@@ -73,16 +73,19 @@ async function main() {
           if (x && x[l] === x.en) bad(here, 'text is not translated in ' + l);
           if (d && d[l] === d.en) bad(here, 'turn is not translated in ' + l);
         }
+        if (process.env.COURSE_VERBOSE) console.error('running', here);
         // run the program
         fresh();
         let out = '';
+        let ranOut = false;
         const answers = (step.i || []).slice();
         let result;
         try {
-          const proxy = await run.callPromising(step.c, s => { out += s; }, () => (answers.length ? answers.shift() : ''));
+          const proxy = await run.callPromising(step.c, s => { out += s; }, () => { if (answers.length) return answers.shift(); ranOut = true; return null; });
           result = proxy.toJs({dict_converter: Object.fromEntries});
           proxy.destroy();
         } catch (error) { bad(here, 'the runner failed: ' + error); continue; }
+        if (ranOut) bad(here, 'the program asked for more answers than the step gives (add more to i)');
         if (step.e) {
           if (!result.error) bad(here, 'was meant to stop with ' + step.e + ' but ran fine');
           else if (result.error.type !== step.e) bad(here, 'stopped with ' + result.error.type + ', not ' + step.e);

@@ -1,11 +1,12 @@
 {
   "name": "pyviel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Learn Python with small steps, every line explained, and friendly errors. Real Python in the page, offline.",
   "license": "MIT",
   "private": true,
   "scripts": {
     "serve": "node tools/serve.js",
-    "test": "node test-errors.js && node tools/page-test.js"
+    "build": "node tools/build-course.js",
+    "test": "node tools/build-course.js && node tools/check-notes.js && node tools/check-language.js && node test-errors.js && node tools/page-test.js"
   }
 }

@@ -107,17 +107,34 @@
   if ($('tutorial').hidden) $('tutorials-toggle').click();
   check('the lessons panel opens', !$('tutorial').hidden);
   const lessons = document.querySelectorAll('.tutorial-lesson');
-  check('there is a lesson to start', lessons.length >= 1, lessons.length);
+  const course = window.PyvielTutorials;
+  check('the course is big: 50 lessons or more', lessons.length >= 50 && course.length === lessons.length, lessons.length);
+  check('and has 200 steps or more', course.reduce((n, l) => n + l.steps.length, 0) >= 200);
+  check('lessons are grouped under stage headings', document.querySelectorAll('.lesson-group').length >= 5, document.querySelectorAll('.lesson-group').length);
   lessons[0].click();
   check('a lesson step shows its code line by line with notes', document.querySelectorAll('.tutorial-code .code-row .note').length >= 1);
+  check('and what you will see', !!document.querySelector('.see-box'));
   document.querySelector('.step-actions .put-code').click();
   check('Put it in the editor loads the step', /print\(/.test(code.value));
-  await until(() => true);
-  document.querySelector('.nav-row .btn:last-child').click();
-  document.querySelector('.nav-row .btn:last-child').click();
+  const stepButtons = () => document.querySelectorAll('.nav-row .btn');
+  for (let i = 0; i < 4; i++) stepButtons()[1].click();
   document.querySelector('.step-actions .put-code').click();
   await run(code.value);
-  check('the lesson about a mistake shows the friendly error', !!document.querySelector('.full-toggle') && /pirnt|print/.test(document.querySelector('.problem-item').innerText));
+  check('the lesson about a mistake shows the friendly error', !!document.querySelector('.full-toggle') && /pirnt/.test(document.querySelector('.problem-item').innerText), document.querySelector('.problem-item') && document.querySelector('.problem-item').innerText);
+  check('the step says what you will see, with the error sentence', course[0].steps[4].see.indexOf('⚠') >= 0, course[0].steps[4].see);
+
+  // every program of every step runs here, in the real page (the ones that ask questions are checked by the build)
+  let ran = 0, wrong = [];
+  for (const lesson of course) {
+    for (const step of lesson.steps) {
+      if (/\binput\(/.test(step.code)) continue;
+      const finished = await run(step.code, 20000);
+      ran++;
+      const failed = !!document.querySelector('.problem-item');
+      if (!finished || failed !== !!step.error) wrong.push(lesson.title + ' / ' + step.title + (failed ? ' (stopped: ' + document.querySelector('.problem-item').innerText.split('\n').slice(0, 3).join(' ') + ')' : ' (did not stop)'));
+    }
+  }
+  check('every step program that needs no typing behaves in the page (' + ran + ' run)', wrong.length === 0, wrong.slice(0, 6).join(' | '));
 
   // a very long line does not break the layout
   check('the page does not scroll sideways', document.documentElement.scrollWidth <= window.innerWidth + 1, document.documentElement.scrollWidth + ' vs ' + window.innerWidth);

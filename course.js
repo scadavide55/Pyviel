@@ -2525,9 +2525,9 @@ window.PyvielCourse = {
       "fr": "Un ensemble est un groupe de choses différentes, sans répétitions et sans ordre. Les accolades sans deux-points font un ensemble. Si tu mets la même chose deux fois, elle n'est gardée qu'une fois.\n\nset(...) construit un ensemble à partir d'une liste ou d'un texte, ce qui est la façon la plus rapide de retirer les répétitions."
      },
      "see": {
-      "en": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}",
-      "it": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}",
-      "fr": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}"
+      "en": "3\nTrue\n{1, 2, 3}\n{'e', 'l', 'o', 'h'}",
+      "it": "3\nTrue\n{1, 2, 3}\n{'e', 'l', 'o', 'h'}",
+      "fr": "3\nTrue\n{1, 2, 3}\n{'e', 'l', 'o', 'h'}"
      },
      "turn": {
       "en": "Count the different letters in \"mississippi\".",
@@ -4711,9 +4711,9 @@ window.PyvielCourse = {
       "fr": "Jusqu'ici tu as utilisé des genres de choses que Python a déjà : texte, liste, dictionnaire. Une classe te permet d'inventer ton propre genre. Pense-y comme à un plan, et chaque chose construite à partir de lui est un objet.\n\nclass Dog: commence le plan (pass veut dire « rien dedans pour l'instant »). Dog() construit un chien, et rex est la boîte qui le garde."
      },
      "see": {
-      "en": "<class '__main__.Dog'>\n<__main__.Dog object at 0x184c0b0>",
-      "it": "<class '__main__.Dog'>\n<__main__.Dog object at 0x184c0b0>",
-      "fr": "<class '__main__.Dog'>\n<__main__.Dog object at 0x184c0b0>"
+      "en": "<class '__main__.Dog'>\n<__main__.Dog object at 0x178d838>",
+      "it": "<class '__main__.Dog'>\n<__main__.Dog object at 0x178d838>",
+      "fr": "<class '__main__.Dog'>\n<__main__.Dog object at 0x178d838>"
      },
      "turn": {
       "en": "Make two dogs and check that they are different objects.",
@@ -5482,9 +5482,9 @@ window.PyvielCourse = {
       "fr": "Une fonction avec yield dedans est un générateur. L'appeler ne la fait pas tourner : elle rend un générateur. Chaque next(...) la fait tourner jusqu'au prochain yield, distribue cette valeur, et fait une pause là, en se souvenant d'où elle en était.\n\nElle produit les valeurs une à la fois, seulement quand on les demande."
      },
      "see": {
-      "en": "<generator object count_up at 0x174f6c0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
-      "it": "<generator object count_up at 0x174f6c0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
-      "fr": "<generator object count_up at 0x174f6c0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
+      "en": "<generator object count_up at 0x178be10>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "it": "<generator object count_up at 0x178be10>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "fr": "<generator object count_up at 0x178be10>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
      },
      "turn": {
       "en": "Write a generator that gives the even numbers up to a limit.",
@@ -5530,9 +5530,9 @@ window.PyvielCourse = {
       "fr": "Des parenthèses au lieu des crochets font une expression génératrice : comme une compréhension de liste mais qui produit les valeurs une à la fois, sans construire toute la liste.\n\nC'est le meilleur choix quand tu veux seulement additionner ou vérifier des choses, comme dans sum(...), max(...), any(...)."
      },
      "see": {
-      "en": "<generator object <genexpr> at 0x15f8e68>\n55\n333833500\n3\nFalse",
-      "it": "<generator object <genexpr> at 0x15f8e68>\n55\n333833500\n3\nFalse",
-      "fr": "<generator object <genexpr> at 0x15f8e68>\n55\n333833500\n3\nFalse"
+      "en": "<generator object <genexpr> at 0x11f6140>\n55\n333833500\n3\nFalse",
+      "it": "<generator object <genexpr> at 0x11f6140>\n55\n333833500\n3\nFalse",
+      "fr": "<generator object <genexpr> at 0x11f6140>\n55\n333833500\n3\nFalse"
      },
      "turn": {
       "en": "Sum the cubes of the numbers from 1 to 20.",
@@ -6395,6 +6395,710 @@ window.PyvielCourse = {
       "en": "Run three background tasks and wait for all of them.",
       "it": "Fai partire tre compiti in secondo piano e aspettali tutti.",
       "fr": "Lance trois tâches en arrière-plan et attends-les toutes."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": {
+    "en": "Stage 5 · Whole programs",
+    "it": "Livello 5 · Programmi interi",
+    "fr": "Niveau 5 · Des programmes entiers"
+   },
+   "title": {
+    "en": "Project 1: Guess the number",
+    "it": "Progetto 1: Indovina il numero",
+    "fr": "Projet 1 : Devine le nombre"
+   },
+   "subtitle": {
+    "en": "From an empty page to a finished game",
+    "it": "Da una pagina vuota a un gioco finito",
+    "fr": "D'une page vide à un jeu fini"
+   },
+   "steps": [
+    {
+     "code": "secret = 42\nguess = int(input(\"Guess the number: \"))\nif guess < secret:\n    print(\"Too low\")\nelif guess > secret:\n    print(\"Too high\")\nelse:\n    print(\"You got it!\")",
+     "title": {
+      "en": "Step 1: one guess",
+      "it": "Passo 1: un tentativo",
+      "fr": "Étape 1 : une tentative"
+     },
+     "text": {
+      "en": "A big program is built in small steps that each work. First the smallest version: the secret is fixed, you guess once, and the program says if it is too low, too high or right.\n\nRun it and try a few guesses. Only when this works do we make it bigger.",
+      "it": "Un programma grande si costruisce con piccoli passi che funzionano ognuno. Prima la versione più piccola: il segreto è fisso, tu indovini una volta, e il programma dice se è troppo basso, troppo alto o giusto.\n\nEseguilo e prova qualche tentativo. Solo quando questo funziona lo facciamo più grande.",
+      "fr": "Un gros programme se construit par petites étapes qui marchent chacune. D'abord la plus petite version : le secret est fixe, tu devines une fois, et le programme dit si c'est trop bas, trop haut ou juste.\n\nLance-le et essaie quelques tentatives. Seulement quand ça marche, on le rend plus grand."
+     },
+     "see": {
+      "en": "Guess the number: 30\nToo low",
+      "it": "Guess the number: 30\nToo low",
+      "fr": "Guess the number: 30\nToo low"
+     },
+     "turn": {
+      "en": "Run it with 42 and with 99 to see all three answers.",
+      "it": "Eseguilo con 42 e con 99 per vedere tutte e tre le risposte.",
+      "fr": "Lance-le avec 42 et avec 99 pour voir les trois réponses."
+     },
+     "slip": null
+    },
+    {
+     "code": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Guess the number: \"))\n    tries += 1\n    if guess < secret:\n        print(\"Too low\")\n    elif guess > secret:\n        print(\"Too high\")\n    else:\n        print(f\"You got it in {tries} tries!\")\n        break",
+     "title": {
+      "en": "Step 2: keep guessing",
+      "it": "Passo 2: continua a indovinare",
+      "fr": "Étape 2 : continuer à deviner"
+     },
+     "text": {
+      "en": "Now a loop that keeps asking until the guess is right, and a counter of the tries. The loop is while True, and break leaves it when the player wins.\n\nThe program works as a game already. The next steps make it safe and nicer.",
+      "it": "Ora un ciclo che continua a chiedere finché il tentativo è giusto, e un contatore dei tentativi. Il ciclo è while True, e break lo lascia quando il giocatore vince.\n\nIl programma funziona già come gioco. I prossimi passi lo rendono sicuro e più bello.",
+      "fr": "Maintenant une boucle qui continue de demander jusqu'à ce que la tentative soit juste, et un compteur d'essais. La boucle est while True, et break la quitte quand le joueur gagne.\n\nLe programme marche déjà comme un jeu. Les étapes suivantes le rendent sûr et plus joli."
+     },
+     "see": {
+      "en": "Guess the number: 50\nToo high\nGuess the number: 30\nToo low\nGuess the number: 42\nYou got it in 3 tries!",
+      "it": "Guess the number: 50\nToo high\nGuess the number: 30\nToo low\nGuess the number: 42\nYou got it in 3 tries!",
+      "fr": "Guess the number: 50\nToo high\nGuess the number: 30\nToo low\nGuess the number: 42\nYou got it in 3 tries!"
+     },
+     "turn": {
+      "en": "Play it until you win.",
+      "it": "Giocaci finché vinci.",
+      "fr": "Joue jusqu'à ce que tu gagnes."
+     },
+     "slip": null
+    },
+    {
+     "code": "def ask_number(question, low, high):\n    \"\"\"Ask until the person types a whole number from low to high.\"\"\"\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"It must be between {low} and {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Guess (1-100): \", 1, 100)\n    tries += 1\n    if guess == secret:\n        print(f\"You got it in {tries} tries!\")\n        break\n    print(\"Too low\" if guess < secret else \"Too high\")",
+     "title": {
+      "en": "Step 3: trust nothing typed",
+      "it": "Passo 3: non fidarti di niente di scritto",
+      "fr": "Étape 3 : ne fais confiance à rien de tapé"
+     },
+     "text": {
+      "en": "What if the player types letters, or 500? A function ask_number keeps asking until the answer is a whole number in the right range. Writing it once in a function means it works for every question in the program.\n\nThe main loop is also shorter now.",
+      "it": "E se il giocatore scrive lettere, o 500? Una funzione ask_number continua a chiedere finché la risposta è un numero intero nell'intervallo giusto. Scriverla una volta in una funzione vuol dire che funziona per ogni domanda del programma.\n\nAnche il ciclo principale ora è più corto.",
+      "fr": "Et si le joueur écrit des lettres, ou 500 ? Une fonction ask_number continue de demander jusqu'à ce que la réponse soit un nombre entier dans la bonne plage. L'écrire une fois dans une fonction veut dire qu'elle marche pour chaque question du programme.\n\nLa boucle principale est aussi plus courte maintenant."
+     },
+     "see": {
+      "en": "Guess (1-100): abc\nPlease type a whole number.\nGuess (1-100): 500\nIt must be between 1 and 100.\nGuess (1-100): 50\nToo high\nGuess (1-100): 42\nYou got it in 2 tries!",
+      "it": "Guess (1-100): abc\nPlease type a whole number.\nGuess (1-100): 500\nIt must be between 1 and 100.\nGuess (1-100): 50\nToo high\nGuess (1-100): 42\nYou got it in 2 tries!",
+      "fr": "Guess (1-100): abc\nPlease type a whole number.\nGuess (1-100): 500\nIt must be between 1 and 100.\nGuess (1-100): 50\nToo high\nGuess (1-100): 42\nYou got it in 2 tries!"
+     },
+     "turn": {
+      "en": "Try typing a word, then 0, then a good number.",
+      "it": "Prova a scrivere una parola, poi 0, poi un numero buono.",
+      "fr": "Essaie d'écrire un mot, puis 0, puis un bon nombre."
+     },
+     "slip": null
+    },
+    {
+     "code": "import random\n\nLEVELS = {\"easy\": 10, \"medium\": 100, \"hard\": 1000}\n\ndef ask_level():\n    while True:\n        level = input(\"Level (easy/medium/hard): \").strip().lower()\n        if level in LEVELS:\n            return level\n        print(\"Choose one of:\", \", \".join(LEVELS))\n\nrandom.seed(11)\nlevel = ask_level()\ntop = LEVELS[level]\nsecret = random.randint(1, top)\nprint(f\"I am thinking of a number from 1 to {top}.\")\nprint(\"Secret for this demo:\", secret)",
+     "title": {
+      "en": "Step 4: levels and a random secret",
+      "it": "Passo 4: livelli e un segreto casuale",
+      "fr": "Étape 4 : niveaux et un secret aléatoire"
+     },
+     "text": {
+      "en": "A dictionary of levels, with the biggest number for each. The program asks until the level is one of its keys, then picks a random secret up to that number.\n\nThe seed makes the secret the same here so the lesson is predictable. In the real game you leave it out.",
+      "it": "Un dizionario di livelli, con il numero più grande per ognuno. Il programma chiede finché il livello è una delle sue chiavi, poi sceglie un segreto casuale fino a quel numero.\n\nIl seme qui rende il segreto sempre uguale, così la lezione è prevedibile. Nel gioco vero lo togli.",
+      "fr": "Un dictionnaire de niveaux, avec le plus grand nombre pour chacun. Le programme demande jusqu'à ce que le niveau soit une de ses clés, puis choisit un secret aléatoire jusqu'à ce nombre.\n\nLa graine rend ici le secret toujours le même pour que la leçon soit prévisible. Dans le vrai jeu tu l'enlèves."
+     },
+     "see": {
+      "en": "Level (easy/medium/hard): expert\nChoose one of: easy, medium, hard\nLevel (easy/medium/hard): Medium\nI am thinking of a number from 1 to 100.\nSecret for this demo: 58",
+      "it": "Level (easy/medium/hard): expert\nChoose one of: easy, medium, hard\nLevel (easy/medium/hard): Medium\nI am thinking of a number from 1 to 100.\nSecret for this demo: 58",
+      "fr": "Level (easy/medium/hard): expert\nChoose one of: easy, medium, hard\nLevel (easy/medium/hard): Medium\nI am thinking of a number from 1 to 100.\nSecret for this demo: 58"
+     },
+     "turn": {
+      "en": "Add a level called \"insane\" with 100000.",
+      "it": "Aggiungi un livello chiamato \"insane\" con 100000.",
+      "fr": "Ajoute un niveau appelé \"insane\" avec 100000."
+     },
+     "slip": null
+    },
+    {
+     "code": "import json, os\n\nSCORE_FILE = \"best.json\"\n\ndef load_best():\n    if os.path.exists(SCORE_FILE):\n        with open(SCORE_FILE) as f:\n            return json.load(f)\n    return {}\n\ndef save_best(best):\n    with open(SCORE_FILE, \"w\") as f:\n        json.dump(best, f)\n\nbest = load_best()\nprint(\"Best scores so far:\", best)\nbest[\"easy\"] = min(best.get(\"easy\", 99), 4)\nsave_best(best)\nprint(\"After this game:\", load_best())\nbest[\"easy\"] = min(best.get(\"easy\", 99), 6)\nsave_best(best)\nprint(\"A worse game keeps the record:\", load_best())",
+     "title": {
+      "en": "Step 5: remember the best score",
+      "it": "Passo 5: ricorda il miglior punteggio",
+      "fr": "Étape 5 : se souvenir du meilleur score"
+     },
+     "text": {
+      "en": "A game is more fun when it remembers. These two functions load and save a dictionary of best scores in a file, using what you learned about json and os. min keeps the smaller number of tries, which is the better score.\n\nIn Pyviel the file stays only while the page is open, but on a real computer it would stay for ever.",
+      "it": "Un gioco è più divertente quando ricorda. Queste due funzioni caricano e salvano un dizionario di migliori punteggi in un file, usando quello che hai imparato su json e os. min tiene il numero più piccolo di tentativi, che è il punteggio migliore.\n\nIn Pyviel il file resta solo finché la pagina è aperta, ma su un computer vero resterebbe per sempre.",
+      "fr": "Un jeu est plus amusant quand il se souvient. Ces deux fonctions chargent et sauvegardent un dictionnaire de meilleurs scores dans un fichier, en utilisant ce que tu as appris sur json et os. min garde le plus petit nombre d'essais, qui est le meilleur score.\n\nDans Pyviel le fichier ne reste que tant que la page est ouverte, mais sur un vrai ordinateur il resterait pour toujours."
+     },
+     "see": {
+      "en": "Best scores so far: {}\nAfter this game: {'easy': 4}\nA worse game keeps the record: {'easy': 4}",
+      "it": "Best scores so far: {}\nAfter this game: {'easy': 4}\nA worse game keeps the record: {'easy': 4}",
+      "fr": "Best scores so far: {}\nAfter this game: {'easy': 4}\nA worse game keeps the record: {'easy': 4}"
+     },
+     "turn": {
+      "en": "Add a \"hard\" record too.",
+      "it": "Aggiungi anche un record \"hard\".",
+      "fr": "Ajoute aussi un record \"hard\"."
+     },
+     "slip": null
+    },
+    {
+     "code": "import random\n\nLEVELS = {\"easy\": 10, \"medium\": 100}\n\ndef ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if text.strip().isdigit() and low <= int(text) <= high:\n            return int(text)\n        print(f\"Please type a whole number from {low} to {high}.\")\n\ndef play(top):\n    secret = random.randint(1, top)\n    tries = 0\n    while True:\n        guess = ask_number(f\"Guess (1-{top}): \", 1, top)\n        tries += 1\n        if guess == secret:\n            return tries\n        print(\"Too low\" if guess < secret else \"Too high\")\n\ndef main():\n    random.seed(3)\n    best = {}\n    for level, top in LEVELS.items():\n        print(f\"--- {level} ---\")\n        tries = play(top)\n        print(f\"You got it in {tries} tries!\")\n        best[level] = min(best.get(level, 999), tries)\n    print(\"Best:\", best)\n\nif __name__ == \"__main__\":\n    main()",
+     "title": {
+      "en": "Step 6: the whole program",
+      "it": "Passo 6: il programma intero",
+      "fr": "Étape 6 : le programme entier"
+     },
+     "text": {
+      "en": "Everything put together in the shape of a good program: small functions that each do one job, a main() that runs the game for each level, constants in capitals, and the line that starts main.\n\nYou built it from a ten-line sketch. This is how every real program grows: one small working step at a time.",
+      "it": "Tutto messo insieme nella forma di un buon programma: piccole funzioni che fanno ognuna un lavoro, un main() che fa girare il gioco per ogni livello, costanti in maiuscolo, e la riga che fa partire main.\n\nL'hai costruito da uno schizzo di dieci righe. È così che cresce ogni programma vero: un piccolo passo funzionante alla volta.",
+      "fr": "Tout mis ensemble sous la forme d'un bon programme : de petites fonctions qui font chacune un travail, un main() qui fait tourner le jeu pour chaque niveau, des constantes en majuscules, et la ligne qui démarre main.\n\nTu l'as construit à partir d'un croquis de dix lignes. C'est ainsi que grandit tout vrai programme : une petite étape qui marche à la fois."
+     },
+     "see": {
+      "en": "--- easy ---\nGuess (1-10): 5\nToo high\nGuess (1-10): 9\nToo high\nGuess (1-10): 3\nToo low\nGuess (1-10): 4\nYou got it in 4 tries!\n...\nYou got it in 3 tries!\nBest: {'easy': 4, 'medium': 3}",
+      "it": "--- easy ---\nGuess (1-10): 5\nToo high\nGuess (1-10): 9\nToo high\nGuess (1-10): 3\nToo low\nGuess (1-10): 4\nYou got it in 4 tries!\n...\nYou got it in 3 tries!\nBest: {'easy': 4, 'medium': 3}",
+      "fr": "--- easy ---\nGuess (1-10): 5\nToo high\nGuess (1-10): 9\nToo high\nGuess (1-10): 3\nToo low\nGuess (1-10): 4\nYou got it in 4 tries!\n...\nYou got it in 3 tries!\nBest: {'easy': 4, 'medium': 3}"
+     },
+     "turn": {
+      "en": "Add a third level and a message when you beat your best score.",
+      "it": "Aggiungi un terzo livello e un messaggio quando batti il tuo record.",
+      "fr": "Ajoute un troisième niveau et un message quand tu bats ton record."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Project 2: Hangman",
+    "it": "Progetto 2: L'impiccato",
+    "fr": "Projet 2 : Le pendu"
+   },
+   "subtitle": {
+    "en": "Texts, sets and a game loop",
+    "it": "Testi, insiemi e un ciclo di gioco",
+    "fr": "Textes, ensembles et une boucle de jeu"
+   },
+   "steps": [
+    {
+     "code": "word = \"python\"\nguessed = {\"p\", \"o\"}\nshown = \"\"\nfor letter in word:\n    shown += letter if letter in guessed else \"_\"\nprint(shown)\nprint(\" \".join(shown))",
+     "title": {
+      "en": "Step 1: show the word with blanks",
+      "it": "Passo 1: mostra la parola con gli spazi vuoti",
+      "fr": "Étape 1 : montrer le mot avec des blancs"
+     },
+     "text": {
+      "en": "In hangman you see the word with the guessed letters shown and the others hidden. A set keeps the letters guessed so far, and a loop builds the display one letter at a time.\n\njoin with a space makes it easier to read: p _ _ _ o _.",
+      "it": "Nell'impiccato vedi la parola con le lettere indovinate mostrate e le altre nascoste. Un insieme tiene le lettere indovinate finora, e un ciclo costruisce la visualizzazione una lettera alla volta.\n\njoin con uno spazio la rende più leggibile: p _ _ _ o _.",
+      "fr": "Au pendu tu vois le mot avec les lettres devinées montrées et les autres cachées. Un ensemble garde les lettres devinées jusqu'ici, et une boucle construit l'affichage une lettre à la fois.\n\njoin avec un espace le rend plus facile à lire : p _ _ _ o _."
+     },
+     "see": {
+      "en": "p___o_\np _ _ _ o _",
+      "it": "p___o_\np _ _ _ o _",
+      "fr": "p___o_\np _ _ _ o _"
+     },
+     "turn": {
+      "en": "Change the guessed letters and watch the display change.",
+      "it": "Cambia le lettere indovinate e guarda cambiare la visualizzazione.",
+      "fr": "Change les lettres devinées et regarde l'affichage changer."
+     },
+     "slip": null
+    },
+    {
+     "code": "def mask(word, guessed):\n    return \" \".join(letter if letter in guessed else \"_\" for letter in word)\n\nword = \"python\"\nguessed = set()\nfor guess in [\"t\", \"z\", \"p\", \"t\"]:\n    if guess in guessed:\n        print(guess, \"- you already tried that\")\n    elif guess in word:\n        guessed.add(guess)\n        print(guess, \"- yes!\", mask(word, guessed))\n    else:\n        guessed.add(guess)\n        print(guess, \"- no\", mask(word, guessed))",
+     "title": {
+      "en": "Step 2: check a guess",
+      "it": "Passo 2: controlla un tentativo",
+      "fr": "Étape 2 : vérifier une tentative"
+     },
+     "text": {
+      "en": "The display becomes a small function mask. Then each guess is checked three ways: already tried, in the word, or not in the word. Here the guesses come from a list so you can see every case in one run.\n\nDoing a small thing and seeing it work is the whole secret of building games.",
+      "it": "La visualizzazione diventa una piccola funzione mask. Poi ogni tentativo viene controllato in tre modi: già provato, nella parola, o non nella parola. Qui i tentativi vengono da una lista così vedi ogni caso in un'esecuzione.\n\nFare una piccola cosa e vederla funzionare è tutto il segreto per costruire giochi.",
+      "fr": "L'affichage devient une petite fonction mask. Puis chaque tentative est vérifiée de trois façons : déjà essayée, dans le mot, ou pas dans le mot. Ici les tentatives viennent d'une liste pour que tu voies chaque cas en une exécution.\n\nFaire une petite chose et la voir marcher est tout le secret pour construire des jeux."
+     },
+     "see": {
+      "en": "t - yes! _ _ t _ _ _\nz - no _ _ t _ _ _\np - yes! p _ t _ _ _\nt - you already tried that",
+      "it": "t - yes! _ _ t _ _ _\nz - no _ _ t _ _ _\np - yes! p _ t _ _ _\nt - you already tried that",
+      "fr": "t - yes! _ _ t _ _ _\nz - no _ _ t _ _ _\np - yes! p _ t _ _ _\nt - you already tried that"
+     },
+     "turn": {
+      "en": "Add another guess to the list.",
+      "it": "Aggiungi un altro tentativo alla lista.",
+      "fr": "Ajoute une autre tentative à la liste."
+     },
+     "slip": null
+    },
+    {
+     "code": "def mask(word, guessed):\n    return \" \".join(letter if letter in guessed else \"_\" for letter in word)\n\nword = \"python\"\nguessed = set()\nlives = 4\nfor guess in [\"x\", \"p\", \"y\", \"q\", \"t\", \"z\", \"h\", \"o\", \"n\"]:\n    if lives == 0 or set(word) <= guessed:\n        break\n    guessed.add(guess)\n    if guess not in word:\n        lives -= 1\n    print(f\"{guess}: {mask(word, guessed)}   lives: {lives}\")\nif set(word) <= guessed:\n    print(\"You win!\")\nelse:\n    print(f\"You lose. The word was {word}.\")",
+     "title": {
+      "en": "Step 3: lives, win and lose",
+      "it": "Passo 3: vite, vittoria e sconfitta",
+      "fr": "Étape 3 : vies, victoire et défaite"
+     },
+     "text": {
+      "en": "Add lives that go down on a wrong guess. The game ends when lives run out, or when every letter of the word is in the guessed set. set(word) <= guessed asks \"are all the letters of the word guessed?\".\n\nThe two ending conditions are checked at the start of each turn.",
+      "it": "Aggiungi delle vite che scendono a ogni tentativo sbagliato. Il gioco finisce quando le vite finiscono, o quando ogni lettera della parola è nell'insieme degli indovinati. set(word) <= guessed chiede \"tutte le lettere della parola sono state indovinate?\".\n\nLe due condizioni di fine vengono controllate all'inizio di ogni turno.",
+      "fr": "Ajoute des vies qui baissent à chaque mauvaise tentative. Le jeu se termine quand les vies sont épuisées, ou quand chaque lettre du mot est dans l'ensemble des devinées. set(word) <= guessed demande « toutes les lettres du mot sont-elles devinées ? ».\n\nLes deux conditions de fin sont vérifiées au début de chaque tour."
+     },
+     "see": {
+      "en": "x: _ _ _ _ _ _   lives: 3\np: p _ _ _ _ _   lives: 3\ny: p y _ _ _ _   lives: 3\nq: p y _ _ _ _   lives: 2\nt: p y t _ _ _   lives: 2\nz: p y t _ _ _   lives: 1\nh: p y t h _ _   lives: 1\no: p y t h o _   lives: 1\nn: p y t h o n   lives: 1\nYou win!",
+      "it": "x: _ _ _ _ _ _   lives: 3\np: p _ _ _ _ _   lives: 3\ny: p y _ _ _ _   lives: 3\nq: p y _ _ _ _   lives: 2\nt: p y t _ _ _   lives: 2\nz: p y t _ _ _   lives: 1\nh: p y t h _ _   lives: 1\no: p y t h o _   lives: 1\nn: p y t h o n   lives: 1\nYou win!",
+      "fr": "x: _ _ _ _ _ _   lives: 3\np: p _ _ _ _ _   lives: 3\ny: p y _ _ _ _   lives: 3\nq: p y _ _ _ _   lives: 2\nt: p y t _ _ _   lives: 2\nz: p y t _ _ _   lives: 1\nh: p y t h _ _   lives: 1\no: p y t h o _   lives: 1\nn: p y t h o n   lives: 1\nYou win!"
+     },
+     "turn": {
+      "en": "Give the player 6 lives.",
+      "it": "Dai al giocatore 6 vite.",
+      "fr": "Donne 6 vies au joueur."
+     },
+     "slip": null
+    },
+    {
+     "code": "STAGES = [\n    \"  +---+\\n  |   |\\n      |\\n      |\\n      |\\n      |\\n=========\",\n    \"  +---+\\n  |   |\\n  O   |\\n      |\\n      |\\n      |\\n=========\",\n    \"  +---+\\n  |   |\\n  O   |\\n  |   |\\n      |\\n      |\\n=========\",\n    \"  +---+\\n  |   |\\n  O   |\\n /|\\\\  |\\n      |\\n      |\\n=========\",\n    \"  +---+\\n  |   |\\n  O   |\\n /|\\\\  |\\n / \\\\  |\\n      |\\n=========\",\n]\nfor wrong in (0, 2, 4):\n    print(STAGES[wrong])\n    print()",
+     "title": {
+      "en": "Step 4: draw the gallows",
+      "it": "Passo 4: disegna la forca",
+      "fr": "Étape 4 : dessiner la potence"
+     },
+     "text": {
+      "en": "A list of drawings, one for each number of mistakes, is all you need to show the gallows. The text with \\n goes over several lines, and the backslash that you want to show is written twice.\n\nThe picture to show is just STAGES[number_of_mistakes].",
+      "it": "Una lista di disegni, uno per ogni numero di errori, è tutto quello che serve per mostrare la forca. Il testo con \\n va su più righe, e la barra rovesciata che vuoi mostrare si scrive due volte.\n\nIl disegno da mostrare è semplicemente STAGES[numero_di_errori].",
+      "fr": "Une liste de dessins, un pour chaque nombre d'erreurs, est tout ce qu'il faut pour montrer la potence. Le texte avec \\n passe sur plusieurs lignes, et l'antislash que tu veux montrer s'écrit deux fois.\n\nLe dessin à montrer est simplement STAGES[nombre_d_erreurs]."
+     },
+     "see": {
+      "en": "  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========\n\n  +---+\n...\n      |\n=========",
+      "it": "  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========\n\n  +---+\n...\n      |\n=========",
+      "fr": "  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========\n\n  +---+\n...\n      |\n========="
+     },
+     "turn": {
+      "en": "Draw your own sixth stage.",
+      "it": "Disegna il tuo sesto stadio.",
+      "fr": "Dessine ton sixième stade."
+     },
+     "slip": null
+    },
+    {
+     "code": "import random\n\nWORDS = [\"python\", \"kaviel\", \"bridge\", \"garden\", \"planet\", \"rocket\"]\nMAX_MISTAKES = 4\n\ndef mask(word, guessed):\n    return \" \".join(letter if letter in guessed else \"_\" for letter in word)\n\ndef play(word):\n    guessed = set()\n    mistakes = 0\n    while mistakes < MAX_MISTAKES and not set(word) <= guessed:\n        print(mask(word, guessed), f\"  mistakes: {mistakes}/{MAX_MISTAKES}\")\n        guess = input(\"Letter: \").strip().lower()\n        if len(guess) != 1 or not guess.isalpha():\n            print(\"One letter, please.\")\n        elif guess in guessed:\n            print(\"You already tried\", guess)\n        else:\n            guessed.add(guess)\n            if guess not in word:\n                mistakes += 1\n    return set(word) <= guessed\n\nrandom.seed(2)\nword = random.choice(WORDS)\nwon = play(word)\nprint(\"You win!\" if won else f\"You lose. It was {word}.\")",
+     "title": {
+      "en": "Step 5: the whole game",
+      "it": "Passo 5: il gioco intero",
+      "fr": "Étape 5 : le jeu entier"
+     },
+     "text": {
+      "en": "The pieces together: a list of words, a random choice, a play function with the loop, and checks that refuse anything that is not one new letter. play gives back True or False and the main code announces the result.\n\nAdd your own words, a drawing for each mistake, and a question at the end to play again.",
+      "it": "I pezzi insieme: una lista di parole, una scelta casuale, una funzione play con il ciclo, e controlli che rifiutano tutto ciò che non è una lettera nuova. play restituisce True o False e il codice principale annuncia il risultato.\n\nAggiungi le tue parole, un disegno per ogni errore, e una domanda alla fine per giocare ancora.",
+      "fr": "Les morceaux ensemble : une liste de mots, un choix aléatoire, une fonction play avec la boucle, et des vérifications qui refusent tout ce qui n'est pas une nouvelle lettre. play rend True ou False et le code principal annonce le résultat.\n\nAjoute tes propres mots, un dessin pour chaque erreur, et une question à la fin pour rejouer."
+     },
+     "see": {
+      "en": "_ _ _ _ _ _   mistakes: 0/4\nLetter: a\n_ _ _ _ _ _   mistakes: 1/4\nLetter: e\n_ _ _ _ _ _   mistakes: 2/4\nLetter: 12\nOne letter, please.\n_ _ _ _ _ _   mistakes: 2/4\nLetter: p\n...\nLetter: n\nYou win!",
+      "it": "_ _ _ _ _ _   mistakes: 0/4\nLetter: a\n_ _ _ _ _ _   mistakes: 1/4\nLetter: e\n_ _ _ _ _ _   mistakes: 2/4\nLetter: 12\nOne letter, please.\n_ _ _ _ _ _   mistakes: 2/4\nLetter: p\n...\nLetter: n\nYou win!",
+      "fr": "_ _ _ _ _ _   mistakes: 0/4\nLetter: a\n_ _ _ _ _ _   mistakes: 1/4\nLetter: e\n_ _ _ _ _ _   mistakes: 2/4\nLetter: 12\nOne letter, please.\n_ _ _ _ _ _   mistakes: 2/4\nLetter: p\n...\nLetter: n\nYou win!"
+     },
+     "turn": {
+      "en": "Add ten more words to the list.",
+      "it": "Aggiungi altre dieci parole alla lista.",
+      "fr": "Ajoute dix mots de plus à la liste."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Project 3: A to-do list that remembers",
+    "it": "Progetto 3: Una lista di cose da fare che ricorda",
+    "fr": "Projet 3 : Une liste de choses à faire qui se souvient"
+   },
+   "subtitle": {
+    "en": "Dictionaries, functions, a menu and files",
+    "it": "Dizionari, funzioni, un menu e file",
+    "fr": "Dictionnaires, fonctions, un menu et fichiers"
+   },
+   "steps": [
+    {
+     "code": "tasks = [\n    {\"title\": \"Learn Python\", \"done\": False},\n    {\"title\": \"Walk the dog\", \"done\": True},\n]\nfor number, task in enumerate(tasks, start=1):\n    mark = \"x\" if task[\"done\"] else \" \"\n    print(f\"{number}. [{mark}] {task['title']}\")",
+     "title": {
+      "en": "Step 1: the data",
+      "it": "Passo 1: i dati",
+      "fr": "Étape 1 : les données"
+     },
+     "text": {
+      "en": "Before the program, think about the data. A task has a title and a done flag, so it is a small dictionary. The list of tasks is a list of dictionaries.\n\nShowing it is just a loop with enumerate, to number the lines starting from 1.",
+      "it": "Prima del programma, pensa ai dati. Un compito ha un titolo e un segno di fatto, quindi è un piccolo dizionario. La lista dei compiti è una lista di dizionari.\n\nMostrarla è solo un ciclo con enumerate, per numerare le righe da 1.",
+      "fr": "Avant le programme, pense aux données. Une tâche a un titre et un indicateur de fait, c'est donc un petit dictionnaire. La liste des tâches est une liste de dictionnaires.\n\nLa montrer n'est qu'une boucle avec enumerate, pour numéroter les lignes à partir de 1."
+     },
+     "see": {
+      "en": "1. [ ] Learn Python\n2. [x] Walk the dog",
+      "it": "1. [ ] Learn Python\n2. [x] Walk the dog",
+      "fr": "1. [ ] Learn Python\n2. [x] Walk the dog"
+     },
+     "turn": {
+      "en": "Add a third task.",
+      "it": "Aggiungi un terzo compito.",
+      "fr": "Ajoute une troisième tâche."
+     },
+     "slip": null
+    },
+    {
+     "code": "def add_task(tasks, title):\n    tasks.append({\"title\": title, \"done\": False})\n\ndef complete(tasks, number):\n    if 1 <= number <= len(tasks):\n        tasks[number - 1][\"done\"] = True\n        return True\n    return False\n\ndef show(tasks):\n    if not tasks:\n        print(\"Nothing to do!\")\n    for number, task in enumerate(tasks, start=1):\n        mark = \"x\" if task[\"done\"] else \" \"\n        print(f\"{number}. [{mark}] {task['title']}\")\n\ntasks = []\nadd_task(tasks, \"Buy milk\")\nadd_task(tasks, \"Do homework\")\nprint(complete(tasks, 2), complete(tasks, 9))\nshow(tasks)",
+     "title": {
+      "en": "Step 2: one function for each action",
+      "it": "Passo 2: una funzione per ogni azione",
+      "fr": "Étape 2 : une fonction pour chaque action"
+     },
+     "text": {
+      "en": "Each thing the program can do becomes a small function: add a task, complete a task, show the tasks. complete gives back True or False so the caller knows if the number was valid.\n\nThe functions receive the list as a parameter, so they are easy to test one by one.",
+      "it": "Ogni cosa che il programma può fare diventa una piccola funzione: aggiungere un compito, completare un compito, mostrare i compiti. complete restituisce True o False così chi chiama sa se il numero era valido.\n\nLe funzioni ricevono la lista come parametro, quindi sono facili da provare una per una.",
+      "fr": "Chaque chose que le programme peut faire devient une petite fonction : ajouter une tâche, terminer une tâche, montrer les tâches. complete rend True ou False pour que l'appelant sache si le numéro était valide.\n\nLes fonctions reçoivent la liste en paramètre, elles sont donc faciles à tester une par une."
+     },
+     "see": {
+      "en": "True False\n1. [ ] Buy milk\n2. [x] Do homework",
+      "it": "True False\n1. [ ] Buy milk\n2. [x] Do homework",
+      "fr": "True False\n1. [ ] Buy milk\n2. [x] Do homework"
+     },
+     "turn": {
+      "en": "Add a function remove(tasks, number).",
+      "it": "Aggiungi una funzione remove(tasks, number).",
+      "fr": "Ajoute une fonction remove(tasks, number)."
+     },
+     "slip": null
+    },
+    {
+     "code": "tasks = [{\"title\": \"Buy milk\", \"done\": False}]\n\ndef show(tasks):\n    for number, task in enumerate(tasks, start=1):\n        mark = \"x\" if task[\"done\"] else \" \"\n        print(f\"{number}. [{mark}] {task['title']}\")\n\nwhile True:\n    print(\"\\n1) show  2) add  3) done  4) quit\")\n    choice = input(\"Choose: \").strip()\n    if choice == \"1\":\n        show(tasks)\n    elif choice == \"2\":\n        tasks.append({\"title\": input(\"Title: \"), \"done\": False})\n    elif choice == \"3\":\n        number = int(input(\"Number: \"))\n        tasks[number - 1][\"done\"] = True\n    elif choice == \"4\":\n        print(\"Bye!\")\n        break\n    else:\n        print(\"Please choose 1, 2, 3 or 4.\")",
+     "title": {
+      "en": "Step 3: a menu",
+      "it": "Passo 3: un menu",
+      "fr": "Étape 3 : un menu"
+     },
+     "text": {
+      "en": "A menu is a while True loop that shows the choices, reads one, and does the matching action. Choosing 4 breaks out of the loop. Anything else is politely refused.\n\nRun it and use every choice. The one with a wrong number will stop the program with an error: the next step fixes it.",
+      "it": "Un menu è un ciclo while True che mostra le scelte, ne legge una, e fa l'azione corrispondente. Scegliere 4 esce dal ciclo. Tutto il resto viene rifiutato con garbo.\n\nEseguilo e usa ogni scelta. Quella con un numero sbagliato fermerà il programma con un errore: il prossimo passo lo corregge.",
+      "fr": "Un menu est une boucle while True qui montre les choix, en lit un, et fait l'action correspondante. Choisir 4 sort de la boucle. Tout le reste est poliment refusé.\n\nLance-le et utilise chaque choix. Celui avec un mauvais numéro arrêtera le programme avec une erreur : l'étape suivante le corrige."
+     },
+     "see": {
+      "en": "\n1) show  2) add  3) done  4) quit\nChoose: 2\nTitle: Call grandma\n\n1) show  2) add  3) done  4) quit\nChoose: 1\n1. [ ] Buy milk\n2. [ ] Call grandma\n...\nChoose: 3\nNumber: 9\n⚠ Line 17: That position does not exist in the list.",
+      "it": "\n1) show  2) add  3) done  4) quit\nChoose: 2\nTitle: Call grandma\n\n1) show  2) add  3) done  4) quit\nChoose: 1\n1. [ ] Buy milk\n2. [ ] Call grandma\n...\nChoose: 3\nNumber: 9\n⚠ Riga 17: Quella posizione non esiste nella lista.",
+      "fr": "\n1) show  2) add  3) done  4) quit\nChoose: 2\nTitle: Call grandma\n\n1) show  2) add  3) done  4) quit\nChoose: 1\n1. [ ] Buy milk\n2. [ ] Call grandma\n...\nChoose: 3\nNumber: 9\n⚠ Ligne 17: Cette position n'existe pas dans la liste."
+     },
+     "turn": {
+      "en": "Run it and read the explanation of the error at the end.",
+      "it": "Eseguilo e leggi la spiegazione dell'errore alla fine.",
+      "fr": "Lance-le et lis l'explication de l'erreur à la fin."
+     },
+     "slip": null,
+     "error": "IndexError"
+    },
+    {
+     "code": "import json, os\n\nFILE = \"tasks.json\"\n\ndef load():\n    if os.path.exists(FILE):\n        with open(FILE) as f:\n            return json.load(f)\n    return []\n\ndef save(tasks):\n    with open(FILE, \"w\") as f:\n        json.dump(tasks, f, indent=2)\n\ndef show(tasks):\n    for number, task in enumerate(tasks, start=1):\n        mark = \"x\" if task[\"done\"] else \" \"\n        print(f\"{number}. [{mark}] {task['title']}\")\n\ntasks = load()\nprint(\"Loaded\", len(tasks), \"tasks\")\ntasks.append({\"title\": \"Finish the project\", \"done\": False})\nsave(tasks)\n\nagain = load()\nshow(again)\nprint(\"Same data after loading:\", again == tasks)",
+     "title": {
+      "en": "Step 4: remember between runs",
+      "it": "Passo 4: ricorda tra un'esecuzione e l'altra",
+      "fr": "Étape 4 : se souvenir entre les exécutions"
+     },
+     "text": {
+      "en": "Two functions, load and save, keep the tasks in a JSON file. At the start the program loads what was saved, and after each change it saves again. If there is no file yet, load gives an empty list.\n\nThis small trick turns a toy into a useful tool.",
+      "it": "Due funzioni, load e save, tengono i compiti in un file JSON. All'inizio il programma carica quello che era stato salvato, e dopo ogni cambiamento salva di nuovo. Se non c'è ancora un file, load dà una lista vuota.\n\nQuesto piccolo trucco trasforma un giocattolo in uno strumento utile.",
+      "fr": "Deux fonctions, load et save, gardent les tâches dans un fichier JSON. Au début le programme charge ce qui avait été sauvegardé, et après chaque changement il sauvegarde à nouveau. S'il n'y a pas encore de fichier, load donne une liste vide.\n\nCe petit truc transforme un jouet en outil utile."
+     },
+     "see": {
+      "en": "Loaded 0 tasks\n1. [ ] Finish the project\nSame data after loading: True",
+      "it": "Loaded 0 tasks\n1. [ ] Finish the project\nSame data after loading: True",
+      "fr": "Loaded 0 tasks\n1. [ ] Finish the project\nSame data after loading: True"
+     },
+     "turn": {
+      "en": "Save after every change, not just at the end.",
+      "it": "Salva dopo ogni cambiamento, non solo alla fine.",
+      "fr": "Sauvegarde après chaque changement, pas seulement à la fin."
+     },
+     "slip": null
+    },
+    {
+     "code": "import json, os\n\nFILE = \"todo.json\"\n\ndef load():\n    if os.path.exists(FILE):\n        with open(FILE) as f:\n            return json.load(f)\n    return []\n\ndef save(tasks):\n    with open(FILE, \"w\") as f:\n        json.dump(tasks, f)\n\ndef show(tasks):\n    if not tasks:\n        print(\"Nothing to do!\")\n    for number, task in enumerate(tasks, start=1):\n        mark = \"x\" if task[\"done\"] else \" \"\n        print(f\"{number}. [{mark}] {task['title']}\")\n\ndef ask_task_number(tasks):\n    text = input(\"Number: \").strip()\n    if text.isdigit() and 1 <= int(text) <= len(tasks):\n        return int(text) - 1\n    print(\"There is no such task.\")\n    return None\n\ndef main():\n    tasks = load()\n    while True:\n        print(\"\\n1) show  2) add  3) done  4) delete  5) quit\")\n        choice = input(\"Choose: \").strip()\n        if choice == \"1\":\n            show(tasks)\n        elif choice == \"2\":\n            title = input(\"Title: \").strip()\n            if title:\n                tasks.append({\"title\": title, \"done\": False})\n                save(tasks)\n        elif choice in (\"3\", \"4\"):\n            index = ask_task_number(tasks)\n            if index is not None:\n                if choice == \"3\":\n                    tasks[index][\"done\"] = True\n                else:\n                    tasks.pop(index)\n                save(tasks)\n        elif choice == \"5\":\n            print(\"Bye!\")\n            break\n        else:\n            print(\"Please choose 1 to 5.\")\n\nmain()",
+     "title": {
+      "en": "Step 5: the finished program",
+      "it": "Passo 5: il programma finito",
+      "fr": "Étape 5 : le programme fini"
+     },
+     "text": {
+      "en": "The complete to-do manager: a menu, add, done, delete, saving after each change, and checks for every wrong input: an empty title, a number that does not exist, a choice that is not on the menu.\n\nNothing in it is new. You built it from pieces you already know, which is exactly what programming is.",
+      "it": "Il gestore completo di cose da fare: un menu, aggiungi, fatto, cancella, salvataggio dopo ogni cambiamento, e controlli per ogni input sbagliato: un titolo vuoto, un numero che non esiste, una scelta che non è nel menu.\n\nNiente in esso è nuovo. L'hai costruito con pezzi che già conosci, ed è esattamente questo che è programmare.",
+      "fr": "Le gestionnaire de tâches complet : un menu, ajouter, fait, supprimer, sauvegarde après chaque changement, et des vérifications pour chaque mauvaise entrée : un titre vide, un numéro qui n'existe pas, un choix qui n'est pas au menu.\n\nRien dedans n'est nouveau. Tu l'as construit avec des morceaux que tu connais déjà, et c'est exactement ça, programmer."
+     },
+     "see": {
+      "en": "\n1) show  2) add  3) done  4) delete  5) quit\nChoose: 2\nTitle: Learn Python\n\n1) show  2) add  3) done  4) delete  5) quit\nChoose: 2\nTitle: Be proud\n\n...\nChoose: 5\nBye!",
+      "it": "\n1) show  2) add  3) done  4) delete  5) quit\nChoose: 2\nTitle: Learn Python\n\n1) show  2) add  3) done  4) delete  5) quit\nChoose: 2\nTitle: Be proud\n\n...\nChoose: 5\nBye!",
+      "fr": "\n1) show  2) add  3) done  4) delete  5) quit\nChoose: 2\nTitle: Learn Python\n\n1) show  2) add  3) done  4) delete  5) quit\nChoose: 2\nTitle: Be proud\n\n...\nChoose: 5\nBye!"
+     },
+     "turn": {
+      "en": "Add a priority to each task and show the high ones first.",
+      "it": "Aggiungi una priorità a ogni compito e mostra prima quelli alti.",
+      "fr": "Ajoute une priorité à chaque tâche et montre d'abord les hautes."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Project 4: A text adventure",
+    "it": "Progetto 4: Un'avventura testuale",
+    "fr": "Projet 4 : Une aventure textuelle"
+   },
+   "subtitle": {
+    "en": "Classes, dictionaries and match together",
+    "it": "Classi, dizionari e match insieme",
+    "fr": "Classes, dictionnaires et match ensemble"
+   },
+   "steps": [
+    {
+     "code": "rooms = {\n    \"hall\": {\"text\": \"A dusty hall.\", \"exits\": {\"north\": \"library\", \"east\": \"kitchen\"}},\n    \"library\": {\"text\": \"Books everywhere.\", \"exits\": {\"south\": \"hall\"}},\n    \"kitchen\": {\"text\": \"It smells of soup.\", \"exits\": {\"west\": \"hall\"}},\n}\nhere = \"hall\"\nprint(rooms[here][\"text\"])\nprint(\"Exits:\", \", \".join(rooms[here][\"exits\"]))\nhere = rooms[here][\"exits\"][\"north\"]\nprint(rooms[here][\"text\"])",
+     "title": {
+      "en": "Step 1: a map",
+      "it": "Passo 1: una mappa",
+      "fr": "Étape 1 : une carte"
+     },
+     "text": {
+      "en": "A text adventure is a map of places. Here each room is a dictionary with a description and its exits, and each exit points to the name of another room. The player is just a name: here.\n\nMoving means putting a new room name in here. The whole world is data.",
+      "it": "Un'avventura testuale è una mappa di luoghi. Qui ogni stanza è un dizionario con una descrizione e le sue uscite, e ogni uscita punta al nome di un'altra stanza. Il giocatore è solo un nome: here.\n\nMuoversi vuol dire mettere in here il nome di una nuova stanza. Tutto il mondo è dati.",
+      "fr": "Une aventure textuelle est une carte de lieux. Ici chaque pièce est un dictionnaire avec une description et ses sorties, et chaque sortie pointe vers le nom d'une autre pièce. Le joueur n'est qu'un nom : here.\n\nSe déplacer veut dire mettre un nouveau nom de pièce dans here. Tout le monde est des données."
+     },
+     "see": {
+      "en": "A dusty hall.\nExits: north, east\nBooks everywhere.",
+      "it": "A dusty hall.\nExits: north, east\nBooks everywhere.",
+      "fr": "A dusty hall.\nExits: north, east\nBooks everywhere."
+     },
+     "turn": {
+      "en": "Add a garden room reachable from the kitchen.",
+      "it": "Aggiungi una stanza giardino raggiungibile dalla cucina.",
+      "fr": "Ajoute une pièce jardin accessible depuis la cuisine."
+     },
+     "slip": null
+    },
+    {
+     "code": "rooms = {\n    \"hall\": {\"text\": \"A dusty hall.\", \"exits\": {\"north\": \"library\"}},\n    \"library\": {\"text\": \"Books everywhere.\", \"exits\": {\"south\": \"hall\"}},\n}\nhere = \"hall\"\nprint(rooms[here][\"text\"])\nfor command in [\"go north\", \"go west\", \"look\", \"go south\", \"dance\"]:\n    print(\">\", command)\n    words = command.split()\n    if words[0] == \"go\":\n        direction = words[1]\n        if direction in rooms[here][\"exits\"]:\n            here = rooms[here][\"exits\"][direction]\n            print(rooms[here][\"text\"])\n        else:\n            print(\"You cannot go that way.\")\n    elif words[0] == \"look\":\n        print(rooms[here][\"text\"])\n    else:\n        print(\"I do not understand.\")",
+     "title": {
+      "en": "Step 2: understand commands",
+      "it": "Passo 2: capire i comandi",
+      "fr": "Étape 2 : comprendre les commandes"
+     },
+     "text": {
+      "en": "The player types commands like \"go north\". split cuts it into words: the first is the verb, the second is the direction. The program checks that the exit exists before moving, and answers politely to anything it does not know.\n\nHere the commands come from a list so you can watch a whole game in one run.",
+      "it": "Il giocatore scrive comandi come \"go north\". split lo taglia in parole: la prima è il verbo, la seconda è la direzione. Il programma controlla che l'uscita esista prima di muoversi, e risponde con garbo a tutto quello che non conosce.\n\nQui i comandi vengono da una lista così puoi vedere un'intera partita in un'esecuzione.",
+      "fr": "Le joueur écrit des commandes comme « go north ». split la coupe en mots : le premier est le verbe, le deuxième est la direction. Le programme vérifie que la sortie existe avant de bouger, et répond poliment à tout ce qu'il ne connaît pas.\n\nIci les commandes viennent d'une liste pour que tu voies toute une partie en une exécution."
+     },
+     "see": {
+      "en": "A dusty hall.\n> go north\nBooks everywhere.\n> go west\nYou cannot go that way.\n> look\nBooks everywhere.\n> go south\nA dusty hall.\n> dance\nI do not understand.",
+      "it": "A dusty hall.\n> go north\nBooks everywhere.\n> go west\nYou cannot go that way.\n> look\nBooks everywhere.\n> go south\nA dusty hall.\n> dance\nI do not understand.",
+      "fr": "A dusty hall.\n> go north\nBooks everywhere.\n> go west\nYou cannot go that way.\n> look\nBooks everywhere.\n> go south\nA dusty hall.\n> dance\nI do not understand."
+     },
+     "turn": {
+      "en": "Add the verb \"help\" that lists the verbs.",
+      "it": "Aggiungi il verbo \"help\" che elenca i verbi.",
+      "fr": "Ajoute le verbe « help » qui liste les verbes."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Player:\n    def __init__(self, room):\n        self.room = room\n        self.inventory = []\n\n    def take(self, item, rooms):\n        items = rooms[self.room][\"items\"]\n        if item in items:\n            items.remove(item)\n            self.inventory.append(item)\n            return f\"You take the {item}.\"\n        return f\"There is no {item} here.\"\n\nrooms = {\"hall\": {\"items\": [\"lamp\", \"key\"]}}\nplayer = Player(\"hall\")\nprint(player.take(\"lamp\", rooms))\nprint(player.take(\"sword\", rooms))\nprint(player.inventory, rooms[\"hall\"][\"items\"])",
+     "title": {
+      "en": "Step 3: a player with things",
+      "it": "Passo 3: un giocatore con degli oggetti",
+      "fr": "Étape 3 : un joueur avec des objets"
+     },
+     "text": {
+      "en": "The player now deserves a class: it knows the room it is in and an inventory of things carried. A method take moves an item from the room to the inventory, and gives back a sentence to show.\n\nMethods that return a text keep the game logic apart from the printing.",
+      "it": "Ora il giocatore merita una classe: sa in che stanza si trova e ha un inventario delle cose che porta. Un metodo take sposta un oggetto dalla stanza all'inventario, e restituisce una frase da mostrare.\n\nI metodi che restituiscono un testo tengono la logica del gioco separata dalla stampa.",
+      "fr": "Le joueur mérite maintenant une classe : il connaît la pièce où il est et un inventaire des choses portées. Une méthode take déplace un objet de la pièce à l'inventaire, et rend une phrase à montrer.\n\nLes méthodes qui rendent un texte gardent la logique du jeu séparée de l'affichage."
+     },
+     "see": {
+      "en": "You take the lamp.\nThere is no sword here.\n['lamp'] ['key']",
+      "it": "You take the lamp.\nThere is no sword here.\n['lamp'] ['key']",
+      "fr": "You take the lamp.\nThere is no sword here.\n['lamp'] ['key']"
+     },
+     "turn": {
+      "en": "Add a method drop that puts an item back in the room.",
+      "it": "Aggiungi un metodo drop che rimette un oggetto nella stanza.",
+      "fr": "Ajoute une méthode drop qui remet un objet dans la pièce."
+     },
+     "slip": null
+    },
+    {
+     "code": "def handle(command, state):\n    match command.split():\n        case [\"go\", direction]:\n            exits = state[\"rooms\"][state[\"here\"]][\"exits\"]\n            if direction in exits:\n                state[\"here\"] = exits[direction]\n                return state[\"rooms\"][state[\"here\"]][\"text\"]\n            return \"You cannot go that way.\"\n        case [\"take\", item]:\n            items = state[\"rooms\"][state[\"here\"]][\"items\"]\n            if item in items:\n                items.remove(item)\n                state[\"bag\"].append(item)\n                return f\"Taken: {item}\"\n            return f\"No {item} here.\"\n        case [\"inventory\"]:\n            return \"You carry: \" + (\", \".join(state[\"bag\"]) or \"nothing\")\n        case [\"quit\"]:\n            return None\n        case _:\n            return \"I do not understand.\"\n\nstate = {\n    \"here\": \"hall\", \"bag\": [],\n    \"rooms\": {\n        \"hall\": {\"text\": \"A dusty hall.\", \"exits\": {\"north\": \"vault\"}, \"items\": [\"key\"]},\n        \"vault\": {\"text\": \"A treasure vault!\", \"exits\": {\"south\": \"hall\"}, \"items\": []},\n    },\n}\nfor command in [\"inventory\", \"take key\", \"go north\", \"inventory\", \"quit\"]:\n    print(\">\", command)\n    answer = handle(command, state)\n    if answer is None:\n        print(\"Bye!\")\n        break\n    print(answer)",
+     "title": {
+      "en": "Step 4: match for the commands",
+      "it": "Passo 4: match per i comandi",
+      "fr": "Étape 4 : match pour les commandes"
+     },
+     "text": {
+      "en": "match is perfect here: each case is the shape of a command. [\"go\", direction] catches any \"go\" with one word after it and puts the word in direction. [\"quit\"] is a command with nothing else.\n\nOne function, handle, takes a command and the state of the game and gives back the sentence to show, or None to stop.",
+      "it": "match è perfetto qui: ogni caso è la forma di un comando. [\"go\", direction] prende qualunque \"go\" con una parola dopo e mette la parola in direction. [\"quit\"] è un comando senza altro.\n\nUna funzione, handle, prende un comando e lo stato del gioco e restituisce la frase da mostrare, o None per fermarsi.",
+      "fr": "match est parfait ici : chaque cas est la forme d'une commande. [\"go\", direction] attrape n'importe quel « go » avec un mot après et met le mot dans direction. [\"quit\"] est une commande sans rien d'autre.\n\nUne fonction, handle, prend une commande et l'état du jeu et rend la phrase à montrer, ou None pour s'arrêter."
+     },
+     "see": {
+      "en": "> inventory\nYou carry: nothing\n> take key\nTaken: key\n> go north\nA treasure vault!\n> inventory\nYou carry: key\n> quit\nBye!",
+      "it": "> inventory\nYou carry: nothing\n> take key\nTaken: key\n> go north\nA treasure vault!\n> inventory\nYou carry: key\n> quit\nBye!",
+      "fr": "> inventory\nYou carry: nothing\n> take key\nTaken: key\n> go north\nA treasure vault!\n> inventory\nYou carry: key\n> quit\nBye!"
+     },
+     "turn": {
+      "en": "Add a command [\"look\"] that describes the room.",
+      "it": "Aggiungi un comando [\"look\"] che descrive la stanza.",
+      "fr": "Ajoute une commande [\"look\"] qui décrit la pièce."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Game:\n    def __init__(self):\n        self.here = \"cellar\"\n        self.bag = []\n        self.rooms = {\n            \"cellar\": {\"text\": \"A damp cellar. A door leads up.\", \"exits\": {\"up\": \"kitchen\"}, \"items\": [\"torch\"]},\n            \"kitchen\": {\"text\": \"A quiet kitchen. A locked door leads east.\", \"exits\": {\"down\": \"cellar\", \"east\": \"garden\"}, \"items\": [\"key\"]},\n            \"garden\": {\"text\": \"A sunny garden. You are free!\", \"exits\": {}, \"items\": []},\n        }\n        self.won = False\n\n    def room(self):\n        return self.rooms[self.here]\n\n    def do(self, command):\n        match command.lower().split():\n            case [\"look\"]:\n                return self.room()[\"text\"] + \" Items: \" + (\", \".join(self.room()[\"items\"]) or \"none\")\n            case [\"take\", item] if item in self.room()[\"items\"]:\n                self.room()[\"items\"].remove(item)\n                self.bag.append(item)\n                return f\"You take the {item}.\"\n            case [\"take\", item]:\n                return f\"There is no {item} here.\"\n            case [\"go\", direction] if direction in self.room()[\"exits\"]:\n                if direction == \"east\" and \"key\" not in self.bag:\n                    return \"The door is locked. You need a key.\"\n                self.here = self.room()[\"exits\"][direction]\n                self.won = self.here == \"garden\"\n                return self.room()[\"text\"]\n            case [\"go\", _]:\n                return \"You cannot go that way.\"\n            case [\"bag\"]:\n                return \"You carry: \" + (\", \".join(self.bag) or \"nothing\")\n            case _:\n                return \"I do not understand.\"\n\ngame = Game()\nprint(game.room()[\"text\"])\nscript = [\"go east\", \"take torch\", \"go up\", \"go east\", \"take key\", \"go east\", \"bag\"]\nfor command in script:\n    print(\">\", command)\n    print(game.do(command))\n    if game.won:\n        print(\"*** You escaped! ***\")\n        break",
+     "title": {
+      "en": "Step 5: the whole adventure",
+      "it": "Passo 5: l'avventura intera",
+      "fr": "Étape 5 : l'aventure entière"
+     },
+     "text": {
+      "en": "Everything together in a class Game: the world, the player, the commands with match, a locked door that needs a key, and a way to win. The script lists the commands that play one whole game.\n\nTo play it yourself, replace the loop over the script with a loop that uses input(\"> \"). Then add rooms, monsters and secrets of your own.",
+      "it": "Tutto insieme in una classe Game: il mondo, il giocatore, i comandi con match, una porta chiusa che richiede una chiave, e un modo per vincere. Lo script elenca i comandi che giocano un'intera partita.\n\nPer giocarci tu stesso, sostituisci il ciclo sullo script con un ciclo che usa input(\"> \"). Poi aggiungi stanze, mostri e segreti tuoi.",
+      "fr": "Tout ensemble dans une classe Game : le monde, le joueur, les commandes avec match, une porte fermée qui demande une clé, et une façon de gagner. Le script liste les commandes qui jouent une partie entière.\n\nPour y jouer toi-même, remplace la boucle sur le script par une boucle qui utilise input(\"> \"). Puis ajoute des pièces, des monstres et des secrets à toi."
+     },
+     "see": {
+      "en": "A damp cellar. A door leads up.\n> go east\nYou cannot go that way.\n> take torch\nYou take the torch.\n> go up\nA quiet kitchen. A locked door leads east.\n> go east\nThe door is locked. You need a key.\n...\nA sunny garden. You are free!\n*** You escaped! ***",
+      "it": "A damp cellar. A door leads up.\n> go east\nYou cannot go that way.\n> take torch\nYou take the torch.\n> go up\nA quiet kitchen. A locked door leads east.\n> go east\nThe door is locked. You need a key.\n...\nA sunny garden. You are free!\n*** You escaped! ***",
+      "fr": "A damp cellar. A door leads up.\n> go east\nYou cannot go that way.\n> take torch\nYou take the torch.\n> go up\nA quiet kitchen. A locked door leads east.\n> go east\nThe door is locked. You need a key.\n...\nA sunny garden. You are free!\n*** You escaped! ***"
+     },
+     "turn": {
+      "en": "Make it playable with input and add a fourth room.",
+      "it": "Rendilo giocabile con input e aggiungi una quarta stanza.",
+      "fr": "Rends-le jouable avec input et ajoute une quatrième pièce."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Project 5: Your own program",
+    "it": "Progetto 5: Il tuo programma",
+    "fr": "Projet 5 : Ton propre programme"
+   },
+   "subtitle": {
+    "en": "Plan it, build it, test it, make it yours",
+    "it": "Pianificalo, costruiscilo, provalo, rendilo tuo",
+    "fr": "Planifie-le, construis-le, teste-le, fais-en le tien"
+   },
+   "steps": [
+    {
+     "code": "# PROJECT: Expense tracker\n# 1. Keep a list of expenses (what, how much, which day)\n# 2. Add a new expense\n# 3. Show the total, and the total for each kind\n# 4. Save and load from a file\n# 5. Refuse bad input\nprint(\"Plan written. Now build it one step at a time.\")",
+     "title": {
+      "en": "Step 1: choose and plan",
+      "it": "Passo 1: scegli e pianifica",
+      "fr": "Étape 1 : choisir et planifier"
+     },
+     "text": {
+      "en": "Now it is your turn to make a whole program. Pick something you would really use: an expense tracker, a flashcard quiz, a habit counter, a recipe book, a trivia game, a unit converter.\n\nBefore the code, write the plan as comments: a numbered list of what the program must do. A good plan has small steps you can test one by one. This example plans an expense tracker; the next steps build it.",
+      "it": "Ora tocca a te fare un programma intero. Scegli qualcosa che useresti davvero: un registro di spese, un quiz con le schede, un contatore di abitudini, un libro di ricette, un gioco a quiz, un convertitore di unità.\n\nPrima del codice, scrivi il piano come commenti: un elenco numerato di cosa deve fare il programma. Un buon piano ha piccoli passi che puoi provare uno per uno. Questo esempio pianifica un registro di spese; i prossimi passi lo costruiscono.",
+      "fr": "C'est maintenant à toi de faire un programme entier. Choisis quelque chose que tu utiliserais vraiment : un suivi de dépenses, un quiz de cartes, un compteur d'habitudes, un livre de recettes, un jeu de questions, un convertisseur d'unités.\n\nAvant le code, écris le plan en commentaires : une liste numérotée de ce que le programme doit faire. Un bon plan a de petites étapes que tu peux tester une par une. Cet exemple planifie un suivi de dépenses ; les étapes suivantes le construisent."
+     },
+     "see": {
+      "en": "Plan written. Now build it one step at a time.",
+      "it": "Plan written. Now build it one step at a time.",
+      "fr": "Plan written. Now build it one step at a time."
+     },
+     "turn": {
+      "en": "Write the plan of your own project in comments.",
+      "it": "Scrivi il piano del tuo progetto in commenti.",
+      "fr": "Écris le plan de ton propre projet en commentaires."
+     },
+     "slip": null
+    },
+    {
+     "code": "from dataclasses import dataclass\n\n@dataclass\nclass Expense:\n    what: str\n    amount: float\n    kind: str\n\nexpenses = [\n    Expense(\"bus ticket\", 2.5, \"travel\"),\n    Expense(\"lunch\", 7.0, \"food\"),\n    Expense(\"book\", 12.0, \"fun\"),\n    Expense(\"snack\", 1.5, \"food\"),\n]\n\ndef total(items):\n    return sum(e.amount for e in items)\n\ndef by_kind(items):\n    result = {}\n    for e in items:\n        result[e.kind] = result.get(e.kind, 0) + e.amount\n    return result\n\nprint(f\"Total: {total(expenses):.2f}\")\nfor kind, amount in sorted(by_kind(expenses).items()):\n    print(f\"{kind:>8}: {amount:6.2f}\")",
+     "title": {
+      "en": "Step 2: the data and the sums",
+      "it": "Passo 2: i dati e i conti",
+      "fr": "Étape 2 : les données et les calculs"
+     },
+     "text": {
+      "en": "Start with the data and the calculations, before any questions to the user. A dataclass describes an expense, two small functions work out the total and the total by kind, and an f-string with a format lines up the table.\n\nTest it with data you know the answer to: here 23.00 in all, of which food is 8.50.",
+      "it": "Parti dai dati e dai calcoli, prima di qualunque domanda all'utente. Una dataclass descrive una spesa, due piccole funzioni calcolano il totale e il totale per tipo, e una f-string con un formato allinea la tabella.\n\nProvalo con dati di cui conosci la risposta: qui 23.00 in tutto, di cui il cibo è 8.50.",
+      "fr": "Commence par les données et les calculs, avant toute question à l'utilisateur. Une dataclass décrit une dépense, deux petites fonctions calculent le total et le total par genre, et une f-string avec un format aligne le tableau.\n\nTeste-le avec des données dont tu connais la réponse : ici 23.00 en tout, dont la nourriture fait 8.50."
+     },
+     "see": {
+      "en": "Total: 23.00\n    food:   8.50\n     fun:  12.00\n  travel:   2.50",
+      "it": "Total: 23.00\n    food:   8.50\n     fun:  12.00\n  travel:   2.50",
+      "fr": "Total: 23.00\n    food:   8.50\n     fun:  12.00\n  travel:   2.50"
+     },
+     "turn": {
+      "en": "Add a fifth expense and check the numbers by hand.",
+      "it": "Aggiungi una quinta spesa e controlla i numeri a mano.",
+      "fr": "Ajoute une cinquième dépense et vérifie les nombres à la main."
+     },
+     "slip": null
+    },
+    {
+     "code": "from dataclasses import dataclass, asdict\nimport json, os\n\n@dataclass\nclass Expense:\n    what: str\n    amount: float\n    kind: str\n\nFILE = \"expenses.json\"\n\ndef save(expenses):\n    with open(FILE, \"w\") as f:\n        json.dump([asdict(e) for e in expenses], f)\n\ndef load():\n    if not os.path.exists(FILE):\n        return []\n    with open(FILE) as f:\n        return [Expense(**item) for item in json.load(f)]\n\ndef parse_amount(text):\n    try:\n        amount = float(text.replace(\",\", \".\"))\n    except ValueError:\n        raise ValueError(f\"{text!r} is not a number\")\n    if amount <= 0:\n        raise ValueError(\"the amount must be more than zero\")\n    return amount\n\nsave([Expense(\"lunch\", 7.0, \"food\")])\nprint(load())\nfor text in [\"3,50\", \"abc\", \"-4\"]:\n    try:\n        print(parse_amount(text))\n    except ValueError as error:\n        print(\"Refused:\", error)",
+     "title": {
+      "en": "Step 3: save, load and refuse bad input",
+      "it": "Passo 3: salva, carica e rifiuta input sbagliati",
+      "fr": "Étape 3 : sauvegarder, charger et refuser les mauvaises entrées"
+     },
+     "text": {
+      "en": "Two more pieces. asdict turns a dataclass into a dictionary for json, and Expense(**item) builds it back. parse_amount accepts a comma as the decimal mark, because people type it, and raises a clear error for text or for an amount that makes no sense.\n\nThe program decides what is acceptable once, in one function.",
+      "it": "Altri due pezzi. asdict trasforma una dataclass in un dizionario per json, e Expense(**item) la ricostruisce. parse_amount accetta la virgola come segno decimale, perché le persone la scrivono, e solleva un errore chiaro per un testo o per un importo senza senso.\n\nIl programma decide cosa è accettabile una volta sola, in una funzione.",
+      "fr": "Deux morceaux de plus. asdict transforme une dataclass en dictionnaire pour json, et Expense(**item) la reconstruit. parse_amount accepte la virgule comme séparateur décimal, parce que les gens la tapent, et lève une erreur claire pour un texte ou un montant qui n'a pas de sens.\n\nLe programme décide ce qui est acceptable une seule fois, dans une fonction."
+     },
+     "see": {
+      "en": "[Expense(what='lunch', amount=7.0, kind='food')]\n3.5\nRefused: 'abc' is not a number\nRefused: the amount must be more than zero",
+      "it": "[Expense(what='lunch', amount=7.0, kind='food')]\n3.5\nRefused: 'abc' is not a number\nRefused: the amount must be more than zero",
+      "fr": "[Expense(what='lunch', amount=7.0, kind='food')]\n3.5\nRefused: 'abc' is not a number\nRefused: the amount must be more than zero"
+     },
+     "turn": {
+      "en": "Refuse an empty name for an expense.",
+      "it": "Rifiuta un nome vuoto per una spesa.",
+      "fr": "Refuse un nom vide pour une dépense."
+     },
+     "slip": null
+    },
+    {
+     "code": "def total(items):\n    return sum(items)\n\ndef average(items):\n    return sum(items) / len(items)\n\ndef test_total():\n    assert total([1, 2, 3]) == 6\n    assert total([]) == 0\n\ndef test_average():\n    assert average([2, 4]) == 3\n    try:\n        average([])\n    except ZeroDivisionError:\n        return\n    raise AssertionError(\"average of nothing should fail\")\n\nfor test in (test_total, test_average):\n    test()\n    print(test.__name__, \"passed\")",
+     "title": {
+      "en": "Step 4: tests protect your work",
+      "it": "Passo 4: i test proteggono il tuo lavoro",
+      "fr": "Étape 4 : les tests protègent ton travail"
+     },
+     "text": {
+      "en": "Small tests for each function let you change the program later with confidence: if you break something, a test says so at once. A test is a function with asserts, and a runner calls each one.\n\nWriting the test for a mistake that you expect, like an empty list, is as important as writing the ones that should work.",
+      "it": "Piccoli test per ogni funzione ti permettono di cambiare il programma più avanti con fiducia: se rompi qualcosa, un test lo dice subito. Un test è una funzione con degli assert, e un esecutore chiama ognuno.\n\nScrivere il test per un errore che ti aspetti, come una lista vuota, è importante quanto scrivere quelli che dovrebbero funzionare.",
+      "fr": "De petits tests pour chaque fonction te permettent de changer le programme plus tard en confiance : si tu casses quelque chose, un test le dit tout de suite. Un test est une fonction avec des assert, et un lanceur appelle chacun.\n\nÉcrire le test pour une erreur que tu attends, comme une liste vide, est aussi important qu'écrire ceux qui devraient marcher."
+     },
+     "see": {
+      "en": "test_total passed\ntest_average passed",
+      "it": "test_total passed\ntest_average passed",
+      "fr": "test_total passed\ntest_average passed"
+     },
+     "turn": {
+      "en": "Write a test for a function of your own project.",
+      "it": "Scrivi un test per una funzione del tuo progetto.",
+      "fr": "Écris un test pour une fonction de ton projet."
+     },
+     "slip": null
+    },
+    {
+     "code": "from datetime import date\n\nSKILLS = {\n    \"basics\": [\"print\", \"variables\", \"numbers\", \"input\", \"if\", \"loops\", \"lists\"],\n    \"data\": [\"text methods\", \"tuples\", \"dictionaries\", \"sets\", \"functions\", \"recursion\"],\n    \"language\": [\"modules\", \"files\", \"exceptions\", \"json\", \"regex\", \"tests\"],\n    \"objects\": [\"classes\", \"inheritance\", \"generators\", \"decorators\", \"async\"],\n}\n\nname = input(\"Your name: \")\nprint(\"=\" * 44)\nprint(f\"  CERTIFICATE: {name} knows Python\")\nprint(\"=\" * 44)\ntotal = 0\nfor stage, topics in SKILLS.items():\n    total += len(topics)\n    print(f\"{stage.title():>9}: {', '.join(topics[:3])}...\")\nprint(f\"You met {total} big ideas, and built 4 programs.\")\nprint(\"Date:\", date(2026, 10, 20).strftime(\"%d %B %Y\"))\nprint(\"Now go and build something that is yours.\")",
+     "title": {
+      "en": "Step 5: the end, and the start",
+      "it": "Passo 5: la fine, e l'inizio",
+      "fr": "Étape 5 : la fin, et le début"
+     },
+     "text": {
+      "en": "You reached the end. This little program uses a dictionary of lists, a loop, an f-string with format, a date and input: a bit of everything that you learned.\n\nYou know Python now: the basics, data, functions, files, errors, objects, generators, decorators, tests and more. What is left is practice. Build something every week, read other people's code, and never be afraid of an error message: you know how to read them.",
+      "it": "Sei arrivato alla fine. Questo piccolo programma usa un dizionario di liste, un ciclo, una f-string con formato, una data e input: un po' di tutto quello che hai imparato.\n\nOra conosci Python: le basi, i dati, le funzioni, i file, gli errori, gli oggetti, i generatori, i decoratori, i test e altro. Quello che resta è la pratica. Costruisci qualcosa ogni settimana, leggi il codice degli altri, e non aver mai paura di un messaggio di errore: sai come leggerli.",
+      "fr": "Tu es arrivé à la fin. Ce petit programme utilise un dictionnaire de listes, une boucle, une f-string avec format, une date et input : un peu de tout ce que tu as appris.\n\nTu connais Python maintenant : les bases, les données, les fonctions, les fichiers, les erreurs, les objets, les générateurs, les décorateurs, les tests et plus. Ce qui reste, c'est la pratique. Construis quelque chose chaque semaine, lis le code des autres, et n'aie jamais peur d'un message d'erreur : tu sais les lire."
+     },
+     "see": {
+      "en": "Your name: Ada\n============================================\n  CERTIFICATE: Ada knows Python\n============================================\n   Basics: print, variables, numbers...\n     Data: text methods, tuples, dictionaries...\n Language: modules, files, exceptions...\n  Objects: classes, inheritance, generators...\nYou met 24 big ideas, and built 4 programs.\nDate: 20 October 2026\nNow go and build something that is yours.",
+      "it": "Your name: Ada\n============================================\n  CERTIFICATE: Ada knows Python\n============================================\n   Basics: print, variables, numbers...\n     Data: text methods, tuples, dictionaries...\n Language: modules, files, exceptions...\n  Objects: classes, inheritance, generators...\nYou met 24 big ideas, and built 4 programs.\nDate: 20 October 2026\nNow go and build something that is yours.",
+      "fr": "Your name: Ada\n============================================\n  CERTIFICATE: Ada knows Python\n============================================\n   Basics: print, variables, numbers...\n     Data: text methods, tuples, dictionaries...\n Language: modules, files, exceptions...\n  Objects: classes, inheritance, generators...\nYou met 24 big ideas, and built 4 programs.\nDate: 20 October 2026\nNow go and build something that is yours."
+     },
+     "turn": {
+      "en": "Change the program so the certificate is about the things you liked best.",
+      "it": "Cambia il programma così che il certificato parli delle cose che ti sono piaciute di più.",
+      "fr": "Change le programme pour que le certificat parle des choses que tu as préférées."
      },
      "slip": null
     }

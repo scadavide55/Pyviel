@@ -11,6 +11,11 @@ import traceback
 
 FILENAME = "<pyviel>"
 
+try:  # JavaScript's null reaches Python as jsnull, not as None
+    from pyodide.ffi import jsnull
+except ImportError:  # outside Pyodide there is no jsnull
+    jsnull = None
+
 
 def _user_frames(tb):
     """Drop the frames of the runner itself: the student sees only their file."""
@@ -85,7 +90,7 @@ def run(source, write, ask, cap=200000):
     def answer(prompt=""):
         prompt = str(prompt)
         reply = ask(prompt)
-        if reply is None:  # the page says Stop while the program waits for an answer
+        if reply is None or reply is jsnull:  # the page says Stop while the program waits for an answer
             raise _Stop()
         reply = str(reply)
         # Like a terminal: the question and the typed answer stay on the screen.

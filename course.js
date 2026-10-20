@@ -2513,7 +2513,7 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "colours = {\"red\", \"green\", \"red\", \"blue\", \"green\"}\nprint(len(colours))\nprint(\"red\" in colours)\nprint(set([1, 2, 2, 3, 3, 3]))\nprint(set(\"hello\"))",
+     "code": "colours = {\"red\", \"green\", \"red\", \"blue\", \"green\"}\nprint(len(colours))\nprint(\"red\" in colours)\nprint(set([1, 2, 2, 3, 3, 3]))\nprint(sorted(set(\"hello\")))",
      "title": {
       "en": "A bunch without repeats",
       "it": "Un gruppo senza ripetizioni",
@@ -2525,9 +2525,9 @@ window.PyvielCourse = {
       "fr": "Un ensemble est un groupe de choses différentes, sans répétitions et sans ordre. Les accolades sans deux-points font un ensemble. Si tu mets la même chose deux fois, elle n'est gardée qu'une fois.\n\nset(...) construit un ensemble à partir d'une liste ou d'un texte, ce qui est la façon la plus rapide de retirer les répétitions."
      },
      "see": {
-      "en": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}",
-      "it": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}",
-      "fr": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}"
+      "en": "3\nTrue\n{1, 2, 3}\n['e', 'h', 'l', 'o']",
+      "it": "3\nTrue\n{1, 2, 3}\n['e', 'h', 'l', 'o']",
+      "fr": "3\nTrue\n{1, 2, 3}\n['e', 'h', 'l', 'o']"
      },
      "turn": {
       "en": "Count the different letters in \"mississippi\".",
@@ -4699,7 +4699,7 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "class Dog:\n    pass\n\nrex = Dog()\nprint(type(rex))\nprint(rex)",
+     "code": "class Dog:\n    pass\n\nrex = Dog()\nprint(type(rex))\nprint(isinstance(rex, Dog))\nprint(rex is Dog())",
      "title": {
       "en": "A class is a blueprint",
       "it": "Una classe è un progetto",
@@ -4711,9 +4711,9 @@ window.PyvielCourse = {
       "fr": "Jusqu'ici tu as utilisé des genres de choses que Python a déjà : texte, liste, dictionnaire. Une classe te permet d'inventer ton propre genre. Pense-y comme à un plan, et chaque chose construite à partir de lui est un objet.\n\nclass Dog: commence le plan (pass veut dire « rien dedans pour l'instant »). Dog() construit un chien, et rex est la boîte qui le garde."
      },
      "see": {
-      "en": "<class '__main__.Dog'>\n<__main__.Dog object at 0x19cc098>",
-      "it": "<class '__main__.Dog'>\n<__main__.Dog object at 0x19cc098>",
-      "fr": "<class '__main__.Dog'>\n<__main__.Dog object at 0x19cc098>"
+      "en": "<class '__main__.Dog'>\nTrue\nFalse",
+      "it": "<class '__main__.Dog'>\nTrue\nFalse",
+      "fr": "<class '__main__.Dog'>\nTrue\nFalse"
      },
      "turn": {
       "en": "Make two dogs and check that they are different objects.",
@@ -5470,7 +5470,7 @@ window.PyvielCourse = {
      "error": "StopIteration"
     },
     {
-     "code": "def count_up(limit):\n    n = 1\n    while n <= limit:\n        yield n\n        n += 1\n\ngen = count_up(3)\nprint(gen)\nprint(next(gen), next(gen))\nfor n in count_up(4):\n    print(n)\nprint(list(count_up(5)))",
+     "code": "def count_up(limit):\n    n = 1\n    while n <= limit:\n        yield n\n        n += 1\n\ngen = count_up(3)\nprint(type(gen).__name__)\nprint(next(gen), next(gen))\nfor n in count_up(4):\n    print(n)\nprint(list(count_up(5)))",
      "title": {
       "en": "A function that pauses: yield",
       "it": "Una funzione che si ferma: yield",
@@ -5482,9 +5482,9 @@ window.PyvielCourse = {
       "fr": "Une fonction avec yield dedans est un générateur. L'appeler ne la fait pas tourner : elle rend un générateur. Chaque next(...) la fait tourner jusqu'au prochain yield, distribue cette valeur, et fait une pause là, en se souvenant d'où elle en était.\n\nElle produit les valeurs une à la fois, seulement quand on les demande."
      },
      "see": {
-      "en": "<generator object count_up at 0x187c4f0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
-      "it": "<generator object count_up at 0x187c4f0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
-      "fr": "<generator object count_up at 0x187c4f0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
+      "en": "generator\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "it": "generator\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "fr": "generator\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
      },
      "turn": {
       "en": "Write a generator that gives the even numbers up to a limit.",
@@ -5518,7 +5518,7 @@ window.PyvielCourse = {
      "slip": null
     },
     {
-     "code": "squares = (n * n for n in range(1, 6))\nprint(squares)\nprint(sum(squares))\nprint(sum(n * n for n in range(1, 1001)))\nprint(max(len(w) for w in [\"a\", \"abc\", \"ab\"]))\nprint(any(n > 99 for n in range(100)))",
+     "code": "squares = (n * n for n in range(1, 6))\nprint(type(squares).__name__)\nprint(sum(squares))\nprint(sum(n * n for n in range(1, 1001)))\nprint(max(len(w) for w in [\"a\", \"abc\", \"ab\"]))\nprint(any(n > 99 for n in range(100)))",
      "title": {
       "en": "A generator in one line",
       "it": "Un generatore in una riga",
@@ -5530,9 +5530,9 @@ window.PyvielCourse = {
       "fr": "Des parenthèses au lieu des crochets font une expression génératrice : comme une compréhension de liste mais qui produit les valeurs une à la fois, sans construire toute la liste.\n\nC'est le meilleur choix quand tu veux seulement additionner ou vérifier des choses, comme dans sum(...), max(...), any(...)."
      },
      "see": {
-      "en": "<generator object <genexpr> at 0x18ec1c8>\n55\n333833500\n3\nFalse",
-      "it": "<generator object <genexpr> at 0x18ec1c8>\n55\n333833500\n3\nFalse",
-      "fr": "<generator object <genexpr> at 0x18ec1c8>\n55\n333833500\n3\nFalse"
+      "en": "generator\n55\n333833500\n3\nFalse",
+      "it": "generator\n55\n333833500\n3\nFalse",
+      "fr": "generator\n55\n333833500\n3\nFalse"
      },
      "turn": {
       "en": "Sum the cubes of the numbers from 1 to 20.",

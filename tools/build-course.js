@@ -92,6 +92,7 @@ async function main() {
         } else if (result.error) {
           bad(here, 'stopped with ' + result.error.type + ': ' + result.error.message + ' (line ' + result.error.line + ')');
         }
+        if (/0x[0-9a-f]{5,}/.test(out)) bad(here, 'the output shows a memory address, which changes on every run: print something else (for example type(x).__name__)');
         if (answers.length && !step.r) bad(here, 'typed answers were not all used: ' + answers.join(', '));
         if (step.i && !/\binput\(/.test(step.c)) bad(here, 'has answers but no input()');
         if (/\binput\(/.test(step.c) && !step.i) bad(here, 'uses input() but has no answers (i)');

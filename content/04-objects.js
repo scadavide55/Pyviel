@@ -15,7 +15,8 @@ module.exports = [
 
 rex = Dog()
 print(type(rex))
-print(rex)`,
+print(isinstance(rex, Dog))
+print(rex is Dog())`,
         t: ['A class is a blueprint', 'Una classe è un progetto', 'Une classe est un plan'],
         x: [`So far you used kinds of things that Python already has: text, list, dictionary. A class lets you invent your own kind. Think of it as a blueprint, and every thing built from it is an object.
 
@@ -896,7 +897,7 @@ Ici tu fais la boucle à la main. La dernière ligne montre l'erreur. next(items
         n += 1
 
 gen = count_up(3)
-print(gen)
+print(type(gen).__name__)
 print(next(gen), next(gen))
 for n in count_up(4):
     print(n)
@@ -947,7 +948,7 @@ Une liste de tous les nombres naturels ne tiendrait jamais en mémoire, mais un 
       },
       {
         c: c`squares = (n * n for n in range(1, 6))
-print(squares)
+print(type(squares).__name__)
 print(sum(squares))
 print(sum(n * n for n in range(1, 1001)))
 print(max(len(w) for w in ["a", "abc", "ab"]))

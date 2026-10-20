@@ -55,6 +55,7 @@ All of these must be green before a commit. After editing `content/*.js` run `bu
 - A lesson is an object in `content/NN-name.js`; the format is at the top of `tools/build-course.js`. Each step has code (`c`), title, text, your turn and watch-out in `[en, it, fr]`.
 - The text is simple, a few short paragraphs. Every step gives the reader something to try (`d`). Python's own words stay in English.
 - **What you will see is never written by hand.** The build runs the code and uses its output. For random output give `r: true` and write `s`; for a program that must stop with an error give `e: 'TypeName'`; for `input()` give the typed answers in `i`.
+- The output of a step must be the same on every run: no memory addresses (`print(x)` of an object or a generator), no printing a `set` of texts (use `sorted(...)`), no clock values, and a seed (`random.seed(n)`) wherever there is luck. The CI builds the course again and fails if `course.js` changes.
 - Use a seed (`random.seed(n)`) in lessons so the output is the same; compute the answers for the demo inputs, never guess them.
 - A construct that is new to the line-by-line notes needs a rule in `explain()` in `tutorials.js` and a sentence in the three languages in `lessons.js`. `check-notes.js` finds the lines that have none.
 - Verified in Pyodide 314: no `threading`, no `turtle`/`tkinter`; `asyncio.run` works through `callPromising` in browsers that can switch stacks.

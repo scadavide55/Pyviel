@@ -495,7 +495,7 @@ C'est ainsi que les vraies données ressemblent, par exemple ce que les sites s'
 print(len(colours))
 print("red" in colours)
 print(set([1, 2, 2, 3, 3, 3]))
-print(set("hello"))`,
+print(sorted(set("hello")))`,
         t: ['A bunch without repeats', 'Un gruppo senza ripetizioni', 'Un groupe sans répétitions'],
         x: [`A set is a bunch of different things, with no repeats and no order. Curly brackets with no colons make a set. If you put the same thing in twice, it is kept once.
 

@@ -4,9 +4,9 @@
 
 Learn Python the way Kaviel teaches code: small steps, every line explained, and a mistake that never leaves you stuck.
 
-Pyviel runs **real Python** (3.14) inside the page. There is nothing to install and nothing leaves your computer.
+Pyviel runs **real Python 3.14**, and nothing leaves your computer. It comes in two forms: the **website**, a demo that needs nothing installed, and the **desktop app**, the complete version. The table below says what differs.
 
-> Status: **1.0 beta.** The whole course is written: **54 lessons and 261 steps**, in English, Italian and French, from `print` to classes, generators, decorators and async, with five complete programs and a cheat sheet. Every program of every step is run on real Python by the build, so what a step says you will see is what you see. It has not been tried with real beginners yet: if you do, please tell us where they got stuck.
+> Status: **1.0 beta.** The whole course is written: **57 lessons and 272 steps**, in English, Italian and French, from `print` to classes, generators, decorators and async, with five complete programs and a cheat sheet. Every program of every step is run on real Python by the build, so what a step says you will see is what you see. It has not been tried with real beginners yet: if you do, please tell us where they got stuck.
 
 ## What is different from running Python yourself
 
@@ -26,7 +26,27 @@ The installers are in the [latest release](https://github.com/scadavide55/Pyviel
 | Windows 10 and 11 | `Pyviel-1.0.0-beta-setup.exe` |
 | Linux (64-bit) | `Pyviel-1.0.0-beta-linux-x64.tar.gz` |
 
-The app is the complete version: the same course, but programs run with a **real Python 3.14 that comes inside the app** (not in the browser), so `threading`, files, `subprocess` and the speed of real Python all work. It also has six themes, a **Command** button that saves your program and shows the exact terminal lines to run it (`python3 file.py`), and an extra appendix that teaches those commands. Programs run in the folder `Documents/Pyviel`. The website is the demo of the same course, running Python inside the browser. The app works with no internet and sends nothing anywhere. The installers are not signed with a paid certificate, so the system may warn the first time: on macOS right-click Pyviel and choose Open; on Windows press More info, then Run anyway. On Linux, unpack the archive and run `pyviel`; if the sandbox complains, run `sudo chown root chrome-sandbox` and `chmod 4755 chrome-sandbox` in that folder.
+Mac note: Apple silicon is the one to use. The Intel file is for Intel Macs up to macOS 27; Apple is ending support for Intel apps with macOS 28.
+
+### App and website: what is different
+
+| | Website (demo) | Desktop app |
+|---|---|---|
+| Course, lessons, errors in 3 languages | the same, all 57 lessons | the same, all 57 lessons |
+| Where Python runs | inside the browser (Pyodide, Python 3.14.2) | a real **Python 3.14.8 packed in the app**, on your computer |
+| Speed | slower (WebAssembly) | normal Python speed |
+| `threading`, `subprocess`, `os.system` | not available | work |
+| Files | live only while the page is open | real files in `Documents/Pyviel` |
+| Stop | ends the program | ends the program and everything it started |
+| Themes | light and dark | six: Cream, Night, Midnight, Forest, Sunset, High contrast |
+| **Command** button (saves the program, shows `cd` and `python3 file.py`) | no | yes |
+| Install | nothing, any recent browser (Chrome, Edge, Firefox, Safari) | a download of 120 to 150 MB, not signed (the system warns the first time) |
+| Needs the internet | the first load only, then offline | never |
+| Badge beside the name | **Web** | none |
+
+Both teach the same Python; the appendix *Python on your computer* explains `python3 file.py`, `-c`, `sys.argv`, `argparse`, `pip` and virtual environments in both. The Python inside the app is private: the terminal on your computer cannot see it, so to follow the appendix you also install Python from python.org.
+
+The installers are not signed with a paid certificate, so the system may warn the first time: on macOS right-click Pyviel and choose Open; on Windows press More info, then Run anyway. On Linux, unpack the archive and run `pyviel`; if the sandbox complains, run `sudo chown root chrome-sandbox` and `chmod 4755 chrome-sandbox` in that folder.
 
 ## Run it from the source
 

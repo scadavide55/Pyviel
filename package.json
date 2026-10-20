@@ -65,7 +65,7 @@
       ],
       "category": "public.app-category.education",
       "icon": "build/icon.png",
-      "identity": null,
+      "identity": "-",
       "artifactName": "Pyviel-${version}-${arch}.${ext}"
     },
     "dmg": {

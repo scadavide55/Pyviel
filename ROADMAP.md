@@ -44,6 +44,8 @@ Written on 21 October 2026, after the 1.0 beta. These are proposals: the author 
 - A themes preview and a setting for the size of the editor text on first start.
 
 ### The course
+- **Lesson 2 (Text) is confusing** (the author's note, 21 October 2026). It has six steps and puts a lot together: two kinds of quotes, a quote inside a text, `+` and `*`, backslash codes, triple quotes, then positions and slices with negative numbers. The step "Look inside a text" is the biggest jump. Ideas: split it into two lessons (quotes, joining and `len` first; escapes, triple quotes, positions and slices later); one new idea per step.
+- **Practice, not only reading.** Today every step ends with one sentence under "Your turn". It should make the student do something and know if it worked: a small task with the expected output shown, "predict what it prints, then run it", a hint that opens on request, and the solution behind a button. Apply it to every lesson, starting with lessons 1 to 5.
 - Exercises with an automatic check ("make this program print 12") and a progress page; maybe a certificate that is true.
 - Look for gaps: testing with `unittest` and `pytest`, `sqlite3`, `argparse` in a bigger program, a lesson on reading other people's code, and more whole programs.
 - A "variables" viewer that shows each name and its value while a program runs, step by step.

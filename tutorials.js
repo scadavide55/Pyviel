@@ -73,7 +73,7 @@
     if (/^\w+\s*,\s*[\w, *]+=/.test(t)) return e.unpackAssign;
     if ((m = t.match(/^(\w+)\s*(?::\s*[\w\[\], ]+)?=\s*/))) return fill(e.assign, {name: m[1]});
     if (/^"[^"]*"\s*:|^'[^']*'\s*:|^\d+\s*:/.test(t)) return e.dictEntry;
-    if ((m = t.match(/^([\w.]+)\.(\w+)\(/))) return fill(e.callMethod, {obj: m[1], method: m[2]});
+    if ((m = t.match(/^([\w.\[\]"']+)\.(\w+)\(/))) return fill(e.callMethod, {obj: m[1], method: m[2]});
     if ((m = t.match(/^(\w+)\(/))) return fill(e.callFn, {name: m[1]});
     if (/^[\w"'\d(\[{-]/.test(t) && /,$/.test(t)) return e.listItem;
     if (/^[\w.]+$/.test(t)) return e.showValue;

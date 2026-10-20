@@ -21,11 +21,12 @@ The installers are in the [latest release](https://github.com/scadavide55/Pyviel
 
 | System | File |
 |---|---|
-| macOS (Intel and Apple silicon) | `Pyviel-1.0.0-beta-universal.dmg` |
+| macOS, Apple silicon (M1 and later) | `Pyviel-1.0.0-beta-arm64.dmg` |
+| macOS, Intel | `Pyviel-1.0.0-beta-x64.dmg` |
 | Windows 10 and 11 | `Pyviel-1.0.0-beta-setup.exe` |
 | Linux (64-bit) | `Pyviel-1.0.0-beta-linux-x64.tar.gz` |
 
-The app is the same page, works with no internet and sends nothing anywhere. The installers are not signed with a paid certificate, so the system may warn the first time: on macOS right-click Pyviel and choose Open; on Windows press More info, then Run anyway. On Linux, unpack the archive and run `pyviel`; if the sandbox complains, run `sudo chown root chrome-sandbox` and `chmod 4755 chrome-sandbox` in that folder.
+The app is the complete version: the same course, but programs run with a **real Python 3.14 that comes inside the app** (not in the browser), so `threading`, files, `subprocess` and the speed of real Python all work. It also has six themes, a **Command** button that saves your program and shows the exact terminal lines to run it (`python3 file.py`), and an extra appendix that teaches those commands. Programs run in the folder `Documents/Pyviel`. The website is the demo of the same course, running Python inside the browser. The app works with no internet and sends nothing anywhere. The installers are not signed with a paid certificate, so the system may warn the first time: on macOS right-click Pyviel and choose Open; on Windows press More info, then Run anyway. On Linux, unpack the archive and run `pyviel`; if the sandbox complains, run `sudo chown root chrome-sandbox` and `chmod 4755 chrome-sandbox` in that folder.
 
 ## Run it from the source
 
@@ -52,7 +53,7 @@ node tools/check-language.js # no English left in the Italian and French texts
 | File | What it is |
 |---|---|
 | `index.html`, `editor.css`, `editor-ui.js` | the editor page |
-| `pyviel.js` | starts the Python worker and runs programs in it |
+| `pyviel.js` | runs programs: in the web worker on the site, in the app's own Python in the desktop app |
 | `pyviel-worker.js` | the worker: loads Pyodide, runs a program, `input()`, Stop |
 | `pyviel-runner.py` | runs one program and describes an error as plain data |
 | `pyviel-errors.js` | turns a Python error into a sentence in three languages |
@@ -62,7 +63,9 @@ node tools/check-language.js # no English left in the Italian and French texts
 | `lessons.js`, `tutorials.js` | the words of the lesson panel, the note beside each line, and the panel itself |
 | `i18n.js`, `strings.js` | the three interface languages |
 | `pyodide/` | Pyodide 314.0.7 (Python 3.14.2), the core files only |
-| `electron/` | the desktop app |
+| `electron/` | the desktop app; `python-host.js` starts its Python, one process per run |
+| `pyviel-host.py` | what the app starts for each run: talks JSON lines with the app and calls `pyviel-runner.py` |
+| `python/` | the Python each installer carries (downloaded by `tools/fetch-python.js`, not in the repository) |
 | `tools/` | the local server, the course build and the checks |
 
 ## Credits and licence

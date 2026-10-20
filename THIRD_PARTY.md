@@ -14,3 +14,7 @@ Pyodide contains CPython 3.14 and the standard library, under the Python Softwar
 ## Trademarks
 
 "Python" and the Python logos are trademarks of the Python Software Foundation. Pyviel is an independent project and is not affiliated with or endorsed by it.
+
+## Python for the desktop app (the `python/` folder, not in the repository)
+
+The installers carry CPython 3.14.8 from python-build-standalone (https://github.com/astral-sh/python-build-standalone, release 20261013, the `install_only_stripped` builds), downloaded by `tools/fetch-python.js` and checked against the published SHA-256 list. Python is under the Python Software Foundation Licence; the builds also carry the licences of the libraries they bundle, in their `LICENSE.txt`. Pyviel does not modify them.

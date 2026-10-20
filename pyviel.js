@@ -18,12 +18,27 @@
   function language() { return (document.documentElement.lang || 'en').slice(0, 2); }
   function say(state, detail) { statusListeners.forEach(function (fn) { try { fn(state, detail); } catch (e) {} }); }
 
+  // In the desktop app the page talks to the Python packed inside the app, not to a worker.
+  function desktop() { return root.pyvielDesktop && root.pyvielDesktop.python; }
+
   function supported() {
+    if (desktop()) return true;
     return typeof SharedArrayBuffer !== 'undefined' && typeof Worker !== 'undefined' && root.crossOriginIsolated !== false;
+  }
+
+  function startDesktop() {
+    say('loading');
+    desktop().onEvent(function (m) { if (runner) handle(m); });
+    return desktop().start().then(function (answer) {
+      if (!answer.ok) { starting = null; say('failed', answer.message); throw new Error(answer.message); }
+      say('ready', answer.version);
+      return answer.version;
+    });
   }
 
   function start() {
     if (starting) return starting;
+    if (desktop()) return (starting = startDesktop());
     if (!supported()) return (starting = Promise.reject(new Error('unsupported')));
     interrupt = new Uint8Array(new SharedArrayBuffer(1));
     control = new Int32Array(new SharedArrayBuffer(8));
@@ -57,6 +72,7 @@
   }
 
   function reply(answer) {
+    if (desktop()) { desktop().answer(answer === undefined ? null : answer); return; }
     if (answer === null || answer === undefined) {
       Atomics.store(control, 0, 2);
     } else {
@@ -100,6 +116,7 @@
 
   function stop() {
     if (!runner) return;
+    if (desktop()) { desktop().stop(); return; }
     interrupt[0] = 2;                  // Python raises KeyboardInterrupt at its next step
     Atomics.store(control, 0, 2);      // and an input() that is waiting gives up
     Atomics.notify(control, 0);
@@ -116,6 +133,12 @@
     }, SLOW_STOP_MS);
   }
 
+  // The desktop app cannot start its Python: the run ends with a sentence instead of an exception.
+  function couldNotStart(error) {
+    var message = String(error && error.message || error);
+    return describe({output: ''}, {ok: false, stopped: false, error: {type: 'InternalError', message: message, line: null, column: null, suggestion: '', full: message}});
+  }
+
   function runAsync(source, options) {
     options = options || {};
     return start().then(function () {
@@ -128,9 +151,13 @@
           onInput: options.input || function () { return ''; }
         };
         if (options.signal) options.signal.addEventListener('abort', stop, {once: true});
+        if (desktop()) { desktop().run(source); return; }
         Atomics.store(control, 0, 0);
         worker.postMessage({type: 'run', source: source});
       });
+    }, function (error) {
+      if (desktop()) { starting = null; return couldNotStart(error); }
+      throw error;
     });
   }
 

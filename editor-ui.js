@@ -156,7 +156,17 @@
     var ua = navigator.userAgent;
     var os = /Android|iPhone|iPad|iPod/i.test(ua) ? '' : /Mac/i.test(ua) ? 'mac' : /Win/i.test(ua) ? 'win' : /Linux|X11/i.test(ua) ? 'linux' : '';
     if (!app || !app.files || !os || !app.files[os]) { link.remove(); return; }
-    link.setAttribute('href', app.release + app.files[os]);
+    // A Mac with an Intel chip needs its own installer; a browser can only guess, and a recent Mac is the likelier one.
+    var file = app.files[os];
+    if (os === 'mac' && app.files.mac_intel) {
+      try {
+        var gl = document.createElement('canvas').getContext('webgl');
+        var info = gl && gl.getExtension('WEBGL_debug_renderer_info');
+        var card = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '';
+        if (/Intel|AMD|Radeon/i.test(card)) file = app.files.mac_intel;
+      } catch (e) {}
+    }
+    link.setAttribute('href', app.release + file);
     link.setAttribute('title', t('Download Pyviel for your computer') + ' — ' + {mac: 'macOS', win: 'Windows', linux: 'Linux'}[os]);
   })();
 
@@ -337,13 +347,80 @@
   if (Object.prototype.hasOwnProperty.call(names, $('examples').value)) filename = names[$('examples').value];
   setFilename(filename, false);
 
-  // Light or dark, remembered on this device.
-  $('theme-toggle').addEventListener('click', function () {
-    var root = document.documentElement;
-    var dark = root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
-    root.dataset.theme = dark ? 'light' : 'dark';
-    try { localStorage.setItem('pyviel.theme', root.dataset.theme); } catch (e) {}
-  });
+  // Light or dark, remembered on this device. The desktop app offers six themes instead.
+  var THEMES = ['light', 'dark', 'midnight', 'forest', 'sunset', 'contrast'];
+  function setTheme(name) {
+    document.documentElement.dataset.theme = name;
+    try { localStorage.setItem('pyviel.theme', name); } catch (e) {}
+    document.querySelectorAll('#theme-menu [data-pick]').forEach(function (b) { b.setAttribute('aria-checked', String(b.dataset.pick === name)); });
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#f4ecdc');
+  }
+  function closePops() {
+    ['theme-menu', 'command-pop'].forEach(function (id) { $(id).hidden = true; });
+    $('theme-toggle').setAttribute('aria-expanded', 'false');
+    $('command-toggle').setAttribute('aria-expanded', 'false');
+  }
+  (function () {
+    var desktop = !!window.pyvielDesktop;
+    var current = document.documentElement.dataset.theme;
+    if (THEMES.indexOf(current) < 0) current = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (!desktop && current !== 'light' && current !== 'dark') current = 'light';
+    setTheme(current);
+    $('theme-toggle').addEventListener('click', function (event) {
+      event.stopPropagation();
+      if (!desktop) { setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'); return; }
+      var open = $('theme-menu').hidden;
+      closePops();
+      if (open) {
+        var box = $('theme-toggle').getBoundingClientRect();
+        $('theme-menu').style.top = (box.bottom + 8) + 'px';
+        $('theme-menu').style.right = Math.max(8, window.innerWidth - box.right) + 'px';
+        $('theme-menu').hidden = false;
+        $('theme-toggle').setAttribute('aria-expanded', 'true');
+      }
+    });
+    if (desktop) {
+      $('theme-toggle').setAttribute('title', t('Choose a theme'));
+      $('theme-toggle').setAttribute('aria-label', t('Choose a theme'));
+      $('theme-menu').addEventListener('click', function (event) {
+        var pick = event.target.closest('[data-pick]');
+        if (pick) { setTheme(pick.dataset.pick); closePops(); }
+      });
+      document.addEventListener('click', function (event) {
+        if (!event.target.closest('.pop') && !event.target.closest('#theme-toggle') && !event.target.closest('#command-toggle')) closePops();
+      });
+      document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && (!$('theme-menu').hidden || !$('command-pop').hidden)) { closePops(); event.stopPropagation(); } }, true);
+    }
+  })();
+
+  // Desktop only: save the program in the folder where programs run, and show the terminal command.
+  (function () {
+    if (!window.pyvielDesktop || !pyvielDesktop.files) return;
+    var shown = '';
+    $('command-toggle').addEventListener('click', function (event) {
+      event.stopPropagation();
+      if (!$('command-pop').hidden) { closePops(); return; }
+      closePops();
+      pyvielDesktop.files.saveInFolder(filename, code.value).then(function (answer) {
+        if (!answer.ok) { toast(t('The program could not be saved: ') + answer.message); return; }
+        var windows = pyvielDesktop.platform === 'win32';
+        var quoted = function (s) { return /\s/.test(s) ? '"' + s + '"' : s; };
+        $('command-folder').textContent = answer.folder;
+        shown = 'cd ' + quoted(answer.folder) + '\n' + (windows ? 'py ' : 'python3 ') + quoted(answer.name);
+        $('command-lines').textContent = shown;
+        setDirty(false);
+        $('command-pop').hidden = false;
+        $('command-toggle').setAttribute('aria-expanded', 'true');
+      });
+    });
+    $('command-close').addEventListener('click', closePops);
+    $('command-copy').addEventListener('click', function () {
+      var done = function () { toast(t('Copied. Paste it in a terminal.')); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(shown).then(done, function () {});
+      else done();
+    });
+  })();
 
   // Text size, 12 to 28 px, remembered on this device.
   var fontSize = 15;

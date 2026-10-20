@@ -27,9 +27,17 @@
     var t = line.trim(), m, e = EXPLAIN;
     if (!t || !e.comment) return '';
     function fill(text, values) { return text.replace(/\{(\w+)\}/g, function (_, key) { return values[key] === undefined ? '' : values[key]; }); }
+    if (/^#!/.test(t)) return e.shebang;
     if (t[0] === '#') return e.comment;
     if (/^("""|\'\'\')/.test(t) || /^("""|\'\'\')$/.test(t)) return e.docString;
     if (/^[\]\)\}]+,?$/.test(t)) return e.closeBracket;
+    if (/^if\s+__name__\s*==/.test(t)) return e.mainGuard;
+    if (/^(sys\.)?exit\(/.test(t)) return e.exitCall;
+    if (/\bsys\.argv\b/.test(t) && !/^(print|if)\b/.test(t)) return e.argvUse;
+    if (/argparse\.ArgumentParser\(/.test(t)) return e.argparseMake;
+    if (/\.add_argument\(/.test(t)) return e.argparseAdd;
+    if (/\.parse_args\(/.test(t)) return e.argparseParse;
+    if (/\bjson\.dumps\(/.test(t)) return e.jsonDumps;
     if (/^print\(/.test(t)) return e.print;
     if (/^\w+\s*=\s*(float|int)\(input\(/.test(t)) return e.askNumber;
     if (/^[\w, ]+\s*=\s*input\(/.test(t)) return e.askNow;

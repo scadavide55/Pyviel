@@ -23,9 +23,10 @@
 
   check('the page is cross-origin isolated (input and Stop need it)', window.crossOriginIsolated === true);
   check('the version sits beside the name and is the one of the code', $('brand-version').textContent === 'v' + Pyviel.VERSION.replace(/-alpha$|-beta$/, ''), $('brand-version').textContent);
+  check('the website says Web beside the name, the app does not', window.pyvielDesktop ? getComputedStyle($('brand-web')).display === 'none' : getComputedStyle($('brand-web')).display !== 'none');
   check('the editor starts with a Python program', /print\(/.test(code.value));
   const version = await Pyviel.start();
-  check('Python loads in the worker', /^3\d\d\./.test(version), version);
+  check('Python loads', /^(3\d\d\.|3\.\d+\.\d+)/.test(version), version);
 
   // a program that works
   await run('print("Hello")\nprint(2 + 3)');

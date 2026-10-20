@@ -2,7 +2,8 @@
    Python's input() and Stop need a cross-origin isolated page, which a plain file:// page cannot be,
    so the files are served by a small local scheme (pyviel://app/) that adds the two headers.
    No network: every file is local, and every http(s) request is cancelled. */
-const { app, BrowserWindow, Menu, shell, session, protocol, net } = require('electron');
+const { app, BrowserWindow, Menu, shell, session, protocol, net, ipcMain } = require('electron');
+const pythonHost = require('./python-host');
 const path = require('path');
 const { pathToFileURL } = require('url');
 
@@ -10,6 +11,13 @@ const ROOT = path.join(__dirname, '..');
 const BG = '#f4ecdc';
 
 app.setName('Pyviel');
+
+// One Pyviel at a time: a second start brings the first window forward.
+if (!app.requestSingleInstanceLock()) { app.quit(); }
+app.on('second-instance', function () {
+  const win = BrowserWindow.getAllWindows()[0];
+  if (win) { if (win.isMinimized()) win.restore(); win.focus(); }
+});
 
 protocol.registerSchemesAsPrivileged([
   { scheme: 'pyviel', privileges: { standard: true, secure: true, supportFetchAPI: true, corsEnabled: true, stream: true } }
@@ -71,6 +79,8 @@ function createWindow() {
   win.webContents.on('will-navigate', function (event, url) {
     if (url.indexOf('pyviel://app/') !== 0) event.preventDefault();
   });
+  // If the page ever crashes, load it again instead of leaving a blank window.
+  win.webContents.on('render-process-gone', function () { if (!win.isDestroyed()) win.loadURL('pyviel://app/index.html'); });
   win.loadURL('pyviel://app/index.html');
   return win;
 }
@@ -81,6 +91,7 @@ app.whenReady().then(function () {
   session.defaultSession.webRequest.onBeforeRequest(function (details, callback) {
     callback({ cancel: /^https?:/i.test(details.url) });
   });
+  pythonHost.register(app, ipcMain);
   Menu.setApplicationMenu(buildMenu());
   createWindow();
   app.on('activate', function () {

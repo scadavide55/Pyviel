@@ -332,6 +332,16 @@
       it: ['Non ci sono più elementi da prendere.', 'next(...) è stato chiamato su qualcosa che ha già dato tutto quello che aveva.'],
       fr: ['Il n\'y a plus d\'éléments à prendre.', 'next(...) a été appelé sur quelque chose qui a déjà donné tout ce qu\'il avait.']
     },
+    process_ended: {
+      en: ['The program closed Python before it was done.', 'This happens with os._exit, or when a very low-level tool crashes. Nothing is wrong with Pyviel: change the program and press Run again.'],
+      it: ['Il programma ha chiuso Python prima di finire.', 'Succede con os._exit, o quando uno strumento di bassissimo livello va in crash. Pyviel non ha niente che non va: cambia il programma e premi di nuovo Esegui.'],
+      fr: ['Le programme a fermé Python avant d\'avoir fini.', 'Cela arrive avec os._exit, ou quand un outil de très bas niveau plante. Pyviel n\'a rien : change le programme et appuie à nouveau sur Lancer.']
+    },
+    internal: {
+      en: ['Pyviel could not run your program.', 'The message is: {m}. Close Pyviel and open it again. If it keeps happening, tell us on GitHub.'],
+      it: ['Pyviel non è riuscito a eseguire il tuo programma.', 'Il messaggio è: {m}. Chiudi Pyviel e aprilo di nuovo. Se continua, dillo a noi su GitHub.'],
+      fr: ['Pyviel n\'a pas pu lancer ton programme.', 'Le message est : {m}. Ferme Pyviel et rouvre-le. Si cela continue, dis-le-nous sur GitHub.']
+    },
     old_browser: {
       en: ['This browser cannot pause Python, so async and await cannot run here.', 'async needs a recent browser (Chrome, Edge or Brave 137 or later, or a recent Firefox or Safari). The rest of Python works as usual.'],
       it: ['Questo browser non riesce a mettere in pausa Python, quindi async e await non possono girare qui.', 'async ha bisogno di un browser recente (Chrome, Edge o Brave 137 o successivo, o un Firefox o Safari recente). Il resto di Python funziona come al solito.'],
@@ -419,6 +429,8 @@
     ['RecursionError', /^/, 'recursion'],
     ['EOFError', /^/, 'eof'],
     ['RuntimeError', /stack switch|WebAssembly stack switching/, 'old_browser'],
+    ['InternalError', /^Python stopped on its own/, 'process_ended'],
+    ['InternalError', /^/, 'internal'],
     ['AssertionError', /^/, 'assertion'],
     ['OverflowError', /^/, 'overflow'],
     ['StopIteration', /^/, 'stop_iteration']

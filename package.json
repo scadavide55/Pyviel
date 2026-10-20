@@ -5,18 +5,25 @@
   "license": "MIT",
   "author": "Pyviel",
   "homepage": "https://scadavide55.github.io/Pyviel/",
-  "repository": {"type": "git", "url": "https://github.com/scadavide55/Pyviel.git"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scadavide55/Pyviel.git"
+  },
   "main": "electron/main.js",
   "scripts": {
     "serve": "node tools/serve.js",
     "build": "node tools/build-course.js",
-    "test": "node tools/build-course.js && node tools/check-notes.js && node tools/check-language.js && node tools/check-translations.js && node test-errors.js && node tools/page-test.js && PYVIEL_QUERY=?nojspi node tools/page-test.js",
+    "test": "node tools/build-course.js && node tools/check-notes.js && node tools/check-language.js && node tools/check-translations.js && node tools/check-version.js && node test-errors.js && node tools/page-test.js && PYVIEL_QUERY=?nojspi node tools/page-test.js",
     "test:app": "electron tools/check-app.js",
     "start": "electron .",
     "dist:mac": "electron-builder --mac --publish never",
     "dist:win": "electron-builder --win --publish never",
     "dist:linux": "electron-builder --linux --publish never",
-    "dist": "npm run dist:mac && npm run dist:win && npm run dist:linux"
+    "dist": "npm run dist:mac && npm run dist:win && npm run dist:linux",
+    "fetch-python": "node tools/fetch-python.js",
+    "predist:mac": "node tools/fetch-python.js mac-arm64 mac-x64",
+    "predist:win": "node tools/fetch-python.js win-x64",
+    "predist:linux": "node tools/fetch-python.js linux-x64"
   },
   "devDependencies": {
     "electron": "44.9.0",
@@ -26,32 +33,105 @@
     "appId": "app.pyviel.learn",
     "productName": "Pyviel",
     "copyright": "Pyviel",
-    "directories": {"output": "dist", "buildResources": "build"},
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
     "files": [
-      "index.html", "editor.css", "editor-ui.js", "i18n.js", "lessons.js", "course.js", "tutorials.js",
-      "pyviel.js", "pyviel-worker.js", "pyviel-runner.py", "pyviel-errors.js", "coi-sw.js",
-      "build/icon.svg", "build/icon.png", "pyodide/**/*", "electron/**/*", "LICENSE", "THIRD_PARTY.md"
+      "index.html",
+      "editor.css",
+      "editor-ui.js",
+      "i18n.js",
+      "lessons.js",
+      "course.js",
+      "tutorials.js",
+      "pyviel.js",
+      "pyviel-errors.js",
+      "build/icon.svg",
+      "build/icon.png",
+      "electron/**/*",
+      "LICENSE",
+      "THIRD_PARTY.md"
     ],
     "mac": {
-      "target": [{"target": "dmg", "arch": ["universal"]}],
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
       "category": "public.app-category.education",
       "icon": "build/icon.png",
       "identity": null,
       "artifactName": "Pyviel-${version}-${arch}.${ext}"
     },
-    "dmg": {"title": "Pyviel ${version}"},
+    "dmg": {
+      "title": "Pyviel ${version}"
+    },
     "win": {
-      "target": [{"target": "nsis", "arch": ["x64"]}],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "icon": "build/icon.png",
       "artifactName": "Pyviel-${version}-setup.${ext}"
     },
-    "nsis": {"oneClick": true, "perMachine": false, "createDesktopShortcut": true, "createStartMenuShortcut": true, "shortcutName": "Pyviel"},
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Pyviel"
+    },
     "linux": {
-      "target": [{"target": "tar.gz", "arch": ["x64"]}],
+      "target": [
+        {
+          "target": "tar.gz",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "category": "Education",
       "icon": "build/icon.png",
       "artifactName": "Pyviel-${version}-linux-${arch}.${ext}"
     },
-    "artifactName": "Pyviel-${version}-${os}-${arch}.${ext}"
+    "artifactName": "Pyviel-${version}-${os}-${arch}.${ext}",
+    "extraResources": [
+      {
+        "from": "python/${os}-${arch}",
+        "to": "python",
+        "filter": [
+          "**/*",
+          "!**/__pycache__/**",
+          "!lib/python3.14/test/**",
+          "!Lib/test/**",
+          "!lib/python3.14/idlelib/**",
+          "!Lib/idlelib/**",
+          "!lib/python3.14/turtledemo/**",
+          "!Lib/turtledemo/**"
+        ]
+      },
+      {
+        "from": ".",
+        "to": "host",
+        "filter": [
+          "pyviel-host.py",
+          "pyviel-runner.py"
+        ]
+      }
+    ],
+    "electronLanguages": [
+      "en",
+      "it",
+      "fr"
+    ]
   }
 }

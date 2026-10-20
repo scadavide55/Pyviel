@@ -5,7 +5,7 @@ The goal, in the author's words: at the end, a student knows Python and can writ
 Decisions taken (20 October 2026):
 
 - Errors behave like Python (the program stops at the first one), but every error is explained in a short sentence with a caption, in all three languages, and **View full error** shows the complete Python message.
-- Python (Pyodide) is shipped inside the project and works offline.
+- The site runs Pyodide (shipped inside the project, works offline); the desktop app runs a real Python 3.14 packed in each installer.
 - The first version covers as much of Python as can be taught well. It is built in stages, each of them publishable.
 
 ## Stages

@@ -185,6 +185,15 @@ check('every rule points at a text that exists', () => {
       assert.ok(said.title.length > 20 && said.caption.length > 20);
     }
   });
+  check('the desktop app tells a program that ended Python, and a Python that did not start, in three languages', () => {
+    for (const lang of Errors.languages) {
+      const ended = Errors.explain({type: 'InternalError', message: 'Python stopped on its own (exit code 3).', line: null, suggestion: '', full: ''}, lang);
+      assert.equal(ended.id, 'process_ended');
+      const missing = Errors.explain({type: 'InternalError', message: 'The Python that comes with Pyviel is missing', line: null, suggestion: '', full: ''}, lang);
+      assert.equal(missing.id, 'internal');
+      assert.ok(missing.caption.includes('missing'));
+    }
+  });
   check('an unknown kind of error still gets a sentence', () => {
     const e = go('class MyTrouble(Exception):\n    pass\nraise MyTrouble("x")').result.error;
     assert.equal(Errors.explain(e, 'en').id, 'raised');

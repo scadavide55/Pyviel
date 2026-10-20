@@ -7266,6 +7266,332 @@ window.PyvielCourse = {
      "slip": null
     }
    ]
+  },
+  {
+   "group": {
+    "en": "Appendix · Python on your computer",
+    "it": "Appendice · Python sul tuo computer",
+    "fr": "Annexe · Python sur ton ordinateur"
+   },
+   "title": {
+    "en": "Python in a terminal",
+    "it": "Python in un terminale",
+    "fr": "Python dans un terminal"
+   },
+   "subtitle": {
+    "en": "The commands every Python user types",
+    "it": "I comandi che ogni utente di Python scrive",
+    "fr": "Les commandes que tout utilisateur de Python tape"
+   },
+   "steps": [
+    {
+     "code": "import sys\nprint(\"Python\", sys.version_info.major)\nprint(\"This is Python\", sys.version_info.major, \"and it is running your lines.\")",
+     "title": {
+      "en": "The terminal and python3 --version",
+      "it": "Il terminale e python3 --version",
+      "fr": "Le terminal et python3 --version"
+     },
+     "text": {
+      "en": "Until now you wrote programs here, in Pyviel. Real programmers also run Python from a terminal: a window where you type a command and press Enter.\n\nOpen one. On a Mac it is the app called Terminal. On Windows it is PowerShell or Terminal. On Linux it is Terminal or Konsole.\n\nType this and press Enter:\n\npython3 --version\n\nThe computer answers with the version, something like Python 3.14.8. On Windows the command is py instead of python3, so type: py --version\n\nThe program on this page asks Python the same question from the inside. It prints the big number of the version: 3.",
+      "it": "Finora hai scritto i programmi qui, in Pyviel. Chi programma esegue Python anche da un terminale: una finestra dove scrivi un comando e premi Invio.\n\nAprine uno. Su Mac è l'app che si chiama Terminale. Su Windows è PowerShell o Terminale. Su Linux è Terminale o Konsole.\n\nScrivi questo e premi Invio:\n\npython3 --version\n\nIl computer risponde con la versione, qualcosa come Python 3.14.8. Su Windows il comando è py invece di python3, quindi scrivi: py --version\n\nIl programma di questa pagina fa a Python la stessa domanda da dentro. Scrive il numero grande della versione: 3.",
+      "fr": "Jusqu'ici tu as écrit les programmes ici, dans Pyviel. Les programmeurs lancent aussi Python depuis un terminal : une fenêtre où tu tapes une commande et appuies sur Entrée.\n\nOuvre-en un. Sur Mac c'est l'application Terminal. Sur Windows c'est PowerShell ou Terminal. Sur Linux c'est Terminal ou Konsole.\n\nTape ceci et appuie sur Entrée :\n\npython3 --version\n\nL'ordinateur répond avec la version, quelque chose comme Python 3.14.8. Sous Windows la commande est py au lieu de python3, donc tape : py --version\n\nLe programme de cette page pose la même question à Python, de l'intérieur. Il affiche le grand numéro de la version : 3."
+     },
+     "see": {
+      "en": "Python 3\nThis is Python 3 and it is running your lines.",
+      "it": "Python 3\nThis is Python 3 and it is running your lines.",
+      "fr": "Python 3\nThis is Python 3 and it is running your lines."
+     },
+     "turn": {
+      "en": "Open a terminal on your computer and type the version command.",
+      "it": "Apri un terminale sul tuo computer e scrivi il comando della versione.",
+      "fr": "Ouvre un terminal sur ton ordinateur et tape la commande de la version."
+     },
+     "slip": {
+      "en": "If the terminal says \"command not found\", Python is not installed on your computer yet. Get it free from python.org. Pyviel has its own Python inside, but the terminal cannot see it.",
+      "it": "Se il terminale dice \"command not found\", Python non è ancora installato sul tuo computer. Scaricalo gratis da python.org. Pyviel ha un suo Python dentro, ma il terminale non lo vede.",
+      "fr": "Si le terminal dit \"command not found\", Python n'est pas encore installé sur ton ordinateur. Prends-le gratuitement sur python.org. Pyviel a son propre Python à l'intérieur, mais le terminal ne le voit pas."
+     }
+    },
+    {
+     "code": "# hello.py\nname = \"Ada\"\nprint(\"Hello,\", name)\nprint(\"This program was run from a file.\")",
+     "title": {
+      "en": "Run a file: python3 hello.py",
+      "it": "Eseguire un file: python3 hello.py",
+      "fr": "Lancer un fichier : python3 hello.py"
+     },
+     "text": {
+      "en": "A program that you want to keep lives in a file whose name ends in .py. You run it by giving the file name to Python.\n\nStep by step in the terminal:\n\n1. Go to the folder that holds the file. The command cd (change directory) does it: cd Documents/Pyviel\n2. Look at what is there: ls on Mac and Linux, dir on Windows.\n3. Run it: python3 hello.py\n\nIn the desktop app of Pyviel, the Command button does the first part for you: it saves your program in the Pyviel folder and shows the exact lines to type.\n\nYou can also give a path instead of going to the folder first: python3 Documents/Pyviel/hello.py",
+      "it": "Un programma che vuoi tenere vive in un file il cui nome finisce con .py. Lo esegui dando a Python il nome del file.\n\nPasso per passo nel terminale:\n\n1. Vai nella cartella che contiene il file. Lo fa il comando cd (change directory): cd Documents/Pyviel\n2. Guarda cosa c'è: ls su Mac e Linux, dir su Windows.\n3. Eseguilo: python3 hello.py\n\nNell'app per computer di Pyviel il pulsante Comando fa la prima parte per te: salva il programma nella cartella Pyviel e mostra le righe esatte da scrivere.\n\nPuoi anche dare un percorso invece di andare prima nella cartella: python3 Documents/Pyviel/hello.py",
+      "fr": "Un programme que tu veux garder vit dans un fichier dont le nom finit par .py. Tu le lances en donnant le nom du fichier à Python.\n\nPas à pas dans le terminal :\n\n1. Va dans le dossier qui contient le fichier. La commande cd (change directory) le fait : cd Documents/Pyviel\n2. Regarde ce qu'il y a : ls sur Mac et Linux, dir sous Windows.\n3. Lance-le : python3 hello.py\n\nDans l'application de bureau de Pyviel, le bouton Commande fait la première partie pour toi : il enregistre ton programme dans le dossier Pyviel et montre les lignes exactes à taper.\n\nTu peux aussi donner un chemin au lieu d'aller d'abord dans le dossier : python3 Documents/Pyviel/hello.py"
+     },
+     "see": {
+      "en": "Hello, Ada\nThis program was run from a file.",
+      "it": "Hello, Ada\nThis program was run from a file.",
+      "fr": "Hello, Ada\nThis program was run from a file."
+     },
+     "turn": {
+      "en": "In the app, press Command and copy the lines into a terminal.",
+      "it": "Nell'app premi Comando e copia le righe in un terminale.",
+      "fr": "Dans l'application, appuie sur Commande et copie les lignes dans un terminal."
+     },
+     "slip": {
+      "en": "Python must find the file. If it says \"No such file or directory\", you are in the wrong folder, or the name is spelled differently. Capital letters count.",
+      "it": "Python deve trovare il file. Se dice \"No such file or directory\", sei nella cartella sbagliata o il nome è scritto diversamente. Le maiuscole contano.",
+      "fr": "Python doit trouver le fichier. S'il dit \"No such file or directory\", tu es dans le mauvais dossier ou le nom est écrit autrement. Les majuscules comptent."
+     }
+    },
+    {
+     "code": "print(2 + 2)\nprint(\"ab\" * 3)\nprint(len(\"terminal\"))",
+     "title": {
+      "en": "One line and the playground: -c and >>>",
+      "it": "Una riga e il campo giochi: -c e >>>",
+      "fr": "Une ligne et le terrain de jeu : -c et >>>"
+     },
+     "text": {
+      "en": "Two more ways to use Python without a file.\n\nOne line: python3 -c \"print(2 + 2)\". The letter c means command. Python runs the text in the quotes and stops.\n\nThe playground: just type python3 and press Enter. You see >>> and Python waits. Type 2 + 2 and press Enter: it answers 4 at once. Every line you type runs now. To leave, type exit() or press Ctrl+D (Ctrl+Z then Enter on Windows).\n\nThe playground is perfect to test a small idea. The program on this page has the same three lines that you would type there.",
+      "it": "Altri due modi di usare Python senza un file.\n\nUna riga: python3 -c \"print(2 + 2)\". La lettera c vuol dire command. Python esegue il testo tra le virgolette e si ferma.\n\nIl campo giochi: scrivi solo python3 e premi Invio. Vedi >>> e Python aspetta. Scrivi 2 + 2 e premi Invio: risponde 4 subito. Ogni riga che scrivi viene eseguita ora. Per uscire scrivi exit() o premi Ctrl+D (Ctrl+Z poi Invio su Windows).\n\nIl campo giochi è perfetto per provare una piccola idea. Il programma di questa pagina ha le stesse tre righe che scriveresti là.",
+      "fr": "Deux autres façons d'utiliser Python sans fichier.\n\nUne ligne : python3 -c \"print(2 + 2)\". La lettre c veut dire command. Python exécute le texte entre guillemets et s'arrête.\n\nLe terrain de jeu : tape juste python3 et appuie sur Entrée. Tu vois >>> et Python attend. Tape 2 + 2 et appuie sur Entrée : il répond 4 tout de suite. Chaque ligne que tu tapes s'exécute maintenant. Pour sortir, tape exit() ou appuie sur Ctrl+D (Ctrl+Z puis Entrée sous Windows).\n\nLe terrain de jeu est parfait pour tester une petite idée. Le programme de cette page a les mêmes trois lignes que tu taperais là-bas."
+     },
+     "see": {
+      "en": "4\nababab\n8",
+      "it": "4\nababab\n8",
+      "fr": "4\nababab\n8"
+     },
+     "turn": {
+      "en": "Type python3 in a terminal, try 10 * 10, and leave with exit().",
+      "it": "Scrivi python3 in un terminale, prova 10 * 10 ed esci con exit().",
+      "fr": "Tape python3 dans un terminal, essaie 10 * 10 et sors avec exit()."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Give your program information",
+    "it": "Dai informazioni al tuo programma",
+    "fr": "Donne des informations à ton programme"
+   },
+   "subtitle": {
+    "en": "Arguments, exit codes and the main guard",
+    "it": "Argomenti, codici di uscita e la guardia main",
+    "fr": "Arguments, codes de sortie et la garde main"
+   },
+   "steps": [
+    {
+     "code": "import sys\n\nnames = sys.argv[1:]\nif names:\n    for name in names:\n        print(\"Hello,\", name)\nelse:\n    print(\"No names given. Run it like: python3 hello.py Ada Linus\")",
+     "title": {
+      "en": "Arguments: sys.argv",
+      "it": "Gli argomenti: sys.argv",
+      "fr": "Les arguments : sys.argv"
+     },
+     "text": {
+      "en": "After the file name you can write more words. Python collects them in a list called sys.argv.\n\npython3 hello.py Ada Linus\n\nInside the program, sys.argv is [\"hello.py\", \"Ada\", \"Linus\"]. The first item is always the name of the file, so the real arguments start at position 1: sys.argv[1:].\n\nHere nobody gave names, so the program explains how to run it. Pyviel runs it without arguments, but in a terminal you can add as many as you like. Words with spaces need quotes: python3 hello.py \"Ada Lovelace\"",
+      "it": "Dopo il nome del file puoi scrivere altre parole. Python le raccoglie in una lista che si chiama sys.argv.\n\npython3 hello.py Ada Linus\n\nDentro il programma, sys.argv è [\"hello.py\", \"Ada\", \"Linus\"]. Il primo elemento è sempre il nome del file, quindi gli argomenti veri partono dalla posizione 1: sys.argv[1:].\n\nQui nessuno ha dato dei nomi, quindi il programma spiega come eseguirlo. Pyviel lo esegue senza argomenti, ma in un terminale ne puoi aggiungere quanti vuoi. Le parole con spazi vogliono le virgolette: python3 hello.py \"Ada Lovelace\"",
+      "fr": "Après le nom du fichier tu peux écrire d'autres mots. Python les range dans une liste appelée sys.argv.\n\npython3 hello.py Ada Linus\n\nDans le programme, sys.argv vaut [\"hello.py\", \"Ada\", \"Linus\"]. Le premier élément est toujours le nom du fichier, donc les vrais arguments commencent à la position 1 : sys.argv[1:].\n\nIci personne n'a donné de noms, alors le programme explique comment le lancer. Pyviel le lance sans arguments, mais dans un terminal tu peux en ajouter autant que tu veux. Les mots avec des espaces veulent des guillemets : python3 hello.py \"Ada Lovelace\""
+     },
+     "see": {
+      "en": "No names given. Run it like: python3 hello.py Ada Linus",
+      "it": "No names given. Run it like: python3 hello.py Ada Linus",
+      "fr": "No names given. Run it like: python3 hello.py Ada Linus"
+     },
+     "turn": {
+      "en": "Save it as hello.py and run it with two names from a terminal.",
+      "it": "Salvalo come hello.py ed eseguilo con due nomi da un terminale.",
+      "fr": "Enregistre-le sous hello.py et lance-le avec deux noms depuis un terminal."
+     },
+     "slip": {
+      "en": "Arguments always arrive as text. The word 5 is \"5\", not the number 5: use int() to turn it into a number.",
+      "it": "Gli argomenti arrivano sempre come testo. La parola 5 è \"5\", non il numero 5: usa int() per trasformarla in numero.",
+      "fr": "Les arguments arrivent toujours sous forme de texte. Le mot 5 est \"5\", pas le nombre 5 : utilise int() pour en faire un nombre."
+     }
+    },
+    {
+     "code": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])",
+     "title": {
+      "en": "Saying how it went: exit codes",
+      "it": "Dire com'è andata: i codici di uscita",
+      "fr": "Dire comment ça s'est passé : les codes de sortie"
+     },
+     "text": {
+      "en": "When a program ends, it leaves a small number behind: the exit code. 0 means all went well. Any other number means something went wrong.\n\nsys.exit(1) stops the program right there and leaves the code 1. Python itself leaves 1 when a program stops with an error, and 0 when it ends normally.\n\nYou can look at the last code in the terminal. On Mac and Linux type echo $? and on Windows PowerShell type echo $LASTEXITCODE.\n\nOther programs and scripts use this number to know if your program worked. That is why a good program that is used wrongly prints a short usage line, and exits with 1.",
+      "it": "Quando un programma finisce, lascia dietro un piccolo numero: il codice di uscita. 0 vuol dire che è andato tutto bene. Qualsiasi altro numero vuol dire che qualcosa è andato storto.\n\nsys.exit(1) ferma il programma lì e lascia il codice 1. Python stesso lascia 1 quando un programma si ferma con un errore, e 0 quando finisce normalmente.\n\nPuoi guardare l'ultimo codice nel terminale. Su Mac e Linux scrivi echo $? e su Windows PowerShell scrivi echo $LASTEXITCODE.\n\nAltri programmi e script usano questo numero per sapere se il tuo programma ha funzionato. Per questo un buon programma usato male scrive una breve riga di uso, ed esce con 1.",
+      "fr": "Quand un programme se termine, il laisse derrière lui un petit nombre : le code de sortie. 0 veut dire que tout s'est bien passé. Tout autre nombre veut dire que quelque chose a mal tourné.\n\nsys.exit(1) arrête le programme là et laisse le code 1. Python lui-même laisse 1 quand un programme s'arrête sur une erreur, et 0 quand il se termine normalement.\n\nTu peux voir le dernier code dans le terminal. Sur Mac et Linux tape echo $? et sous Windows PowerShell tape echo $LASTEXITCODE.\n\nD'autres programmes et scripts utilisent ce nombre pour savoir si ton programme a marché. C'est pourquoi un bon programme mal utilisé affiche une courte ligne d'usage, et sort avec 1."
+     },
+     "see": {
+      "en": "Usage: python3 greet.py NAME",
+      "it": "Usage: python3 greet.py NAME",
+      "fr": "Usage: python3 greet.py NAME"
+     },
+     "turn": {
+      "en": "Run it from a terminal with no name, then with one, and check the exit code each time.",
+      "it": "Eseguilo da un terminale senza nome, poi con uno, e controlla ogni volta il codice di uscita.",
+      "fr": "Lance-le depuis un terminal sans nom, puis avec un, et vérifie le code de sortie à chaque fois."
+     },
+     "slip": null
+    },
+    {
+     "code": "def main():\n    print(\"The program starts here.\")\n\nif __name__ == \"__main__\":\n    main()",
+     "title": {
+      "en": "The main guard: if __name__ == \"__main__\"",
+      "it": "La guardia main: if __name__ == \"__main__\"",
+      "fr": "La garde main : if __name__ == \"__main__\""
+     },
+     "text": {
+      "en": "You will see these two lines at the bottom of almost every Python file in the world.\n\nPython gives each file a name while it runs. When you run a file directly (python3 hello.py), its name is \"__main__\". When another file imports it (import hello), its name is \"hello\".\n\nSo if __name__ == \"__main__\": means: run this part only when the file is started on its own, not when it is borrowed by another program.\n\nThat lets one file be both a program and a toolbox of functions that others can import safely. Put the work in a function, usually called main, and call it under the guard.",
+      "it": "Vedrai queste due righe in fondo a quasi ogni file Python del mondo.\n\nPython dà a ogni file un nome mentre gira. Quando esegui un file direttamente (python3 hello.py), il suo nome è \"__main__\". Quando un altro file lo importa (import hello), il suo nome è \"hello\".\n\nQuindi if __name__ == \"__main__\": vuol dire: esegui questa parte solo quando il file parte da solo, non quando lo prende in prestito un altro programma.\n\nCosì un file può essere insieme un programma e una cassetta di funzioni che gli altri importano senza rischi. Metti il lavoro in una funzione, di solito chiamata main, e chiamala sotto la guardia.",
+      "fr": "Tu verras ces deux lignes en bas de presque tous les fichiers Python du monde.\n\nPython donne un nom à chaque fichier pendant qu'il tourne. Quand tu lances un fichier directement (python3 hello.py), son nom est \"__main__\". Quand un autre fichier l'importe (import hello), son nom est \"hello\".\n\nDonc if __name__ == \"__main__\": veut dire : exécute cette partie seulement quand le fichier démarre tout seul, pas quand un autre programme l'emprunte.\n\nAinsi un fichier peut être à la fois un programme et une boîte à outils de fonctions que les autres importent sans risque. Mets le travail dans une fonction, souvent appelée main, et appelle-la sous la garde."
+     },
+     "see": {
+      "en": "The program starts here.",
+      "it": "The program starts here.",
+      "fr": "The program starts here."
+     },
+     "turn": {
+      "en": "Add a second function and call it from main().",
+      "it": "Aggiungi una seconda funzione e chiamala da main().",
+      "fr": "Ajoute une deuxième fonction et appelle-la depuis main()."
+     },
+     "slip": null
+    },
+    {
+     "code": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Greets people\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"friend\")\nparser.add_argument(\"--shout\", action=\"store_true\")\nargs = parser.parse_args()\n\nmessage = \"Hello, \" + args.name\nif args.shout:\n    message = message.upper() + \"!\"\nprint(message)",
+     "title": {
+      "en": "argparse: arguments with names and help",
+      "it": "argparse: argomenti con nomi e aiuto",
+      "fr": "argparse : des arguments avec des noms et une aide"
+     },
+     "text": {
+      "en": "When a program has many options, reading sys.argv by hand gets messy. The module argparse does it for you, and it gives a free help page.\n\nYou describe the arguments you accept: add_argument(\"name\") is a word, and add_argument(\"--shout\", action=\"store_true\") is a switch that is either given or not.\n\nThen parse_args() reads the command line and fills an object: args.name and args.shout.\n\nIn a terminal:\n\npython3 greet.py Ada --shout\npython3 greet.py --help\n\nThe first prints HELLO, ADA! and the second prints a help page that argparse wrote by itself. A wrong option gets a clear error and exit code 2.",
+      "it": "Quando un programma ha molte opzioni, leggere sys.argv a mano diventa un pasticcio. Il modulo argparse lo fa per te, e dà una pagina di aiuto gratis.\n\nDescrivi gli argomenti che accetti: add_argument(\"name\") è una parola, e add_argument(\"--shout\", action=\"store_true\") è un interruttore che c'è oppure no.\n\nPoi parse_args() legge la riga di comando e riempie un oggetto: args.name e args.shout.\n\nIn un terminale:\n\npython3 greet.py Ada --shout\npython3 greet.py --help\n\nIl primo scrive HELLO, ADA! e il secondo scrive una pagina di aiuto che argparse ha scritto da solo. Un'opzione sbagliata riceve un errore chiaro e il codice di uscita 2.",
+      "fr": "Quand un programme a beaucoup d'options, lire sys.argv à la main devient confus. Le module argparse le fait pour toi, et il donne une page d'aide gratuite.\n\nTu décris les arguments acceptés : add_argument(\"name\") est un mot, et add_argument(\"--shout\", action=\"store_true\") est un interrupteur qui est donné ou non.\n\nPuis parse_args() lit la ligne de commande et remplit un objet : args.name et args.shout.\n\nDans un terminal :\n\npython3 greet.py Ada --shout\npython3 greet.py --help\n\nLe premier affiche HELLO, ADA! et le deuxième affiche une page d'aide qu'argparse a écrite tout seul. Une mauvaise option reçoit une erreur claire et le code de sortie 2."
+     },
+     "see": {
+      "en": "Hello, friend",
+      "it": "Hello, friend",
+      "fr": "Hello, friend"
+     },
+     "turn": {
+      "en": "Add a second switch, --twice, that prints the message two times.",
+      "it": "Aggiungi un secondo interruttore, --twice, che scrive il messaggio due volte.",
+      "fr": "Ajoute un deuxième interrupteur, --twice, qui affiche le message deux fois."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Tools around Python",
+    "it": "Gli strumenti attorno a Python",
+    "fr": "Les outils autour de Python"
+   },
+   "subtitle": {
+    "en": "Modules, pip, virtual environments, tracebacks and scripts",
+    "it": "Moduli, pip, ambienti virtuali, traceback e script",
+    "fr": "Modules, pip, environnements virtuels, tracebacks et scripts"
+   },
+   "steps": [
+    {
+     "code": "import json\n\ndata = {\"name\": \"Ada\", \"scores\": [3, 5, 8]}\ntext = json.dumps(data, indent=2)\nprint(text)",
+     "title": {
+      "en": "Run a module: python3 -m",
+      "it": "Eseguire un modulo: python3 -m",
+      "fr": "Lancer un module : python3 -m"
+     },
+     "text": {
+      "en": "-m means module. Python can run a module from its big library as if it were a program.\n\npython3 -m json.tool data.json shows a JSON file nicely indented. The program on this page does the same job from the inside, with json.dumps.\n\nSome modules that are useful every day:\n\npython3 -m http.server shares the current folder on your computer, at the address localhost:8000.\npython3 -m unittest runs your tests.\npython3 -m venv .venv makes a virtual environment, see the next step.\npython3 -m pip install requests installs a package.\n\nWriting python3 -m pip instead of just pip makes sure that you use the pip of the same Python.",
+      "it": "-m vuol dire modulo. Python può eseguire un modulo della sua grande libreria come se fosse un programma.\n\npython3 -m json.tool data.json mostra un file JSON ben rientrato. Il programma di questa pagina fa lo stesso lavoro da dentro, con json.dumps.\n\nAlcuni moduli utili ogni giorno:\n\npython3 -m http.server condivide la cartella attuale sul tuo computer, all'indirizzo localhost:8000.\npython3 -m unittest esegue i tuoi test.\npython3 -m venv .venv crea un ambiente virtuale, vedi il passo dopo.\npython3 -m pip install requests installa un pacchetto.\n\nScrivere python3 -m pip invece di solo pip assicura che usi il pip dello stesso Python.",
+      "fr": "-m veut dire module. Python peut lancer un module de sa grande bibliothèque comme si c'était un programme.\n\npython3 -m json.tool data.json affiche un fichier JSON bien indenté. Le programme de cette page fait le même travail de l'intérieur, avec json.dumps.\n\nQuelques modules utiles tous les jours :\n\npython3 -m http.server partage le dossier actuel sur ton ordinateur, à l'adresse localhost:8000.\npython3 -m unittest lance tes tests.\npython3 -m venv .venv crée un environnement virtuel, voir l'étape suivante.\npython3 -m pip install requests installe un paquet.\n\nÉcrire python3 -m pip au lieu de pip seul garantit que tu utilises le pip du même Python."
+     },
+     "see": {
+      "en": "{\n  \"name\": \"Ada\",\n  \"scores\": [\n    3,\n    5,\n    8\n  ]\n}",
+      "it": "{\n  \"name\": \"Ada\",\n  \"scores\": [\n    3,\n    5,\n    8\n  ]\n}",
+      "fr": "{\n  \"name\": \"Ada\",\n  \"scores\": [\n    3,\n    5,\n    8\n  ]\n}"
+     },
+     "turn": {
+      "en": "In a terminal, run python3 -m http.server and open localhost:8000 in the browser. Stop it with Ctrl+C.",
+      "it": "In un terminale esegui python3 -m http.server e apri localhost:8000 nel browser. Fermalo con Ctrl+C.",
+      "fr": "Dans un terminal, lance python3 -m http.server et ouvre localhost:8000 dans le navigateur. Arrête-le avec Ctrl+C."
+     },
+     "slip": null
+    },
+    {
+     "code": "import sys\n\ninside = sys.prefix != sys.base_prefix\nprint(\"Inside a virtual environment:\", inside)",
+     "title": {
+      "en": "pip and virtual environments",
+      "it": "pip e gli ambienti virtuali",
+      "fr": "pip et les environnements virtuels"
+     },
+     "text": {
+      "en": "Python has a huge shop of free packages that other people wrote, called PyPI. pip is the tool that downloads them.\n\npython3 -m pip install requests\n\nBut if every project installs into the same place, they start to fight over versions. The cure is a virtual environment: a private folder with its own Python and its own packages, one for each project.\n\npython3 -m venv .venv\nsource .venv/bin/activate (Mac and Linux)\n.venv\\Scripts\\activate (Windows)\n\nAfter activating, the terminal line starts with (.venv), and pip installs only in there. Type deactivate to come back.\n\nThe program checks whether you are inside one. In Pyviel the answer is False.",
+      "it": "Python ha un enorme negozio di pacchetti gratuiti scritti da altri, chiamato PyPI. pip è lo strumento che li scarica.\n\npython3 -m pip install requests\n\nMa se ogni progetto installa nello stesso posto, iniziano a litigare per le versioni. La cura è un ambiente virtuale: una cartella privata con il suo Python e i suoi pacchetti, una per ogni progetto.\n\npython3 -m venv .venv\nsource .venv/bin/activate (Mac e Linux)\n.venv\\Scripts\\activate (Windows)\n\nDopo l'attivazione la riga del terminale inizia con (.venv), e pip installa solo là dentro. Scrivi deactivate per tornare indietro.\n\nIl programma controlla se sei dentro uno. In Pyviel la risposta è False.",
+      "fr": "Python a une énorme boutique de paquets gratuits écrits par d'autres, appelée PyPI. pip est l'outil qui les télécharge.\n\npython3 -m pip install requests\n\nMais si chaque projet installe au même endroit, les versions se disputent. Le remède est un environnement virtuel : un dossier privé avec son propre Python et ses propres paquets, un pour chaque projet.\n\npython3 -m venv .venv\nsource .venv/bin/activate (Mac et Linux)\n.venv\\Scripts\\activate (Windows)\n\nAprès l'activation, la ligne du terminal commence par (.venv), et pip n'installe que là-dedans. Tape deactivate pour revenir.\n\nLe programme vérifie si tu es dans un environnement. Dans Pyviel la réponse est False."
+     },
+     "see": {
+      "en": "Inside a virtual environment: False",
+      "it": "Inside a virtual environment: False",
+      "fr": "Inside a virtual environment: False"
+     },
+     "turn": {
+      "en": "Make a virtual environment in a new folder and run this program inside it. The answer changes to True.",
+      "it": "Crea un ambiente virtuale in una cartella nuova ed esegui questo programma dentro. La risposta diventa True.",
+      "fr": "Crée un environnement virtuel dans un nouveau dossier et lance ce programme dedans. La réponse devient True."
+     },
+     "slip": null
+    },
+    {
+     "code": "def divide(a, b):\n    return a / b\n\nprint(divide(10, 2))\nprint(divide(1, 0))",
+     "title": {
+      "en": "Reading a real traceback",
+      "it": "Leggere un traceback vero",
+      "fr": "Lire un vrai traceback"
+     },
+     "text": {
+      "en": "In a terminal, an error is not shown in friendly words. Python prints a traceback, and it is the same text that the View full error button shows in Pyviel.\n\nTraceback (most recent call last):\n  File \"divide.py\", line 5, in <module>\n    print(divide(1, 0))\n  File \"divide.py\", line 2, in divide\n    return a / b\nZeroDivisionError: division by zero\n\nRead it from the bottom up. The last line is the kind of error and what happened. Above it are the steps that led there, the last step at the bottom: the file, the line number and the line itself.\n\nHere line 5 called divide, and line 2 inside divide broke. Fix the place that is at the bottom, then look up if the cause started higher.",
+      "it": "In un terminale un errore non è mostrato in parole amichevoli. Python scrive un traceback, ed è lo stesso testo che mostra il pulsante View full error in Pyviel.\n\nTraceback (most recent call last):\n  File \"divide.py\", line 5, in <module>\n    print(divide(1, 0))\n  File \"divide.py\", line 2, in divide\n    return a / b\nZeroDivisionError: division by zero\n\nLeggilo dal basso verso l'alto. L'ultima riga è il tipo di errore e cosa è successo. Sopra ci sono i passi che hanno portato fin lì, l'ultimo passo in fondo: il file, il numero di riga e la riga stessa.\n\nQui la riga 5 ha chiamato divide, e la riga 2 dentro divide si è rotta. Correggi il punto che sta in fondo, poi guarda se la causa è iniziata più in alto.",
+      "fr": "Dans un terminal, une erreur n'est pas montrée avec des mots amicaux. Python affiche un traceback, et c'est le même texte que montre le bouton View full error dans Pyviel.\n\nTraceback (most recent call last):\n  File \"divide.py\", line 5, in <module>\n    print(divide(1, 0))\n  File \"divide.py\", line 2, in divide\n    return a / b\nZeroDivisionError: division by zero\n\nLis-le de bas en haut. La dernière ligne est le genre d'erreur et ce qui s'est passé. Au-dessus il y a les étapes qui y ont mené, la dernière étape en bas : le fichier, le numéro de ligne et la ligne elle-même.\n\nIci la ligne 5 a appelé divide, et la ligne 2 dans divide a cassé. Corrige l'endroit qui est en bas, puis regarde si la cause a commencé plus haut."
+     },
+     "see": {
+      "en": "5.0\n⚠ Line 2: A number was divided by zero.",
+      "it": "5.0\n⚠ Riga 2: Un numero è stato diviso per zero.",
+      "fr": "5.0\n⚠ Ligne 2: Un nombre a été divisé par zéro."
+     },
+     "turn": {
+      "en": "Press Run, then View full error, and find the file, the line and the last line.",
+      "it": "Premi Esegui, poi View full error, e trova il file, la riga e l'ultima riga.",
+      "fr": "Appuie sur Lancer, puis View full error, et trouve le fichier, la ligne et la dernière ligne."
+     },
+     "slip": null,
+     "error": "ZeroDivisionError"
+    },
+    {
+     "code": "#!/usr/bin/env python3\n# A script you can run by its name alone.\nimport sys\n\nprint(\"Script\", \"ran\" if sys.version_info.major == 3 else \"not ran\")",
+     "title": {
+      "en": "Scripts you run by name",
+      "it": "Script che esegui dal nome",
+      "fr": "Des scripts lancés par leur nom"
+     },
+     "text": {
+      "en": "On Mac and Linux a file can be a command of its own. Two small things make it so.\n\nFirst, the very first line, the shebang: #!/usr/bin/env python3. It tells the system which program must read the file. For Python, it ends up in the same python3 that you type by hand.\n\nSecond, tell the system that the file may be run: chmod +x hello.py\n\nNow you run it with ./hello.py, with no python3 before. The dot and slash mean \"the file in this folder\".\n\nOn Windows the shebang does nothing and the way is py hello.py. The line is only a comment for Python, so it is safe everywhere.",
+      "it": "Su Mac e Linux un file può essere un comando a sé. Due piccole cose lo permettono.\n\nPrimo, la primissima riga, lo shebang: #!/usr/bin/env python3. Dice al sistema quale programma deve leggere il file. Per Python, finisce nello stesso python3 che scrivi a mano.\n\nSecondo, dì al sistema che il file può essere eseguito: chmod +x hello.py\n\nOra lo esegui con ./hello.py, senza python3 prima. Il punto e la barra vogliono dire \"il file in questa cartella\".\n\nSu Windows lo shebang non fa niente e la strada è py hello.py. Per Python la riga è solo un commento, quindi è sicura ovunque.",
+      "fr": "Sur Mac et Linux un fichier peut être une commande à part entière. Deux petites choses le permettent.\n\nD'abord, la toute première ligne, le shebang : #!/usr/bin/env python3. Elle dit au système quel programme doit lire le fichier. Pour Python, cela mène au même python3 que tu tapes à la main.\n\nEnsuite, dis au système que le fichier peut être lancé : chmod +x hello.py\n\nMaintenant tu le lances avec ./hello.py, sans python3 devant. Le point et la barre veulent dire \"le fichier de ce dossier\".\n\nSous Windows le shebang ne fait rien et le chemin est py hello.py. Pour Python la ligne n'est qu'un commentaire, donc elle est sans danger partout."
+     },
+     "see": {
+      "en": "Script ran",
+      "it": "Script ran",
+      "fr": "Script ran"
+     },
+     "turn": {
+      "en": "Save the program, make it executable and run it as ./script.py.",
+      "it": "Salva il programma, rendilo eseguibile ed eseguilo come ./script.py.",
+      "fr": "Enregistre le programme, rends-le exécutable et lance-le avec ./script.py."
+     },
+     "slip": null
+    }
+   ]
   }
  ]
 };

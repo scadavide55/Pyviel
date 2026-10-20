@@ -10,14 +10,14 @@
 <meta property="og:title" content="Pyviel: learn real Python, one small step at a time">
 <meta property="og:description" content="53 lessons from print to async, every line explained, errors in plain words. Free and offline, in English, Italian and French.">
 <link rel="icon" href="build/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="editor.css?v=17">
+<link rel="stylesheet" href="editor.css?v=19">
 <script>try { var t = localStorage.getItem('pyviel.theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <script>
   // Where the desktop installers live: in the GitHub release, not in the repository (each is over 100 MB).
   window.PYVIEL_APP = {
     version: '1.0.0-beta',
     release: 'https://github.com/scadavide55/Pyviel/releases/download/v1.0.0-beta/',
-    files: {mac: 'Pyviel-1.0.0-beta-universal.dmg', win: 'Pyviel-1.0.0-beta-setup.exe', linux: 'Pyviel-1.0.0-beta-linux-x64.tar.gz'}
+    files: {mac: 'Pyviel-1.0.0-beta-arm64.dmg', mac_intel: 'Pyviel-1.0.0-beta-x64.dmg', win: 'Pyviel-1.0.0-beta-setup.exe', linux: 'Pyviel-1.0.0-beta-linux-x64.tar.gz'}
   };
   // The desktop app never shows the download button: it is already installed.
   if (window.pyvielDesktop) document.documentElement.dataset.desktop = '1';
@@ -47,7 +47,7 @@
 <header class="topbar">
   <a class="brand" href="./" aria-label="Pyviel, start page">
     <img class="logo" src="build/icon.svg" alt="" width="34" height="34">
-    <span class="brand-name">Pyviel</span><span class="brand-beta">beta</span><span class="brand-version" id="brand-version" title="Version"></span>
+    <span class="brand-name">Pyviel</span><span class="brand-beta">beta</span><span class="brand-web" id="brand-web" title="This is the website: it runs Python inside your browser. The desktop app runs Python on your computer.">Web</span><span class="brand-version" id="brand-version" title="Version"></span>
   </a>
 
   <div class="filebox">
@@ -60,6 +60,7 @@
     <button class="tool" id="new-file" title="Start a new empty program"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5h6l4 4v11H5zM11 2.5v4h4"/></svg><span>New</span></button>
     <button class="tool" id="open-file" title="Open a .py file from your computer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 15.5v-11h5l2 2h8v3m-15 6 2-6h13l-2 6z"/></svg><span>Open</span></button>
     <button class="tool" id="save-file" title="Save this program on your computer · Cmd/Ctrl+S"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg><span>Save</span></button>
+    <button class="tool app-only" id="command-toggle" aria-expanded="false" aria-controls="command-pop" title="See the terminal command that runs this program"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4.500h14v11H3zM6 8.500l2.500 2L6 12.500M10.500 13h3.500"/></svg><span>Command</span></button>
   </div>
 
   <div class="spacer"></div>
@@ -70,6 +71,14 @@
 
   <a class="tool download" id="download" href="#" title="Download Pyviel for your computer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5v9m-3.5-3 3.5 3.5 3.5-3.5M4 15.5h12"/></svg><span>Download</span></a>
   <button class="tool icon-only" id="theme-toggle" title="Switch between light and dark" aria-label="Switch between light and dark"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16.500 11.500A7 7 0 1 1 8.500 3.500a5.500 5.500 0 0 0 8 8z"/></svg></button>
+  <div class="pop theme-menu" id="theme-menu" role="menu" hidden>
+    <button role="menuitemradio" data-pick="light"><span class="swatch" style="--a:#f4ecdc;--b:#e8572a"></span>Cream</button>
+    <button role="menuitemradio" data-pick="dark"><span class="swatch" style="--a:#1e1a17;--b:#ff8a5c"></span>Night</button>
+    <button role="menuitemradio" data-pick="midnight"><span class="swatch" style="--a:#0f1724;--b:#5aa9ff"></span>Midnight</button>
+    <button role="menuitemradio" data-pick="forest"><span class="swatch" style="--a:#14201a;--b:#8fd16a"></span>Forest</button>
+    <button role="menuitemradio" data-pick="sunset"><span class="swatch" style="--a:#fbeee8;--b:#d6336c"></span>Sunset</button>
+    <button role="menuitemradio" data-pick="contrast"><span class="swatch" style="--a:#ffffff;--b:#000000"></span>High contrast</button>
+  </div>
   <button class="stop" id="stop" hidden title="Stop the program · Esc"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="2" fill="currentColor" stroke="none"/></svg>Stop</button>
   <button class="run" id="run" title="Run your program · Cmd/Ctrl+Enter"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.500 2.500 9 5.500-9 5.500z" fill="currentColor" stroke="none"/></svg>Run</button>
 </header>
@@ -191,11 +200,21 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
   <div class="shortcut-list"><h3>Keyboard</h3><span>Run <kbd>Cmd/Ctrl + Enter</kbd></span><span>Save <kbd>Cmd/Ctrl + S</kbd></span><span>Find <kbd>Cmd/Ctrl + F</kbd></span><span>Stop <kbd>Esc</kbd></span><span>Comment <kbd>Cmd/Ctrl + /</kbd></span><span>Indent <kbd>Tab</kbd></span><span>Unindent <kbd>Shift + Tab</kbd></span></div>
 </dialog>
 
+<div class="pop command-pop" id="command-pop" role="dialog" aria-labelledby="command-title" hidden>
+  <h3 id="command-title">Run it from a terminal</h3>
+  <p>Pyviel saved your program in this folder:</p>
+  <pre id="command-folder"></pre>
+  <p>Open a terminal and type:</p>
+  <pre id="command-lines"></pre>
+  <p class="pop-note">Your programs run in this folder, so the files they create land there too.</p>
+  <div class="pop-actions"><button class="tool" id="command-copy">Copy</button><button class="tool" id="command-close">Close</button></div>
+</div>
+
 <div class="toast" id="toast" role="status" hidden><span id="toast-text"></span><button id="toast-action" hidden></button></div>
 
-<script src="i18n.js?v=1.0.0-2"></script>
-<script src="pyviel-errors.js?v=0.1.0-1"></script>
-<script src="pyviel.js?v=1.0.0-3"></script>
+<script src="i18n.js?v=1.0.0-4"></script>
+<script src="pyviel-errors.js?v=1.0.0-4"></script>
+<script src="pyviel.js?v=1.0.0-4"></script>
 <script>
 // The version next to the name is the one of the code that runs, so it cannot drift.
 (function () {
@@ -582,9 +601,9 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
   });
 })();
 </script>
-<script src="editor-ui.js?v=1.0.0-2"></script>
-<script src="lessons.js?v=1.0.0-2"></script>
-<script src="course.js?v=1.0.0-2"></script>
-<script src="tutorials.js?v=1.0.0-2"></script>
+<script src="editor-ui.js?v=1.0.0-4"></script>
+<script src="lessons.js?v=1.0.0-4"></script>
+<script src="course.js?v=1.0.0-4"></script>
+<script src="tutorials.js?v=1.0.0-4"></script>
 </body>
 </html>

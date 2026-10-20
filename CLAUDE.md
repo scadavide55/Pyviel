@@ -39,6 +39,7 @@ All of these must be green before a commit. After editing `content/*.js` run `bu
 - **Lesson code lives in `tutorials.js`, texts in `lessons.js`.** Step counts must match in the three languages, or the English text is used.
 - **Cache keys are hand-written:** `pyviel.js?v=...` in `index.html`. Bump them after a change.
 - **The version lives in `pyviel.js` (`VERSION`) and `package.json`;** the CI job compares them. The download names in `index.html` (`PYVIEL_APP`) and the README are a third place: they must match the release tag.
+- **Two engines.** The website runs Pyodide in a worker (`pyviel-worker.js`; `?nojspi` pretends to be a browser without stack switching, and the tests run the course in that mode too). The desktop app does not load Pyodide at all: `electron/python-host.js` starts the Python packed in `python/<os>-<arch>/` (fetched by `tools/fetch-python.js`, git-ignored) with `pyviel-host.py`, one process per run, JSON lines on private copies of stdin/stdout. `pyviel.js` picks the engine; `pyviel-runner.py` is shared. The app has the themes and the Command button (`.app-only`); the site shows the **Web** badge. `tools/check-version.js` keeps the version, the release address and the installer names in step.
 - **The desktop app** serves the files through the `pyviel://` scheme with the two isolation headers (`electron/main.js`); `electron tools/check-app.js` runs the page checks in the real app window.
 - **Never write `start`-style Kaviel words here.** Kaviel's language is not part of Pyviel.
 

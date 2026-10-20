@@ -74,7 +74,7 @@ code { font: .92em ui-monospace, "SF Mono", Menlo, monospace; background: var(--
 
 /* Top bar */
 .topbar { flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 10px 18px; background: var(--card); border-bottom: 2px solid var(--edge); }
-.brand-beta { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 6px; border-radius: 999px; background: var(--accent-soft, #e7f0e4); color: var(--accent-ink, #2f5b34); align-self: center; }
+.brand-beta { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 6px; border-radius: 999px; background: var(--accent-soft, #e7f0e4); color: var(--ink); align-self: center; }
 .engine { font-size: 11px; color: var(--muted, #7a7469); }
 .brand { display: flex; align-items: center; gap: 9px; color: var(--ink); font-size: 21px; font-weight: 800; text-decoration: none; margin-right: 6px; }
 .logo { width: 34px; height: 34px; stroke-width: 3; }
@@ -91,7 +91,8 @@ code { font: .92em ui-monospace, "SF Mono", Menlo, monospace; background: var(--
 /* Get the desktop app: the same editor, offline. */
 .download { box-shadow: inset 0 0 0 2px var(--accent); color: var(--accent); }
 .download:hover { background: var(--accent); color: #fff; }
-[data-desktop] #download { display: none !important; }
+[data-desktop] #download, [data-desktop] .brand-web { display: none !important; }
+.brand-web { align-self: center; margin-left: 4px; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 6px; border-radius: 999px; border: 1.5px solid var(--edge); color: var(--ink); }
 .run, .stop { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 20px; border: 2px solid var(--edge); border-radius: 12px; font-weight: 800; font-size: 17px; box-shadow: 0 3px 0 var(--edge); transition: transform .08s, box-shadow .08s; }
 .run svg, .stop svg { width: 16px; height: 16px; }
 .run { background: var(--go); color: var(--go-ink); }
@@ -368,3 +369,25 @@ dialog::backdrop { background: #2b242088; }
 .engine[data-state="loading"]::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--accent); animation: pulse 1s ease-in-out infinite alternate; }
 .engine[data-state="ready"]::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--go, #3f9b55); }
 @keyframes pulse { to { opacity: .25; } }
+
+/* Themes of the desktop app (the website only has light and dark) */
+:root[data-theme="midnight"] { color-scheme: dark; --bg:#0f1724; --card:#162033; --ink:#e6edf7; --muted:#9fb0c8; --line:#26354d; --edge:#4a5f82; --accent:#5aa9ff; --accent-soft:#16304f; --go:#3fb663; --go-ink:#07210f; --stop:#ef6a6a; --warn:#e9b350; --err:#ff8a85; --ok:#6fd18a; --screen:#0a101a; --active:#1c2a42; --tok-keyword:#ff8fb1; --tok-string:#8ed99f; --tok-number:#7cc4ff; --tok-comment:#7488a6; --tok-value:#c9a2f2; --tok-operator:#a5b4cc; }
+:root[data-theme="forest"] { color-scheme: dark; --bg:#14201a; --card:#1b2a22; --ink:#e8f2e6; --muted:#9fb8a6; --line:#2c4234; --edge:#547060; --accent:#8fd16a; --accent-soft:#23402a; --go:#3fb663; --go-ink:#0b2412; --stop:#ef6a6a; --warn:#e9b350; --err:#ff8a85; --ok:#8fe0a0; --screen:#0d1511; --active:#243a2d; --tok-keyword:#f2a6c4; --tok-string:#a6e39a; --tok-number:#8fd0f0; --tok-comment:#7f9a88; --tok-value:#d0b3f2; --tok-operator:#b0c4b4; }
+:root[data-theme="sunset"] { --bg:#fbeee8; --card:#fff8f4; --ink:#3a2330; --muted:#86667a; --line:#e6cbc4; --edge:#3a2330; --accent:#d6336c; --accent-soft:#fbd9e6; --go:#2f9e4f; --go-ink:#ffffff; --stop:#d23b3b; --warn:#a96a00; --err:#c52f2f; --ok:#26803f; --screen:#2e1d2b; --screen-ink:#fbeee8; --screen-muted:#b79aa9; --active:#f7dfe0; --tok-keyword:#c2255c; --tok-string:#2b7a3d; --tok-number:#1d5fb0; --tok-comment:#a08593; --tok-value:#7a3fb0; --tok-operator:#86667a; }
+:root[data-theme="contrast"] { --bg:#ffffff; --card:#ffffff; --ink:#000000; --muted:#333333; --line:#7a7a7a; --edge:#000000; --accent:#b8400a; --accent-soft:#ffe7d6; --go:#1b7a36; --go-ink:#ffffff; --stop:#b91c1c; --warn:#7a4a00; --err:#a01212; --ok:#14602b; --screen:#000000; --screen-ink:#ffffff; --screen-muted:#cfcfcf; --active:#fff1c2; --tok-keyword:#a3004a; --tok-string:#0b5d1e; --tok-number:#0a3d91; --tok-comment:#4d4d4d; --tok-value:#5b1f99; --tok-operator:#222222; }
+
+/* Only the desktop app has these */
+.app-only { display: none !important; }
+[data-desktop] .app-only { display: inline-flex !important; }
+.pop { position: fixed; z-index: 30; background: var(--card); color: var(--ink); border: 2px solid var(--edge); border-radius: 14px; box-shadow: 0 6px 0 var(--edge), 0 12px 30px #0004; padding: 8px; }
+.theme-menu { display: flex; flex-direction: column; min-width: 190px; }
+.theme-menu button { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 9px; font-weight: 700; text-align: left; }
+.theme-menu button:hover, .theme-menu button[aria-checked="true"] { background: var(--accent-soft); }
+.theme-menu button[aria-checked="true"]::after { content: "✓"; margin-left: auto; color: var(--accent); }
+.swatch { width: 26px; height: 26px; border-radius: 8px; border: 2px solid var(--edge); background: linear-gradient(135deg, var(--a) 55%, var(--b) 55%); flex-shrink: 0; }
+.command-pop { left: 50%; top: 80px; transform: translateX(-50%); width: min(560px, calc(100vw - 24px)); padding: 18px 20px; }
+.command-pop h3 { margin: 0 0 6px; font-size: 18px; }
+.command-pop p { margin: 8px 0 4px; }
+.command-pop pre { margin: 0; padding: 10px 12px; background: var(--screen); color: var(--screen-ink); border-radius: 10px; font: 14px/1.6 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; word-break: break-all; user-select: all; }
+.command-pop .pop-note { color: var(--muted); font-size: 13px; }
+.pop-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }

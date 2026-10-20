@@ -23,6 +23,19 @@
 
   // [English, Italiano, Français]
   var UI = [
+    ['Web', 'Web', 'Web'],
+    ['This is the website: it runs Python inside your browser. The desktop app runs Python on your computer.', 'Questo è il sito: esegue Python dentro il tuo browser. L\'app per computer esegue Python sul tuo computer.', 'Ceci est le site : il exécute Python dans ton navigateur. L\'application de bureau exécute Python sur ton ordinateur.'],
+    ['Choose a theme', 'Scegli un tema', 'Choisis un thème'],
+    ['Cream', 'Crema', 'Crème'], ['Night', 'Notte', 'Nuit'], ['Midnight', 'Mezzanotte', 'Minuit'], ['Forest', 'Foresta', 'Forêt'], ['Sunset', 'Tramonto', 'Coucher de soleil'], ['High contrast', 'Alto contrasto', 'Contraste élevé'],
+    ['Command', 'Comando', 'Commande'],
+    ['See the terminal command that runs this program', 'Vedi il comando del terminale che esegue questo programma', 'Voir la commande du terminal qui lance ce programme'],
+    ['Run it from a terminal', 'Eseguilo da un terminale', 'Lance-le depuis un terminal'],
+    ['Pyviel saved your program in this folder:', 'Pyviel ha salvato il tuo programma in questa cartella:', 'Pyviel a enregistré ton programme dans ce dossier :'],
+    ['Open a terminal and type:', 'Apri un terminale e scrivi:', 'Ouvre un terminal et tape :'],
+    ['Your programs run in this folder, so the files they create land there too.', 'I tuoi programmi girano in questa cartella, quindi anche i file che creano finiscono qui.', 'Tes programmes tournent dans ce dossier, donc les fichiers qu\'ils créent y arrivent aussi.'],
+    ['Copy', 'Copia', 'Copier'],
+    ['Copied. Paste it in a terminal.', 'Copiato. Incollalo in un terminale.', 'Copié. Colle-le dans un terminal.'],
+    ['The program could not be saved: ', 'Non sono riuscito a salvare il programma: ', 'Le programme n\'a pas pu être enregistré : '],
     ['Click to rename your file', 'Clicca per rinominare il file', 'Clique pour renommer le fichier'],
     ['File name', 'Nome del file', 'Nom du fichier'],
     ['edited', 'modificato', 'modifié'],

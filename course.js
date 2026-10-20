@@ -2525,9 +2525,9 @@ window.PyvielCourse = {
       "fr": "Un ensemble est un groupe de choses différentes, sans répétitions et sans ordre. Les accolades sans deux-points font un ensemble. Si tu mets la même chose deux fois, elle n'est gardée qu'une fois.\n\nset(...) construit un ensemble à partir d'une liste ou d'un texte, ce qui est la façon la plus rapide de retirer les répétitions."
      },
      "see": {
-      "en": "3\nTrue\n{1, 2, 3}\n{'h', 'o', 'l', 'e'}",
-      "it": "3\nTrue\n{1, 2, 3}\n{'h', 'o', 'l', 'e'}",
-      "fr": "3\nTrue\n{1, 2, 3}\n{'h', 'o', 'l', 'e'}"
+      "en": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}",
+      "it": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}",
+      "fr": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}"
      },
      "turn": {
       "en": "Count the different letters in \"mississippi\".",
@@ -4676,6 +4676,1725 @@ window.PyvielCourse = {
       "en": "Add type hints to a function of your own.",
       "it": "Aggiungi i suggerimenti di tipo a una tua funzione.",
       "fr": "Ajoute des indications de type à une fonction à toi."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": {
+    "en": "Stage 4 · Objects and beyond",
+    "it": "Livello 4 · Oggetti e oltre",
+    "fr": "Niveau 4 · Objets et au-delà"
+   },
+   "title": {
+    "en": "Your own kind of thing: classes",
+    "it": "Un tuo tipo di cosa: le classi",
+    "fr": "Ton propre genre de chose : les classes"
+   },
+   "subtitle": {
+    "en": "Objects with data and actions",
+    "it": "Oggetti con dati e azioni",
+    "fr": "Des objets avec des données et des actions"
+   },
+   "steps": [
+    {
+     "code": "class Dog:\n    pass\n\nrex = Dog()\nprint(type(rex))\nprint(rex)",
+     "title": {
+      "en": "A class is a blueprint",
+      "it": "Una classe è un progetto",
+      "fr": "Une classe est un plan"
+     },
+     "text": {
+      "en": "So far you used kinds of things that Python already has: text, list, dictionary. A class lets you invent your own kind. Think of it as a blueprint, and every thing built from it is an object.\n\nclass Dog: starts the blueprint (pass means \"nothing in it yet\"). Dog() builds one dog, and rex is the box that holds it.",
+      "it": "Finora hai usato tipi di cose che Python ha già: testo, lista, dizionario. Una classe ti permette di inventare un tuo tipo. Pensala come un progetto, e ogni cosa costruita da esso è un oggetto.\n\nclass Dog: comincia il progetto (pass vuol dire \"ancora niente dentro\"). Dog() costruisce un cane, e rex è la scatola che lo tiene.",
+      "fr": "Jusqu'ici tu as utilisé des genres de choses que Python a déjà : texte, liste, dictionnaire. Une classe te permet d'inventer ton propre genre. Pense-y comme à un plan, et chaque chose construite à partir de lui est un objet.\n\nclass Dog: commence le plan (pass veut dire « rien dedans pour l'instant »). Dog() construit un chien, et rex est la boîte qui le garde."
+     },
+     "see": {
+      "en": "<class '__main__.Dog'>\n<__main__.Dog object at 0x184c0b0>",
+      "it": "<class '__main__.Dog'>\n<__main__.Dog object at 0x184c0b0>",
+      "fr": "<class '__main__.Dog'>\n<__main__.Dog object at 0x184c0b0>"
+     },
+     "turn": {
+      "en": "Make two dogs and check that they are different objects.",
+      "it": "Crea due cani e controlla che siano oggetti diversi.",
+      "fr": "Crée deux chiens et vérifie que ce sont des objets différents."
+     },
+     "slip": {
+      "en": "Class names start with a capital letter: Dog, not dog. It is the style everybody follows.",
+      "it": "I nomi delle classi cominciano con la maiuscola: Dog, non dog. È lo stile che tutti seguono.",
+      "fr": "Les noms de classes commencent par une majuscule : Dog, pas dog. C'est le style que tout le monde suit."
+     }
+    },
+    {
+     "code": "class Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nrex = Dog(\"Rex\", 3)\nfido = Dog(\"Fido\", 5)\nprint(rex.name, rex.age)\nprint(fido.name)\nrex.age = 4\nprint(rex.age, fido.age)",
+     "title": {
+      "en": "Give it data: __init__",
+      "it": "Dargli dei dati: __init__",
+      "fr": "Lui donner des données : __init__"
+     },
+     "text": {
+      "en": "__init__ is a special method that runs by itself when an object is made. Its job is to set the object up. self means \"this very object\", and self.name = name keeps the value inside the object.\n\nEach object has its own copy of the data: changing rex does not change fido.",
+      "it": "__init__ è un metodo speciale che parte da solo quando si crea un oggetto. Il suo compito è prepararlo. self vuol dire \"questo preciso oggetto\", e self.name = name tiene il valore dentro l'oggetto.\n\nOgni oggetto ha una sua copia dei dati: cambiare rex non cambia fido.",
+      "fr": "__init__ est une méthode spéciale qui démarre toute seule quand un objet est créé. Son travail est de le préparer. self veut dire « cet objet précis », et self.name = name garde la valeur dans l'objet.\n\nChaque objet a sa propre copie des données : changer rex ne change pas fido."
+     },
+     "see": {
+      "en": "Rex 3\nFido\n4 5",
+      "it": "Rex 3\nFido\n4 5",
+      "fr": "Rex 3\nFido\n4 5"
+     },
+     "turn": {
+      "en": "Add a third dog with your own name and age.",
+      "it": "Aggiungi un terzo cane con il tuo nome e la tua età.",
+      "fr": "Ajoute un troisième chien avec ton nom et ton âge."
+     },
+     "slip": {
+      "en": "The two underscores come in pairs on each side: __init__, not _init_.",
+      "it": "I due trattini bassi vanno in coppia da ogni lato: __init__, non _init_.",
+      "fr": "Les deux tirets bas vont par paires de chaque côté : __init__, pas _init_."
+     }
+    },
+    {
+     "code": "class Dog:\n    def __init__(self, name):\n        self.name = name\n\n    def bark(self):\n        print(self.name, \"says Woof!\")\n\n    def rename(self, new_name):\n        self.name = new_name\n\nrex = Dog(\"Rex\")\nrex.bark()\nrex.rename(\"Max\")\nrex.bark()",
+     "title": {
+      "en": "Give it actions: methods",
+      "it": "Dargli delle azioni: i metodi",
+      "fr": "Lui donner des actions : les méthodes"
+     },
+     "text": {
+      "en": "A function inside a class is a method. The first parameter is always self, and Python fills it in for you: rex.bark() means Dog.bark(rex).\n\nMethods can read the data of the object with self.name and change it too.",
+      "it": "Una funzione dentro una classe è un metodo. Il primo parametro è sempre self, e Python lo riempie per te: rex.bark() vuol dire Dog.bark(rex).\n\nI metodi possono leggere i dati dell'oggetto con self.name e cambiarli anche.",
+      "fr": "Une fonction dans une classe est une méthode. Le premier paramètre est toujours self, et Python le remplit pour toi : rex.bark() veut dire Dog.bark(rex).\n\nLes méthodes peuvent lire les données de l'objet avec self.name et les changer aussi."
+     },
+     "see": {
+      "en": "Rex says Woof!\nMax says Woof!",
+      "it": "Rex says Woof!\nMax says Woof!",
+      "fr": "Rex says Woof!\nMax says Woof!"
+     },
+     "turn": {
+      "en": "Add a method birthday that makes the dog one year older.",
+      "it": "Aggiungi un metodo birthday che fa invecchiare il cane di un anno.",
+      "fr": "Ajoute une méthode birthday qui fait vieillir le chien d'un an."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Dog:\n    species = \"Canis familiaris\"\n    count = 0\n\n    def __init__(self, name):\n        self.name = name\n        Dog.count += 1\n\na = Dog(\"Rex\")\nb = Dog(\"Fido\")\nprint(a.species, b.species)\nprint(Dog.count)\nprint(a.count)",
+     "title": {
+      "en": "Data shared by all",
+      "it": "Dati condivisi da tutti",
+      "fr": "Des données partagées par tous"
+     },
+     "text": {
+      "en": "A name written in the class itself, outside the methods, belongs to the class and is shared by every object: species, and a counter that grows each time a dog is made.\n\nUse it for what is the same for everybody. What differs from object to object goes in self.",
+      "it": "Un nome scritto nella classe stessa, fuori dai metodi, appartiene alla classe ed è condiviso da ogni oggetto: species, e un contatore che cresce ogni volta che si crea un cane.\n\nUsalo per ciò che è uguale per tutti. Ciò che cambia da oggetto a oggetto va in self.",
+      "fr": "Un nom écrit dans la classe elle-même, hors des méthodes, appartient à la classe et est partagé par chaque objet : species, et un compteur qui grandit chaque fois qu'un chien est créé.\n\nUtilise-le pour ce qui est pareil pour tout le monde. Ce qui diffère d'un objet à l'autre va dans self."
+     },
+     "see": {
+      "en": "Canis familiaris Canis familiaris\n2\n2",
+      "it": "Canis familiaris Canis familiaris\n2\n2",
+      "fr": "Canis familiaris Canis familiaris\n2\n2"
+     },
+     "turn": {
+      "en": "Make a class Player with a shared count of players.",
+      "it": "Crea una classe Player con un conteggio condiviso dei giocatori.",
+      "fr": "Crée une classe Player avec un compte partagé des joueurs."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Counter:\n    def __init__(self):\n        self.value = 0\n\n    def add(self, amount=1):\n        self.value += amount\n        return self\n\nc = Counter()\nc.add().add().add(10)\nprint(c.value)\nprint(isinstance(c, Counter), isinstance(5, Counter))\nprint(c.__class__.__name__)\nprint(hasattr(c, \"value\"), hasattr(c, \"colour\"))",
+     "title": {
+      "en": "Ask about an object",
+      "it": "Fare domande a un oggetto",
+      "fr": "Poser des questions à un objet"
+     },
+     "text": {
+      "en": "A method that returns self lets you chain calls: c.add().add().add(10). isinstance(object, Class) asks if an object is of a kind. hasattr asks if it has a given name, and __class__.__name__ gives the name of its class.\n\nEverything in Python is an object: even numbers and texts are objects of classes.",
+      "it": "Un metodo che restituisce self permette di concatenare le chiamate: c.add().add().add(10). isinstance(oggetto, Classe) chiede se un oggetto è di un certo tipo. hasattr chiede se ha un dato nome, e __class__.__name__ dà il nome della sua classe.\n\nTutto in Python è un oggetto: perfino i numeri e i testi sono oggetti di classi.",
+      "fr": "Une méthode qui renvoie self permet d'enchaîner les appels : c.add().add().add(10). isinstance(objet, Classe) demande si un objet est d'un certain genre. hasattr demande s'il a un nom donné, et __class__.__name__ donne le nom de sa classe.\n\nTout en Python est un objet : même les nombres et les textes sont des objets de classes."
+     },
+     "see": {
+      "en": "12\nTrue False\nCounter\nTrue False",
+      "it": "12\nTrue False\nCounter\nTrue False",
+      "fr": "12\nTrue False\nCounter\nTrue False"
+     },
+     "turn": {
+      "en": "Check with isinstance that \"hi\" is a str.",
+      "it": "Controlla con isinstance che \"hi\" sia una str.",
+      "fr": "Vérifie avec isinstance que \"hi\" est une str."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Objects that work together",
+    "it": "Oggetti che lavorano insieme",
+    "fr": "Des objets qui travaillent ensemble"
+   },
+   "subtitle": {
+    "en": "A bank account, a game and a shop",
+    "it": "Un conto in banca, un gioco e un negozio",
+    "fr": "Un compte en banque, un jeu et un magasin"
+   },
+   "steps": [
+    {
+     "code": "class Account:\n    def __init__(self, owner, balance=0):\n        self.owner = owner\n        self.balance = balance\n\n    def deposit(self, amount):\n        self.balance += amount\n\n    def withdraw(self, amount):\n        if amount > self.balance:\n            print(\"Not enough money\")\n        else:\n            self.balance -= amount\n\nacc = Account(\"Ada\", 100)\nacc.deposit(50)\nacc.withdraw(30)\nacc.withdraw(500)\nprint(acc.owner, acc.balance)",
+     "title": {
+      "en": "A bank account",
+      "it": "Un conto in banca",
+      "fr": "Un compte en banque"
+     },
+     "text": {
+      "en": "A class is perfect when data and the actions on it belong together. The account keeps its balance, and the only ways to change it are the methods, which can check the rules: you cannot take out more than you have.\n\nThis idea, data and rules kept together, is the heart of object-oriented programming.",
+      "it": "Una classe è perfetta quando i dati e le azioni su di essi stanno insieme. Il conto tiene il suo saldo, e gli unici modi per cambiarlo sono i metodi, che possono controllare le regole: non puoi prelevare più di quello che hai.\n\nQuest'idea, dati e regole tenuti insieme, è il cuore della programmazione a oggetti.",
+      "fr": "Une classe est parfaite quand les données et les actions sur elles vont ensemble. Le compte garde son solde, et les seules façons de le changer sont les méthodes, qui peuvent vérifier les règles : tu ne peux pas retirer plus que ce que tu as.\n\nCette idée, des données et des règles gardées ensemble, est le cœur de la programmation orientée objet."
+     },
+     "see": {
+      "en": "Not enough money\nAda 120",
+      "it": "Not enough money\nAda 120",
+      "fr": "Not enough money\nAda 120"
+     },
+     "turn": {
+      "en": "Add a method show that prints the owner and the balance.",
+      "it": "Aggiungi un metodo show che stampa il proprietario e il saldo.",
+      "fr": "Ajoute une méthode show qui affiche le propriétaire et le solde."
+     },
+     "slip": null
+    },
+    {
+     "code": "class InsufficientFunds(Exception):\n    pass\n\nclass Account:\n    def __init__(self, balance=0):\n        self.balance = balance\n\n    def withdraw(self, amount):\n        if amount > self.balance:\n            raise InsufficientFunds(f\"only {self.balance} available\")\n        self.balance -= amount\n\nacc = Account(20)\ntry:\n    acc.withdraw(50)\nexcept InsufficientFunds as error:\n    print(\"Refused:\", error)\nacc.withdraw(5)\nprint(acc.balance)",
+     "title": {
+      "en": "Methods that raise errors",
+      "it": "Metodi che sollevano errori",
+      "fr": "Des méthodes qui lèvent des erreurs"
+     },
+     "text": {
+      "en": "Printing a message inside a method is not very useful, because the caller cannot react. It is better to raise an error that the caller can catch with try and except, and decide what to do.\n\nYour own error class, from the exceptions lesson, makes the meaning clear.",
+      "it": "Stampare un messaggio dentro un metodo non è molto utile, perché chi chiama non può reagire. È meglio sollevare un errore che chi chiama può prendere con try ed except, e decidere cosa fare.\n\nLa tua classe di errore, dalla lezione sulle eccezioni, rende chiaro il significato.",
+      "fr": "Afficher un message dans une méthode n'est pas très utile, parce que l'appelant ne peut pas réagir. Il vaut mieux lever une erreur que l'appelant peut attraper avec try et except, et décider quoi faire.\n\nTa propre classe d'erreur, de la leçon sur les exceptions, rend le sens clair."
+     },
+     "see": {
+      "en": "Refused: only 20 available\n15",
+      "it": "Refused: only 20 available\n15",
+      "fr": "Refused: only 20 available\n15"
+     },
+     "turn": {
+      "en": "Refuse a negative deposit with an error.",
+      "it": "Rifiuta un deposito negativo con un errore.",
+      "fr": "Refuse un dépôt négatif avec une erreur."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Item:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n\nclass Cart:\n    def __init__(self):\n        self.items = []\n\n    def add(self, item):\n        self.items.append(item)\n\n    def total(self):\n        return sum(item.price for item in self.items)\n\ncart = Cart()\ncart.add(Item(\"book\", 12))\ncart.add(Item(\"pen\", 3))\nprint(len(cart.items), cart.total())\nfor item in cart.items:\n    print(f\"- {item.name}: {item.price}\")",
+     "title": {
+      "en": "Objects holding objects",
+      "it": "Oggetti che contengono oggetti",
+      "fr": "Des objets qui contiennent des objets"
+     },
+     "text": {
+      "en": "An object can keep other objects: the cart holds a list of items. Each class does one clear job, and together they model a little shop.\n\nSplitting a problem into objects that each know their own job makes big programs easier to understand.",
+      "it": "Un oggetto può tenere altri oggetti: il carrello tiene una lista di articoli. Ogni classe fa un lavoro chiaro, e insieme modellano un piccolo negozio.\n\nDividere un problema in oggetti che conoscono ognuno il proprio lavoro rende i programmi grandi più facili da capire.",
+      "fr": "Un objet peut garder d'autres objets : le panier garde une liste d'articles. Chaque classe fait un travail clair, et ensemble elles modélisent un petit magasin.\n\nDécouper un problème en objets qui connaissent chacun leur propre travail rend les gros programmes plus faciles à comprendre."
+     },
+     "see": {
+      "en": "2 15\n- book: 12\n- pen: 3",
+      "it": "2 15\n- book: 12\n- pen: 3",
+      "fr": "2 15\n- book: 12\n- pen: 3"
+     },
+     "turn": {
+      "en": "Add a method that finds the most expensive item.",
+      "it": "Aggiungi un metodo che trova l'articolo più costoso.",
+      "fr": "Ajoute une méthode qui trouve l'article le plus cher."
+     },
+     "slip": null
+    },
+    {
+     "code": "import random\n\nclass Monster:\n    def __init__(self, name, health):\n        self.name = name\n        self.health = health\n\n    def hit(self, damage):\n        self.health = max(0, self.health - damage)\n\n    def alive(self):\n        return self.health > 0\n\nrandom.seed(5)\norc = Monster(\"Orc\", 12)\nturn = 0\nwhile orc.alive():\n    turn += 1\n    orc.hit(random.randint(2, 6))\n    print(f\"Turn {turn}: the {orc.name} has {orc.health} health\")\nprint(\"The orc is defeated!\")",
+     "title": {
+      "en": "A game with objects",
+      "it": "Un gioco con gli oggetti",
+      "fr": "Un jeu avec des objets"
+     },
+     "text": {
+      "en": "Games are made of objects: a monster knows its health, can be hit, and tells if it is alive. The loop only talks to the object, it does not care how health is stored.\n\nThe seed makes the fight the same every time. Remove it and every fight is different.",
+      "it": "I giochi sono fatti di oggetti: un mostro conosce la sua salute, può essere colpito, e dice se è vivo. Il ciclo parla solo con l'oggetto, non gli importa come è conservata la salute.\n\nIl seme rende il combattimento uguale ogni volta. Toglilo e ogni combattimento è diverso.",
+      "fr": "Les jeux sont faits d'objets : un monstre connaît sa santé, peut être frappé, et dit s'il est vivant. La boucle ne parle qu'à l'objet, elle ne se soucie pas de la façon dont la santé est gardée.\n\nLa graine rend le combat identique à chaque fois. Enlève-la et chaque combat est différent."
+     },
+     "see": {
+      "en": "Turn 1: the Orc has 6 health\nTurn 2: the Orc has 2 health\nTurn 3: the Orc has 0 health\nThe orc is defeated!",
+      "it": "Turn 1: the Orc has 6 health\nTurn 2: the Orc has 2 health\nTurn 3: the Orc has 0 health\nThe orc is defeated!",
+      "fr": "Turn 1: the Orc has 6 health\nTurn 2: the Orc has 2 health\nTurn 3: the Orc has 0 health\nThe orc is defeated!"
+     },
+     "turn": {
+      "en": "Add a Hero class and make the two fight.",
+      "it": "Aggiungi una classe Hero e falli combattere.",
+      "fr": "Ajoute une classe Hero et fais-les se battre."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Families of classes: inheritance",
+    "it": "Famiglie di classi: l'ereditarietà",
+    "fr": "Des familles de classes : l'héritage"
+   },
+   "subtitle": {
+    "en": "Reuse and specialise",
+    "it": "Riutilizzare e specializzare",
+    "fr": "Réutiliser et spécialiser"
+   },
+   "steps": [
+    {
+     "code": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow\"\n\nfor pet in [Dog(\"Rex\"), Cat(\"Tom\"), Animal(\"Thing\")]:\n    print(pet.name, \"says\", pet.speak())",
+     "title": {
+      "en": "A child class",
+      "it": "Una classe figlia",
+      "fr": "Une classe enfant"
+     },
+     "text": {
+      "en": "class Dog(Animal) means \"a Dog is an Animal\": it gets everything Animal has (here __init__ and name) and can add or change things. Writing speak again in Dog replaces the version of Animal: it is called overriding.\n\nThe loop calls pet.speak() without caring which kind of animal it is. Each object does its own version. This is called polymorphism, a long word for a simple idea.",
+      "it": "class Dog(Animal) vuol dire \"un Dog è un Animal\": riceve tutto quello che ha Animal (qui __init__ e name) e può aggiungere o cambiare cose. Scrivere di nuovo speak in Dog sostituisce la versione di Animal: si chiama sovrascrittura.\n\nIl ciclo chiama pet.speak() senza badare a che tipo di animale sia. Ogni oggetto fa la sua versione. Si chiama polimorfismo, una parola lunga per un'idea semplice.",
+      "fr": "class Dog(Animal) veut dire « un Dog est un Animal » : il reçoit tout ce qu'Animal a (ici __init__ et name) et peut ajouter ou changer des choses. Écrire à nouveau speak dans Dog remplace la version d'Animal : on appelle ça redéfinir.\n\nLa boucle appelle pet.speak() sans se soucier du genre d'animal. Chaque objet fait sa propre version. On appelle ça le polymorphisme, un mot long pour une idée simple."
+     },
+     "see": {
+      "en": "Rex says Woof\nTom says Meow\nThing says ...",
+      "it": "Rex says Woof\nTom says Meow\nThing says ...",
+      "fr": "Rex says Woof\nTom says Meow\nThing says ..."
+     },
+     "turn": {
+      "en": "Add a Cow class that says \"Moo\".",
+      "it": "Aggiungi una classe Cow che dice \"Moo\".",
+      "fr": "Ajoute une classe Cow qui dit « Moo »."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Animal:\n    def __init__(self, name, legs):\n        self.name = name\n        self.legs = legs\n\nclass Bird(Animal):\n    def __init__(self, name, can_fly=True):\n        super().__init__(name, 2)\n        self.can_fly = can_fly\n\n    def describe(self):\n        return f\"{self.name} has {self.legs} legs and {'can' if self.can_fly else 'cannot'} fly\"\n\nprint(Bird(\"Robin\").describe())\nprint(Bird(\"Penguin\", can_fly=False).describe())",
+     "title": {
+      "en": "Use the parent: super()",
+      "it": "Usare il genitore: super()",
+      "fr": "Utiliser le parent : super()"
+     },
+     "text": {
+      "en": "When the child needs its own __init__, call the parent's with super().__init__(...) so the parent can do its part of the setting up, and then add the new data.\n\nsuper() means \"the class I inherit from\".",
+      "it": "Quando la figlia ha bisogno del suo __init__, chiama quello del genitore con super().__init__(...) così il genitore può fare la sua parte di preparazione, e poi aggiungi i dati nuovi.\n\nsuper() vuol dire \"la classe da cui eredito\".",
+      "fr": "Quand l'enfant a besoin de son propre __init__, appelle celui du parent avec super().__init__(...) pour que le parent fasse sa part de préparation, puis ajoute les nouvelles données.\n\nsuper() veut dire « la classe dont j'hérite »."
+     },
+     "see": {
+      "en": "Robin has 2 legs and can fly\nPenguin has 2 legs and cannot fly",
+      "it": "Robin has 2 legs and can fly\nPenguin has 2 legs and cannot fly",
+      "fr": "Robin has 2 legs and can fly\nPenguin has 2 legs and cannot fly"
+     },
+     "turn": {
+      "en": "Add a Fish class that has 0 legs.",
+      "it": "Aggiungi una classe Fish che ha 0 zampe.",
+      "fr": "Ajoute une classe Fish qui a 0 pattes."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Shape:\n    def area(self):\n        raise NotImplementedError(\"each shape must say its area\")\n\nclass Square(Shape):\n    def __init__(self, side):\n        self.side = side\n    def area(self):\n        return self.side ** 2\n\nclass Circle(Shape):\n    def __init__(self, radius):\n        self.radius = radius\n    def area(self):\n        return 3.14159 * self.radius ** 2\n\nshapes = [Square(3), Circle(1), Square(2)]\nprint([round(s.area(), 2) for s in shapes])\nprint(sum(s.area() for s in shapes) > 10)\nprint(isinstance(shapes[0], Shape), issubclass(Circle, Shape))",
+     "title": {
+      "en": "A family of shapes",
+      "it": "Una famiglia di forme",
+      "fr": "Une famille de formes"
+     },
+     "text": {
+      "en": "The parent class Shape only says \"every shape must have an area\" and leaves the details to the children. Code that uses a list of shapes does not need to know which kind each is.\n\nisinstance and issubclass check the family: a Square is a Shape.",
+      "it": "La classe genitore Shape dice solo \"ogni forma deve avere un'area\" e lascia i dettagli alle figlie. Il codice che usa una lista di forme non ha bisogno di sapere di che tipo è ognuna.\n\nisinstance e issubclass controllano la famiglia: un Square è una Shape.",
+      "fr": "La classe parent Shape dit seulement « chaque forme doit avoir une aire » et laisse les détails aux enfants. Le code qui utilise une liste de formes n'a pas besoin de savoir de quel genre est chacune.\n\nisinstance et issubclass vérifient la famille : un Square est une Shape."
+     },
+     "see": {
+      "en": "[9, 3.14, 4]\nTrue\nTrue True",
+      "it": "[9, 3.14, 4]\nTrue\nTrue True",
+      "fr": "[9, 3.14, 4]\nTrue\nTrue True"
+     },
+     "turn": {
+      "en": "Add a Rectangle class.",
+      "it": "Aggiungi una classe Rectangle.",
+      "fr": "Ajoute une classe Rectangle."
+     },
+     "slip": null
+    },
+    {
+     "code": "from abc import ABC, abstractmethod\n\nclass Vehicle(ABC):\n    @abstractmethod\n    def wheels(self):\n        ...\n\nclass Bike(Vehicle):\n    def wheels(self):\n        return 2\n\nprint(Bike().wheels())\ntry:\n    Vehicle()\nexcept TypeError as error:\n    print(\"Cannot build a Vehicle:\", \"abstract\" in str(error))",
+     "title": {
+      "en": "A class that cannot be built",
+      "it": "Una classe che non si può costruire",
+      "fr": "Une classe qu'on ne peut pas construire"
+     },
+     "text": {
+      "en": "An abstract class is only a plan for others: it cannot be built on its own, and its abstract methods must be written by every child. Python protects you: building a Vehicle stops with a TypeError.\n\nUse it when you want to be sure that every member of a family has certain methods.",
+      "it": "Una classe astratta è solo un progetto per altre: non si può costruire da sola, e i suoi metodi astratti devono essere scritti da ogni figlia. Python ti protegge: costruire un Vehicle si ferma con un TypeError.\n\nUsala quando vuoi essere sicuro che ogni membro di una famiglia abbia certi metodi.",
+      "fr": "Une classe abstraite n'est qu'un plan pour d'autres : elle ne peut pas être construite seule, et ses méthodes abstraites doivent être écrites par chaque enfant. Python te protège : construire un Vehicle s'arrête avec une TypeError.\n\nUtilise-la quand tu veux être sûr que chaque membre d'une famille a certaines méthodes."
+     },
+     "see": {
+      "en": "2\nCannot build a Vehicle: True",
+      "it": "2\nCannot build a Vehicle: True",
+      "fr": "2\nCannot build a Vehicle: True"
+     },
+     "turn": {
+      "en": "Add a Car class with 4 wheels.",
+      "it": "Aggiungi una classe Car con 4 ruote.",
+      "fr": "Ajoute une classe Car avec 4 roues."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Engine:\n    def start(self):\n        return \"Vroom\"\n\nclass Car:\n    def __init__(self):\n        self.engine = Engine()\n\n    def start(self):\n        return \"The car says \" + self.engine.start()\n\nprint(Car().start())",
+     "title": {
+      "en": "Has-a, not is-a",
+      "it": "Ha-un, non è-un",
+      "fr": "A-un, pas est-un"
+     },
+     "text": {
+      "en": "Inheritance means \"is a\": a Dog is an Animal. But a Car is not an Engine, it has one. For \"has a\", simply keep an object inside another one, like the engine in the car.\n\nA good rule: prefer \"has a\". Use inheritance only when \"is a\" is really true.",
+      "it": "L'ereditarietà vuol dire \"è un\": un Dog è un Animal. Ma una Car non è un Engine, ne ha uno. Per \"ha un\", basta tenere un oggetto dentro un altro, come il motore nell'auto.\n\nUna buona regola: preferisci \"ha un\". Usa l'ereditarietà solo quando \"è un\" è davvero vero.",
+      "fr": "L'héritage veut dire « est un » : un Dog est un Animal. Mais une Car n'est pas un Engine, elle en a un. Pour « a un », il suffit de garder un objet dans un autre, comme le moteur dans la voiture.\n\nUne bonne règle : préfère « a un ». N'utilise l'héritage que quand « est un » est vraiment vrai."
+     },
+     "see": {
+      "en": "The car says Vroom",
+      "it": "The car says Vroom",
+      "fr": "The car says Vroom"
+     },
+     "turn": {
+      "en": "Give the car wheels, as a list of four objects.",
+      "it": "Dai all'auto delle ruote, come lista di quattro oggetti.",
+      "fr": "Donne des roues à la voiture, comme liste de quatre objets."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Make objects behave like Python things",
+    "it": "Far comportare gli oggetti come cose di Python",
+    "fr": "Faire se comporter les objets comme des choses de Python"
+   },
+   "subtitle": {
+    "en": "Special methods",
+    "it": "I metodi speciali",
+    "fr": "Les méthodes spéciales"
+   },
+   "steps": [
+    {
+     "code": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\np = Point(3, 4)\nprint(p)\nprint([p, Point(0, 0)])\nprint(str(p), repr(p))",
+     "title": {
+      "en": "Show an object nicely",
+      "it": "Mostrare bene un oggetto",
+      "fr": "Montrer joliment un objet"
+     },
+     "text": {
+      "en": "Printing a plain object shows something like <Point object at ...>, which says nothing. __str__ decides what print shows, and __repr__ decides what is shown inside lists and when programmers look closely.\n\nMethods with two underscores on both sides, called special methods, are how Python asks your object how it wants to behave.",
+      "it": "Stampare un oggetto semplice mostra qualcosa come <Point object at ...>, che non dice niente. __str__ decide cosa mostra print, e __repr__ decide cosa si vede dentro le liste e quando chi programma guarda da vicino.\n\nI metodi con due trattini bassi da entrambi i lati, chiamati metodi speciali, sono il modo in cui Python chiede al tuo oggetto come vuole comportarsi.",
+      "fr": "Afficher un objet simple montre quelque chose comme <Point object at ...>, qui ne dit rien. __str__ décide ce que print montre, et __repr__ décide ce qu'on voit dans les listes et quand les programmeurs regardent de près.\n\nLes méthodes avec deux tirets bas des deux côtés, appelées méthodes spéciales, sont la façon dont Python demande à ton objet comment il veut se comporter."
+     },
+     "see": {
+      "en": "(3, 4)\n[Point(3, 4), Point(0, 0)]\n(3, 4) Point(3, 4)",
+      "it": "(3, 4)\n[Point(3, 4), Point(0, 0)]\n(3, 4) Point(3, 4)",
+      "fr": "(3, 4)\n[Point(3, 4), Point(0, 0)]\n(3, 4) Point(3, 4)"
+     },
+     "turn": {
+      "en": "Add __str__ to a Dog class so print shows its name.",
+      "it": "Aggiungi __str__ a una classe Dog così print mostra il suo nome.",
+      "fr": "Ajoute __str__ à une classe Dog pour que print montre son nom."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __add__(self, other):\n        return Point(self.x + other.x, self.y + other.y)\n\n    def __eq__(self, other):\n        return self.x == other.x and self.y == other.y\n\n    def __mul__(self, number):\n        return Point(self.x * number, self.y * number)\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\na = Point(1, 2)\nb = Point(3, 4)\nprint(a + b)\nprint(a * 3)\nprint(a == Point(1, 2), a == b)",
+     "title": {
+      "en": "Use + and == with your objects",
+      "it": "Usare + e == con i tuoi oggetti",
+      "fr": "Utiliser + et == avec tes objets"
+     },
+     "text": {
+      "en": "__add__ tells Python what + does for your objects, __mul__ does the same for *, and __eq__ for ==. Without __eq__, two points with the same values would count as different objects.\n\nPython turns a + b into a.__add__(b).",
+      "it": "__add__ dice a Python cosa fa + per i tuoi oggetti, __mul__ fa lo stesso per *, e __eq__ per ==. Senza __eq__, due punti con gli stessi valori conterebbero come oggetti diversi.\n\nPython trasforma a + b in a.__add__(b).",
+      "fr": "__add__ dit à Python ce que fait + pour tes objets, __mul__ fait pareil pour *, et __eq__ pour ==. Sans __eq__, deux points avec les mêmes valeurs compteraient comme des objets différents.\n\nPython transforme a + b en a.__add__(b)."
+     },
+     "see": {
+      "en": "Point(4, 6)\nPoint(3, 6)\nTrue False",
+      "it": "Point(4, 6)\nPoint(3, 6)\nTrue False",
+      "fr": "Point(4, 6)\nPoint(3, 6)\nTrue False"
+     },
+     "turn": {
+      "en": "Add __sub__ to subtract two points.",
+      "it": "Aggiungi __sub__ per sottrarre due punti.",
+      "fr": "Ajoute __sub__ pour soustraire deux points."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Playlist:\n    def __init__(self, songs):\n        self.songs = list(songs)\n\n    def __len__(self):\n        return len(self.songs)\n\n    def __getitem__(self, index):\n        return self.songs[index]\n\n    def __contains__(self, song):\n        return song in self.songs\n\n    def __iter__(self):\n        return iter(self.songs)\n\np = Playlist([\"Intro\", \"Song A\", \"Song B\"])\nprint(len(p), p[1], \"Song A\" in p)\nfor s in p:\n    print(\"-\", s)\nprint(sorted(p, reverse=True))",
+     "title": {
+      "en": "Behave like a collection",
+      "it": "Comportarsi come una raccolta",
+      "fr": "Se comporter comme une collection"
+     },
+     "text": {
+      "en": "With __len__, __getitem__, __contains__ and __iter__ your object works with len(...), square brackets, in and for loops, even sorted(...): it feels like a built-in collection.\n\nYou do not need all of them, only the ones that make sense for your object.",
+      "it": "Con __len__, __getitem__, __contains__ e __iter__ il tuo oggetto funziona con len(...), le parentesi quadre, in e i cicli for, perfino sorted(...): sembra una raccolta di Python.\n\nNon servono tutti, solo quelli che hanno senso per il tuo oggetto.",
+      "fr": "Avec __len__, __getitem__, __contains__ et __iter__ ton objet marche avec len(...), les crochets, in et les boucles for, même sorted(...) : on dirait une collection native.\n\nTu n'as pas besoin de tous, seulement de ceux qui ont du sens pour ton objet."
+     },
+     "see": {
+      "en": "3 Song A True\n- Intro\n- Song A\n- Song B\n['Song B', 'Song A', 'Intro']",
+      "it": "3 Song A True\n- Intro\n- Song A\n- Song B\n['Song B', 'Song A', 'Intro']",
+      "fr": "3 Song A True\n- Intro\n- Song A\n- Song B\n['Song B', 'Song A', 'Intro']"
+     },
+     "turn": {
+      "en": "Make a Deck of cards class that has len and a loop.",
+      "it": "Fai una classe Deck di carte che abbia len e un ciclo.",
+      "fr": "Fais une classe Deck de cartes qui a len et une boucle."
+     },
+     "slip": null
+    },
+    {
+     "code": "from functools import total_ordering\n\n@total_ordering\nclass Version:\n    def __init__(self, text):\n        self.parts = tuple(int(n) for n in text.split(\".\"))\n\n    def __eq__(self, other):\n        return self.parts == other.parts\n\n    def __lt__(self, other):\n        return self.parts < other.parts\n\n    def __repr__(self):\n        return \"Version(\" + \".\".join(map(str, self.parts)) + \")\"\n\nversions = [Version(\"1.10\"), Version(\"1.2\"), Version(\"2.0\")]\nprint(sorted(versions))\nprint(max(versions))\nprint(Version(\"1.2\") <= Version(\"1.10\"))",
+     "title": {
+      "en": "Compare and sort objects",
+      "it": "Confrontare e ordinare oggetti",
+      "fr": "Comparer et trier des objets"
+     },
+     "text": {
+      "en": "__lt__ says what \"smaller than\" means for your objects. Once you have it, sorted and max work on them. The decorator total_ordering fills in <=, > and >= by itself from __eq__ and __lt__.\n\nVersions are a good example: \"1.10\" is bigger than \"1.2\", which a plain text comparison gets wrong.",
+      "it": "__lt__ dice cosa vuol dire \"minore di\" per i tuoi oggetti. Una volta che ce l'hai, sorted e max funzionano su di essi. Il decoratore total_ordering riempie da solo <=, > e >= a partire da __eq__ e __lt__.\n\nLe versioni sono un buon esempio: \"1.10\" è più grande di \"1.2\", cosa che un confronto tra testi sbaglia.",
+      "fr": "__lt__ dit ce que veut dire « plus petit que » pour tes objets. Une fois que tu l'as, sorted et max marchent sur eux. Le décorateur total_ordering remplit tout seul <=, > et >= à partir de __eq__ et __lt__.\n\nLes versions sont un bon exemple : « 1.10 » est plus grand que « 1.2 », ce qu'une comparaison de textes se trompe."
+     },
+     "see": {
+      "en": "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue",
+      "it": "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue",
+      "fr": "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue"
+     },
+     "turn": {
+      "en": "Make a class Card that can be sorted by its number.",
+      "it": "Fai una classe Card che si può ordinare per numero.",
+      "fr": "Fais une classe Card qui peut être triée par son numéro."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Greeter:\n    def __init__(self, greeting):\n        self.greeting = greeting\n\n    def __call__(self, name):\n        return f\"{self.greeting}, {name}!\"\n\nhello = Greeter(\"Hello\")\nprint(hello(\"Ada\"))\nprint(callable(hello))\n\nclass Temperature:\n    def __init__(self, degrees):\n        self.degrees = degrees\n    def __bool__(self):\n        return self.degrees > 0\n    def __hash__(self):\n        return hash(self.degrees)\n    def __eq__(self, other):\n        return self.degrees == other.degrees\n\nprint(bool(Temperature(5)), bool(Temperature(-1)))\nprint(len({Temperature(3), Temperature(3), Temperature(4)}))",
+     "title": {
+      "en": "Even more special methods",
+      "it": "Ancora più metodi speciali",
+      "fr": "Encore plus de méthodes spéciales"
+     },
+     "text": {
+      "en": "__call__ lets an object be used like a function. __bool__ says when the object counts as True. __hash__ together with __eq__ lets objects be kept in a set or used as dictionary keys.\n\nThere are dozens of special methods. You can always look them up when you need one.",
+      "it": "__call__ permette di usare un oggetto come una funzione. __bool__ dice quando l'oggetto conta come True. __hash__ insieme a __eq__ permette di tenere gli oggetti in un insieme o usarli come chiavi di dizionario.\n\nCi sono decine di metodi speciali. Puoi sempre cercarli quando te ne serve uno.",
+      "fr": "__call__ permet d'utiliser un objet comme une fonction. __bool__ dit quand l'objet compte comme True. __hash__ avec __eq__ permet de garder les objets dans un ensemble ou de les utiliser comme clés de dictionnaire.\n\nIl y a des dizaines de méthodes spéciales. Tu peux toujours les chercher quand tu en as besoin."
+     },
+     "see": {
+      "en": "Hello, Ada!\nTrue\nTrue False\n2",
+      "it": "Hello, Ada!\nTrue\nTrue False\n2",
+      "fr": "Hello, Ada!\nTrue\nTrue False\n2"
+     },
+     "turn": {
+      "en": "Make a class whose objects can be called to add a fixed number.",
+      "it": "Fai una classe i cui oggetti si possono chiamare per aggiungere un numero fisso.",
+      "fr": "Fais une classe dont les objets peuvent être appelés pour ajouter un nombre fixe."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Guarding data",
+    "it": "Proteggere i dati",
+    "fr": "Protéger les données"
+   },
+   "subtitle": {
+    "en": "Properties, class methods and static methods",
+    "it": "Property, metodi di classe e metodi statici",
+    "fr": "Propriétés, méthodes de classe et méthodes statiques"
+   },
+   "steps": [
+    {
+     "code": "class Circle:\n    def __init__(self, radius):\n        self.radius = radius\n\n    @property\n    def diameter(self):\n        return self.radius * 2\n\n    @property\n    def area(self):\n        return round(3.14159 * self.radius ** 2, 2)\n\nc = Circle(5)\nprint(c.diameter, c.area)\nc.radius = 10\nprint(c.diameter, c.area)",
+     "title": {
+      "en": "A value worked out when asked: @property",
+      "it": "Un valore calcolato quando lo chiedi: @property",
+      "fr": "Une valeur calculée quand on la demande : @property"
+     },
+     "text": {
+      "en": "@property turns a method into something that looks like a plain value: you write c.diameter, without brackets, and Python runs the method.\n\nIt is perfect for values that depend on others: when the radius changes, the diameter and the area are always right.",
+      "it": "@property trasforma un metodo in qualcosa che sembra un semplice valore: scrivi c.diameter, senza parentesi, e Python fa girare il metodo.\n\nÈ perfetto per valori che dipendono da altri: quando il raggio cambia, il diametro e l'area sono sempre giusti.",
+      "fr": "@property transforme une méthode en quelque chose qui ressemble à une simple valeur : tu écris c.diameter, sans parenthèses, et Python lance la méthode.\n\nC'est parfait pour les valeurs qui dépendent d'autres : quand le rayon change, le diamètre et l'aire sont toujours justes."
+     },
+     "see": {
+      "en": "10 78.54\n20 314.16",
+      "it": "10 78.54\n20 314.16",
+      "fr": "10 78.54\n20 314.16"
+     },
+     "turn": {
+      "en": "Add a property circumference.",
+      "it": "Aggiungi una property circumference.",
+      "fr": "Ajoute une propriété circumference."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Person:\n    def __init__(self, age):\n        self.age = age\n\n    @property\n    def age(self):\n        return self._age\n\n    @age.setter\n    def age(self, value):\n        if value < 0:\n            raise ValueError(\"age cannot be negative\")\n        self._age = value\n\np = Person(12)\np.age = 13\nprint(p.age)\ntry:\n    p.age = -5\nexcept ValueError as error:\n    print(\"Refused:\", error)\nprint(p.age)",
+     "title": {
+      "en": "A guard at the door: setters",
+      "it": "Una guardia alla porta: i setter",
+      "fr": "Un garde à la porte : les setters"
+     },
+     "text": {
+      "en": "A property can also have a setter, run when someone gives it a value. It checks the value before keeping it. The real value is stored under a name with an underscore, _age, which by custom means \"private, please do not touch\".\n\nThe people using your class just write p.age = 13 and never know that a check is happening.",
+      "it": "Una property può avere anche un setter, che parte quando qualcuno le dà un valore. Controlla il valore prima di tenerlo. Il valore vero è conservato con un nome che ha il trattino basso, _age, che per consuetudine vuol dire \"privato, per favore non toccare\".\n\nChi usa la tua classe scrive solo p.age = 13 e non sa mai che c'è un controllo.",
+      "fr": "Une propriété peut aussi avoir un setter, lancé quand quelqu'un lui donne une valeur. Il vérifie la valeur avant de la garder. La vraie valeur est rangée sous un nom avec un tiret bas, _age, qui par convention veut dire « privé, s'il te plaît ne touche pas ».\n\nLes gens qui utilisent ta classe écrivent juste p.age = 13 et ne savent jamais qu'une vérification a lieu."
+     },
+     "see": {
+      "en": "13\nRefused: age cannot be negative\n13",
+      "it": "13\nRefused: age cannot be negative\n13",
+      "fr": "13\nRefused: age cannot be negative\n13"
+     },
+     "turn": {
+      "en": "Make a Product class where the price cannot be negative.",
+      "it": "Fai una classe Product in cui il prezzo non può essere negativo.",
+      "fr": "Fais une classe Product où le prix ne peut pas être négatif."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Date:\n    def __init__(self, year, month, day):\n        self.year, self.month, self.day = year, month, day\n\n    @classmethod\n    def from_text(cls, text):\n        year, month, day = text.split(\"-\")\n        return cls(int(year), int(month), int(day))\n\n    @staticmethod\n    def is_leap(year):\n        return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)\n\nd = Date.from_text(\"2026-10-20\")\nprint(d.year, d.month, d.day)\nprint(Date.is_leap(2024), Date.is_leap(2100))",
+     "title": {
+      "en": "Methods of the class itself",
+      "it": "Metodi della classe stessa",
+      "fr": "Méthodes de la classe elle-même"
+     },
+     "text": {
+      "en": "@classmethod gets the class (cls) instead of an object, which makes it a good second way to build objects: Date.from_text(\"2026-10-20\"). @staticmethod gets nothing special: it is just a function that lives in the class because it belongs to the subject.\n\nBoth are called on the class itself, without making an object first.",
+      "it": "@classmethod riceve la classe (cls) invece di un oggetto, il che la rende un buon secondo modo di costruire oggetti: Date.from_text(\"2026-10-20\"). @staticmethod non riceve niente di speciale: è solo una funzione che vive nella classe perché appartiene all'argomento.\n\nEntrambi si chiamano sulla classe stessa, senza costruire prima un oggetto.",
+      "fr": "@classmethod reçoit la classe (cls) au lieu d'un objet, ce qui en fait une bonne deuxième façon de construire des objets : Date.from_text(\"2026-10-20\"). @staticmethod ne reçoit rien de spécial : c'est juste une fonction qui vit dans la classe parce qu'elle appartient au sujet.\n\nLes deux s'appellent sur la classe elle-même, sans construire d'objet d'abord."
+     },
+     "see": {
+      "en": "2026 10 20\nTrue False",
+      "it": "2026 10 20\nTrue False",
+      "fr": "2026 10 20\nTrue False"
+     },
+     "turn": {
+      "en": "Add a class method that builds a Date for today's default: 2026-01-01.",
+      "it": "Aggiungi un metodo di classe che costruisce una Date predefinita: 2026-01-01.",
+      "fr": "Ajoute une méthode de classe qui construit une Date par défaut : 2026-01-01."
+     },
+     "slip": null
+    },
+    {
+     "code": "class Safe:\n    def __init__(self):\n        self.public = \"anyone can see\"\n        self._careful = \"please do not touch\"\n        self.__secret = \"hidden\"\n\ns = Safe()\nprint(s.public)\nprint(s._careful)\nprint([n for n in dir(s) if \"secret\" in n])\ntry:\n    print(s.__secret)\nexcept AttributeError:\n    print(\"no direct access to __secret\")",
+     "title": {
+      "en": "What \"private\" means in Python",
+      "it": "Cosa vuol dire \"privato\" in Python",
+      "fr": "Ce que « privé » veut dire en Python"
+     },
+     "text": {
+      "en": "Python trusts people. One underscore, _careful, is a polite note: \"this is for the class itself\". Two underscores, __secret, make Python rename it to _Safe__secret to avoid accidents, but it is still reachable.\n\nNothing is truly locked. Good programmers follow the notes.",
+      "it": "Python si fida delle persone. Un trattino basso, _careful, è una nota gentile: \"questo è per la classe stessa\". Due trattini bassi, __secret, fanno rinominare a Python il nome in _Safe__secret per evitare incidenti, ma resta raggiungibile.\n\nNiente è davvero chiuso a chiave. Chi programma bene segue le note.",
+      "fr": "Python fait confiance aux gens. Un tiret bas, _careful, est une note polie : « ceci est pour la classe elle-même ». Deux tirets bas, __secret, font renommer le nom par Python en _Safe__secret pour éviter les accidents, mais il reste accessible.\n\nRien n'est vraiment verrouillé. Les bons programmeurs suivent les notes."
+     },
+     "see": {
+      "en": "anyone can see\nplease do not touch\n['_Safe__secret']\nno direct access to __secret",
+      "it": "anyone can see\nplease do not touch\n['_Safe__secret']\nno direct access to __secret",
+      "fr": "anyone can see\nplease do not touch\n['_Safe__secret']\nno direct access to __secret"
+     },
+     "turn": {
+      "en": "Find the real name of __secret with dir and use it.",
+      "it": "Trova il vero nome di __secret con dir e usalo.",
+      "fr": "Trouve le vrai nom de __secret avec dir et utilise-le."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Less typing: dataclasses and enums",
+    "it": "Meno da scrivere: dataclass ed enum",
+    "fr": "Moins à écrire : dataclasses et enums"
+   },
+   "subtitle": {
+    "en": "Classes for plain data, and a list of choices",
+    "it": "Classi per dati semplici, e una lista di scelte",
+    "fr": "Des classes pour des données simples, et une liste de choix"
+   },
+   "steps": [
+    {
+     "code": "from dataclasses import dataclass\n\n@dataclass\nclass Book:\n    title: str\n    pages: int\n    read: bool = False\n\nb = Book(\"Dune\", 600)\nprint(b)\nprint(b.title, b.pages, b.read)\nprint(b == Book(\"Dune\", 600))",
+     "title": {
+      "en": "A class in four lines",
+      "it": "Una classe in quattro righe",
+      "fr": "Une classe en quatre lignes"
+     },
+     "text": {
+      "en": "A class that only keeps data needs a lot of boring code: __init__, __repr__, __eq__. The decorator @dataclass writes them for you, from the list of names with their types. A value after = is a default.\n\nCompare it with the Point class that you wrote by hand.",
+      "it": "Una classe che tiene solo dati richiede molto codice noioso: __init__, __repr__, __eq__. Il decoratore @dataclass li scrive per te, a partire dalla lista di nomi con i loro tipi. Un valore dopo = è un predefinito.\n\nConfrontala con la classe Point che hai scritto a mano.",
+      "fr": "Une classe qui ne garde que des données demande beaucoup de code ennuyeux : __init__, __repr__, __eq__. Le décorateur @dataclass les écrit pour toi, à partir de la liste de noms avec leurs types. Une valeur après = est une valeur par défaut.\n\nCompare-la avec la classe Point que tu as écrite à la main."
+     },
+     "see": {
+      "en": "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+      "it": "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+      "fr": "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue"
+     },
+     "turn": {
+      "en": "Make a dataclass Pet with a name, a species and an age.",
+      "it": "Fai una dataclass Pet con nome, specie ed età.",
+      "fr": "Fais une dataclass Pet avec un nom, une espèce et un âge."
+     },
+     "slip": null
+    },
+    {
+     "code": "from dataclasses import dataclass, field, replace\n\n@dataclass(order=True, frozen=True)\nclass Score:\n    points: int\n    player: str = \"?\"\n\na = Score(10, \"Ada\")\nb = Score(7, \"Max\")\nprint(a > b, sorted([a, b]))\nprint(replace(a, points=99))\ntry:\n    a.points = 0\nexcept Exception as error:\n    print(type(error).__name__)\n\n@dataclass\nclass Team:\n    members: list = field(default_factory=list)\n\nt = Team()\nt.members.append(\"Ada\")\nprint(t, Team())",
+     "title": {
+      "en": "Order, freeze and defaults",
+      "it": "Ordinare, congelare e predefiniti",
+      "fr": "Ordonner, geler et valeurs par défaut"
+     },
+     "text": {
+      "en": "order=True makes the objects sortable, and frozen=True makes them impossible to change, like a tuple. replace(obj, name=value) builds a copy with one change.\n\nFor a default that is a list, write field(default_factory=list): a plain [] would be shared by every object.",
+      "it": "order=True rende gli oggetti ordinabili, e frozen=True li rende impossibili da cambiare, come una tupla. replace(obj, nome=valore) costruisce una copia con un cambiamento.\n\nPer un predefinito che è una lista, scrivi field(default_factory=list): un semplice [] sarebbe condiviso da ogni oggetto.",
+      "fr": "order=True rend les objets triables, et frozen=True les rend impossibles à changer, comme un tuple. replace(obj, nom=valeur) construit une copie avec un changement.\n\nPour une valeur par défaut qui est une liste, écris field(default_factory=list) : un simple [] serait partagé par tous les objets."
+     },
+     "see": {
+      "en": "True [Score(points=7, player='Max'), Score(points=10, player='Ada')]\nScore(points=99, player='Ada')\nFrozenInstanceError\nTeam(members=['Ada']) Team(members=[])",
+      "it": "True [Score(points=7, player='Max'), Score(points=10, player='Ada')]\nScore(points=99, player='Ada')\nFrozenInstanceError\nTeam(members=['Ada']) Team(members=[])",
+      "fr": "True [Score(points=7, player='Max'), Score(points=10, player='Ada')]\nScore(points=99, player='Ada')\nFrozenInstanceError\nTeam(members=['Ada']) Team(members=[])"
+     },
+     "turn": {
+      "en": "Sort three scores and print the best one.",
+      "it": "Ordina tre punteggi e stampa il migliore.",
+      "fr": "Trie trois scores et affiche le meilleur."
+     },
+     "slip": null
+    },
+    {
+     "code": "from enum import Enum\n\nclass Colour(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3\n\nprint(Colour.RED)\nprint(Colour.RED.name, Colour.RED.value)\nprint(Colour(2))\nprint(Colour[\"BLUE\"])\nfor c in Colour:\n    print(c.name, c.value)\nprint(Colour.RED == Colour.RED, Colour.RED is Colour.GREEN)",
+     "title": {
+      "en": "A fixed list of choices: Enum",
+      "it": "Una lista fissa di scelte: Enum",
+      "fr": "Une liste fixe de choix : Enum"
+     },
+     "text": {
+      "en": "An Enum is a short list of named choices. Instead of using the numbers 1, 2, 3 or the texts \"red\", \"green\" that are easy to mistype, you use Colour.RED. Each has a name and a value, and you can walk through them.\n\nTypos become errors at once instead of hiding in your program.",
+      "it": "Un Enum è una breve lista di scelte con nome. Invece di usare i numeri 1, 2, 3 o i testi \"red\", \"green\" facili da sbagliare, usi Colour.RED. Ognuna ha un nome e un valore, e le puoi scorrere.\n\nGli errori di battitura diventano errori subito invece di nascondersi nel tuo programma.",
+      "fr": "Un Enum est une courte liste de choix nommés. Au lieu d'utiliser les nombres 1, 2, 3 ou les textes « red », « green » faciles à mal écrire, tu utilises Colour.RED. Chacun a un nom et une valeur, et tu peux les parcourir.\n\nLes fautes de frappe deviennent des erreurs tout de suite au lieu de se cacher dans ton programme."
+     },
+     "see": {
+      "en": "Colour.RED\nRED 1\nColour.GREEN\nColour.BLUE\nRED 1\nGREEN 2\nBLUE 3\nTrue False",
+      "it": "Colour.RED\nRED 1\nColour.GREEN\nColour.BLUE\nRED 1\nGREEN 2\nBLUE 3\nTrue False",
+      "fr": "Colour.RED\nRED 1\nColour.GREEN\nColour.BLUE\nRED 1\nGREEN 2\nBLUE 3\nTrue False"
+     },
+     "turn": {
+      "en": "Make an enum Direction with NORTH, SOUTH, EAST and WEST.",
+      "it": "Fai un enum Direction con NORTH, SOUTH, EAST e WEST.",
+      "fr": "Fais un enum Direction avec NORTH, SOUTH, EAST et WEST."
+     },
+     "slip": null
+    },
+    {
+     "code": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n\nclass Task:\n    def __init__(self):\n        self.state = State.IDLE\n\n    def advance(self):\n        if self.state is State.IDLE:\n            self.state = State.RUNNING\n        elif self.state is State.RUNNING:\n            self.state = State.DONE\n\nt = Task()\nfor _ in range(3):\n    print(t.state.name)\n    t.advance()\nprint(t.state)",
+     "title": {
+      "en": "Enums in a program",
+      "it": "Gli enum in un programma",
+      "fr": "Les enums dans un programme"
+     },
+     "text": {
+      "en": "auto() gives each name a number so you do not have to. An enum is the right tool for a state: a task is idle, running or done, nothing else.\n\nCompare enum members with is, because each one exists only once.",
+      "it": "auto() dà a ogni nome un numero così non devi farlo tu. Un enum è lo strumento giusto per uno stato: un compito è fermo, in corso o finito, nient'altro.\n\nConfronta i membri dell'enum con is, perché ognuno esiste una volta sola.",
+      "fr": "auto() donne un numéro à chaque nom pour que tu n'aies pas à le faire. Un enum est le bon outil pour un état : une tâche est au repos, en cours ou finie, rien d'autre.\n\nCompare les membres d'un enum avec is, parce que chacun n'existe qu'une seule fois."
+     },
+     "see": {
+      "en": "IDLE\nRUNNING\nDONE\nState.DONE",
+      "it": "IDLE\nRUNNING\nDONE\nState.DONE",
+      "fr": "IDLE\nRUNNING\nDONE\nState.DONE"
+     },
+     "turn": {
+      "en": "Add a CANCELLED state and a method cancel.",
+      "it": "Aggiungi uno stato CANCELLED e un metodo cancel.",
+      "fr": "Ajoute un état CANCELLED et une méthode cancel."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Produce one at a time: generators",
+    "it": "Produrre uno alla volta: i generatori",
+    "fr": "Produire un à la fois : les générateurs"
+   },
+   "subtitle": {
+    "en": "Iterators and yield",
+    "it": "Iteratori e yield",
+    "fr": "Itérateurs et yield"
+   },
+   "steps": [
+    {
+     "code": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, \"nothing left\"))\nprint(next(items))",
+     "title": {
+      "en": "What a for loop really does",
+      "it": "Cosa fa davvero un ciclo for",
+      "fr": "Ce que fait vraiment une boucle for"
+     },
+     "text": {
+      "en": "A for loop asks for items one at a time. iter(list) makes the tool that hands out items, and next(...) takes the next one. When there are none left Python raises a StopIteration, which the for loop catches and quietly stops.\n\nHere you do the loop by hand. The last line shows the error. next(items, \"nothing left\") gives a default instead.",
+      "it": "Un ciclo for chiede gli elementi uno alla volta. iter(lista) crea lo strumento che consegna gli elementi, e next(...) prende il successivo. Quando non ce ne sono più Python solleva uno StopIteration, che il ciclo for prende e si ferma in silenzio.\n\nQui fai il ciclo a mano. L'ultima riga mostra l'errore. next(items, \"nothing left\") dà invece un predefinito.",
+      "fr": "Une boucle for demande les éléments un par un. iter(liste) fabrique l'outil qui distribue les éléments, et next(...) prend le suivant. Quand il n'y en a plus Python lève une StopIteration, que la boucle for attrape et s'arrête tranquillement.\n\nIci tu fais la boucle à la main. La dernière ligne montre l'erreur. next(items, \"nothing left\") donne à la place une valeur par défaut."
+     },
+     "see": {
+      "en": "a\nb\nc\nnothing left\n⚠ Line 6: There are no more items to take.",
+      "it": "a\nb\nc\nnothing left\n⚠ Riga 6: Non ci sono più elementi da prendere.",
+      "fr": "a\nb\nc\nnothing left\n⚠ Ligne 6: Il n'y a plus d'éléments à prendre."
+     },
+     "turn": {
+      "en": "Remove the last line and walk through your own list by hand.",
+      "it": "Togli l'ultima riga e scorri a mano una tua lista.",
+      "fr": "Enlève la dernière ligne et parcours à la main une liste à toi."
+     },
+     "slip": null,
+     "error": "StopIteration"
+    },
+    {
+     "code": "def count_up(limit):\n    n = 1\n    while n <= limit:\n        yield n\n        n += 1\n\ngen = count_up(3)\nprint(gen)\nprint(next(gen), next(gen))\nfor n in count_up(4):\n    print(n)\nprint(list(count_up(5)))",
+     "title": {
+      "en": "A function that pauses: yield",
+      "it": "Una funzione che si ferma: yield",
+      "fr": "Une fonction qui fait une pause : yield"
+     },
+     "text": {
+      "en": "A function with yield inside is a generator. Calling it does not run it: it gives back a generator. Each next(...) runs it until the next yield, hands out that value, and pauses there, remembering where it was.\n\nIt produces values one at a time, only when they are asked for.",
+      "it": "Una funzione con yield dentro è un generatore. Chiamarla non la fa girare: restituisce un generatore. Ogni next(...) la fa girare fino al prossimo yield, consegna quel valore, e si ferma lì, ricordando dov'era.\n\nProduce i valori uno alla volta, solo quando vengono chiesti.",
+      "fr": "Une fonction avec yield dedans est un générateur. L'appeler ne la fait pas tourner : elle rend un générateur. Chaque next(...) la fait tourner jusqu'au prochain yield, distribue cette valeur, et fait une pause là, en se souvenant d'où elle en était.\n\nElle produit les valeurs une à la fois, seulement quand on les demande."
+     },
+     "see": {
+      "en": "<generator object count_up at 0x174f6c0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "it": "<generator object count_up at 0x174f6c0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "fr": "<generator object count_up at 0x174f6c0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
+     },
+     "turn": {
+      "en": "Write a generator that gives the even numbers up to a limit.",
+      "it": "Scrivi un generatore che dà i numeri pari fino a un limite.",
+      "fr": "Écris un générateur qui donne les nombres pairs jusqu'à une limite."
+     },
+     "slip": null
+    },
+    {
+     "code": "def naturals():\n    n = 0\n    while True:\n        yield n\n        n += 1\n\ndef first(count, source):\n    for _ in range(count):\n        yield next(source)\n\nprint(list(first(5, naturals())))\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nprint(list(first(10, fib())))",
+     "title": {
+      "en": "A list that never ends",
+      "it": "Una lista che non finisce mai",
+      "fr": "Une liste qui ne finit jamais"
+     },
+     "text": {
+      "en": "A generator can be infinite, because it only makes a value when asked. naturals gives 0, 1, 2, 3... forever, and first takes just as many as you want. The fast Fibonacci in a few lines.\n\nA list of all natural numbers would never fit in memory, but a generator is fine.",
+      "it": "Un generatore può essere infinito, perché fa un valore solo quando richiesto. naturals dà 0, 1, 2, 3... per sempre, e first ne prende solo quanti ne vuoi. Il Fibonacci veloce in poche righe.\n\nUna lista di tutti i numeri naturali non starebbe mai in memoria, ma un generatore va benissimo.",
+      "fr": "Un générateur peut être infini, parce qu'il ne fait une valeur que quand on la demande. naturals donne 0, 1, 2, 3... pour toujours, et first n'en prend que le nombre que tu veux. Le Fibonacci rapide en quelques lignes.\n\nUne liste de tous les nombres naturels ne tiendrait jamais en mémoire, mais un générateur convient très bien."
+     },
+     "see": {
+      "en": "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+      "it": "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+      "fr": "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+     },
+     "turn": {
+      "en": "Make a generator of the powers of 2.",
+      "it": "Fai un generatore delle potenze di 2.",
+      "fr": "Fais un générateur des puissances de 2."
+     },
+     "slip": null
+    },
+    {
+     "code": "squares = (n * n for n in range(1, 6))\nprint(squares)\nprint(sum(squares))\nprint(sum(n * n for n in range(1, 1001)))\nprint(max(len(w) for w in [\"a\", \"abc\", \"ab\"]))\nprint(any(n > 99 for n in range(100)))",
+     "title": {
+      "en": "A generator in one line",
+      "it": "Un generatore in una riga",
+      "fr": "Un générateur en une ligne"
+     },
+     "text": {
+      "en": "Round brackets instead of square ones make a generator expression: like a list comprehension but producing values one at a time, without building the whole list.\n\nIt is the best choice when you only want to add up or check things, as in sum(...), max(...), any(...).",
+      "it": "Le parentesi tonde al posto di quelle quadre fanno un'espressione generatore: come una comprensione di lista ma che produce i valori uno alla volta, senza costruire tutta la lista.\n\nÈ la scelta migliore quando vuoi solo sommare o controllare cose, come in sum(...), max(...), any(...).",
+      "fr": "Des parenthèses au lieu des crochets font une expression génératrice : comme une compréhension de liste mais qui produit les valeurs une à la fois, sans construire toute la liste.\n\nC'est le meilleur choix quand tu veux seulement additionner ou vérifier des choses, comme dans sum(...), max(...), any(...)."
+     },
+     "see": {
+      "en": "<generator object <genexpr> at 0x15f8e68>\n55\n333833500\n3\nFalse",
+      "it": "<generator object <genexpr> at 0x15f8e68>\n55\n333833500\n3\nFalse",
+      "fr": "<generator object <genexpr> at 0x15f8e68>\n55\n333833500\n3\nFalse"
+     },
+     "turn": {
+      "en": "Sum the cubes of the numbers from 1 to 20.",
+      "it": "Somma i cubi dei numeri da 1 a 20.",
+      "fr": "Additionne les cubes des nombres de 1 à 20."
+     },
+     "slip": {
+      "en": "A generator can be used only once. After sum(squares), the generator squares is empty.",
+      "it": "Un generatore si può usare una volta sola. Dopo sum(squares), il generatore squares è vuoto.",
+      "fr": "Un générateur ne peut être utilisé qu'une fois. Après sum(squares), le générateur squares est vide."
+     }
+    },
+    {
+     "code": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nfor n in Countdown(3):\n    print(n)\nprint(list(Countdown(5)))\n\ndef read_in_pairs(items):\n    it = iter(items)\n    for first in it:\n        second = next(it, None)\n        yield first, second\n\nprint(list(read_in_pairs([1, 2, 3, 4, 5])))",
+     "title": {
+      "en": "Make your own iterator",
+      "it": "Crea un tuo iteratore",
+      "fr": "Crée ton propre itérateur"
+     },
+     "text": {
+      "en": "An iterator is any object with __iter__ and __next__. __next__ gives the next value or raises StopIteration at the end. This is what a for loop needs to work.\n\nA generator is usually shorter, so this is what you use most of the time. But now you know what is happening underneath.",
+      "it": "Un iteratore è qualunque oggetto con __iter__ e __next__. __next__ dà il valore successivo o solleva StopIteration alla fine. È ciò di cui un ciclo for ha bisogno per funzionare.\n\nUn generatore di solito è più corto, quindi è ciò che usi più spesso. Ma ora sai cosa succede sotto.",
+      "fr": "Un itérateur est n'importe quel objet avec __iter__ et __next__. __next__ donne la valeur suivante ou lève StopIteration à la fin. C'est ce dont une boucle for a besoin pour marcher.\n\nUn générateur est généralement plus court, c'est donc ce que tu utilises le plus souvent. Mais maintenant tu sais ce qui se passe dessous."
+     },
+     "see": {
+      "en": "3\n2\n1\n[5, 4, 3, 2, 1]\n[(1, 2), (3, 4), (5, None)]",
+      "it": "3\n2\n1\n[5, 4, 3, 2, 1]\n[(1, 2), (3, 4), (5, None)]",
+      "fr": "3\n2\n1\n[5, 4, 3, 2, 1]\n[(1, 2), (3, 4), (5, None)]"
+     },
+     "turn": {
+      "en": "Write an iterator that counts up from 1 to a limit.",
+      "it": "Scrivi un iteratore che conta da 1 a un limite.",
+      "fr": "Écris un itérateur qui compte de 1 à une limite."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Add a power to a function: decorators",
+    "it": "Dare un potere a una funzione: i decoratori",
+    "fr": "Donner un pouvoir à une fonction : les décorateurs"
+   },
+   "subtitle": {
+    "en": "Functions that wrap functions",
+    "it": "Funzioni che avvolgono funzioni",
+    "fr": "Des fonctions qui enveloppent des fonctions"
+   },
+   "steps": [
+    {
+     "code": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\ndef greet(name):\n    return \"hello \" + name\n\nloud = shout(greet)\nprint(loud(\"ada\"))\nprint(greet(\"ada\"))",
+     "title": {
+      "en": "A function that takes a function",
+      "it": "Una funzione che prende una funzione",
+      "fr": "Une fonction qui prend une fonction"
+     },
+     "text": {
+      "en": "Remember that a function is a value: you can pass it to another function. shout takes a function, builds a new function wrapper that calls the old one and changes the result, and gives the new one back.\n\nloud is greet with a new power. The original greet is untouched.",
+      "it": "Ricorda che una funzione è un valore: la puoi passare a un'altra funzione. shout prende una funzione, costruisce una nuova funzione wrapper che chiama la vecchia e cambia il risultato, e restituisce la nuova.\n\nloud è greet con un nuovo potere. L'originale greet non viene toccata.",
+      "fr": "Rappelle-toi qu'une fonction est une valeur : tu peux la passer à une autre fonction. shout prend une fonction, construit une nouvelle fonction wrapper qui appelle l'ancienne et change le résultat, et rend la nouvelle.\n\nloud est greet avec un nouveau pouvoir. L'originale greet n'est pas touchée."
+     },
+     "see": {
+      "en": "HELLO ADA!\nhello ada",
+      "it": "HELLO ADA!\nhello ada",
+      "fr": "HELLO ADA!\nhello ada"
+     },
+     "turn": {
+      "en": "Write a wrapper that adds \"...\" after the result.",
+      "it": "Scrivi un wrapper che aggiunge \"...\" dopo il risultato.",
+      "fr": "Écris un wrapper qui ajoute \"...\" après le résultat."
+     },
+     "slip": null
+    },
+    {
+     "code": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\n@shout\ndef greet(name):\n    return \"hello \" + name\n\nprint(greet(\"ada\"))\nprint(greet(\"max\"))",
+     "title": {
+      "en": "The @ shortcut",
+      "it": "La scorciatoia @",
+      "fr": "Le raccourci @"
+     },
+     "text": {
+      "en": "Writing @shout right above def greet is exactly the same as writing greet = shout(greet) after it. It is called a decorator.\n\nFrom now on every call to greet gets the new power. You have already met decorators: @property, @classmethod, @dataclass and @lru_cache.",
+      "it": "Scrivere @shout subito sopra def greet è esattamente come scrivere greet = shout(greet) dopo. Si chiama decoratore.\n\nD'ora in poi ogni chiamata a greet ha il nuovo potere. Hai già incontrato dei decoratori: @property, @classmethod, @dataclass e @lru_cache.",
+      "fr": "Écrire @shout juste au-dessus de def greet revient exactement à écrire greet = shout(greet) après. On appelle ça un décorateur.\n\nDésormais chaque appel à greet a le nouveau pouvoir. Tu as déjà rencontré des décorateurs : @property, @classmethod, @dataclass et @lru_cache."
+     },
+     "see": {
+      "en": "HELLO ADA!\nHELLO MAX!",
+      "it": "HELLO ADA!\nHELLO MAX!",
+      "fr": "HELLO ADA!\nHELLO MAX!"
+     },
+     "turn": {
+      "en": "Decorate another function with @shout.",
+      "it": "Decora un'altra funzione con @shout.",
+      "fr": "Décore une autre fonction avec @shout."
+     },
+     "slip": null
+    },
+    {
+     "code": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef add(a, b=0):\n    \"\"\"Add two numbers.\"\"\"\n    return a + b\n\nadd(2, b=3)\nprint(add.__name__, \"|\", add.__doc__)",
+     "title": {
+      "en": "A decorator for any function",
+      "it": "Un decoratore per qualsiasi funzione",
+      "fr": "Un décorateur pour n'importe quelle fonction"
+     },
+     "text": {
+      "en": "*args and **kwargs let the wrapper accept any values and pass them on, so the decorator works for any function. The decorator @functools.wraps keeps the name and the description of the original, which would otherwise be lost.\n\nA logging decorator is a classic: it shows what your functions do, without changing them.",
+      "it": "*args e **kwargs lasciano che il wrapper accetti qualunque valore e lo passi, così il decoratore funziona per qualsiasi funzione. Il decoratore @functools.wraps conserva il nome e la descrizione dell'originale, che altrimenti andrebbero persi.\n\nUn decoratore che scrive un registro è un classico: mostra cosa fanno le tue funzioni, senza cambiarle.",
+      "fr": "*args et **kwargs laissent le wrapper accepter n'importe quelles valeurs et les transmettre, donc le décorateur marche pour n'importe quelle fonction. Le décorateur @functools.wraps garde le nom et la description de l'original, qui seraient sinon perdus.\n\nUn décorateur de journal est un classique : il montre ce que font tes fonctions, sans les changer."
+     },
+     "see": {
+      "en": "calling add with (2,) {'b': 3}\nadd returned 5\nadd | Add two numbers.",
+      "it": "calling add with (2,) {'b': 3}\nadd returned 5\nadd | Add two numbers.",
+      "fr": "calling add with (2,) {'b': 3}\nadd returned 5\nadd | Add two numbers."
+     },
+     "turn": {
+      "en": "Decorate a function with two parameters and read the log.",
+      "it": "Decora una funzione con due parametri e leggi il registro.",
+      "fr": "Décore une fonction à deux paramètres et lis le journal."
+     },
+     "slip": null
+    },
+    {
+     "code": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for _ in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print(\"hello\")\n\nhello()",
+     "title": {
+      "en": "A decorator with an option",
+      "it": "Un decoratore con un'opzione",
+      "fr": "Un décorateur avec une option"
+     },
+     "text": {
+      "en": "To give a decorator an option, like @repeat(3), you need one more layer: repeat(3) gives back the real decorator, which then wraps the function.\n\nThree nested functions look scary at first. Read them from the outside in: option, function, call.",
+      "it": "Per dare un'opzione a un decoratore, come @repeat(3), serve uno strato in più: repeat(3) restituisce il vero decoratore, che poi avvolge la funzione.\n\nTre funzioni annidate sembrano spaventose all'inizio. Leggile da fuori verso dentro: opzione, funzione, chiamata.",
+      "fr": "Pour donner une option à un décorateur, comme @repeat(3), il faut une couche de plus : repeat(3) rend le vrai décorateur, qui enveloppe ensuite la fonction.\n\nTrois fonctions imbriquées font peur au début. Lis-les de l'extérieur vers l'intérieur : option, fonction, appel."
+     },
+     "see": {
+      "en": "hello\nhello\nhello",
+      "it": "hello\nhello\nhello",
+      "fr": "hello\nhello\nhello"
+     },
+     "turn": {
+      "en": "Change the number of repetitions to 5.",
+      "it": "Cambia il numero di ripetizioni in 5.",
+      "fr": "Change le nombre de répétitions en 5."
+     },
+     "slip": null
+    },
+    {
+     "code": "import time, functools\n\ndef timed(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = function(*args, **kwargs)\n        wrapper.last_seconds = time.perf_counter() - start\n        return result\n    return wrapper\n\n@timed\ndef slow_sum(n):\n    return sum(range(n))\n\nprint(slow_sum(1_000_000))\nprint(slow_sum.last_seconds < 1)\n\ndef remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef square(n):\n    print(\"working out\", n)\n    return n * n\n\nprint(square(4), square(4))",
+     "title": {
+      "en": "Useful decorators",
+      "it": "Decoratori utili",
+      "fr": "Des décorateurs utiles"
+     },
+     "text": {
+      "en": "A decorator that times a function, and one that remembers its answers (a tiny version of lru_cache): square(4) is only worked out the first time.\n\nDecorators add a side power to a function without touching its code: timing, logging, checking, remembering.",
+      "it": "Un decoratore che cronometra una funzione, e uno che ricorda le sue risposte (una piccola versione di lru_cache): square(4) viene calcolato solo la prima volta.\n\nI decoratori aggiungono un potere laterale a una funzione senza toccarne il codice: cronometrare, registrare, controllare, ricordare.",
+      "fr": "Un décorateur qui chronomètre une fonction, et un qui se souvient de ses réponses (une petite version de lru_cache) : square(4) n'est calculé que la première fois.\n\nLes décorateurs ajoutent un pouvoir annexe à une fonction sans toucher à son code : chronométrer, journaliser, vérifier, se souvenir."
+     },
+     "see": {
+      "en": "499999500000\nTrue\nworking out 4\n16 16",
+      "it": "499999500000\nTrue\nworking out 4\n16 16",
+      "fr": "499999500000\nTrue\nworking out 4\n16 16"
+     },
+     "turn": {
+      "en": "Write a decorator that checks that the argument is not negative.",
+      "it": "Scrivi un decoratore che controlla che l'argomento non sia negativo.",
+      "fr": "Écris un décorateur qui vérifie que l'argument n'est pas négatif."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Open and always close: with",
+    "it": "Aprire e chiudere sempre: with",
+    "fr": "Ouvrir et toujours fermer : with"
+   },
+   "subtitle": {
+    "en": "Context managers",
+    "it": "I gestori di contesto",
+    "fr": "Les gestionnaires de contexte"
+   },
+   "steps": [
+    {
+     "code": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False\n\nwith Tag(\"html\") as page:\n    print(\"  hello\")\n    with Tag(\"b\"):\n        print(\"    bold\")",
+     "title": {
+      "en": "What with really does",
+      "it": "Cosa fa davvero with",
+      "fr": "Ce que fait vraiment with"
+     },
+     "text": {
+      "en": "with calls __enter__ when it starts and __exit__ when it ends, even if something goes wrong inside. That is how with open(...) always closes the file.\n\nAny class with these two methods can be used in a with. Here the tags are opened and closed in the right order.",
+      "it": "with chiama __enter__ quando comincia e __exit__ quando finisce, anche se dentro qualcosa va storto. È così che with open(...) chiude sempre il file.\n\nQualunque classe con questi due metodi può essere usata in un with. Qui i tag vengono aperti e chiusi nell'ordine giusto.",
+      "fr": "with appelle __enter__ au début et __exit__ à la fin, même si quelque chose se passe mal dedans. C'est ainsi que with open(...) ferme toujours le fichier.\n\nN'importe quelle classe avec ces deux méthodes peut être utilisée dans un with. Ici les balises sont ouvertes et fermées dans le bon ordre."
+     },
+     "see": {
+      "en": "<html>\n  hello\n<b>\n    bold\n</b>\n</html>",
+      "it": "<html>\n  hello\n<b>\n    bold\n</b>\n</html>",
+      "fr": "<html>\n  hello\n<b>\n    bold\n</b>\n</html>"
+     },
+     "turn": {
+      "en": "Add a Tag(\"p\") inside the page.",
+      "it": "Aggiungi un Tag(\"p\") dentro la pagina.",
+      "fr": "Ajoute un Tag(\"p\") dans la page."
+     },
+     "slip": null
+    },
+    {
+     "code": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Start:\", task)\n    try:\n        yield\n    finally:\n        print(\"End:\", task)\n\nwith announce(\"cleaning\"):\n    print(\"working...\")\n\ntry:\n    with announce(\"risky\"):\n        raise ValueError(\"oops\")\nexcept ValueError:\n    print(\"the error went through\")",
+     "title": {
+      "en": "A with in a few lines",
+      "it": "Un with in poche righe",
+      "fr": "Un with en quelques lignes"
+     },
+     "text": {
+      "en": "@contextmanager lets you write a context manager as a generator: what is before the yield is the \"enter\", what is after is the \"exit\". Put the exit part in finally so it runs even on an error.\n\nIt is shorter than writing a class.",
+      "it": "@contextmanager ti permette di scrivere un gestore di contesto come un generatore: quello che sta prima di yield è l'\"entrata\", quello che sta dopo è l'\"uscita\". Metti la parte di uscita in finally così gira anche con un errore.\n\nÈ più corto che scrivere una classe.",
+      "fr": "@contextmanager te permet d'écrire un gestionnaire de contexte comme un générateur : ce qui est avant le yield est l'« entrée », ce qui est après est la « sortie ». Mets la partie de sortie dans finally pour qu'elle tourne même avec une erreur.\n\nC'est plus court que d'écrire une classe."
+     },
+     "see": {
+      "en": "Start: cleaning\nworking...\nEnd: cleaning\nStart: risky\nEnd: risky\nthe error went through",
+      "it": "Start: cleaning\nworking...\nEnd: cleaning\nStart: risky\nEnd: risky\nthe error went through",
+      "fr": "Start: cleaning\nworking...\nEnd: cleaning\nStart: risky\nEnd: risky\nthe error went through"
+     },
+     "turn": {
+      "en": "Make a context manager that prints how long its block took.",
+      "it": "Fai un gestore di contesto che stampa quanto ha impiegato il suo blocco.",
+      "fr": "Fais un gestionnaire de contexte qui affiche combien de temps son bloc a pris."
+     },
+     "slip": null
+    },
+    {
+     "code": "from contextlib import suppress, redirect_stdout\nimport io, os\n\nwith suppress(FileNotFoundError):\n    os.remove(\"never_existed.txt\")\nprint(\"no error\")\n\nbuffer = io.StringIO()\nwith redirect_stdout(buffer):\n    print(\"this goes into the buffer\")\nprint(repr(buffer.getvalue()))\n\nwith open(\"a.txt\", \"w\") as one, open(\"b.txt\", \"w\") as two:\n    one.write(\"1\")\n    two.write(\"2\")\nprint(os.path.exists(\"a.txt\"), os.path.exists(\"b.txt\"))",
+     "title": {
+      "en": "Ready-made helpers",
+      "it": "Aiuti già pronti",
+      "fr": "Aides toutes prêtes"
+     },
+     "text": {
+      "en": "contextlib has helpers: suppress ignores a chosen error, redirect_stdout captures what print would show. One with can open several things at once, separated by commas.\n\nWhenever you see \"open something, use it, close it\", think of with.",
+      "it": "contextlib ha degli aiuti: suppress ignora un errore a scelta, redirect_stdout cattura quello che print mostrerebbe. Un solo with può aprire più cose insieme, separate da virgole.\n\nOgni volta che vedi \"apri qualcosa, usalo, chiudilo\", pensa a with.",
+      "fr": "contextlib a des aides : suppress ignore une erreur choisie, redirect_stdout capture ce que print montrerait. Un seul with peut ouvrir plusieurs choses à la fois, séparées par des virgules.\n\nChaque fois que tu vois « ouvre quelque chose, utilise-le, ferme-le », pense à with."
+     },
+     "see": {
+      "en": "no error\n'this goes into the buffer\\n'\nTrue True",
+      "it": "no error\n'this goes into the buffer\\n'\nTrue True",
+      "fr": "no error\n'this goes into the buffer\\n'\nTrue True"
+     },
+     "turn": {
+      "en": "Use suppress to ignore a ZeroDivisionError.",
+      "it": "Usa suppress per ignorare uno ZeroDivisionError.",
+      "fr": "Utilise suppress pour ignorer une ZeroDivisionError."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Modern Python tricks",
+    "it": "Trucchi del Python moderno",
+    "fr": "Astuces du Python moderne"
+   },
+   "subtitle": {
+    "en": "match, walrus, unpacking and friends",
+    "it": "match, walrus, spacchettare e compagnia",
+    "fr": "match, morse, déballage et compagnie"
+   },
+   "steps": [
+    {
+     "code": "def describe(command):\n    match command:\n        case \"go north\" | \"go south\":\n            return \"moving\"\n        case \"quit\":\n            return \"bye\"\n        case [\"take\", item]:\n            return f\"taking {item}\"\n        case {\"type\": \"gift\", \"name\": name}:\n            return f\"a gift called {name}\"\n        case int(number) if number > 100:\n            return \"a big number\"\n        case _:\n            return \"I do not understand\"\n\nprint(describe(\"go north\"))\nprint(describe([\"take\", \"lamp\"]))\nprint(describe({\"type\": \"gift\", \"name\": \"book\"}))\nprint(describe(500))\nprint(describe(\"dance\"))",
+     "title": {
+      "en": "match: choose by shape",
+      "it": "match: scegliere dalla forma",
+      "fr": "match : choisir selon la forme"
+     },
+     "text": {
+      "en": "match looks at a value and picks the first case that fits. A case can be a value, several values joined with |, the shape of a list or a dictionary that picks parts out into names, or a pattern with an extra question after if. The last case _ matches everything.\n\nIt is a tidy replacement for long chains of if and elif.",
+      "it": "match guarda un valore e sceglie il primo caso che gli corrisponde. Un caso può essere un valore, più valori uniti con |, la forma di una lista o di un dizionario che estrae parti in nomi, o uno schema con una domanda in più dopo if. L'ultimo caso _ corrisponde a tutto.\n\nÈ un sostituto ordinato per le lunghe catene di if ed elif.",
+      "fr": "match regarde une valeur et choisit le premier cas qui lui correspond. Un cas peut être une valeur, plusieurs valeurs jointes par |, la forme d'une liste ou d'un dictionnaire qui extrait des parties dans des noms, ou un motif avec une question en plus après if. Le dernier cas _ correspond à tout.\n\nC'est un remplacement propre pour les longues chaînes de if et elif."
+     },
+     "see": {
+      "en": "moving\ntaking lamp\na gift called book\na big number\nI do not understand",
+      "it": "moving\ntaking lamp\na gift called book\na big number\nI do not understand",
+      "fr": "moving\ntaking lamp\na gift called book\na big number\nI do not understand"
+     },
+     "turn": {
+      "en": "Add a case for the command [\"drop\", item].",
+      "it": "Aggiungi un caso per il comando [\"drop\", item].",
+      "fr": "Ajoute un cas pour la commande [\"drop\", item]."
+     },
+     "slip": null
+    },
+    {
+     "code": "data = [3, 8, 15, 4]\nif (n := len(data)) > 3:\n    print(f\"A long list of {n} items\")\n\nwhile (line := \"x\") != \"x\":\n    pass\n\nx = 5\nprint(f\"{x=}\")\nprint(f\"{x * 2 = }\")\nname = \"Ada\"\nprint(f\"{name!r} {name!s:>6} {3.14159:.2f}\")\n\ntotal = (a := 4) + (b := 5)\nprint(total, a, b)",
+     "title": {
+      "en": "The walrus and a debugging f-string",
+      "it": "Il tricheco e una f-string per correggere",
+      "fr": "Le morse et une f-string pour déboguer"
+     },
+     "text": {
+      "en": "The walrus := puts a value in a name inside an expression, so you can use it right away: (n := len(data)) > 3 keeps the length and tests it in one go.\n\nAnd f\"{x=}\" shows both the name and the value: a lovely trick when you debug with print.",
+      "it": "Il tricheco := mette un valore in un nome dentro un'espressione, così puoi usarlo subito: (n := len(data)) > 3 tiene la lunghezza e la verifica in un colpo solo.\n\nE f\"{x=}\" mostra sia il nome sia il valore: un trucco bellissimo quando correggi con print.",
+      "fr": "Le morse := met une valeur dans un nom à l'intérieur d'une expression, pour que tu puisses l'utiliser tout de suite : (n := len(data)) > 3 garde la longueur et la teste d'un coup.\n\nEt f\"{x=}\" montre à la fois le nom et la valeur : une astuce géniale quand tu débogues avec print."
+     },
+     "see": {
+      "en": "A long list of 4 items\nx=5\nx * 2 = 10\n'Ada'    Ada 3.14\n9 4 5",
+      "it": "A long list of 4 items\nx=5\nx * 2 = 10\n'Ada'    Ada 3.14\n9 4 5",
+      "fr": "A long list of 4 items\nx=5\nx * 2 = 10\n'Ada'    Ada 3.14\n9 4 5"
+     },
+     "turn": {
+      "en": "Use f\"{...=}\" to debug the sum of two variables.",
+      "it": "Usa f\"{...=}\" per correggere la somma di due variabili.",
+      "fr": "Utilise f\"{...=}\" pour déboguer la somme de deux variables."
+     },
+     "slip": null
+    },
+    {
+     "code": "first, *middle, last = [1, 2, 3, 4, 5]\nprint(first, middle, last)\na = {\"x\": 1, \"y\": 2}\nb = {\"y\": 20, \"z\": 30}\nprint(a | b)\nprint({**a, **b})\nprint([*range(3), *\"ab\"])\n(x, y), z = (1, 2), 3\nprint(x, y, z)\ndef f(a, /, b, *, c):\n    return a + b + c\nprint(f(1, 2, c=3))",
+     "title": {
+      "en": "Unpacking everywhere",
+      "it": "Spacchettare ovunque",
+      "fr": "Déballer partout"
+     },
+     "text": {
+      "en": "A star in an unpacking catches \"all the rest\" into a list. Two dictionaries are merged with | or with **. A star in front of a list inside brackets spreads it out. Unpacking can go into nested pairs too.\n\nA / and a * in the parameters decide which parameters must be given by position or by name.",
+      "it": "Una stella in uno spacchettamento cattura \"tutto il resto\" in una lista. Due dizionari si uniscono con | o con **. Una stella davanti a una lista dentro le parentesi la sparge. Lo spacchettamento può andare anche in coppie annidate.\n\nUna / e una * tra i parametri decidono quali parametri vanno dati per posizione o per nome.",
+      "fr": "Une étoile dans un déballage attrape « tout le reste » dans une liste. Deux dictionnaires se fusionnent avec | ou avec **. Une étoile devant une liste dans des crochets l'étale. Le déballage peut aussi aller dans des paires imbriquées.\n\nUn / et une * dans les paramètres décident quels paramètres doivent être donnés par position ou par nom."
+     },
+     "see": {
+      "en": "1 [2, 3, 4] 5\n{'x': 1, 'y': 20, 'z': 30}\n{'x': 1, 'y': 20, 'z': 30}\n[0, 1, 2, 'a', 'b']\n1 2 3\n6",
+      "it": "1 [2, 3, 4] 5\n{'x': 1, 'y': 20, 'z': 30}\n{'x': 1, 'y': 20, 'z': 30}\n[0, 1, 2, 'a', 'b']\n1 2 3\n6",
+      "fr": "1 [2, 3, 4] 5\n{'x': 1, 'y': 20, 'z': 30}\n{'x': 1, 'y': 20, 'z': 30}\n[0, 1, 2, 'a', 'b']\n1 2 3\n6"
+     },
+     "turn": {
+      "en": "Merge three dictionaries into one.",
+      "it": "Unisci tre dizionari in uno.",
+      "fr": "Fusionne trois dictionnaires en un."
+     },
+     "slip": null
+    },
+    {
+     "code": "import copy\n\noriginal = {\"name\": \"Ada\", \"tags\": [\"a\", \"b\"]}\nshallow = original.copy()\ndeep = copy.deepcopy(original)\noriginal[\"tags\"].append(\"c\")\nprint(shallow[\"tags\"])\nprint(deep[\"tags\"])\n\nvalues = [1, 2, 3]\nprint(id(values) == id(values[:]), values is values)\na = b = [0]\na.append(1)\nprint(b)\nprint([[0] * 3] * 2 == [[0] * 3 for _ in range(2)])\ngrid = [[0] * 2] * 2\ngrid[0][0] = 9\nprint(grid)",
+     "title": {
+      "en": "Copies, and a famous trap",
+      "it": "Copie, e una trappola famosa",
+      "fr": "Copies, et un piège célèbre"
+     },
+     "text": {
+      "en": "copy() makes a shallow copy: the outer list is new, but the lists inside are still shared. copy.deepcopy copies everything, all the way down.\n\nThe famous trap: [[0] * 2] * 2 repeats the same inner list twice, so changing one changes both. Build rows with a comprehension instead.",
+      "it": "copy() fa una copia superficiale: la lista esterna è nuova, ma le liste dentro sono ancora condivise. copy.deepcopy copia tutto, fino in fondo.\n\nLa trappola famosa: [[0] * 2] * 2 ripete due volte la stessa lista interna, quindi cambiarne una cambia entrambe. Costruisci le righe con una comprensione.",
+      "fr": "copy() fait une copie superficielle : la liste extérieure est nouvelle, mais les listes à l'intérieur sont toujours partagées. copy.deepcopy copie tout, jusqu'au fond.\n\nLe piège célèbre : [[0] * 2] * 2 répète deux fois la même liste intérieure, donc en changer une change les deux. Construis les lignes avec une compréhension."
+     },
+     "see": {
+      "en": "['a', 'b', 'c']\n['a', 'b']\nFalse True\n[0, 1]\nTrue\n[[9, 0], [9, 0]]",
+      "it": "['a', 'b', 'c']\n['a', 'b']\nFalse True\n[0, 1]\nTrue\n[[9, 0], [9, 0]]",
+      "fr": "['a', 'b', 'c']\n['a', 'b']\nFalse True\n[0, 1]\nTrue\n[[9, 0], [9, 0]]"
+     },
+     "turn": {
+      "en": "Make a 3 by 3 board of zeros the right way.",
+      "it": "Fai una scacchiera 3 per 3 di zeri nel modo giusto.",
+      "fr": "Fais un plateau 3 sur 3 de zéros de la bonne façon."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Numbers and text in depth",
+    "it": "Numeri e testo in profondità",
+    "fr": "Nombres et texte en profondeur"
+   },
+   "subtitle": {
+    "en": "Exact decimals, fractions, bits and letters",
+    "it": "Decimali esatti, frazioni, bit e lettere",
+    "fr": "Décimaux exacts, fractions, bits et lettres"
+   },
+   "steps": [
+    {
+     "code": "from decimal import Decimal, getcontext\nprint(0.1 + 0.2)\nprint(Decimal(\"0.1\") + Decimal(\"0.2\"))\nprice = Decimal(\"19.99\")\nprint(price * 3)\nprint(Decimal(\"10\") / Decimal(\"3\"))\ngetcontext().prec = 5\nprint(Decimal(1) / Decimal(7))",
+     "title": {
+      "en": "Exact decimals for money",
+      "it": "Decimali esatti per i soldi",
+      "fr": "Décimaux exacts pour l'argent"
+     },
+     "text": {
+      "en": "Ordinary floats are never exact: 0.1 + 0.2 is not quite 0.3. For money, use Decimal and write the numbers as texts, \"0.1\": the sums are exact. prec says how many digits to keep.\n\nNever use floats to count money.",
+      "it": "I float normali non sono mai esatti: 0.1 + 0.2 non è proprio 0.3. Per i soldi usa Decimal e scrivi i numeri come testi, \"0.1\": i conti sono esatti. prec dice quante cifre tenere.\n\nNon usare mai i float per contare i soldi.",
+      "fr": "Les floats ordinaires ne sont jamais exacts : 0.1 + 0.2 n'est pas tout à fait 0.3. Pour l'argent, utilise Decimal et écris les nombres comme des textes, \"0.1\" : les calculs sont exacts. prec dit combien de chiffres garder.\n\nN'utilise jamais des floats pour compter l'argent."
+     },
+     "see": {
+      "en": "0.30000000000000004\n0.3\n59.97\n3.333333333333333333333333333\n0.14286",
+      "it": "0.30000000000000004\n0.3\n59.97\n3.333333333333333333333333333\n0.14286",
+      "fr": "0.30000000000000004\n0.3\n59.97\n3.333333333333333333333333333\n0.14286"
+     },
+     "turn": {
+      "en": "Compute the total of 3 items at 0.10 each with Decimal.",
+      "it": "Calcola il totale di 3 articoli da 0.10 con Decimal.",
+      "fr": "Calcule le total de 3 articles à 0.10 chacun avec Decimal."
+     },
+     "slip": null
+    },
+    {
+     "code": "from fractions import Fraction\nhalf = Fraction(1, 2)\nthird = Fraction(1, 3)\nprint(half + third)\nprint(half * third)\nprint(Fraction(6, 8))\nprint(Fraction(\"0.75\"))\nprint(float(Fraction(1, 3)))\nprint(half < third, half > third)",
+     "title": {
+      "en": "Exact fractions",
+      "it": "Frazioni esatte",
+      "fr": "Fractions exactes"
+     },
+     "text": {
+      "en": "Fraction keeps a number as the ratio of two whole numbers, so 1/2 + 1/3 is exactly 5/6 and nothing is lost. Python simplifies for you: 6/8 becomes 3/4.\n\nPerfect for recipes, music and maths homework.",
+      "it": "Fraction tiene un numero come rapporto di due numeri interi, quindi 1/2 + 1/3 è esattamente 5/6 e non si perde niente. Python semplifica per te: 6/8 diventa 3/4.\n\nPerfetto per le ricette, la musica e i compiti di matematica.",
+      "fr": "Fraction garde un nombre comme le rapport de deux nombres entiers, donc 1/2 + 1/3 vaut exactement 5/6 et rien n'est perdu. Python simplifie pour toi : 6/8 devient 3/4.\n\nParfait pour les recettes, la musique et les devoirs de maths."
+     },
+     "see": {
+      "en": "5/6\n1/6\n3/4\n3/4\n0.3333333333333333\nFalse True",
+      "it": "5/6\n1/6\n3/4\n3/4\n0.3333333333333333\nFalse True",
+      "fr": "5/6\n1/6\n3/4\n3/4\n0.3333333333333333\nFalse True"
+     },
+     "turn": {
+      "en": "Add 2/5 and 3/10.",
+      "it": "Somma 2/5 e 3/10.",
+      "fr": "Additionne 2/5 et 3/10."
+     },
+     "slip": null
+    },
+    {
+     "code": "n = 202\nprint(bin(n), oct(n), hex(n))\nprint(int(\"11001010\", 2), int(\"ff\", 16), 0b1010, 0xff)\nprint(format(n, \"08b\"), f\"{n:x}\", f\"{n:#o}\")\nprint(5 & 3, 5 | 3, 5 ^ 3, ~5)\nprint(1 << 4, 64 >> 2)\nprint((n >> 3) & 1)",
+     "title": {
+      "en": "Numbers made of bits",
+      "it": "Numeri fatti di bit",
+      "fr": "Des nombres faits de bits"
+     },
+     "text": {
+      "en": "Computers store numbers in binary: only 0 and 1. bin, oct and hex show a number in base 2, 8 and 16, and int(text, base) reads one back. Operators & (and), | (or), ^ (different), ~ (flip) and the shifts << and >> work on the bits themselves.\n\nShifting left by 4 is multiplying by 16.",
+      "it": "I computer conservano i numeri in binario: solo 0 e 1. bin, oct e hex mostrano un numero in base 2, 8 e 16, e int(testo, base) ne rilegge uno. Gli operatori & (e), | (o), ^ (diverso), ~ (inverti) e gli scorrimenti << e >> lavorano sui bit stessi.\n\nScorrere a sinistra di 4 vuol dire moltiplicare per 16.",
+      "fr": "Les ordinateurs stockent les nombres en binaire : seulement 0 et 1. bin, oct et hex montrent un nombre en base 2, 8 et 16, et int(texte, base) en relit un. Les opérateurs & (et), | (ou), ^ (différent), ~ (inverse) et les décalages << et >> travaillent sur les bits eux-mêmes.\n\nDécaler de 4 vers la gauche, c'est multiplier par 16."
+     },
+     "see": {
+      "en": "0b11001010 0o312 0xca\n202 255 10 255\n11001010 ca 0o312\n1 7 6 -6\n16 16\n1",
+      "it": "0b11001010 0o312 0xca\n202 255 10 255\n11001010 ca 0o312\n1 7 6 -6\n16 16\n1",
+      "fr": "0b11001010 0o312 0xca\n202 255 10 255\n11001010 ca 0o312\n1 7 6 -6\n16 16\n1"
+     },
+     "turn": {
+      "en": "Write 100 in binary, then read it back.",
+      "it": "Scrivi 100 in binario, poi rileggilo.",
+      "fr": "Écris 100 en binaire, puis relis-le."
+     },
+     "slip": null
+    },
+    {
+     "code": "word = \"café\"\nprint(len(word), word.encode(\"utf-8\"), len(word.encode(\"utf-8\")))\nraw = \"héllo\".encode(\"utf-8\")\nprint(raw, raw.decode(\"utf-8\"))\nprint(ord(\"é\"), chr(233), \"é\", \"\\N{SNOWMAN}\")\nprint(\"é\" == \"é\", len(\"é\"))\nimport unicodedata\nprint(unicodedata.normalize(\"NFC\", \"é\") == \"é\")\nprint(bytes([72, 105]), list(b\"Hi\"), bytearray(b\"ab\"))",
+     "title": {
+      "en": "Letters, bytes and unicode",
+      "it": "Lettere, byte e unicode",
+      "fr": "Lettres, octets et unicode"
+     },
+     "text": {
+      "en": "A text is made of characters; a file or a network carries bytes. encode turns a text into bytes (utf-8 is the usual way) and decode turns bytes back into text. Accented letters and emoji take more than one byte.\n\nUnicode gives every character a number: ord and chr convert. The same letter can be written in more than one way, so normalize makes them comparable.",
+      "it": "Un testo è fatto di caratteri; un file o una rete trasportano byte. encode trasforma un testo in byte (utf-8 è il modo solito) e decode trasforma i byte di nuovo in testo. Le lettere accentate e gli emoji occupano più di un byte.\n\nUnicode dà un numero a ogni carattere: ord e chr convertono. La stessa lettera si può scrivere in più modi, quindi normalize le rende confrontabili.",
+      "fr": "Un texte est fait de caractères ; un fichier ou un réseau transporte des octets. encode transforme un texte en octets (utf-8 est la façon habituelle) et decode retransforme les octets en texte. Les lettres accentuées et les emoji prennent plus d'un octet.\n\nUnicode donne un numéro à chaque caractère : ord et chr convertissent. La même lettre peut s'écrire de plusieurs façons, donc normalize les rend comparables."
+     },
+     "see": {
+      "en": "4 b'caf\\xc3\\xa9' 5\nb'h\\xc3\\xa9llo' héllo\n233 é é ☃\nFalse 2\nTrue\nb'Hi' [72, 105] bytearray(b'ab')",
+      "it": "4 b'caf\\xc3\\xa9' 5\nb'h\\xc3\\xa9llo' héllo\n233 é é ☃\nFalse 2\nTrue\nb'Hi' [72, 105] bytearray(b'ab')",
+      "fr": "4 b'caf\\xc3\\xa9' 5\nb'h\\xc3\\xa9llo' héllo\n233 é é ☃\nFalse 2\nTrue\nb'Hi' [72, 105] bytearray(b'ab')"
+     },
+     "turn": {
+      "en": "Find how many bytes your own name takes in utf-8.",
+      "it": "Trova quanti byte occupa il tuo nome in utf-8.",
+      "fr": "Trouve combien d'octets ton prénom prend en utf-8."
+     },
+     "slip": null
+    },
+    {
+     "code": "import math\nprint(10 ** 30)\nprint(2 ** 200)\nprint(math.isqrt(10 ** 20))\nprint(divmod(17, 5), pow(2, 10, 1000))\nprint(round(2.675, 2), round(1234.5678, -2))\nprint(int(\"  42  \"), float(\"1e3\"), complex(1, 2) * complex(0, 1))\nprint(sum([0.1] * 10) == 1.0, math.fsum([0.1] * 10) == 1.0)",
+     "title": {
+      "en": "Huge numbers and small surprises",
+      "it": "Numeri enormi e piccole sorprese",
+      "fr": "Nombres énormes et petites surprises"
+     },
+     "text": {
+      "en": "Whole numbers in Python can be as big as the memory allows: 2 ** 200 is no problem. divmod gives the quotient and the rest together, pow(a, b, m) works with a remainder, and complex handles complex numbers.\n\nFloats are not exact: adding 0.1 ten times is not exactly 1.0, but math.fsum is more careful.",
+      "it": "I numeri interi in Python possono essere grandi quanto permette la memoria: 2 ** 200 non è un problema. divmod dà insieme il quoziente e il resto, pow(a, b, m) lavora con un resto, e complex gestisce i numeri complessi.\n\nI float non sono esatti: sommare 0.1 dieci volte non fa esattamente 1.0, ma math.fsum è più attento.",
+      "fr": "Les nombres entiers en Python peuvent être aussi grands que la mémoire le permet : 2 ** 200 n'est pas un problème. divmod donne ensemble le quotient et le reste, pow(a, b, m) travaille avec un reste, et complex gère les nombres complexes.\n\nLes floats ne sont pas exacts : additionner 0.1 dix fois ne fait pas exactement 1.0, mais math.fsum est plus soigneux."
+     },
+     "see": {
+      "en": "1000000000000000000000000000000\n1606938044258990275541962092341162602522202993782792835301376\n10000000000\n(3, 2) 24\n2.67 1200.0\n42 1000.0 (-2+1j)\nTrue True",
+      "it": "1000000000000000000000000000000\n1606938044258990275541962092341162602522202993782792835301376\n10000000000\n(3, 2) 24\n2.67 1200.0\n42 1000.0 (-2+1j)\nTrue True",
+      "fr": "1000000000000000000000000000000\n1606938044258990275541962092341162602522202993782792835301376\n10000000000\n(3, 2) 24\n2.67 1200.0\n42 1000.0 (-2+1j)\nTrue True"
+     },
+     "turn": {
+      "en": "How many digits does 2 ** 1000 have?",
+      "it": "Quante cifre ha 2 ** 1000?",
+      "fr": "Combien de chiffres a 2 ** 1000 ?"
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Fast and slow",
+    "it": "Veloce e lento",
+    "fr": "Rapide et lent"
+   },
+   "subtitle": {
+    "en": "Measure, choose well, and a little big-O",
+    "it": "Misura, scegli bene, e un po' di big-O",
+    "fr": "Mesure, choisis bien, et un peu de grand-O"
+   },
+   "steps": [
+    {
+     "code": "import timeit\nslow = timeit.timeit(\"sum([n * n for n in range(1000)])\", number=200)\nfast = timeit.timeit(\"sum(n * n for n in range(1000))\", number=200)\nprint(slow > 0, fast > 0)\n\nimport time\nstart = time.perf_counter()\ntotal = 0\nfor n in range(200_000):\n    total += n\nseconds = time.perf_counter() - start\nprint(\"A loop of 200,000 steps took\", \"less than\" if seconds < 1 else \"more than\", \"a second\")",
+     "title": {
+      "en": "Measure, do not guess",
+      "it": "Misura, non indovinare",
+      "fr": "Mesure, ne devine pas"
+     },
+     "text": {
+      "en": "When you wonder which way is faster, measure it. timeit runs a small piece of code many times and tells how long it took. time.perf_counter is a stopwatch.\n\nProgrammers are famously bad at guessing what is slow. The numbers do not lie.",
+      "it": "Quando ti chiedi quale modo sia più veloce, misuralo. timeit fa girare un piccolo pezzo di codice molte volte e dice quanto ha impiegato. time.perf_counter è un cronometro.\n\nChi programma è famoso per indovinare male cosa è lento. I numeri non mentono.",
+      "fr": "Quand tu te demandes quelle façon est la plus rapide, mesure-la. timeit lance un petit morceau de code plein de fois et dit combien de temps il a pris. time.perf_counter est un chronomètre.\n\nLes programmeurs sont célèbres pour mal deviner ce qui est lent. Les chiffres ne mentent pas."
+     },
+     "see": {
+      "en": "True True\nA loop of 200,000 steps took less than a second",
+      "it": "True True\nA loop of 200,000 steps took less than a second",
+      "fr": "True True\nA loop of 200,000 steps took less than a second"
+     },
+     "turn": {
+      "en": "Time two ways to build a list of 1000 squares.",
+      "it": "Cronometra due modi di costruire una lista di 1000 quadrati.",
+      "fr": "Chronomètre deux façons de construire une liste de 1000 carrés."
+     },
+     "slip": null
+    },
+    {
+     "code": "import time\nnames_list = list(range(50_000))\nnames_set = set(names_list)\n\nstart = time.perf_counter()\nfor n in range(0, 50_000, 500):\n    n in names_list\nlist_time = time.perf_counter() - start\n\nstart = time.perf_counter()\nfor n in range(0, 50_000, 500):\n    n in names_set\nset_time = time.perf_counter() - start\nprint(\"The set is faster:\", set_time < list_time)\n\nd = {n: n * 2 for n in range(10)}\nprint(d[7])",
+     "title": {
+      "en": "The right box for the job",
+      "it": "La scatola giusta per il lavoro",
+      "fr": "La bonne boîte pour le travail"
+     },
+     "text": {
+      "en": "Asking \"is it in the list?\" makes Python look at the items one by one. A set or a dictionary jumps straight to the answer. With 50,000 items the difference is huge.\n\nIf you ask \"is it in there?\" many times, use a set or a dictionary.",
+      "it": "Chiedere \"è nella lista?\" fa guardare a Python gli elementi uno per uno. Un insieme o un dizionario salta dritto alla risposta. Con 50.000 elementi la differenza è enorme.\n\nSe chiedi \"c'è dentro?\" tante volte, usa un insieme o un dizionario.",
+      "fr": "Demander « est-ce dans la liste ? » fait regarder à Python les éléments un par un. Un ensemble ou un dictionnaire saute directement à la réponse. Avec 50 000 éléments la différence est énorme.\n\nSi tu demandes « est-ce dedans ? » plusieurs fois, utilise un ensemble ou un dictionnaire."
+     },
+     "see": {
+      "en": "The set is faster: True\n14",
+      "it": "The set is faster: True\n14",
+      "fr": "The set is faster: True\n14"
+     },
+     "turn": {
+      "en": "Remove repeats from a long list with a set.",
+      "it": "Togli le ripetizioni da una lunga lista con un insieme.",
+      "fr": "Retire les répétitions d'une longue liste avec un ensemble."
+     },
+     "slip": null
+    },
+    {
+     "code": "def count_steps_linear(n):\n    steps = 0\n    for _ in range(n):\n        steps += 1\n    return steps\n\ndef count_steps_quadratic(n):\n    steps = 0\n    for _ in range(n):\n        for _ in range(n):\n            steps += 1\n    return steps\n\ndef count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n //= 2\n        steps += 1\n    return steps\n\nfor n in [10, 100, 1000]:\n    print(n, count_steps_linear(n), count_steps_quadratic(n), count_steps_halving(n))",
+     "title": {
+      "en": "How work grows: big-O",
+      "it": "Come cresce il lavoro: big-O",
+      "fr": "Comment le travail grandit : grand-O"
+     },
+     "text": {
+      "en": "Computer scientists describe how the work grows when the input grows. One loop: ten times more data, ten times more work (linear). A loop inside a loop: a hundred times more (quadratic), which gets slow very fast. Halving each time: almost no extra work (logarithmic).\n\nThe three columns show it. This idea is called big-O.",
+      "it": "Chi studia informatica descrive come cresce il lavoro quando crescono i dati. Un ciclo: dieci volte più dati, dieci volte più lavoro (lineare). Un ciclo dentro un ciclo: cento volte di più (quadratico), che diventa lento in fretta. Dimezzare ogni volta: quasi nessun lavoro in più (logaritmico).\n\nLe tre colonne lo mostrano. Quest'idea si chiama big-O.",
+      "fr": "Les informaticiens décrivent comment le travail grandit quand les données grandissent. Une boucle : dix fois plus de données, dix fois plus de travail (linéaire). Une boucle dans une boucle : cent fois plus (quadratique), ce qui devient lent très vite. Diviser par deux à chaque fois : presque pas de travail en plus (logarithmique).\n\nLes trois colonnes le montrent. Cette idée s'appelle le grand-O."
+     },
+     "see": {
+      "en": "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+      "it": "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+      "fr": "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9"
+     },
+     "turn": {
+      "en": "Predict the steps of the quadratic function for n = 20.",
+      "it": "Prevedi i passi della funzione quadratica per n = 20.",
+      "fr": "Prévois les pas de la fonction quadratique pour n = 20."
+     },
+     "slip": null
+    },
+    {
+     "code": "from functools import lru_cache\nimport time\n\ndef slow_fib(n):\n    return n if n < 2 else slow_fib(n - 1) + slow_fib(n - 2)\n\n@lru_cache(maxsize=None)\ndef fast_fib(n):\n    return n if n < 2 else fast_fib(n - 1) + fast_fib(n - 2)\n\nstart = time.perf_counter()\nprint(slow_fib(22))\nslow_time = time.perf_counter() - start\nstart = time.perf_counter()\nprint(fast_fib(22))\nfast_time = time.perf_counter() - start\nprint(\"Remembering is faster:\", fast_time < slow_time)\nprint(fast_fib(200))\nprint(fast_fib.cache_info().hits > 0)",
+     "title": {
+      "en": "Remember the answers",
+      "it": "Ricorda le risposte",
+      "fr": "Souviens-toi des réponses"
+     },
+     "text": {
+      "en": "The slow Fibonacci works the same things out again and again. With lru_cache each answer is worked out once and remembered, and fast_fib(200) is instant while slow_fib(200) would take longer than the age of the universe.\n\nThis idea of remembering partial answers is called memoization, and it is one of the best ways to speed up a program.",
+      "it": "Il Fibonacci lento ricalcola le stesse cose ancora e ancora. Con lru_cache ogni risposta è calcolata una volta e ricordata, e fast_fib(200) è istantaneo mentre slow_fib(200) impiegherebbe più dell'età dell'universo.\n\nQuest'idea di ricordare le risposte parziali si chiama memoizzazione, ed è uno dei modi migliori per velocizzare un programma.",
+      "fr": "Le Fibonacci lent recalcule les mêmes choses encore et encore. Avec lru_cache chaque réponse est calculée une fois et mémorisée, et fast_fib(200) est instantané alors que slow_fib(200) prendrait plus longtemps que l'âge de l'univers.\n\nCette idée de mémoriser les réponses partielles s'appelle la mémoïsation, et c'est l'une des meilleures façons d'accélérer un programme."
+     },
+     "see": {
+      "en": "17711\n17711\nRemembering is faster: True\n280571172992510140037611932413038677189525\nTrue",
+      "it": "17711\n17711\nRemembering is faster: True\n280571172992510140037611932413038677189525\nTrue",
+      "fr": "17711\n17711\nRemembering is faster: True\n280571172992510140037611932413038677189525\nTrue"
+     },
+     "turn": {
+      "en": "Memoize a function that counts the ways to climb n stairs by 1 or 2 steps.",
+      "it": "Memoizza una funzione che conta i modi di salire n gradini di 1 o 2 passi.",
+      "fr": "Mémoïse une fonction qui compte les façons de monter n marches par 1 ou 2."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Algorithms",
+    "it": "Algoritmi",
+    "fr": "Algorithmes"
+   },
+   "subtitle": {
+    "en": "Search, sort and think step by step",
+    "it": "Cercare, ordinare e pensare passo dopo passo",
+    "fr": "Chercher, trier et penser pas à pas"
+   },
+   "steps": [
+    {
+     "code": "def linear_search(items, target):\n    for index, item in enumerate(items):\n        if item == target:\n            return index\n    return -1\n\ndef binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps\n\nnumbers = list(range(0, 1000, 3))\nprint(linear_search(numbers, 600))\nprint(binary_search(numbers, 600))\nprint(binary_search(numbers, 601))",
+     "title": {
+      "en": "Find it fast: binary search",
+      "it": "Trovarlo in fretta: ricerca binaria",
+      "fr": "Le trouver vite : recherche binaire"
+     },
+     "text": {
+      "en": "In a sorted list you do not need to look at every item. Look at the middle: if the target is bigger, forget the left half; if smaller, forget the right half. Repeat. Each step halves the work, so 1000 items need only about 10 steps.\n\nIt is how you find a name in a phone book, or a word in a dictionary.",
+      "it": "In una lista ordinata non serve guardare ogni elemento. Guarda quello di mezzo: se il bersaglio è più grande, dimentica la metà sinistra; se è più piccolo, dimentica la metà destra. Ripeti. Ogni passo dimezza il lavoro, quindi 1000 elementi richiedono solo circa 10 passi.\n\nÈ come si trova un nome in un elenco telefonico, o una parola in un dizionario.",
+      "fr": "Dans une liste triée tu n'as pas besoin de regarder chaque élément. Regarde celui du milieu : si la cible est plus grande, oublie la moitié gauche ; si elle est plus petite, oublie la moitié droite. Recommence. Chaque pas divise le travail par deux, donc 1000 éléments n'ont besoin que d'environ 10 pas.\n\nC'est comme ça qu'on trouve un nom dans un annuaire, ou un mot dans un dictionnaire."
+     },
+     "see": {
+      "en": "200\n(200, 8)\n(-1, 9)",
+      "it": "200\n(200, 8)\n(-1, 9)",
+      "fr": "200\n(200, 8)\n(-1, 9)"
+     },
+     "turn": {
+      "en": "Count the steps for a list of 1,000,000 numbers.",
+      "it": "Conta i passi per una lista di 1.000.000 di numeri.",
+      "fr": "Compte les pas pour une liste de 1 000 000 de nombres."
+     },
+     "slip": null
+    },
+    {
+     "code": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items\n\ndef insertion_sort(items):\n    result = []\n    for item in items:\n        position = 0\n        while position < len(result) and result[position] < item:\n            position += 1\n        result.insert(position, item)\n    return result\n\ndata = [5, 2, 9, 1, 7, 3]\nprint(bubble_sort(data))\nprint(insertion_sort(data))\nprint(data)",
+     "title": {
+      "en": "Sort by hand",
+      "it": "Ordinare a mano",
+      "fr": "Trier à la main"
+     },
+     "text": {
+      "en": "Python has sorted(...), but writing a sort yourself teaches a lot. Bubble sort swaps neighbours that are in the wrong order, again and again, until the biggest bubbles up to the end. Insertion sort takes each item and puts it in its place in a growing sorted list.\n\nBoth are slow for big lists (quadratic), but easy to understand.",
+      "it": "Python ha sorted(...), ma scrivere un ordinamento tu stesso insegna molto. Il bubble sort scambia i vicini che sono nell'ordine sbagliato, ancora e ancora, finché il più grande sale in fondo. L'insertion sort prende ogni elemento e lo mette al suo posto in una lista ordinata che cresce.\n\nEntrambi sono lenti per le liste grandi (quadratici), ma facili da capire.",
+      "fr": "Python a sorted(...), mais écrire un tri toi-même apprend beaucoup. Le tri à bulles échange les voisins qui sont dans le mauvais ordre, encore et encore, jusqu'à ce que le plus grand remonte au bout. Le tri par insertion prend chaque élément et le met à sa place dans une liste triée qui grandit.\n\nLes deux sont lents pour les grandes listes (quadratiques), mais faciles à comprendre."
+     },
+     "see": {
+      "en": "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+      "it": "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+      "fr": "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]"
+     },
+     "turn": {
+      "en": "Make bubble_sort sort from the biggest to the smallest.",
+      "it": "Fai ordinare a bubble_sort dal più grande al più piccolo.",
+      "fr": "Fais trier bubble_sort du plus grand au plus petit."
+     },
+     "slip": null
+    },
+    {
+     "code": "def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))\n\nprint(merge_sort([38, 27, 43, 3, 9, 82, 10]))\nimport random\nrandom.seed(1)\nbig = [random.randint(0, 1000) for _ in range(500)]\nprint(merge_sort(big) == sorted(big))",
+     "title": {
+      "en": "Divide and conquer: merge sort",
+      "it": "Dividi e conquista: merge sort",
+      "fr": "Diviser pour régner : tri fusion"
+     },
+     "text": {
+      "en": "Merge sort uses recursion: cut the list in half, sort each half the same way, and merge the two sorted halves by always taking the smaller front item. The last line checks the answer against Python's own sorted.\n\nIt is much faster than bubble sort for big lists. Always test your algorithm against a trusted tool.",
+      "it": "Il merge sort usa la ricorsione: taglia la lista a metà, ordina ogni metà allo stesso modo, e fonde le due metà ordinate prendendo sempre l'elemento di testa più piccolo. L'ultima riga controlla la risposta con il sorted di Python.\n\nÈ molto più veloce del bubble sort per le liste grandi. Prova sempre il tuo algoritmo contro uno strumento di cui ti fidi.",
+      "fr": "Le tri fusion utilise la récursion : coupe la liste en deux, trie chaque moitié de la même façon, et fusionne les deux moitiés triées en prenant toujours le plus petit élément de tête. La dernière ligne vérifie la réponse avec le sorted de Python.\n\nIl est bien plus rapide que le tri à bulles pour les grandes listes. Teste toujours ton algorithme contre un outil de confiance."
+     },
+     "see": {
+      "en": "[3, 9, 10, 27, 38, 43, 82]\nTrue",
+      "it": "[3, 9, 10, 27, 38, 43, 82]\nTrue",
+      "fr": "[3, 9, 10, 27, 38, 43, 82]\nTrue"
+     },
+     "turn": {
+      "en": "Count how many comparisons merge sort needs for 16 items.",
+      "it": "Conta quanti confronti servono al merge sort per 16 elementi.",
+      "fr": "Compte combien de comparaisons le tri fusion demande pour 16 éléments."
+     },
+     "slip": null
+    },
+    {
+     "code": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\ndef sieve(limit):\n    marks = [True] * (limit + 1)\n    marks[0:2] = [False, False]\n    for p in range(2, int(limit ** 0.5) + 1):\n        if marks[p]:\n            for multiple in range(p * p, limit + 1, p):\n                marks[multiple] = False\n    return [n for n, ok in enumerate(marks) if ok]\n\nprint([n for n in range(30) if is_prime(n)])\nprint(sieve(50))\nprint(len(sieve(10_000)))",
+     "title": {
+      "en": "Prime numbers",
+      "it": "I numeri primi",
+      "fr": "Les nombres premiers"
+     },
+     "text": {
+      "en": "A prime has no divisor other than 1 and itself. To test one number you only need to check divisors up to its square root. To find all the primes up to a limit, the sieve of Eratosthenes crosses out the multiples of each prime, which is far quicker.\n\nAn algorithm from over two thousand years ago, still the right idea today.",
+      "it": "Un primo non ha divisori oltre a 1 e se stesso. Per provare un numero basta controllare i divisori fino alla sua radice quadrata. Per trovare tutti i primi fino a un limite, il crivello di Eratostene cancella i multipli di ogni primo, ed è molto più rapido.\n\nUn algoritmo di oltre duemila anni fa, ancora oggi l'idea giusta.",
+      "fr": "Un nombre premier n'a pas d'autre diviseur que 1 et lui-même. Pour tester un nombre il suffit de vérifier les diviseurs jusqu'à sa racine carrée. Pour trouver tous les premiers jusqu'à une limite, le crible d'Ératosthène barre les multiples de chaque premier, ce qui est bien plus rapide.\n\nUn algorithme vieux de plus de deux mille ans, toujours la bonne idée aujourd'hui."
+     },
+     "see": {
+      "en": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]\n1229",
+      "it": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]\n1229",
+      "fr": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]\n1229"
+     },
+     "turn": {
+      "en": "Find the biggest prime under 1000.",
+      "it": "Trova il primo più grande sotto 1000.",
+      "fr": "Trouve le plus grand premier sous 1000."
+     },
+     "slip": null
+    },
+    {
+     "code": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(solve(2))\nprint(solve(3))\nprint(len(solve(10)), 2 ** 10 - 1)\n\ndef permutations(items):\n    if len(items) <= 1:\n        return [items]\n    result = []\n    for i, item in enumerate(items):\n        for rest in permutations(items[:i] + items[i + 1:]):\n            result.append([item] + rest)\n    return result\n\nprint(permutations([1, 2, 3]))",
+     "title": {
+      "en": "Hard puzzles with recursion",
+      "it": "Rompicapo difficili con la ricorsione",
+      "fr": "Casse-tête difficiles avec la récursion"
+     },
+     "text": {
+      "en": "The Towers of Hanoi: move n discs from one peg to another, one at a time, never putting a big disc on a small one. The recursion says: move n-1 discs out of the way, move the big one, bring the n-1 back. It needs 2 to the power n minus 1 moves.\n\nRecursion also builds all the orders of a list: pick each item as the first and arrange the rest.",
+      "it": "Le Torri di Hanoi: sposta n dischi da un piolo a un altro, uno alla volta, senza mai mettere un disco grande su uno piccolo. La ricorsione dice: togli di mezzo n-1 dischi, sposta quello grande, riporta gli n-1. Servono 2 alla n meno 1 mosse.\n\nLa ricorsione costruisce anche tutti gli ordini di una lista: scegli ogni elemento come primo e disponi il resto.",
+      "fr": "Les Tours de Hanoï : déplace n disques d'une tige à une autre, un à la fois, sans jamais mettre un grand disque sur un petit. La récursion dit : écarte n-1 disques, déplace le grand, ramène les n-1. Il faut 2 puissance n moins 1 coups.\n\nLa récursion construit aussi tous les ordres d'une liste : choisis chaque élément comme premier et arrange le reste."
+     },
+     "see": {
+      "en": "['A->B', 'A->C', 'B->C']\n['A->C', 'A->B', 'C->B', 'A->C', 'B->A', 'B->C', 'A->C']\n1023 1023\n[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+      "it": "['A->B', 'A->C', 'B->C']\n['A->C', 'A->B', 'C->B', 'A->C', 'B->A', 'B->C', 'A->C']\n1023 1023\n[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+      "fr": "['A->B', 'A->C', 'B->C']\n['A->C', 'A->B', 'C->B', 'A->C', 'B->A', 'B->C', 'A->C']\n1023 1023\n[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]"
+     },
+     "turn": {
+      "en": "How many moves does it take for 20 discs?",
+      "it": "Quante mosse servono per 20 dischi?",
+      "fr": "Combien de coups faut-il pour 20 disques ?"
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Doing many things at once",
+    "it": "Fare tante cose insieme",
+    "fr": "Faire plein de choses à la fois"
+   },
+   "subtitle": {
+    "en": "async and await",
+    "it": "async e await",
+    "fr": "async et await"
+   },
+   "steps": [
+    {
+     "code": "import asyncio\n\nasync def hello():\n    print(\"Hello\")\n    await asyncio.sleep(0.01)\n    print(\"World\")\n    return 42\n\nresult = asyncio.run(hello())\nprint(result)",
+     "title": {
+      "en": "A function that can wait",
+      "it": "Una funzione che può aspettare",
+      "fr": "Une fonction qui peut attendre"
+     },
+     "text": {
+      "en": "async def makes a coroutine: a function that can pause while it waits for something slow (a download, a timer) and let others work in the meantime. await marks the place where it waits. asyncio.run starts the whole thing.\n\nThis step and the next ones need a recent browser, because Python has to pause and resume. If yours is old, Pyviel will say so.",
+      "it": "async def crea una coroutine: una funzione che può fermarsi mentre aspetta qualcosa di lento (un download, un timer) e lasciare lavorare gli altri nel frattempo. await segna il punto dove aspetta. asyncio.run fa partire il tutto.\n\nQuesto passo e i prossimi hanno bisogno di un browser recente, perché Python deve fermarsi e riprendere. Se il tuo è vecchio, Pyviel lo dirà.",
+      "fr": "async def crée une coroutine : une fonction qui peut faire une pause pendant qu'elle attend quelque chose de lent (un téléchargement, un minuteur) et laisser les autres travailler entre-temps. await marque l'endroit où elle attend. asyncio.run démarre le tout.\n\nCette étape et les suivantes ont besoin d'un navigateur récent, parce que Python doit se mettre en pause et reprendre. Si le tien est vieux, Pyviel le dira."
+     },
+     "see": {
+      "en": "Hello\nWorld\n42",
+      "it": "Hello\nWorld\n42",
+      "fr": "Hello\nWorld\n42"
+     },
+     "turn": {
+      "en": "Add one more print after the await.",
+      "it": "Aggiungi un altro print dopo l'await.",
+      "fr": "Ajoute un autre print après l'await."
+     },
+     "slip": {
+      "en": "await only works inside an async def. Outside, it is a mistake.",
+      "it": "await funziona solo dentro un async def. Fuori, è un errore.",
+      "fr": "await ne marche que dans un async def. Dehors, c'est une erreur."
+     }
+    },
+    {
+     "code": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    print(name, \"done\")\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(\n        fetch(\"slow\", 0.06),\n        fetch(\"fast\", 0.01),\n        fetch(\"medium\", 0.03),\n    )\n    print(results)\n\nasyncio.run(main())",
+     "title": {
+      "en": "Wait for many at the same time",
+      "it": "Aspettare tanti insieme",
+      "fr": "Attendre plusieurs en même temps"
+     },
+     "text": {
+      "en": "gather starts several coroutines together and waits for all of them. They run at the same time: the fast one finishes first even though it was started second, and the total time is that of the slowest, not the sum.\n\nThe results come back in the same order as you asked.",
+      "it": "gather fa partire più coroutine insieme e aspetta tutte. Girano nello stesso tempo: quella veloce finisce per prima anche se è partita per seconda, e il tempo totale è quello della più lenta, non la somma.\n\nI risultati tornano nello stesso ordine in cui li hai chiesti.",
+      "fr": "gather démarre plusieurs coroutines ensemble et les attend toutes. Elles tournent en même temps : la rapide finit la première même si elle a démarré en deuxième, et le temps total est celui de la plus lente, pas la somme.\n\nLes résultats reviennent dans le même ordre que tu les as demandés."
+     },
+     "see": {
+      "en": "fast done\nmedium done\nslow done\n['SLOW', 'FAST', 'MEDIUM']",
+      "it": "fast done\nmedium done\nslow done\n['SLOW', 'FAST', 'MEDIUM']",
+      "fr": "fast done\nmedium done\nslow done\n['SLOW', 'FAST', 'MEDIUM']"
+     },
+     "turn": {
+      "en": "Add a fourth task that takes 0.02 seconds.",
+      "it": "Aggiungi un quarto compito che dura 0.02 secondi.",
+      "fr": "Ajoute une quatrième tâche qui dure 0.02 seconde."
+     },
+     "slip": null
+    },
+    {
+     "code": "import asyncio\n\nasync def producer(queue):\n    for n in range(3):\n        await queue.put(n)\n        print(\"made\", n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"used\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())\nprint(\"finished\")",
+     "title": {
+      "en": "Tasks that pass things to each other",
+      "it": "Compiti che si passano cose",
+      "fr": "Des tâches qui se passent des choses"
+     },
+     "text": {
+      "en": "A Queue lets one coroutine hand things to another. The producer puts items in, the consumer takes them out as they come, and None is the agreed sign for \"no more\".\n\nThis is the shape of many real programs: one part collects work, another does it.",
+      "it": "Una Queue permette a una coroutine di passare cose a un'altra. Il produttore mette elementi dentro, il consumatore li toglie man mano che arrivano, e None è il segno concordato per \"basta\".\n\nÈ la forma di molti programmi veri: una parte raccoglie il lavoro, un'altra lo fa.",
+      "fr": "Une Queue permet à une coroutine de passer des choses à une autre. Le producteur met des éléments dedans, le consommateur les retire à mesure qu'ils arrivent, et None est le signe convenu pour « fini ».\n\nC'est la forme de beaucoup de vrais programmes : une partie collecte le travail, une autre le fait."
+     },
+     "see": {
+      "en": "made 0\nmade 1\nmade 2\nused 0\nused 1\nused 2\nfinished",
+      "it": "made 0\nmade 1\nmade 2\nused 0\nused 1\nused 2\nfinished",
+      "fr": "made 0\nmade 1\nmade 2\nused 0\nused 1\nused 2\nfinished"
+     },
+     "turn": {
+      "en": "Make the producer send five items.",
+      "it": "Fai mandare cinque elementi al produttore.",
+      "fr": "Fais envoyer cinq éléments au producteur."
+     },
+     "slip": null
+    },
+    {
+     "code": "import asyncio\n\nasync def slow():\n    await asyncio.sleep(1)\n    return \"never reached\"\n\nasync def main():\n    try:\n        result = await asyncio.wait_for(slow(), timeout=0.05)\n    except asyncio.TimeoutError:\n        print(\"Too slow, gave up\")\n    task = asyncio.create_task(asyncio.sleep(0.01, result=\"background\"))\n    print(\"doing other things\")\n    print(await task)\n\nasyncio.run(main())",
+     "title": {
+      "en": "Time limits and background tasks",
+      "it": "Limiti di tempo e compiti in secondo piano",
+      "fr": "Limites de temps et tâches en arrière-plan"
+     },
+     "text": {
+      "en": "wait_for stops waiting after a time limit and raises TimeoutError. create_task starts a coroutine in the background and gives you a task, which you await later to get its result.\n\nAsync is a big topic. You now know the four pieces that cover most real uses: async def, await, gather and create_task.",
+      "it": "wait_for smette di aspettare dopo un limite di tempo e solleva TimeoutError. create_task fa partire una coroutine in secondo piano e ti dà un compito, che aspetti dopo per avere il suo risultato.\n\nAsync è un argomento grande. Ora conosci i quattro pezzi che coprono la maggior parte degli usi veri: async def, await, gather e create_task.",
+      "fr": "wait_for arrête d'attendre après une limite de temps et lève TimeoutError. create_task démarre une coroutine en arrière-plan et te donne une tâche, que tu attends plus tard pour avoir son résultat.\n\nAsync est un grand sujet. Tu connais maintenant les quatre morceaux qui couvrent la plupart des vrais usages : async def, await, gather et create_task."
+     },
+     "see": {
+      "en": "Too slow, gave up\ndoing other things\nbackground",
+      "it": "Too slow, gave up\ndoing other things\nbackground",
+      "fr": "Too slow, gave up\ndoing other things\nbackground"
+     },
+     "turn": {
+      "en": "Run three background tasks and wait for all of them.",
+      "it": "Fai partire tre compiti in secondo piano e aspettali tutti.",
+      "fr": "Lance trois tâches en arrière-plan et attends-les toutes."
      },
      "slip": null
     }

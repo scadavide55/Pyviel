@@ -16,8 +16,17 @@
       group: say(lesson.group),
       title: say(lesson.title),
       subtitle: say(lesson.subtitle),
+      met: (function () {
+        var seen = {}, list = [];
+        lesson.steps.forEach(function (step) { (step.news || []).forEach(function (n) { if (!seen[n.k]) { seen[n.k] = 1; list.push({word: n.w, text: say(n.d)}); } }); });
+        return list;
+      })(),
       steps: lesson.steps.map(function (step) {
-        return {title: say(step.title), text: say(step.text), code: step.code, see: say(step.see), turn: say(step.turn), slip: say(step.slip), error: step.error};
+        return {
+          title: say(step.title), text: say(step.text), code: step.code, see: say(step.see), turn: say(step.turn), slip: say(step.slip), error: step.error,
+          news: (step.news || []).map(function (n) { return {key: n.k, word: n.w, text: say(n.d), shape: n.s}; }),
+          task: step.ex ? {text: say(step.ex.task), hint: say(step.ex.hint), solution: step.ex.sol, start: step.ex.start, spec: step.ex.spec, answers: step.ex.answers, expected: step.ex.expected} : null
+        };
       })
     };
   });
@@ -317,6 +326,128 @@
     showStartHere();
   }
 
+  var SOLVED = 'pyviel.tutorial.solved';
+  var solved = read(SOLVED, {});
+  if (!solved || typeof solved !== 'object') solved = {};
+  var revealed = {};
+
+  function shortText(text, lines) {
+    var rows = String(text).replace(/\s+$/, '').split('\n');
+    return rows.length > lines ? rows.slice(0, lines - 1).concat(['...']).join('\n') : rows.join('\n');
+  }
+
+  // A practice task: the student writes in the editor, then asks to be checked.
+  function drawTask(task, key) {
+    var box = element('div', 'exercise' + (solved[key] ? ' solved' : ''));
+    var head = element('div', 'block-title', UI.turn || 'Your turn');
+    if (solved[key]) head.appendChild(element('span', 'solved-tag', '✓ ' + (UI.solved || 'Solved')));
+    box.appendChild(head);
+    String(task.text).split('\n\n').forEach(function (paragraph) { box.appendChild(element('p', 'exercise-text', paragraph)); });
+    if (task.expected) {
+      box.appendChild(element('div', 'expected-title', UI.shouldShow || 'Your program should show:'));
+      box.appendChild(element('pre', 'screen small', task.expected));
+    }
+    var result = element('div', 'exercise-result');
+    result.setAttribute('aria-live', 'polite');
+    var extra = element('div', 'exercise-extra');
+
+    var buttons = element('div', 'exercise-buttons');
+    function button(label, className, action) {
+      var b = element('button', 'btn ' + className, label);
+      b.type = 'button';
+      b.addEventListener('click', action);
+      buttons.appendChild(b);
+      return b;
+    }
+    button(UI.startTask || 'Start here', 'start-task', function () {
+      try { if (code.value.trim() && code.value !== task.start) localStorage.setItem(BACKUP, code.value); } catch (e) {}
+      code.value = task.start || '';
+      code.dispatchEvent(new Event('input', {bubbles: true}));
+      code.setSelectionRange(code.value.length, code.value.length);
+      code.focus();
+      if (window.innerWidth <= 900) setOpen(false);
+      document.dispatchEvent(new CustomEvent('pyviel:notice', {detail: UI.taskReady || 'Ready. Write your answer in the editor, then press Check my program.'}));
+    });
+    button(UI.checkTask || 'Check my program', 'primary check-task', function () { checkTask(task, key, result); });
+    button(UI.hint || 'Hint', 'hint-task', function () {
+      extra.innerHTML = '';
+      var hint = element('p', 'hint-box');
+      hint.appendChild(element('b', null, UI.hintTitle || 'Hint'));
+      hint.appendChild(document.createTextNode(task.hint));
+      extra.appendChild(hint);
+    });
+    button(UI.solution || 'Show a solution', 'solution-task', function () {
+      extra.innerHTML = '';
+      var holder = element('div', 'solution-box');
+      holder.appendChild(element('b', null, UI.solutionTitle || 'One solution'));
+      holder.appendChild(element('pre', 'src', task.solution));
+      var put = element('button', 'btn', UI.putSolution || 'Put it in the editor');
+      put.type = 'button';
+      put.addEventListener('click', function () {
+        code.value = task.solution;
+        code.dispatchEvent(new Event('input', {bubbles: true}));
+        code.setSelectionRange(0, 0);
+        code.focus();
+        if (window.innerWidth <= 900) setOpen(false);
+      });
+      holder.appendChild(put);
+      extra.appendChild(holder);
+    });
+    box.appendChild(buttons);
+    box.appendChild(result);
+    box.appendChild(extra);
+    stepBox.appendChild(box);
+  }
+
+  function checkTask(task, key, result) {
+    result.className = 'exercise-result';
+    result.innerHTML = '';
+    var stop = $('stop');
+    if (!window.Pyviel || (stop && !stop.hidden)) { result.textContent = UI.checkBusy || 'Wait until the program has finished, then check again.'; return; }
+    var source = code.value;
+    if (!source.trim()) { result.className += ' no'; result.textContent = UI.checkEmptyEditor || 'The editor is empty. Press Start here, or type your program.'; return; }
+    result.className += ' working';
+    result.textContent = UI.checking || 'Checking…';
+    var answers = (task.answers || []).slice();
+    window.Pyviel.runAsync(source, {input: function () { return answers.length ? answers.shift() : null; }}).then(function (run) {
+      result.className = 'exercise-result';
+      result.innerHTML = '';
+      function say2(cls, title, text) {
+        result.className += ' ' + cls;
+        result.appendChild(element('b', null, title));
+        if (text) result.appendChild(document.createTextNode(text));
+      }
+      if (run.problems.length) {
+        var problem = run.problems[0];
+        say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkError || 'Your program stopped with a problem') + ' (' + (UI.line || 'line') + ' ' + problem.line + '): ' + problem.message);
+        return;
+      }
+      if (run.stopped) { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkMoreAnswers || 'Your program asked more questions than this task expects.')); return; }
+      var verdict = window.PyvielCheck.check(task.spec, run.text, source);
+      if (verdict.ok) {
+        solved[key] = 1;
+        write(SOLVED, solved);
+        say2('yes', '✓ ' + (UI.right || 'Yes! That is right.'), ' ' + (UI.rightMore || 'You can go on to the next step.'));
+        var tag = stepBox.querySelector('.exercise .block-title');
+        if (tag && !tag.querySelector('.solved-tag')) tag.appendChild(element('span', 'solved-tag', '✓ ' + (UI.solved || 'Solved')));
+        var dot = stepBox.querySelector('.progress .here'); if (dot) dot.className += ' solved';
+        return;
+      }
+      if (verdict.why === 'empty') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkEmpty || 'Your program showed nothing. Use print to show something.')); return; }
+      if (verdict.why === 'code') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkCode || 'It shows the right thing, but the task asks you to write it in a special way. Read the task again.')); return; }
+      say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkWrong || 'Your program shows something different.'));
+      result.appendChild(element('div', 'expected-title', UI.yourShows || 'Your program showed:'));
+      result.appendChild(element('pre', 'screen small', shortText(window.PyvielCheck.tidy(run.text), 8)));
+      if (task.expected) {
+        result.appendChild(element('div', 'expected-title', UI.shouldShow || 'Your program should show:'));
+        result.appendChild(element('pre', 'screen small', task.expected));
+      }
+    }, function () {
+      result.className = 'exercise-result no';
+      result.textContent = UI.checkFailed || 'Something went wrong while checking. Try again.';
+    });
+  }
+
   function drawStep() {
     silence();
     var lesson = TUTORIALS[position.lesson], step = lesson.steps[position.step];
@@ -331,13 +462,28 @@
 
     var bar = element('div', 'progress');
     bar.setAttribute('aria-hidden', 'true');
-    lesson.steps.forEach(function (_, i) { bar.appendChild(element('i', i < position.step ? 'on' : i === position.step ? 'here' : '')); });
+    lesson.steps.forEach(function (_, i) { bar.appendChild(element('i', (i < position.step ? 'on' : i === position.step ? 'here' : '') + (solved[position.lesson + ':' + i] ? ' solved' : ''))); });
     stepBox.appendChild(bar);
     stepBox.appendChild(element('div', 'step-count', (UI.lesson || 'Lesson') + ' ' + (position.lesson + 1) + ': ' + lesson.title + ' · ' + (UI.step || 'step') + ' ' + (position.step + 1) + ' ' + (UI.of || 'of') + ' ' + lesson.steps.length));
     stepBox.appendChild(element('h3', null, step.title));
     String(step.text).split('\n\n').forEach(function (paragraph) {
       stepBox.appendChild(element('p', 'tutorial-text', paragraph));
     });
+
+    // Every new thing is explained before the program that uses it.
+    if (step.news.length) {
+      var words = element('div', 'new-words');
+      words.appendChild(element('div', 'block-title', UI.newWords || 'New in this step'));
+      step.news.forEach(function (n) {
+        var item = element('div', 'new-word');
+        item.appendChild(element('code', 'new-word-name', n.word));
+        item.appendChild(element('span', 'new-word-text', n.text));
+        if (n.shape) item.appendChild(element('pre', 'new-word-shape', n.shape));
+        words.appendChild(item);
+      });
+      stepBox.appendChild(words);
+    }
+
     var listenRow = listenButton(step);
     if (listenRow) stepBox.appendChild(listenRow);
 
@@ -355,13 +501,28 @@
     });
     stepBox.appendChild(rows);
 
+    // Think first, then look: the result stays hidden until the student has a guess.
+    var stepKey = position.lesson + ':' + position.step;
     if (step.see) {
       var see = element('div', 'see-box');
-      see.appendChild(element('div', 'block-title', UI.see || 'What you will see'));
-      see.appendChild(element('pre', 'screen', step.see));
+      if (revealed[stepKey]) {
+        see.appendChild(element('div', 'block-title', UI.see || 'What you will see'));
+        see.appendChild(element('pre', 'screen', step.see));
+      } else {
+        var ask = element('div', 'predict');
+        ask.appendChild(element('b', null, UI.predict || 'Think first'));
+        ask.appendChild(element('span', null, UI.predictText || 'What do you think this program shows? Make a guess, then look.'));
+        var reveal = element('button', 'btn reveal', UI.showResult || 'Show what you will see');
+        reveal.type = 'button';
+        reveal.addEventListener('click', function () { revealed[stepKey] = true; drawStep(); });
+        ask.appendChild(reveal);
+        see.appendChild(ask);
+      }
       stepBox.appendChild(see);
     }
-    if (step.turn) {
+
+    if (step.task) drawTask(step.task, stepKey);
+    else if (step.turn) {
       var turn = element('p', 'your-turn');
       turn.appendChild(element('b', null, UI.turn || 'Your turn'));
       turn.appendChild(document.createTextNode(step.turn));
@@ -416,6 +577,15 @@
     });
     actions.insertBefore(tryIt, actions.firstChild);
     stepBox.appendChild(actions);
+
+    if (last && lesson.met.length) {
+      var recap = element('div', 'recap');
+      recap.appendChild(element('div', 'block-title', UI.recap || 'In this lesson you met'));
+      var chips = element('div', 'chips');
+      lesson.met.forEach(function (m) { var chip = element('code', 'chip', m.word); chip.title = m.text; chips.appendChild(chip); });
+      recap.appendChild(chips);
+      stepBox.appendChild(recap);
+    }
 
     var nav = element('div', 'nav-row');
     var previous = element('button', 'btn', '← Back');

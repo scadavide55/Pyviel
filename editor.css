@@ -391,3 +391,35 @@ dialog::backdrop { background: #2b242088; }
 .command-pop pre { margin: 0; padding: 10px 12px; background: var(--screen); color: var(--screen-ink); border-radius: 10px; font: 14px/1.6 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; word-break: break-all; user-select: all; }
 .command-pop .pop-note { color: var(--muted); font-size: 13px; }
 .pop-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
+
+/* Lessons: new words, think first, practice tasks */
+.new-words { display: flex; flex-direction: column; gap: 8px; padding: 12px 12px 12px; background: var(--accent-soft); border-radius: 12px; border-left: 5px solid var(--accent); }
+.new-words .block-title { margin: 0; color: var(--accent); }
+.new-word { display: flex; flex-direction: column; gap: 3px; }
+.new-word-name { align-self: flex-start; font: 700 15px/1.4 ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: var(--card); padding: 2px 8px; border-radius: 6px; border: 1.5px solid var(--edge); }
+.new-word-text { font-size: 15px; line-height: 1.5; }
+.new-word-shape { margin: 2px 0 0; padding: 6px 10px; background: var(--screen); color: var(--screen-ink); border-radius: 8px; font: 13px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; }
+.predict { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px; border: 2px dashed var(--edge); border-radius: 12px; }
+.predict b { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.exercise { display: flex; flex-direction: column; gap: 8px; padding: 12px; background: var(--card); border: 2px solid var(--edge); border-radius: 12px; }
+.exercise.solved { border-color: var(--ok); }
+.exercise .block-title { margin: 0; color: var(--accent); display: flex; gap: 10px; align-items: center; }
+.solved-tag { color: var(--ok); text-transform: none; letter-spacing: 0; font-size: 13px; }
+.exercise-text { margin: 0; font-size: 16px; line-height: 1.5; }
+.expected-title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-top: 4px; }
+.screen.small { margin: 0; padding: 8px 12px; font-size: 14px; }
+.exercise-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.exercise-buttons .btn { height: 36px; padding: 0 12px; }
+.exercise-result:empty { display: none; }
+.exercise-result { padding: 10px 12px; border-radius: 10px; font-size: 15px; line-height: 1.5; }
+.exercise-result b { margin-right: 4px; }
+.exercise-result.yes { background: color-mix(in srgb, var(--ok) 16%, var(--card)); border-left: 5px solid var(--ok); }
+.exercise-result.no { background: color-mix(in srgb, var(--warn) 14%, var(--card)); border-left: 5px solid var(--warn); }
+.exercise-result.working { background: var(--bg); color: var(--muted); }
+.hint-box, .solution-box { margin: 0; padding: 10px 12px; background: var(--bg); border-radius: 10px; border-left: 5px solid var(--edge); display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.hint-box b, .solution-box b { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.solution-box pre { margin: 0; padding: 8px 10px; background: var(--screen); color: var(--screen-ink); border-radius: 8px; font: 13px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; align-self: stretch; }
+.progress i.solved { box-shadow: inset 0 0 0 2px var(--ok); }
+.recap { display: flex; flex-direction: column; gap: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); font-size: 13px; }

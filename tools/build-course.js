@@ -6,7 +6,14 @@
    and a step is
      {c: code,
       i: [answers typed for input(), in order]            (optional)
-      t: [title en, it, fr]   x: [text en, it, fr]   d: [your turn en, it, fr]   w: [watch out en, it, fr]
+      t: [title en, it, fr]   x: [text en, it, fr]   w: [watch out en, it, fr]
+      n: ['print', 'string']  the new things of the step, as keys of content/glossary.js (tools/check-newwords.js
+                              makes sure that everything is explained where it first appears)
+      ex: {t: [task en, it, fr], h: [hint en, it, fr], sol: 'a solution', start: 'code to begin with' (optional),
+           out: 'what it prints' | exact: true (what the solution prints) | m: 'regex on the output',
+           c: 'regex on the program text' (optional), i: [typed answers] (optional)}
+                              a practice task; the build runs the solution, and the start, and checks both
+      d: [your turn en, it, fr]   the old kind of practice sentence, still accepted
       s: what you will see, when it cannot be found by running (random output)   (optional)
       e: 'NameError'          the program is meant to stop with this error        (optional)
       r: true                 the output changes on every run, so `s` is required (optional)}
@@ -22,6 +29,9 @@ if (!process.execArgv.includes('--experimental-wasm-jspi')) {
   process.exit(again.status === null ? 1 : again.status);
 }
 const Errors = require('../pyviel-errors.js');
+const Check = require('../pyviel-check.js');
+const glossaryFile = path.join(__dirname, '..', 'content', 'glossary.js');
+const glossary = fs.existsSync(glossaryFile) ? require(glossaryFile) : {};
 
 const LANGS = ['en', 'it', 'fr'];
 const MAX_SEE_LINES = 12;
@@ -51,7 +61,7 @@ async function main() {
   const fresh = py.runPython('import os, tempfile\ndef _fresh():\n    os.chdir(tempfile.mkdtemp())\n_fresh');
   const lineWord = Errors.words.line;
 
-  const files = fs.readdirSync(path.join(__dirname, '..', 'content')).filter(f => /\.js$/.test(f)).sort();
+  const files = fs.readdirSync(path.join(__dirname, '..', 'content')).filter(f => /^\d.*\.js$/.test(f)).sort();
   const lessons = [];
   for (const file of files) {
     for (const lesson of require(path.join(__dirname, '..', 'content', file))) {
@@ -65,7 +75,8 @@ async function main() {
         const here = where + ' step ' + (index + 1) + (step.t ? ' "' + step.t[0] + '"' : '');
         const t = pick3(step.t, here, 't (title)', true);
         const x = pick3(step.x, here, 'x (text)', true);
-        const d = pick3(step.d, here, 'd (your turn)', true);
+        const d = pick3(step.d, here, 'd (your turn)', !step.ex);
+        if (step.ex && step.d) bad(here, 'has both ex and d: keep ex');
         const w = pick3(step.w, here, 'w (watch out)', false);
         if (typeof step.c !== 'string' || !step.c.trim()) { bad(here, 'no code'); continue; }
         for (const l of ['it', 'fr']) {
@@ -112,7 +123,58 @@ async function main() {
           }
           if (!see[l].trim()) bad(here, 'nothing to show for "what you will see" in ' + l + ' (give s)');
         }
-        steps.push({code: step.c.replace(/\n+$/, ''), title: t, text: x, see, turn: d, slip: w, error: step.e || undefined});
+        // the new words of the step, from the glossary
+        const news = [];
+        for (const item of step.n || []) {
+          const key = typeof item === 'string' ? item : null;
+          if (!key || !glossary[key]) { bad(here, 'n has "' + (key || JSON.stringify(item)) + '", which is not in content/glossary.js'); continue; }
+          const g = glossary[key];
+          const d3 = pick3(g.d, here + ' glossary ' + key, 'description', true);
+          const w3 = g.w3 ? pick3(g.w3, here + ' glossary ' + key, 'word', true) : null;
+          news.push({k: key, w: g.w, word: w3, d: d3, s: g.s || undefined});
+        }
+        // the practice task
+        let ex;
+        if (step.ex) {
+          const e = step.ex;
+          const t3 = pick3(e.t, here, 'ex.t (task)', true);
+          const h3 = pick3(e.h, here, 'ex.h (hint)', true);
+          if (typeof e.sol !== 'string' || !e.sol.trim()) bad(here, 'ex.sol (a solution) is missing');
+          else {
+            for (const l of ['it', 'fr']) {
+              if (t3 && t3[l] === t3.en) bad(here, 'ex.t is not translated in ' + l);
+              if (h3 && h3[l] === h3.en && !/[()=*\[\]]/.test(h3.en)) bad(here, 'ex.h is not translated in ' + l);
+            }
+            const give = (e.i || []).slice();
+            const play = async source => {
+              fresh();
+              let printed = '', asked = 0;
+              const proxy = await run.callPromising(source, s => { printed += s; }, () => { asked++; return give.length ? give.shift() : null; });
+              const result = proxy.toJs({dict_converter: Object.fromEntries});
+              proxy.destroy();
+              return {printed, result};
+            };
+            try {
+              const solved = await play(e.sol);
+              if (solved.result.error) bad(here, 'the solution stops with ' + solved.result.error.type + ': ' + solved.result.error.message);
+              const spec = {};
+              if (e.out !== undefined) spec.out = e.out;
+              else if (e.exact) spec.out = solved.printed;
+              if (e.m !== undefined) spec.m = e.m;
+              if (e.c !== undefined) spec.c = e.c;
+              if (spec.out === undefined && spec.m === undefined && spec.c === undefined) bad(here, 'ex needs out, exact, m or c to check');
+              const verdict = Check.check(spec, solved.printed, e.sol);
+              if (!verdict.ok) bad(here, 'the solution does not pass its own check (' + verdict.why + '): it printed ' + JSON.stringify(solved.printed));
+              if (typeof e.start === 'string' && e.start.trim()) {
+                give.splice(0, give.length, ...(e.i || []));
+                const began = await play(e.start);
+                if (!began.result.error && Check.check(spec, began.printed, e.start).ok) bad(here, 'the start already passes the check: the task is done before the student does anything');
+              }
+              ex = {task: t3, hint: h3, sol: e.sol.replace(/\n+$/, ''), start: typeof e.start === 'string' ? e.start.replace(/\n+$/, '') : '', spec, answers: e.i || [], expected: e.out !== undefined || e.exact ? shorten(spec.out) : undefined};
+            } catch (error) { bad(here, 'the task could not be run: ' + error); }
+          }
+        }
+        steps.push({code: step.c.replace(/\n+$/, ''), title: t, text: x, see, turn: d || undefined, slip: w, error: step.e || undefined, news: news.length ? news : undefined, ex});
       }
       if (!steps.length) bad(where, 'no steps');
       lessons.push({group, title, subtitle, steps});

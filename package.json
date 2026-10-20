@@ -46,6 +46,7 @@
       "course.js",
       "tutorials.js",
       "pyviel.js",
+      "pyviel-check.js",
       "pyviel-errors.js",
       "build/icon.svg",
       "build/icon.png",

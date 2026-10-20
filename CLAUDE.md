@@ -38,6 +38,8 @@ All of these must be green before a commit. After editing `content/*.js` run `bu
 - **Python's own words stay in English** in every language (`int`, `str`, `print`...). Only the explanation is translated.
 - **Lesson code lives in `tutorials.js`, texts in `lessons.js`.** Step counts must match in the three languages, or the English text is used.
 - **Cache keys are hand-written:** `pyviel.js?v=...` in `index.html`. Bump them after a change.
+- **The version lives in `pyviel.js` (`VERSION`) and `package.json`;** the CI job compares them. The download names in `index.html` (`PYVIEL_APP`) and the README are a third place: they must match the release tag.
+- **The desktop app** serves the files through the `pyviel://` scheme with the two isolation headers (`electron/main.js`); `electron tools/check-app.js` runs the page checks in the real app window.
 - **Never write `start`-style Kaviel words here.** Kaviel's language is not part of Pyviel.
 
 ## Working here

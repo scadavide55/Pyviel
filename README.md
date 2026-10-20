@@ -1,10 +1,12 @@
 # Pyviel
 
+**[Open Pyviel in your browser](https://scadavide55.github.io/Pyviel/)** · no install, no account, works offline · [Download the desktop app](https://github.com/scadavide55/Pyviel/releases/latest)
+
 Learn Python the way Kaviel teaches code: small steps, every line explained, and a mistake that never leaves you stuck.
 
 Pyviel runs **real Python** (3.14) inside the page. There is nothing to install and nothing leaves your computer.
 
-> Status: **0.2.0-alpha.** The whole course is written: **53 lessons and 255 steps**, in English, Italian and French, from `print` to classes, generators, decorators, async and five complete programs. Every program of every step is run on real Python by the build, so what a step says you will see is what you see. Not yet tried with real beginners, and not yet published.
+> Status: **1.0 beta.** The whole course is written: **54 lessons and 261 steps**, in English, Italian and French, from `print` to classes, generators, decorators and async, with five complete programs and a cheat sheet. Every program of every step is run on real Python by the build, so what a step says you will see is what you see. It has not been tried with real beginners yet: if you do, please tell us where they got stuck.
 
 ## What is different from running Python yourself
 
@@ -13,7 +15,19 @@ Pyviel runs **real Python** (3.14) inside the page. There is nothing to install 
 - **The lessons explain every line** of every program, with what you will see when it runs and a small job to try.
 - **It works offline** and sends nothing anywhere.
 
-## Run it
+## The desktop app
+
+The installers are in the [latest release](https://github.com/scadavide55/Pyviel/releases/latest) (each is over 100 MB, so they are not stored in the repository):
+
+| System | File |
+|---|---|
+| macOS (Intel and Apple silicon) | `Pyviel-1.0.0-beta-universal.dmg` |
+| Windows 10 and 11 | `Pyviel-1.0.0-beta-setup.exe` |
+| Linux (64-bit) | `Pyviel-1.0.0-beta-linux-x64.tar.gz` |
+
+The app is the same page, works with no internet and sends nothing anywhere. The installers are not signed with a paid certificate, so the system may warn the first time: on macOS right-click Pyviel and choose Open; on Windows press More info, then Run anyway. On Linux, unpack the archive and run `pyviel`; if the sandbox complains, run `sudo chown root chrome-sandbox` and `chmod 4755 chrome-sandbox` in that folder.
+
+## Run it from the source
 
 Python's `input()` and the Stop button need the page to be *cross-origin isolated*, which a plain `file://` page cannot be. Use a web address:
 
@@ -21,7 +35,7 @@ Python's `input()` and the Stop button need the page to be *cross-origin isolate
 node tools/serve.js          # then open http://127.0.0.1:8780/
 ```
 
-The published site gets the same thing from the small service worker `coi-sw.js` (the first visit reloads once).
+The published site gets the same thing from the small service worker `coi-sw.js` (the first visit reloads once), and the desktop app serves its files through a local scheme that sends the same headers.
 
 ## Tests
 
@@ -48,7 +62,8 @@ node tools/check-language.js # no English left in the Italian and French texts
 | `lessons.js`, `tutorials.js` | the words of the lesson panel, the note beside each line, and the panel itself |
 | `i18n.js`, `strings.js` | the three interface languages |
 | `pyodide/` | Pyodide 314.0.7 (Python 3.14.2), the core files only |
-| `tools/` | the local server and the page test |
+| `electron/` | the desktop app |
+| `tools/` | the local server, the course build and the checks |
 
 ## Credits and licence
 

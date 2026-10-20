@@ -19,7 +19,7 @@ Decisions taken (20 October 2026):
 | **4 · Objects and beyond** (done) | classes, `__init__`, inheritance, special methods, dataclasses, enums, comprehensions, generators, lambda, decorators, `with`, type hints | about 12 |
 | **5 · Whole programs** (done) | three guided projects from empty page to finished program (a guessing game, a to-do manager that keeps its data, a text adventure) | 3 |
 
-Written on 20 October 2026: 53 lessons and 255 steps, each in three languages (stage 1: 13 lessons, stage 2: 11, stage 3: 10, stage 4: 14, stage 5: 5). Every program of every step is run for real by a test, and every Python error that the course can cause has a sentence in all three languages.
+Written on 20 October 2026: 54 lessons and 261 steps, each in three languages (stage 1: 13 lessons, stage 2: 11, stage 3: 10, stage 4: 14, stage 5: 5, and a cheat sheet as an appendix). Every program of every step is run for real by a test, and every Python error that the course can cause has a sentence in all three languages.
 
 ## Known limits of the Python in the browser
 
@@ -27,10 +27,13 @@ Written on 20 October 2026: 53 lessons and 255 steps, each in three languages (s
 - A very long calculation inside Python's own code (for example `10 ** 10 ** 8`) cannot be interrupted by Stop. Pyviel then restarts Python after a few seconds.
 - Files live in a small private workspace in the page and are gone when the page is closed, unless a lesson saves them to the computer.
 
+## Done in 1.0 beta
+
+The site, the desktop apps for macOS, Windows and Linux, and the whole course.
+
 ## What is still to do
 
 - A test with a real beginner on the first lessons, and a review of the Italian and French texts by people who speak them.
-- The desktop app, and publishing the site.
 - `threading` does not exist in the browser, and `asyncio` needs a recent browser (Chrome, Edge, Brave 137 or later, recent Firefox and Safari have it or are getting it).
 - The leftovers of Kaviel in `i18n.js` and `editor.css` (words and rules that Pyviel does not use).
 

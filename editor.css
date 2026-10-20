@@ -362,3 +362,6 @@ dialog::backdrop { background: #2b242088; }
 .full-toggle { margin: 0 12px 10px 12px; padding: 4px 10px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); font-weight: 600; font-size: 13px; cursor: pointer; }
 .full-toggle:hover { border-color: var(--edge); }
 .full-error { margin: 0 12px 12px 12px; padding: 10px 12px; overflow: auto; max-height: 220px; border-radius: 8px; background: var(--screen, #2a2420); color: var(--screen-ink, #f4ecdc); font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre; }
+
+.lesson-group { margin: 16px 2px 4px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lesson-group:first-of-type { margin-top: 4px; }

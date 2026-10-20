@@ -1,7 +1,5 @@
-/* Lesson texts for Pyviel, in English, Italiano and Français.
-   The code of every step lives in tutorials.js and never changes with the language.
-   A step is [title, explanation, what you will see, your turn, watch out].
-   Paragraphs inside the explanation are separated by a blank line. */
+/* The words of the lesson panel and the note beside each line of code, in English, Italiano and Français.
+   The course itself is course.js (generated from content/). */
 window.PyvielLessons = {
   en: {
     ui: {
@@ -10,42 +8,63 @@ window.PyvielLessons = {
       typeIt: 'Type it yourself', putIt: 'Put it in the editor', typeNote: 'Empty page ready. Type the lines you see in the lesson, then press Run.',
       listen: 'Listen', stopReading: 'Stop reading',
       startLessons: 'New here? Start with lesson 1', continueLesson: 'Continue: lesson {n}', lessonsDone: '{done} of {total} lessons done',
-      allDoneTitle: 'You know the whole language!', allDoneText: 'Now open the examples, change them, and make a program of your own.', seeExamples: 'See the examples'
+      allDoneTitle: 'You know Python!', allDoneText: 'You finished every lesson. Now open the examples, change them, and build a program of your own.', seeExamples: 'See the examples'
     },
     explain: {
       comment: 'A note for people. Python skips it.',
+      docString: 'A long text between triple quotes. Often used to describe what the code does.',
+      insideText: 'Still part of the long text above.',
+      closeBracket: 'Closes the bracket that was opened above.',
       print: 'Shows this on the screen.',
       askNow: 'Asks the question and keeps what the person types in the name on the left.',
-      askNumber: 'Asks the question, then turns the typed text into a whole number.',
+      askNumber: 'Asks the question, then turns the typed text into a number.',
       importIt: 'Brings in a tool box that Python has ready.',
+      decorator: 'A decorator: it adds a power to the function written just below.',
       ifBlock: 'Checks something. The lines pushed in below run only if it is true.',
       elifBlock: 'If the first check was false, checks this one.',
       elseBlock: 'If none of the checks was true, the lines pushed in below run.',
-      forLoop: 'Repeats the lines pushed in below, once for each thing.',
+      forRange: 'Repeats the lines pushed in below, once for each number in the range.',
+      forLoop: 'Repeats the lines pushed in below, once for each item.',
+      whileForever: 'Repeats the lines below again and again. Something inside must use break to leave.',
       whileLoop: 'Repeats the lines pushed in below while the check is true.',
       fnDef: 'Starts your own function, called {name}. The lines pushed in below are what it does.',
+      methodDef: 'Starts a method called {name}: a function that belongs to the class. The first name, self, is the object itself.',
+      initDef: 'The special method that runs when a new object is made. It sets the object up.',
+      specialDef: 'A special method: Python calls it by itself when the object is used in a certain way.',
+      classDef: 'Starts a new kind of thing, called {name}. The lines pushed in below describe it.',
+      classInherit: 'Starts a kind of thing called {name} that inherits everything from {parent}, and can add or change.',
       returnIt: 'Sends this value back to the place that used the function.',
+      yieldIt: 'Hands out one value, then waits here until the next one is asked for.',
       breakIt: 'Leaves the loop right now.',
       continueIt: 'Skips to the next turn of the loop.',
       passIt: 'Does nothing, on purpose. A block needs at least one line.',
-      assign: 'Puts a value in the name {name}. If it already holds something, the old value is gone.'
-    },
-    lessons: [
-      ['Meet Pyviel', 'Your very first program', [
-        [`Make the computer talk`, `A program is a list of instructions. The computer reads them from the top to the bottom.
-
-print is a word that Python already knows. It makes the computer say something. What you want it to say goes inside the round brackets, between quotes.`, `Hello!`, `Click the green Run button. Look at the Output box.`, `Spell print correctly, with brackets and quotes. If you write prnt, Pyviel tells you which line is wrong.`],
-        [`Say more than one thing`, `Each print line says one line. The computer does them in order, just like you read a book.
-
-The quotes tell Python that the words are text, not instructions.`, `Hello!
-My name is Pyviel.
-Nice to meet you.`, `Add one more line that says your own name.`, `Every opening bracket and every opening quote needs its closing one.`],
-        [`When something breaks`, `Everybody makes mistakes, all the time. Here pirnt is a typo: Python does not know that name.
-
-Pyviel tells you in one sentence what happened and on which line. The button View full error shows the whole message that Python wrote, for when you want to learn to read it.`, `Before
-(then a problem on line 2: the name pirnt does not exist, and Python asks: did you mean print?)`, `Fix the typo, then run it again. All three lines will appear.`, `Python stops at the first mistake. The lines after it do not run until you fix it.`]
-      ]]
-    ]
+      tryBlock: 'Tries the lines pushed in below. If one fails, Python looks for an except instead of stopping.',
+      exceptBlock: 'Runs only if the try above failed with this kind of error.',
+      finallyBlock: 'Runs at the end in every case, whether there was an error or not.',
+      raiseIt: 'Makes an error on purpose, to say that something is not right.',
+      withBlock: 'Opens something, runs the lines pushed in below, and closes it by itself at the end.',
+      assertIt: 'Checks that this is true. If not, Python stops with an error.',
+      delIt: 'Deletes this item or name.',
+      globalIt: 'Says that this name is the one outside the function, not a new one inside.',
+      matchBlock: 'Looks at this value and picks the case below that fits it.',
+      caseBlock: 'One possible shape of the value. Its lines run if it fits.',
+      augAssign: 'Changes the value in place: it takes the old value, does the sum, and keeps the result.',
+      lambdaDef: 'Makes a tiny function with no name and keeps it in this name.',
+      comprehension: 'Builds a new collection in one line by walking through another one.',
+      listLiteral: 'Makes a list and keeps it in the name on the left.',
+      dictLiteral: 'Makes a dictionary: pairs of a key and a value, kept in the name on the left.',
+      setLiteral: 'Makes a set: a bunch of different values with no order.',
+      tupleLiteral: 'Makes a tuple: a few values that go together and cannot be changed.',
+      itemAssign: 'Puts a new value at this position or key.',
+      attrAssign: 'Gives this object a value of its own, kept under that name.',
+      unpackAssign: 'Puts each value on the right into its own name on the left, in order.',
+      assign: 'Puts a value in the name {name}. If it already holds something, the old value is gone.',
+      dictEntry: 'One pair of the dictionary: a key, a colon and its value.',
+      callMethod: 'Asks {obj} to do {method}. A method is a function that belongs to a value.',
+      callFn: 'Runs the function {name}.',
+      listItem: 'One item of the collection above. Items are separated by commas.',
+      showValue: 'Names a value. On its own line it does nothing visible in a program.'
+    }
   },
   it: {
     ui: {
@@ -54,42 +73,63 @@ Pyviel tells you in one sentence what happened and on which line. The button Vie
       typeIt: 'Scrivilo tu', putIt: 'Mettilo nell\'editor', typeNote: 'Pagina vuota pronta. Scrivi le righe che vedi nella lezione, poi premi Esegui.',
       listen: 'Ascolta', stopReading: 'Ferma la lettura',
       startLessons: 'Sei nuovo? Inizia dalla lezione 1', continueLesson: 'Continua: lezione {n}', lessonsDone: '{done} lezioni su {total} fatte',
-      allDoneTitle: 'Conosci tutto il linguaggio!', allDoneText: 'Ora apri gli esempi, cambiali e crea un programma tutto tuo.', seeExamples: 'Vedi gli esempi'
+      allDoneTitle: 'Conosci Python!', allDoneText: 'Hai finito tutte le lezioni. Ora apri gli esempi, cambiali e costruisci un programma tutto tuo.', seeExamples: 'Vedi gli esempi'
     },
     explain: {
       comment: 'Una nota per le persone. Python la salta.',
+      docString: 'Un testo lungo tra triple virgolette. Spesso serve a descrivere cosa fa il codice.',
+      insideText: 'Ancora parte del testo lungo qui sopra.',
+      closeBracket: 'Chiude la parentesi aperta sopra.',
       print: 'Mostra questo sullo schermo.',
       askNow: 'Fa la domanda e tiene ciò che la persona scrive nel nome a sinistra.',
-      askNumber: 'Fa la domanda, poi trasforma il testo scritto in un numero intero.',
+      askNumber: 'Fa la domanda, poi trasforma il testo scritto in un numero.',
       importIt: 'Porta una scatola di strumenti che Python ha già pronta.',
+      decorator: 'Un decoratore: aggiunge un potere alla funzione scritta subito sotto.',
       ifBlock: 'Controlla qualcosa. Le righe rientrate sotto girano solo se è vero.',
       elifBlock: 'Se il primo controllo era falso, controlla questo.',
       elseBlock: 'Se nessun controllo era vero, girano le righe rientrate sotto.',
-      forLoop: 'Ripete le righe rientrate sotto, una volta per ogni cosa.',
+      forRange: 'Ripete le righe rientrate sotto, una volta per ogni numero dell\'intervallo.',
+      forLoop: 'Ripete le righe rientrate sotto, una volta per ogni elemento.',
+      whileForever: 'Ripete le righe sotto ancora e ancora. Dentro ci deve essere un break per uscire.',
       whileLoop: 'Ripete le righe rientrate sotto finché il controllo è vero.',
       fnDef: 'Inizia una tua funzione, chiamata {name}. Le righe rientrate sotto sono ciò che fa.',
+      methodDef: 'Inizia un metodo chiamato {name}: una funzione che appartiene alla classe. Il primo nome, self, è l\'oggetto stesso.',
+      initDef: 'Il metodo speciale che parte quando si crea un nuovo oggetto. Lo prepara.',
+      specialDef: 'Un metodo speciale: Python lo chiama da solo quando l\'oggetto è usato in un certo modo.',
+      classDef: 'Inizia un nuovo tipo di cosa, chiamato {name}. Le righe rientrate sotto lo descrivono.',
+      classInherit: 'Inizia un tipo di cosa chiamato {name} che eredita tutto da {parent}, e può aggiungere o cambiare.',
       returnIt: 'Rimanda questo valore al posto che ha usato la funzione.',
+      yieldIt: 'Consegna un valore, poi aspetta qui finché non viene chiesto il successivo.',
       breakIt: 'Esce subito dal ciclo.',
       continueIt: 'Salta al giro successivo del ciclo.',
       passIt: 'Non fa niente, apposta. Un blocco ha bisogno di almeno una riga.',
-      assign: 'Mette un valore nel nome {name}. Se conteneva già qualcosa, il vecchio valore sparisce.'
-    },
-    lessons: [
-      ['Conosci Pyviel', 'Il tuo primo programma', [
-        [`Fai parlare il computer`, `Un programma è un elenco di istruzioni. Il computer le legge dall'alto verso il basso.
-
-print è una parola che Python conosce già. Fa dire qualcosa al computer. Quello che vuoi fargli dire va dentro le parentesi tonde, tra virgolette.`, `Ciao!`, `Premi il pulsante verde Esegui. Guarda la casella Risultato.`, `Scrivi bene print, con le parentesi e le virgolette. Se scrivi prnt, Pyviel ti dice quale riga è sbagliata.`],
-        [`Di' più di una cosa`, `Ogni riga print dice una riga. Il computer le fa in ordine, proprio come leggi un libro.
-
-Le virgolette dicono a Python che le parole sono testo, non istruzioni.`, `Ciao!
-Mi chiamo Pyviel.
-Piacere di conoscerti.`, `Aggiungi un'altra riga che dice il tuo nome.`, `Ogni parentesi aperta e ogni virgoletta aperta ha bisogno della sua chiusura.`],
-        [`Quando qualcosa si rompe`, `Tutti sbagliano, sempre. Qui pirnt è un errore di battitura: Python non conosce quel nome.
-
-Pyviel ti dice in una frase cosa è successo e in che riga. Il pulsante Mostra l'errore completo fa vedere tutto il messaggio che Python ha scritto, per quando vuoi imparare a leggerlo.`, `Prima
-(poi un problema alla riga 2: il nome pirnt non esiste, e Python chiede: volevi scrivere print?)`, `Correggi l'errore, poi riesegui. Compariranno tutte e tre le righe.`, `Python si ferma al primo errore. Le righe dopo non girano finché non lo correggi.`]
-      ]]
-    ]
+      tryBlock: 'Prova le righe rientrate sotto. Se una fallisce, Python cerca un except invece di fermarsi.',
+      exceptBlock: 'Gira solo se il try sopra è fallito con questo tipo di errore.',
+      finallyBlock: 'Gira alla fine in ogni caso, che ci sia stato un errore o no.',
+      raiseIt: 'Crea un errore apposta, per dire che qualcosa non va.',
+      withBlock: 'Apre qualcosa, fa girare le righe rientrate sotto, e lo chiude da solo alla fine.',
+      assertIt: 'Controlla che questo sia vero. Se no, Python si ferma con un errore.',
+      delIt: 'Cancella questo elemento o nome.',
+      globalIt: 'Dice che questo nome è quello fuori dalla funzione, non uno nuovo dentro.',
+      matchBlock: 'Guarda questo valore e sceglie il caso qui sotto che gli corrisponde.',
+      caseBlock: 'Una possibile forma del valore. Le sue righe girano se corrisponde.',
+      augAssign: 'Cambia il valore sul posto: prende il vecchio valore, fa il conto e tiene il risultato.',
+      lambdaDef: 'Crea una piccola funzione senza nome e la tiene in questo nome.',
+      comprehension: 'Costruisce una nuova raccolta in una riga scorrendone un\'altra.',
+      listLiteral: 'Crea una lista e la tiene nel nome a sinistra.',
+      dictLiteral: 'Crea un dizionario: coppie di chiave e valore, tenute nel nome a sinistra.',
+      setLiteral: 'Crea un insieme: un gruppo di valori diversi senza ordine.',
+      tupleLiteral: 'Crea una tupla: qualche valore che sta insieme e non si può cambiare.',
+      itemAssign: 'Mette un nuovo valore in questa posizione o chiave.',
+      attrAssign: 'Dà a questo oggetto un valore suo, tenuto con quel nome.',
+      unpackAssign: 'Mette ogni valore a destra nel suo nome a sinistra, in ordine.',
+      assign: 'Mette un valore nel nome {name}. Se conteneva già qualcosa, il vecchio valore sparisce.',
+      dictEntry: 'Una coppia del dizionario: una chiave, i due punti e il suo valore.',
+      callMethod: 'Chiede a {obj} di fare {method}. Un metodo è una funzione che appartiene a un valore.',
+      callFn: 'Esegue la funzione {name}.',
+      listItem: 'Un elemento della raccolta sopra. Gli elementi sono separati da virgole.',
+      showValue: 'Nomina un valore. Da solo su una riga non mostra niente in un programma.'
+    }
   },
   fr: {
     ui: {
@@ -98,41 +138,62 @@ Pyviel ti dice in una frase cosa è successo e in che riga. Il pulsante Mostra l
       typeIt: 'Écris-le toi-même', putIt: 'Mets-le dans l\'éditeur', typeNote: 'Page vide prête. Écris les lignes que tu vois dans la leçon, puis appuie sur Lancer.',
       listen: 'Écouter', stopReading: 'Arrêter la lecture',
       startLessons: 'Tu débutes ? Commence par la leçon 1', continueLesson: 'Continue : leçon {n}', lessonsDone: '{done} leçons sur {total} faites',
-      allDoneTitle: 'Tu connais tout le langage !', allDoneText: 'Ouvre maintenant les exemples, change-les et crée ton propre programme.', seeExamples: 'Voir les exemples'
+      allDoneTitle: 'Tu connais Python !', allDoneText: 'Tu as fini toutes les leçons. Ouvre maintenant les exemples, change-les et construis ton propre programme.', seeExamples: 'Voir les exemples'
     },
     explain: {
       comment: 'Une note pour les humains. Python la saute.',
+      docString: 'Un long texte entre triples guillemets. Souvent utilisé pour décrire ce que fait le code.',
+      insideText: 'Toujours une partie du long texte au-dessus.',
+      closeBracket: 'Ferme la parenthèse ouverte au-dessus.',
       print: 'Montre ceci à l\'écran.',
       askNow: 'Pose la question et garde ce que la personne écrit dans le nom à gauche.',
-      askNumber: 'Pose la question, puis transforme le texte écrit en nombre entier.',
+      askNumber: 'Pose la question, puis transforme le texte écrit en nombre.',
       importIt: 'Apporte une boîte à outils que Python a déjà prête.',
+      decorator: 'Un décorateur : il ajoute un pouvoir à la fonction écrite juste dessous.',
       ifBlock: 'Vérifie quelque chose. Les lignes décalées dessous ne tournent que si c\'est vrai.',
       elifBlock: 'Si le premier test était faux, vérifie celui-ci.',
       elseBlock: 'Si aucun test n\'était vrai, les lignes décalées dessous tournent.',
-      forLoop: 'Répète les lignes décalées dessous, une fois pour chaque chose.',
+      forRange: 'Répète les lignes décalées dessous, une fois pour chaque nombre de la plage.',
+      forLoop: 'Répète les lignes décalées dessous, une fois pour chaque élément.',
+      whileForever: 'Répète les lignes dessous encore et encore. Il faut un break à l\'intérieur pour sortir.',
       whileLoop: 'Répète les lignes décalées dessous tant que le test est vrai.',
       fnDef: 'Commence ta propre fonction, appelée {name}. Les lignes décalées dessous sont ce qu\'elle fait.',
+      methodDef: 'Commence une méthode appelée {name} : une fonction qui appartient à la classe. Le premier nom, self, est l\'objet lui-même.',
+      initDef: 'La méthode spéciale qui démarre quand un nouvel objet est créé. Elle le prépare.',
+      specialDef: 'Une méthode spéciale : Python l\'appelle tout seul quand l\'objet est utilisé d\'une certaine façon.',
+      classDef: 'Commence un nouveau genre de chose, appelé {name}. Les lignes décalées dessous le décrivent.',
+      classInherit: 'Commence un genre de chose appelé {name} qui hérite de tout de {parent}, et peut ajouter ou changer.',
       returnIt: 'Renvoie cette valeur à l\'endroit qui a utilisé la fonction.',
+      yieldIt: 'Donne une valeur, puis attend ici jusqu\'à ce que la suivante soit demandée.',
       breakIt: 'Sort de la boucle tout de suite.',
       continueIt: 'Passe au tour suivant de la boucle.',
       passIt: 'Ne fait rien, exprès. Un bloc a besoin d\'au moins une ligne.',
-      assign: 'Met une valeur dans le nom {name}. S\'il contenait déjà quelque chose, l\'ancienne valeur disparaît.'
-    },
-    lessons: [
-      ['Découvre Pyviel', 'Ton tout premier programme', [
-        [`Fais parler l'ordinateur`, `Un programme est une liste d'instructions. L'ordinateur les lit de haut en bas.
-
-print est un mot que Python connaît déjà. Il fait dire quelque chose à l'ordinateur. Ce que tu veux lui faire dire va entre les parenthèses, entre guillemets.`, `Salut!`, `Appuie sur le bouton vert Lancer. Regarde la boîte Résultat.`, `Écris bien print, avec les parenthèses et les guillemets. Si tu écris prnt, Pyviel te dit quelle ligne est fausse.`],
-        [`Dis plus d'une chose`, `Chaque ligne print dit une ligne. L'ordinateur les fait dans l'ordre, comme tu lis un livre.
-
-Les guillemets disent à Python que les mots sont du texte, pas des instructions.`, `Salut!
-Je m'appelle Pyviel.
-Enchanté de te connaître.`, `Ajoute une ligne de plus qui dit ton prénom.`, `Chaque parenthèse ouverte et chaque guillemet ouvert a besoin de sa fermeture.`],
-        [`Quand quelque chose casse`, `Tout le monde se trompe, tout le temps. Ici pirnt est une faute de frappe : Python ne connaît pas ce nom.
-
-Pyviel te dit en une phrase ce qui s'est passé et à quelle ligne. Le bouton Voir l'erreur complète montre tout le message que Python a écrit, pour quand tu veux apprendre à le lire.`, `Avant
-(puis un problème à la ligne 2 : le nom pirnt n'existe pas, et Python demande : tu voulais écrire print ?)`, `Corrige la faute, puis relance. Les trois lignes apparaîtront.`, `Python s'arrête à la première erreur. Les lignes d'après ne tournent pas tant que tu ne l'as pas corrigée.`]
-      ]]
-    ]
+      tryBlock: 'Essaie les lignes décalées dessous. Si l\'une échoue, Python cherche un except au lieu de s\'arrêter.',
+      exceptBlock: 'Tourne seulement si le try au-dessus a échoué avec ce genre d\'erreur.',
+      finallyBlock: 'Tourne à la fin dans tous les cas, qu\'il y ait eu une erreur ou non.',
+      raiseIt: 'Crée une erreur exprès, pour dire que quelque chose ne va pas.',
+      withBlock: 'Ouvre quelque chose, fait tourner les lignes décalées dessous, et le ferme tout seul à la fin.',
+      assertIt: 'Vérifie que ceci est vrai. Sinon, Python s\'arrête avec une erreur.',
+      delIt: 'Supprime cet élément ou ce nom.',
+      globalIt: 'Dit que ce nom est celui de l\'extérieur de la fonction, pas un nouveau à l\'intérieur.',
+      matchBlock: 'Regarde cette valeur et choisit le cas dessous qui lui correspond.',
+      caseBlock: 'Une forme possible de la valeur. Ses lignes tournent si elle correspond.',
+      augAssign: 'Change la valeur sur place : elle prend l\'ancienne valeur, fait le calcul et garde le résultat.',
+      lambdaDef: 'Crée une toute petite fonction sans nom et la garde dans ce nom.',
+      comprehension: 'Construit une nouvelle collection en une ligne en parcourant une autre.',
+      listLiteral: 'Crée une liste et la garde dans le nom à gauche.',
+      dictLiteral: 'Crée un dictionnaire : des paires clé et valeur, gardées dans le nom à gauche.',
+      setLiteral: 'Crée un ensemble : un groupe de valeurs différentes sans ordre.',
+      tupleLiteral: 'Crée un tuple : quelques valeurs qui vont ensemble et ne peuvent pas être changées.',
+      itemAssign: 'Met une nouvelle valeur à cette position ou clé.',
+      attrAssign: 'Donne à cet objet une valeur à lui, gardée sous ce nom.',
+      unpackAssign: 'Met chaque valeur de droite dans son propre nom à gauche, dans l\'ordre.',
+      assign: 'Met une valeur dans le nom {name}. S\'il contenait déjà quelque chose, l\'ancienne valeur disparaît.',
+      dictEntry: 'Une paire du dictionnaire : une clé, deux-points et sa valeur.',
+      callMethod: 'Demande à {obj} de faire {method}. Une méthode est une fonction qui appartient à une valeur.',
+      callFn: 'Exécute la fonction {name}.',
+      listItem: 'Un élément de la collection au-dessus. Les éléments sont séparés par des virgules.',
+      showValue: 'Nomme une valeur. Seul sur une ligne il ne montre rien dans un programme.'
+    }
   }
 };

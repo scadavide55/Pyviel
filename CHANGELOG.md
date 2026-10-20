@@ -1,5 +1,9 @@
 # Changes
 
+## Unreleased
+
+- **Works in Safari and Firefox.** These browsers cannot pause Python, and every program stopped with an `InternalError`. Pyviel now notices this and runs the program anyway; `asyncio` uses a loop that waits by sleeping, so the async lessons run there too. The test suite now runs the whole course a second time pretending to be such a browser (`?nojspi`).
+
 ## 1.0.0 beta — 20 October 2026
 
 The first public version.

@@ -57,12 +57,28 @@ async function init(message) {
   post({type: 'ready', version: python.version});
 }
 
+let noStackSwitching = false;
+const fakeNoJspi = new URL(import.meta.url).searchParams.has('nojspi');
+
 async function runSource(source) {
   interruptView[0] = 0;
   let result;
   try {
     // callPromising lets Python wait for JavaScript (asyncio.sleep, await...) in browsers that can switch stacks.
-    const proxy = typeof runProgram.callPromising === 'function' ? await runProgram.callPromising(source, send, ask) : runProgram(source, send, ask);
+    // Pyodide offers callPromising even where the browser cannot switch stacks (Safari, Firefox): then it throws before running anything, and the plain call is used.
+    let proxy;
+    if (typeof runProgram.callPromising === 'function' && !noStackSwitching) {
+      try {
+        // ?nojspi pretends to be Safari: the tests use it to cover this fallback.
+        if (fakeNoJspi) throw new Error('WebAssembly stack switching not supported in this JavaScript runtime');
+        proxy = await runProgram.callPromising(source, send, ask);
+      } catch (error) {
+        if (!/stack switching/i.test(String(error))) throw error;
+        noStackSwitching = true;
+        python.globals.set('SYNC_ASYNC', true);
+      }
+    }
+    if (!proxy) proxy = runProgram(source, send, ask);
     result = proxy.toJs({dict_converter: Object.fromEntries});
     proxy.destroy();
   } catch (error) {

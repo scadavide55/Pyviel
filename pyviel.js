@@ -30,7 +30,7 @@
     data = new Uint8Array(new SharedArrayBuffer(262144));
     starting = new Promise(function (resolve, reject) {
       say('loading');
-      worker = new Worker('pyviel-worker.js', {type: 'module'});
+      worker = new Worker('pyviel-worker.js' + (/[?&]nojspi\b/.test(location.search) ? '?nojspi' : ''), {type: 'module'});
       worker.onmessage = function (event) {
         var m = event.data;
         if (m.type === 'ready') { say('ready', m.version); resolve(m.version); }

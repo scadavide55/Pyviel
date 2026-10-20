@@ -10,7 +10,7 @@
   "scripts": {
     "serve": "node tools/serve.js",
     "build": "node tools/build-course.js",
-    "test": "node tools/build-course.js && node tools/check-notes.js && node tools/check-language.js && node tools/check-translations.js && node test-errors.js && node tools/page-test.js",
+    "test": "node tools/build-course.js && node tools/check-notes.js && node tools/check-language.js && node tools/check-translations.js && node test-errors.js && node tools/page-test.js && PYVIEL_QUERY=?nojspi node tools/page-test.js",
     "test:app": "electron tools/check-app.js",
     "start": "electron .",
     "dist:mac": "electron-builder --mac --publish never",

@@ -18,7 +18,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function main() {
   const server = spawn(process.execPath, [path.join(__dirname, 'serve.js'), '8781'], {stdio: 'ignore'});
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'pyviel-profile-'));
-  const chrome = spawn(browser, ['--headless=new', '--remote-debugging-port=9334', '--user-data-dir=' + profile, '--no-sandbox', '--disable-gpu', '--no-first-run', 'http://127.0.0.1:8781/'], {stdio: 'ignore'});
+  const chrome = spawn(browser, ['--headless=new', '--remote-debugging-port=9334', '--user-data-dir=' + profile, '--no-sandbox', '--disable-gpu', '--no-first-run', 'http://127.0.0.1:8781/' + (process.env.PYVIEL_QUERY || '')], {stdio: 'ignore'});
   let failed = 0, total = 0;
   try {
     let target = null;
@@ -42,7 +42,7 @@ async function main() {
     await send('Runtime.enable');
     await send('Page.enable');
     await send('Emulation.setDeviceMetricsOverride', {width: 1280, height: 900, deviceScaleFactor: 1, mobile: false});
-    await send('Page.navigate', {url: 'http://127.0.0.1:8781/'});
+    await send('Page.navigate', {url: 'http://127.0.0.1:8781/' + (process.env.PYVIEL_QUERY || '')});
     await sleep(1500);
     const script = fs.readFileSync(path.join(__dirname, 'page-checks.js'), 'utf8');
     const reply = await send('Runtime.evaluate', {expression: script, awaitPromise: true, returnByValue: true, timeout: 120000});

@@ -57,6 +57,55 @@ def _describe(exc):
     }
 
 
+SYNC_ASYNC = False  # set by the page when the browser cannot pause Python (no JSPI)
+
+
+def _sync_asyncio_run():
+    """An event loop that waits by sleeping, so asyncio works where Python cannot be paused."""
+    import asyncio
+    import time
+
+    class _Waiter:
+        def select(self, timeout=None):
+            end = time.monotonic() + (timeout if timeout is not None else 0)
+            while True:
+                left = end - time.monotonic()
+                if left <= 0:
+                    return []
+                time.sleep(min(left, 0.02))  # short slices: Stop can interrupt between them
+
+        def close(self):
+            pass
+
+        def get_map(self):
+            return {}
+
+    class _Loop(asyncio.BaseEventLoop):
+        def __init__(self):
+            super().__init__()
+            self._selector = _Waiter()
+
+        def _process_events(self, events):
+            pass
+
+        def _write_to_self(self):
+            pass
+
+        def close(self):
+            super().close()
+
+    def run(main, *, debug=None, loop_factory=None):
+        outer = asyncio._get_running_loop()  # Pyodide's own loop is marked as running while JavaScript calls Python
+        asyncio._set_running_loop(None)
+        try:
+            with asyncio.Runner(debug=debug, loop_factory=_Loop) as runner:
+                return runner.run(main)
+        finally:
+            asyncio._set_running_loop(outer)
+
+    return run
+
+
 class _Stop(BaseException):
     """Raised by the page when the student presses Stop while waiting for input."""
 
@@ -103,6 +152,11 @@ def run(source, write, ask, cap=200000):
     old_out, old_err, old_input = sys.stdout, sys.stderr, builtins.input
     sys.stdout = sys.stderr = Out()
     builtins.input = answer
+    old_asyncio_run = None
+    if SYNC_ASYNC:
+        import asyncio
+        old_asyncio_run = asyncio.run
+        asyncio.run = _sync_asyncio_run()
     try:
         try:
             code = compile(source, FILENAME, "exec")
@@ -119,3 +173,5 @@ def run(source, write, ask, cap=200000):
         return {"ok": True, "stopped": False, "error": None}
     finally:
         sys.stdout, sys.stderr, builtins.input = old_out, old_err, old_input
+        if old_asyncio_run is not None:
+            asyncio.run = old_asyncio_run

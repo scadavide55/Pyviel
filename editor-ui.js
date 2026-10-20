@@ -148,6 +148,18 @@
     });
   });
 
+  // Download: the button points at the installer for the system you are on.
+  // On a phone there is no app to install, so the button goes away.
+  (function () {
+    var link = $('download'), app = window.PYVIEL_APP;
+    if (!link) return;
+    var ua = navigator.userAgent;
+    var os = /Android|iPhone|iPad|iPod/i.test(ua) ? '' : /Mac/i.test(ua) ? 'mac' : /Win/i.test(ua) ? 'win' : /Linux|X11/i.test(ua) ? 'linux' : '';
+    if (!app || !app.files || !os || !app.files[os]) { link.remove(); return; }
+    link.setAttribute('href', app.release + app.files[os]);
+    link.setAttribute('title', t('Download Pyviel for your computer') + ' — ' + {mac: 'macOS', win: 'Windows', linux: 'Linux'}[os]);
+  })();
+
   var NEW_SOURCE = '';
   $('new-file').addEventListener('click', function () {
     var before = code.value, beforeName = filename;

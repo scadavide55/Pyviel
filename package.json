@@ -1,12 +1,57 @@
 {
   "name": "pyviel",
-  "version": "0.2.0",
-  "description": "Learn Python with small steps, every line explained, and friendly errors. Real Python in the page, offline.",
+  "version": "1.0.0-beta",
+  "description": "Learn real Python in small steps, every line explained, errors in plain words. Real Python in the page, offline.",
   "license": "MIT",
-  "private": true,
+  "author": "Pyviel",
+  "homepage": "https://scadavide55.github.io/Pyviel/",
+  "repository": {"type": "git", "url": "https://github.com/scadavide55/Pyviel.git"},
+  "main": "electron/main.js",
   "scripts": {
     "serve": "node tools/serve.js",
     "build": "node tools/build-course.js",
-    "test": "node tools/build-course.js && node tools/check-notes.js && node tools/check-language.js && node tools/check-translations.js && node test-errors.js && node tools/page-test.js"
+    "test": "node tools/build-course.js && node tools/check-notes.js && node tools/check-language.js && node tools/check-translations.js && node test-errors.js && node tools/page-test.js",
+    "test:app": "electron tools/check-app.js",
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac --publish never",
+    "dist:win": "electron-builder --win --publish never",
+    "dist:linux": "electron-builder --linux --publish never",
+    "dist": "npm run dist:mac && npm run dist:win && npm run dist:linux"
+  },
+  "devDependencies": {
+    "electron": "44.9.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "app.pyviel.learn",
+    "productName": "Pyviel",
+    "copyright": "Pyviel",
+    "directories": {"output": "dist", "buildResources": "build"},
+    "files": [
+      "index.html", "editor.css", "editor-ui.js", "i18n.js", "lessons.js", "course.js", "tutorials.js",
+      "pyviel.js", "pyviel-worker.js", "pyviel-runner.py", "pyviel-errors.js", "coi-sw.js",
+      "build/icon.svg", "build/icon.png", "pyodide/**/*", "electron/**/*", "LICENSE", "THIRD_PARTY.md"
+    ],
+    "mac": {
+      "target": [{"target": "dmg", "arch": ["universal"]}],
+      "category": "public.app-category.education",
+      "icon": "build/icon.png",
+      "identity": null,
+      "artifactName": "Pyviel-${version}-${arch}.${ext}"
+    },
+    "dmg": {"title": "Pyviel ${version}"},
+    "win": {
+      "target": [{"target": "nsis", "arch": ["x64"]}],
+      "icon": "build/icon.png",
+      "artifactName": "Pyviel-${version}-setup.${ext}"
+    },
+    "nsis": {"oneClick": true, "perMachine": false, "createDesktopShortcut": true, "createStartMenuShortcut": true, "shortcutName": "Pyviel"},
+    "linux": {
+      "target": [{"target": "tar.gz", "arch": ["x64"]}],
+      "category": "Education",
+      "icon": "build/icon.png",
+      "artifactName": "Pyviel-${version}-linux-${arch}.${ext}"
+    },
+    "artifactName": "Pyviel-${version}-${os}-${arch}.${ext}"
   }
 }

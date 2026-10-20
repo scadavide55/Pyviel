@@ -2525,9 +2525,9 @@ window.PyvielCourse = {
       "fr": "Un ensemble est un groupe de choses différentes, sans répétitions et sans ordre. Les accolades sans deux-points font un ensemble. Si tu mets la même chose deux fois, elle n'est gardée qu'une fois.\n\nset(...) construit un ensemble à partir d'une liste ou d'un texte, ce qui est la façon la plus rapide de retirer les répétitions."
      },
      "see": {
-      "en": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}",
-      "it": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}",
-      "fr": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}"
+      "en": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}",
+      "it": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}",
+      "fr": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}"
      },
      "turn": {
       "en": "Count the different letters in \"mississippi\".",
@@ -3375,9 +3375,9 @@ window.PyvielCourse = {
       "fr": "True\nFalse"
      },
      "turn": {
-      "en": "Make check accept an answer with capital letters too.",
-      "it": "Fai accettare a check anche una risposta con le maiuscole.",
-      "fr": "Fais accepter à check aussi une réponse avec des majuscules."
+      "en": "Make check ignore a full stop at the end of the answer, with strip(\" .\").",
+      "it": "Fai ignorare a check un punto alla fine della risposta, con strip(\" .\").",
+      "fr": "Fais ignorer à check un point à la fin de la réponse, avec strip(\" .\")."
      },
      "slip": null
     },
@@ -4711,9 +4711,9 @@ window.PyvielCourse = {
       "fr": "Jusqu'ici tu as utilisé des genres de choses que Python a déjà : texte, liste, dictionnaire. Une classe te permet d'inventer ton propre genre. Pense-y comme à un plan, et chaque chose construite à partir de lui est un objet.\n\nclass Dog: commence le plan (pass veut dire « rien dedans pour l'instant »). Dog() construit un chien, et rex est la boîte qui le garde."
      },
      "see": {
-      "en": "<class '__main__.Dog'>\n<__main__.Dog object at 0x16f1d48>",
-      "it": "<class '__main__.Dog'>\n<__main__.Dog object at 0x16f1d48>",
-      "fr": "<class '__main__.Dog'>\n<__main__.Dog object at 0x16f1d48>"
+      "en": "<class '__main__.Dog'>\n<__main__.Dog object at 0x19cc098>",
+      "it": "<class '__main__.Dog'>\n<__main__.Dog object at 0x19cc098>",
+      "fr": "<class '__main__.Dog'>\n<__main__.Dog object at 0x19cc098>"
      },
      "turn": {
       "en": "Make two dogs and check that they are different objects.",
@@ -5482,9 +5482,9 @@ window.PyvielCourse = {
       "fr": "Une fonction avec yield dedans est un générateur. L'appeler ne la fait pas tourner : elle rend un générateur. Chaque next(...) la fait tourner jusqu'au prochain yield, distribue cette valeur, et fait une pause là, en se souvenant d'où elle en était.\n\nElle produit les valeurs une à la fois, seulement quand on les demande."
      },
      "see": {
-      "en": "<generator object count_up at 0x1833070>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
-      "it": "<generator object count_up at 0x1833070>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
-      "fr": "<generator object count_up at 0x1833070>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
+      "en": "<generator object count_up at 0x187c4f0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "it": "<generator object count_up at 0x187c4f0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "fr": "<generator object count_up at 0x187c4f0>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
      },
      "turn": {
       "en": "Write a generator that gives the even numbers up to a limit.",
@@ -5530,9 +5530,9 @@ window.PyvielCourse = {
       "fr": "Des parenthèses au lieu des crochets font une expression génératrice : comme une compréhension de liste mais qui produit les valeurs une à la fois, sans construire toute la liste.\n\nC'est le meilleur choix quand tu veux seulement additionner ou vérifier des choses, comme dans sum(...), max(...), any(...)."
      },
      "see": {
-      "en": "<generator object <genexpr> at 0x180bfe0>\n55\n333833500\n3\nFalse",
-      "it": "<generator object <genexpr> at 0x180bfe0>\n55\n333833500\n3\nFalse",
-      "fr": "<generator object <genexpr> at 0x180bfe0>\n55\n333833500\n3\nFalse"
+      "en": "<generator object <genexpr> at 0x18ec1c8>\n55\n333833500\n3\nFalse",
+      "it": "<generator object <genexpr> at 0x18ec1c8>\n55\n333833500\n3\nFalse",
+      "fr": "<generator object <genexpr> at 0x18ec1c8>\n55\n333833500\n3\nFalse"
      },
      "turn": {
       "en": "Sum the cubes of the numbers from 1 to 20.",
@@ -7099,6 +7099,169 @@ window.PyvielCourse = {
       "en": "Change the program so the certificate is about the things you liked best.",
       "it": "Cambia il programma così che il certificato parli delle cose che ti sono piaciute di più.",
       "fr": "Change le programme pour que le certificat parle des choses que tu as préférées."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": {
+    "en": "Appendix · Your cheat sheet",
+    "it": "Appendice · Il tuo foglio di riepilogo",
+    "fr": "Annexe · Ta fiche de révision"
+   },
+   "title": {
+    "en": "The Python cheat sheet",
+    "it": "Il foglio di riepilogo di Python",
+    "fr": "La fiche de révision de Python"
+   },
+   "subtitle": {
+    "en": "Everything in six small pages",
+    "it": "Tutto in sei piccole pagine",
+    "fr": "Tout en six petites pages"
+   },
+   "steps": [
+    {
+     "code": "# values and names\nname, age, height = \"Ada\", 12, 1.5\nprint(type(name), type(age), type(height), type(True), type(None))\nprint(f\"{name} is {age}; next year {age + 1}\")\nprint(7 / 2, 7 // 2, 7 % 2, 2 ** 8, round(3.14159, 2))\nprint(int(\"5\") + 1, str(5) + \"1\", float(\"2.5\"), bool(\"\"))\ntext = \"  Hello, Python  \"\nprint(text.strip().lower().replace(\"python\", \"world\"))\nprint(text.split(\",\"), len(text), text[2:7], text[::-1][:5])",
+     "title": {
+      "en": "Page 1: values, numbers and text",
+      "it": "Pagina 1: valori, numeri e testo",
+      "fr": "Page 1 : valeurs, nombres et texte"
+     },
+     "text": {
+      "en": "The first page of the sheet: names and the kinds of value (str, int, float, bool, None), the sums, the conversions, an f-string, and the text tools.\n\nRead each line and say out loud what you expect before you look at the output. If one surprises you, go back to that lesson.",
+      "it": "La prima pagina del foglio: i nomi e i tipi di valore (str, int, float, bool, None), i conti, le conversioni, una f-string e gli strumenti del testo.\n\nLeggi ogni riga e di' a voce alta cosa ti aspetti prima di guardare il risultato. Se una ti sorprende, torna a quella lezione.",
+      "fr": "La première page de la fiche : les noms et les sortes de valeur (str, int, float, bool, None), les calculs, les conversions, une f-string et les outils du texte.\n\nLis chaque ligne et dis à voix haute ce que tu attends avant de regarder le résultat. Si l'une te surprend, retourne à cette leçon."
+     },
+     "see": {
+      "en": "<class 'str'> <class 'int'> <class 'float'> <class 'bool'> <class 'NoneType'>\nAda is 12; next year 13\n3.5 3 1 256 3.14\n6 51 2.5 False\nhello, world\n['  Hello', ' Python  '] 17 Hello   noh",
+      "it": "<class 'str'> <class 'int'> <class 'float'> <class 'bool'> <class 'NoneType'>\nAda is 12; next year 13\n3.5 3 1 256 3.14\n6 51 2.5 False\nhello, world\n['  Hello', ' Python  '] 17 Hello   noh",
+      "fr": "<class 'str'> <class 'int'> <class 'float'> <class 'bool'> <class 'NoneType'>\nAda is 12; next year 13\n3.5 3 1 256 3.14\n6 51 2.5 False\nhello, world\n['  Hello', ' Python  '] 17 Hello   noh"
+     },
+     "turn": {
+      "en": "Change the values and predict each line again.",
+      "it": "Cambia i valori e prevedi di nuovo ogni riga.",
+      "fr": "Change les valeurs et prévois à nouveau chaque ligne."
+     },
+     "slip": null
+    },
+    {
+     "code": "# choices and loops\nn = 7\nif n < 0:\n    print(\"negative\")\nelif n == 0:\n    print(\"zero\")\nelse:\n    print(\"positive\")\nprint(\"odd\" if n % 2 else \"even\")\n\nfor i in range(3):\n    print(\"for\", i)\ncount = 3\nwhile count > 0:\n    print(\"while\", count)\n    count -= 1\nfor i, letter in enumerate(\"ab\", start=1):\n    print(i, letter)\nfor i in range(10):\n    if i == 2:\n        continue\n    if i == 4:\n        break\n    print(\"i\", i)",
+     "title": {
+      "en": "Page 2: choices and loops",
+      "it": "Pagina 2: scelte e cicli",
+      "fr": "Page 2 : choix et boucles"
+     },
+     "text": {
+      "en": "if, elif and else choose a road. for walks through things, while repeats while a question is true, enumerate adds a number to each item, break leaves the loop and continue skips to the next turn.\n\nRemember the colon at the end of the line and the four spaces for the lines inside.",
+      "it": "if, elif ed else scelgono una strada. for scorre le cose, while ripete finché una domanda è vera, enumerate aggiunge un numero a ogni elemento, break esce dal ciclo e continue salta al giro successivo.\n\nRicorda i due punti alla fine della riga e i quattro spazi per le righe dentro.",
+      "fr": "if, elif et else choisissent un chemin. for parcourt des choses, while répète tant qu'une question est vraie, enumerate ajoute un numéro à chaque élément, break sort de la boucle et continue passe au tour suivant.\n\nRappelle-toi les deux-points à la fin de la ligne et les quatre espaces pour les lignes dedans."
+     },
+     "see": {
+      "en": "positive\nodd\nfor 0\nfor 1\nfor 2\nwhile 3\nwhile 2\nwhile 1\n1 a\n...\ni 1\ni 3",
+      "it": "positive\nodd\nfor 0\nfor 1\nfor 2\nwhile 3\nwhile 2\nwhile 1\n1 a\n...\ni 1\ni 3",
+      "fr": "positive\nodd\nfor 0\nfor 1\nfor 2\nwhile 3\nwhile 2\nwhile 1\n1 a\n...\ni 1\ni 3"
+     },
+     "turn": {
+      "en": "Add an elif for numbers above 100.",
+      "it": "Aggiungi un elif per i numeri sopra 100.",
+      "fr": "Ajoute un elif pour les nombres au-dessus de 100."
+     },
+     "slip": null
+    },
+    {
+     "code": "# collections\nitems = [3, 1, 2]\nitems.append(4)\nitems.sort()\nprint(items, items[0], items[-1], items[1:3], len(items))\npoint = (1, 2)\nx, y = point\nprint(x, y)\nages = {\"Ada\": 12, \"Max\": 9}\nages[\"Zoe\"] = 15\nprint(ages[\"Ada\"], ages.get(\"Bob\", \"?\"), list(ages), \"Max\" in ages)\nfor name, age in ages.items():\n    print(name, age)\nunique = {1, 2, 2, 3}\nprint(unique, unique | {9}, unique & {2, 9})\nprint([n * n for n in items if n % 2 == 0], {n: n * 2 for n in (1, 2)})\nprint(sorted(ages, key=ages.get), max(items), sum(items))",
+     "title": {
+      "en": "Page 3: lists, tuples, dictionaries and sets",
+      "it": "Pagina 3: liste, tuple, dizionari e insiemi",
+      "fr": "Page 3 : listes, tuples, dictionnaires et ensembles"
+     },
+     "text": {
+      "en": "Four collections: a list [ ] can change and keeps order, a tuple ( ) cannot change, a dictionary { key: value } looks things up by name, and a set { } keeps each thing once.\n\nComprehensions build a new collection in one line, and sorted, max and sum work on all of them.",
+      "it": "Quattro raccolte: una lista [ ] può cambiare e tiene l'ordine, una tupla ( ) non può cambiare, un dizionario { chiave: valore } cerca le cose per nome, e un insieme { } tiene ogni cosa una volta sola.\n\nLe comprensioni costruiscono una nuova raccolta in una riga, e sorted, max e sum funzionano su tutte.",
+      "fr": "Quatre collections : une liste [ ] peut changer et garde l'ordre, un tuple ( ) ne peut pas changer, un dictionnaire { clé: valeur } cherche les choses par nom, et un ensemble { } garde chaque chose une seule fois.\n\nLes compréhensions construisent une nouvelle collection en une ligne, et sorted, max et sum marchent sur toutes."
+     },
+     "see": {
+      "en": "[1, 2, 3, 4] 1 4 [2, 3] 4\n1 2\n12 ? ['Ada', 'Max', 'Zoe'] True\nAda 12\nMax 9\nZoe 15\n{1, 2, 3} {1, 2, 3, 9} {2}\n[4, 16] {1: 2, 2: 4}\n['Max', 'Ada', 'Zoe'] 4 10",
+      "it": "[1, 2, 3, 4] 1 4 [2, 3] 4\n1 2\n12 ? ['Ada', 'Max', 'Zoe'] True\nAda 12\nMax 9\nZoe 15\n{1, 2, 3} {1, 2, 3, 9} {2}\n[4, 16] {1: 2, 2: 4}\n['Max', 'Ada', 'Zoe'] 4 10",
+      "fr": "[1, 2, 3, 4] 1 4 [2, 3] 4\n1 2\n12 ? ['Ada', 'Max', 'Zoe'] True\nAda 12\nMax 9\nZoe 15\n{1, 2, 3} {1, 2, 3, 9} {2}\n[4, 16] {1: 2, 2: 4}\n['Max', 'Ada', 'Zoe'] 4 10"
+     },
+     "turn": {
+      "en": "Add an item to every collection and print them.",
+      "it": "Aggiungi un elemento a ogni raccolta e stampale.",
+      "fr": "Ajoute un élément à chaque collection et affiche-les."
+     },
+     "slip": null
+    },
+    {
+     "code": "# functions\ndef area(width, height=1, *extra, **options):\n    \"\"\"Return the area.\"\"\"\n    return width * height\n\nprint(area(3), area(3, 4), area(height=2, width=5))\nsquare = lambda n: n * n\nprint(square(6), list(map(square, [1, 2, 3])))\n\ndef counter():\n    total = 0\n    def add(n):\n        nonlocal total\n        total += n\n        return total\n    return add\n\nc = counter()\nc(5)\nprint(c(10))\ndef fact(n):\n    return 1 if n <= 1 else n * fact(n - 1)\nprint(fact(6))\nprint(area.__doc__, callable(area))",
+     "title": {
+      "en": "Page 4: functions",
+      "it": "Pagina 4: funzioni",
+      "fr": "Page 4 : fonctions"
+     },
+     "text": {
+      "en": "def makes a function, with parameters, defaults, *args and **kwargs. return gives the answer. A lambda is a tiny function, a function inside a function remembers its surroundings, and a function can call itself.\n\nA function is a value too: you can keep it in a name and pass it around.",
+      "it": "def crea una funzione, con parametri, predefiniti, *args e **kwargs. return dà la risposta. Una lambda è una piccola funzione, una funzione dentro una funzione ricorda ciò che ha intorno, e una funzione può richiamare se stessa.\n\nAnche una funzione è un valore: la puoi tenere in un nome e passare in giro.",
+      "fr": "def crée une fonction, avec des paramètres, des valeurs par défaut, *args et **kwargs. return donne la réponse. Une lambda est une toute petite fonction, une fonction dans une fonction se souvient de ce qui l'entoure, et une fonction peut s'appeler elle-même.\n\nUne fonction est aussi une valeur : tu peux la garder dans un nom et la passer partout."
+     },
+     "see": {
+      "en": "3 12 10\n36 [1, 4, 9]\n15\n720\nReturn the area. True",
+      "it": "3 12 10\n36 [1, 4, 9]\n15\n720\nReturn the area. True",
+      "fr": "3 12 10\n36 [1, 4, 9]\n15\n720\nReturn the area. True"
+     },
+     "turn": {
+      "en": "Write your own function with a default value.",
+      "it": "Scrivi una tua funzione con un valore predefinito.",
+      "fr": "Écris ta propre fonction avec une valeur par défaut."
+     },
+     "slip": null
+    },
+    {
+     "code": "# classes and errors\nfrom dataclasses import dataclass\n\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n    def speak(self):\n        return \"...\"\n    def __repr__(self):\n        return f\"{type(self).__name__}({self.name!r})\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\npets = [Animal(\"Thing\"), Dog(\"Rex\")]\nprint(pets, [p.speak() for p in pets], isinstance(pets[1], Animal))\n\n@dataclass\nclass Point:\n    x: int\n    y: int = 0\nprint(Point(3), Point(3) == Point(3, 0))\n\ndef safe_int(text):\n    try:\n        return int(text)\n    except ValueError:\n        return None\n    finally:\n        pass\nprint(safe_int(\"12\"), safe_int(\"no\"))\ntry:\n    raise KeyError(\"missing\")\nexcept (KeyError, IndexError) as error:\n    print(\"caught\", type(error).__name__)",
+     "title": {
+      "en": "Page 5: classes and errors",
+      "it": "Pagina 5: classi ed errori",
+      "fr": "Page 5 : classes et erreurs"
+     },
+     "text": {
+      "en": "class makes your own kind of thing, with __init__ to set it up, methods for actions, and special methods like __repr__. A child class inherits from its parent and can change what it needs. @dataclass writes the boring parts for you.\n\ntry, except, finally and raise handle the things that go wrong, without stopping the program.",
+      "it": "class crea il tuo tipo di cosa, con __init__ per prepararlo, metodi per le azioni, e metodi speciali come __repr__. Una classe figlia eredita dalla madre e può cambiare ciò che le serve. @dataclass scrive per te le parti noiose.\n\ntry, except, finally e raise gestiscono le cose che vanno storte, senza fermare il programma.",
+      "fr": "class crée ton propre genre de chose, avec __init__ pour le préparer, des méthodes pour les actions, et des méthodes spéciales comme __repr__. Une classe enfant hérite de son parent et peut changer ce dont elle a besoin. @dataclass écrit pour toi les parties ennuyeuses.\n\ntry, except, finally et raise gèrent ce qui se passe mal, sans arrêter le programme."
+     },
+     "see": {
+      "en": "[Animal('Thing'), Dog('Rex')] ['...', 'Woof'] True\nPoint(x=3, y=0) True\n12 None\ncaught KeyError",
+      "it": "[Animal('Thing'), Dog('Rex')] ['...', 'Woof'] True\nPoint(x=3, y=0) True\n12 None\ncaught KeyError",
+      "fr": "[Animal('Thing'), Dog('Rex')] ['...', 'Woof'] True\nPoint(x=3, y=0) True\n12 None\ncaught KeyError"
+     },
+     "turn": {
+      "en": "Add a Cat class with its own speak.",
+      "it": "Aggiungi una classe Cat con il suo speak.",
+      "fr": "Ajoute une classe Cat avec son propre speak."
+     },
+     "slip": null
+    },
+    {
+     "code": "# files, modules and tricks\nimport json, math, random, os\nfrom collections import Counter\n\nrandom.seed(1)\nprint(math.sqrt(49), random.choice(\"abc\"), Counter(\"hello\").most_common(1))\nwith open(\"demo.json\", \"w\") as f:\n    json.dump({\"scores\": [1, 2, 3]}, f)\nwith open(\"demo.json\") as f:\n    print(json.load(f)[\"scores\"], os.path.exists(\"demo.json\"))\n\ndef numbers():\n    n = 0\n    while True:\n        yield n\n        n += 1\ngen = numbers()\nprint([next(gen) for _ in range(4)])\n\ndef twice(function):\n    def wrapper(*args):\n        return function(function(*args))\n    return wrapper\n@twice\ndef add3(n):\n    return n + 3\nprint(add3(10))\n\nfirst, *rest = [1, 2, 3, 4]\nprint(first, rest, {**{\"a\": 1}, \"b\": 2}, [*\"ab\", 9])\nmatch [1, 2]:\n    case [a, b]:\n        print(\"a pair:\", a, b)\nif (size := len(rest)) > 2:\n    print(\"size\", size)",
+     "title": {
+      "en": "Page 6: files, modules and tricks",
+      "it": "Pagina 6: file, moduli e trucchi",
+      "fr": "Page 6 : fichiers, modules et astuces"
+     },
+     "text": {
+      "en": "The last page: modules with import, saving data with json, a generator that gives one value at a time, a decorator that adds a power to a function, unpacking with a star, match, and the walrus.\n\nThat is the whole language in one screen. Keep this lesson as your reminder, and come back whenever you forget a word.",
+      "it": "L'ultima pagina: i moduli con import, salvare dati con json, un generatore che dà un valore alla volta, un decoratore che aggiunge un potere a una funzione, lo spacchettamento con la stella, match, e il tricheco.\n\nQuesto è l'intero linguaggio in una schermata. Tieni questa lezione come promemoria, e torna quando dimentichi una parola.",
+      "fr": "La dernière page : les modules avec import, sauvegarder des données avec json, un générateur qui donne une valeur à la fois, un décorateur qui ajoute un pouvoir à une fonction, le déballage avec l'étoile, match, et le morse.\n\nC'est tout le langage sur un écran. Garde cette leçon comme aide-mémoire, et reviens quand tu oublies un mot."
+     },
+     "see": {
+      "en": "7.0 a [('l', 2)]\n[1, 2, 3] True\n[0, 1, 2, 3]\n16\n1 [2, 3, 4] {'a': 1, 'b': 2} ['a', 'b', 9]\na pair: 1 2\nsize 3",
+      "it": "7.0 a [('l', 2)]\n[1, 2, 3] True\n[0, 1, 2, 3]\n16\n1 [2, 3, 4] {'a': 1, 'b': 2} ['a', 'b', 9]\na pair: 1 2\nsize 3",
+      "fr": "7.0 a [('l', 2)]\n[1, 2, 3] True\n[0, 1, 2, 3]\n16\n1 [2, 3, 4] {'a': 1, 'b': 2} ['a', 'b', 9]\na pair: 1 2\nsize 3"
+     },
+     "turn": {
+      "en": "Pick a line you do not remember and find its lesson.",
+      "it": "Scegli una riga che non ricordi e trova la sua lezione.",
+      "fr": "Choisis une ligne dont tu ne te souviens pas et trouve sa leçon."
      },
      "slip": null
     }

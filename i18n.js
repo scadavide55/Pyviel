@@ -80,6 +80,8 @@
     ['<code>input</code> asks and gives back text. <code>int(...)</code> turns the text into a whole number.', '<code>input</code> chiede e restituisce testo. <code>int(...)</code> trasforma il testo in un numero intero.', '<code>input</code> demande et rend du texte. <code>int(...)</code> transforme le texte en nombre entier.'],
     ['The first item is number 0. <code>append</code> adds one at the end. <code>len</code> counts.', 'Il primo elemento è il numero 0. <code>append</code> ne aggiunge uno alla fine. <code>len</code> conta.', 'Le premier élément est le numéro 0. <code>append</code> en ajoute un à la fin. <code>len</code> compte.'],
     ['Pyviel says in a short sentence what happened and on which line. <b>View full error</b> shows the whole Python message.', 'Pyviel dice in una breve frase cosa è successo e in che riga. <b>Mostra l\'errore completo</b> fa vedere tutto il messaggio di Python.', 'Pyviel dit en une courte phrase ce qui s\'est passé et à quelle ligne. <b>Voir l\'erreur complète</b> montre tout le message de Python.'],
+    ['Loading Python…', 'Python si sta caricando…', 'Python se charge…'], ['Python is ready', 'Python è pronto', 'Python est prêt'], ['Python could not start here', 'Python non è riuscito a partire qui', 'Python n\'a pas pu démarrer ici'],
+    ['Comment', 'Commenta', 'Commenter'],
     ['Answer', 'Risposta', 'Réponse'], ['Pyviel, start page', 'Pyviel, pagina iniziale', 'Pyviel, page d\'accueil'], ['Version', 'Versione', 'Version'],
     ['Language', 'Lingua', 'Langue'], ['Pyviel program', 'Programma Pyviel', 'Programme Pyviel'], ['Results', 'Risultati', 'Résultats'],
     ['Ln', 'Riga', 'Ligne'], ['Col', 'Col', 'Col'],

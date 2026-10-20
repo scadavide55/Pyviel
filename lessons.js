@@ -6,7 +6,7 @@ window.PyvielLessons = {
       lesson: 'Lesson', step: 'step', of: 'of', steps: 'steps',
       lineByLine: 'Line by line', see: 'What you will see', turn: 'Your turn', slip: 'Watch out',
       typeIt: 'Type it yourself', putIt: 'Put it in the editor', typeNote: 'Empty page ready. Type the lines you see in the lesson, then press Run.',
-      listen: 'Listen', stopReading: 'Stop reading',
+      listen: 'Listen', stopReading: 'Stop reading', tryIt: 'Try it',
       startLessons: 'New here? Start with lesson 1', continueLesson: 'Continue: lesson {n}', lessonsDone: '{done} of {total} lessons done',
       allDoneTitle: 'You know Python!', allDoneText: 'You finished every lesson. Now open the examples, change them, and build a program of your own.', seeExamples: 'See the examples'
     },
@@ -75,7 +75,7 @@ window.PyvielLessons = {
       lesson: 'Lezione', step: 'passo', of: 'di', steps: 'passi',
       lineByLine: 'Riga per riga', see: 'Cosa vedrai', turn: 'Tocca a te', slip: 'Attenzione',
       typeIt: 'Scrivilo tu', putIt: 'Mettilo nell\'editor', typeNote: 'Pagina vuota pronta. Scrivi le righe che vedi nella lezione, poi premi Esegui.',
-      listen: 'Ascolta', stopReading: 'Ferma la lettura',
+      listen: 'Ascolta', stopReading: 'Ferma la lettura', tryIt: 'Provalo',
       startLessons: 'Sei nuovo? Inizia dalla lezione 1', continueLesson: 'Continua: lezione {n}', lessonsDone: '{done} lezioni su {total} fatte',
       allDoneTitle: 'Conosci Python!', allDoneText: 'Hai finito tutte le lezioni. Ora apri gli esempi, cambiali e costruisci un programma tutto tuo.', seeExamples: 'Vedi gli esempi'
     },
@@ -144,7 +144,7 @@ window.PyvielLessons = {
       lesson: 'Leçon', step: 'étape', of: 'sur', steps: 'étapes',
       lineByLine: 'Ligne par ligne', see: 'Ce que tu verras', turn: 'À toi', slip: 'Attention',
       typeIt: 'Écris-le toi-même', putIt: 'Mets-le dans l\'éditeur', typeNote: 'Page vide prête. Écris les lignes que tu vois dans la leçon, puis appuie sur Lancer.',
-      listen: 'Écouter', stopReading: 'Arrêter la lecture',
+      listen: 'Écouter', stopReading: 'Arrêter la lecture', tryIt: 'Essaie',
       startLessons: 'Tu débutes ? Commence par la leçon 1', continueLesson: 'Continue : leçon {n}', lessonsDone: '{done} leçons sur {total} faites',
       allDoneTitle: 'Tu connais Python !', allDoneText: 'Tu as fini toutes les leçons. Ouvre maintenant les exemples, change-les et construis ton propre programme.', seeExamples: 'Voir les exemples'
     },

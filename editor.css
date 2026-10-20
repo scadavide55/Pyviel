@@ -78,8 +78,6 @@ code { font: .92em ui-monospace, "SF Mono", Menlo, monospace; background: var(--
 .engine { font-size: 11px; color: var(--muted, #7a7469); }
 .brand { display: flex; align-items: center; gap: 9px; color: var(--ink); font-size: 21px; font-weight: 800; text-decoration: none; margin-right: 6px; }
 .logo { width: 34px; height: 34px; stroke-width: 3; }
-.logo-bg { fill: var(--accent); stroke: var(--edge); stroke-width: 2; }
-.logo-k { stroke: #fff; }
 .filebox { display: flex; align-items: center; gap: 8px; min-width: 0; }
 #file-name { width: 190px; max-width: 28vw; padding: 6px 10px; background: transparent; border: 2px solid transparent; border-radius: 8px; font-weight: 600; text-overflow: ellipsis; }
 #file-name:hover { border-color: var(--line); }
@@ -230,9 +228,6 @@ code { font: .92em ui-monospace, "SF Mono", Menlo, monospace; background: var(--
 .answer-row input:focus { outline: 3px solid var(--accent); }
 .answer-row button { padding: 0 16px; font-weight: 800; background: #ffd37a; color: #2b2420; border-radius: 8px; }
 .answer-row button:hover { filter: brightness(1.08); }
-.key-hint { margin-top: 12px; padding: 10px 12px; border: 2px dashed #ffd37a; border-radius: 12px; color: #ffd37a; font-weight: 700; }
-.key-hint kbd { background: #ffffff1f; color: var(--screen-ink); border-color: #ffffff55; font-size: 14px; }
-.key-hint.nope { animation: shake .22s; }
 @keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
 
 /* Problems */
@@ -367,3 +362,9 @@ dialog::backdrop { background: #2b242088; }
 
 .lesson-group { margin: 16px 2px 4px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .lesson-group:first-of-type { margin-top: 4px; }
+
+.try-it { background: var(--go, #3f9b55); color: #fff; border-color: var(--edge); box-shadow: 0 3px 0 var(--edge); }
+.try-it:hover:not(:disabled) { background: var(--go, #3f9b55); filter: brightness(1.06); }
+.engine[data-state="loading"]::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--accent); animation: pulse 1s ease-in-out infinite alternate; }
+.engine[data-state="ready"]::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--go, #3f9b55); }
+@keyframes pulse { to { opacity: .25; } }

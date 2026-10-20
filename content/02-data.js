@@ -1215,7 +1215,7 @@ Scrivere il giudizio in una funzione a parte vuol dire che puoi migliorarlo dopo
           `Une petite fonction avec un seul travail : dire si une réponse est juste. strip enlève les espaces en trop et lower met en minuscules, donc "  Rome " compte.
 
 Écrire le jugement dans sa propre fonction veut dire que tu peux l'améliorer plus tard sans toucher au reste.`],
-        d: ['Make check accept an answer with capital letters too.', 'Fai accettare a check anche una risposta con le maiuscole.', 'Fais accepter à check aussi une réponse avec des majuscules.']
+        d: ['Make check ignore a full stop at the end of the answer, with strip(" .").', 'Fai ignorare a check un punto alla fine della risposta, con strip(" .").', 'Fais ignorer à check un point à la fin de la réponse, avec strip(" .").']
       },
       {
         c: c`questions = {

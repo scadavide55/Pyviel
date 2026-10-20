@@ -400,6 +400,13 @@
       afterLoad('Done. Now press the green Run button.');
     });
     actions.appendChild(open);
+    var tryIt = element('button', 'btn put-code try-it', UI.tryIt || 'Try it');
+    tryIt.type = 'button';
+    tryIt.addEventListener('click', function () {
+      open.click();
+      setTimeout(function () { var run = $('run'); if (run) run.click(); }, 60);
+    });
+    actions.insertBefore(tryIt, actions.firstChild);
     stepBox.appendChild(actions);
 
     var nav = element('div', 'nav-row');

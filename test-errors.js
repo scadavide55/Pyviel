@@ -177,6 +177,14 @@ check('every rule points at a text that exists', () => {
     const said = Errors.languages.map(l => Errors.explain(e, l).title);
     assert.equal(new Set(said).size, 3);
   });
+  check('a browser that cannot pause Python is told so, in three languages', () => {
+    const error = {type: 'RuntimeError', message: 'Cannot stack switch because the Python entrypoint was a synchronous function.', line: 4, suggestion: '', full: ''};
+    for (const lang of Errors.languages) {
+      const said = Errors.explain(error, lang);
+      assert.equal(said.id, 'old_browser');
+      assert.ok(said.title.length > 20 && said.caption.length > 20);
+    }
+  });
   check('an unknown kind of error still gets a sentence', () => {
     const e = go('class MyTrouble(Exception):\n    pass\nraise MyTrouble("x")').result.error;
     assert.equal(Errors.explain(e, 'en').id, 'raised');

@@ -2525,9 +2525,9 @@ window.PyvielCourse = {
       "fr": "Un ensemble est un groupe de choses différentes, sans répétitions et sans ordre. Les accolades sans deux-points font un ensemble. Si tu mets la même chose deux fois, elle n'est gardée qu'une fois.\n\nset(...) construit un ensemble à partir d'une liste ou d'un texte, ce qui est la façon la plus rapide de retirer les répétitions."
      },
      "see": {
-      "en": "3\nTrue\n{1, 2, 3}\n{'e', 'l', 'o', 'h'}",
-      "it": "3\nTrue\n{1, 2, 3}\n{'e', 'l', 'o', 'h'}",
-      "fr": "3\nTrue\n{1, 2, 3}\n{'e', 'l', 'o', 'h'}"
+      "en": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}",
+      "it": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}",
+      "fr": "3\nTrue\n{1, 2, 3}\n{'o', 'l', 'e', 'h'}"
      },
      "turn": {
       "en": "Count the different letters in \"mississippi\".",
@@ -4711,9 +4711,9 @@ window.PyvielCourse = {
       "fr": "Jusqu'ici tu as utilisé des genres de choses que Python a déjà : texte, liste, dictionnaire. Une classe te permet d'inventer ton propre genre. Pense-y comme à un plan, et chaque chose construite à partir de lui est un objet.\n\nclass Dog: commence le plan (pass veut dire « rien dedans pour l'instant »). Dog() construit un chien, et rex est la boîte qui le garde."
      },
      "see": {
-      "en": "<class '__main__.Dog'>\n<__main__.Dog object at 0x178d838>",
-      "it": "<class '__main__.Dog'>\n<__main__.Dog object at 0x178d838>",
-      "fr": "<class '__main__.Dog'>\n<__main__.Dog object at 0x178d838>"
+      "en": "<class '__main__.Dog'>\n<__main__.Dog object at 0x16f1d48>",
+      "it": "<class '__main__.Dog'>\n<__main__.Dog object at 0x16f1d48>",
+      "fr": "<class '__main__.Dog'>\n<__main__.Dog object at 0x16f1d48>"
      },
      "turn": {
       "en": "Make two dogs and check that they are different objects.",
@@ -5482,9 +5482,9 @@ window.PyvielCourse = {
       "fr": "Une fonction avec yield dedans est un générateur. L'appeler ne la fait pas tourner : elle rend un générateur. Chaque next(...) la fait tourner jusqu'au prochain yield, distribue cette valeur, et fait une pause là, en se souvenant d'où elle en était.\n\nElle produit les valeurs une à la fois, seulement quand on les demande."
      },
      "see": {
-      "en": "<generator object count_up at 0x178be10>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
-      "it": "<generator object count_up at 0x178be10>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
-      "fr": "<generator object count_up at 0x178be10>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
+      "en": "<generator object count_up at 0x1833070>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "it": "<generator object count_up at 0x1833070>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "fr": "<generator object count_up at 0x1833070>\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
      },
      "turn": {
       "en": "Write a generator that gives the even numbers up to a limit.",
@@ -5530,9 +5530,9 @@ window.PyvielCourse = {
       "fr": "Des parenthèses au lieu des crochets font une expression génératrice : comme une compréhension de liste mais qui produit les valeurs une à la fois, sans construire toute la liste.\n\nC'est le meilleur choix quand tu veux seulement additionner ou vérifier des choses, comme dans sum(...), max(...), any(...)."
      },
      "see": {
-      "en": "<generator object <genexpr> at 0x11f6140>\n55\n333833500\n3\nFalse",
-      "it": "<generator object <genexpr> at 0x11f6140>\n55\n333833500\n3\nFalse",
-      "fr": "<generator object <genexpr> at 0x11f6140>\n55\n333833500\n3\nFalse"
+      "en": "<generator object <genexpr> at 0x180bfe0>\n55\n333833500\n3\nFalse",
+      "it": "<generator object <genexpr> at 0x180bfe0>\n55\n333833500\n3\nFalse",
+      "fr": "<generator object <genexpr> at 0x180bfe0>\n55\n333833500\n3\nFalse"
      },
      "turn": {
       "en": "Sum the cubes of the numbers from 1 to 20.",

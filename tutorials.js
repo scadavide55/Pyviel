@@ -382,7 +382,7 @@
     typeIt.type = 'button';
     typeIt.addEventListener('click', function () {
       keepBackup();
-      code.value = '\nend\n';
+      code.value = '';
       code.setSelectionRange(0, 0);
       afterLoad(UI.typeNote || 'Empty page ready. Type the lines, then press Run.');
       code.setSelectionRange(0, 0);

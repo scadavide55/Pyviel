@@ -116,6 +116,9 @@
   check('and what you will see', !!document.querySelector('.see-box'));
   document.querySelector('.step-actions .put-code').click();
   check('Put it in the editor loads the step', /print\(/.test(code.value));
+  document.querySelector('.step-actions .type-it').click();
+  check('Type it yourself gives an empty page', code.value === '');
+  document.querySelector('.step-actions .put-code').click();
   const stepButtons = () => document.querySelectorAll('.nav-row .btn');
   for (let i = 0; i < 4; i++) stepButtons()[1].click();
   document.querySelector('.step-actions .put-code').click();

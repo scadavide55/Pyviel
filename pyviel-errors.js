@@ -332,6 +332,11 @@
       it: ['Non ci sono più elementi da prendere.', 'next(...) è stato chiamato su qualcosa che ha già dato tutto quello che aveva.'],
       fr: ['Il n\'y a plus d\'éléments à prendre.', 'next(...) a été appelé sur quelque chose qui a déjà donné tout ce qu\'il avait.']
     },
+    old_browser: {
+      en: ['This browser cannot pause Python, so async and await cannot run here.', 'async needs a recent browser (Chrome, Edge or Brave 137 or later, or a recent Firefox or Safari). The rest of Python works as usual.'],
+      it: ['Questo browser non riesce a mettere in pausa Python, quindi async e await non possono girare qui.', 'async ha bisogno di un browser recente (Chrome, Edge o Brave 137 o successivo, o un Firefox o Safari recente). Il resto di Python funziona come al solito.'],
+      fr: ['Ce navigateur ne peut pas mettre Python en pause, donc async et await ne peuvent pas tourner ici.', 'async a besoin d\'un navigateur récent (Chrome, Edge ou Brave 137 ou plus récent, ou un Firefox ou Safari récent). Le reste de Python marche comme d\'habitude.']
+    },
     raised: {
       en: ['The program raised a `{1}`.', 'The message is: {m}. It was raised on purpose with raise, or by a Python tool when something was not right.'],
       it: ['Il programma ha sollevato un `{1}`.', 'Il messaggio è: {m}. È stato sollevato apposta con raise, oppure da uno strumento di Python quando qualcosa non andava.'],
@@ -413,6 +418,7 @@
     ['FileNotFoundError', /: '(.+)'$/, 'file_missing'],
     ['RecursionError', /^/, 'recursion'],
     ['EOFError', /^/, 'eof'],
+    ['RuntimeError', /stack switch|WebAssembly stack switching/, 'old_browser'],
     ['AssertionError', /^/, 'assertion'],
     ['OverflowError', /^/, 'overflow'],
     ['StopIteration', /^/, 'stop_iteration']

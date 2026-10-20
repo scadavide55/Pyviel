@@ -307,10 +307,12 @@ dialog::backdrop { background: #2b242088; }
 .run.nudge { animation: nudge .6s ease-in-out 4; }
 @keyframes nudge { 50% { transform: scale(1.12); } }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .topbar { flex-wrap: wrap; row-gap: 6px; }
   .filebox { order: 10; flex: 1 1 100%; }
   #file-name { width: 100%; max-width: none; border-color: var(--line); }
+}
+@media (max-width: 640px) {
   .tool { padding: 8px 8px; }
 }
 @media (max-width: 460px) {

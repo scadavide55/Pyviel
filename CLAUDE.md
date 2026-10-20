@@ -24,6 +24,7 @@ node tools/page-test.js              # 41: the page, in headless Brave through t
 node tools/build-course.js           # content/*.js -> course.js; runs every step's program on real Python
 node tools/check-notes.js            # every code line of every step has a note, in 3 languages
 node tools/check-language.js         # no English left in the it/fr texts
+node tools/check-translations.js     # every label of the page has an Italian and a French entry
 node tools/serve.js                  # local server with the two headers Python needs, port 8780
 ```
 

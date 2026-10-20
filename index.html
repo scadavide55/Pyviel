@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pyviel</title>
+<meta name="description" content="Pyviel is a very small programming language for learning how code thinks. A mistake never stops the program. Free, offline, in English, Italian and French.">
+<meta name="theme-color" content="#f4ecdc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pyviel: a small language for learning how code thinks">
+<meta property="og:description" content="Write a real program in minutes. A mistake never stops it, and every lesson explains each line. Free, offline, in English, Italian and French.">
+<meta property="og:url" content="https://scadavide55.github.io/Pyviel/">
+<meta property="og:image" content="https://scadavide55.github.io/Pyviel/build/icon.png">
+<link rel="icon" href="build/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="editor.css?v=12">
+<script>try { var t = localStorage.getItem('pyviel.theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<script>
+  // Python's input() and Stop need a cross-origin isolated page. A web server that cannot send
+  // the two headers gets them from coi-sw.js; the first visit reloads once to start it.
+  (function () {
+    if (window.crossOriginIsolated || !('serviceWorker' in navigator) || location.protocol.indexOf('http') !== 0) return;
+    navigator.serviceWorker.register('coi-sw.js').then(function (registration) {
+      if (!registration.active || navigator.serviceWorker.controller) return;
+      registration.addEventListener('updatefound', function () {});
+      navigator.serviceWorker.ready.then(function () { try { location.reload(); } catch (e) {} });
+    }).catch(function () {});
+  })();
+</script>
+</head>
+<body>
+<h1 class="sr-only">Pyviel</h1>
+
+<header class="topbar">
+  <a class="brand" href="./" aria-label="Pyviel, start page">
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="9" class="logo-bg"/><path d="M11 8v16M11 17l9-9M14.5 14l6.5 10" class="logo-k"/></svg>
+    <span class="brand-name">Pyviel</span><span class="brand-beta">beta</span><span class="brand-version" id="brand-version" title="Version"></span>
+  </a>
+
+  <div class="filebox">
+    <label class="sr-only" for="file-name">File name</label>
+    <input id="file-name" value="untitled.py" spellcheck="false" autocomplete="off" maxlength="120" title="Click to rename your file">
+    <span class="edited" id="edited" title="You changed this file since you last saved it" hidden>edited</span>
+  </div>
+
+  <div class="file-tools" role="group" aria-label="Files">
+    <button class="tool" id="new-file" title="Start a new empty program"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5h6l4 4v11H5zM11 2.5v4h4"/></svg><span>New</span></button>
+    <button class="tool" id="open-file" title="Open a .py file from your computer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 15.5v-11h5l2 2h8v3m-15 6 2-6h13l-2 6z"/></svg><span>Open</span></button>
+    <button class="tool" id="save-file" title="Save this program on your computer · Cmd/Ctrl+S"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg><span>Save</span></button>
+  </div>
+
+  <div class="spacer"></div>
+
+  <button class="tool" id="tutorials-toggle" aria-expanded="false" aria-controls="tutorial" title="Lessons and examples"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4.5c2.5-1 5-1 7 .8 2-1.800 4.500-1.800 7-.8v11c-2.500-1-5-1-7 .8-2-1.800-4.500-1.800-7-.8z M10 5.300v11"/></svg><span>Lessons</span></button>
+  <button class="tool" id="guide-toggle" aria-expanded="false" aria-controls="guide" title="Quick help · press ?"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.500"/><path d="M7.800 8a2.300 2.300 0 1 1 3.300 2c-.8.500-1.100.9-1.100 1.800M10 14.200v.1"/></svg><span>Help</span></button>
+  <select id="lang" class="lang" aria-label="Language" title="Language"><option value="en">English</option><option value="it">Italiano</option><option value="fr">Français</option></select>
+
+  <button class="tool icon-only" id="theme-toggle" title="Switch between light and dark" aria-label="Switch between light and dark"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16.500 11.500A7 7 0 1 1 8.500 3.500a5.500 5.500 0 0 0 8 8z"/></svg></button>
+  <button class="stop" id="stop" hidden title="Stop the program · Esc"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="2" fill="currentColor" stroke="none"/></svg>Stop</button>
+  <button class="run" id="run" title="Run your program · Cmd/Ctrl+Enter"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.500 2.500 9 5.500-9 5.500z" fill="currentColor" stroke="none"/></svg>Run</button>
+</header>
+
+<div class="app-shell">
+
+  <aside class="learn" id="tutorial" aria-label="Lessons and examples" hidden>
+    <div class="learn-head">
+      <div class="tabs" role="tablist">
+        <button role="tab" id="tab-lessons" aria-selected="true" aria-controls="lessons-view">Lessons</button>
+        <button role="tab" id="tab-examples" aria-selected="false" aria-controls="examples-view">Examples</button>
+      </div>
+      <button class="icon-button" id="tutorial-close" aria-label="Close the lessons panel" title="Close"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+    </div>
+
+    <div class="learn-body" id="lessons-view" role="tabpanel" aria-labelledby="tab-lessons">
+      <div id="tutorial-lessons" class="lesson-list" aria-label="Lessons"></div>
+      <section class="tutorial-step" id="tutorial-step" aria-live="polite" hidden></section>
+    </div>
+
+    <div class="learn-body" id="examples-view" role="tabpanel" aria-labelledby="tab-examples" hidden>
+      <p class="learn-intro">Pick a small program. It opens in the editor, and you press Run.</p>
+      <div class="example-list" id="example-list">
+        <button data-example="hello"><b>Hello</b><span>Say hello</span></button>
+        <button data-example="questions"><b>A question</b><span>Ask a name</span></button>
+        <button data-example="age"><b>Under or over</b><span>Are you 18 yet?</span></button>
+        <button data-example="loop"><b>Times table</b><span>Counting with a loop</span></button>
+        <button data-example="lists"><b>A list of pets</b><span>Many things in one</span></button>
+        <button data-example="functions"><b>Your own functions</b><span>def and return</span></button>
+        <button data-example="errors"><b>Mistakes</b><span>See what a mistake looks like</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <div class="mobile-examples"><label for="examples">Example</label><select id="examples" title="Examples"><option value="">Your code</option><option value="hello">Hello</option><option value="questions">A question</option><option value="age">Under or over</option><option value="loop">Times table</option><option value="lists">A list of pets</option><option value="functions">Your own functions</option><option value="errors">Mistakes</option></select></div>
+
+    <main class="workbench">
+      <section class="editor" aria-label="Your program">
+        <div class="pane-head">
+          <h2>Your program</h2>
+          <span class="spacer"></span>
+          <button id="smaller" class="icon-button" title="Smaller text" aria-label="Smaller text"><span class="aa">A<small>−</small></span></button>
+          <button id="bigger" class="icon-button" title="Bigger text" aria-label="Bigger text"><span class="aa">A<small>+</small></span></button>
+          <button id="find-toggle" class="icon-button" title="Find · Cmd/Ctrl+F" aria-label="Find in code"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.500" cy="8.500" r="5"/><path d="m12 12 5 5"/></svg></button>
+        </div>
+        <form id="find-bar" class="find-bar" hidden role="search"><input id="find-query" aria-label="Find text" placeholder="Find…" autocomplete="off"><span id="find-count" aria-live="polite"></span><button type="button" id="find-prev" aria-label="Previous match">↑</button><button type="submit" aria-label="Next match">↓</button><button type="button" id="find-close" aria-label="Close search">×</button></form>
+        <div class="symbols" id="symbols" role="toolbar" aria-label="Symbols">
+          <button type="button" data-insert='"' title="Quotation mark">&quot;</button>
+          <button type="button" data-insert="(" title="Open round bracket">(</button>
+          <button type="button" data-insert=")" title="Close round bracket">)</button>
+          <button type="button" data-insert="{" title="Open curly bracket">{</button>
+          <button type="button" data-insert="}" title="Close curly bracket">}</button>
+          <button type="button" data-insert="[" title="Open square bracket">[</button>
+          <button type="button" data-insert="]" title="Close square bracket">]</button>
+          <button type="button" data-insert="=" title="Equals sign">=</button>
+          <button type="button" data-insert="#" title="Comment sign">#</button>
+          <button type="button" data-insert=", " title="Comma">,</button>
+        </div>
+        <div class="editor-body"><div class="gutter" id="gutter" aria-hidden="true"></div><div class="code-stack"><div class="active-line" id="active-line" aria-hidden="true"></div><pre id="highlight" aria-hidden="true"></pre><textarea id="code" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Pyviel program"></textarea></div></div>
+        <div class="editor-foot"><span id="cursor-position">Ln 1, Col 1</span><span class="spacer"></span><span id="save-state"><span class="dot"></span> Saved in this browser</span></div>
+      </section>
+
+      <section class="side" aria-label="Results">
+        <div class="pane output">
+          <div class="pane-head"><h2>Output</h2><span class="spacer"></span><span class="run-status" id="run-status" role="status" aria-live="polite"></span><span id="execution-time"></span><button class="icon-button" id="clear-output" title="Clear the output" aria-label="Clear the output"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5h12M8 5V3h4v2M6 5l1 12h6l1-12"/></svg></button></div>
+          <div class="pane-body output-body">
+            <pre class="out" id="out"></pre>
+            <div class="output-placeholder" id="output-placeholder"><strong>Nothing here yet.</strong><p>Press the green Run button.</p></div>
+            <form class="answer-bar" id="answer-bar" hidden><label for="answer-input" id="answer-prompt">Answer</label><div class="answer-row"><input id="answer-input" autocomplete="off" spellcheck="false" aria-label="Type your answer"><button type="submit" id="answer-send">Send</button></div></form>
+          </div>
+        </div>
+        <div class="pane problems">
+          <div class="pane-head"><h2>Problems</h2><span class="count" id="count"></span><span class="spacer"></span><span class="diagnostic-dot" id="diagnostic-dot"></span></div>
+          <div class="pane-body" id="problems"></div>
+          <div class="summary" id="summary" role="status">Ready when you are.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="workspace-footer"><span>Your code stays on this computer.</span><span class="engine" id="engine">Running on the Pyviel engine</span><span class="spacer"></span><button id="shortcuts-toggle">Keyboard shortcuts</button></footer>
+  </div>
+</div>
+
+<input type="file" id="file-input" accept=".py,text/plain" hidden>
+<div class="drop-veil" id="drop-veil" hidden><div>Drop your .py file to open it</div></div>
+
+<dialog id="guide" aria-labelledby="guide-title">
+  <div class="dialog-head"><h2 id="guide-title">Quick help</h2><button class="icon-button" id="guide-close" aria-label="Close help"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div>
+  <div class="guide-grid">
+    <section><h3>Say something</h3><pre>print("Hello!")
+# a comment</pre><p><code>print</code> shows something. Words in quotes are text. A line that begins with <code>#</code> is a note for people; Python skips it.</p></section>
+    <section><h3>Keep a value</h3><pre>score = 0
+score = score + 1
+print(score)</pre><p>A name, an <code>=</code> and a value keep it for later. The new value replaces the old one.</p></section>
+    <section><h3>Make a choice</h3><pre>if score > 10:
+    print("You made it.")
+else:
+    print("Keep going.")</pre><p>The line ends with <code>:</code> and the lines below are pushed in by four spaces. They belong to it.</p></section>
+    <section><h3>Do it again</h3><pre>for i in range(3):
+    print("Again!")
+
+n = 0
+while n < 3:
+    n = n + 1</pre><p><code>for</code> repeats a number of times. <code>while</code> keeps going while the question is true.</p></section>
+    <section><h3>Ask a question</h3><pre>name = input("Your name? ")
+age = int(input("Your age? "))
+print("Hi", name)</pre><p><code>input</code> asks and gives back text. <code>int(...)</code> turns the text into a whole number.</p></section>
+    <section><h3>Your own function</h3><pre>def greet(name):
+    return "Hello " + name
+
+print(greet("Ada"))</pre><p>A function is a few lines with a name. <code>return</code> gives back the result.</p></section>
+    <section><h3>A list</h3><pre>pets = ["cat", "dog"]
+print(pets[0])
+pets.append("owl")
+print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds one at the end. <code>len</code> counts.</p></section>
+    <section><h3>When something breaks</h3><pre>print(pirnt)</pre><p>Pyviel says in a short sentence what happened and on which line. <b>View full error</b> shows the whole Python message.</p></section>
+  </div>
+  <div class="shortcut-list"><h3>Keyboard</h3><span>Run <kbd>Cmd/Ctrl + Enter</kbd></span><span>Save <kbd>Cmd/Ctrl + S</kbd></span><span>Find <kbd>Cmd/Ctrl + F</kbd></span><span>Stop <kbd>Esc</kbd></span><span>Indent <kbd>Tab</kbd></span><span>Unindent <kbd>Shift + Tab</kbd></span></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" hidden><span id="toast-text"></span><button id="toast-action" hidden></button></div>
+
+<script src="strings.js?v=1.6.0-3"></script>
+<script src="i18n.js?v=1.6.0-3"></script>
+<script src="pyviel-errors.js?v=0.1.0-1"></script>
+<script src="pyviel.js?v=0.1.0-1"></script>
+<script>
+// The version next to the name is the one of the code that runs, so it cannot drift.
+(function () {
+  var shown = document.getElementById('brand-version');
+  if (shown && window.Pyviel) shown.textContent = 'v' + String(Pyviel.VERSION).replace(/-alpha$|-beta$/, '');
+})();
+</script>
+<script>
+(function () {
+  'use strict';
+
+  var code = document.getElementById('code');
+  var gutter = document.getElementById('gutter');
+  var out = document.getElementById('out');
+  var problemsBox = document.getElementById('problems');
+  var count = document.getElementById('count');
+  var summary = document.getElementById('summary');
+  var examples = document.getElementById('examples');
+  var STORE = 'pyviel.source';
+
+  var SAMPLES = {
+    hello: 'print("Hello!")\nprint("My first Python program")\n',
+    questions: 'name = input("What is your name? ")\nprint("Hello", name)\n',
+    age: 'age = int(input("How old are you? "))\nif age < 18:\n    print("Under 18")\nelif age == 18:\n    print("Exactly 18")\nelse:\n    print("Over 18")\n',
+    loop: 'for i in range(1, 6):\n    print(i, "x 7 =", i * 7)\n',
+    lists: 'pets = ["cat", "dog", "fox"]\nfor pet in pets:\n    print(pet.upper())\nprint("How many:", len(pets))\n',
+    functions: 'def greet(name):\n    return "Hello " + name + "!"\n\nprint(greet("Ada"))\nprint(greet("Luca"))\n',
+    errors: 'print("Before")\nprint(pirnt)\nprint("After")\n'
+  };
+
+  // Examples follow the language of the site: only the text in quotes is translated.
+  if (window.PyvielI18n) Object.keys(SAMPLES).forEach(function (key) { SAMPLES[key] = PyvielI18n.code(SAMPLES[key]); });
+
+  function lineCount(text) {
+    return text.split('\n').length;
+  }
+
+  function saveSource() {
+    var saved = true;
+    try { localStorage.setItem(STORE, code.value); } catch (e) { saved = false; }
+    code.dispatchEvent(new CustomEvent('pyviel:saved', { detail: saved }));
+  }
+
+  function sourceChanged() {
+    code.dispatchEvent(new Event('pyviel:edited'));
+    examples.value = '';
+    drawGutter();
+    saveSource();
+    problemsBox.innerHTML = '<div class="empty">You changed the code. Press Run to check it again.</div>';
+    count.textContent = '';
+    summary.textContent = 'You changed the code. The output is from the previous run.';
+    summary.className = 'summary';
+  }
+
+  function indentSelection(unindent) {
+    var start = code.selectionStart, end = code.selectionEnd;
+    if (!unindent && start === end) {
+      code.setRangeText('    ', start, end, 'end');
+    } else {
+      var first = code.value.lastIndexOf('\n', start - 1) + 1;
+      if (start === 0) first = 0;
+      // A selection ending at the next line's start does not include that line.
+      var last = end > start && code.value[end - 1] === '\n' ? end - 1 : end;
+      var block = code.value.slice(first, last);
+      var lines = block.split('\n');
+      var firstDelta = 0, totalDelta = 0;
+      lines = lines.map(function (line, i) {
+        var remove = unindent ? Math.min(4, (line.match(/^ */) || [''])[0].length) : 0;
+        var delta = unindent ? -remove : 4;
+        if (i === 0) firstDelta = delta;
+        totalDelta += delta;
+        return unindent ? line.slice(remove) : '    ' + line;
+      });
+      code.setRangeText(lines.join('\n'), first, last, 'preserve');
+      code.setSelectionRange(Math.max(first, start + firstDelta), Math.max(first, end + totalDelta));
+    }
+    sourceChanged();
+  }
+
+  function drawGutter() {
+    var n = lineCount(code.value);
+    var html = '';
+    for (var i = 1; i <= n; i++) html += '<div>' + i + '</div>';
+    gutter.innerHTML = html;
+    gutter.scrollTop = code.scrollTop;
+    code.dispatchEvent(new Event('pyviel:source'));
+  }
+
+  function clearGutter() {
+    var kids = gutter.children;
+    for (var i = 0; i < kids.length; i++) kids[i].className = '';
+  }
+
+  function selectLine(line) {
+    var lines = code.value.split('\n');
+    var start = 0;
+    for (var i = 0; i < line - 1 && i < lines.length; i++) start += lines[i].length + 1;
+    var end = start + (lines[line - 1] ? lines[line - 1].length : 0);
+    code.focus();
+    code.setSelectionRange(start, end);
+    var lineHeight = parseFloat(getComputedStyle(code).lineHeight), top = (line - 1) * lineHeight;
+    if (top < code.scrollTop || top > code.scrollTop + code.clientHeight - 60) {
+      code.scrollTop = Math.max(0, top - code.clientHeight / 3);
+      gutter.scrollTop = code.scrollTop;
+    }
+  }
+
+  var running = false, controller = null, answerWaiter = null;
+  var runButton = document.getElementById('run');
+  var stopButton = document.getElementById('stop');
+  var runStatus = document.getElementById('run-status');
+  var answerBar = document.getElementById('answer-bar');
+  var answerInput = document.getElementById('answer-input');
+  var answerPrompt = document.getElementById('answer-prompt');
+
+  function setRunState(state) {
+    document.body.dataset.runState = state;
+    runStatus.textContent = state === 'running' ? 'Running…' : state === 'input' ? 'Waiting for your answer' : '';
+    runStatus.className = 'run-status' + (state === 'idle' ? '' : ' live');
+    stopButton.hidden = state === 'idle';
+    runButton.setAttribute('aria-busy', state === 'idle' ? 'false' : 'true');
+  }
+
+  // Output arrives as pieces of text, exactly as Python writes it, new lines included.
+  function appendOutput(text) {
+    out.textContent += text;
+    var body = out.parentElement;
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function hideAnswer() {
+    answerBar.hidden = true;
+    answerInput.value = '';
+  }
+
+  function askAnswer(question) {
+    return new Promise(function (resolve) {
+      answerWaiter = resolve;
+      answerPrompt.textContent = question || 'Your answer';
+      answerInput.value = '';
+      answerBar.hidden = false;
+      answerInput.focus();
+      setRunState('input');
+    });
+  }
+
+  answerBar.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (!answerWaiter) return;
+    var done = answerWaiter;
+    answerWaiter = null;
+    var value = answerInput.value;
+    hideAnswer();
+    setRunState('running');
+    code.focus();
+    done(value);
+  });
+
+  // Escape is Stop while a program runs.
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' && running) {
+      ev.preventDefault();
+      stopRun();
+    }
+  }, true);
+
+  function stopRun() {
+    if (controller) controller.abort();
+  }
+  stopButton.addEventListener('click', stopRun);
+
+  async function runIt() {
+    if (running) return;
+    running = true;
+    controller = new AbortController();
+    setRunState('running');
+    // On a phone the output sits below the editor: bring it into view so Run visibly does something.
+    if (window.innerWidth <= 900) {
+      var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelector('.pane.output').scrollIntoView({behavior: still ? 'auto' : 'smooth', block: 'start'});
+    }
+    saveSource();
+    out.textContent = '';
+    document.getElementById('execution-time').textContent = '';
+    problemsBox.innerHTML = '<div class="empty">Running…</div>';
+    count.textContent = '';
+    clearGutter();
+    var started = performance.now();
+    try {
+      var result = await Pyviel.runAsync(code.value, {
+        signal: controller.signal,
+        onOutput: appendOutput,
+        input: askAnswer
+      });
+      showResult(result);
+    } catch (e) {
+      out.textContent = '';
+      problemsBox.textContent = /unsupported/.test(String(e && e.message))
+        ? 'Pyviel needs to be opened from a web address or from the app, not as a file on the computer. Your code is safe.'
+        : 'Something went wrong inside the editor, not in your program. Your code is safe. Try Run again, or press Save to keep a copy.';
+      count.textContent = '';
+      clearGutter();
+      summary.textContent = 'Editor error. You can try Run again.';
+      summary.className = 'summary';
+    } finally {
+      running = false;
+      controller = null;
+      hideAnswer();
+      answerWaiter = null;
+      document.getElementById('execution-time').textContent = Math.max(0.1, performance.now() - started).toFixed(1) + ' ms';
+      setRunState('idle');
+      code.focus();
+    }
+  }
+
+  function lang() { return (document.documentElement.lang || 'en').slice(0, 2); }
+
+  function showResult(result) {
+    problemsBox.innerHTML = '';
+    var marks = {};
+    for (var i = 0; i < result.problems.length; i++) {
+      var p = result.problems[i];
+      var item = document.createElement('div');
+      item.className = 'problem-item';
+      var row = document.createElement('button');
+      row.type = 'button';
+      row.className = 'problem ' + p.kind;
+      row.innerHTML =
+        '<span class="where"></span>' +
+        '<span><span class="kind">' + (p.type || 'error') + '</span>' +
+        '<span class="msg" style="display:block"></span>' +
+        (p.hint ? '<span class="hint" style="display:block"></span>' : '') + '</span>';
+      row.querySelector('.where').textContent = (PyvielErrors.words.line[lang()] || 'Line') + ' ' + p.line;
+      row.querySelector('.msg').textContent = p.message;
+      if (p.hint) row.querySelector('.hint').textContent = p.hint;
+      row.addEventListener('click', (function (line) {
+        return function () { selectLine(line); };
+      })(p.line));
+      item.appendChild(row);
+      if (p.full) {
+        var toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'full-toggle';
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = PyvielErrors.words.viewFull[lang()] || PyvielErrors.words.viewFull.en;
+        var full = document.createElement('pre');
+        full.className = 'full-error';
+        full.hidden = true;
+        full.textContent = p.full;
+        toggle.addEventListener('click', function (toggleButton, fullBox) {
+          return function () {
+            var open = fullBox.hidden;
+            fullBox.hidden = !open;
+            toggleButton.setAttribute('aria-expanded', String(open));
+            toggleButton.textContent = open ? (PyvielErrors.words.hideFull[lang()] || PyvielErrors.words.hideFull.en) : (PyvielErrors.words.viewFull[lang()] || PyvielErrors.words.viewFull.en);
+          };
+        }(toggle, full));
+        item.appendChild(toggle);
+        item.appendChild(full);
+      }
+      problemsBox.appendChild(item);
+      if (p.kind === 'error' || p.kind === 'warning') {
+        if (!marks[p.line] || p.kind === 'error') marks[p.line] = p.kind;
+      }
+    }
+    clearGutter();
+    Object.keys(marks).forEach(function (line) {
+      var el = gutter.children[Number(line) - 1];
+      if (el) el.className = marks[line];
+    });
+    if (result.problems.length === 0) {
+      problemsBox.innerHTML = '<div class="ok">No problems.</div>';
+    }
+    count.textContent = result.problems.length
+      ? '· ' + result.problems.length + (result.problems.length === 1 ? ' problem' : ' problems')
+      : '';
+    summary.textContent = result.summary;
+    summary.className = 'summary' + (result.problems.length ? '' : ' ok');
+    code.dispatchEvent(new CustomEvent('pyviel:ran'));
+  }
+
+  // Restore source without running it: loading a draft must not open prompts.
+  var saved = null, fromHash = '';
+  try { saved = localStorage.getItem(STORE); } catch (e) {}
+  try { fromHash = decodeURIComponent((location.hash || '').replace(/^#/, '')); } catch (e) {}
+  if (Object.prototype.hasOwnProperty.call(SAMPLES, fromHash)) {
+    code.value = SAMPLES[fromHash];
+    examples.value = fromHash;
+  } else code.value = saved !== null ? saved : SAMPLES.hello;
+  code.setSelectionRange(0, 0);
+  drawGutter();
+  setRunState('idle');
+  problemsBox.innerHTML = '<div class="empty">Press Run and any problems will show up here.</div>';
+  code.setAttribute('aria-label', 'Pyviel source code');
+  examples.setAttribute('aria-label', 'Load an example');
+
+  code.addEventListener('input', sourceChanged);
+  code.addEventListener('scroll', function () { gutter.scrollTop = code.scrollTop; });
+  code.addEventListener('paste', function (ev) {
+    if (!ev.clipboardData) return;
+    var text = ev.clipboardData.getData('text/plain');
+    // Preserve the engine's four-space meaning for pasted indentation tabs.
+    var normalized = text.replace(/\r\n?/g, '\n').replace(/^[ \t]*\t[ \t]*/gm, function (indent) {
+      return indent.replace(/\t/g, '    ');
+    });
+    if (normalized === text) return;
+    ev.preventDefault();
+    code.setRangeText(normalized, code.selectionStart, code.selectionEnd, 'end');
+    sourceChanged();
+  });
+  code.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter' && (ev.metaKey || ev.ctrlKey)) {
+      ev.preventDefault();
+      runIt();
+    } else if (ev.key === 'Tab') {
+      ev.preventDefault();
+      indentSelection(ev.shiftKey);
+    } else if (ev.key === 'Enter' && !ev.isComposing && !ev.altKey && !ev.shiftKey) {
+      ev.preventDefault();
+      var start = code.selectionStart;
+      var first = start === 0 ? 0 : code.value.lastIndexOf('\n', start - 1) + 1;
+      var before = code.value.slice(first, start);
+      var indent = (before.match(/^ */) || [''])[0];
+      if (/:\s*(#.*)?$/.test(before)) indent += '    ';
+      code.setRangeText('\n' + indent, start, code.selectionEnd, 'end');
+      sourceChanged();
+    }
+  });
+
+  document.getElementById('run').addEventListener('click', runIt);
+  examples.addEventListener('change', function () {
+    var key = examples.value;
+    if (!Object.prototype.hasOwnProperty.call(SAMPLES, key)) return;
+    code.value = SAMPLES[key];
+    sourceChanged();
+    examples.value = key;
+    out.textContent = '';
+    summary.textContent = 'Example opened. Press Run to try it.';
+    code.setSelectionRange(0, 0);
+    code.scrollTop = 0;
+    gutter.scrollTop = 0;
+  });
+})();
+</script>
+<script src="editor-ui.js?v=1.6.0-3"></script>
+<script src="lessons.js?v=1.6.0-3"></script>
+<script src="tutorials.js?v=1.6.0-3"></script>
+</body>
+</html>

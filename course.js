@@ -2525,9 +2525,9 @@ window.PyvielCourse = {
       "fr": "Un ensemble est un groupe de choses différentes, sans répétitions et sans ordre. Les accolades sans deux-points font un ensemble. Si tu mets la même chose deux fois, elle n'est gardée qu'une fois.\n\nset(...) construit un ensemble à partir d'une liste ou d'un texte, ce qui est la façon la plus rapide de retirer les répétitions."
      },
      "see": {
-      "en": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}",
-      "it": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}",
-      "fr": "3\nTrue\n{1, 2, 3}\n{'o', 'e', 'l', 'h'}"
+      "en": "3\nTrue\n{1, 2, 3}\n{'h', 'o', 'l', 'e'}",
+      "it": "3\nTrue\n{1, 2, 3}\n{'h', 'o', 'l', 'e'}",
+      "fr": "3\nTrue\n{1, 2, 3}\n{'h', 'o', 'l', 'e'}"
      },
      "turn": {
       "en": "Count the different letters in \"mississippi\".",
@@ -3426,6 +3426,1256 @@ window.PyvielCourse = {
       "en": "Put this random choice inside your own quiz.",
       "it": "Metti questa scelta casuale dentro il tuo quiz.",
       "fr": "Mets ce choix au hasard dans ton propre quiz."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": {
+    "en": "Stage 3 · The rest of the language",
+    "it": "Livello 3 · Il resto del linguaggio",
+    "fr": "Niveau 3 · Le reste du langage"
+   },
+   "title": {
+    "en": "Tool boxes: modules",
+    "it": "Scatole di strumenti: i moduli",
+    "fr": "Boîtes à outils : les modules"
+   },
+   "subtitle": {
+    "en": "Use what others already wrote",
+    "it": "Usa quello che altri hanno già scritto",
+    "fr": "Utilise ce que d'autres ont déjà écrit"
+   },
+   "steps": [
+    {
+     "code": "import math\nprint(math.sqrt(144))\nprint(math.pi)\nprint(math.floor(3.7), math.ceil(3.2))",
+     "title": {
+      "en": "import a tool box",
+      "it": "importare una scatola di strumenti",
+      "fr": "importer une boîte à outils"
+     },
+     "text": {
+      "en": "Python comes with many tool boxes, called modules. import math brings the box called math, and then you use its tools with a dot: math.sqrt(144).\n\nYou write import once, at the top of the program, and you can use the box everywhere below.",
+      "it": "Python viene con tante scatole di strumenti, chiamate moduli. import math porta la scatola chiamata math, e poi usi i suoi strumenti con un punto: math.sqrt(144).\n\nScrivi import una volta, in cima al programma, e puoi usare la scatola ovunque sotto.",
+      "fr": "Python vient avec plein de boîtes à outils, appelées modules. import math apporte la boîte appelée math, et ensuite tu utilises ses outils avec un point : math.sqrt(144).\n\nTu écris import une fois, en haut du programme, et tu peux utiliser la boîte partout en dessous."
+     },
+     "see": {
+      "en": "12.0\n3.141592653589793\n3 4",
+      "it": "12.0\n3.141592653589793\n3 4",
+      "fr": "12.0\n3.141592653589793\n3 4"
+     },
+     "turn": {
+      "en": "Find the square root of 2 with math.sqrt.",
+      "it": "Trova la radice quadrata di 2 con math.sqrt.",
+      "fr": "Trouve la racine carrée de 2 avec math.sqrt."
+     },
+     "slip": null
+    },
+    {
+     "code": "from math import sqrt, pi\nprint(sqrt(81))\nprint(pi)\n\nimport math as m\nprint(m.cos(0))\n\nfrom random import randint as roll\nprint(1 <= roll(1, 6) <= 6)",
+     "title": {
+      "en": "from, and a nickname: as",
+      "it": "from, e un soprannome: as",
+      "fr": "from, et un surnom : as"
+     },
+     "text": {
+      "en": "from math import sqrt takes just the tool you want, and then you write sqrt without the \"math.\" in front. import math as m gives the box a shorter name.\n\nBoth are fine. Taking only what you need makes the code shorter, while keeping the box name makes it clear where each tool comes from.",
+      "it": "from math import sqrt prende solo lo strumento che vuoi, e poi scrivi sqrt senza il \"math.\" davanti. import math as m dà alla scatola un nome più corto.\n\nVanno bene entrambi. Prendere solo quello che serve rende il codice più corto, mentre tenere il nome della scatola chiarisce da dove viene ogni strumento.",
+      "fr": "from math import sqrt prend juste l'outil que tu veux, et ensuite tu écris sqrt sans le « math. » devant. import math as m donne à la boîte un nom plus court.\n\nLes deux sont bons. Prendre seulement ce dont tu as besoin raccourcit le code, tandis que garder le nom de la boîte montre clairement d'où vient chaque outil."
+     },
+     "see": {
+      "en": "9.0\n3.141592653589793\n1.0\nTrue",
+      "it": "9.0\n3.141592653589793\n1.0\nTrue",
+      "fr": "9.0\n3.141592653589793\n1.0\nTrue"
+     },
+     "turn": {
+      "en": "Import floor from math and use it on 9.99.",
+      "it": "Importa floor da math e usalo su 9.99.",
+      "fr": "Importe floor depuis math et utilise-le sur 9.99."
+     },
+     "slip": {
+      "en": "Do not write from math import * : it brings everything and hides where names come from.",
+      "it": "Non scrivere from math import * : porta tutto e nasconde da dove vengono i nomi.",
+      "fr": "N'écris pas from math import * : ça apporte tout et cache d'où viennent les noms."
+     }
+    },
+    {
+     "code": "import math\nprint(math.sqrt)\nprint(type(math))\nprint([name for name in dir(math) if name.startswith(\"s\")][:6])\nprint(math.sqrt.__doc__[:40])",
+     "title": {
+      "en": "What is inside a module?",
+      "it": "Cosa c'è dentro un modulo?",
+      "fr": "Qu'y a-t-il dans un module ?"
+     },
+     "text": {
+      "en": "You can look inside any box. dir(module) lists every name it holds, and every tool has a small description, its __doc__.\n\nWhen you do not remember a tool, asking dir and the description is faster than looking it up.",
+      "it": "Puoi guardare dentro ogni scatola. dir(modulo) elenca tutti i nomi che contiene, e ogni strumento ha una piccola descrizione, il suo __doc__.\n\nQuando non ricordi uno strumento, chiedere a dir e alla descrizione è più veloce che cercarlo.",
+      "fr": "Tu peux regarder dans chaque boîte. dir(module) liste tous les noms qu'elle contient, et chaque outil a une petite description, son __doc__.\n\nQuand tu ne te rappelles pas un outil, demander à dir et à la description est plus rapide que de le chercher."
+     },
+     "see": {
+      "en": "<built-in function sqrt>\n<class 'module'>\n['sin', 'sinh', 'sqrt', 'sumprod']\nReturn the square root of x.",
+      "it": "<built-in function sqrt>\n<class 'module'>\n['sin', 'sinh', 'sqrt', 'sumprod']\nReturn the square root of x.",
+      "fr": "<built-in function sqrt>\n<class 'module'>\n['sin', 'sinh', 'sqrt', 'sumprod']\nReturn the square root of x."
+     },
+     "turn": {
+      "en": "Look inside the random module with dir.",
+      "it": "Guarda dentro il modulo random con dir.",
+      "fr": "Regarde dans le module random avec dir."
+     },
+     "slip": null
+    },
+    {
+     "code": "import this_module_does_not_exist",
+     "title": {
+      "en": "A box that does not exist",
+      "it": "Una scatola che non esiste",
+      "fr": "Une boîte qui n'existe pas"
+     },
+     "text": {
+      "en": "If the name of the module is wrong, or the module is not available, import stops with a ModuleNotFoundError.\n\nPyviel includes Python's standard library, which is huge, but not extra packages that you would install, nor modules that need a window such as turtle or tkinter.",
+      "it": "Se il nome del modulo è sbagliato, o il modulo non è disponibile, import si ferma con un ModuleNotFoundError.\n\nPyviel include la libreria standard di Python, che è enorme, ma non i pacchetti extra che si installerebbero, né i moduli che hanno bisogno di una finestra come turtle o tkinter.",
+      "fr": "Si le nom du module est faux, ou si le module n'est pas disponible, import s'arrête avec une ModuleNotFoundError.\n\nPyviel inclut la bibliothèque standard de Python, qui est énorme, mais pas les paquets supplémentaires qu'on installerait, ni les modules qui ont besoin d'une fenêtre comme turtle ou tkinter."
+     },
+     "see": {
+      "en": "⚠ Line 1: There is no module called this_module_does_not_exist.",
+      "it": "⚠ Riga 1: Non esiste un modulo chiamato this_module_does_not_exist.",
+      "fr": "⚠ Ligne 1: Il n'existe pas de module appelé this_module_does_not_exist."
+     },
+     "turn": {
+      "en": "Fix it by importing math instead.",
+      "it": "Correggilo importando math.",
+      "fr": "Corrige-le en important math."
+     },
+     "slip": null,
+     "error": "ModuleNotFoundError"
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Maths and luck",
+    "it": "Matematica e fortuna",
+    "fr": "Maths et chance"
+   },
+   "subtitle": {
+    "en": "The math and random modules",
+    "it": "I moduli math e random",
+    "fr": "Les modules math et random"
+   },
+   "steps": [
+    {
+     "code": "import math\nprint(math.hypot(3, 4))\nprint(math.pow(2, 8), math.factorial(5))\nprint(math.gcd(12, 18))\nprint(round(math.sin(math.pi / 2), 3))\nprint(math.log10(1000), math.log2(8))\nprint(math.isclose(0.1 + 0.2, 0.3))",
+     "title": {
+      "en": "More maths",
+      "it": "Ancora matematica",
+      "fr": "Encore des maths"
+     },
+     "text": {
+      "en": "math has the tools from maths class: hypot (the long side of a right triangle), pow, factorial, gcd (the biggest number that divides both), the trigonometry functions sin, cos, tan, and logarithms log10 and log2.\n\nisclose compares decimals with a little tolerance, because decimals are never perfect: it is the right way to ask if 0.1 + 0.2 equals 0.3.",
+      "it": "math ha gli strumenti della matematica: hypot (il lato lungo di un triangolo rettangolo), pow, factorial, gcd (il numero più grande che divide entrambi), le funzioni trigonometriche sin, cos, tan, e i logaritmi log10 e log2.\n\nisclose confronta i decimali con un po' di tolleranza, perché i decimali non sono mai perfetti: è il modo giusto per chiedere se 0.1 + 0.2 è uguale a 0.3.",
+      "fr": "math a les outils des cours de maths : hypot (le grand côté d'un triangle rectangle), pow, factorial, gcd (le plus grand nombre qui divise les deux), les fonctions de trigonométrie sin, cos, tan, et les logarithmes log10 et log2.\n\nisclose compare des décimaux avec un peu de tolérance, parce que les décimaux ne sont jamais parfaits : c'est la bonne façon de demander si 0.1 + 0.2 égale 0.3."
+     },
+     "see": {
+      "en": "5.0\n256.0 120\n6\n1.0\n3.0 3.0\nTrue",
+      "it": "5.0\n256.0 120\n6\n1.0\n3.0 3.0\nTrue",
+      "fr": "5.0\n256.0 120\n6\n1.0\n3.0 3.0\nTrue"
+     },
+     "turn": {
+      "en": "Find the diagonal of a screen that is 16 by 9.",
+      "it": "Trova la diagonale di uno schermo di 16 per 9.",
+      "fr": "Trouve la diagonale d'un écran de 16 sur 9."
+     },
+     "slip": null
+    },
+    {
+     "code": "import math\nr = 5\nprint(\"Area:\", round(math.pi * r ** 2, 2))\nprint(\"Circumference:\", round(2 * math.pi * r, 2))\nprint(math.degrees(math.pi), math.radians(180))\nprint(math.inf > 10 ** 100, math.isnan(float(\"nan\")))",
+     "title": {
+      "en": "A circle",
+      "it": "Un cerchio",
+      "fr": "Un cercle"
+     },
+     "text": {
+      "en": "With math.pi you can work with circles: the area is pi times r squared, and the circumference is two times pi times r. degrees and radians convert between the two ways to measure angles.\n\nmath.inf is an infinity bigger than any number, and nan means \"not a number\".",
+      "it": "Con math.pi puoi lavorare con i cerchi: l'area è pi per r al quadrato, e la circonferenza è due per pi per r. degrees e radians convertono tra i due modi di misurare gli angoli.\n\nmath.inf è un infinito più grande di qualsiasi numero, e nan vuol dire \"non un numero\".",
+      "fr": "Avec math.pi tu peux travailler avec des cercles : l'aire est pi fois r au carré, et la circonférence est deux fois pi fois r. degrees et radians convertissent entre les deux façons de mesurer les angles.\n\nmath.inf est un infini plus grand que n'importe quel nombre, et nan veut dire « pas un nombre »."
+     },
+     "see": {
+      "en": "Area: 78.54\nCircumference: 31.42\n180.0 3.141592653589793\nTrue True",
+      "it": "Area: 78.54\nCircumference: 31.42\n180.0 3.141592653589793\nTrue True",
+      "fr": "Area: 78.54\nCircumference: 31.42\n180.0 3.141592653589793\nTrue True"
+     },
+     "turn": {
+      "en": "Compute the area of a circle with a radius of 10.",
+      "it": "Calcola l'area di un cerchio di raggio 10.",
+      "fr": "Calcule l'aire d'un cercle de rayon 10."
+     },
+     "slip": null
+    },
+    {
+     "code": "import random\nrandom.seed(7)\nprint(random.randint(1, 6))\nprint(random.random())\nprint(random.choice([\"rock\", \"paper\", \"scissors\"]))\ncards = [1, 2, 3, 4, 5]\nrandom.shuffle(cards)\nprint(cards)\nprint(random.sample(range(1, 50), 6))\nprint(random.uniform(1, 2))",
+     "title": {
+      "en": "Luck",
+      "it": "La fortuna",
+      "fr": "La chance"
+     },
+     "text": {
+      "en": "random gives luck. randint(a, b) is a whole number from a to b, both included. random() is a decimal between 0 and 1. choice picks one item of a list, shuffle mixes a list in place, sample picks several different items, and uniform gives a decimal between two numbers.\n\nrandom.seed(7) fixes the luck: the same seed always gives the same sequence, which is perfect for tests. Without it, every run is different.",
+      "it": "random dà la fortuna. randint(a, b) è un numero intero da a a b, entrambi inclusi. random() è un decimale tra 0 e 1. choice sceglie un elemento di una lista, shuffle mescola una lista sul posto, sample sceglie diversi elementi, e uniform dà un decimale tra due numeri.\n\nrandom.seed(7) fissa la fortuna: lo stesso seme dà sempre la stessa sequenza, che è perfetto per i test. Senza, ogni esecuzione è diversa.",
+      "fr": "random donne la chance. randint(a, b) est un nombre entier de a à b, les deux compris. random() est un décimal entre 0 et 1. choice choisit un élément d'une liste, shuffle mélange une liste sur place, sample choisit plusieurs éléments différents, et uniform donne un décimal entre deux nombres.\n\nrandom.seed(7) fixe la chance : la même graine donne toujours la même suite, ce qui est parfait pour les tests. Sans elle, chaque exécution est différente."
+     },
+     "see": {
+      "en": "3\n0.9478653606090632\npaper\n[2, 4, 3, 5, 1]\n[24, 38, 4, 33, 14, 3]\n1.0859472336891716",
+      "it": "3\n0.9478653606090632\npaper\n[2, 4, 3, 5, 1]\n[24, 38, 4, 33, 14, 3]\n1.0859472336891716",
+      "fr": "3\n0.9478653606090632\npaper\n[2, 4, 3, 5, 1]\n[24, 38, 4, 33, 14, 3]\n1.0859472336891716"
+     },
+     "turn": {
+      "en": "Throw two dice and print the sum.",
+      "it": "Tira due dadi e stampa la somma.",
+      "fr": "Lance deux dés et affiche la somme."
+     },
+     "slip": null
+    },
+    {
+     "code": "import random\nchoices = [\"rock\", \"paper\", \"scissors\"]\nbeats = {\"rock\": \"scissors\", \"paper\": \"rock\", \"scissors\": \"paper\"}\n\nrandom.seed(3)\nfor round_number in range(1, 4):\n    you = random.choice(choices)\n    computer = random.choice(choices)\n    if you == computer:\n        result = \"draw\"\n    elif beats[you] == computer:\n        result = \"you win\"\n    else:\n        result = \"computer wins\"\n    print(f\"Round {round_number}: {you} vs {computer} -> {result}\")",
+     "title": {
+      "en": "Rock, paper, scissors",
+      "it": "Sasso, carta, forbici",
+      "fr": "Pierre, feuille, ciseaux"
+     },
+     "text": {
+      "en": "A small game that uses a dictionary (who beats whom), a list of choices, random.choice and if, elif, else. Here both players are random and the seed makes the output the same every time.\n\nTo play against the computer, replace the first choice with an input.",
+      "it": "Un piccolo gioco che usa un dizionario (chi batte chi), una lista di scelte, random.choice e if, elif, else. Qui entrambi i giocatori sono casuali e il seme rende il risultato uguale ogni volta.\n\nPer giocare contro il computer, sostituisci la prima scelta con un input.",
+      "fr": "Un petit jeu qui utilise un dictionnaire (qui bat qui), une liste de choix, random.choice et if, elif, else. Ici les deux joueurs sont aléatoires et la graine rend le résultat identique à chaque fois.\n\nPour jouer contre l'ordinateur, remplace le premier choix par un input."
+     },
+     "see": {
+      "en": "Round 1: rock vs scissors -> you win\nRound 2: scissors vs rock -> computer wins\nRound 3: paper vs scissors -> computer wins",
+      "it": "Round 1: rock vs scissors -> you win\nRound 2: scissors vs rock -> computer wins\nRound 3: paper vs scissors -> computer wins",
+      "fr": "Round 1: rock vs scissors -> you win\nRound 2: scissors vs rock -> computer wins\nRound 3: paper vs scissors -> computer wins"
+     },
+     "turn": {
+      "en": "Change the program so that you type your choice.",
+      "it": "Cambia il programma così che scrivi tu la tua scelta.",
+      "fr": "Change le programme pour que tu écrives ton choix."
+     },
+     "slip": null
+    },
+    {
+     "code": "import statistics\ndata = [2, 4, 4, 4, 5, 5, 7, 9]\nprint(statistics.mean(data))\nprint(statistics.median(data))\nprint(statistics.mode(data))\nprint(round(statistics.stdev(data), 3))\nprint(sum(data) / len(data), max(data) - min(data))",
+     "title": {
+      "en": "Averages and more: statistics",
+      "it": "Medie e altro: statistics",
+      "fr": "Moyennes et plus : statistics"
+     },
+     "text": {
+      "en": "The statistics module gives mean (the average), median (the middle value), mode (the most common value) and stdev (how spread out the data is).\n\nA good habit is to check a result by hand, for example the mean with sum divided by len.",
+      "it": "Il modulo statistics dà mean (la media), median (il valore di mezzo), mode (il valore più comune) e stdev (quanto sono sparsi i dati).\n\nUna buona abitudine è controllare un risultato a mano, per esempio la media con sum diviso len.",
+      "fr": "Le module statistics donne mean (la moyenne), median (la valeur du milieu), mode (la valeur la plus courante) et stdev (à quel point les données sont dispersées).\n\nUne bonne habitude est de vérifier un résultat à la main, par exemple la moyenne avec sum divisé par len."
+     },
+     "see": {
+      "en": "5\n4.5\n4\n2.138\n5.0 7",
+      "it": "5\n4.5\n4\n2.138\n5.0 7",
+      "fr": "5\n4.5\n4\n2.138\n5.0 7"
+     },
+     "turn": {
+      "en": "Find the median of your own five numbers.",
+      "it": "Trova la mediana di cinque numeri tuoi.",
+      "fr": "Trouve la médiane de cinq nombres à toi."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Dates and time",
+    "it": "Date e tempo",
+    "fr": "Dates et temps"
+   },
+   "subtitle": {
+    "en": "The datetime module",
+    "it": "Il modulo datetime",
+    "fr": "Le module datetime"
+   },
+   "steps": [
+    {
+     "code": "from datetime import date\nbirthday = date(2014, 5, 17)\nprint(birthday)\nprint(birthday.year, birthday.month, birthday.day)\nprint(birthday.weekday())\nprint(birthday.strftime(\"%d/%m/%Y\"))\nprint(birthday.strftime(\"%A %d %B %Y\"))",
+     "title": {
+      "en": "A date",
+      "it": "Una data",
+      "fr": "Une date"
+     },
+     "text": {
+      "en": "date(year, month, day) makes a date. You can read its year, month and day, and weekday() tells the day of the week as a number (Monday is 0).\n\nstrftime writes the date in the form you describe: %d is the day, %m the month, %Y the year, %A the name of the weekday and %B the name of the month.",
+      "it": "date(anno, mese, giorno) crea una data. Puoi leggerne anno, mese e giorno, e weekday() dice il giorno della settimana come numero (il lunedì è 0).\n\nstrftime scrive la data nella forma che descrivi: %d è il giorno, %m il mese, %Y l'anno, %A il nome del giorno della settimana e %B il nome del mese.",
+      "fr": "date(année, mois, jour) crée une date. Tu peux lire son année, son mois et son jour, et weekday() dit le jour de la semaine comme un nombre (lundi vaut 0).\n\nstrftime écrit la date dans la forme que tu décris : %d est le jour, %m le mois, %Y l'année, %A le nom du jour de la semaine et %B le nom du mois."
+     },
+     "see": {
+      "en": "2014-05-17\n2014 5 17\n5\n17/05/2014\nSaturday 17 May 2014",
+      "it": "2014-05-17\n2014 5 17\n5\n17/05/2014\nSaturday 17 May 2014",
+      "fr": "2014-05-17\n2014 5 17\n5\n17/05/2014\nSaturday 17 May 2014"
+     },
+     "turn": {
+      "en": "Make the date of your own birthday and print the day of the week.",
+      "it": "Crea la data del tuo compleanno e stampa il giorno della settimana.",
+      "fr": "Crée la date de ton anniversaire et affiche le jour de la semaine."
+     },
+     "slip": null
+    },
+    {
+     "code": "from datetime import date, timedelta\nstart = date(2026, 12, 20)\nprint(start + timedelta(days=14))\nprint(start - timedelta(weeks=1))\nchristmas = date(2026, 12, 25)\nprint((christmas - start).days, \"days to Christmas\")\nprint(christmas > start)\nprint(date(2028, 2, 28) + timedelta(days=1))",
+     "title": {
+      "en": "Counting days",
+      "it": "Contare i giorni",
+      "fr": "Compter les jours"
+     },
+     "text": {
+      "en": "timedelta is an amount of time. Add it to a date to move forward, subtract it to go back. Subtracting two dates gives a timedelta, and .days tells how many days.\n\nPython knows the calendar, even leap years: 28 February 2028 plus one day is the 29th.",
+      "it": "timedelta è una quantità di tempo. Sommala a una data per andare avanti, sottraila per tornare indietro. Sottrarre due date dà un timedelta, e .days dice quanti giorni.\n\nPython conosce il calendario, anche gli anni bisestili: il 28 febbraio 2028 più un giorno è il 29.",
+      "fr": "timedelta est une quantité de temps. Ajoute-la à une date pour avancer, soustrais-la pour reculer. Soustraire deux dates donne un timedelta, et .days dit combien de jours.\n\nPython connaît le calendrier, même les années bissextiles : le 28 février 2028 plus un jour, c'est le 29."
+     },
+     "see": {
+      "en": "2027-01-03\n2026-12-13\n5 days to Christmas\nTrue\n2028-02-29",
+      "it": "2027-01-03\n2026-12-13\n5 days to Christmas\nTrue\n2028-02-29",
+      "fr": "2027-01-03\n2026-12-13\n5 days to Christmas\nTrue\n2028-02-29"
+     },
+     "turn": {
+      "en": "How many days are there between two dates you choose?",
+      "it": "Quanti giorni ci sono tra due date che scegli?",
+      "fr": "Combien de jours y a-t-il entre deux dates que tu choisis ?"
+     },
+     "slip": null
+    },
+    {
+     "code": "from datetime import datetime\nmoment = datetime(2026, 10, 20, 14, 30, 5)\nprint(moment)\nprint(moment.hour, moment.minute, moment.second)\nprint(moment.strftime(\"%H:%M\"))\nparsed = datetime.strptime(\"2026-03-08 09:15\", \"%Y-%m-%d %H:%M\")\nprint(parsed.date(), parsed.time())",
+     "title": {
+      "en": "Date and time of day",
+      "it": "Data e ora del giorno",
+      "fr": "Date et heure du jour"
+     },
+     "text": {
+      "en": "datetime keeps both the date and the time. strftime turns it into a text, and its twin strptime goes the other way: it reads a text written in a known form and makes a datetime.\n\nThis is how you read dates that people type or that come from a file.",
+      "it": "datetime tiene sia la data sia l'ora. strftime la trasforma in un testo, e la sua gemella strptime fa il contrario: legge un testo scritto in una forma nota e crea un datetime.\n\nÈ così che si leggono le date che le persone scrivono o che arrivano da un file.",
+      "fr": "datetime garde à la fois la date et l'heure. strftime le transforme en texte, et son jumeau strptime fait l'inverse : il lit un texte écrit dans une forme connue et crée un datetime.\n\nC'est ainsi qu'on lit les dates que les gens écrivent ou qui viennent d'un fichier."
+     },
+     "see": {
+      "en": "2026-10-20 14:30:05\n14 30 5\n14:30\n2026-03-08 09:15:00",
+      "it": "2026-10-20 14:30:05\n14 30 5\n14:30\n2026-03-08 09:15:00",
+      "fr": "2026-10-20 14:30:05\n14 30 5\n14:30\n2026-03-08 09:15:00"
+     },
+     "turn": {
+      "en": "Read the text \"25/12/2026\" with the form \"%d/%m/%Y\".",
+      "it": "Leggi il testo \"25/12/2026\" con la forma \"%d/%m/%Y\".",
+      "fr": "Lis le texte \"25/12/2026\" avec la forme \"%d/%m/%Y\"."
+     },
+     "slip": null
+    },
+    {
+     "code": "from datetime import datetime\nnow = datetime.now()\nprint(\"The clock says a year from 2026 on:\", now.year >= 2026)\nimport time\nstart = time.time()\ntotal = sum(range(1_000_000))\nelapsed = time.time() - start\nprint(\"Counting took less than a second:\", elapsed < 1)",
+     "title": {
+      "en": "Now, and how long it took",
+      "it": "Adesso, e quanto ci ha messo",
+      "fr": "Maintenant, et combien de temps ça a pris"
+     },
+     "text": {
+      "en": "datetime.now() gives the current moment, from the computer's clock. time.time() gives the seconds that have passed since a fixed date long ago, which is perfect to measure how long something takes: take the time before, take it after, and subtract.\n\nReal programs use this to show how long a task needed.",
+      "it": "datetime.now() dà il momento attuale, dall'orologio del computer. time.time() dà i secondi passati da una data fissa molto tempo fa, che è perfetto per misurare quanto ci mette qualcosa: prendi il tempo prima, prendilo dopo, e sottrai.\n\nI programmi veri lo usano per mostrare quanto tempo ha richiesto un lavoro.",
+      "fr": "datetime.now() donne l'instant actuel, d'après l'horloge de l'ordinateur. time.time() donne les secondes écoulées depuis une date fixe il y a longtemps, ce qui est parfait pour mesurer combien de temps prend quelque chose : prends le temps avant, prends-le après, et soustrais.\n\nLes vrais programmes utilisent ça pour montrer combien de temps une tâche a demandé."
+     },
+     "see": {
+      "en": "The clock says a year from 2026 on: True\nCounting took less than a second: True",
+      "it": "The clock says a year from 2026 on: True\nCounting took less than a second: True",
+      "fr": "The clock says a year from 2026 on: True\nCounting took less than a second: True"
+     },
+     "turn": {
+      "en": "Time how long a loop of a million additions takes.",
+      "it": "Misura quanto ci mette un ciclo di un milione di somme.",
+      "fr": "Mesure combien de temps prend une boucle d'un million d'additions."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Files",
+    "it": "I file",
+    "fr": "Les fichiers"
+   },
+   "subtitle": {
+    "en": "Write and read text that stays",
+    "it": "Scrivere e leggere testo che resta",
+    "fr": "Écrire et lire du texte qui reste"
+   },
+   "steps": [
+    {
+     "code": "with open(\"notes.txt\", \"w\") as f:\n    f.write(\"First line\\n\")\n    f.write(\"Second line\\n\")\nprint(\"File written\")\nwith open(\"notes.txt\") as f:\n    text = f.read()\nprint(text)",
+     "title": {
+      "en": "Write a file, read it back",
+      "it": "Scrivere un file e rileggerlo",
+      "fr": "Écrire un fichier, le relire"
+     },
+     "text": {
+      "en": "open(name, \"w\") opens a file to write, and creates it if it does not exist. open(name) alone opens it to read. with opens the file, runs the pushed-in lines, and closes the file by itself at the end, even if something goes wrong.\n\nIn Pyviel files live in a small private workspace in the page, so they are not on your computer, and they disappear when you close the page.",
+      "it": "open(nome, \"w\") apre un file in scrittura, e lo crea se non esiste. open(nome) da solo lo apre in lettura. with apre il file, fa girare le righe rientrate e chiude il file da solo alla fine, anche se qualcosa va storto.\n\nIn Pyviel i file vivono in un piccolo spazio di lavoro privato nella pagina, quindi non sono sul tuo computer, e spariscono quando chiudi la pagina.",
+      "fr": "open(nom, \"w\") ouvre un fichier en écriture, et le crée s'il n'existe pas. open(nom) tout seul l'ouvre en lecture. with ouvre le fichier, fait tourner les lignes décalées et ferme le fichier tout seul à la fin, même si quelque chose se passe mal.\n\nDans Pyviel les fichiers vivent dans un petit espace de travail privé dans la page, ils ne sont donc pas sur ton ordinateur, et ils disparaissent quand tu fermes la page."
+     },
+     "see": {
+      "en": "File written\nFirst line\nSecond line",
+      "it": "File written\nFirst line\nSecond line",
+      "fr": "File written\nFirst line\nSecond line"
+     },
+     "turn": {
+      "en": "Write three lines of your own and read them back.",
+      "it": "Scrivi tre righe tue e rileggile.",
+      "fr": "Écris trois lignes à toi et relis-les."
+     },
+     "slip": {
+      "en": "Opening a file with \"w\" erases what was inside. To keep it and add, use \"a\".",
+      "it": "Aprire un file con \"w\" cancella quello che c'era dentro. Per tenerlo e aggiungere, usa \"a\".",
+      "fr": "Ouvrir un fichier avec \"w\" efface ce qu'il y avait dedans. Pour le garder et ajouter, utilise \"a\"."
+     }
+    },
+    {
+     "code": "with open(\"log.txt\", \"w\") as f:\n    f.write(\"one\\n\")\nwith open(\"log.txt\", \"a\") as f:\n    f.write(\"two\\n\")\n    f.write(\"three\\n\")\nwith open(\"log.txt\") as f:\n    for line in f:\n        print(line.strip())\nwith open(\"log.txt\") as f:\n    lines = f.readlines()\nprint(lines)",
+     "title": {
+      "en": "Add to a file, read line by line",
+      "it": "Aggiungere a un file, leggere riga per riga",
+      "fr": "Ajouter à un fichier, lire ligne par ligne"
+     },
+     "text": {
+      "en": "\"a\" means append: the new text goes at the end and the old stays. A for loop over the file gives its lines one at a time, each with the new line character at the end, so strip() cleans it.\n\nreadlines() gives all the lines in a list. read() gives everything as one long text.",
+      "it": "\"a\" vuol dire append: il testo nuovo va in fondo e il vecchio resta. Un ciclo for sul file dà le sue righe una alla volta, ognuna con il carattere di a capo alla fine, quindi strip() la pulisce.\n\nreadlines() dà tutte le righe in una lista. read() dà tutto come un unico testo lungo.",
+      "fr": "\"a\" veut dire append : le nouveau texte va à la fin et l'ancien reste. Une boucle for sur le fichier donne ses lignes une par une, chacune avec le caractère de fin de ligne à la fin, donc strip() la nettoie.\n\nreadlines() donne toutes les lignes dans une liste. read() donne tout comme un seul long texte."
+     },
+     "see": {
+      "en": "one\ntwo\nthree\n['one\\n', 'two\\n', 'three\\n']",
+      "it": "one\ntwo\nthree\n['one\\n', 'two\\n', 'three\\n']",
+      "fr": "one\ntwo\nthree\n['one\\n', 'two\\n', 'three\\n']"
+     },
+     "turn": {
+      "en": "Count how many lines the file has.",
+      "it": "Conta quante righe ha il file.",
+      "fr": "Compte combien de lignes a le fichier."
+     },
+     "slip": null
+    },
+    {
+     "code": "import os\nwith open(\"data.txt\", \"w\") as f:\n    f.write(\"hello\")\nprint(os.path.exists(\"data.txt\"))\nprint(os.path.exists(\"nothing.txt\"))\nprint(os.path.getsize(\"data.txt\"), \"bytes\")\nprint(\"data.txt\" in os.listdir(\".\"))\nos.rename(\"data.txt\", \"renamed.txt\")\nos.remove(\"renamed.txt\")\nprint(os.path.exists(\"renamed.txt\"))",
+     "title": {
+      "en": "Look after files: os",
+      "it": "Occuparsi dei file: os",
+      "fr": "S'occuper des fichiers : os"
+     },
+     "text": {
+      "en": "The os module works with files themselves: path.exists asks if one is there, path.getsize tells its size, listdir lists a folder, rename changes its name and remove deletes it.\n\nCheck with exists before reading a file that may not be there.",
+      "it": "Il modulo os lavora con i file stessi: path.exists chiede se uno c'è, path.getsize dice la sua dimensione, listdir elenca una cartella, rename cambia il nome e remove lo cancella.\n\nControlla con exists prima di leggere un file che potrebbe non esserci.",
+      "fr": "Le module os travaille avec les fichiers eux-mêmes : path.exists demande si l'un est là, path.getsize dit sa taille, listdir liste un dossier, rename change son nom et remove le supprime.\n\nVérifie avec exists avant de lire un fichier qui pourrait ne pas être là."
+     },
+     "see": {
+      "en": "True\nFalse\n5 bytes\nTrue\nFalse",
+      "it": "True\nFalse\n5 bytes\nTrue\nFalse",
+      "fr": "True\nFalse\n5 bytes\nTrue\nFalse"
+     },
+     "turn": {
+      "en": "Create a file, check it exists, then delete it.",
+      "it": "Crea un file, controlla che esista, poi cancellalo.",
+      "fr": "Crée un fichier, vérifie qu'il existe, puis supprime-le."
+     },
+     "slip": null
+    },
+    {
+     "code": "open(\"missing_file.txt\")",
+     "title": {
+      "en": "A file that is not there",
+      "it": "Un file che non c'è",
+      "fr": "Un fichier qui n'est pas là"
+     },
+     "text": {
+      "en": "Opening a file that does not exist to read it stops with a FileNotFoundError. The explanation reminds you that, here, files live in a small workspace and have to be written first.\n\nIn the next lesson you will learn to catch this error with try and except, so the program does not stop.",
+      "it": "Aprire per leggere un file che non esiste si ferma con un FileNotFoundError. La spiegazione ti ricorda che, qui, i file vivono in un piccolo spazio di lavoro e vanno scritti prima.\n\nNella prossima lezione imparerai a prendere questo errore con try ed except, così il programma non si ferma.",
+      "fr": "Ouvrir un fichier qui n'existe pas pour le lire s'arrête avec une FileNotFoundError. L'explication te rappelle qu'ici les fichiers vivent dans un petit espace de travail et doivent être écrits d'abord.\n\nDans la leçon suivante tu apprendras à attraper cette erreur avec try et except, pour que le programme ne s'arrête pas."
+     },
+     "see": {
+      "en": "⚠ Line 1: The file 'missing_file.txt' was not found.",
+      "it": "⚠ Riga 1: Il file 'missing_file.txt' non è stato trovato.",
+      "fr": "⚠ Ligne 1: Le fichier 'missing_file.txt' est introuvable."
+     },
+     "turn": {
+      "en": "Write the file first, then read it.",
+      "it": "Scrivi prima il file, poi leggilo.",
+      "fr": "Écris d'abord le fichier, puis lis-le."
+     },
+     "slip": null,
+     "error": "FileNotFoundError"
+    },
+    {
+     "code": "names = [\"Ada\", \"Max\", \"Zoe\"]\nwith open(\"names.txt\", \"w\") as f:\n    for name in names:\n        f.write(name + \"\\n\")\n\nloaded = []\nwith open(\"names.txt\") as f:\n    for line in f:\n        loaded.append(line.strip())\nprint(loaded)\nprint(loaded == names)",
+     "title": {
+      "en": "Save and load a list",
+      "it": "Salvare e caricare una lista",
+      "fr": "Sauvegarder et charger une liste"
+     },
+     "text": {
+      "en": "A very common job: keep a list of things in a file, one per line, and read it back later. Writing adds the line ending \\n, reading removes it with strip().\n\nThis is how a program remembers things between two runs.",
+      "it": "Un lavoro molto comune: tenere una lista di cose in un file, una per riga, e rileggerla più tardi. Scrivere aggiunge il fine riga \\n, leggere lo toglie con strip().\n\nÈ così che un programma ricorda le cose tra due esecuzioni.",
+      "fr": "Un travail très courant : garder une liste de choses dans un fichier, une par ligne, et la relire plus tard. Écrire ajoute la fin de ligne \\n, lire l'enlève avec strip().\n\nC'est ainsi qu'un programme se souvient des choses entre deux exécutions."
+     },
+     "see": {
+      "en": "['Ada', 'Max', 'Zoe']\nTrue",
+      "it": "['Ada', 'Max', 'Zoe']\nTrue",
+      "fr": "['Ada', 'Max', 'Zoe']\nTrue"
+     },
+     "turn": {
+      "en": "Save and load a list of numbers, turning them back with int.",
+      "it": "Salva e carica una lista di numeri, ritrasformandoli con int.",
+      "fr": "Sauvegarde et charge une liste de nombres, en les retransformant avec int."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "When things go wrong, on purpose",
+    "it": "Quando le cose vanno storte, apposta",
+    "fr": "Quand les choses tournent mal, exprès"
+   },
+   "subtitle": {
+    "en": "try, except and friends",
+    "it": "try, except e compagnia",
+    "fr": "try, except et compagnie"
+   },
+   "steps": [
+    {
+     "code": "try:\n    number = int(\"abc\")\n    print(\"This line is skipped\")\nexcept ValueError:\n    print(\"That was not a number\")\nprint(\"The program goes on\")",
+     "title": {
+      "en": "Try it, and catch the error",
+      "it": "Provaci, e prendi l'errore",
+      "fr": "Essaie, et attrape l'erreur"
+     },
+     "text": {
+      "en": "try runs the pushed-in lines. If one of them fails with the kind of error named after except, Python jumps to the except block instead of stopping, and the program goes on.\n\nIt is like a safety net: you say \"try this, and if it goes wrong in this way, do that\".",
+      "it": "try fa girare le righe rientrate. Se una di loro fallisce con il tipo di errore nominato dopo except, Python salta al blocco except invece di fermarsi, e il programma va avanti.\n\nÈ come una rete di sicurezza: dici \"prova questo, e se va male in questo modo, fai quello\".",
+      "fr": "try fait tourner les lignes décalées. Si l'une d'elles échoue avec le genre d'erreur nommé après except, Python saute au bloc except au lieu de s'arrêter, et le programme continue.\n\nC'est comme un filet de sécurité : tu dis « essaie ça, et si ça se passe mal de cette façon, fais ça »."
+     },
+     "see": {
+      "en": "That was not a number\nThe program goes on",
+      "it": "That was not a number\nThe program goes on",
+      "fr": "That was not a number\nThe program goes on"
+     },
+     "turn": {
+      "en": "Change \"abc\" to \"42\" and see that except does not run.",
+      "it": "Cambia \"abc\" in \"42\" e guarda che except non gira.",
+      "fr": "Change \"abc\" en \"42\" et vois que except ne tourne pas."
+     },
+     "slip": {
+      "en": "Name the kind of error you expect. A bare except hides every mistake, even your typos.",
+      "it": "Nomina il tipo di errore che ti aspetti. Un except senza nome nasconde ogni errore, anche i tuoi errori di battitura.",
+      "fr": "Nomme le genre d'erreur que tu attends. Un except sans nom cache toutes les erreurs, même tes fautes de frappe."
+     }
+    },
+    {
+     "code": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n\nprint(safe_divide(10, 2))\nprint(safe_divide(1, 0))\n\nfor text in [\"12\", \"x\", \"7\"]:\n    try:\n        print(int(text) * 2)\n    except ValueError as error:\n        print(\"Problem:\", error)",
+     "title": {
+      "en": "Which error, and what it says",
+      "it": "Quale errore, e cosa dice",
+      "fr": "Quelle erreur, et ce qu'elle dit"
+     },
+     "text": {
+      "en": "You can have several except blocks for several kinds of error. And except ValueError as error keeps the error in a box, so you can show its message.\n\nA loop with try inside lets the program handle each item on its own: one bad item does not stop the others.",
+      "it": "Puoi avere più blocchi except per più tipi di errore. E except ValueError as error tiene l'errore in una scatola, così puoi mostrarne il messaggio.\n\nUn ciclo con try dentro lascia che il programma gestisca ogni elemento da solo: un elemento sbagliato non ferma gli altri.",
+      "fr": "Tu peux avoir plusieurs blocs except pour plusieurs genres d'erreur. Et except ValueError as error garde l'erreur dans une boîte, pour que tu puisses montrer son message.\n\nUne boucle avec try dedans laisse le programme gérer chaque élément à part : un mauvais élément n'arrête pas les autres."
+     },
+     "see": {
+      "en": "5.0\nNone\n24\nProblem: invalid literal for int() with base 10: 'x'\n14",
+      "it": "5.0\nNone\n24\nProblem: invalid literal for int() with base 10: 'x'\n14",
+      "fr": "5.0\nNone\n24\nProblem: invalid literal for int() with base 10: 'x'\n14"
+     },
+     "turn": {
+      "en": "Make a function that turns a text into a number, or gives back 0 if it cannot.",
+      "it": "Fai una funzione che trasforma un testo in numero, o restituisce 0 se non può.",
+      "fr": "Fais une fonction qui transforme un texte en nombre, ou rend 0 si elle ne peut pas."
+     },
+     "slip": null
+    },
+    {
+     "code": "def read_number(text):\n    try:\n        value = int(text)\n    except ValueError:\n        print(\"not a number\")\n    else:\n        print(\"got\", value)\n    finally:\n        print(\"done with\", repr(text))\n\nread_number(\"5\")\nread_number(\"five\")",
+     "title": {
+      "en": "else and finally",
+      "it": "else e finally",
+      "fr": "else et finally"
+     },
+     "text": {
+      "en": "else runs only when try worked with no error. finally runs at the end in every case, with an error or without: it is the place to tidy up, like closing something.\n\nThe usual order is try, except, else, finally, and only try and one of the others are needed.",
+      "it": "else gira solo quando try ha funzionato senza errori. finally gira alla fine in ogni caso, con un errore o senza: è il posto per sistemare, come chiudere qualcosa.\n\nL'ordine solito è try, except, else, finally, e servono solo try e uno degli altri.",
+      "fr": "else ne tourne que quand try a marché sans erreur. finally tourne à la fin dans tous les cas, avec une erreur ou sans : c'est l'endroit pour ranger, comme fermer quelque chose.\n\nL'ordre habituel est try, except, else, finally, et seuls try et l'un des autres sont nécessaires."
+     },
+     "see": {
+      "en": "got 5\ndone with '5'\nnot a number\ndone with 'five'",
+      "it": "got 5\ndone with '5'\nnot a number\ndone with 'five'",
+      "fr": "got 5\ndone with '5'\nnot a number\ndone with 'five'"
+     },
+     "turn": {
+      "en": "Add a finally to a division function that prints \"end\".",
+      "it": "Aggiungi un finally a una funzione di divisione che stampa \"end\".",
+      "fr": "Ajoute un finally à une fonction de division qui affiche \"end\"."
+     },
+     "slip": null
+    },
+    {
+     "code": "def set_age(age):\n    if age < 0:\n        raise ValueError(\"an age cannot be negative\")\n    return age\n\nprint(set_age(12))\ntry:\n    set_age(-5)\nexcept ValueError as error:\n    print(\"Caught:\", error)\nset_age(-1)",
+     "title": {
+      "en": "Raise your own error",
+      "it": "Solleva un tuo errore",
+      "fr": "Lève ta propre erreur"
+     },
+     "text": {
+      "en": "raise makes an error on purpose, when your function receives something that makes no sense. The message tells the person using it what was wrong.\n\nThe caller can catch it with try and except, or not: the last line does not catch it, so the program stops there, with your own message in the explanation.",
+      "it": "raise crea un errore apposta, quando la tua funzione riceve qualcosa che non ha senso. Il messaggio dice a chi la usa cosa c'era di sbagliato.\n\nChi chiama può prenderlo con try ed except, oppure no: l'ultima riga non lo prende, quindi il programma si ferma lì, con il tuo messaggio nella spiegazione.",
+      "fr": "raise crée une erreur exprès, quand ta fonction reçoit quelque chose qui n'a pas de sens. Le message dit à la personne qui l'utilise ce qui n'allait pas.\n\nL'appelant peut l'attraper avec try et except, ou pas : la dernière ligne ne l'attrape pas, donc le programme s'arrête là, avec ton propre message dans l'explication."
+     },
+     "see": {
+      "en": "12\nCaught: an age cannot be negative\n⚠ Line 3: A value is right in type but wrong in content.",
+      "it": "12\nCaught: an age cannot be negative\n⚠ Riga 3: Un valore è del tipo giusto ma ha un contenuto sbagliato.",
+      "fr": "12\nCaught: an age cannot be negative\n⚠ Ligne 3: Une valeur a le bon type mais un mauvais contenu."
+     },
+     "turn": {
+      "en": "Remove the last line, then raise an error for an empty name.",
+      "it": "Togli l'ultima riga, poi solleva un errore per un nome vuoto.",
+      "fr": "Enlève la dernière ligne, puis lève une erreur pour un nom vide."
+     },
+     "slip": null,
+     "error": "ValueError"
+    },
+    {
+     "code": "while True:\n    text = input(\"Your age: \")\n    try:\n        age = int(text)\n        if age < 0:\n            raise ValueError(\"negative\")\n        break\n    except ValueError:\n        print(\"Please type a whole number, 0 or more.\")\nprint(\"Thanks, you are\", age)",
+     "title": {
+      "en": "Ask again until it is right",
+      "it": "Chiedi di nuovo finché è giusto",
+      "fr": "Redemande jusqu'à ce que ce soit juste"
+     },
+     "text": {
+      "en": "This is the most useful use of try: a loop that keeps asking until the answer is valid. Anything that is not a whole number, or is negative, goes to except, prints a polite message, and the loop asks again.\n\nbreak leaves the loop only when everything went well.",
+      "it": "Questo è l'uso più utile di try: un ciclo che continua a chiedere finché la risposta è valida. Tutto quello che non è un numero intero, o è negativo, va a except, stampa un messaggio gentile, e il ciclo chiede di nuovo.\n\nbreak esce dal ciclo solo quando tutto è andato bene.",
+      "fr": "C'est l'usage le plus utile de try : une boucle qui continue de demander jusqu'à ce que la réponse soit valide. Tout ce qui n'est pas un nombre entier, ou est négatif, va dans except, affiche un message poli, et la boucle redemande.\n\nbreak ne sort de la boucle que quand tout s'est bien passé."
+     },
+     "see": {
+      "en": "Your age: abc\nPlease type a whole number, 0 or more.\nYour age: -3\nPlease type a whole number, 0 or more.\nYour age: 12\nThanks, you are 12",
+      "it": "Your age: abc\nPlease type a whole number, 0 or more.\nYour age: -3\nPlease type a whole number, 0 or more.\nYour age: 12\nThanks, you are 12",
+      "fr": "Your age: abc\nPlease type a whole number, 0 or more.\nYour age: -3\nPlease type a whole number, 0 or more.\nYour age: 12\nThanks, you are 12"
+     },
+     "turn": {
+      "en": "Also refuse ages above 120.",
+      "it": "Rifiuta anche le età sopra 120.",
+      "fr": "Refuse aussi les âges au-dessus de 120."
+     },
+     "slip": null
+    },
+    {
+     "code": "class AgeError(Exception):\n    \"\"\"The age is not possible.\"\"\"\n\ndef check(age):\n    if not 0 <= age <= 120:\n        raise AgeError(f\"{age} is not a possible age\")\n    return age\n\ntry:\n    check(200)\nexcept AgeError as error:\n    print(\"Caught:\", error)\nprint(issubclass(AgeError, Exception))",
+     "title": {
+      "en": "Your own kind of error",
+      "it": "Un tuo tipo di errore",
+      "fr": "Ton propre genre d'erreur"
+     },
+     "text": {
+      "en": "You can invent your own kind of error: a class that inherits from Exception. Then you can catch exactly that one and nothing else.\n\nDo not worry about class for now: you will learn it in the next stage. For now it is a name with a meaning.",
+      "it": "Puoi inventare un tuo tipo di errore: una classe che eredita da Exception. Poi puoi prendere esattamente quello e nient'altro.\n\nNon preoccuparti di class per ora: la imparerai nel prossimo livello. Per ora è un nome con un significato.",
+      "fr": "Tu peux inventer ton propre genre d'erreur : une classe qui hérite d'Exception. Ensuite tu peux attraper exactement celui-là et rien d'autre.\n\nNe t'inquiète pas de class pour l'instant : tu l'apprendras au niveau suivant. Pour l'instant c'est un nom avec un sens."
+     },
+     "see": {
+      "en": "Caught: 200 is not a possible age\nTrue",
+      "it": "Caught: 200 is not a possible age\nTrue",
+      "fr": "Caught: 200 is not a possible age\nTrue"
+     },
+     "turn": {
+      "en": "Raise your own error for a negative price.",
+      "it": "Solleva un tuo errore per un prezzo negativo.",
+      "fr": "Lève ta propre erreur pour un prix négatif."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Data files: JSON and CSV",
+    "it": "File di dati: JSON e CSV",
+    "fr": "Fichiers de données : JSON et CSV"
+   },
+   "subtitle": {
+    "en": "How programs share information",
+    "it": "Come i programmi si scambiano informazioni",
+    "fr": "Comment les programmes échangent des informations"
+   },
+   "steps": [
+    {
+     "code": "import json\nperson = {\"name\": \"Ada\", \"age\": 12, \"pets\": [\"cat\", \"dog\"], \"student\": True}\ntext = json.dumps(person)\nprint(text)\nprint(type(text))\nback = json.loads(text)\nprint(back[\"pets\"][0], back == person)\nprint(json.dumps(person, indent=2))",
+     "title": {
+      "en": "JSON: data as text",
+      "it": "JSON: dati come testo",
+      "fr": "JSON : des données en texte"
+     },
+     "text": {
+      "en": "JSON is a way to write data as plain text, so it can be saved or sent to another program. It looks almost like a Python dictionary. json.dumps turns data into text, and json.loads turns the text back into data.\n\nindent=2 makes it easy to read. Almost every website uses JSON to talk to other programs.",
+      "it": "JSON è un modo di scrivere i dati come semplice testo, così si possono salvare o mandare a un altro programma. Somiglia quasi a un dizionario di Python. json.dumps trasforma i dati in testo, e json.loads trasforma il testo di nuovo in dati.\n\nindent=2 lo rende facile da leggere. Quasi ogni sito usa JSON per parlare con altri programmi.",
+      "fr": "JSON est une façon d'écrire des données en simple texte, pour pouvoir les enregistrer ou les envoyer à un autre programme. Il ressemble presque à un dictionnaire Python. json.dumps transforme des données en texte, et json.loads retransforme le texte en données.\n\nindent=2 le rend facile à lire. Presque tous les sites utilisent JSON pour parler à d'autres programmes."
+     },
+     "see": {
+      "en": "{\"name\": \"Ada\", \"age\": 12, \"pets\": [\"cat\", \"dog\"], \"student\": true}\n<class 'str'>\ncat True\n{\n  \"name\": \"Ada\",\n  \"age\": 12,\n  \"pets\": [\n    \"cat\",\n    \"dog\"\n  ],\n  \"student\": true\n}",
+      "it": "{\"name\": \"Ada\", \"age\": 12, \"pets\": [\"cat\", \"dog\"], \"student\": true}\n<class 'str'>\ncat True\n{\n  \"name\": \"Ada\",\n  \"age\": 12,\n  \"pets\": [\n    \"cat\",\n    \"dog\"\n  ],\n  \"student\": true\n}",
+      "fr": "{\"name\": \"Ada\", \"age\": 12, \"pets\": [\"cat\", \"dog\"], \"student\": true}\n<class 'str'>\ncat True\n{\n  \"name\": \"Ada\",\n  \"age\": 12,\n  \"pets\": [\n    \"cat\",\n    \"dog\"\n  ],\n  \"student\": true\n}"
+     },
+     "turn": {
+      "en": "Make a dictionary about your favourite game and print it as JSON.",
+      "it": "Fai un dizionario sul tuo gioco preferito e stampalo come JSON.",
+      "fr": "Fais un dictionnaire sur ton jeu préféré et affiche-le en JSON."
+     },
+     "slip": null
+    },
+    {
+     "code": "import json\nscores = {\"Ada\": 12, \"Max\": 7}\nwith open(\"scores.json\", \"w\") as f:\n    json.dump(scores, f)\n\nwith open(\"scores.json\") as f:\n    loaded = json.load(f)\nloaded[\"Zoe\"] = 15\nprint(loaded)\nwith open(\"scores.json\", \"w\") as f:\n    json.dump(loaded, f, indent=2)\nprint(open(\"scores.json\").read())",
+     "title": {
+      "en": "Save and load data",
+      "it": "Salvare e caricare i dati",
+      "fr": "Sauvegarder et charger des données"
+     },
+     "text": {
+      "en": "json.dump writes data straight into a file and json.load reads it back. With these two lines, a program can keep a score table, a to-do list or settings between runs.\n\nThis is the easiest way to make a program remember things.",
+      "it": "json.dump scrive i dati direttamente in un file e json.load li rilegge. Con queste due righe, un programma può tenere una tabella dei punteggi, una lista di cose da fare o delle impostazioni tra un'esecuzione e l'altra.\n\nÈ il modo più facile per far ricordare le cose a un programma.",
+      "fr": "json.dump écrit les données directement dans un fichier et json.load les relit. Avec ces deux lignes, un programme peut garder un tableau de scores, une liste de choses à faire ou des réglages entre deux exécutions.\n\nC'est la façon la plus facile de faire se souvenir un programme."
+     },
+     "see": {
+      "en": "{'Ada': 12, 'Max': 7, 'Zoe': 15}\n{\n  \"Ada\": 12,\n  \"Max\": 7,\n  \"Zoe\": 15\n}",
+      "it": "{'Ada': 12, 'Max': 7, 'Zoe': 15}\n{\n  \"Ada\": 12,\n  \"Max\": 7,\n  \"Zoe\": 15\n}",
+      "fr": "{'Ada': 12, 'Max': 7, 'Zoe': 15}\n{\n  \"Ada\": 12,\n  \"Max\": 7,\n  \"Zoe\": 15\n}"
+     },
+     "turn": {
+      "en": "Save a list of your three favourite songs and load it back.",
+      "it": "Salva una lista delle tue tre canzoni preferite e ricaricala.",
+      "fr": "Sauvegarde une liste de tes trois chansons préférées et recharge-la."
+     },
+     "slip": null
+    },
+    {
+     "code": "import csv\nrows = [[\"name\", \"score\"], [\"Ada\", 12], [\"Max\", 7]]\nwith open(\"table.csv\", \"w\", newline=\"\") as f:\n    writer = csv.writer(f)\n    writer.writerows(rows)\nprint(open(\"table.csv\").read())\nwith open(\"table.csv\") as f:\n    for row in csv.reader(f):\n        print(row)",
+     "title": {
+      "en": "CSV: tables as text",
+      "it": "CSV: tabelle come testo",
+      "fr": "CSV : des tableaux en texte"
+     },
+     "text": {
+      "en": "CSV is how spreadsheets are saved as plain text: one row per line, values separated by commas. csv.writer writes rows, csv.reader reads them back as lists of texts.\n\nEvery value comes back as a text, even the numbers, so convert them with int(...) when you need them.",
+      "it": "CSV è come si salvano i fogli di calcolo come semplice testo: una riga per linea, valori separati da virgole. csv.writer scrive le righe, csv.reader le rilegge come liste di testi.\n\nOgni valore torna come testo, anche i numeri, quindi convertili con int(...) quando ti servono.",
+      "fr": "CSV est la façon d'enregistrer les tableurs en simple texte : une ligne par rangée, valeurs séparées par des virgules. csv.writer écrit les lignes, csv.reader les relit comme des listes de textes.\n\nChaque valeur revient en texte, même les nombres, donc convertis-les avec int(...) quand tu en as besoin."
+     },
+     "see": {
+      "en": "name,score\nAda,12\nMax,7\n\n['name', 'score']\n['Ada', '12']\n['Max', '7']",
+      "it": "name,score\nAda,12\nMax,7\n\n['name', 'score']\n['Ada', '12']\n['Max', '7']",
+      "fr": "name,score\nAda,12\nMax,7\n\n['name', 'score']\n['Ada', '12']\n['Max', '7']"
+     },
+     "turn": {
+      "en": "Add a third person to the table.",
+      "it": "Aggiungi una terza persona alla tabella.",
+      "fr": "Ajoute une troisième personne au tableau."
+     },
+     "slip": null
+    },
+    {
+     "code": "import csv, io\ndata = \"name,score\\nAda,12\\nMax,7\\nZoe,15\\n\"\nreader = csv.DictReader(io.StringIO(data))\ntotal = 0\nfor row in reader:\n    print(row[\"name\"], int(row[\"score\"]))\n    total += int(row[\"score\"])\nprint(\"Total:\", total)",
+     "title": {
+      "en": "Rows with names",
+      "it": "Righe con i nomi",
+      "fr": "Des lignes avec des noms"
+     },
+     "text": {
+      "en": "DictReader uses the first row as the names of the columns, and gives each following row as a dictionary: row[\"name\"]. Much clearer than counting columns.\n\nio.StringIO makes a text behave like a file, which is handy for trying things.",
+      "it": "DictReader usa la prima riga come nomi delle colonne, e dà ogni riga successiva come un dizionario: row[\"name\"]. Molto più chiaro che contare le colonne.\n\nio.StringIO fa comportare un testo come un file, ed è comodo per fare prove.",
+      "fr": "DictReader utilise la première ligne comme noms des colonnes, et donne chaque ligne suivante comme un dictionnaire : row[\"name\"]. Bien plus clair que de compter les colonnes.\n\nio.StringIO fait se comporter un texte comme un fichier, ce qui est pratique pour faire des essais."
+     },
+     "see": {
+      "en": "Ada 12\nMax 7\nZoe 15\nTotal: 34",
+      "it": "Ada 12\nMax 7\nZoe 15\nTotal: 34",
+      "fr": "Ada 12\nMax 7\nZoe 15\nTotal: 34"
+     },
+     "turn": {
+      "en": "Find the highest score in the data.",
+      "it": "Trova il punteggio più alto nei dati.",
+      "fr": "Trouve le score le plus haut dans les données."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Find patterns in text",
+    "it": "Trovare schemi nel testo",
+    "fr": "Trouver des motifs dans du texte"
+   },
+   "subtitle": {
+    "en": "Regular expressions",
+    "it": "Le espressioni regolari",
+    "fr": "Les expressions régulières"
+   },
+   "steps": [
+    {
+     "code": "import re\ntext = \"My phone is 555-1234 and my friend's is 555-9876.\"\nprint(re.search(r\"\\d{3}-\\d{4}\", text))\nprint(re.search(r\"\\d{3}-\\d{4}\", text).group())\nprint(re.findall(r\"\\d{3}-\\d{4}\", text))\nprint(re.search(r\"xyz\", text))",
+     "title": {
+      "en": "Look for a pattern",
+      "it": "Cercare uno schema",
+      "fr": "Chercher un motif"
+     },
+     "text": {
+      "en": "A regular expression, or regex, describes a pattern of text. \\d means \"a digit\" and {3} means \"three of them\", so \\d{3}-\\d{4} is three digits, a dash and four digits.\n\nre.search finds the first match (or None), re.findall gives the list of all matches. Put an r before the quote, as in r\"\\d\", so that Python leaves the backslashes alone.",
+      "it": "Un'espressione regolare, o regex, descrive uno schema di testo. \\d vuol dire \"una cifra\" e {3} vuol dire \"tre di esse\", quindi \\d{3}-\\d{4} è tre cifre, un trattino e quattro cifre.\n\nre.search trova la prima corrispondenza (o None), re.findall dà la lista di tutte. Metti una r prima della virgoletta, come in r\"\\d\", così Python lascia in pace le barre rovesciate.",
+      "fr": "Une expression régulière, ou regex, décrit un motif de texte. \\d veut dire « un chiffre » et {3} veut dire « trois d'entre eux », donc \\d{3}-\\d{4} est trois chiffres, un tiret et quatre chiffres.\n\nre.search trouve la première correspondance (ou None), re.findall donne la liste de toutes. Mets un r avant le guillemet, comme dans r\"\\d\", pour que Python laisse les antislashs tranquilles."
+     },
+     "see": {
+      "en": "<re.Match object; span=(12, 20), match='555-1234'>\n555-1234\n['555-1234', '555-9876']\nNone",
+      "it": "<re.Match object; span=(12, 20), match='555-1234'>\n555-1234\n['555-1234', '555-9876']\nNone",
+      "fr": "<re.Match object; span=(12, 20), match='555-1234'>\n555-1234\n['555-1234', '555-9876']\nNone"
+     },
+     "turn": {
+      "en": "Find all the numbers in \"I have 3 cats and 12 fish\" with \\d+.",
+      "it": "Trova tutti i numeri in \"I have 3 cats and 12 fish\" con \\d+.",
+      "fr": "Trouve tous les nombres dans \"I have 3 cats and 12 fish\" avec \\d+."
+     },
+     "slip": null
+    },
+    {
+     "code": "import re\nprint(re.findall(r\"\\w+\", \"Hello, big world!\"))\nprint(re.findall(r\"[aeiou]\", \"education\"))\nprint(re.findall(r\"cat|dog\", \"a cat and a dog\"))\nprint(re.findall(r\"colou?r\", \"color colour\"))\nprint(re.findall(r\"\\bgo+d\\b\", \"god good goood gd\"))\nprint(bool(re.match(r\"^[A-Z][a-z]+$\", \"Python\")))",
+     "title": {
+      "en": "The building blocks",
+      "it": "I mattoncini",
+      "fr": "Les briques"
+     },
+     "text": {
+      "en": "A few signs go a long way. \\w is a letter or digit, [aeiou] is any one letter from the list, | means \"or\", ? makes the thing before it optional, + means \"one or more\", * means \"zero or more\", \\b is the edge of a word, ^ and $ are the start and the end of the text.\n\nre.match checks only from the beginning of the text.",
+      "it": "Pochi segni portano lontano. \\w è una lettera o cifra, [aeiou] è una qualunque lettera della lista, | vuol dire \"oppure\", ? rende facoltativa la cosa prima, + vuol dire \"una o più\", * vuol dire \"zero o più\", \\b è il bordo di una parola, ^ e $ sono l'inizio e la fine del testo.\n\nre.match controlla solo dall'inizio del testo.",
+      "fr": "Quelques signes vont loin. \\w est une lettre ou un chiffre, [aeiou] est une lettre quelconque de la liste, | veut dire « ou », ? rend facultative la chose d'avant, + veut dire « un ou plus », * veut dire « zéro ou plus », \\b est le bord d'un mot, ^ et $ sont le début et la fin du texte.\n\nre.match vérifie seulement depuis le début du texte."
+     },
+     "see": {
+      "en": "['Hello', 'big', 'world']\n['e', 'u', 'a', 'i', 'o']\n['cat', 'dog']\n['color', 'colour']\n['god', 'good', 'goood']\nTrue",
+      "it": "['Hello', 'big', 'world']\n['e', 'u', 'a', 'i', 'o']\n['cat', 'dog']\n['color', 'colour']\n['god', 'good', 'goood']\nTrue",
+      "fr": "['Hello', 'big', 'world']\n['e', 'u', 'a', 'i', 'o']\n['cat', 'dog']\n['color', 'colour']\n['god', 'good', 'goood']\nTrue"
+     },
+     "turn": {
+      "en": "Write a pattern that matches \"gray\" and \"grey\".",
+      "it": "Scrivi uno schema che corrisponde a \"gray\" e \"grey\".",
+      "fr": "Écris un motif qui correspond à \"gray\" et \"grey\"."
+     },
+     "slip": null
+    },
+    {
+     "code": "import re\ntext = \"Name: Ada, Age: 12; Name: Max, Age: 9\"\nprint(re.findall(r\"Name: (\\w+), Age: (\\d+)\", text))\nfound = re.search(r\"Age: (\\d+)\", text)\nprint(found.group(0), \"|\", found.group(1))\nprint(re.sub(r\"\\d+\", \"#\", text))\nprint(re.split(r\"[,;] \", text))",
+     "title": {
+      "en": "Pick parts out, replace, split",
+      "it": "Estrarre parti, sostituire, dividere",
+      "fr": "Extraire des parties, remplacer, découper"
+     },
+     "text": {
+      "en": "Round brackets in a pattern catch a part of the match: group(1) is the first part, group(0) is the whole match. findall with groups gives tuples.\n\nre.sub replaces every match with something else, and re.split cuts a text at every match, even when the separator can be written in several ways.",
+      "it": "Le parentesi tonde in uno schema catturano una parte della corrispondenza: group(1) è la prima parte, group(0) è l'intera corrispondenza. findall con i gruppi dà tuple.\n\nre.sub sostituisce ogni corrispondenza con qualcos'altro, e re.split taglia un testo a ogni corrispondenza, anche quando il separatore può essere scritto in più modi.",
+      "fr": "Les parenthèses dans un motif attrapent une partie de la correspondance : group(1) est la première partie, group(0) est la correspondance entière. findall avec des groupes donne des tuples.\n\nre.sub remplace chaque correspondance par autre chose, et re.split coupe un texte à chaque correspondance, même quand le séparateur peut s'écrire de plusieurs façons."
+     },
+     "see": {
+      "en": "[('Ada', '12'), ('Max', '9')]\nAge: 12 | 12\nName: Ada, Age: #; Name: Max, Age: #\n['Name: Ada', 'Age: 12', 'Name: Max', 'Age: 9']",
+      "it": "[('Ada', '12'), ('Max', '9')]\nAge: 12 | 12\nName: Ada, Age: #; Name: Max, Age: #\n['Name: Ada', 'Age: 12', 'Name: Max', 'Age: 9']",
+      "fr": "[('Ada', '12'), ('Max', '9')]\nAge: 12 | 12\nName: Ada, Age: #; Name: Max, Age: #\n['Name: Ada', 'Age: 12', 'Name: Max', 'Age: 9']"
+     },
+     "turn": {
+      "en": "Hide every digit of \"my code is 4821\" with a star.",
+      "it": "Nascondi ogni cifra di \"my code is 4821\" con una stella.",
+      "fr": "Cache chaque chiffre de \"my code is 4821\" avec une étoile."
+     },
+     "slip": null
+    },
+    {
+     "code": "import re\n\ndef valid_email(text):\n    return bool(re.fullmatch(r\"[\\w.]+@[\\w]+\\.[a-z]{2,}\", text))\n\nfor address in [\"ada@example.com\", \"ada@\", \"max.smith@site.org\", \"no spaces@x.com\"]:\n    print(address, \"->\", valid_email(address))",
+     "title": {
+      "en": "A real check: an email address",
+      "it": "Un controllo vero: un indirizzo email",
+      "fr": "Une vraie vérification : une adresse e-mail"
+     },
+     "text": {
+      "en": "Regexes shine when you check what people type. fullmatch asks that the whole text fits the pattern. This one accepts letters, digits, dots, an @, a name, a dot and at least two letters at the end.\n\nIt is a simple pattern: real email rules are much bigger. Always test with good and bad examples.",
+      "it": "Le regex brillano quando controlli cosa scrivono le persone. fullmatch chiede che l'intero testo rispetti lo schema. Questo accetta lettere, cifre, punti, una @, un nome, un punto e almeno due lettere alla fine.\n\nÈ uno schema semplice: le vere regole per le email sono molto più grandi. Prova sempre con esempi buoni e cattivi.",
+      "fr": "Les regex brillent quand tu vérifies ce que les gens écrivent. fullmatch demande que tout le texte respecte le motif. Celui-ci accepte des lettres, des chiffres, des points, un @, un nom, un point et au moins deux lettres à la fin.\n\nC'est un motif simple : les vraies règles des e-mails sont bien plus grandes. Teste toujours avec de bons et de mauvais exemples."
+     },
+     "see": {
+      "en": "ada@example.com -> True\nada@ -> False\nmax.smith@site.org -> True\nno spaces@x.com -> False",
+      "it": "ada@example.com -> True\nada@ -> False\nmax.smith@site.org -> True\nno spaces@x.com -> False",
+      "fr": "ada@example.com -> True\nada@ -> False\nmax.smith@site.org -> True\nno spaces@x.com -> False"
+     },
+     "turn": {
+      "en": "Write a check for a phone number like 555-1234.",
+      "it": "Scrivi un controllo per un numero di telefono come 555-1234.",
+      "fr": "Écris une vérification pour un numéro de téléphone comme 555-1234."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "A tour of the standard library",
+    "it": "Un giro nella libreria standard",
+    "fr": "Un tour de la bibliothèque standard"
+   },
+   "subtitle": {
+    "en": "collections, itertools, functools and more",
+    "it": "collections, itertools, functools e altro",
+    "fr": "collections, itertools, functools et plus"
+   },
+   "steps": [
+    {
+     "code": "from collections import Counter\ncounts = Counter(\"mississippi\")\nprint(counts)\nprint(counts[\"s\"])\nprint(counts.most_common(2))\nwords = \"the cat and the hat and the bat\".split()\nprint(Counter(words).most_common(1))",
+     "title": {
+      "en": "Counting made easy: Counter",
+      "it": "Contare è facile: Counter",
+      "fr": "Compter facilement : Counter"
+     },
+     "text": {
+      "en": "Counter counts how many times each item appears, in one line. It is a kind of dictionary, and most_common(n) gives the n most frequent items.\n\nRemember the word-counting loop from the dictionary lesson? This replaces it.",
+      "it": "Counter conta quante volte compare ogni elemento, in una riga. È una specie di dizionario, e most_common(n) dà gli n elementi più frequenti.\n\nTi ricordi il ciclo per contare le parole della lezione sui dizionari? Questo lo sostituisce.",
+      "fr": "Counter compte combien de fois chaque élément apparaît, en une ligne. C'est une sorte de dictionnaire, et most_common(n) donne les n éléments les plus fréquents.\n\nTu te souviens de la boucle pour compter les mots de la leçon sur les dictionnaires ? Ceci la remplace."
+     },
+     "see": {
+      "en": "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]\n[('the', 3)]",
+      "it": "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]\n[('the', 3)]",
+      "fr": "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]\n[('the', 3)]"
+     },
+     "turn": {
+      "en": "Find the most common letter of a sentence you choose.",
+      "it": "Trova la lettera più comune di una frase che scegli.",
+      "fr": "Trouve la lettre la plus courante d'une phrase que tu choisis."
+     },
+     "slip": null
+    },
+    {
+     "code": "from collections import defaultdict, deque, namedtuple\ngroups = defaultdict(list)\nfor word in [\"ant\", \"bee\", \"ape\", \"bat\"]:\n    groups[word[0]].append(word)\nprint(dict(groups))\n\nqueue = deque([1, 2, 3])\nqueue.append(4)\nprint(queue.popleft(), list(queue))\n\nPoint = namedtuple(\"Point\", [\"x\", \"y\"])\np = Point(3, 4)\nprint(p, p.x + p.y)",
+     "title": {
+      "en": "More collections",
+      "it": "Altre raccolte",
+      "fr": "Plus de collections"
+     },
+     "text": {
+      "en": "defaultdict makes a missing key start with an empty value by itself, so no check is needed. deque is a row that is fast at both ends, perfect for a queue. namedtuple makes a tuple whose parts have names: p.x.\n\nAll three solve small annoyances you would otherwise code by hand.",
+      "it": "defaultdict fa partire da solo con un valore vuoto una chiave che manca, quindi non serve nessun controllo. deque è una fila veloce a entrambe le estremità, perfetta per una coda. namedtuple crea una tupla le cui parti hanno un nome: p.x.\n\nTutti e tre risolvono piccoli fastidi che altrimenti scriveresti a mano.",
+      "fr": "defaultdict fait démarrer tout seul avec une valeur vide une clé qui manque, donc aucune vérification n'est nécessaire. deque est une file rapide aux deux bouts, parfaite pour une file d'attente. namedtuple crée un tuple dont les parties ont un nom : p.x.\n\nLes trois résolvent de petits ennuis que tu coderais sinon à la main."
+     },
+     "see": {
+      "en": "{'a': ['ant', 'ape'], 'b': ['bee', 'bat']}\n1 [2, 3, 4]\nPoint(x=3, y=4) 7",
+      "it": "{'a': ['ant', 'ape'], 'b': ['bee', 'bat']}\n1 [2, 3, 4]\nPoint(x=3, y=4) 7",
+      "fr": "{'a': ['ant', 'ape'], 'b': ['bee', 'bat']}\n1 [2, 3, 4]\nPoint(x=3, y=4) 7"
+     },
+     "turn": {
+      "en": "Group the words of a sentence by their length.",
+      "it": "Raggruppa le parole di una frase in base alla loro lunghezza.",
+      "fr": "Regroupe les mots d'une phrase selon leur longueur."
+     },
+     "slip": null
+    },
+    {
+     "code": "from itertools import permutations, combinations, product, chain, islice, count\nprint(list(permutations(\"abc\", 2)))\nprint(list(combinations([1, 2, 3, 4], 2)))\nprint(list(product(\"ab\", [1, 2])))\nprint(list(chain([1, 2], [3], \"xy\")))\nprint(list(islice(count(10), 4)))",
+     "title": {
+      "en": "Combinations: itertools",
+      "it": "Combinazioni: itertools",
+      "fr": "Combinaisons : itertools"
+     },
+     "text": {
+      "en": "itertools has tools to build combinations: permutations (all orders), combinations (choose some, order does not matter), product (every pairing), chain (glue several rows), and count (counts forever, so cut it with islice).\n\nThey give an iterator, so wrap them in list(...) to see everything.",
+      "it": "itertools ha strumenti per costruire combinazioni: permutations (tutti gli ordini), combinations (scegliere alcuni, l'ordine non conta), product (ogni abbinamento), chain (incollare più file), e count (conta per sempre, quindi taglialo con islice).\n\nDanno un iteratore, quindi avvolgili in list(...) per vedere tutto.",
+      "fr": "itertools a des outils pour construire des combinaisons : permutations (tous les ordres), combinations (en choisir quelques-uns, l'ordre ne compte pas), product (chaque association), chain (coller plusieurs rangées), et count (compte pour toujours, donc coupe-le avec islice).\n\nIls donnent un itérateur, enveloppe-les donc dans list(...) pour tout voir."
+     },
+     "see": {
+      "en": "[('a', 'b'), ('a', 'c'), ('b', 'a'), ('b', 'c'), ('c', 'a'), ('c', 'b')]\n[(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]\n[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]",
+      "it": "[('a', 'b'), ('a', 'c'), ('b', 'a'), ('b', 'c'), ('c', 'a'), ('c', 'b')]\n[(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]\n[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]",
+      "fr": "[('a', 'b'), ('a', 'c'), ('b', 'a'), ('b', 'c'), ('c', 'a'), ('c', 'b')]\n[(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]\n[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]"
+     },
+     "turn": {
+      "en": "How many ways can 4 friends sit in a row? Use permutations.",
+      "it": "In quanti modi possono sedersi in fila 4 amici? Usa permutations.",
+      "fr": "De combien de façons 4 amis peuvent-ils s'asseoir en rang ? Utilise permutations."
+     },
+     "slip": null
+    },
+    {
+     "code": "from functools import reduce, lru_cache, partial\nprint(reduce(lambda a, b: a * b, [1, 2, 3, 4]))\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    return n if n < 2 else fib(n - 1) + fib(n - 2)\n\nprint(fib(80))\npower_of_two = partial(pow, 2)\nprint(power_of_two(10))",
+     "title": {
+      "en": "Clever tools: functools",
+      "it": "Strumenti furbi: functools",
+      "fr": "Outils malins : functools"
+     },
+     "text": {
+      "en": "reduce folds a list into one value with a function. lru_cache remembers the answers of a function, so fib(80) is instant instead of taking forever: the slow Fibonacci of the recursion lesson, fixed with one line. partial makes a new function with one value already filled in.\n\nThe @ line above a function is called a decorator. You will learn to write them in the next stage.",
+      "it": "reduce piega una lista in un solo valore con una funzione. lru_cache ricorda le risposte di una funzione, quindi fib(80) è istantaneo invece di impiegare un'eternità: il lento Fibonacci della lezione sulla ricorsione, sistemato con una riga. partial crea una nuova funzione con un valore già inserito.\n\nLa riga con @ sopra una funzione si chiama decoratore. Imparerai a scriverli nel prossimo livello.",
+      "fr": "reduce plie une liste en une seule valeur avec une fonction. lru_cache se souvient des réponses d'une fonction, donc fib(80) est instantané au lieu de prendre une éternité : le Fibonacci lent de la leçon sur la récursion, réparé avec une ligne. partial fabrique une nouvelle fonction avec une valeur déjà remplie.\n\nLa ligne avec @ au-dessus d'une fonction s'appelle un décorateur. Tu apprendras à en écrire au niveau suivant."
+     },
+     "see": {
+      "en": "24\n23416728348467685\n1024",
+      "it": "24\n23416728348467685\n1024",
+      "fr": "24\n23416728348467685\n1024"
+     },
+     "turn": {
+      "en": "Use reduce to find the biggest of [4, 9, 2].",
+      "it": "Usa reduce per trovare il più grande di [4, 9, 2].",
+      "fr": "Utilise reduce pour trouver le plus grand de [4, 9, 2]."
+     },
+     "slip": null
+    },
+    {
+     "code": "import string, textwrap, pprint\nprint(string.ascii_lowercase)\nprint(string.digits, string.punctuation[:5])\nlong_text = \"Python is a language that is easy to read and fun to write.\"\nprint(textwrap.fill(long_text, width=24))\ndata = {\"name\": \"Ada\", \"scores\": [12, 7, 15], \"address\": {\"city\": \"Rome\"}}\npprint.pprint(data, width=30)\nprint(string.capwords(\"hello big world\"))",
+     "title": {
+      "en": "Text helpers",
+      "it": "Aiuti per il testo",
+      "fr": "Aides pour le texte"
+     },
+     "text": {
+      "en": "string has ready-made lists of letters and digits. textwrap.fill breaks a long text into lines of a given width. pprint.pprint shows big data over many lines so it is easy to read, and string.capwords capitalises every word.\n\nA real tour of the standard library is never finished: the habit is to ask \"has someone already written this?\" before writing it.",
+      "it": "string ha liste già pronte di lettere e cifre. textwrap.fill spezza un testo lungo in righe di una data larghezza. pprint.pprint mostra dati grandi su più righe così sono facili da leggere, e string.capwords mette la maiuscola a ogni parola.\n\nUn giro vero nella libreria standard non finisce mai: l'abitudine è chiedersi \"qualcuno l'ha già scritto?\" prima di scriverlo.",
+      "fr": "string a des listes toutes prêtes de lettres et de chiffres. textwrap.fill coupe un long texte en lignes d'une largeur donnée. pprint.pprint montre de grosses données sur plusieurs lignes pour qu'elles soient faciles à lire, et string.capwords met une majuscule à chaque mot.\n\nUn vrai tour de la bibliothèque standard n'est jamais fini : l'habitude est de se demander « quelqu'un l'a-t-il déjà écrit ? » avant de l'écrire."
+     },
+     "see": {
+      "en": "abcdefghijklmnopqrstuvwxyz\n0123456789 !\"#$%\nPython is a language\nthat is easy to read and\nfun to write.\n{'address': {'city': 'Rome'},\n 'name': 'Ada',\n 'scores': [12, 7, 15]}\nHello Big World",
+      "it": "abcdefghijklmnopqrstuvwxyz\n0123456789 !\"#$%\nPython is a language\nthat is easy to read and\nfun to write.\n{'address': {'city': 'Rome'},\n 'name': 'Ada',\n 'scores': [12, 7, 15]}\nHello Big World",
+      "fr": "abcdefghijklmnopqrstuvwxyz\n0123456789 !\"#$%\nPython is a language\nthat is easy to read and\nfun to write.\n{'address': {'city': 'Rome'},\n 'name': 'Ada',\n 'scores': [12, 7, 15]}\nHello Big World"
+     },
+     "turn": {
+      "en": "Wrap a sentence of your own to a width of 20.",
+      "it": "Spezza una frase tua con larghezza 20.",
+      "fr": "Coupe une phrase à toi avec une largeur de 20."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Is it right? Testing and debugging",
+    "it": "È giusto? Test e correzione",
+    "fr": "Est-ce juste ? Tests et débogage"
+   },
+   "subtitle": {
+    "en": "Catch mistakes before they catch you",
+    "it": "Prendi gli errori prima che prendano te",
+    "fr": "Attrape les erreurs avant qu'elles ne t'attrapent"
+   },
+   "steps": [
+    {
+     "code": "def double(n):\n    return n * 2\n\nassert double(4) == 8\nassert double(0) == 0\nassert double(-3) == -6\nprint(\"All the checks passed\")\nassert double(5) == 11, \"double(5) should be 10\"",
+     "title": {
+      "en": "assert: a promise that must be true",
+      "it": "assert: una promessa che deve essere vera",
+      "fr": "assert : une promesse qui doit être vraie"
+     },
+     "text": {
+      "en": "assert checks that something is True. If it is, nothing happens. If not, Python stops with an AssertionError and your message. It is the simplest test: \"I promise that double(4) is 8\".\n\nWrite a few asserts next to your function, with small examples whose answer you know. The last one is wrong on purpose, so you see what a failing test looks like.",
+      "it": "assert controlla che qualcosa sia True. Se lo è, non succede niente. Se no, Python si ferma con un AssertionError e il tuo messaggio. È il test più semplice: \"prometto che double(4) è 8\".\n\nScrivi qualche assert vicino alla tua funzione, con piccoli esempi di cui conosci la risposta. L'ultimo è sbagliato apposta, così vedi com'è un test che fallisce.",
+      "fr": "assert vérifie que quelque chose est True. Si c'est le cas, rien ne se passe. Sinon, Python s'arrête avec une AssertionError et ton message. C'est le test le plus simple : « je promets que double(4) vaut 8 ».\n\nÉcris quelques assert près de ta fonction, avec de petits exemples dont tu connais la réponse. Le dernier est faux exprès, pour que tu voies à quoi ressemble un test qui échoue."
+     },
+     "see": {
+      "en": "All the checks passed\n⚠ Line 8: An assert failed: something that should be true is not.",
+      "it": "All the checks passed\n⚠ Riga 8: Un assert è fallito: qualcosa che doveva essere vero non lo è.",
+      "fr": "All the checks passed\n⚠ Ligne 8: Un assert a échoué : quelque chose qui devait être vrai ne l'est pas."
+     },
+     "turn": {
+      "en": "Fix the last assert and run again.",
+      "it": "Correggi l'ultimo assert e riesegui.",
+      "fr": "Corrige le dernier assert et relance."
+     },
+     "slip": null,
+     "error": "AssertionError"
+    },
+    {
+     "code": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\nsuite = unittest.defaultTestLoader.loadTestsFromTestCase(TestEven)\nresult = unittest.TextTestRunner(stream=open(\"/dev/null\", \"w\")).run(suite)\nprint(\"Tests run:\", result.testsRun, \"- failures:\", len(result.failures))",
+     "title": {
+      "en": "A real test tool: unittest",
+      "it": "Uno strumento di test vero: unittest",
+      "fr": "Un vrai outil de test : unittest"
+     },
+     "text": {
+      "en": "unittest is Python's own testing tool. Each test is a method whose name starts with test, and it uses assertEqual, assertTrue and friends. All the tests are collected and run together, and you get a count of what passed.\n\nYou will see class in the next stage. For now notice the shape: one little test per idea.",
+      "it": "unittest è lo strumento di test di Python. Ogni test è un metodo il cui nome comincia con test, e usa assertEqual, assertTrue e compagnia. Tutti i test vengono raccolti ed eseguiti insieme, e ottieni un conteggio di quelli passati.\n\nVedrai class nel prossimo livello. Per ora nota la forma: un piccolo test per ogni idea.",
+      "fr": "unittest est l'outil de test de Python. Chaque test est une méthode dont le nom commence par test, et il utilise assertEqual, assertTrue et compagnie. Tous les tests sont rassemblés et lancés ensemble, et tu obtiens un compte de ceux qui ont réussi.\n\nTu verras class au niveau suivant. Pour l'instant remarque la forme : un petit test par idée."
+     },
+     "see": {
+      "en": "Tests run: 3 - failures: 0",
+      "it": "Tests run: 3 - failures: 0",
+      "fr": "Tests run: 3 - failures: 0"
+     },
+     "turn": {
+      "en": "Add a test that says is_even(-2) is True.",
+      "it": "Aggiungi un test che dice che is_even(-2) è True.",
+      "fr": "Ajoute un test qui dit que is_even(-2) est True."
+     },
+     "slip": null
+    },
+    {
+     "code": "def average(numbers):\n    total = 0\n    for n in numbers:\n        total += n\n        print(\"DEBUG: n =\", n, \"total =\", total)\n    return total / len(numbers)\n\nprint(average([4, 6, 8]))",
+     "title": {
+      "en": "Look inside: print debugging",
+      "it": "Guardare dentro: correzione con print",
+      "fr": "Regarder dedans : déboguer avec print"
+     },
+     "text": {
+      "en": "When a program gives a wrong answer and no error, add print lines that show what the boxes really hold at each step. Often you see the mistake right away.\n\nGive those prints a clear label like DEBUG and remove them when you are done.",
+      "it": "Quando un programma dà una risposta sbagliata senza errore, aggiungi righe print che mostrano cosa contengono davvero le scatole a ogni passo. Spesso vedi subito l'errore.\n\nDai a quei print un'etichetta chiara come DEBUG e toglili quando hai finito.",
+      "fr": "Quand un programme donne une mauvaise réponse sans erreur, ajoute des lignes print qui montrent ce que les boîtes contiennent vraiment à chaque étape. Souvent tu vois l'erreur tout de suite.\n\nDonne à ces print une étiquette claire comme DEBUG et enlève-les quand tu as fini."
+     },
+     "see": {
+      "en": "DEBUG: n = 4 total = 4\nDEBUG: n = 6 total = 10\nDEBUG: n = 8 total = 18\n6.0",
+      "it": "DEBUG: n = 4 total = 4\nDEBUG: n = 6 total = 10\nDEBUG: n = 8 total = 18\n6.0",
+      "fr": "DEBUG: n = 4 total = 4\nDEBUG: n = 6 total = 10\nDEBUG: n = 8 total = 18\n6.0"
+     },
+     "turn": {
+      "en": "Find the bug: change the code so it returns the average of an empty list safely.",
+      "it": "Trova l'errore: cambia il codice in modo che restituisca la media di una lista vuota senza problemi.",
+      "fr": "Trouve le bogue : change le code pour qu'il rende la moyenne d'une liste vide sans problème."
+     },
+     "slip": null
+    },
+    {
+     "code": "import traceback\n\ndef divide(a, b):\n    return a / b\n\ntry:\n    divide(1, 0)\nexcept ZeroDivisionError:\n    text = traceback.format_exc()\n    print(text.splitlines()[0])\n    print(text.splitlines()[-1])\n    print(len(text.splitlines()), \"lines in the full error\")",
+     "title": {
+      "en": "Read the full error with code",
+      "it": "Leggere l'errore completo con il codice",
+      "fr": "Lire l'erreur complète avec du code"
+     },
+     "text": {
+      "en": "The module traceback lets a program get the full error as text, the same text that View full error shows you. The first line says \"Traceback\", the last line says what happened.\n\nReal programs use this to write a report of what went wrong, without stopping.",
+      "it": "Il modulo traceback permette a un programma di ottenere l'errore completo come testo, lo stesso testo che mostra Mostra l'errore completo. La prima riga dice \"Traceback\", l'ultima dice cosa è successo.\n\nI programmi veri lo usano per scrivere un rapporto di cosa è andato storto, senza fermarsi.",
+      "fr": "Le module traceback permet à un programme d'obtenir l'erreur complète sous forme de texte, le même texte que montre Voir l'erreur complète. La première ligne dit « Traceback », la dernière dit ce qui s'est passé.\n\nLes vrais programmes utilisent ça pour écrire un rapport de ce qui s'est mal passé, sans s'arrêter."
+     },
+     "see": {
+      "en": "Traceback (most recent call last):\nZeroDivisionError: division by zero\n8 lines in the full error",
+      "it": "Traceback (most recent call last):\nZeroDivisionError: division by zero\n8 lines in the full error",
+      "fr": "Traceback (most recent call last):\nZeroDivisionError: division by zero\n8 lines in the full error"
+     },
+     "turn": {
+      "en": "Cause a different error inside try and print its last line.",
+      "it": "Causa un errore diverso dentro try e stampa la sua ultima riga.",
+      "fr": "Cause une erreur différente dans try et affiche sa dernière ligne."
+     },
+     "slip": null
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Programs you can be proud of",
+    "it": "Programmi di cui andare fieri",
+    "fr": "Des programmes dont tu peux être fier"
+   },
+   "subtitle": {
+    "en": "Structure, style and good habits",
+    "it": "Struttura, stile e buone abitudini",
+    "fr": "Structure, style et bonnes habitudes"
+   },
+   "steps": [
+    {
+     "code": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\nif __name__ == \"__main__\":\n    main()",
+     "title": {
+      "en": "A main() and a start line",
+      "it": "Un main() e una riga di partenza",
+      "fr": "Un main() et une ligne de départ"
+     },
+     "text": {
+      "en": "A tidy program puts its work in functions and has one main() that runs them. The line if __name__ == \"__main__\": means \"run main only if this file is the program itself, not if another program imported it\".\n\nYou will see this shape in almost every Python file in the world.",
+      "it": "Un programma ordinato mette il suo lavoro in funzioni e ha un solo main() che le fa girare. La riga if __name__ == \"__main__\": vuol dire \"fai girare main solo se questo file è il programma stesso, non se un altro programma lo ha importato\".\n\nVedrai questa forma in quasi ogni file Python del mondo.",
+      "fr": "Un programme bien rangé met son travail dans des fonctions et a un seul main() qui les fait tourner. La ligne if __name__ == \"__main__\": veut dire « fais tourner main seulement si ce fichier est le programme lui-même, pas si un autre programme l'a importé ».\n\nTu verras cette forme dans presque tous les fichiers Python du monde."
+     },
+     "see": {
+      "en": "Name: Ada\nHello, Ada!",
+      "it": "Name: Ada\nHello, Ada!",
+      "fr": "Name: Ada\nHello, Ada!"
+     },
+     "turn": {
+      "en": "Add a second function farewell(name) and call it from main.",
+      "it": "Aggiungi una seconda funzione farewell(name) e chiamala da main.",
+      "fr": "Ajoute une deuxième fonction farewell(name) et appelle-la depuis main."
+     },
+     "slip": null
+    },
+    {
+     "code": "def area_of_rectangle(width, height):\n    \"\"\"Return the area of a rectangle, in square units.\"\"\"\n    return width * height\n\n\nMAX_PLAYERS = 4\nplayer_names = [\"Ada\", \"Max\"]\ntotal_score = 0\n\nfor player_name in player_names:\n    total_score += len(player_name)\n\nprint(area_of_rectangle(3, 4), MAX_PLAYERS, total_score)",
+     "title": {
+      "en": "Names and style",
+      "it": "Nomi e stile",
+      "fr": "Noms et style"
+     },
+     "text": {
+      "en": "The community agreed on a style, called PEP 8. Names of variables and functions are in small letters with underscores (player_name), names of constants, values that never change, are in capitals (MAX_PLAYERS). Four spaces for each push-in, two empty lines around functions, and a short description under each def.\n\nNobody forces you, but it makes every program easier to read, including yours next month.",
+      "it": "La comunità ha concordato uno stile, chiamato PEP 8. I nomi di variabili e funzioni sono in minuscolo con i trattini bassi (player_name), i nomi delle costanti, valori che non cambiano mai, sono in maiuscolo (MAX_PLAYERS). Quattro spazi per ogni rientro, due righe vuote attorno alle funzioni, e una breve descrizione sotto ogni def.\n\nNessuno ti obbliga, ma rende ogni programma più facile da leggere, compreso il tuo il mese prossimo.",
+      "fr": "La communauté s'est mise d'accord sur un style, appelé PEP 8. Les noms de variables et de fonctions sont en minuscules avec des tirets bas (player_name), les noms de constantes, des valeurs qui ne changent jamais, sont en majuscules (MAX_PLAYERS). Quatre espaces par décalage, deux lignes vides autour des fonctions, et une courte description sous chaque def.\n\nPersonne ne t'y oblige, mais ça rend chaque programme plus facile à lire, le tien le mois prochain compris."
+     },
+     "see": {
+      "en": "12 4 6",
+      "it": "12 4 6",
+      "fr": "12 4 6"
+     },
+     "turn": {
+      "en": "Rewrite a name like PlayerScore in the Python style.",
+      "it": "Riscrivi un nome come PlayerScore nello stile Python.",
+      "fr": "Réécris un nom comme PlayerScore dans le style Python."
+     },
+     "slip": null
+    },
+    {
+     "code": "def ask_number(question, low, high):\n    \"\"\"Ask until the person types a whole number from low to high.\"\"\"\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"It must be between {low} and {high}.\")\n\nage = ask_number(\"Age (1-120): \", 1, 120)\nprint(\"Age saved:\", age)",
+     "title": {
+      "en": "Trust nothing that a person types",
+      "it": "Non fidarti di niente di ciò che scrive una persona",
+      "fr": "Ne fais confiance à rien de ce qu'une personne écrit"
+     },
+     "text": {
+      "en": "People type surprises: letters instead of numbers, empty lines, huge values. A good program checks everything that comes in. A small helper function that keeps asking until the answer is valid can be used again and again.\n\nWriting it once, in a function, means every question in your program is safe.",
+      "it": "Le persone scrivono sorprese: lettere al posto di numeri, righe vuote, valori enormi. Un buon programma controlla tutto quello che entra. Una piccola funzione di aiuto che continua a chiedere finché la risposta è valida si può usare più e più volte.\n\nScriverla una volta, in una funzione, vuol dire che ogni domanda del tuo programma è sicura.",
+      "fr": "Les gens écrivent des surprises : des lettres au lieu de nombres, des lignes vides, des valeurs énormes. Un bon programme vérifie tout ce qui entre. Une petite fonction d'aide qui continue de demander jusqu'à ce que la réponse soit valide peut être utilisée encore et encore.\n\nL'écrire une fois, dans une fonction, veut dire que chaque question de ton programme est sûre."
+     },
+     "see": {
+      "en": "Age (1-120): abc\nPlease type a whole number.\nAge (1-120): 500\nIt must be between 1 and 120.\nAge (1-120): 30\nAge saved: 30",
+      "it": "Age (1-120): abc\nPlease type a whole number.\nAge (1-120): 500\nIt must be between 1 and 120.\nAge (1-120): 30\nAge saved: 30",
+      "fr": "Age (1-120): abc\nPlease type a whole number.\nAge (1-120): 500\nIt must be between 1 and 120.\nAge (1-120): 30\nAge saved: 30"
+     },
+     "turn": {
+      "en": "Write ask_yes_no(question) that only accepts \"yes\" or \"no\".",
+      "it": "Scrivi ask_yes_no(question) che accetta solo \"yes\" o \"no\".",
+      "fr": "Écris ask_yes_no(question) qui accepte seulement \"yes\" ou \"no\"."
+     },
+     "slip": null
+    },
+    {
+     "code": "from typing import List, Optional\n\ndef find_longest(words: List[str]) -> Optional[str]:\n    \"\"\"Return the longest word, or None for an empty list.\"\"\"\n    if not words:\n        return None\n    return max(words, key=len)\n\nprint(find_longest([\"pear\", \"banana\", \"fig\"]))\nprint(find_longest([]))\nage: int = 12\nnames: list[str] = [\"Ada\", \"Max\"]\nprint(age, names)",
+     "title": {
+      "en": "Type hints",
+      "it": "Suggerimenti di tipo",
+      "fr": "Indications de type"
+     },
+     "text": {
+      "en": "You can write down what type each parameter and each answer should be: name: str and -> int. Python does not check them while running, but they tell the reader, and the editor, what is expected. Optional[str] means \"a text or None\".\n\nAdding them is a habit of careful programmers.",
+      "it": "Puoi scrivere che tipo dovrebbero essere ogni parametro e ogni risposta: name: str e -> int. Python non li controlla mentre gira, ma dicono al lettore, e all'editor, cosa ci si aspetta. Optional[str] vuol dire \"un testo o None\".\n\nAggiungerli è un'abitudine di chi programma con cura.",
+      "fr": "Tu peux écrire quel type devrait avoir chaque paramètre et chaque réponse : name: str et -> int. Python ne les vérifie pas pendant l'exécution, mais ils disent au lecteur, et à l'éditeur, ce qui est attendu. Optional[str] veut dire « un texte ou None ».\n\nLes ajouter est une habitude des programmeurs soigneux."
+     },
+     "see": {
+      "en": "banana\nNone\n12 ['Ada', 'Max']",
+      "it": "banana\nNone\n12 ['Ada', 'Max']",
+      "fr": "banana\nNone\n12 ['Ada', 'Max']"
+     },
+     "turn": {
+      "en": "Add type hints to a function of your own.",
+      "it": "Aggiungi i suggerimenti di tipo a una tua funzione.",
+      "fr": "Ajoute des indications de type à une fonction à toi."
      },
      "slip": null
     }

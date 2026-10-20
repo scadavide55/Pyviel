@@ -16,6 +16,11 @@
    a text left untranslated: the build stops and says where. */
 const fs = require('node:fs');
 const path = require('node:path');
+// asyncio needs WebAssembly stack switching, which Node has behind a flag: start again with it.
+if (!process.execArgv.includes('--experimental-wasm-jspi')) {
+  const again = require('node:child_process').spawnSync(process.execPath, ['--experimental-wasm-jspi', __filename, ...process.argv.slice(2)], {stdio: 'inherit'});
+  process.exit(again.status === null ? 1 : again.status);
+}
 const Errors = require('../pyviel-errors.js');
 
 const LANGS = ['en', 'it', 'fr'];
@@ -56,13 +61,13 @@ async function main() {
       const subtitle = pick3(lesson.subtitle, where, 'subtitle', true);
       const group = pick3(lesson.group, where, 'group', false);
       const steps = [];
-      (lesson.steps || []).forEach((step, index) => {
+      for (const [index, step] of (lesson.steps || []).entries()) {
         const here = where + ' step ' + (index + 1) + (step.t ? ' "' + step.t[0] + '"' : '');
         const t = pick3(step.t, here, 't (title)', true);
         const x = pick3(step.x, here, 'x (text)', true);
         const d = pick3(step.d, here, 'd (your turn)', true);
         const w = pick3(step.w, here, 'w (watch out)', false);
-        if (typeof step.c !== 'string' || !step.c.trim()) { bad(here, 'no code'); return; }
+        if (typeof step.c !== 'string' || !step.c.trim()) { bad(here, 'no code'); continue; }
         for (const l of ['it', 'fr']) {
           if (t && t[l] === t.en && !/^[A-Z0-9 ,.]+$/.test(t.en)) bad(here, 'title is not translated in ' + l);
           if (x && x[l] === x.en) bad(here, 'text is not translated in ' + l);
@@ -74,10 +79,10 @@ async function main() {
         const answers = (step.i || []).slice();
         let result;
         try {
-          const proxy = run(step.c, s => { out += s; }, () => (answers.length ? answers.shift() : ''));
+          const proxy = await run.callPromising(step.c, s => { out += s; }, () => (answers.length ? answers.shift() : ''));
           result = proxy.toJs({dict_converter: Object.fromEntries});
           proxy.destroy();
-        } catch (error) { bad(here, 'the runner failed: ' + error); return; }
+        } catch (error) { bad(here, 'the runner failed: ' + error); continue; }
         if (step.e) {
           if (!result.error) bad(here, 'was meant to stop with ' + step.e + ' but ran fine');
           else if (result.error.type !== step.e) bad(here, 'stopped with ' + result.error.type + ', not ' + step.e);
@@ -104,7 +109,7 @@ async function main() {
           if (!see[l].trim()) bad(here, 'nothing to show for "what you will see" in ' + l + ' (give s)');
         }
         steps.push({code: step.c.replace(/\n+$/, ''), title: t, text: x, see, turn: d, slip: w, error: step.e || undefined});
-      });
+      }
       if (!steps.length) bad(where, 'no steps');
       lessons.push({group, title, subtitle, steps});
     }

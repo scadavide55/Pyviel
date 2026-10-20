@@ -57,11 +57,12 @@ async function init(message) {
   post({type: 'ready', version: python.version});
 }
 
-function runSource(source) {
+async function runSource(source) {
   interruptView[0] = 0;
   let result;
   try {
-    const proxy = runProgram(source, send, ask);
+    // callPromising lets Python wait for JavaScript (asyncio.sleep, await...) in browsers that can switch stacks.
+    const proxy = typeof runProgram.callPromising === 'function' ? await runProgram.callPromising(source, send, ask) : runProgram(source, send, ask);
     result = proxy.toJs({dict_converter: Object.fromEntries});
     proxy.destroy();
   } catch (error) {
@@ -76,7 +77,7 @@ self.onmessage = async (event) => {
   const message = event.data;
   try {
     if (message.type === 'init') await init(message);
-    else if (message.type === 'run') runSource(message.source);
+    else if (message.type === 'run') await runSource(message.source);
   } catch (error) {
     post({type: 'failed', message: String(error && error.message || error)});
   }

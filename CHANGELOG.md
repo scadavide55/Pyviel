@@ -1,5 +1,29 @@
 # Changes
 
+## Next version (not released yet)
+
+The lessons are easier to follow and give much more practice.
+
+- **Every step has three phases**: *Learn* (the idea, the new words, the program line by line), *Try it* (guess what it shows, then run it) and *Your turn* (a task, checked). One big button leads from one phase to the next.
+- **The task is ready when you get there**: its starting code goes into the editor by itself, with *Start over* and a way to bring back the code that was there. On a phone, *Go to the editor* is one tap.
+- **A wrong answer shows the first line that differs**: what your program showed there and what it should show.
+- **Challenges**: lessons 1 to 20 end with a challenge that puts the whole lesson together, written from an empty page (or, in *Reading mistakes*, by fixing three errors one by one). The course has **321 steps**.
+- **Hints guide instead of giving the answer** away; the solution stays behind its own button. The build now refuses a hint that holds the whole solution, and a task whose start already passes.
+- **Notes that say what really happens**: "Checks if score >= 90", "with i being 0, 1, 2", "Adds 3 to what is in total", "Asks "Name?" and keeps the answer, as text, in name".
+- Four tasks that were already solved before the student started (in the projects and the terminal appendix) are now real changes to make.
+
+Site and editor:
+
+- **Python starts even where the page cannot be isolated** (service workers blocked, some private windows): programs run, Stop restarts Python, and `input()` says in a sentence why it cannot wait there. Before, the page waited for ever on "Loading Python".
+- **Undo works on the editor's own edits**: Enter, Tab, Backspace over an indent, commenting, the symbol buttons, and opening an example can all be taken back with Cmd/Ctrl+Z. Enter after `return`, `break`, `continue`, `pass` or `raise` steps back out of the block.
+- The Python worker and its runner have a cache key, so an update never mixes old and new files.
+- The top bar keeps the file name readable on narrow windows; the footer no longer runs two sentences together; on a phone the file name uses the whole row and the footer shows only whether Python is ready.
+- "New here? Start with lesson 1" becomes "Continue: lesson N" once you have started.
+
+Desktop app:
+
+- The window opens where it was last closed.
+
 ## 1.1.0 beta — 22 October 2026
 
 The tutorials were rebuilt from the ground up, so that nothing new is ever thrown at the student without an explanation.

@@ -243,6 +243,38 @@ Si tu te surprends à copier les mêmes lignes deux fois, c'est un signe : mets-
           h: ['if a > b: return a, and after it return b.', 'if a > b: return a, e dopo return b.', 'if a > b: return a, et après return b.'],
           sol: 'def bigger(a, b):\n    if a > b:\n        return a\n    return b\n\nprint(bigger(3, 9))', out: '9', c: 'def bigger'
         }
+      },
+      {
+        c: [c`def greet(name):
+    return "Hello, " + name + "!"
+
+print(greet("Ada"))
+print(greet("Bo"))`, c`def greet(name):
+    return "Ciao, " + name + "!"
+
+print(greet("Ada"))
+print(greet("Bo"))`, c`def greet(name):
+    return "Bonjour, " + name + " !"
+
+print(greet("Ada"))
+print(greet("Bo"))`],
+        t: ['Challenge: a function you can reuse', 'Sfida: una funzione da riusare', 'Défi : une fonction à réutiliser'],
+        x: [`Written once, used twice: that is what functions are for. greet does not print anything itself; it gives back a text, and the caller decides what to do with it.
+
+In the task, the answers of two calls are added together, which only works because the function returns them.`,
+          `Scritta una volta, usata due: ecco a cosa servono le funzioni. greet non scrive niente da sola; restituisce un testo, e chi la chiama decide cosa farne.
+
+Nel compito, le risposte di due chiamate vengono sommate, e funziona solo perché la funzione le restituisce.`,
+          `Écrite une fois, utilisée deux fois : voilà à quoi servent les fonctions. greet n'affiche rien elle-même ; elle rend un texte, et celui qui l'appelle décide quoi en faire.
+
+Dans la tâche, les réponses de deux appels sont additionnées, ce qui ne marche que parce que la fonction les rend.`],
+        ex: {
+          t: ['Write a function area that takes a width and a height and returns the area. Use it to show the total area of two rooms: 3 by 4 and 5 by 2 (22).', 'Scrivi una funzione area che prende una larghezza e un\'altezza e restituisce l\'area. Usala per mostrare l\'area totale di due stanze: 3 per 4 e 5 per 2 (22).', 'Écris une fonction area qui prend une largeur et une hauteur et rend l\'aire. Utilise-la pour afficher l\'aire totale de deux pièces : 3 sur 4 et 5 sur 2 (22).'],
+          h: ['def with two parameters and a return inside. Then one print that adds two calls of the function.', 'def con due parametri e un return dentro. Poi un print che somma due chiamate della funzione.', 'def avec deux paramètres et un return dedans. Puis un print qui additionne deux appels de la fonction.'],
+          start: '',
+          sol: 'def area(width, height):\n    return width * height\n\nprint(area(3, 4) + area(5, 2))',
+          out: '22', c: 'return'
+        }
       }
     ]
   },

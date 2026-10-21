@@ -67,4 +67,7 @@ All of these must be green before a commit. After editing `content/*.js` run `bu
 - A step has `c` (code), `n`, `t`, `x`, `w`, and `ex`: the practice task (`t` task, `h` hint, `sol` solution, `start`, and the check: `out`, `exact`, `m` regex on the output, `c` regex on the program text, `i` typed answers). The build runs every solution and start in every language.
 - **Words inside examples are translated.** `c`, `ex.start`, `ex.sol` and the checks are `[en, it, fr]` when they contain words; the three versions must have the same shape (the checker compares them). Identifiers and names like Ada stay as they are.
 - Files that lessons write start with `demo_`.
+- **A task is never solved before the student starts**: the build fails when the start already passes. A hint points at the idea or the line to change; it never holds the whole solution (that is what "Show a solution" is for).
+- Lessons 1–20 end with a **Challenge** step: an example that combines the lesson, then a program written from an empty page (or from code to fix), checked.
+- In the page a step has three phases: Learn (text, new words, notes), Try it (guess, then run), Your turn (the task; its start goes into the editor by itself the first time).
 - `pyviel-check.js` is shared by the page and the build: what the build proves about a solution is what the page does with a student.

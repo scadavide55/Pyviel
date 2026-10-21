@@ -323,6 +323,35 @@ for letter in word:
 print(word, "a", vowels, "voyelles")`],
           exact: true
         }
+      },
+      {
+        c: [c`text = "  Hello, World  "
+clean = text.strip().lower()
+print(clean.replace("world", "Python"))
+print(clean.split(", "))`, c`text = "  Ciao, Mondo  "
+clean = text.strip().lower()
+print(clean.replace("mondo", "Python"))
+print(clean.split(", "))`, c`text = "  Bonjour, Monde  "
+clean = text.strip().lower()
+print(clean.replace("monde", "Python"))
+print(clean.split(", "))`],
+        t: ['Challenge: tidy a sentence', 'Sfida: metti in ordine una frase', 'Défi : range une phrase'],
+        x: [`Text methods can be chained: strip takes the spaces off the ends, and then lower works on what strip gave back. The original text is never changed: each method gives back a new text.
+
+split cuts a text into a list, at the piece you give it.`,
+          `I metodi del testo si possono mettere in fila: strip toglie gli spazi alle estremità, e poi lower lavora su quello che strip ha restituito. Il testo di partenza non cambia mai: ogni metodo restituisce un testo nuovo.
+
+split taglia un testo in una lista, nel punto che gli dai.`,
+          `Les méthodes du texte peuvent s'enchaîner : strip enlève les espaces aux bouts, puis lower travaille sur ce que strip a rendu. Le texte de départ ne change jamais : chaque méthode rend un nouveau texte.
+
+split coupe un texte en une liste, à l'endroit que tu lui donnes.`],
+        ex: {
+          t: ['The box sentence holds a messy text. Show it without the spaces at the ends and with a capital at the start of every word. Then show how many words it has.', 'La scatola sentence contiene un testo disordinato. Mostralo senza gli spazi alle estremità e con la maiuscola all\'inizio di ogni parola. Poi mostra quante parole ha.', 'La boîte sentence contient un texte en désordre. Affiche-le sans les espaces aux bouts et avec une majuscule au début de chaque mot. Puis affiche combien de mots il a.'],
+          h: ['strip, then title, for the first line. For the count, split gives a list of the words, and len counts it.', 'strip, poi title, per la prima riga. Per contare, split dà una lista delle parole, e len la conta.', 'strip, puis title, pour la première ligne. Pour compter, split donne une liste des mots, et len la compte.'],
+          start: ['sentence = "   the cat sat on the mat  "', 'sentence = "   il gatto dorme sul tappeto  "', 'sentence = "   le chat dort sur le tapis  "'],
+          sol: ['sentence = "   the cat sat on the mat  "\nprint(sentence.strip().title())\nprint(len(sentence.split()))', 'sentence = "   il gatto dorme sul tappeto  "\nprint(sentence.strip().title())\nprint(len(sentence.split()))', 'sentence = "   le chat dort sur le tapis  "\nprint(sentence.strip().title())\nprint(len(sentence.split()))'],
+          out: ['The Cat Sat On The Mat\n6', 'Il Gatto Dorme Sul Tappeto\n5', 'Le Chat Dort Sur Le Tapis\n6'], c: 'split'
+        }
       }
     ]
   },
@@ -483,6 +512,38 @@ Tu connais déjà range. list(range(5)) est la façon la plus rapide de voir ce 
           h: ['list(range(1, 6))', 'list(range(1, 6))', 'list(range(1, 6))'],
           sol: 'print(list(range(1, 6)))', out: '[1, 2, 3, 4, 5]', c: 'list'
         }
+      },
+      {
+        c: [c`words = ["pear", "fig", "banana"]
+print(sorted(words, key=len))
+print(words[:2])
+grid = [[1, 2], [3, 4]]
+print(grid[1][0])`, c`words = ["pera", "fico", "banana"]
+print(sorted(words, key=len))
+print(words[:2])
+grid = [[1, 2], [3, 4]]
+print(grid[1][0])`, c`words = ["poire", "figue", "banane"]
+print(sorted(words, key=len))
+print(words[:2])
+grid = [[1, 2], [3, 4]]
+print(grid[1][0])`],
+        t: ['Challenge: two lists side by side', 'Sfida: due liste fianco a fianco', 'Défi : deux listes côte à côte'],
+        x: [`Sorting by a rule, a slice, and a list inside a list, in one program. grid[1][0] reads in two steps: first the row at place 1, then the item at place 0 of that row.
+
+In the task you walk through two lists at the same time.`,
+          `Ordinare con una regola, una fetta e una lista dentro una lista, in un programma. grid[1][0] si legge in due passi: prima la riga al posto 1, poi l'elemento al posto 0 di quella riga.
+
+Nel compito attraversi due liste nello stesso momento.`,
+          `Trier selon une règle, une tranche et une liste dans une liste, en un programme. grid[1][0] se lit en deux étapes : d'abord la ligne à la place 1, puis l'élément à la place 0 de cette ligne.
+
+Dans la tâche tu parcours deux listes en même temps.`],
+        ex: {
+          t: ['names holds Ada, Bo and Cy, and ages holds 12, 9 and 15, in the same order. Show each name with its age on its own line: Ada 12, then Bo 9, then Cy 15.', 'names contiene Ada, Bo e Cy, e ages contiene 12, 9 e 15, nello stesso ordine. Mostra ogni nome con la sua età su una riga: Ada 12, poi Bo 9, poi Cy 15.', 'names contient Ada, Bo et Cy, et ages contient 12, 9 et 15, dans le même ordre. Affiche chaque prénom avec son âge sur sa ligne : Ada 12, puis Bo 9, puis Cy 15.'],
+          h: ['zip(names, ages) gives pairs; a for loop can take each pair into two names.', 'zip(names, ages) dà delle coppie; un ciclo for può prendere ogni coppia in due nomi.', 'zip(names, ages) donne des paires ; une boucle for peut prendre chaque paire dans deux noms.'],
+          start: 'names = ["Ada", "Bo", "Cy"]\nages = [12, 9, 15]',
+          sol: 'names = ["Ada", "Bo", "Cy"]\nages = [12, 9, 15]\nfor name, age in zip(names, ages):\n    print(name, age)',
+          out: 'Ada 12\nBo 9\nCy 15', c: 'for '
+        }
       }
     ]
   },
@@ -608,6 +669,29 @@ Choisis une liste quand le contenu va changer, et un tuple quand il doit rester 
           t: ['Turn the list [1, 2, 3] into a tuple and show it.', 'Trasforma la lista [1, 2, 3] in una tupla e mostrala.', 'Transforme la liste [1, 2, 3] en tuple et affiche-le.'],
           h: ['tuple(...) builds a tuple out of what you give it.', 'tuple(...) costruisce una tupla con quello che gli dai.', 'tuple(...) construit un tuple avec ce que tu lui donnes.'],
           sol: 'print(tuple([1, 2, 3]))', out: '(1, 2, 3)', c: 'tuple'
+        }
+      },
+      {
+        c: c`size = (1920, 1080)
+width, height = size
+print(width * height)
+print(size[0] > size[1])`,
+        t: ['Challenge: how far is the point?', 'Sfida: quanto è lontano il punto?', 'Défi : à quelle distance est le point ?'],
+        x: [`A tuple keeps values that belong together, like the two sides of a screen. Unpacking gives each value its own name, so the next lines read clearly.
+
+The tuple itself cannot change, but you can use its values as much as you like.`,
+          `Una tupla tiene insieme valori che vanno insieme, come i due lati di uno schermo. Spacchettarla dà a ogni valore un suo nome, così le righe dopo si leggono bene.
+
+La tupla in sé non può cambiare, ma puoi usare i suoi valori quanto vuoi.`,
+          `Un tuple garde des valeurs qui vont ensemble, comme les deux côtés d'un écran. Le déballer donne à chaque valeur son propre nom, pour que les lignes suivantes se lisent bien.
+
+Le tuple lui-même ne peut pas changer, mais tu peux utiliser ses valeurs autant que tu veux.`],
+        ex: {
+          t: ['The tuple point holds 3 and 4. Unpack it into x and y, and show how far the point is from 0: the square root of x * x + y * y, which is 5.0.', 'La tupla point contiene 3 e 4. Spacchettala in x e y, e mostra quanto è lontano il punto da 0: la radice quadrata di x * x + y * y, che è 5.0.', 'Le tuple point contient 3 et 4. Déballe-le dans x et y, et affiche à quelle distance le point est de 0 : la racine carrée de x * x + y * y, qui vaut 5.0.'],
+          h: ['Two names on the left of = take the two values. A square root is the power 0.5, written ** 0.5.', 'Due nomi a sinistra di = prendono i due valori. Una radice quadrata è la potenza 0.5, scritta ** 0.5.', 'Deux noms à gauche de = prennent les deux valeurs. Une racine carrée est la puissance 0.5, écrite ** 0.5.'],
+          start: 'point = (3, 4)',
+          sol: 'point = (3, 4)\nx, y = point\nprint((x * x + y * y) ** 0.5)',
+          out: '5.0', c: 'x\\s*,\\s*y\\s*='
         }
       }
     ]
@@ -808,6 +892,38 @@ C'est ainsi que sont faites les vraies données, par exemple celles que les site
           sol: ['person = {"name": "Ada", "address": {"city": "Rome", "zip": "00100"}}\nprint(person["address"]["zip"])', 'person = {"name": "Ada", "address": {"city": "Roma", "zip": "00100"}}\nprint(person["address"]["zip"])', 'person = {"name": "Ada", "address": {"city": "Paris", "zip": "75001"}}\nprint(person["address"]["zip"])'],
           out: ['00100', '00100', '75001'], c: '\\["zip"\\]'
         }
+      },
+      {
+        c: [c`stock = {"apples": 5, "pears": 2}
+stock["pears"] += 3
+stock["figs"] = 1
+for fruit, count in stock.items():
+    print(fruit, count)`, c`stock = {"mele": 5, "pere": 2}
+stock["pere"] += 3
+stock["fichi"] = 1
+for fruit, count in stock.items():
+    print(fruit, count)`, c`stock = {"pommes": 5, "poires": 2}
+stock["poires"] += 3
+stock["figues"] = 1
+for fruit, count in stock.items():
+    print(fruit, count)`],
+        t: ['Challenge: count the letters', 'Sfida: conta le lettere', 'Défi : compte les lettres'],
+        x: [`A dictionary that changes: a value grows with +=, a new key is added, and a loop shows every pair. The keys come out in the order they were put in.
+
+The task uses the counting pattern: if the key is there add 1, otherwise start it at 1.`,
+          `Un dizionario che cambia: un valore cresce con +=, si aggiunge una chiave nuova, e un ciclo mostra ogni coppia. Le chiavi escono nell'ordine in cui sono state messe.
+
+Il compito usa lo schema per contare: se la chiave c'è aggiungi 1, altrimenti falla partire da 1.`,
+          `Un dictionnaire qui change : une valeur grandit avec +=, une nouvelle clé est ajoutée, et une boucle affiche chaque paire. Les clés sortent dans l'ordre où elles ont été mises.
+
+La tâche utilise le schéma pour compter : si la clé est là ajoute 1, sinon fais-la commencer à 1.`],
+        ex: {
+          t: ['Count how many times each letter appears in the word in the box word, using a dictionary, and show the dictionary.', 'Conta quante volte appare ogni lettera della parola nella scatola word, usando un dizionario, e mostra il dizionario.', 'Compte combien de fois chaque lettre apparaît dans le mot de la boîte word, avec un dictionnaire, et affiche le dictionnaire.'],
+          h: ['Start with an empty dictionary. For each letter: if it is already a key, add 1 to it; else put it in with 1.', 'Parti da un dizionario vuoto. Per ogni lettera: se è già una chiave, aggiungi 1; altrimenti mettila con 1.', 'Pars d\'un dictionnaire vide. Pour chaque lettre : si c\'est déjà une clé, ajoute 1 ; sinon mets-la avec 1.'],
+          start: ['word = "banana"', 'word = "banana"', 'word = "banane"'],
+          sol: ['word = "banana"\ncounts = {}\nfor letter in word:\n    if letter in counts:\n        counts[letter] += 1\n    else:\n        counts[letter] = 1\nprint(counts)', 'word = "banana"\ncounts = {}\nfor letter in word:\n    if letter in counts:\n        counts[letter] += 1\n    else:\n        counts[letter] = 1\nprint(counts)', 'word = "banane"\ncounts = {}\nfor letter in word:\n    if letter in counts:\n        counts[letter] += 1\n    else:\n        counts[letter] = 1\nprint(counts)'],
+          out: ['{\'b\': 1, \'a\': 3, \'n\': 2}', '{\'b\': 1, \'a\': 3, \'n\': 2}', '{\'b\': 1, \'a\': 2, \'n\': 2, \'e\': 1}'], c: 'for '
+        }
       }
     ]
   },
@@ -949,6 +1065,35 @@ not in est le contraire de in : il est True quand la chose n'est pas dedans.`],
           t: ['Remove the repeats from [3, 1, 3, 2, 1] keeping the first order: the result must be [3, 1, 2].', 'Togli le ripetizioni da [3, 1, 3, 2, 1] tenendo l\'ordine di arrivo: il risultato deve essere [3, 1, 2].', 'Enlève les répétitions de [3, 1, 3, 2, 1] en gardant l\'ordre d\'arrivée : le résultat doit être [3, 1, 2].'],
           h: ['Loop, and use if n not in result: then result.append(n).', 'Fai un ciclo e usa if n not in result: poi result.append(n).', 'Fais une boucle et utilise if n not in result: puis result.append(n).'],
           start: 'numbers = [3, 1, 3, 2, 1]\nresult = []', sol: 'numbers = [3, 1, 3, 2, 1]\nresult = []\nfor n in numbers:\n    if n not in result:\n        result.append(n)\nprint(result)', out: '[3, 1, 2]', c: 'not in'
+        }
+      },
+      {
+        c: [c`colours = ["red", "blue", "red", "green", "blue"]
+unique = set(colours)
+print(len(unique))
+print(sorted(unique))`, c`colours = ["rosso", "blu", "rosso", "verde", "blu"]
+unique = set(colours)
+print(len(unique))
+print(sorted(unique))`, c`colours = ["rouge", "bleu", "rouge", "vert", "bleu"]
+unique = set(colours)
+print(len(unique))
+print(sorted(unique))`],
+        t: ['Challenge: what do they share?', 'Sfida: cosa hanno in comune?', 'Défi : qu\'ont-ils en commun ?'],
+        x: [`Turning a list into a set throws away the repeats, so len counts the different colours. A set has no order: sorted gives a list in order, so the result is the same on every computer.
+
+Two sets can also be combined: | joins them, & keeps what they share, - keeps what only the first has.`,
+          `Trasformare una lista in un insieme butta via le ripetizioni, così len conta i colori diversi. Un insieme non ha ordine: sorted dà una lista in ordine, così il risultato è lo stesso su ogni computer.
+
+Due insiemi si possono anche combinare: | li unisce, & tiene quello che hanno in comune, - tiene quello che ha solo il primo.`,
+          `Transformer une liste en ensemble jette les répétitions, donc len compte les couleurs différentes. Un ensemble n'a pas d'ordre : sorted donne une liste dans l'ordre, pour que le résultat soit le même sur chaque ordinateur.
+
+Deux ensembles peuvent aussi se combiner : | les réunit, & garde ce qu'ils ont en commun, - garde ce que seul le premier a.`],
+        ex: {
+          t: ['ada and bo hold the games two friends like. Show, in order, the games they both like.', 'ada e bo contengono i giochi che piacciono a due amici. Mostra, in ordine, i giochi che piacciono a tutti e due.', 'ada et bo contiennent les jeux qu\'aiment deux amis. Affiche, dans l\'ordre, les jeux qu\'ils aiment tous les deux.'],
+          h: ['One sign between two sets keeps only what is in both. Put the result in sorted(...) to show it in order.', 'Un segno tra due insiemi tiene solo quello che c\'è in tutti e due. Metti il risultato in sorted(...) per mostrarlo in ordine.', 'Un signe entre deux ensembles garde seulement ce qui est dans les deux. Mets le résultat dans sorted(...) pour l\'afficher dans l\'ordre.'],
+          start: ['ada = {"chess", "tag", "uno"}\nbo = {"uno", "chess", "golf"}', 'ada = {"scacchi", "nascondino", "uno"}\nbo = {"uno", "scacchi", "golf"}', 'ada = {"dames", "chat", "uno"}\nbo = {"uno", "dames", "golf"}'],
+          sol: ['ada = {"chess", "tag", "uno"}\nbo = {"uno", "chess", "golf"}\nprint(sorted(ada & bo))', 'ada = {"scacchi", "nascondino", "uno"}\nbo = {"uno", "scacchi", "golf"}\nprint(sorted(ada & bo))', 'ada = {"dames", "chat", "uno"}\nbo = {"uno", "dames", "golf"}\nprint(sorted(ada & bo))'],
+          out: ['[\'chess\', \'uno\']', '[\'scacchi\', \'uno\']', '[\'dames\', \'uno\']'], c: '&'
         }
       }
     ]

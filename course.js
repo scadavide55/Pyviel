@@ -7635,6 +7635,75 @@ window.PyvielCourse = {
        "fr": "2"
       }
      }
+    },
+    {
+     "code": {
+      "en": "scores = [7, 3, 9]\nscores.append(5)\nscores.sort()\nprint(scores)\nprint(\"Best:\", scores[-1], \"Total:\", sum(scores))",
+      "it": "scores = [7, 3, 9]\nscores.append(5)\nscores.sort()\nprint(scores)\nprint(\"Best:\", scores[-1], \"Total:\", sum(scores))",
+      "fr": "scores = [7, 3, 9]\nscores.append(5)\nscores.sort()\nprint(scores)\nprint(\"Best:\", scores[-1], \"Total:\", sum(scores))"
+     },
+     "title": {
+      "en": "Challenge: fill a basket",
+      "it": "Sfida: riempi un cestino",
+      "fr": "Défi : remplis un panier"
+     },
+     "text": {
+      "en": "A list that grows, gets sorted, and is then used: the last item of a sorted list is the biggest, and sum adds them all.\n\nappend always adds at the end; sort puts the list itself in order.",
+      "it": "Una lista che cresce, viene ordinata e poi usata: l'ultimo elemento di una lista ordinata è il più grande, e sum li somma tutti.\n\nappend aggiunge sempre alla fine; sort mette in ordine la lista stessa.",
+      "fr": "Une liste qui grandit, est triée, puis utilisée : le dernier élément d'une liste triée est le plus grand, et sum les additionne tous.\n\nappend ajoute toujours à la fin ; sort met la liste elle-même dans l'ordre."
+     },
+     "see": {
+      "en": "[3, 5, 7, 9]\nBest: 9 Total: 24",
+      "it": "[3, 5, 7, 9]\nBest: 9 Total: 24",
+      "fr": "[3, 5, 7, 9]\nBest: 9 Total: 24"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The list basket starts empty. Add apple, pear and fig with append, take pear out again, and show the list in order.",
+       "it": "La lista basket parte vuota. Aggiungi mela, pera e fico con append, togli di nuovo pera e mostra la lista in ordine.",
+       "fr": "La liste basket commence vide. Ajoute pomme, poire et figue avec append, enlève de nouveau poire, et affiche la liste dans l'ordre."
+      },
+      "hint": {
+       "en": "Three append lines, one remove line, then sort the list (or use sorted) before you show it.",
+       "it": "Tre righe append, una riga remove, poi ordina la lista (o usa sorted) prima di mostrarla.",
+       "fr": "Trois lignes append, une ligne remove, puis trie la liste (ou utilise sorted) avant de l'afficher."
+      },
+      "sol": {
+       "en": "basket = []\nbasket.append(\"apple\")\nbasket.append(\"pear\")\nbasket.append(\"fig\")\nbasket.remove(\"pear\")\nprint(sorted(basket))",
+       "it": "basket = []\nbasket.append(\"mela\")\nbasket.append(\"pera\")\nbasket.append(\"fico\")\nbasket.remove(\"pera\")\nprint(sorted(basket))",
+       "fr": "basket = []\nbasket.append(\"pomme\")\nbasket.append(\"poire\")\nbasket.append(\"figue\")\nbasket.remove(\"poire\")\nprint(sorted(basket))"
+      },
+      "start": {
+       "en": "basket = []",
+       "it": "basket = []",
+       "fr": "basket = []"
+      },
+      "spec": {
+       "en": {
+        "out": "['apple', 'fig']",
+        "c": "append[\\s\\S]*remove"
+       },
+       "it": {
+        "out": "['fico', 'mela']",
+        "c": "append[\\s\\S]*remove"
+       },
+       "fr": {
+        "out": "['figue', 'pomme']",
+        "c": "append[\\s\\S]*remove"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['apple', 'fig']",
+       "it": "['fico', 'mela']",
+       "fr": "['figue', 'pomme']"
+      }
+     }
     }
    ]
   },
@@ -8054,6 +8123,75 @@ window.PyvielCourse = {
        "en": "Start\n42",
        "it": "Inizio\n42",
        "fr": "Début\n42"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "numbers = [4, 8, 15]\nfor n in numbers:\n    print(n, \"x 2 =\", n * 2)\nprint(\"Done\")",
+      "it": "numbers = [4, 8, 15]\nfor n in numbers:\n    print(n, \"x 2 =\", n * 2)\nprint(\"Done\")",
+      "fr": "numbers = [4, 8, 15]\nfor n in numbers:\n    print(n, \"x 2 =\", n * 2)\nprint(\"Done\")"
+     },
+     "title": {
+      "en": "Challenge: three mistakes",
+      "it": "Sfida: tre errori",
+      "fr": "Défi : trois erreurs"
+     },
+     "text": {
+      "en": "This program is right. The task below is not: it has three mistakes, and Python shows only the first one each time.\n\nA good habit: read the line number and the sentence, fix that one mistake, run again, and read the next message.",
+      "it": "Questo programma è giusto. Il compito qui sotto no: ha tre errori, e Python ne mostra solo il primo ogni volta.\n\nUna buona abitudine: leggi il numero di riga e la frase, correggi quell'errore, esegui di nuovo e leggi il messaggio dopo.",
+      "fr": "Ce programme est juste. La tâche ci-dessous ne l'est pas : elle a trois erreurs, et Python ne montre que la première à chaque fois.\n\nUne bonne habitude : lis le numéro de ligne et la phrase, corrige cette erreur, relance, et lis le message suivant."
+     },
+     "see": {
+      "en": "4 x 2 = 8\n8 x 2 = 16\n15 x 2 = 30\nDone",
+      "it": "4 x 2 = 8\n8 x 2 = 16\n15 x 2 = 30\nDone",
+      "fr": "4 x 2 = 8\n8 x 2 = 16\n15 x 2 = 30\nDone"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The program in the editor has three mistakes. Fix them one at a time, reading the message each time. When it works it shows 6.",
+       "it": "Il programma nell'editor ha tre errori. Correggili uno alla volta, leggendo il messaggio ogni volta. Quando funziona mostra 6.",
+       "fr": "Le programme dans l'éditeur a trois erreurs. Corrige-les une par une, en lisant le message à chaque fois. Quand il marche il affiche 6."
+      },
+      "hint": {
+       "en": "Look for a missing colon, a line that should be pushed in, and a name written wrong.",
+       "it": "Cerca i due punti che mancano, una riga che andrebbe rientrata e un nome scritto male.",
+       "fr": "Cherche les deux-points qui manquent, une ligne qui devrait être décalée et un nom mal écrit."
+      },
+      "sol": {
+       "en": "total = 0\nfor n in range(1, 4):\n    total = total + n\nprint(total)",
+       "it": "total = 0\nfor n in range(1, 4):\n    total = total + n\nprint(total)",
+       "fr": "total = 0\nfor n in range(1, 4):\n    total = total + n\nprint(total)"
+      },
+      "start": {
+       "en": "total = 0\nfor n in range(1, 4)\ntotal = total + n\nprint(totl)",
+       "it": "total = 0\nfor n in range(1, 4)\ntotal = total + n\nprint(totl)",
+       "fr": "total = 0\nfor n in range(1, 4)\ntotal = total + n\nprint(totl)"
+      },
+      "spec": {
+       "en": {
+        "out": "6",
+        "c": "print\\(total\\)"
+       },
+       "it": {
+        "out": "6",
+        "c": "print\\(total\\)"
+       },
+       "fr": {
+        "out": "6",
+        "c": "print\\(total\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "6",
+       "it": "6",
+       "fr": "6"
       }
      }
     }
@@ -9117,6 +9255,75 @@ window.PyvielCourse = {
        "fr": "education a 5 voyelles"
       }
      }
+    },
+    {
+     "code": {
+      "en": "text = \"  Hello, World  \"\nclean = text.strip().lower()\nprint(clean.replace(\"world\", \"Python\"))\nprint(clean.split(\", \"))",
+      "it": "text = \"  Ciao, Mondo  \"\nclean = text.strip().lower()\nprint(clean.replace(\"mondo\", \"Python\"))\nprint(clean.split(\", \"))",
+      "fr": "text = \"  Bonjour, Monde  \"\nclean = text.strip().lower()\nprint(clean.replace(\"monde\", \"Python\"))\nprint(clean.split(\", \"))"
+     },
+     "title": {
+      "en": "Challenge: tidy a sentence",
+      "it": "Sfida: metti in ordine una frase",
+      "fr": "Défi : range une phrase"
+     },
+     "text": {
+      "en": "Text methods can be chained: strip takes the spaces off the ends, and then lower works on what strip gave back. The original text is never changed: each method gives back a new text.\n\nsplit cuts a text into a list, at the piece you give it.",
+      "it": "I metodi del testo si possono mettere in fila: strip toglie gli spazi alle estremità, e poi lower lavora su quello che strip ha restituito. Il testo di partenza non cambia mai: ogni metodo restituisce un testo nuovo.\n\nsplit taglia un testo in una lista, nel punto che gli dai.",
+      "fr": "Les méthodes du texte peuvent s'enchaîner : strip enlève les espaces aux bouts, puis lower travaille sur ce que strip a rendu. Le texte de départ ne change jamais : chaque méthode rend un nouveau texte.\n\nsplit coupe un texte en une liste, à l'endroit que tu lui donnes."
+     },
+     "see": {
+      "en": "hello, Python\n['hello', 'world']",
+      "it": "ciao, Python\n['ciao', 'mondo']",
+      "fr": "bonjour, Python\n['bonjour', 'monde']"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The box sentence holds a messy text. Show it without the spaces at the ends and with a capital at the start of every word. Then show how many words it has.",
+       "it": "La scatola sentence contiene un testo disordinato. Mostralo senza gli spazi alle estremità e con la maiuscola all'inizio di ogni parola. Poi mostra quante parole ha.",
+       "fr": "La boîte sentence contient un texte en désordre. Affiche-le sans les espaces aux bouts et avec une majuscule au début de chaque mot. Puis affiche combien de mots il a."
+      },
+      "hint": {
+       "en": "strip, then title, for the first line. For the count, split gives a list of the words, and len counts it.",
+       "it": "strip, poi title, per la prima riga. Per contare, split dà una lista delle parole, e len la conta.",
+       "fr": "strip, puis title, pour la première ligne. Pour compter, split donne une liste des mots, et len la compte."
+      },
+      "sol": {
+       "en": "sentence = \"   the cat sat on the mat  \"\nprint(sentence.strip().title())\nprint(len(sentence.split()))",
+       "it": "sentence = \"   il gatto dorme sul tappeto  \"\nprint(sentence.strip().title())\nprint(len(sentence.split()))",
+       "fr": "sentence = \"   le chat dort sur le tapis  \"\nprint(sentence.strip().title())\nprint(len(sentence.split()))"
+      },
+      "start": {
+       "en": "sentence = \"   the cat sat on the mat  \"",
+       "it": "sentence = \"   il gatto dorme sul tappeto  \"",
+       "fr": "sentence = \"   le chat dort sur le tapis  \""
+      },
+      "spec": {
+       "en": {
+        "out": "The Cat Sat On The Mat\n6",
+        "c": "split"
+       },
+       "it": {
+        "out": "Il Gatto Dorme Sul Tappeto\n5",
+        "c": "split"
+       },
+       "fr": {
+        "out": "Le Chat Dort Sur Le Tapis\n6",
+        "c": "split"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "The Cat Sat On The Mat\n6",
+       "it": "Il Gatto Dorme Sul Tappeto\n5",
+       "fr": "Le Chat Dort Sur Le Tapis\n6"
+      }
+     }
     }
    ]
   },
@@ -9682,6 +9889,75 @@ window.PyvielCourse = {
        "fr": "[1, 2, 3, 4, 5]"
       }
      }
+    },
+    {
+     "code": {
+      "en": "words = [\"pear\", \"fig\", \"banana\"]\nprint(sorted(words, key=len))\nprint(words[:2])\ngrid = [[1, 2], [3, 4]]\nprint(grid[1][0])",
+      "it": "words = [\"pera\", \"fico\", \"banana\"]\nprint(sorted(words, key=len))\nprint(words[:2])\ngrid = [[1, 2], [3, 4]]\nprint(grid[1][0])",
+      "fr": "words = [\"poire\", \"figue\", \"banane\"]\nprint(sorted(words, key=len))\nprint(words[:2])\ngrid = [[1, 2], [3, 4]]\nprint(grid[1][0])"
+     },
+     "title": {
+      "en": "Challenge: two lists side by side",
+      "it": "Sfida: due liste fianco a fianco",
+      "fr": "Défi : deux listes côte à côte"
+     },
+     "text": {
+      "en": "Sorting by a rule, a slice, and a list inside a list, in one program. grid[1][0] reads in two steps: first the row at place 1, then the item at place 0 of that row.\n\nIn the task you walk through two lists at the same time.",
+      "it": "Ordinare con una regola, una fetta e una lista dentro una lista, in un programma. grid[1][0] si legge in due passi: prima la riga al posto 1, poi l'elemento al posto 0 di quella riga.\n\nNel compito attraversi due liste nello stesso momento.",
+      "fr": "Trier selon une règle, une tranche et une liste dans une liste, en un programme. grid[1][0] se lit en deux étapes : d'abord la ligne à la place 1, puis l'élément à la place 0 de cette ligne.\n\nDans la tâche tu parcours deux listes en même temps."
+     },
+     "see": {
+      "en": "['fig', 'pear', 'banana']\n['pear', 'fig']\n3",
+      "it": "['pera', 'fico', 'banana']\n['pera', 'fico']\n3",
+      "fr": "['poire', 'figue', 'banane']\n['poire', 'figue']\n3"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "names holds Ada, Bo and Cy, and ages holds 12, 9 and 15, in the same order. Show each name with its age on its own line: Ada 12, then Bo 9, then Cy 15.",
+       "it": "names contiene Ada, Bo e Cy, e ages contiene 12, 9 e 15, nello stesso ordine. Mostra ogni nome con la sua età su una riga: Ada 12, poi Bo 9, poi Cy 15.",
+       "fr": "names contient Ada, Bo et Cy, et ages contient 12, 9 et 15, dans le même ordre. Affiche chaque prénom avec son âge sur sa ligne : Ada 12, puis Bo 9, puis Cy 15."
+      },
+      "hint": {
+       "en": "zip(names, ages) gives pairs; a for loop can take each pair into two names.",
+       "it": "zip(names, ages) dà delle coppie; un ciclo for può prendere ogni coppia in due nomi.",
+       "fr": "zip(names, ages) donne des paires ; une boucle for peut prendre chaque paire dans deux noms."
+      },
+      "sol": {
+       "en": "names = [\"Ada\", \"Bo\", \"Cy\"]\nages = [12, 9, 15]\nfor name, age in zip(names, ages):\n    print(name, age)",
+       "it": "names = [\"Ada\", \"Bo\", \"Cy\"]\nages = [12, 9, 15]\nfor name, age in zip(names, ages):\n    print(name, age)",
+       "fr": "names = [\"Ada\", \"Bo\", \"Cy\"]\nages = [12, 9, 15]\nfor name, age in zip(names, ages):\n    print(name, age)"
+      },
+      "start": {
+       "en": "names = [\"Ada\", \"Bo\", \"Cy\"]\nages = [12, 9, 15]",
+       "it": "names = [\"Ada\", \"Bo\", \"Cy\"]\nages = [12, 9, 15]",
+       "fr": "names = [\"Ada\", \"Bo\", \"Cy\"]\nages = [12, 9, 15]"
+      },
+      "spec": {
+       "en": {
+        "out": "Ada 12\nBo 9\nCy 15",
+        "c": "for "
+       },
+       "it": {
+        "out": "Ada 12\nBo 9\nCy 15",
+        "c": "for "
+       },
+       "fr": {
+        "out": "Ada 12\nBo 9\nCy 15",
+        "c": "for "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Ada 12\nBo 9\nCy 15",
+       "it": "Ada 12\nBo 9\nCy 15",
+       "fr": "Ada 12\nBo 9\nCy 15"
+      }
+     }
     }
    ]
   },
@@ -10102,6 +10378,75 @@ window.PyvielCourse = {
        "en": "(1, 2, 3)",
        "it": "(1, 2, 3)",
        "fr": "(1, 2, 3)"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "size = (1920, 1080)\nwidth, height = size\nprint(width * height)\nprint(size[0] > size[1])",
+      "it": "size = (1920, 1080)\nwidth, height = size\nprint(width * height)\nprint(size[0] > size[1])",
+      "fr": "size = (1920, 1080)\nwidth, height = size\nprint(width * height)\nprint(size[0] > size[1])"
+     },
+     "title": {
+      "en": "Challenge: how far is the point?",
+      "it": "Sfida: quanto è lontano il punto?",
+      "fr": "Défi : à quelle distance est le point ?"
+     },
+     "text": {
+      "en": "A tuple keeps values that belong together, like the two sides of a screen. Unpacking gives each value its own name, so the next lines read clearly.\n\nThe tuple itself cannot change, but you can use its values as much as you like.",
+      "it": "Una tupla tiene insieme valori che vanno insieme, come i due lati di uno schermo. Spacchettarla dà a ogni valore un suo nome, così le righe dopo si leggono bene.\n\nLa tupla in sé non può cambiare, ma puoi usare i suoi valori quanto vuoi.",
+      "fr": "Un tuple garde des valeurs qui vont ensemble, comme les deux côtés d'un écran. Le déballer donne à chaque valeur son propre nom, pour que les lignes suivantes se lisent bien.\n\nLe tuple lui-même ne peut pas changer, mais tu peux utiliser ses valeurs autant que tu veux."
+     },
+     "see": {
+      "en": "2073600\nTrue",
+      "it": "2073600\nTrue",
+      "fr": "2073600\nTrue"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The tuple point holds 3 and 4. Unpack it into x and y, and show how far the point is from 0: the square root of x * x + y * y, which is 5.0.",
+       "it": "La tupla point contiene 3 e 4. Spacchettala in x e y, e mostra quanto è lontano il punto da 0: la radice quadrata di x * x + y * y, che è 5.0.",
+       "fr": "Le tuple point contient 3 et 4. Déballe-le dans x et y, et affiche à quelle distance le point est de 0 : la racine carrée de x * x + y * y, qui vaut 5.0."
+      },
+      "hint": {
+       "en": "Two names on the left of = take the two values. A square root is the power 0.5, written ** 0.5.",
+       "it": "Due nomi a sinistra di = prendono i due valori. Una radice quadrata è la potenza 0.5, scritta ** 0.5.",
+       "fr": "Deux noms à gauche de = prennent les deux valeurs. Une racine carrée est la puissance 0.5, écrite ** 0.5."
+      },
+      "sol": {
+       "en": "point = (3, 4)\nx, y = point\nprint((x * x + y * y) ** 0.5)",
+       "it": "point = (3, 4)\nx, y = point\nprint((x * x + y * y) ** 0.5)",
+       "fr": "point = (3, 4)\nx, y = point\nprint((x * x + y * y) ** 0.5)"
+      },
+      "start": {
+       "en": "point = (3, 4)",
+       "it": "point = (3, 4)",
+       "fr": "point = (3, 4)"
+      },
+      "spec": {
+       "en": {
+        "out": "5.0",
+        "c": "x\\s*,\\s*y\\s*="
+       },
+       "it": {
+        "out": "5.0",
+        "c": "x\\s*,\\s*y\\s*="
+       },
+       "fr": {
+        "out": "5.0",
+        "c": "x\\s*,\\s*y\\s*="
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "5.0",
+       "it": "5.0",
+       "fr": "5.0"
       }
      }
     }
@@ -10640,6 +10985,75 @@ window.PyvielCourse = {
        "fr": "75001"
       }
      }
+    },
+    {
+     "code": {
+      "en": "stock = {\"apples\": 5, \"pears\": 2}\nstock[\"pears\"] += 3\nstock[\"figs\"] = 1\nfor fruit, count in stock.items():\n    print(fruit, count)",
+      "it": "stock = {\"mele\": 5, \"pere\": 2}\nstock[\"pere\"] += 3\nstock[\"fichi\"] = 1\nfor fruit, count in stock.items():\n    print(fruit, count)",
+      "fr": "stock = {\"pommes\": 5, \"poires\": 2}\nstock[\"poires\"] += 3\nstock[\"figues\"] = 1\nfor fruit, count in stock.items():\n    print(fruit, count)"
+     },
+     "title": {
+      "en": "Challenge: count the letters",
+      "it": "Sfida: conta le lettere",
+      "fr": "Défi : compte les lettres"
+     },
+     "text": {
+      "en": "A dictionary that changes: a value grows with +=, a new key is added, and a loop shows every pair. The keys come out in the order they were put in.\n\nThe task uses the counting pattern: if the key is there add 1, otherwise start it at 1.",
+      "it": "Un dizionario che cambia: un valore cresce con +=, si aggiunge una chiave nuova, e un ciclo mostra ogni coppia. Le chiavi escono nell'ordine in cui sono state messe.\n\nIl compito usa lo schema per contare: se la chiave c'è aggiungi 1, altrimenti falla partire da 1.",
+      "fr": "Un dictionnaire qui change : une valeur grandit avec +=, une nouvelle clé est ajoutée, et une boucle affiche chaque paire. Les clés sortent dans l'ordre où elles ont été mises.\n\nLa tâche utilise le schéma pour compter : si la clé est là ajoute 1, sinon fais-la commencer à 1."
+     },
+     "see": {
+      "en": "apples 5\npears 5\nfigs 1",
+      "it": "mele 5\npere 5\nfichi 1",
+      "fr": "pommes 5\npoires 5\nfigues 1"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Count how many times each letter appears in the word in the box word, using a dictionary, and show the dictionary.",
+       "it": "Conta quante volte appare ogni lettera della parola nella scatola word, usando un dizionario, e mostra il dizionario.",
+       "fr": "Compte combien de fois chaque lettre apparaît dans le mot de la boîte word, avec un dictionnaire, et affiche le dictionnaire."
+      },
+      "hint": {
+       "en": "Start with an empty dictionary. For each letter: if it is already a key, add 1 to it; else put it in with 1.",
+       "it": "Parti da un dizionario vuoto. Per ogni lettera: se è già una chiave, aggiungi 1; altrimenti mettila con 1.",
+       "fr": "Pars d'un dictionnaire vide. Pour chaque lettre : si c'est déjà une clé, ajoute 1 ; sinon mets-la avec 1."
+      },
+      "sol": {
+       "en": "word = \"banana\"\ncounts = {}\nfor letter in word:\n    if letter in counts:\n        counts[letter] += 1\n    else:\n        counts[letter] = 1\nprint(counts)",
+       "it": "word = \"banana\"\ncounts = {}\nfor letter in word:\n    if letter in counts:\n        counts[letter] += 1\n    else:\n        counts[letter] = 1\nprint(counts)",
+       "fr": "word = \"banane\"\ncounts = {}\nfor letter in word:\n    if letter in counts:\n        counts[letter] += 1\n    else:\n        counts[letter] = 1\nprint(counts)"
+      },
+      "start": {
+       "en": "word = \"banana\"",
+       "it": "word = \"banana\"",
+       "fr": "word = \"banane\""
+      },
+      "spec": {
+       "en": {
+        "out": "{'b': 1, 'a': 3, 'n': 2}",
+        "c": "for "
+       },
+       "it": {
+        "out": "{'b': 1, 'a': 3, 'n': 2}",
+        "c": "for "
+       },
+       "fr": {
+        "out": "{'b': 1, 'a': 2, 'n': 2, 'e': 1}",
+        "c": "for "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "{'b': 1, 'a': 3, 'n': 2}",
+       "it": "{'b': 1, 'a': 3, 'n': 2}",
+       "fr": "{'b': 1, 'a': 2, 'n': 2, 'e': 1}"
+      }
+     }
     }
    ]
   },
@@ -11049,6 +11463,75 @@ window.PyvielCourse = {
        "en": "[3, 1, 2]",
        "it": "[3, 1, 2]",
        "fr": "[3, 1, 2]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "colours = [\"red\", \"blue\", \"red\", \"green\", \"blue\"]\nunique = set(colours)\nprint(len(unique))\nprint(sorted(unique))",
+      "it": "colours = [\"rosso\", \"blu\", \"rosso\", \"verde\", \"blu\"]\nunique = set(colours)\nprint(len(unique))\nprint(sorted(unique))",
+      "fr": "colours = [\"rouge\", \"bleu\", \"rouge\", \"vert\", \"bleu\"]\nunique = set(colours)\nprint(len(unique))\nprint(sorted(unique))"
+     },
+     "title": {
+      "en": "Challenge: what do they share?",
+      "it": "Sfida: cosa hanno in comune?",
+      "fr": "Défi : qu'ont-ils en commun ?"
+     },
+     "text": {
+      "en": "Turning a list into a set throws away the repeats, so len counts the different colours. A set has no order: sorted gives a list in order, so the result is the same on every computer.\n\nTwo sets can also be combined: | joins them, & keeps what they share, - keeps what only the first has.",
+      "it": "Trasformare una lista in un insieme butta via le ripetizioni, così len conta i colori diversi. Un insieme non ha ordine: sorted dà una lista in ordine, così il risultato è lo stesso su ogni computer.\n\nDue insiemi si possono anche combinare: | li unisce, & tiene quello che hanno in comune, - tiene quello che ha solo il primo.",
+      "fr": "Transformer une liste en ensemble jette les répétitions, donc len compte les couleurs différentes. Un ensemble n'a pas d'ordre : sorted donne une liste dans l'ordre, pour que le résultat soit le même sur chaque ordinateur.\n\nDeux ensembles peuvent aussi se combiner : | les réunit, & garde ce qu'ils ont en commun, - garde ce que seul le premier a."
+     },
+     "see": {
+      "en": "3\n['blue', 'green', 'red']",
+      "it": "3\n['blu', 'rosso', 'verde']",
+      "fr": "3\n['bleu', 'rouge', 'vert']"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "ada and bo hold the games two friends like. Show, in order, the games they both like.",
+       "it": "ada e bo contengono i giochi che piacciono a due amici. Mostra, in ordine, i giochi che piacciono a tutti e due.",
+       "fr": "ada et bo contiennent les jeux qu'aiment deux amis. Affiche, dans l'ordre, les jeux qu'ils aiment tous les deux."
+      },
+      "hint": {
+       "en": "One sign between two sets keeps only what is in both. Put the result in sorted(...) to show it in order.",
+       "it": "Un segno tra due insiemi tiene solo quello che c'è in tutti e due. Metti il risultato in sorted(...) per mostrarlo in ordine.",
+       "fr": "Un signe entre deux ensembles garde seulement ce qui est dans les deux. Mets le résultat dans sorted(...) pour l'afficher dans l'ordre."
+      },
+      "sol": {
+       "en": "ada = {\"chess\", \"tag\", \"uno\"}\nbo = {\"uno\", \"chess\", \"golf\"}\nprint(sorted(ada & bo))",
+       "it": "ada = {\"scacchi\", \"nascondino\", \"uno\"}\nbo = {\"uno\", \"scacchi\", \"golf\"}\nprint(sorted(ada & bo))",
+       "fr": "ada = {\"dames\", \"chat\", \"uno\"}\nbo = {\"uno\", \"dames\", \"golf\"}\nprint(sorted(ada & bo))"
+      },
+      "start": {
+       "en": "ada = {\"chess\", \"tag\", \"uno\"}\nbo = {\"uno\", \"chess\", \"golf\"}",
+       "it": "ada = {\"scacchi\", \"nascondino\", \"uno\"}\nbo = {\"uno\", \"scacchi\", \"golf\"}",
+       "fr": "ada = {\"dames\", \"chat\", \"uno\"}\nbo = {\"uno\", \"dames\", \"golf\"}"
+      },
+      "spec": {
+       "en": {
+        "out": "['chess', 'uno']",
+        "c": "&"
+       },
+       "it": {
+        "out": "['scacchi', 'uno']",
+        "c": "&"
+       },
+       "fr": {
+        "out": "['dames', 'uno']",
+        "c": "&"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['chess', 'uno']",
+       "it": "['scacchi', 'uno']",
+       "fr": "['dames', 'uno']"
       }
      }
     }
@@ -11550,6 +12033,75 @@ window.PyvielCourse = {
        "en": "9",
        "it": "9",
        "fr": "9"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def greet(name):\n    return \"Hello, \" + name + \"!\"\n\nprint(greet(\"Ada\"))\nprint(greet(\"Bo\"))",
+      "it": "def greet(name):\n    return \"Ciao, \" + name + \"!\"\n\nprint(greet(\"Ada\"))\nprint(greet(\"Bo\"))",
+      "fr": "def greet(name):\n    return \"Bonjour, \" + name + \" !\"\n\nprint(greet(\"Ada\"))\nprint(greet(\"Bo\"))"
+     },
+     "title": {
+      "en": "Challenge: a function you can reuse",
+      "it": "Sfida: una funzione da riusare",
+      "fr": "Défi : une fonction à réutiliser"
+     },
+     "text": {
+      "en": "Written once, used twice: that is what functions are for. greet does not print anything itself; it gives back a text, and the caller decides what to do with it.\n\nIn the task, the answers of two calls are added together, which only works because the function returns them.",
+      "it": "Scritta una volta, usata due: ecco a cosa servono le funzioni. greet non scrive niente da sola; restituisce un testo, e chi la chiama decide cosa farne.\n\nNel compito, le risposte di due chiamate vengono sommate, e funziona solo perché la funzione le restituisce.",
+      "fr": "Écrite une fois, utilisée deux fois : voilà à quoi servent les fonctions. greet n'affiche rien elle-même ; elle rend un texte, et celui qui l'appelle décide quoi en faire.\n\nDans la tâche, les réponses de deux appels sont additionnées, ce qui ne marche que parce que la fonction les rend."
+     },
+     "see": {
+      "en": "Hello, Ada!\nHello, Bo!",
+      "it": "Ciao, Ada!\nCiao, Bo!",
+      "fr": "Bonjour, Ada !\nBonjour, Bo !"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a function area that takes a width and a height and returns the area. Use it to show the total area of two rooms: 3 by 4 and 5 by 2 (22).",
+       "it": "Scrivi una funzione area che prende una larghezza e un'altezza e restituisce l'area. Usala per mostrare l'area totale di due stanze: 3 per 4 e 5 per 2 (22).",
+       "fr": "Écris une fonction area qui prend une largeur et une hauteur et rend l'aire. Utilise-la pour afficher l'aire totale de deux pièces : 3 sur 4 et 5 sur 2 (22)."
+      },
+      "hint": {
+       "en": "def with two parameters and a return inside. Then one print that adds two calls of the function.",
+       "it": "def con due parametri e un return dentro. Poi un print che somma due chiamate della funzione.",
+       "fr": "def avec deux paramètres et un return dedans. Puis un print qui additionne deux appels de la fonction."
+      },
+      "sol": {
+       "en": "def area(width, height):\n    return width * height\n\nprint(area(3, 4) + area(5, 2))",
+       "it": "def area(width, height):\n    return width * height\n\nprint(area(3, 4) + area(5, 2))",
+       "fr": "def area(width, height):\n    return width * height\n\nprint(area(3, 4) + area(5, 2))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "22",
+        "c": "return"
+       },
+       "it": {
+        "out": "22",
+        "c": "return"
+       },
+       "fr": {
+        "out": "22",
+        "c": "return"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "22",
+       "it": "22",
+       "fr": "22"
       }
      }
     }

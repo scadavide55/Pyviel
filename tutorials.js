@@ -125,8 +125,8 @@
     if (/^(global|nonlocal)\b/.test(t)) return e.globalIt;
     if (/^match\b/.test(t)) return e.matchBlock;
     if (/^case\b/.test(t)) return e.caseBlock;
-    if ((m = t.match(/^(\w+)\s*(\+|-|\*)=\s*([^=].{0,24}?)\s*(#.*)?$/)) && e.addTo) return fill({'+': e.addTo, '-': e.takeFrom, '*': e.timesBy}[m[2]], {name: m[1], value: m[3]});
-    if (/^[\w.\[\]]+\s*(\+|-|\*|\/|\/\/|%|\*\*)=/.test(t)) return e.augAssign;
+    if ((m = t.match(/^([\w.]+(?:\[[^\]]+\])?)\s*(\+|-|\*)=\s*([^=].{0,24}?)\s*(#.*)?$/)) && e.addTo) return fill({'+': e.addTo, '-': e.takeFrom, '*': e.timesBy}[m[2]], {name: m[1], value: m[3]});
+    if (/^[\w.\[\]"']+\s*(\+|-|\*|\/|\/\/|%|\*\*)=/.test(t)) return e.augAssign;
     if (/^[\w.]+\s*=\s*lambda\b/.test(t)) return e.lambdaDef;
     if (/^[\w.]+\s*=\s*[\[\{(].*\bfor\b.*\bin\b/.test(t)) return e.comprehension;
     if ((m = t.match(/^(\w+)\s*=\s*\[(.*)\]\s*$/)) && e.listOf && !/[\[\](]/.test(m[2])) {

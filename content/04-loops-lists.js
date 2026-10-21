@@ -571,6 +571,30 @@ Avec les autres que tu connais, c'est presque tout ce qu'il te faut pour travail
           h: ['names.count("Ada") inside print.', 'names.count("Ada") dentro print.', 'names.count("Ada") dans print.'],
           start: 'names = ["Zoe", "Ada", "Max", "Ada"]', sol: 'names = ["Zoe", "Ada", "Max", "Ada"]\nprint(names.count("Ada"))', out: '2', c: 'count'
         }
+      },
+      {
+        c: c`scores = [7, 3, 9]
+scores.append(5)
+scores.sort()
+print(scores)
+print("Best:", scores[-1], "Total:", sum(scores))`,
+        t: ['Challenge: fill a basket', 'Sfida: riempi un cestino', 'Défi : remplis un panier'],
+        x: [`A list that grows, gets sorted, and is then used: the last item of a sorted list is the biggest, and sum adds them all.
+
+append always adds at the end; sort puts the list itself in order.`,
+          `Una lista che cresce, viene ordinata e poi usata: l'ultimo elemento di una lista ordinata è il più grande, e sum li somma tutti.
+
+append aggiunge sempre alla fine; sort mette in ordine la lista stessa.`,
+          `Une liste qui grandit, est triée, puis utilisée : le dernier élément d'une liste triée est le plus grand, et sum les additionne tous.
+
+append ajoute toujours à la fin ; sort met la liste elle-même dans l'ordre.`],
+        ex: {
+          t: ['The list basket starts empty. Add apple, pear and fig with append, take pear out again, and show the list in order.', 'La lista basket parte vuota. Aggiungi mela, pera e fico con append, togli di nuovo pera e mostra la lista in ordine.', 'La liste basket commence vide. Ajoute pomme, poire et figue avec append, enlève de nouveau poire, et affiche la liste dans l\'ordre.'],
+          h: ['Three append lines, one remove line, then sort the list (or use sorted) before you show it.', 'Tre righe append, una riga remove, poi ordina la lista (o usa sorted) prima di mostrarla.', 'Trois lignes append, une ligne remove, puis trie la liste (ou utilise sorted) avant de l\'afficher.'],
+          start: 'basket = []',
+          sol: ['basket = []\nbasket.append("apple")\nbasket.append("pear")\nbasket.append("fig")\nbasket.remove("pear")\nprint(sorted(basket))', 'basket = []\nbasket.append("mela")\nbasket.append("pera")\nbasket.append("fico")\nbasket.remove("pera")\nprint(sorted(basket))', 'basket = []\nbasket.append("pomme")\nbasket.append("poire")\nbasket.append("figue")\nbasket.remove("poire")\nprint(sorted(basket))'],
+          out: ['[\'apple\', \'fig\']', '[\'fico\', \'mela\']', '[\'figue\', \'pomme\']'], c: 'append[\\s\\S]*remove'
+        }
       }
     ]
   },
@@ -733,6 +757,29 @@ print(number)`, c`print("Début")
 number = int("42")
 print(number)`],
           out: ['Start\n42', 'Inizio\n42', 'Début\n42']
+        }
+      },
+      {
+        c: c`numbers = [4, 8, 15]
+for n in numbers:
+    print(n, "x 2 =", n * 2)
+print("Done")`,
+        t: ['Challenge: three mistakes', 'Sfida: tre errori', 'Défi : trois erreurs'],
+        x: [`This program is right. The task below is not: it has three mistakes, and Python shows only the first one each time.
+
+A good habit: read the line number and the sentence, fix that one mistake, run again, and read the next message.`,
+          `Questo programma è giusto. Il compito qui sotto no: ha tre errori, e Python ne mostra solo il primo ogni volta.
+
+Una buona abitudine: leggi il numero di riga e la frase, correggi quell'errore, esegui di nuovo e leggi il messaggio dopo.`,
+          `Ce programme est juste. La tâche ci-dessous ne l'est pas : elle a trois erreurs, et Python ne montre que la première à chaque fois.
+
+Une bonne habitude : lis le numéro de ligne et la phrase, corrige cette erreur, relance, et lis le message suivant.`],
+        ex: {
+          t: ['The program in the editor has three mistakes. Fix them one at a time, reading the message each time. When it works it shows 6.', 'Il programma nell\'editor ha tre errori. Correggili uno alla volta, leggendo il messaggio ogni volta. Quando funziona mostra 6.', 'Le programme dans l\'éditeur a trois erreurs. Corrige-les une par une, en lisant le message à chaque fois. Quand il marche il affiche 6.'],
+          h: ['Look for a missing colon, a line that should be pushed in, and a name written wrong.', 'Cerca i due punti che mancano, una riga che andrebbe rientrata e un nome scritto male.', 'Cherche les deux-points qui manquent, une ligne qui devrait être décalée et un nom mal écrit.'],
+          start: 'total = 0\nfor n in range(1, 4)\ntotal = total + n\nprint(totl)',
+          sol: 'total = 0\nfor n in range(1, 4):\n    total = total + n\nprint(total)',
+          out: '6', c: 'print\\(total\\)'
         }
       }
     ]

@@ -181,6 +181,14 @@ async function main() {
               if (t3 && t3[l] === t3.en) bad(here, 'ex.t is not translated in ' + l);
               if (h3 && h3[l] === h3.en && !/[()=*\[\]]/.test(h3.en)) bad(here, 'ex.h is not translated in ' + l);
             }
+            // A hint points the way; "Show a solution" is the button that gives the answer away.
+            // Allowed: a hint that names the one line to change in a given start.
+            if (h3) {
+              const squash = text => String(text).replace(/\s+/g, '');
+              const startLines = (starts ? starts.en : '').split('\n').map(x => x.trim());
+              const added = sols.en.split('\n').filter(x => x.trim() && !startLines.includes(x.trim())).map(squash);
+              if (added.length && added.every(x => squash(h3.en).includes(x)) && !(starts && starts.en.trim() && added.length === 1)) bad(here, 'ex.h gives the whole solution away: let the hint point the way instead');
+            }
             const spec = {}, answers = {}, expected = {};
             try {
               for (const l of LANGS) {

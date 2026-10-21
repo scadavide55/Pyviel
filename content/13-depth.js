@@ -150,6 +150,19 @@ divmod donne ensemble le quotient et le reste, sous forme de paire. pow(a, b, m)
           h: ['divmod takes the two numbers, the one to divide first, and gives back both answers at once.', 'divmod prende i due numeri, prima quello da dividere, e restituisce le due risposte insieme.', 'divmod prend les deux nombres, celui à diviser d\'abord, et rend les deux réponses à la fois.'],
           sol: 'print(divmod(100, 7))', out: '(14, 2)', c: 'divmod'
         }
+      },
+      {
+        c: 'for n in [5, 10, 255]:\n    print(n, bin(n), hex(n))\nprint(int("1010", 2))\nprint(divmod(17, 5))',
+        n: [],
+        t: ['Challenge: count in binary', 'Sfida: conta in binario', 'Défi : compte en binaire'],
+        x: ['bin and hex write a number in another base, with 0b or 0x in front. int with a second number reads such a text back. divmod gives the whole part and the rest at once.\n\nA computer counts in binary: 0, 1, 10, 11, 100... Each place is worth twice the place on its right.', 'bin e hex scrivono un numero in un\'altra base, con 0b o 0x davanti. int con un secondo numero rilegge un testo così. divmod dà la parte intera e il resto insieme.\n\nUn computer conta in binario: 0, 1, 10, 11, 100... Ogni posto vale il doppio del posto alla sua destra.', 'bin et hex écrivent un nombre dans une autre base, avec 0b ou 0x devant. int avec un deuxième nombre relit un tel texte. divmod donne la partie entière et le reste en même temps.\n\nUn ordinateur compte en binaire : 0, 1, 10, 11, 100... Chaque place vaut le double de la place à sa droite.'],
+        ex: {
+          t: ['From an empty page: show the numbers from 1 to 8 in binary, one per line, without the 0b in front: 1, 10, 11, 100, 101, 110, 111, 1000.', 'Da una pagina vuota: mostra i numeri da 1 a 8 in binario, uno per riga, senza lo 0b davanti: 1, 10, 11, 100, 101, 110, 111, 1000.', 'À partir d\'une page vide : affiche les nombres de 1 à 8 en binaire, un par ligne, sans le 0b devant : 1, 10, 11, 100, 101, 110, 111, 1000.'],
+          h: ['A for loop over a range that stops after 8. bin gives a text that starts with 0b: a slice can leave out its first two letters.', 'Un ciclo for su un range che si ferma dopo 8. bin dà un testo che comincia con 0b: una fetta può lasciare fuori le sue prime due lettere.', 'Une boucle for sur un range qui s\'arrête après 8. bin donne un texte qui commence par 0b : une tranche peut laisser de côté ses deux premières lettres.'],
+          start: '',
+          sol: 'for n in range(1, 9):\n    print(bin(n)[2:])',
+          exact: true, uses: ['for', 'bin']
+        }
       }
     ]
   },
@@ -334,6 +347,19 @@ fast_fib(200) est instantané, alors que slow_fib(200) ne finirait pas de ta vie
           t: ['Make a cached function fact(n) with @lru_cache(maxsize=None): it returns 1 when n is 0, and otherwise n * fact(n - 1). Show fact(10) (3628800).', 'Metti @lru_cache(maxsize=None) sulla funzione fact(n) = n * fact(n - 1), con il caso base fact(0) = 1, e mostra fact(10) (3628800).', 'Mets @lru_cache(maxsize=None) sur la fonction fact(n) = n * fact(n - 1), avec le cas de base fact(0) = 1, et affiche fact(10) (3628800).'],
           h: ['Bring in lru_cache and put it above the def, with maxsize=None in its brackets. Then write fact the recursive way.', 'Porta dentro lru_cache e mettilo sopra il def, con maxsize=None tra le parentesi. Poi scrivi fact in modo ricorsivo.', 'Fais entrer lru_cache et mets-le au-dessus du def, avec maxsize=None entre ses parenthèses. Puis écris fact de façon récursive.'],
           sol: 'from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fact(n):\n    return 1 if n == 0 else n * fact(n - 1)\n\nprint(fact(10))', out: '3628800', c: 'lru_cache'
+        }
+      },
+      {
+        c: 'from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef ways(n):\n    if n <= 1:\n        return 1\n    return ways(n - 1) + ways(n - 2)\n\nprint(ways(60))\nprint(ways.cache_info().hits > 0)',
+        n: [],
+        t: ['Challenge: a function that remembers', 'Sfida: una funzione che ricorda', 'Défi : une fonction qui se souvient'],
+        x: ['Without the cache, ways(60) would work out the same small answers billions of times, and never end in time. With @lru_cache each answer is worked out once and then remembered.\n\nThe lesson in three habits: measure before you change, choose the right box (a set to ask in, a dictionary to look up), and remember answers that come back.', 'Senza la cache, ways(60) calcolerebbe le stesse piccole risposte miliardi di volte, e non finirebbe mai in tempo. Con @lru_cache ogni risposta si calcola una volta e poi si ricorda.\n\nLa lezione in tre abitudini: misura prima di cambiare, scegli la scatola giusta (un insieme per chiedere, un dizionario per cercare), e ricorda le risposte che tornano.', 'Sans le cache, ways(60) calculerait les mêmes petites réponses des milliards de fois, et ne finirait jamais à temps. Avec @lru_cache chaque réponse est calculée une fois puis retenue.\n\nLa leçon en trois habitudes : mesure avant de changer, choisis la bonne boîte (un ensemble pour demander, un dictionnaire pour chercher), et retiens les réponses qui reviennent.'],
+        ex: {
+          t: ['From an empty page: write fib(n), the Fibonacci numbers (fib(0) is 0, fib(1) is 1, and each next one is the sum of the two before it), the recursive way and with @lru_cache. Show fib(80): without the cache it would never finish.', 'Da una pagina vuota: scrivi fib(n), i numeri di Fibonacci (fib(0) è 0, fib(1) è 1, e ognuno dopo è la somma dei due prima), in modo ricorsivo e con @lru_cache. Mostra fib(80): senza la cache non finirebbe mai.', 'À partir d\'une page vide : écris fib(n), les nombres de Fibonacci (fib(0) vaut 0, fib(1) vaut 1, et chaque suivant est la somme des deux d\'avant), de façon récursive et avec @lru_cache. Affiche fib(80) : sans le cache il ne finirait jamais.'],
+          h: ['Bring in lru_cache from functools and put it just above the def. Inside: the two small cases give n back, every other n adds the results for the two numbers before it.', 'Porta dentro lru_cache da functools e mettilo subito sopra il def. Dentro: i due casi piccoli restituiscono n, ogni altro n somma i risultati dei due numeri prima.', 'Fais entrer lru_cache depuis functools et mets-le juste au-dessus du def. Dedans : les deux petits cas rendent n, tout autre n additionne les résultats des deux nombres d\'avant.'],
+          start: '',
+          sol: 'from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(80))',
+          exact: true, uses: ['def'], c: '@(functools\\.)?(lru_cache|cache)\\b'
         }
       }
     ]
@@ -539,6 +565,19 @@ Le nombre de coups double à chaque disque : 10 disques demandent 1023 coups. Et
           t: ['Show how many moves are needed for 5 discs (31), using len and solve.', 'Mostra quante mosse servono per 5 dischi (31), usando len e solve.', 'Affiche combien de coups il faut pour 5 disques (31), en utilisant len et solve.'],
           h: ['solve gives back the list of moves. len counts the items of a list.', 'solve restituisce la lista delle mosse. len conta gli elementi di una lista.', 'solve rend la liste des coups. len compte les éléments d\'une liste.'],
           start: 'def solve(n, start="A", spare="B", goal="C", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f"{start}->{goal}")\n    solve(n - 1, spare, start, goal, moves)\n    return moves', sol: 'def solve(n, start="A", spare="B", goal="C", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f"{start}->{goal}")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(len(solve(5)))', out: '31', c: 'solve\\(5\\)'
+        }
+      },
+      {
+        c: 'def steps_to_find(items, target):\n    steps = 0\n    for item in items:\n        steps += 1\n        if item == target:\n            return steps\n    return steps\n\nnumbers = list(range(1, 101))\nprint(steps_to_find(numbers, 70))\nprint(steps_to_find(numbers, 1000))',
+        n: [],
+        t: ['Challenge: find the biggest by hand', 'Sfida: trova il più grande a mano', 'Défi : trouve le plus grand à la main'],
+        x: ['An algorithm is a recipe: clear steps that always come to an end. Looking at each item in turn is the simplest search; on a sorted list, binary search needs far fewer steps.\n\nThe best way to understand an algorithm is to write it yourself, without the ready-made helper.', 'Un algoritmo è una ricetta: passi chiari che arrivano sempre a una fine. Guardare ogni elemento a turno è la ricerca più semplice; su una lista ordinata, la ricerca binaria ha bisogno di molti meno passi.\n\nIl modo migliore per capire un algoritmo è scriverlo da te, senza l\'aiutante già pronto.', 'Un algorithme est une recette : des étapes claires qui finissent toujours. Regarder chaque élément à son tour est la recherche la plus simple ; sur une liste triée, la recherche binaire demande beaucoup moins d\'étapes.\n\nLa meilleure façon de comprendre un algorithme est de l\'écrire toi-même, sans l\'outil tout prêt.'],
+        ex: {
+          t: ['From an empty page: write largest(items), which finds the biggest number with a loop, without max and without sorted. Show largest([4, 17, 9, 23, 8]) (23).', 'Da una pagina vuota: scrivi largest(items), che trova il numero più grande con un ciclo, senza max e senza sorted. Mostra largest([4, 17, 9, 23, 8]) (23).', 'À partir d\'une page vide : écris largest(items), qui trouve le plus grand nombre avec une boucle, sans max et sans sorted. Affiche largest([4, 17, 9, 23, 8]) (23).'],
+          h: ['Keep the first item in a box: it is the biggest so far. Then look at each item: when one is bigger than what is in the box, it goes in the box. At the end, give the box back.', 'Tieni il primo elemento in una scatola: è il più grande finora. Poi guarda ogni elemento: quando uno è più grande di quello nella scatola, va nella scatola. Alla fine, restituisci la scatola.', 'Garde le premier élément dans une boîte : c\'est le plus grand jusqu\'ici. Puis regarde chaque élément : quand l\'un est plus grand que ce qu\'il y a dans la boîte, il va dans la boîte. À la fin, rends la boîte.'],
+          start: '',
+          sol: 'def largest(items):\n    best = items[0]\n    for item in items:\n        if item > best:\n            best = item\n    return best\n\nprint(largest([4, 17, 9, 23, 8]))',
+          out: '23', uses: ['def', 'for', 'if'], c: '^(?![\\s\\S]*\\b(max|sorted|sort)\\b)'
         }
       }
     ]
@@ -963,6 +1002,19 @@ C'est ainsi qu'un programme peut lancer un long travail, continuer à parler ave
           t: ['Start work() as a background task, show "waiting", and then show the result of the task.', 'Fai partire work() come compito in secondo piano, mostra "attendo" e poi mostra il risultato del compito.', 'Lance work() comme tâche en arrière-plan, affiche "j\'attends" et puis affiche le résultat de la tâche.'],
           h: ['create_task starts work() at once and gives back a task. Show the first word, then await the task to get its result, and show it.', 'create_task fa partire work() subito e restituisce un task. Mostra la prima parola, poi await del task per avere il suo risultato, e mostralo.', 'create_task lance work() tout de suite et rend une tâche. Affiche le premier mot, puis await la tâche pour avoir son résultat, et affiche-le.'],
           start: 'import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return "done"', sol: 'import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return "done"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print("waiting")\n    print(await task)\n\nasyncio.run(main())', out: 'waiting\ndone', c: 'create_task'
+        }
+      },
+      {
+        c: ['import asyncio\n\nasync def cook(dish, seconds):\n    print("start", dish)\n    await asyncio.sleep(seconds)\n    print("ready", dish)\n    return dish\n\nasync def main():\n    done = await asyncio.gather(cook("soup", 0.02), cook("toast", 0.01))\n    print(done)\n\nasyncio.run(main())', 'import asyncio\n\nasync def cook(dish, seconds):\n    print("inizio", dish)\n    await asyncio.sleep(seconds)\n    print("pronto", dish)\n    return dish\n\nasync def main():\n    done = await asyncio.gather(cook("zuppa", 0.02), cook("pane", 0.01))\n    print(done)\n\nasyncio.run(main())', 'import asyncio\n\nasync def cook(dish, seconds):\n    print("début", dish)\n    await asyncio.sleep(seconds)\n    print("prêt", dish)\n    return dish\n\nasync def main():\n    done = await asyncio.gather(cook("soupe", 0.02), cook("pain", 0.01))\n    print(done)\n\nasyncio.run(main())'],
+        n: [],
+        t: ['Challenge: two countdowns at once', 'Sfida: due conti alla rovescia insieme', 'Défi : deux comptes à rebours en même temps'],
+        x: ['gather runs coroutines together: while one waits, the other works. The second dish is ready first because it waits less, but gather gives the results back in the order you asked for them.\n\nasync def makes a coroutine, await waits without stopping the others, and asyncio.run starts everything.', 'gather fa girare le coroutine insieme: mentre una aspetta, l\'altra lavora. Il secondo piatto è pronto prima perché aspetta meno, ma gather restituisce i risultati nell\'ordine in cui li hai chiesti.\n\nasync def fa una coroutine, await aspetta senza fermare le altre, e asyncio.run fa partire tutto.', 'gather fait tourner les coroutines ensemble : pendant que l\'une attend, l\'autre travaille. Le deuxième plat est prêt d\'abord parce qu\'il attend moins, mais gather rend les résultats dans l\'ordre où tu les as demandés.\n\nasync def fait une coroutine, await attend sans arrêter les autres, et asyncio.run lance tout.'],
+        ex: {
+          t: ['From an empty page: write a coroutine countdown(name, n) that, from n down to 1, shows the name and the number and then waits 0.01 seconds. Run countdown("A", 2) and countdown("B", 2) together with gather. It must show A 2, B 2, A 1 and B 1, one per line.', 'Da una pagina vuota: scrivi una coroutine countdown(name, n) che, da n giù fino a 1, mostra il nome e il numero e poi aspetta 0.01 secondi. Fai girare countdown("A", 2) e countdown("B", 2) insieme con gather. Deve mostrare A 2, B 2, A 1 e B 1, uno per riga.', 'À partir d\'une page vide : écris une coroutine countdown(name, n) qui, de n jusqu\'à 1, affiche le nom et le nombre puis attend 0.01 seconde. Lance countdown("A", 2) et countdown("B", 2) ensemble avec gather. Il doit afficher A 2, B 2, A 1 et B 1, un par ligne.'],
+          h: ['Inside countdown: a loop that goes down (a range with a step of -1), a print, then await with asyncio.sleep. A main coroutine waits for gather with the two calls, and asyncio.run starts main.', 'Dentro countdown: un ciclo che scende (un range con un passo di -1), un print, poi await con asyncio.sleep. Una coroutine main aspetta gather con le due chiamate, e asyncio.run fa partire main.', 'Dans countdown : une boucle qui descend (un range avec un pas de -1), un print, puis await avec asyncio.sleep. Une coroutine main attend gather avec les deux appels, et asyncio.run lance main.'],
+          start: '',
+          sol: 'import asyncio\n\nasync def countdown(name, n):\n    for i in range(n, 0, -1):\n        print(name, i)\n        await asyncio.sleep(0.01)\n\nasync def main():\n    await asyncio.gather(countdown("A", 2), countdown("B", 2))\n\nasyncio.run(main())',
+          out: 'A 2\nB 2\nA 1\nB 1', uses: ['async', 'await', '.gather']
         }
       }
     ]

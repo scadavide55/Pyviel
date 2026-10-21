@@ -1,6 +1,6 @@
 # Changes
 
-## Next version (not released yet)
+## 1.2.1 — 22 October 2026
 
 The tutorials check real learning, and give much more practice.
 
@@ -14,6 +14,13 @@ The tutorials check real learning, and give much more practice.
 - On a phone, a **Check** button sits next to Run while a task is open.
 - **Plain sentences for four more errors**, in three languages: `JSONDecodeError`, `PatternError` (the regular expression is broken), `IsADirectoryError` and `UnicodeDecodeError`.
 - **Screen readers** hear what the program printed, and each problem, when a run ends.
+- **Hints point the way, never the line to type**: 170 hints held a line of the solution and were rewritten. The build now fails when a hint holds a line of the solution, or when copying the step's program already solves its task (8 tasks fixed, 2 had a hidden requirement).
+- **An answer that is almost right says what differs**: capital letters, spaces, punctuation, quotes shown, 4.0 instead of 4, lines in another order. After two wrong checks the page offers the hint and the example, never the answer.
+- **Think first explains a wrong pick**: the wrong answers come from real beginner mistakes (the quotes shown, the name of a box instead of its value, + adding a space...) and the page says what each one gets wrong.
+- **Remember?** asks a second question from four lessons back, from lesson 6.
+- **9 more challenges** (lessons 41 to 49): every lesson from 1 to 49 ends with a program written from an empty page. The course has **358 steps**.
+- A task that asks questions says which answers the check will type.
+- Fixed: a check of a program with a loop that never ends stayed on "Checking..." for ever; now it stops after 8 seconds, with a Stop button and a sentence about while. Run waits while a check uses Python. On a phone the verdict scrolls into view, with a way back to the editor.
 
 Note: in lessons 3 to 20 a new step was added before the challenge, so a challenge solved in 1.2.0 may show as not solved.
 

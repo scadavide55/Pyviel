@@ -30379,6 +30379,84 @@ window.PyvielCourse = {
        "fr": "ok"
       }
      }
+    },
+    {
+     "code": {
+      "en": "from contextlib import contextmanager\n\n@contextmanager\ndef frame(title):\n    print(\"+--\", title, \"--+\")\n    yield\n    print(\"+-- end --+\")\n\nwith frame(\"menu\"):\n    print(\"1. play\")\n    print(\"2. quit\")",
+      "it": "from contextlib import contextmanager\n\n@contextmanager\ndef frame(title):\n    print(\"+--\", title, \"--+\")\n    yield\n    print(\"+-- fine --+\")\n\nwith frame(\"menu\"):\n    print(\"1. gioca\")\n    print(\"2. esci\")",
+      "fr": "from contextlib import contextmanager\n\n@contextmanager\ndef frame(title):\n    print(\"+--\", title, \"--+\")\n    yield\n    print(\"+-- fin --+\")\n\nwith frame(\"menu\"):\n    print(\"1. jouer\")\n    print(\"2. quitter\")"
+     },
+     "title": {
+      "en": "Challenge: a bell around the work",
+      "it": "Sfida: un campanello intorno al lavoro",
+      "fr": "Défi : une cloche autour du travail"
+     },
+     "text": {
+      "en": "A with does something when it starts and something when it ends, even if the middle goes wrong. You can build one with a class (__enter__ and __exit__) or, shorter, with @contextmanager and a yield where the middle goes.\n\nThis frame draws a line before and after whatever is pushed in under the with.",
+      "it": "Un with fa qualcosa quando comincia e qualcosa quando finisce, anche se in mezzo qualcosa va storto. Puoi costruirne uno con una classe (__enter__ e __exit__) o, più corto, con @contextmanager e uno yield dove va il mezzo.\n\nQuesta cornice disegna una riga prima e dopo quello che è rientrato sotto il with.",
+      "fr": "Un with fait quelque chose quand il commence et quelque chose quand il finit, même si le milieu tourne mal. Tu peux en construire un avec une classe (__enter__ et __exit__) ou, plus court, avec @contextmanager et un yield là où va le milieu.\n\nCe cadre dessine une ligne avant et après ce qui est décalé sous le with."
+     },
+     "see": {
+      "en": "+-- menu --+\n1. play\n2. quit\n+-- end --+",
+      "it": "+-- menu --+\n1. gioca\n2. esci\n+-- fine --+",
+      "fr": "+-- menu --+\n1. jouer\n2. quitter\n+-- fin --+"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: write a class Bell with __enter__ and __exit__. When the with starts it shows ding, when it ends it shows dong. Use it around a print of the word middle, so that the program shows ding, middle and dong.",
+       "it": "Da una pagina vuota: scrivi una classe Bell con __enter__ e __exit__. Quando il with comincia mostra ding, quando finisce mostra dong. Usala intorno a un print della parola mezzo, così il programma mostra ding, mezzo e dong.",
+       "fr": "À partir d'une page vide : écris une classe Bell avec __enter__ et __exit__. Quand le with commence elle affiche ding, quand il finit elle affiche dong. Utilise-la autour d'un print du mot milieu, pour que le programme affiche ding, milieu et dong."
+      },
+      "hint": {
+       "en": "Two special methods: __enter__ runs when the with starts, __exit__ when it ends, and __exit__ gets three more parameters after self. The class Tag at the start of this lesson has the same shape.",
+       "it": "Due metodi speciali: __enter__ gira quando il with comincia, __exit__ quando finisce, e __exit__ riceve tre parametri in più dopo self. La classe Tag all'inizio di questa lezione ha la stessa forma.",
+       "fr": "Deux méthodes spéciales : __enter__ tourne quand le with commence, __exit__ quand il finit, et __exit__ reçoit trois paramètres de plus après self. La classe Tag au début de cette leçon a la même forme."
+      },
+      "sol": {
+       "en": "class Bell:\n    def __enter__(self):\n        print(\"ding\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"dong\")\n        return False\n\nwith Bell():\n    print(\"middle\")",
+       "it": "class Bell:\n    def __enter__(self):\n        print(\"ding\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"dong\")\n        return False\n\nwith Bell():\n    print(\"mezzo\")",
+       "fr": "class Bell:\n    def __enter__(self):\n        print(\"ding\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"dong\")\n        return False\n\nwith Bell():\n    print(\"milieu\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "ding\nmiddle\ndong",
+        "uses": [
+         "class",
+         "with"
+        ]
+       },
+       "it": {
+        "out": "ding\nmezzo\ndong",
+        "uses": [
+         "class",
+         "with"
+        ]
+       },
+       "fr": {
+        "out": "ding\nmilieu\ndong",
+        "uses": [
+         "class",
+         "with"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "ding\nmiddle\ndong",
+       "it": "ding\nmezzo\ndong",
+       "fr": "ding\nmilieu\ndong"
+      }
+     }
     }
    ]
   },
@@ -30774,6 +30852,84 @@ window.PyvielCourse = {
        "en": "[[9, 0], [0, 0]]",
        "it": "[[9, 0], [0, 0]]",
        "fr": "[[9, 0], [0, 0]]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def move(command):\n    match command.split():\n        case [\"go\", direction]:\n            return \"You go \" + direction\n        case [\"take\", *things]:\n            return \"You take \" + \" and \".join(things)\n        case _:\n            return \"What?\"\n\nprint(move(\"go north\"))\nprint(move(\"take key lamp\"))\nprint(move(\"dance\"))",
+      "it": "def move(command):\n    match command.split():\n        case [\"vai\", direction]:\n            return \"Vai a \" + direction\n        case [\"prendi\", *things]:\n            return \"Prendi \" + \" e \".join(things)\n        case _:\n            return \"Cosa?\"\n\nprint(move(\"vai nord\"))\nprint(move(\"prendi chiave lampada\"))\nprint(move(\"balla\"))",
+      "fr": "def move(command):\n    match command.split():\n        case [\"va\", direction]:\n            return \"Tu vas au \" + direction\n        case [\"prends\", *things]:\n            return \"Tu prends \" + \" et \".join(things)\n        case _:\n            return \"Quoi ?\"\n\nprint(move(\"va nord\"))\nprint(move(\"prends clé lampe\"))\nprint(move(\"danse\"))"
+     },
+     "title": {
+      "en": "Challenge: shapes by their shape",
+      "it": "Sfida: forme secondo la forma",
+      "fr": "Défi : des formes selon leur forme"
+     },
+     "text": {
+      "en": "match compares a value with patterns, and a pattern can take the value apart: [\"go\", direction] matches a list of two words whose first one is go, and puts the second one in direction. A star takes all the rest.\n\nThis is a tiny command reader, like the one of a text adventure.",
+      "it": "match confronta un valore con degli schemi, e uno schema può smontare il valore: [\"vai\", direction] corrisponde a una lista di due parole la cui prima è vai, e mette la seconda in direction. Una stella prende tutto il resto.\n\nQuesto è un piccolo lettore di comandi, come quello di un'avventura testuale.",
+      "fr": "match compare une valeur avec des motifs, et un motif peut démonter la valeur : [\"va\", direction] correspond à une liste de deux mots dont le premier est va, et met le second dans direction. Une étoile prend tout le reste.\n\nC'est un petit lecteur de commandes, comme celui d'une aventure textuelle."
+     },
+     "see": {
+      "en": "You go north\nYou take key and lamp\nWhat?",
+      "it": "Vai a nord\nPrendi chiave e lampada\nCosa?",
+      "fr": "Tu vas au nord\nTu prends clé et lampe\nQuoi ?"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: write area(shape) with a match on a tuple. (\"square\", side) gives side * side, (\"rect\", width, height) gives width * height, and anything else gives 0. Show area((\"square\", 3)), area((\"rect\", 2, 5)) and area((\"circle\", 1)), one per line.",
+       "it": "Da una pagina vuota: scrivi area(shape) con un match su una tupla. (\"quadrato\", side) dà side * side, (\"rettangolo\", width, height) dà width * height, e qualsiasi altra cosa dà 0. Mostra area((\"quadrato\", 3)), area((\"rettangolo\", 2, 5)) e area((\"cerchio\", 1)), uno per riga.",
+       "fr": "À partir d'une page vide : écris area(shape) avec un match sur un tuple. (\"carré\", side) donne side * side, (\"rectangle\", width, height) donne width * height, et toute autre chose donne 0. Affiche area((\"carré\", 3)), area((\"rectangle\", 2, 5)) et area((\"cercle\", 1)), un par ligne."
+      },
+      "hint": {
+       "en": "Each case is a tuple pattern: the word in quotes first, then names that catch the numbers. case _ catches everything else. In the calls, the tuple has its own round brackets inside those of area.",
+       "it": "Ogni case è uno schema di tupla: prima la parola tra virgolette, poi i nomi che prendono i numeri. case _ prende tutto il resto. Nelle chiamate, la tupla ha le sue parentesi tonde dentro quelle di area.",
+       "fr": "Chaque case est un motif de tuple : d'abord le mot entre guillemets, puis les noms qui attrapent les nombres. case _ attrape tout le reste. Dans les appels, le tuple a ses propres parenthèses dans celles de area."
+      },
+      "sol": {
+       "en": "def area(shape):\n    match shape:\n        case (\"square\", side):\n            return side * side\n        case (\"rect\", width, height):\n            return width * height\n        case _:\n            return 0\n\nprint(area((\"square\", 3)))\nprint(area((\"rect\", 2, 5)))\nprint(area((\"circle\", 1)))",
+       "it": "def area(shape):\n    match shape:\n        case (\"quadrato\", side):\n            return side * side\n        case (\"rettangolo\", width, height):\n            return width * height\n        case _:\n            return 0\n\nprint(area((\"quadrato\", 3)))\nprint(area((\"rettangolo\", 2, 5)))\nprint(area((\"cerchio\", 1)))",
+       "fr": "def area(shape):\n    match shape:\n        case (\"carré\", side):\n            return side * side\n        case (\"rectangle\", width, height):\n            return width * height\n        case _:\n            return 0\n\nprint(area((\"carré\", 3)))\nprint(area((\"rectangle\", 2, 5)))\nprint(area((\"cercle\", 1)))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "9\n10\n0",
+        "uses": [
+         "match",
+         "def"
+        ]
+       },
+       "it": {
+        "out": "9\n10\n0",
+        "uses": [
+         "match",
+         "def"
+        ]
+       },
+       "fr": {
+        "out": "9\n10\n0",
+        "uses": [
+         "match",
+         "def"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "9\n10\n0",
+       "it": "9\n10\n0",
+       "fr": "9\n10\n0"
       }
      }
     }
@@ -31399,6 +31555,84 @@ window.PyvielCourse = {
        "fr": "(14, 2)"
       }
      }
+    },
+    {
+     "code": {
+      "en": "for n in [5, 10, 255]:\n    print(n, bin(n), hex(n))\nprint(int(\"1010\", 2))\nprint(divmod(17, 5))",
+      "it": "for n in [5, 10, 255]:\n    print(n, bin(n), hex(n))\nprint(int(\"1010\", 2))\nprint(divmod(17, 5))",
+      "fr": "for n in [5, 10, 255]:\n    print(n, bin(n), hex(n))\nprint(int(\"1010\", 2))\nprint(divmod(17, 5))"
+     },
+     "title": {
+      "en": "Challenge: count in binary",
+      "it": "Sfida: conta in binario",
+      "fr": "Défi : compte en binaire"
+     },
+     "text": {
+      "en": "bin and hex write a number in another base, with 0b or 0x in front. int with a second number reads such a text back. divmod gives the whole part and the rest at once.\n\nA computer counts in binary: 0, 1, 10, 11, 100... Each place is worth twice the place on its right.",
+      "it": "bin e hex scrivono un numero in un'altra base, con 0b o 0x davanti. int con un secondo numero rilegge un testo così. divmod dà la parte intera e il resto insieme.\n\nUn computer conta in binario: 0, 1, 10, 11, 100... Ogni posto vale il doppio del posto alla sua destra.",
+      "fr": "bin et hex écrivent un nombre dans une autre base, avec 0b ou 0x devant. int avec un deuxième nombre relit un tel texte. divmod donne la partie entière et le reste en même temps.\n\nUn ordinateur compte en binaire : 0, 1, 10, 11, 100... Chaque place vaut le double de la place à sa droite."
+     },
+     "see": {
+      "en": "5 0b101 0x5\n10 0b1010 0xa\n255 0b11111111 0xff\n10\n(3, 2)",
+      "it": "5 0b101 0x5\n10 0b1010 0xa\n255 0b11111111 0xff\n10\n(3, 2)",
+      "fr": "5 0b101 0x5\n10 0b1010 0xa\n255 0b11111111 0xff\n10\n(3, 2)"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: show the numbers from 1 to 8 in binary, one per line, without the 0b in front: 1, 10, 11, 100, 101, 110, 111, 1000.",
+       "it": "Da una pagina vuota: mostra i numeri da 1 a 8 in binario, uno per riga, senza lo 0b davanti: 1, 10, 11, 100, 101, 110, 111, 1000.",
+       "fr": "À partir d'une page vide : affiche les nombres de 1 à 8 en binaire, un par ligne, sans le 0b devant : 1, 10, 11, 100, 101, 110, 111, 1000."
+      },
+      "hint": {
+       "en": "A for loop over a range that stops after 8. bin gives a text that starts with 0b: a slice can leave out its first two letters.",
+       "it": "Un ciclo for su un range che si ferma dopo 8. bin dà un testo che comincia con 0b: una fetta può lasciare fuori le sue prime due lettere.",
+       "fr": "Une boucle for sur un range qui s'arrête après 8. bin donne un texte qui commence par 0b : une tranche peut laisser de côté ses deux premières lettres."
+      },
+      "sol": {
+       "en": "for n in range(1, 9):\n    print(bin(n)[2:])",
+       "it": "for n in range(1, 9):\n    print(bin(n)[2:])",
+       "fr": "for n in range(1, 9):\n    print(bin(n)[2:])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "1\n10\n11\n100\n101\n110\n111\n1000\n",
+        "uses": [
+         "for",
+         "bin"
+        ]
+       },
+       "it": {
+        "out": "1\n10\n11\n100\n101\n110\n111\n1000\n",
+        "uses": [
+         "for",
+         "bin"
+        ]
+       },
+       "fr": {
+        "out": "1\n10\n11\n100\n101\n110\n111\n1000\n",
+        "uses": [
+         "for",
+         "bin"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1\n10\n11\n100\n101\n110\n111\n1000",
+       "it": "1\n10\n11\n100\n101\n110\n111\n1000",
+       "fr": "1\n10\n11\n100\n101\n110\n111\n1000"
+      }
+     }
     }
    ]
   },
@@ -31887,6 +32121,125 @@ window.PyvielCourse = {
        "fr": "3628800"
       }
      }
+    },
+    {
+     "code": {
+      "en": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef ways(n):\n    if n <= 1:\n        return 1\n    return ways(n - 1) + ways(n - 2)\n\nprint(ways(60))\nprint(ways.cache_info().hits > 0)",
+      "it": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef ways(n):\n    if n <= 1:\n        return 1\n    return ways(n - 1) + ways(n - 2)\n\nprint(ways(60))\nprint(ways.cache_info().hits > 0)",
+      "fr": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef ways(n):\n    if n <= 1:\n        return 1\n    return ways(n - 1) + ways(n - 2)\n\nprint(ways(60))\nprint(ways.cache_info().hits > 0)"
+     },
+     "title": {
+      "en": "Challenge: a function that remembers",
+      "it": "Sfida: una funzione che ricorda",
+      "fr": "Défi : une fonction qui se souvient"
+     },
+     "text": {
+      "en": "Without the cache, ways(60) would work out the same small answers billions of times, and never end in time. With @lru_cache each answer is worked out once and then remembered.\n\nThe lesson in three habits: measure before you change, choose the right box (a set to ask in, a dictionary to look up), and remember answers that come back.",
+      "it": "Senza la cache, ways(60) calcolerebbe le stesse piccole risposte miliardi di volte, e non finirebbe mai in tempo. Con @lru_cache ogni risposta si calcola una volta e poi si ricorda.\n\nLa lezione in tre abitudini: misura prima di cambiare, scegli la scatola giusta (un insieme per chiedere, un dizionario per cercare), e ricorda le risposte che tornano.",
+      "fr": "Sans le cache, ways(60) calculerait les mêmes petites réponses des milliards de fois, et ne finirait jamais à temps. Avec @lru_cache chaque réponse est calculée une fois puis retenue.\n\nLa leçon en trois habitudes : mesure avant de changer, choisis la bonne boîte (un ensemble pour demander, un dictionnaire pour chercher), et retiens les réponses qui reviennent."
+     },
+     "see": {
+      "en": "2504730781961\nTrue",
+      "it": "2504730781961\nTrue",
+      "fr": "2504730781961\nTrue"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: write fib(n), the Fibonacci numbers (fib(0) is 0, fib(1) is 1, and each next one is the sum of the two before it), the recursive way and with @lru_cache. Show fib(80): without the cache it would never finish.",
+       "it": "Da una pagina vuota: scrivi fib(n), i numeri di Fibonacci (fib(0) è 0, fib(1) è 1, e ognuno dopo è la somma dei due prima), in modo ricorsivo e con @lru_cache. Mostra fib(80): senza la cache non finirebbe mai.",
+       "fr": "À partir d'une page vide : écris fib(n), les nombres de Fibonacci (fib(0) vaut 0, fib(1) vaut 1, et chaque suivant est la somme des deux d'avant), de façon récursive et avec @lru_cache. Affiche fib(80) : sans le cache il ne finirait jamais."
+      },
+      "hint": {
+       "en": "Bring in lru_cache from functools and put it just above the def. Inside: the two small cases give n back, every other n adds the results for the two numbers before it.",
+       "it": "Porta dentro lru_cache da functools e mettilo subito sopra il def. Dentro: i due casi piccoli restituiscono n, ogni altro n somma i risultati dei due numeri prima.",
+       "fr": "Fais entrer lru_cache depuis functools et mets-le juste au-dessus du def. Dedans : les deux petits cas rendent n, tout autre n additionne les résultats des deux nombres d'avant."
+      },
+      "sol": {
+       "en": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(80))",
+       "it": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(80))",
+       "fr": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(80))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "23416728348467685\n",
+        "c": "@(functools\\.)?(lru_cache|cache)\\b",
+        "uses": [
+         "def"
+        ]
+       },
+       "it": {
+        "out": "23416728348467685\n",
+        "c": "@(functools\\.)?(lru_cache|cache)\\b",
+        "uses": [
+         "def"
+        ]
+       },
+       "fr": {
+        "out": "23416728348467685\n",
+        "c": "@(functools\\.)?(lru_cache|cache)\\b",
+        "uses": [
+         "def"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "23416728348467685",
+       "it": "23416728348467685",
+       "fr": "23416728348467685"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "2504730781961\nTrue",
+        "2504730781961\nFalse",
+        "2504730781962\nTrue"
+       ],
+       "right": 0,
+       "why": [
+        "",
+        "bool",
+        "number"
+       ]
+      },
+      "it": {
+       "options": [
+        "2504730781961\nTrue",
+        "2504730781961\nFalse",
+        "2504730781962\nTrue"
+       ],
+       "right": 0,
+       "why": [
+        "",
+        "bool",
+        "number"
+       ]
+      },
+      "fr": {
+       "options": [
+        "2504730781961\nTrue",
+        "2504730781961\nFalse",
+        "2504730781962\nTrue"
+       ],
+       "right": 0,
+       "why": [
+        "",
+        "bool",
+        "number"
+       ]
+      }
+     }
     }
    ]
   },
@@ -32368,6 +32721,131 @@ window.PyvielCourse = {
        "en": "31",
        "it": "31",
        "fr": "31"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def steps_to_find(items, target):\n    steps = 0\n    for item in items:\n        steps += 1\n        if item == target:\n            return steps\n    return steps\n\nnumbers = list(range(1, 101))\nprint(steps_to_find(numbers, 70))\nprint(steps_to_find(numbers, 1000))",
+      "it": "def steps_to_find(items, target):\n    steps = 0\n    for item in items:\n        steps += 1\n        if item == target:\n            return steps\n    return steps\n\nnumbers = list(range(1, 101))\nprint(steps_to_find(numbers, 70))\nprint(steps_to_find(numbers, 1000))",
+      "fr": "def steps_to_find(items, target):\n    steps = 0\n    for item in items:\n        steps += 1\n        if item == target:\n            return steps\n    return steps\n\nnumbers = list(range(1, 101))\nprint(steps_to_find(numbers, 70))\nprint(steps_to_find(numbers, 1000))"
+     },
+     "title": {
+      "en": "Challenge: find the biggest by hand",
+      "it": "Sfida: trova il più grande a mano",
+      "fr": "Défi : trouve le plus grand à la main"
+     },
+     "text": {
+      "en": "An algorithm is a recipe: clear steps that always come to an end. Looking at each item in turn is the simplest search; on a sorted list, binary search needs far fewer steps.\n\nThe best way to understand an algorithm is to write it yourself, without the ready-made helper.",
+      "it": "Un algoritmo è una ricetta: passi chiari che arrivano sempre a una fine. Guardare ogni elemento a turno è la ricerca più semplice; su una lista ordinata, la ricerca binaria ha bisogno di molti meno passi.\n\nIl modo migliore per capire un algoritmo è scriverlo da te, senza l'aiutante già pronto.",
+      "fr": "Un algorithme est une recette : des étapes claires qui finissent toujours. Regarder chaque élément à son tour est la recherche la plus simple ; sur une liste triée, la recherche binaire demande beaucoup moins d'étapes.\n\nLa meilleure façon de comprendre un algorithme est de l'écrire toi-même, sans l'outil tout prêt."
+     },
+     "see": {
+      "en": "70\n100",
+      "it": "70\n100",
+      "fr": "70\n100"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: write largest(items), which finds the biggest number with a loop, without max and without sorted. Show largest([4, 17, 9, 23, 8]) (23).",
+       "it": "Da una pagina vuota: scrivi largest(items), che trova il numero più grande con un ciclo, senza max e senza sorted. Mostra largest([4, 17, 9, 23, 8]) (23).",
+       "fr": "À partir d'une page vide : écris largest(items), qui trouve le plus grand nombre avec une boucle, sans max et sans sorted. Affiche largest([4, 17, 9, 23, 8]) (23)."
+      },
+      "hint": {
+       "en": "Keep the first item in a box: it is the biggest so far. Then look at each item: when one is bigger than what is in the box, it goes in the box. At the end, give the box back.",
+       "it": "Tieni il primo elemento in una scatola: è il più grande finora. Poi guarda ogni elemento: quando uno è più grande di quello nella scatola, va nella scatola. Alla fine, restituisci la scatola.",
+       "fr": "Garde le premier élément dans une boîte : c'est le plus grand jusqu'ici. Puis regarde chaque élément : quand l'un est plus grand que ce qu'il y a dans la boîte, il va dans la boîte. À la fin, rends la boîte."
+      },
+      "sol": {
+       "en": "def largest(items):\n    best = items[0]\n    for item in items:\n        if item > best:\n            best = item\n    return best\n\nprint(largest([4, 17, 9, 23, 8]))",
+       "it": "def largest(items):\n    best = items[0]\n    for item in items:\n        if item > best:\n            best = item\n    return best\n\nprint(largest([4, 17, 9, 23, 8]))",
+       "fr": "def largest(items):\n    best = items[0]\n    for item in items:\n        if item > best:\n            best = item\n    return best\n\nprint(largest([4, 17, 9, 23, 8]))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "23",
+        "c": "^(?![\\s\\S]*\\b(max|sorted|sort)\\b)",
+        "uses": [
+         "def",
+         "for",
+         "if"
+        ]
+       },
+       "it": {
+        "out": "23",
+        "c": "^(?![\\s\\S]*\\b(max|sorted|sort)\\b)",
+        "uses": [
+         "def",
+         "for",
+         "if"
+        ]
+       },
+       "fr": {
+        "out": "23",
+        "c": "^(?![\\s\\S]*\\b(max|sorted|sort)\\b)",
+        "uses": [
+         "def",
+         "for",
+         "if"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "23",
+       "it": "23",
+       "fr": "23"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "200\n(200, 8)\n(-1, 9)",
+        "70\n101",
+        "70\n100"
+       ],
+       "right": 2,
+       "why": [
+        "other",
+        "number",
+        ""
+       ]
+      },
+      "it": {
+       "options": [
+        "200\n(200, 8)\n(-1, 9)",
+        "70\n101",
+        "70\n100"
+       ],
+       "right": 2,
+       "why": [
+        "other",
+        "number",
+        ""
+       ]
+      },
+      "fr": {
+       "options": [
+        "200\n(200, 8)\n(-1, 9)",
+        "70\n101",
+        "70\n100"
+       ],
+       "right": 2,
+       "why": [
+        "other",
+        "number",
+        ""
+       ]
       }
      }
     }
@@ -33154,6 +33632,87 @@ window.PyvielCourse = {
         "other",
         "other"
        ]
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import asyncio\n\nasync def cook(dish, seconds):\n    print(\"start\", dish)\n    await asyncio.sleep(seconds)\n    print(\"ready\", dish)\n    return dish\n\nasync def main():\n    done = await asyncio.gather(cook(\"soup\", 0.02), cook(\"toast\", 0.01))\n    print(done)\n\nasyncio.run(main())",
+      "it": "import asyncio\n\nasync def cook(dish, seconds):\n    print(\"inizio\", dish)\n    await asyncio.sleep(seconds)\n    print(\"pronto\", dish)\n    return dish\n\nasync def main():\n    done = await asyncio.gather(cook(\"zuppa\", 0.02), cook(\"pane\", 0.01))\n    print(done)\n\nasyncio.run(main())",
+      "fr": "import asyncio\n\nasync def cook(dish, seconds):\n    print(\"début\", dish)\n    await asyncio.sleep(seconds)\n    print(\"prêt\", dish)\n    return dish\n\nasync def main():\n    done = await asyncio.gather(cook(\"soupe\", 0.02), cook(\"pain\", 0.01))\n    print(done)\n\nasyncio.run(main())"
+     },
+     "title": {
+      "en": "Challenge: two countdowns at once",
+      "it": "Sfida: due conti alla rovescia insieme",
+      "fr": "Défi : deux comptes à rebours en même temps"
+     },
+     "text": {
+      "en": "gather runs coroutines together: while one waits, the other works. The second dish is ready first because it waits less, but gather gives the results back in the order you asked for them.\n\nasync def makes a coroutine, await waits without stopping the others, and asyncio.run starts everything.",
+      "it": "gather fa girare le coroutine insieme: mentre una aspetta, l'altra lavora. Il secondo piatto è pronto prima perché aspetta meno, ma gather restituisce i risultati nell'ordine in cui li hai chiesti.\n\nasync def fa una coroutine, await aspetta senza fermare le altre, e asyncio.run fa partire tutto.",
+      "fr": "gather fait tourner les coroutines ensemble : pendant que l'une attend, l'autre travaille. Le deuxième plat est prêt d'abord parce qu'il attend moins, mais gather rend les résultats dans l'ordre où tu les as demandés.\n\nasync def fait une coroutine, await attend sans arrêter les autres, et asyncio.run lance tout."
+     },
+     "see": {
+      "en": "start soup\nstart toast\nready toast\nready soup\n['soup', 'toast']",
+      "it": "inizio zuppa\ninizio pane\npronto pane\npronto zuppa\n['zuppa', 'pane']",
+      "fr": "début soupe\ndébut pain\nprêt pain\nprêt soupe\n['soupe', 'pain']"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: write a coroutine countdown(name, n) that, from n down to 1, shows the name and the number and then waits 0.01 seconds. Run countdown(\"A\", 2) and countdown(\"B\", 2) together with gather. It must show A 2, B 2, A 1 and B 1, one per line.",
+       "it": "Da una pagina vuota: scrivi una coroutine countdown(name, n) che, da n giù fino a 1, mostra il nome e il numero e poi aspetta 0.01 secondi. Fai girare countdown(\"A\", 2) e countdown(\"B\", 2) insieme con gather. Deve mostrare A 2, B 2, A 1 e B 1, uno per riga.",
+       "fr": "À partir d'une page vide : écris une coroutine countdown(name, n) qui, de n jusqu'à 1, affiche le nom et le nombre puis attend 0.01 seconde. Lance countdown(\"A\", 2) et countdown(\"B\", 2) ensemble avec gather. Il doit afficher A 2, B 2, A 1 et B 1, un par ligne."
+      },
+      "hint": {
+       "en": "Inside countdown: a loop that goes down (a range with a step of -1), a print, then await with asyncio.sleep. A main coroutine waits for gather with the two calls, and asyncio.run starts main.",
+       "it": "Dentro countdown: un ciclo che scende (un range con un passo di -1), un print, poi await con asyncio.sleep. Una coroutine main aspetta gather con le due chiamate, e asyncio.run fa partire main.",
+       "fr": "Dans countdown : une boucle qui descend (un range avec un pas de -1), un print, puis await avec asyncio.sleep. Une coroutine main attend gather avec les deux appels, et asyncio.run lance main."
+      },
+      "sol": {
+       "en": "import asyncio\n\nasync def countdown(name, n):\n    for i in range(n, 0, -1):\n        print(name, i)\n        await asyncio.sleep(0.01)\n\nasync def main():\n    await asyncio.gather(countdown(\"A\", 2), countdown(\"B\", 2))\n\nasyncio.run(main())",
+       "it": "import asyncio\n\nasync def countdown(name, n):\n    for i in range(n, 0, -1):\n        print(name, i)\n        await asyncio.sleep(0.01)\n\nasync def main():\n    await asyncio.gather(countdown(\"A\", 2), countdown(\"B\", 2))\n\nasyncio.run(main())",
+       "fr": "import asyncio\n\nasync def countdown(name, n):\n    for i in range(n, 0, -1):\n        print(name, i)\n        await asyncio.sleep(0.01)\n\nasync def main():\n    await asyncio.gather(countdown(\"A\", 2), countdown(\"B\", 2))\n\nasyncio.run(main())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "A 2\nB 2\nA 1\nB 1",
+        "uses": [
+         "async",
+         "await",
+         ".gather"
+        ]
+       },
+       "it": {
+        "out": "A 2\nB 2\nA 1\nB 1",
+        "uses": [
+         "async",
+         "await",
+         ".gather"
+        ]
+       },
+       "fr": {
+        "out": "A 2\nB 2\nA 1\nB 1",
+        "uses": [
+         "async",
+         "await",
+         ".gather"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "A 2\nB 2\nA 1\nB 1",
+       "it": "A 2\nB 2\nA 1\nB 1",
+       "fr": "A 2\nB 2\nA 1\nB 1"
       }
      }
     }
@@ -34363,6 +34922,125 @@ window.PyvielCourse = {
        "fr": "one two\nthree four\nfive six"
       }
      }
+    },
+    {
+     "code": {
+      "en": "from collections import Counter, defaultdict\n\nwords = [\"apple\", \"avocado\", \"banana\", \"blueberry\", \"cherry\"]\nby_letter = defaultdict(list)\nfor word in words:\n    by_letter[word[0]].append(word)\nprint(by_letter[\"a\"])\nprint(by_letter[\"b\"])\nprint(Counter(\"banana\").most_common(1))",
+      "it": "from collections import Counter, defaultdict\n\nwords = [\"albicocca\", \"arancia\", \"banana\", \"biscotto\", \"ciliegia\"]\nby_letter = defaultdict(list)\nfor word in words:\n    by_letter[word[0]].append(word)\nprint(by_letter[\"a\"])\nprint(by_letter[\"b\"])\nprint(Counter(\"banana\").most_common(1))",
+      "fr": "from collections import Counter, defaultdict\n\nwords = [\"abricot\", \"ananas\", \"banane\", \"brioche\", \"cerise\"]\nby_letter = defaultdict(list)\nfor word in words:\n    by_letter[word[0]].append(word)\nprint(by_letter[\"a\"])\nprint(by_letter[\"b\"])\nprint(Counter(\"banane\").most_common(1))"
+     },
+     "title": {
+      "en": "Challenge: the most common letters",
+      "it": "Sfida: le lettere più frequenti",
+      "fr": "Défi : les lettres les plus fréquentes"
+     },
+     "text": {
+      "en": "collections has boxes made for common jobs: Counter counts, defaultdict starts every new key with an empty list (or 0), deque is a fast queue, namedtuple gives names to the parts of a tuple. itertools and functools have tools for loops and functions.\n\nBefore you write a long loop, ask: is there already a tool for this?",
+      "it": "collections ha scatole fatte per i lavori più comuni: Counter conta, defaultdict fa partire ogni chiave nuova con una lista vuota (o 0), deque è una coda veloce, namedtuple dà nomi alle parti di una tupla. itertools e functools hanno strumenti per i cicli e le funzioni.\n\nPrima di scrivere un ciclo lungo, chiediti: c'è già uno strumento per questo?",
+      "fr": "collections a des boîtes faites pour les tâches courantes : Counter compte, defaultdict commence chaque nouvelle clé avec une liste vide (ou 0), deque est une file rapide, namedtuple donne des noms aux parties d'un tuple. itertools et functools ont des outils pour les boucles et les fonctions.\n\nAvant d'écrire une longue boucle, demande-toi : y a-t-il déjà un outil pour ça ?"
+     },
+     "see": {
+      "en": "['apple', 'avocado']\n['banana', 'blueberry']\n[('a', 3)]",
+      "it": "['albicocca', 'arancia']\n['banana', 'biscotto']\n[('a', 3)]",
+      "fr": "['abricot', 'ananas']\n['banane', 'brioche']\n[('a', 2)]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: show the two most common letters of the word mississippi, each with how many times it appears: [('i', 4), ('s', 4)]",
+       "it": "Da una pagina vuota: mostra le due lettere più frequenti della parola mississippi, ognuna con quante volte compare: [('i', 4), ('s', 4)]",
+       "fr": "À partir d'une page vide : affiche les deux lettres les plus fréquentes du mot mississippi, chacune avec le nombre de fois où elle apparaît : [('i', 4), ('s', 4)]"
+      },
+      "hint": {
+       "en": "Counter counts every letter of a text in one go, and its method most_common takes how many you want.",
+       "it": "Counter conta ogni lettera di un testo in un colpo solo, e il suo metodo most_common prende quante ne vuoi.",
+       "fr": "Counter compte chaque lettre d'un texte d'un seul coup, et sa méthode most_common prend combien tu en veux."
+      },
+      "sol": {
+       "en": "from collections import Counter\n\nprint(Counter(\"mississippi\").most_common(2))",
+       "it": "from collections import Counter\n\nprint(Counter(\"mississippi\").most_common(2))",
+       "fr": "from collections import Counter\n\nprint(Counter(\"mississippi\").most_common(2))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[('i', 4), ('s', 4)]\n",
+        "uses": [
+         "Counter",
+         ".most_common"
+        ]
+       },
+       "it": {
+        "out": "[('i', 4), ('s', 4)]\n",
+        "uses": [
+         "Counter",
+         ".most_common"
+        ]
+       },
+       "fr": {
+        "out": "[('i', 4), ('s', 4)]\n",
+        "uses": [
+         "Counter",
+         ".most_common"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[('i', 4), ('s', 4)]",
+       "it": "[('i', 4), ('s', 4)]",
+       "fr": "[('i', 4), ('s', 4)]"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['apple', 'avocado']\n['banana', 'blueberry']\n[('a', 3)]",
+        "['apple', 'avocado']\n['banana', 'blueberry']\n[('a', 4)]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]"
+       ],
+       "right": 0,
+       "why": [
+        "",
+        "number",
+        "other"
+       ]
+      },
+      "it": {
+       "options": [
+        "['albicocca', 'arancia']\n['banana', 'biscotto']\n[('a', 4)]",
+        "['albicocca', 'arancia']\n['banana', 'biscotto']\n[('a', 3)]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]"
+       ],
+       "right": 1,
+       "why": [
+        "number",
+        "",
+        "other"
+       ]
+      },
+      "fr": {
+       "options": [
+        "['abricot', 'ananas']\n['banane', 'brioche']\n[('a', 2)]",
+        "['abricot', 'ananas']\n['banane', 'brioche']\n[('a', 3)]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]"
+       ],
+       "right": 0,
+       "why": [
+        "",
+        "number",
+        "other"
+       ]
+      }
+     }
     }
    ]
   },
@@ -34798,6 +35476,87 @@ window.PyvielCourse = {
        "fr": []
       }
      }
+    },
+    {
+     "code": {
+      "en": "def average(numbers):\n    return sum(numbers) / len(numbers)\n\nassert average([2, 4]) == 3\nassert average([5]) == 5\nassert average([1, 2, 3, 4]) == 2.5\nprint(\"average works\")",
+      "it": "def average(numbers):\n    return sum(numbers) / len(numbers)\n\nassert average([2, 4]) == 3\nassert average([5]) == 5\nassert average([1, 2, 3, 4]) == 2.5\nprint(\"average funziona\")",
+      "fr": "def average(numbers):\n    return sum(numbers) / len(numbers)\n\nassert average([2, 4]) == 3\nassert average([5]) == 5\nassert average([1, 2, 3, 4]) == 2.5\nprint(\"average marche\")"
+     },
+     "title": {
+      "en": "Challenge: promises for a function",
+      "it": "Sfida: promesse per una funzione",
+      "fr": "Défi : des promesses pour une fonction"
+     },
+     "text": {
+      "en": "A test is a small program that checks a bigger one. assert says what must be true: if it is not, the program stops and tells you where. When all the promises hold, you can change the code without fear.\n\nWrite the promises first, then the function: you will know when you are done.",
+      "it": "Un test è un piccolo programma che controlla un programma più grande. assert dice cosa deve essere vero: se non lo è, il programma si ferma e ti dice dove. Quando tutte le promesse tengono, puoi cambiare il codice senza paura.\n\nScrivi prima le promesse, poi la funzione: saprai quando hai finito.",
+      "fr": "Un test est un petit programme qui vérifie un programme plus grand. assert dit ce qui doit être vrai : si ce n'est pas le cas, le programme s'arrête et te dit où. Quand toutes les promesses tiennent, tu peux changer le code sans crainte.\n\nÉcris d'abord les promesses, puis la fonction : tu sauras quand tu as fini."
+     },
+     "see": {
+      "en": "average works",
+      "it": "average funziona",
+      "fr": "average marche"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: write is_even(n), which gives back True for even numbers. Under it, three assert lines: 2 is even, 7 is not, and 0 is even. Then show: All tests passed",
+       "it": "Da una pagina vuota: scrivi is_even(n), che restituisce True per i numeri pari. Sotto, tre righe assert: 2 è pari, 7 no, e 0 è pari. Poi mostra: Tutti i test passati",
+       "fr": "À partir d'une page vide : écris is_even(n), qui rend True pour les nombres pairs. Dessous, trois lignes assert : 2 est pair, 7 ne l'est pas, et 0 est pair. Puis affiche : Tous les tests sont passés"
+      },
+      "hint": {
+       "en": "% 2 gives 0 for even numbers. Each assert is followed by something that must be True; for 7, put not in front of the call.",
+       "it": "% 2 dà 0 per i numeri pari. Ogni assert è seguito da qualcosa che deve essere True; per 7, metti not davanti alla chiamata.",
+       "fr": "% 2 donne 0 pour les nombres pairs. Chaque assert est suivi de quelque chose qui doit être True ; pour 7, mets not devant l'appel."
+      },
+      "sol": {
+       "en": "def is_even(n):\n    return n % 2 == 0\n\nassert is_even(2)\nassert not is_even(7)\nassert is_even(0)\nprint(\"All tests passed\")",
+       "it": "def is_even(n):\n    return n % 2 == 0\n\nassert is_even(2)\nassert not is_even(7)\nassert is_even(0)\nprint(\"Tutti i test passati\")",
+       "fr": "def is_even(n):\n    return n % 2 == 0\n\nassert is_even(2)\nassert not is_even(7)\nassert is_even(0)\nprint(\"Tous les tests sont passés\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "All tests passed",
+        "c": "(assert[\\s\\S]*){3}",
+        "uses": [
+         "def",
+         "assert"
+        ]
+       },
+       "it": {
+        "out": "Tutti i test passati",
+        "c": "(assert[\\s\\S]*){3}",
+        "uses": [
+         "def",
+         "assert"
+        ]
+       },
+       "fr": {
+        "out": "Tous les tests sont passés",
+        "c": "(assert[\\s\\S]*){3}",
+        "uses": [
+         "def",
+         "assert"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "All tests passed",
+       "it": "Tutti i test passati",
+       "fr": "Tous les tests sont passés"
+      }
+     }
     }
    ]
   },
@@ -35207,6 +35966,128 @@ window.PyvielCourse = {
        "options": [
         "banana\nNone\n13 ['Ada', 'Max']",
         "banana\nNone\n12 ['Ada', 'Max']",
+        "12 4 6"
+       ],
+       "right": 1,
+       "why": [
+        "number",
+        "",
+        "other"
+       ]
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "PRICES = [2.5, 4.0, 1.25]\n\ndef total(prices: list[float]) -> float:\n    return sum(prices)\n\ndef main() -> None:\n    print(f\"Total: {total(PRICES):.2f}\")\n\nif __name__ == \"__main__\":\n    main()",
+      "it": "PRICES = [2.5, 4.0, 1.25]\n\ndef total(prices: list[float]) -> float:\n    return sum(prices)\n\ndef main() -> None:\n    print(f\"Total: {total(PRICES):.2f}\")\n\nif __name__ == \"__main__\":\n    main()",
+      "fr": "PRICES = [2.5, 4.0, 1.25]\n\ndef total(prices: list[float]) -> float:\n    return sum(prices)\n\ndef main() -> None:\n    print(f\"Total: {total(PRICES):.2f}\")\n\nif __name__ == \"__main__\":\n    main()"
+     },
+     "title": {
+      "en": "Challenge: a tidy little program",
+      "it": "Sfida: un piccolo programma in ordine",
+      "fr": "Défi : un petit programme bien rangé"
+     },
+     "text": {
+      "en": "A program you can be proud of reads like a story: constants at the top in CAPITALS, small functions with clear names and type hints, and a main() that tells what happens, started by the main guard.\n\nNone of this changes what the program does. It changes how easy it is to read, to test, and to change next month.",
+      "it": "Un programma di cui andare fieri si legge come una storia: costanti in cima in MAIUSCOLO, piccole funzioni con nomi chiari e type hint, e un main() che racconta cosa succede, fatto partire dalla main guard.\n\nNiente di questo cambia cosa fa il programma. Cambia quanto è facile leggerlo, provarlo e cambiarlo il mese prossimo.",
+      "fr": "Un programme dont tu peux être fier se lit comme une histoire : des constantes en haut en MAJUSCULES, de petites fonctions aux noms clairs avec des type hints, et un main() qui raconte ce qui se passe, lancé par la main guard.\n\nRien de tout cela ne change ce que fait le programme. Cela change la facilité à le lire, à le tester, et à le changer le mois prochain."
+     },
+     "see": {
+      "en": "Total: 7.75",
+      "it": "Total: 7.75",
+      "fr": "Total: 7.75"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From an empty page: a constant NAMES with the list [\"ada\", \"bo\"]; a function greet(name: str) -> str that gives back Hello, and the name with a capital letter (Hello, Ada); and a main() that shows the greeting of each name, started by the main guard.",
+       "it": "Da una pagina vuota: una costante NAMES con la lista [\"ada\", \"bo\"]; una funzione greet(name: str) -> str che restituisce Ciao, e il nome con la maiuscola (Ciao, Ada); e un main() che mostra il saluto di ogni nome, fatto partire dalla main guard.",
+       "fr": "À partir d'une page vide : une constante NAMES avec la liste [\"ada\", \"bo\"] ; une fonction greet(name: str) -> str qui rend Bonjour, et le nom avec une majuscule (Bonjour, Ada) ; et un main() qui affiche la salutation de chaque nom, lancé par la main guard."
+      },
+      "hint": {
+       "en": "Three parts, from the top: the constant in capitals; the function with its type hints (title gives a capital letter); main with a for loop. At the very end, the if that asks about __name__ calls main.",
+       "it": "Tre parti, dall'alto: la costante in maiuscolo; la funzione con i suoi type hint (title dà la maiuscola); main con un ciclo for. Proprio alla fine, l'if che chiede di __name__ chiama main.",
+       "fr": "Trois parties, du haut : la constante en majuscules ; la fonction avec ses type hints (title donne une majuscule) ; main avec une boucle for. Tout à la fin, le if qui demande __name__ appelle main."
+      },
+      "sol": {
+       "en": "NAMES = [\"ada\", \"bo\"]\n\ndef greet(name: str) -> str:\n    return \"Hello, \" + name.title()\n\ndef main() -> None:\n    for name in NAMES:\n        print(greet(name))\n\nif __name__ == \"__main__\":\n    main()",
+       "it": "NAMES = [\"ada\", \"bo\"]\n\ndef greet(name: str) -> str:\n    return \"Ciao, \" + name.title()\n\ndef main() -> None:\n    for name in NAMES:\n        print(greet(name))\n\nif __name__ == \"__main__\":\n    main()",
+       "fr": "NAMES = [\"ada\", \"bo\"]\n\ndef greet(name: str) -> str:\n    return \"Bonjour, \" + name.title()\n\ndef main() -> None:\n    for name in NAMES:\n        print(greet(name))\n\nif __name__ == \"__main__\":\n    main()"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Hello, Ada\nHello, Bo",
+        "c": "->[\\s\\S]*__name__",
+        "uses": [
+         "def",
+         "for"
+        ]
+       },
+       "it": {
+        "out": "Ciao, Ada\nCiao, Bo",
+        "c": "->[\\s\\S]*__name__",
+        "uses": [
+         "def",
+         "for"
+        ]
+       },
+       "fr": {
+        "out": "Bonjour, Ada\nBonjour, Bo",
+        "c": "->[\\s\\S]*__name__",
+        "uses": [
+         "def",
+         "for"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Hello, Ada\nHello, Bo",
+       "it": "Ciao, Ada\nCiao, Bo",
+       "fr": "Bonjour, Ada\nBonjour, Bo"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Total: 7.76",
+        "Total: 7.75",
+        "12 4 6"
+       ],
+       "right": 1,
+       "why": [
+        "number",
+        "",
+        "other"
+       ]
+      },
+      "it": {
+       "options": [
+        "Total: 7.76",
+        "Total: 7.75",
+        "12 4 6"
+       ],
+       "right": 1,
+       "why": [
+        "number",
+        "",
+        "other"
+       ]
+      },
+      "fr": {
+       "options": [
+        "Total: 7.76",
+        "Total: 7.75",
         "12 4 6"
        ],
        "right": 1,

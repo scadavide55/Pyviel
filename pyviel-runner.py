@@ -122,6 +122,7 @@ _STATEMENTS = {
     ast.GeneratorExp: "comprehension", ast.JoinedStr: "f-string", ast.Subscript: "[]", ast.Slice: "slice",
     ast.Dict: "dict", ast.List: "list", ast.Tuple: "tuple", ast.Set: "set", ast.IfExp: "if-else",
     ast.Assert: "assert", ast.Global: "global", ast.Nonlocal: "nonlocal", ast.Await: "await",
+    ast.Match: "match", ast.AsyncFunctionDef: "async",
 }
 
 

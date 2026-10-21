@@ -117,6 +117,32 @@ window.PyvielCourse = {
        "it": "Buongiorno",
        "fr": "Bonne journée"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "\"Hello!\"",
+        "Hello!",
+        "Hello!\nMy name is Pyviel.\nNice to meet you."
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Ciao!\nMi chiamo Pyviel.\nPiacere di conoscerti.",
+        "Ciao!",
+        "\"Ciao!\""
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour!",
+        "Bonjour!\nJe m'appelle Pyviel.\nRavi de te rencontrer.",
+        "\"Bonjour!\""
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -181,6 +207,32 @@ window.PyvielCourse = {
        "en": [],
        "it": [],
        "fr": []
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello!\nMy name is Pyviel.\nNice to meet you.",
+        "Hello!",
+        "\"Hello!\"\n\"My name is Pyviel.\"\n\"Nice to meet you.\""
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "\"Ciao!\"\n\"Mi chiamo Pyviel.\"\n\"Piacere di conoscerti.\"",
+        "Ciao!\nMi chiamo Pyviel.\nPiacere di conoscerti.",
+        "Ciao!"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour!",
+        "\"Bonjour!\"\nJe m'appelle Pyviel.\n\"Ravi de te rencontrer.\"",
+        "Bonjour!\nJe m'appelle Pyviel.\nRavi de te rencontrer."
+       ],
+       "right": 2
       }
      }
     },
@@ -291,6 +343,32 @@ window.PyvielCourse = {
        "it": "42",
        "fr": "42"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "The answer is\n7\n5",
+        "The answer is\n7\n2 + 3",
+        "\"The answer is\"\n7\n5"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "\"La risposta è\"\n7\n5",
+        "La risposta è\n7\n5",
+        "La risposta è\n7\n2 + 3"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "La réponse est\n7\n5",
+        "\"La réponse est\"\n7\n5",
+        "La réponse est\n7\n2 + 3"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -375,6 +453,32 @@ window.PyvielCourse = {
        "en": "Hi",
        "it": "Salve",
        "fr": "Salut"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "The note above is invisible.",
+        "\"The note above is invisible.\"",
+        "Hello!"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "La nota qui sopra è invisibile.",
+        "Ciao!",
+        "\"La nota qui sopra è invisibile.\""
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "La note au-dessus est invisible.",
+        "Bonjour!",
+        "\"La note au-dessus est invisible.\""
+       ],
+       "right": 0
       }
      }
     },
@@ -511,6 +615,32 @@ window.PyvielCourse = {
        "it": [],
        "fr": []
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hi, I am Pyviel.\nI can count:\n40 + 2",
+        "\"Hi, I am Pyviel.\"\n\"I can count:\"\n42",
+        "Hi, I am Pyviel.\nI can count:\n42"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "\"Ciao, sono Pyviel.\"\n\"So contare:\"\n42",
+        "Ciao, sono Pyviel.\nSo contare:\n42",
+        "Ciao, sono Pyviel.\nSo contare:\n40 + 2"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "\"Salut, je suis Pyviel.\"\n\"Je sais compter :\"\n42",
+        "Salut, je suis Pyviel.\nJe sais compter :\n40 + 2",
+        "Salut, je suis Pyviel.\nJe sais compter :\n42"
+       ],
+       "right": 2
+      }
      }
     }
    ]
@@ -624,6 +754,32 @@ window.PyvielCourse = {
        "it": "Luna\nLuna",
        "fr": "Lune\nLune"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Ada\nAda",
+        "7\n8\n9",
+        "Ada\n12\n100"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Ada\nAda",
+        "7\n8\n9",
+        "Ada\n12\n100"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Ada\nAda",
+        "7\n8\n9",
+        "Ada\n12\n100"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -702,6 +858,32 @@ window.PyvielCourse = {
        "it": "15",
        "fr": "15"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "7\n8\n9",
+        "Ada\nAda",
+        "7\n8\n10"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "7\n8\n9",
+        "Ada\nAda",
+        "7\n8\n10"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "7\n8\n9",
+        "Ada\nAda",
+        "7\n8\n10"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -774,6 +956,32 @@ window.PyvielCourse = {
        "en": "blue",
        "it": "blu",
        "fr": "bleu"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Ada\n12\n100",
+        "Ada\n12\n101",
+        "Ada\nAda"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Ada\n12\n100",
+        "Ada\n12\n101",
+        "Ada\nAda"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Ada\n12\n100",
+        "Ada\n12\n101",
+        "Ada\nAda"
+       ],
+       "right": 0
       }
      }
     },
@@ -865,6 +1073,32 @@ window.PyvielCourse = {
        "en": "Ada is 12 years old",
        "it": "Ada ha 12 anni",
        "fr": "Ada a 12 ans"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Ada is 12 years old\nHello Ada",
+        "Ada\nAda",
+        "Ada is 13 years old\nHello Ada"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Ada\nAda",
+        "Ada ha 12 anni\nCiao Ada",
+        "Ada ha 13 anni\nCiao Ada"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Ada\nAda",
+        "Ada a 12 ans\nBonjour Ada",
+        "Ada a 13 ans\nBonjour Ada"
+       ],
+       "right": 1
       }
      }
     },
@@ -1132,6 +1366,32 @@ window.PyvielCourse = {
        "it": "ciao",
        "fr": "salut"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Double quotes\nSingle quotes",
+        "It's a nice day\nShe said \"hello\" to me",
+        "\"Double quotes\"\n'Single quotes'"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "\"Virgolette doppie\"\n'Virgolette singole'",
+        "Virgolette doppie\nVirgolette singole",
+        "L'albero è alto\nHa detto \"ciao\" a tutti"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "C'est une belle journée\nIl a dit \"salut\" à tout le monde",
+        "\"Guillemets doubles\"\n'Guillemets simples'",
+        "Guillemets doubles\nGuillemets simples"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -1197,6 +1457,32 @@ window.PyvielCourse = {
        "en": "He said \"wow\"",
        "it": "Ha detto \"wow\"",
        "fr": "Il a dit \"wow\""
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Double quotes\nSingle quotes",
+        "It's a nice day\nShe said \"hello\" to me",
+        "Pyviel\nHello, Ada"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Virgolette doppie\nVirgolette singole",
+        "L'albero è alto\nHa detto \"ciao\" a tutti",
+        "Pyviel\nCiao, Ada"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Guillemets doubles\nGuillemets simples",
+        "C'est une belle journée\nIl a dit \"salut\" à tout le monde",
+        "Pyviel\nBonjour, Ada"
+       ],
+       "right": 1
       }
      }
     },
@@ -1286,6 +1572,32 @@ window.PyvielCourse = {
        "en": "Python",
        "it": "Python",
        "fr": "Python"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Double quotes\nSingle quotes",
+        "Pyviel\nHello, Ada",
+        "It's a nice day\nShe said \"hello\" to me"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Pyviel\nCiao, Ada",
+        "Virgolette doppie\nVirgolette singole",
+        "L'albero è alto\nHa detto \"ciao\" a tutti"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Pyviel\nBonjour, Ada",
+        "C'est une belle journée\nIl a dit \"salut\" à tout le monde",
+        "Guillemets doubles\nGuillemets simples"
+       ],
+       "right": 0
       }
      }
     },
@@ -1381,6 +1693,32 @@ window.PyvielCourse = {
        "it": "**********",
        "fr": "**********"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "\"Ha\" * 3\n\"-\" * 20\n\"ab\" * 2 + \"c\"",
+        "Double quotes\nSingle quotes",
+        "HaHaHa\n--------------------\nababc"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "\"Ha\" * 3\n\"-\" * 20\n\"ab\" * 2 + \"c\"",
+        "Virgolette doppie\nVirgolette singole",
+        "HaHaHa\n--------------------\nababc"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "\"Ha\" * 3\n\"-\" * 20\n\"ab\" * 2 + \"c\"",
+        "Guillemets doubles\nGuillemets simples",
+        "HaHaHa\n--------------------\nababc"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -1466,6 +1804,32 @@ window.PyvielCourse = {
        "it": "6",
        "fr": "6"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Double quotes\nSingle quotes",
+        "6\n8\n0",
+        "6\n8\n1"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Virgolette doppie\nVirgolette singole",
+        "6\n12\n0",
+        "6\n12\n1"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "6\n19\n0",
+        "Guillemets doubles\nGuillemets simples",
+        "6\n19\n1"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -1534,6 +1898,32 @@ window.PyvielCourse = {
        "en": "hahaha!\n7",
        "it": "hahaha!\n7",
        "fr": "hahaha!\n7"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello world\n-----------\nIt's 11 letters long",
+        "Hello world\n-----------\nIt's 12 letters long",
+        "Double quotes\nSingle quotes"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Ciao mondo\n----------\nSono 10 caratteri",
+        "Ciao mondo\n----------\nSono 11 caratteri",
+        "Virgolette doppie\nVirgolette singole"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Bonjour le monde\n----------------\nC'est long de 17 caractères",
+        "Guillemets doubles\nGuillemets simples",
+        "Bonjour le monde\n----------------\nC'est long de 16 caractères"
+       ],
+       "right": 2
       }
      }
     }
@@ -1639,6 +2029,32 @@ window.PyvielCourse = {
        "it": "Ciao\nMondo",
        "fr": "Bonjour\nMonde"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "She said \"hi\"\nA backslash: \\",
+        "Line one\nLine two\nName:\tAda",
+        "P\nt\nn"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "P\nt\nn",
+        "Ha detto \"ciao\"\nUna barra rovesciata: \\",
+        "Riga uno\nRiga due\nNome:\tAda"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "P\nt\nn",
+        "Ligne un\nLigne deux\nNom :\tAda",
+        "Il a dit \"salut\"\nUne barre oblique inversée : \\"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -1707,6 +2123,32 @@ window.PyvielCourse = {
        "en": "She said \"ok\"",
        "it": "Ha detto \"ok\"",
        "fr": "Il a dit \"ok\""
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "She said \"hi\"\nA backslash: \\",
+        "Line one\nLine two\nName:\tAda",
+        "She said \"hi\"\n\"A backslash: \\\\\""
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Ha detto \"ciao\"\nUna barra rovesciata: \\",
+        "Ha detto \"ciao\"\n\"Una barra rovesciata: \\\\\"",
+        "Riga uno\nRiga due\nNome:\tAda"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Il a dit \"salut\"\nUne barre oblique inversée : \\",
+        "Il a dit \"salut\"\n\"Une barre oblique inversée : \\\\\"",
+        "Ligne un\nLigne deux\nNom :\tAda"
+       ],
+       "right": 0
       }
      }
     },
@@ -1877,6 +2319,32 @@ window.PyvielCourse = {
        "it": "n",
        "fr": "n"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Line one\nLine two\nName:\tAda",
+        "She said \"hi\"\nA backslash: \\",
+        "P\nt\nn"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Riga uno\nRiga due\nNome:\tAda",
+        "Ha detto \"ciao\"\nUna barra rovesciata: \\",
+        "P\nt\nn"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Ligne un\nLigne deux\nNom :\tAda",
+        "Il a dit \"salut\"\nUne barre oblique inversée : \\",
+        "P\nt\nn"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -1961,6 +2429,32 @@ window.PyvielCourse = {
        "en": "a",
        "it": "a",
        "fr": "e"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Line one\nLine two\nName:\tAda",
+        "n\no",
+        "She said \"hi\"\nA backslash: \\"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Riga uno\nRiga due\nNome:\tAda",
+        "n\no",
+        "Ha detto \"ciao\"\nUna barra rovesciata: \\"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Ligne un\nLigne deux\nNom :\tAda",
+        "n\no",
+        "Il a dit \"salut\"\nUne barre oblique inversée : \\"
+       ],
+       "right": 1
       }
      }
     },
@@ -2234,6 +2728,32 @@ window.PyvielCourse = {
        "it": "1440",
        "fr": "1440"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10\n4\n21",
+        "7 + 3\n7 - 3\n7 * 3",
+        "10\n4\n22"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "10\n4\n21",
+        "7 + 3\n7 - 3\n7 * 3",
+        "10\n4\n22"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "10\n4\n21",
+        "7 + 3\n7 - 3\n7 * 3",
+        "10\n4\n22"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -2324,6 +2844,32 @@ window.PyvielCourse = {
        "en": "4.0",
        "it": "4.0",
        "fr": "4.0"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "3.5\n3.0\n0.26",
+        "7 / 2\n6 / 2\n1 / 4",
+        "3.5\n3.0\n0.25"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "3.5\n3.0\n0.26",
+        "7 / 2\n6 / 2\n1 / 4",
+        "3.5\n3.0\n0.25"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "3.5\n3.0\n0.26",
+        "7 / 2\n6 / 2\n1 / 4",
+        "3.5\n3.0\n0.25"
+       ],
+       "right": 2
       }
      }
     },
@@ -2522,6 +3068,32 @@ window.PyvielCourse = {
        "it": "81",
        "fr": "81"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "2 ** 3\n2 ** 10\n10 ** 6",
+        "8\n1024\n1000001",
+        "8\n1024\n1000000"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "2 ** 3\n2 ** 10\n10 ** 6",
+        "8\n1024\n1000001",
+        "8\n1024\n1000000"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "2 ** 3\n2 ** 10\n10 ** 6",
+        "8\n1024\n1000001",
+        "8\n1024\n1000000"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -2616,6 +3188,32 @@ window.PyvielCourse = {
        "it": "9",
        "fr": "9"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "14\n20\n5",
+        "2 + 3 * 4\n(2 + 3) * 4\n10 - 2 - 3",
+        "14\n20\n6"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "14\n20\n5",
+        "2 + 3 * 4\n(2 + 3) * 4\n10 - 2 - 3",
+        "14\n20\n6"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "14\n20\n5",
+        "2 + 3 * 4\n(2 + 3) * 4\n10 - 2 - 3",
+        "14\n20\n6"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -2707,6 +3305,32 @@ window.PyvielCourse = {
        "it": "3.75",
        "fr": "3.75"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10\n4\n21",
+        "3.14159\n2.5 + 1.25\n0.1 + 0.2",
+        "3.14159\n3.75\n0.30000000000000004"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "10\n4\n21",
+        "3.14159\n2.5 + 1.25\n0.1 + 0.2",
+        "3.14159\n3.75\n0.30000000000000004"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "10\n4\n21",
+        "3.14159\n2.5 + 1.25\n0.1 + 0.2",
+        "3.14159\n3.75\n0.30000000000000004"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -2795,6 +3419,32 @@ window.PyvielCourse = {
        "en": "9.9",
        "it": "9.9",
        "fr": "9.9"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10\n4\n21",
+        "3.14\n3\n3",
+        "3.14\n3\n2"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "10\n4\n21",
+        "3.14\n3\n3",
+        "3.14\n3\n2"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "10\n4\n21",
+        "3.14\n3\n3",
+        "3.14\n3\n2"
+       ],
+       "right": 2
       }
      }
     },
@@ -2909,6 +3559,32 @@ window.PyvielCourse = {
        "it": "30",
        "fr": "30"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "5\n2\n10",
+        "10\n4\n21",
+        "5\n2\n9"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "5\n2\n10",
+        "10\n4\n21",
+        "5\n2\n9"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "5\n2\n10",
+        "10\n4\n21",
+        "5\n2\n9"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -3008,6 +3684,32 @@ window.PyvielCourse = {
        "it": "130",
        "fr": "130"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "5\n11",
+        "5\n10",
+        "10\n4\n21"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "5\n11",
+        "5\n10",
+        "10\n4\n21"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "5\n11",
+        "5\n10",
+        "10\n4\n21"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -3076,6 +3778,32 @@ window.PyvielCourse = {
        "en": "3\n2",
        "it": "3\n2",
        "fr": "3\n2"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "29\n2 9",
+        "29\n2 10",
+        "10\n4\n21"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "29\n2 9",
+        "29\n2 10",
+        "10\n4\n21"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "29\n2 9",
+        "29\n2 10",
+        "10\n4\n21"
+       ],
+       "right": 0
       }
      }
     }
@@ -3260,6 +3988,32 @@ window.PyvielCourse = {
        "it": "1234",
        "fr": "1234"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "55\n10\n555",
+        "\"5\" + \"5\"\n5 + 5\n\"5\" * 3",
+        "55\n10\n556"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "55\n10\n555",
+        "\"5\" + \"5\"\n5 + 5\n\"5\" * 3",
+        "55\n10\n556"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "55\n10\n555",
+        "\"5\" + \"5\"\n5 + 5\n\"5\" * 3",
+        "55\n10\n556"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -3371,6 +4125,32 @@ window.PyvielCourse = {
        "it": "30",
        "fr": "30"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "43\n5.0\n9",
+        "55\n10\n555",
+        "43\n5.0\n10"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "43\n5.0\n9",
+        "55\n10\n555",
+        "43\n5.0\n10"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "43\n5.0\n9",
+        "55\n10\n555",
+        "43\n5.0\n10"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -3455,6 +4235,32 @@ window.PyvielCourse = {
        "en": "5 apples",
        "it": "5 mele",
        "fr": "5 pommes"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "7 days\nI have 3 cats",
+        "7 days\n\"I have \" + str(3) + \" cats\"",
+        "7 days\nI have 4 cats"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "7 giorni\nHo 3 gatti",
+        "7 giorni\nHo 4 gatti",
+        "7 giorni\n\"Ho \" + str(3) + \" gatti\""
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "7 jours\nJ'ai 4 chats",
+        "7 jours\nJ'ai 3 chats",
+        "7 jours\n\"J'ai \" + str(3) + \" chats\""
+       ],
+       "right": 1
       }
      }
     },
@@ -3603,6 +4409,32 @@ window.PyvielCourse = {
        "en": "Next year: 13",
        "it": "L'anno prossimo: 13",
        "fr": "L'an prochain : 13"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Total: 16\n<class 'str'> <class 'int'>",
+        "55\n10\n555",
+        "Total: 15\n<class 'str'> <class 'int'>"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Total: 16\n<class 'str'> <class 'int'>",
+        "55\n10\n555",
+        "Total: 15\n<class 'str'> <class 'int'>"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Total: 16\n<class 'str'> <class 'int'>",
+        "55\n10\n555",
+        "Total: 15\n<class 'str'> <class 'int'>"
+       ],
+       "right": 2
       }
      }
     }
@@ -4146,6 +4978,32 @@ window.PyvielCourse = {
        "it": "Ada ha 13 anni",
        "fr": "Ada a 13 ans"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Ada is 12 years old",
+        "Ada is 13 years old",
+        "3 x 4 = 12\nHalf of 4 is 2.0"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Ada ha 13 anni",
+        "Ada ha 12 anni",
+        "3 x 4 = 12\nLa metà di 4 è 2.0"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Ada a 13 ans",
+        "3 x 4 = 12\nLa moitié de 4 est 2.0",
+        "Ada a 12 ans"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -4214,6 +5072,32 @@ window.PyvielCourse = {
        "en": "The area is 24",
        "it": "L'area è 24",
        "fr": "L'aire est 24"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "3 x 4 = 12\nHalf of 4 is 2.1",
+        "3 x 4 = 12\nHalf of 4 is 2.0",
+        "Ada is 12 years old"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "3 x 4 = 12\nLa metà di 4 è 2.0",
+        "3 x 4 = 12\nLa metà di 4 è 2.1",
+        "Ada ha 12 anni"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Ada a 12 ans",
+        "3 x 4 = 12\nLa moitié de 4 est 2.0",
+        "3 x 4 = 12\nLa moitié de 4 est 2.1"
+       ],
+       "right": 1
       }
      }
     },
@@ -4300,6 +5184,32 @@ window.PyvielCourse = {
        "it": "7.00",
        "fr": "7.00"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "3.14\n3.1416\nPrice: 2.51",
+        "3.14\n3.1416\nPrice: 2.50",
+        "Ada is 12 years old"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "3.14\n3.1416\nPrezzo: 2.50",
+        "Ada ha 12 anni",
+        "3.14\n3.1416\nPrezzo: 2.51"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "3.14\n3.1416\nPrix : 2.51",
+        "3.14\n3.1416\nPrix : 2.50",
+        "Ada a 12 ans"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -4384,6 +5294,32 @@ window.PyvielCourse = {
        "en": "1,234,567",
        "it": "1,234,567",
        "fr": "1,234,567"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "1,234,567\n8\nleft    |   right|",
+        "1,234,567\n007\nleft    |   right|",
+        "Ada is 12 years old"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "1,234,567\n8\nsinistra|  destra|",
+        "Ada ha 12 anni",
+        "1,234,567\n007\nsinistra|  destra|"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "1,234,567\n007\ngauche  |  droite|",
+        "Ada a 12 ans",
+        "1,234,567\n8\ngauche  |  droite|"
+       ],
+       "right": 0
       }
      }
     },
@@ -4645,6 +5581,32 @@ window.PyvielCourse = {
        "it": "False",
        "fr": "False"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue",
+        "True\nTrue\nFalse"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue",
+        "True\nTrue\nFalse"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue",
+        "True\nTrue\nFalse"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -4748,6 +5710,32 @@ window.PyvielCourse = {
        "it": "True",
        "fr": "True"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -4847,6 +5835,32 @@ window.PyvielCourse = {
        "it": "True",
        "fr": "True"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -4915,6 +5929,32 @@ window.PyvielCourse = {
        "en": "False",
        "it": "False",
        "fr": "False"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "True\nTrue\nFalse",
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 2
       }
      }
     },
@@ -5000,6 +6040,32 @@ window.PyvielCourse = {
        "en": "True",
        "it": "True",
        "fr": "True"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue",
+        "True\nTrue\nFalse"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue",
+        "True\nTrue\nFalse"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse"
+       ],
+       "right": 0
       }
      }
     },
@@ -5114,6 +6180,32 @@ window.PyvielCourse = {
        "it": "True",
        "fr": "True"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nFalse",
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -5182,6 +6274,32 @@ window.PyvielCourse = {
        "en": "True",
        "it": "True",
        "fr": "True"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse",
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "True\nFalse",
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "True\nFalse",
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse"
+       ],
+       "right": 0
       }
      }
     },
@@ -5271,6 +6389,32 @@ window.PyvielCourse = {
        "en": "True",
        "it": "True",
        "fr": "True"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse",
+        "False True\nFalse True\nTrue"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nTrue",
+        "False True\nFalse True\nTrue",
+        "True\nFalse\nFalse"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nFalse",
+        "False True\nFalse True\nTrue",
+        "True\nFalse\nTrue"
+       ],
+       "right": 1
       }
      }
     },
@@ -5369,6 +6513,32 @@ window.PyvielCourse = {
        "it": "None",
        "fr": "None"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "None\n<class 'NoneType'>\nFalse",
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "None\n<class 'NoneType'>\nFalse",
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "None\n<class 'NoneType'>\nFalse",
+        "True\nFalse\nFalse",
+        "True\nFalse\nTrue"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -5437,6 +6607,32 @@ window.PyvielCourse = {
        "en": "True",
        "it": "True",
        "fr": "True"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "True\nTrue\nFalse",
+        "True\nFalse\nTrue",
+        "True\nFalse\nFalse"
+       ],
+       "right": 0
       }
      }
     }
@@ -5542,6 +6738,32 @@ window.PyvielCourse = {
        "it": "Benvenuto",
        "fr": "Bienvenue"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "B",
+        "Too young, sorry",
+        "You can come in\nThe end"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "B",
+        "Troppo piccolo, scusa",
+        "Puoi entrare\nFine"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "B",
+        "Tu peux entrer\nFin",
+        "Trop jeune, désolé"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -5626,6 +6848,32 @@ window.PyvielCourse = {
        "en": "Child",
        "it": "Bambino",
        "fr": "Enfant"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Too young, sorry",
+        "You can come in\nThe end",
+        "B"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Troppo piccolo, scusa",
+        "Puoi entrare\nFine",
+        "B"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Tu peux entrer\nFin",
+        "B",
+        "Trop jeune, désolé"
+       ],
+       "right": 2
       }
      }
     },
@@ -5712,6 +6960,32 @@ window.PyvielCourse = {
        "it": "C",
        "fr": "C"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "You can come in\nThe end",
+        "Too young, sorry",
+        "B"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Puoi entrare\nFine",
+        "Troppo piccolo, scusa",
+        "B"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Tu peux entrer\nFin",
+        "Trop jeune, désolé",
+        "B"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -5781,6 +7055,32 @@ window.PyvielCourse = {
        "it": "Ok",
        "fr": "Ok"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Welcome to the show",
+        "Too young, sorry",
+        "You can come in\nThe end"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Puoi entrare\nFine",
+        "Benvenuto allo spettacolo",
+        "Troppo piccolo, scusa"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Tu peux entrer\nFin",
+        "Trop jeune, désolé",
+        "Bienvenue au spectacle"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -5849,6 +7149,32 @@ window.PyvielCourse = {
        "en": "Even",
        "it": "Pari",
        "fr": "Pair"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Buy a ticket first",
+        "You can come in\nThe end",
+        "Too young, sorry"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Puoi entrare\nFine",
+        "Prima compra il biglietto",
+        "Troppo piccolo, scusa"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Trop jeune, désolé",
+        "Achète d'abord un billet",
+        "Tu peux entrer\nFin"
+       ],
+       "right": 1
       }
      }
     },
@@ -5935,6 +7261,32 @@ window.PyvielCourse = {
        "it": "dispari",
        "fr": "impair"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "adult",
+        "Too young, sorry",
+        "You can come in\nThe end"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "adulto",
+        "Puoi entrare\nFine",
+        "Troppo piccolo, scusa"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "adulte",
+        "Tu peux entrer\nFin",
+        "Trop jeune, désolé"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -6003,6 +7355,32 @@ window.PyvielCourse = {
        "en": "hot",
        "it": "caldo",
        "fr": "chaud"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Pass",
+        "Too young, sorry",
+        "You can come in\nThe end"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Troppo piccolo, scusa",
+        "Puoi entrare\nFine",
+        "Promosso"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Réussi",
+        "Tu peux entrer\nFin",
+        "Trop jeune, désolé"
+       ],
+       "right": 0
       }
      }
     }
@@ -6121,6 +7499,32 @@ window.PyvielCourse = {
        "en": "Hello\nHello\nHello\nHello",
        "it": "Ciao\nCiao\nCiao\nCiao",
        "fr": "Bonjour\nBonjour\nBonjour\nBonjour"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello\nHello\nHello",
+        "****\n****\n****",
+        "15"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Ciao\nCiao\nCiao",
+        "15",
+        "****\n****\n****"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "15",
+        "Bonjour\nBonjour\nBonjour",
+        "****\n****\n****"
+       ],
+       "right": 1
       }
      }
     },
@@ -6414,6 +7818,32 @@ window.PyvielCourse = {
        "it": "55",
        "fr": "55"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello\nHello\nHello",
+        "15",
+        "16"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Ciao\nCiao\nCiao",
+        "15",
+        "16"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour\nBonjour\nBonjour",
+        "15",
+        "16"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -6558,6 +7988,32 @@ window.PyvielCourse = {
        "it": "*****\n*****",
        "fr": "*****\n*****"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello\nHello\nHello",
+        "15",
+        "****\n****\n****"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Ciao\nCiao\nCiao",
+        "15",
+        "****\n****\n****"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Bonjour\nBonjour\nBonjour",
+        "15",
+        "****\n****\n****"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -6626,6 +8082,32 @@ window.PyvielCourse = {
        "en": "5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25",
        "it": "5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25",
        "fr": "5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "The sum of 1 to 10 is 55",
+        "The sum of 1 to 10 is 56",
+        "Hello\nHello\nHello"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "La somma da 1 a 10 è 55",
+        "Ciao\nCiao\nCiao",
+        "La somma da 1 a 10 è 56"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "La somme de 1 à 10 est 55",
+        "Bonjour\nBonjour\nBonjour",
+        "La somme de 1 à 10 est 56"
+       ],
+       "right": 0
       }
      }
     }
@@ -7362,6 +8844,32 @@ window.PyvielCourse = {
        "it": "['gufo', 'cane', 'volpe']",
        "fr": "['hibou', 'chien', 'renard']"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['cat', 'dog', 'fox']\n['owl', 'cat', 'dog', 'fox']",
+        "['cat', 'kitten', 'fox']",
+        "['cat', 'fox', 'owl']\nowl ['cat', 'fox']\n['fox']"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "['gatto', 'cucciolo', 'volpe']",
+        "['gatto', 'volpe', 'gufo']\ngufo ['gatto', 'volpe']\n['volpe']",
+        "['gatto', 'cane', 'volpe']\n['gufo', 'gatto', 'cane', 'volpe']"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "['chat', 'chien', 'renard']\n['hibou', 'chat', 'chien', 'renard']",
+        "['chat', 'renard', 'hibou']\nhibou ['chat', 'renard']\n['renard']",
+        "['chat', 'chaton', 'renard']"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -7460,6 +8968,32 @@ window.PyvielCourse = {
        "en": "['cat', 'dog', 'bird']",
        "it": "['gatto', 'cane', 'uccello']",
        "fr": "['chat', 'chien', 'oiseau']"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['cat', 'fox', 'owl']\nowl ['cat', 'fox']\n['fox']",
+        "['cat', 'dog', 'fox']\n['owl', 'cat', 'dog', 'fox']",
+        "['cat', 'kitten', 'fox']"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "['gatto', 'cucciolo', 'volpe']",
+        "['gatto', 'volpe', 'gufo']\ngufo ['gatto', 'volpe']\n['volpe']",
+        "['gatto', 'cane', 'volpe']\n['gufo', 'gatto', 'cane', 'volpe']"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "['chat', 'chaton', 'renard']",
+        "['chat', 'chien', 'renard']\n['hibou', 'chat', 'chien', 'renard']",
+        "['chat', 'renard', 'hibou']\nhibou ['chat', 'renard']\n['renard']"
+       ],
+       "right": 1
       }
      }
     },
@@ -7574,6 +9108,32 @@ window.PyvielCourse = {
        "it": "['gatto', 'volpe']",
        "fr": "['chat', 'renard']"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['cat', 'dog', 'fox']\n['owl', 'cat', 'dog', 'fox']",
+        "['cat', 'fox', 'owl']\nowl ['cat', 'fox']\n['fox']",
+        "['cat', 'kitten', 'fox']"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "['gatto', 'volpe', 'gufo']\ngufo ['gatto', 'volpe']\n['volpe']",
+        "['gatto', 'cucciolo', 'volpe']",
+        "['gatto', 'cane', 'volpe']\n['gufo', 'gatto', 'cane', 'volpe']"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "['chat', 'chien', 'renard']\n['hibou', 'chat', 'chien', 'renard']",
+        "['chat', 'chaton', 'renard']",
+        "['chat', 'renard', 'hibou']\nhibou ['chat', 'renard']\n['renard']"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -7658,6 +9218,32 @@ window.PyvielCourse = {
        "en": "20",
        "it": "20",
        "fr": "20"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Total: 311\nAverage: 77.75\n311 64 95",
+        "Total: 311\nAverage: 77.75\n311 64 96",
+        "['cat', 'kitten', 'fox']"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "['gatto', 'cucciolo', 'volpe']",
+        "Totale: 311\nMedia: 77.75\n311 64 96",
+        "Totale: 311\nMedia: 77.75\n311 64 95"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Total : 311\nMoyenne : 77.75\n311 64 96",
+        "Total : 311\nMoyenne : 77.75\n311 64 95",
+        "['chat', 'chaton', 'renard']"
+       ],
+       "right": 1
       }
      }
     },
@@ -7757,6 +9343,32 @@ window.PyvielCourse = {
        "en": "[1, 2, 5, 9]",
        "it": "[1, 2, 5, 9]",
        "fr": "[1, 2, 5, 9]"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[1, 2, 3]\n[4, 7, 9]\n['Ada', 'Max', 'Zoe']",
+        "[1, 2, 3]\n[4, 7, 10]\n['Ada', 'Max', 'Zoe']",
+        "['cat', 'kitten', 'fox']"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "[1, 2, 3]\n[4, 7, 9]\n['Ada', 'Max', 'Zoe']",
+        "[1, 2, 3]\n[4, 7, 10]\n['Ada', 'Max', 'Zoe']",
+        "['gatto', 'cucciolo', 'volpe']"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "[1, 2, 3]\n[4, 7, 9]\n['Ada', 'Max', 'Zoe']",
+        "[1, 2, 3]\n[4, 7, 10]\n['Ada', 'Max', 'Zoe']",
+        "['chat', 'chaton', 'renard']"
+       ],
+       "right": 0
       }
      }
     },
@@ -7871,6 +9483,32 @@ window.PyvielCourse = {
        "it": "2",
        "fr": "2"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['cat', 'kitten', 'fox']",
+        "['Ada', 'Max', 'Ada', 'Zoe']\n1\n2",
+        "['Ada', 'Max', 'Ada', 'Zoe']\n1\n3"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "['gatto', 'cucciolo', 'volpe']",
+        "['Ada', 'Max', 'Ada', 'Zoe']\n1\n2",
+        "['Ada', 'Max', 'Ada', 'Zoe']\n1\n3"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "['chat', 'chaton', 'renard']",
+        "['Ada', 'Max', 'Ada', 'Zoe']\n1\n2",
+        "['Ada', 'Max', 'Ada', 'Zoe']\n1\n3"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -7939,6 +9577,32 @@ window.PyvielCourse = {
        "en": "['apple', 'fig']",
        "it": "['fico', 'mela']",
        "fr": "['figue', 'pomme']"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['cat', 'kitten', 'fox']",
+        "[3, 5, 7, 9]\nBest: 9 Total: 25",
+        "[3, 5, 7, 9]\nBest: 9 Total: 24"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "['gatto', 'cucciolo', 'volpe']",
+        "[3, 5, 7, 9]\nBest: 9 Total: 25",
+        "[3, 5, 7, 9]\nBest: 9 Total: 24"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "['chat', 'chaton', 'renard']",
+        "[3, 5, 7, 9]\nBest: 9 Total: 25",
+        "[3, 5, 7, 9]\nBest: 9 Total: 24"
+       ],
+       "right": 2
       }
      }
     }
@@ -8602,6 +10266,32 @@ window.PyvielCourse = {
        "it": "CIAO",
        "fr": "SALUT"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello, Python!\n  Hello, Python!  \n18 14",
+        "PYTHON\npython\nPython",
+        "the slow brown fox\nthe quick brown fox"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Ciao, Python!\n  Ciao, Python!  \n17 13",
+        "PYTHON\npython\nPython",
+        "la volpe lenta salta\nla volpe veloce salta"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 17",
+        "PYTHON\npython\nPython",
+        "le renard lent saute\nle renard rapide saute"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -8701,6 +10391,32 @@ window.PyvielCourse = {
        "it": "ciao",
        "fr": "salut"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "Hello, Python!\n  Hello, Python!  \n18 14",
+        "Hello, Python!\n  Hello, Python!  \n18 15"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Ciao, Python!\n  Ciao, Python!  \n17 14",
+        "PYTHON\npython\nPython",
+        "Ciao, Python!\n  Ciao, Python!  \n17 13"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 17",
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 18"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -8785,6 +10501,32 @@ window.PyvielCourse = {
        "en": "my dog is big",
        "it": "il mio cane è grande",
        "fr": "mon chien est grand"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "the slow brown fox\nthe quick brown fox",
+        "PYTHON\npython\nPython",
+        "Hello, Python!\n  Hello, Python!  \n18 14"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "Ciao, Python!\n  Ciao, Python!  \n17 13",
+        "la volpe lenta salta\nla volpe veloce salta"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "le renard lent saute\nle renard rapide saute",
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 17"
+       ],
+       "right": 1
       }
      }
     },
@@ -8885,6 +10627,32 @@ window.PyvielCourse = {
        "it": "3",
        "fr": "2"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10\n-1\n3",
+        "10\n-1\n2",
+        "PYTHON\npython\nPython"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "9\n-1\n3",
+        "9\n-1\n2",
+        "PYTHON\npython\nPython"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "10\n-1\n4",
+        "PYTHON\npython\nPython",
+        "10\n-1\n5"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -8983,6 +10751,32 @@ window.PyvielCourse = {
        "en": "True",
        "it": "True",
        "fr": "True"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello, Python!\n  Hello, Python!  \n18 14",
+        "PYTHON\npython\nPython",
+        "True\nFalse"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "True\nFalse",
+        "PYTHON\npython\nPython",
+        "Ciao, Python!\n  Ciao, Python!  \n17 13"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 17",
+        "PYTHON\npython\nPython",
+        "True\nFalse"
+       ],
+       "right": 2
       }
      }
     },
@@ -9083,6 +10877,32 @@ window.PyvielCourse = {
        "it": "4",
        "fr": "4"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "['red', 'green', 'blue']\nred-green-blue\n['one', 'two', 'three']",
+        "Hello, Python!\n  Hello, Python!  \n18 14"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "['rosso', 'verde', 'blu']\nrosso-verde-blu\n['uno', 'due', 'tre']",
+        "Ciao, Python!\n  Ciao, Python!  \n17 13",
+        "PYTHON\npython\nPython"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 17",
+        "['rouge', 'vert', 'bleu']\nrouge-vert-bleu\n['un', 'deux', 'trois']"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -9167,6 +10987,32 @@ window.PyvielCourse = {
        "en": "nohtyP",
        "it": "nohtyP",
        "fr": "nohtyP"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "yth\nPto\nnohtyP",
+        "PYTHON\npython\nPython",
+        "Hello, Python!\n  Hello, Python!  \n18 14"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "yth\nPto\nnohtyP",
+        "PYTHON\npython\nPython",
+        "Ciao, Python!\n  Ciao, Python!  \n17 13"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "yth\nPto\nnohtyP",
+        "PYTHON\npython\nPython",
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 17"
+       ],
+       "right": 0
       }
      }
     },
@@ -9380,6 +11226,32 @@ window.PyvielCourse = {
        "it": "True",
        "fr": "True"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nTrue",
+        "PYTHON\npython\nPython",
+        "Hello, Python!\n  Hello, Python!  \n18 14"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nTrue",
+        "PYTHON\npython\nPython",
+        "Ciao, Python!\n  Ciao, Python!  \n17 13"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nTrue",
+        "PYTHON\npython\nPython",
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 17"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -9554,6 +11426,32 @@ window.PyvielCourse = {
        "it": "educazione ha 6 vocali",
        "fr": "education a 5 voyelles"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "banana has 3 vowels\nBNN",
+        "banana has 4 vowels\nBNN"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "banana ha 3 vocali\nBNN",
+        "banana ha 4 vocali\nBNN",
+        "PYTHON\npython\nPython"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "banane a 3 voyelles\nBNNE",
+        "banane a 4 voyelles\nBNNE",
+        "PYTHON\npython\nPython"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -9622,6 +11520,32 @@ window.PyvielCourse = {
        "en": "The Cat Sat On The Mat\n6",
        "it": "Il Gatto Dorme Sul Tappeto\n5",
        "fr": "Le Chat Dort Sur Le Tapis\n6"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello, Python!\n  Hello, Python!  \n18 14",
+        "hello, Python\n['hello', 'world']",
+        "PYTHON\npython\nPython"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "ciao, Python\n['ciao', 'mondo']",
+        "Ciao, Python!\n  Ciao, Python!  \n17 13"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "PYTHON\npython\nPython",
+        "Bonjour, Python !\n  Bonjour, Python !  \n21 17",
+        "bonjour, Python\n['bonjour', 'monde']"
+       ],
+       "right": 2
       }
      }
     }
@@ -9805,6 +11729,32 @@ window.PyvielCourse = {
        "en": "[1, 2, 3]",
        "it": "[1, 2, 3]",
        "fr": "[1, 2, 3]"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False",
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 6]\nTrue False",
+        "['fig', 'pear', 'banana']\n['pear', 'fig']\n3"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False",
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 6]\nTrue False",
+        "['pera', 'fico', 'banana']\n['pera', 'fico']\n3"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False",
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 6]\nTrue False",
+        "['poire', 'figue', 'banane']\n['poire', 'figue']\n3"
+       ],
+       "right": 0
       }
      }
     },
@@ -10257,6 +12207,32 @@ window.PyvielCourse = {
        "it": "Ada 12\nBo 9\nCy 15",
        "fr": "Ada 12\nBo 9\nCy 15"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['fig', 'pear', 'banana']\n['pear', 'fig']\n3",
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False",
+        "['fig', 'pear', 'banana']\n['pear', 'fig']\n4"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "['pera', 'fico', 'banana']\n['pera', 'fico']\n3",
+        "['pera', 'fico', 'banana']\n['pera', 'fico']\n4",
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "['poire', 'figue', 'banane']\n['poire', 'figue']\n4",
+        "['poire', 'figue', 'banane']\n['poire', 'figue']\n3",
+        "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False"
+       ],
+       "right": 1
+      }
      }
     }
    ]
@@ -10357,6 +12333,32 @@ window.PyvielCourse = {
        "it": "8",
        "fr": "8"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "(3, 4)\n3 4\n2",
+        "<class 'tuple'>\n<class 'int'>",
+        "(3, 4)\n3 4\n3"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "(3, 4)\n3 4\n2",
+        "<class 'tuple'>\n<class 'int'>",
+        "(3, 4)\n3 4\n3"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "(3, 4)\n3 4\n2",
+        "<class 'tuple'>\n<class 'int'>",
+        "(3, 4)\n3 4\n3"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -10442,6 +12444,32 @@ window.PyvielCourse = {
        "it": "<class 'tuple'>",
        "fr": "<class 'tuple'>"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "<class 'tuple'>\n<class 'int'>",
+        "(3, 4)\n3 4\n2",
+        "3 4\nAda is 12 and lives in Rome"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "<class 'tuple'>\n<class 'int'>",
+        "(3, 4)\n3 4\n2",
+        "3 4\nAda ha 12 anni e vive a Roma"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "<class 'tuple'>\n<class 'int'>",
+        "(3, 4)\n3 4\n2",
+        "3 4\nAda a 12 ans et habite à Rome"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -10526,6 +12554,32 @@ window.PyvielCourse = {
        "en": "16",
        "it": "16",
        "fr": "16"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "3 4\nAda is 13 and lives in Rome",
+        "(3, 4)\n3 4\n2",
+        "3 4\nAda is 12 and lives in Rome"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "3 4\nAda ha 13 anni e vive a Roma",
+        "(3, 4)\n3 4\n2",
+        "3 4\nAda ha 12 anni e vive a Roma"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "3 4\nAda a 13 ans et habite à Rome",
+        "3 4\nAda a 12 ans et habite à Rome",
+        "(3, 4)\n3 4\n2"
+       ],
+       "right": 1
       }
      }
     },
@@ -10688,6 +12742,32 @@ window.PyvielCourse = {
        "it": "(1, 2, 3)",
        "fr": "(1, 2, 3)"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 4)\nTrue",
+        "(3, 4)\n3 4\n2",
+        "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 3)\nTrue"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 4)\nTrue",
+        "(3, 4)\n3 4\n2",
+        "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 3)\nTrue"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 4)\nTrue",
+        "(3, 4)\n3 4\n2",
+        "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 3)\nTrue"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -10756,6 +12836,32 @@ window.PyvielCourse = {
        "en": "5.0",
        "it": "5.0",
        "fr": "5.0"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "2073600\nTrue",
+        "(3, 4)\n3 4\n2",
+        "2073601\nTrue"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "2073600\nTrue",
+        "(3, 4)\n3 4\n2",
+        "2073601\nTrue"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "2073600\nTrue",
+        "(3, 4)\n3 4\n2",
+        "2073601\nTrue"
+       ],
+       "right": 0
       }
      }
     }
@@ -11042,6 +13148,32 @@ window.PyvielCourse = {
        "it": "{'apples': 5}",
        "fr": "{'apples': 5}"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "{'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}\nthe 3",
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 4}"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "{'il': 3, 'gatto': 1, 'e': 2, 'cane': 1, 'uccello': 1}\nil 3",
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 4}"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "{'le': 3, 'chat': 1, 'et': 2, 'chien': 1, 'oiseau': 1}\nle 3",
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 4}"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -11224,6 +13356,32 @@ window.PyvielCourse = {
        "it": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}",
        "fr": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "{'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}\nthe 4",
+        "{'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}\nthe 3"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "{'il': 3, 'gatto': 1, 'e': 2, 'cane': 1, 'uccello': 1}\nil 4",
+        "{'il': 3, 'gatto': 1, 'e': 2, 'cane': 1, 'uccello': 1}\nil 3"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "{'le': 3, 'chat': 1, 'et': 2, 'chien': 1, 'oiseau': 1}\nle 3",
+        "{'le': 3, 'chat': 1, 'et': 2, 'chien': 1, 'oiseau': 1}\nle 4"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -11293,6 +13451,32 @@ window.PyvielCourse = {
        "it": "00100",
        "fr": "75001"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "dog\nRome\n4",
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "dog\nRome\n3"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "cane\nRoma\n4",
+        "cane\nRoma\n3",
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "chien\nParis\n4",
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "chien\nParis\n3"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -11361,6 +13545,32 @@ window.PyvielCourse = {
        "en": "{'b': 1, 'a': 3, 'n': 2}",
        "it": "{'b': 1, 'a': 3, 'n': 2}",
        "fr": "{'b': 1, 'a': 2, 'n': 2, 'e': 1}"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "apples 5\npears 5\nfigs 1",
+        "apples 5\npears 5\nfigs 2"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "mele 5\npere 5\nfichi 1",
+        "mele 5\npere 5\nfichi 2"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+        "pommes 5\npoires 5\nfigues 1",
+        "pommes 5\npoires 5\nfigues 2"
+       ],
+       "right": 1
       }
      }
     }
@@ -11575,6 +13785,32 @@ window.PyvielCourse = {
        "it": "[1, 2, 3, 4]",
        "fr": "[1, 2, 3, 4]"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "4\n['code', 'fun']",
+        "6\n3\n['Rome', 'Paris', 'Oslo']",
+        "3\n['code', 'fun']"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "4\n['codice', 'divertente']",
+        "6\n3\n['Roma', 'Parigi', 'Oslo']",
+        "3\n['codice', 'divertente']"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "6\n3\n['Rome', 'Paris', 'Oslo']",
+        "4\n['amusant', 'code']",
+        "3\n['amusant', 'code']"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -11773,6 +14009,32 @@ window.PyvielCourse = {
        "it": "[3, 1, 2]",
        "fr": "[3, 1, 2]"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "6\n3\n['Rome', 'Paris', 'Oslo']",
+        "3\n['code', 'fun']",
+        "6\n4\n['Rome', 'Paris', 'Oslo']"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "6\n4\n['Roma', 'Parigi', 'Oslo']",
+        "6\n3\n['Roma', 'Parigi', 'Oslo']",
+        "3\n['codice', 'divertente']"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "6\n3\n['Rome', 'Paris', 'Oslo']",
+        "3\n['amusant', 'code']",
+        "6\n4\n['Rome', 'Paris', 'Oslo']"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -11841,6 +14103,32 @@ window.PyvielCourse = {
        "en": "['chess', 'uno']",
        "it": "['scacchi', 'uno']",
        "fr": "['dames', 'uno']"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "3\n['blue', 'green', 'red']",
+        "4\n['blue', 'green', 'red']",
+        "3\n['code', 'fun']"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "3\n['blu', 'rosso', 'verde']",
+        "3\n['codice', 'divertente']",
+        "4\n['blu', 'rosso', 'verde']"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "3\n['bleu', 'rouge', 'vert']",
+        "4\n['bleu', 'rouge', 'vert']",
+        "3\n['amusant', 'code']"
+       ],
+       "right": 0
       }
      }
     }
@@ -12035,6 +14323,32 @@ window.PyvielCourse = {
        "it": "42",
        "fr": "42"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "25\n25\n16",
+        "Hello Ada\nHello Max\n7",
+        "Hello Ada\nHello Max\n8"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "25\n25\n16",
+        "Ciao Ada\nCiao Max\n7",
+        "Ciao Ada\nCiao Max\n8"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour Ada\nBonjour Max\n8",
+        "25\n25\n16",
+        "Bonjour Ada\nBonjour Max\n7"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -12120,6 +14434,32 @@ window.PyvielCourse = {
        "it": "27",
        "fr": "27"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "25\n25\n17",
+        "25\n25\n16",
+        "Hello Ada\nHello Max\n7"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "25\n25\n17",
+        "25\n25\n16",
+        "Ciao Ada\nCiao Max\n7"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "25\n25\n17",
+        "25\n25\n16",
+        "Bonjour Ada\nBonjour Max\n7"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -12188,6 +14528,32 @@ window.PyvielCourse = {
        "en": "10",
        "it": "10",
        "fr": "10"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10\nNone 10",
+        "10\nNone 11",
+        "Hello Ada\nHello Max\n7"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "10\nNone 10",
+        "10\nNone 11",
+        "Ciao Ada\nCiao Max\n7"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "10\nNone 10",
+        "10\nNone 11",
+        "Bonjour Ada\nBonjour Max\n7"
+       ],
+       "right": 0
       }
      }
     },
@@ -12274,6 +14640,32 @@ window.PyvielCourse = {
        "it": "True",
        "fr": "True"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "25\n25\n16",
+        "True False\nA B C",
+        "Hello Ada\nHello Max\n7"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "25\n25\n16",
+        "True False\nA B C",
+        "Ciao Ada\nCiao Max\n7"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "True False\nA B C",
+        "Bonjour Ada\nBonjour Max\n7",
+        "25\n25\n16"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -12343,6 +14735,32 @@ window.PyvielCourse = {
        "it": "9",
        "fr": "9"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello Ada\nHello Max\n7",
+        "Ada: average 8.0\nMax: average 7.9",
+        "Ada: average 8.0\nMax: average 7.8"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Ciao Ada\nCiao Max\n7",
+        "Ada: media 8.0\nMax: media 7.8",
+        "Ada: media 8.0\nMax: media 7.9"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour Ada\nBonjour Max\n7",
+        "Ada : moyenne 8.0\nMax : moyenne 7.8",
+        "Ada : moyenne 8.0\nMax : moyenne 7.9"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -12411,6 +14829,32 @@ window.PyvielCourse = {
        "en": "22",
        "it": "22",
        "fr": "22"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello Ada\nHello Max\n7",
+        "25\n25\n16",
+        "Hello, Ada!\nHello, Bo!"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "25\n25\n16",
+        "Ciao Ada\nCiao Max\n7",
+        "Ciao, Ada!\nCiao, Bo!"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Bonjour, Ada !\nBonjour, Bo !",
+        "Bonjour Ada\nBonjour Max\n7",
+        "25\n25\n16"
+       ],
+       "right": 0
       }
      }
     }
@@ -13032,6 +15476,32 @@ window.PyvielCourse = {
        "it": "50",
        "fr": "50"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "2\n3",
+        "20\n30",
+        "20\n31"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "2\n3",
+        "20\n30",
+        "20\n31"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "2\n3",
+        "20\n30",
+        "20\n31"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -13187,6 +15657,32 @@ window.PyvielCourse = {
        "it": "0",
        "fr": "0"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "2\n3",
+        "20\n30",
+        "2\n4"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "2\n3",
+        "20\n30",
+        "2\n4"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "2\n3",
+        "20\n30",
+        "2\n4"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -13280,6 +15776,32 @@ window.PyvielCourse = {
        "en": "2 4 6\n2",
        "it": "2 4 6\n2",
        "fr": "2 4 6\n2"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "1 2 3\n2",
+        "1 2 3\n1",
+        "20\n30"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "1 2 3\n2",
+        "1 2 3\n1",
+        "20\n30"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "1 2 3\n2",
+        "1 2 3\n1",
+        "20\n30"
+       ],
+       "right": 1
       }
      }
     }
@@ -13440,6 +15962,32 @@ window.PyvielCourse = {
        "it": "720",
        "fr": "720"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "120\n3628801",
+        "120\n3628800",
+        "10\nnohtyp"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "120\n3628801",
+        "120\n3628800",
+        "10\nnohtyp"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "120\n3628801",
+        "120\n3628800",
+        "10\nnohtyp"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -13577,6 +16125,32 @@ window.PyvielCourse = {
        "en": "15",
        "it": "15",
        "fr": "15"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10\nnohtyp",
+        "120\n3628800",
+        "11\nnohtyp"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "10\nnohtyp",
+        "120\n3628800",
+        "11\nnohtyp"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "10\nnohtyp",
+        "120\n3628800",
+        "11\nnohtyp"
+       ],
+       "right": 0
       }
      }
     },
@@ -13748,6 +16322,32 @@ window.PyvielCourse = {
        "it": "[2, 4, 6, 8, 10]",
        "fr": "[2, 4, 6, 8, 10]"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[2, 4, 6, 8]\n['APPLE', 'BANANA']\n[1, 2, 3, 4, 5, 60, 70, 80]",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 26]",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "[2, 4, 6, 8]\n['BANANA']\n[1, 2, 3, 4, 5, 60, 70, 80]",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 26]",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "[2, 4, 6, 8]\n['BANANE']\n[1, 2, 3, 4, 5, 60, 70, 80]",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 26]",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -13817,6 +16417,32 @@ window.PyvielCourse = {
        "it": "[6, 7, 8]",
        "fr": "[6, 7, 8]"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+        "[2, 4, 6, 8]\n['APPLE', 'BANANA']\n[1, 2, 3, 4, 5, 60, 70, 81]",
+        "[2, 4, 6, 8]\n['APPLE', 'BANANA']\n[1, 2, 3, 4, 5, 60, 70, 80]"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "[2, 4, 6, 8]\n['BANANA']\n[1, 2, 3, 4, 5, 60, 70, 81]",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+        "[2, 4, 6, 8]\n['BANANA']\n[1, 2, 3, 4, 5, 60, 70, 80]"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "[2, 4, 6, 8]\n['BANANE']\n[1, 2, 3, 4, 5, 60, 70, 80]",
+        "[2, 4, 6, 8]\n['BANANE']\n[1, 2, 3, 4, 5, 60, 70, 81]",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -13885,6 +16511,32 @@ window.PyvielCourse = {
        "en": "{1: 1, 2: 4, 3: 9}",
        "it": "{1: 1, 2: 4, 3: 9}",
        "fr": "{1: 1, 2: 4, 3: 9}"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{4: 'Zoe'}",
+        "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{3: 'Zoe'}",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{4: 'Zoe'}",
+        "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{3: 'Zoe'}",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{4: 'Zoe'}",
+        "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{3: 'Zoe'}",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 1
       }
      }
     },
@@ -14040,6 +16692,32 @@ window.PyvielCourse = {
        "it": "21",
        "fr": "21"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+        "42\n7\n['fig', 'pear', 'banana']",
+        "42\n8\n['fig', 'pear', 'banana']"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+        "42\n7\n['fig', 'pear', 'banana']",
+        "42\n8\n['fig', 'pear', 'banana']"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+        "42\n7\n['fig', 'pear', 'banana']",
+        "42\n8\n['fig', 'pear', 'banana']"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -14138,6 +16816,32 @@ window.PyvielCourse = {
        "en": "[10, 20, 30]",
        "it": "[10, 20, 30]",
        "fr": "[10, 20, 30]"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '4']",
+        "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '5']",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '4']",
+        "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '5']",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '4']",
+        "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '5']",
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+       ],
+       "right": 0
       }
      }
     }
@@ -14579,6 +17283,32 @@ window.PyvielCourse = {
        "it": "9.0",
        "fr": "9.0"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "12.0\n1.4142135623730951",
+        "3.141592653589793\n3\n4",
+        "12.0\n1.4142135623730952"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "12.0\n1.4142135623730951",
+        "3.141592653589793\n3\n4",
+        "12.0\n1.4142135623730952"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "12.0\n1.4142135623730951",
+        "3.141592653589793\n3\n4",
+        "12.0\n1.4142135623730952"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -14692,6 +17422,32 @@ window.PyvielCourse = {
        "it": "8",
        "fr": "8"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "3.141592653589793\n3\n4",
+        "3.141592653589793\n3\n5",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "3.141592653589793\n3\n4",
+        "3.141592653589793\n3\n5",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "3.141592653589793\n3\n4",
+        "3.141592653589793\n3\n5",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -14791,6 +17547,32 @@ window.PyvielCourse = {
        "it": "9",
        "fr": "9"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "9.0\n3.141592653589793\n4.0",
+        "12.0\n1.4142135623730951",
+        "9.0\n3.141592653589793\n4.1"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "9.0\n3.141592653589793\n4.0",
+        "12.0\n1.4142135623730951",
+        "9.0\n3.141592653589793\n4.1"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "9.0\n3.141592653589793\n4.0",
+        "12.0\n1.4142135623730951",
+        "9.0\n3.141592653589793\n4.1"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -14870,6 +17652,32 @@ window.PyvielCourse = {
        "en": [],
        "it": [],
        "fr": []
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "<class 'module'>\n['sin', 'sinh', 'sqrt', 'sumprod']",
+        "3.141592653589793\n3\n4",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "<class 'module'>\n['sin', 'sinh', 'sqrt', 'sumprod']",
+        "3.141592653589793\n3\n4",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "<class 'module'>\n['sin', 'sinh', 'sqrt', 'sumprod']",
+        "3.141592653589793\n3\n4",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 0
       }
      }
     },
@@ -15074,6 +17882,32 @@ window.PyvielCourse = {
        "en": "720",
        "it": "720",
        "fr": "720"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "5.0\n120\n6",
+        "3\n0.9478653606090632",
+        "5.0\n120\n7"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "5.0\n120\n6",
+        "3\n0.9478653606090632",
+        "5.0\n120\n7"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "5.0\n120\n6",
+        "3\n0.9478653606090632",
+        "5.0\n120\n7"
+       ],
+       "right": 0
       }
      }
     },
@@ -15282,6 +18116,32 @@ window.PyvielCourse = {
        "it": [],
        "fr": []
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "3\n0.9478653606090632",
+        "5.0\n120\n6",
+        "rock\n[1, 3, 4, 2, 5]"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "3\n0.9478653606090632",
+        "5.0\n120\n6",
+        "sasso\n[1, 3, 4, 2, 5]"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "3\n0.9478653606090632",
+        "5.0\n120\n6",
+        "pierre\n[1, 3, 4, 2, 5]"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -15375,6 +18235,32 @@ window.PyvielCourse = {
        "en": [],
        "it": [],
        "fr": []
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "5.0\n120\n6",
+        "rock\n[1, 3, 4, 2, 5]",
+        "rock\n[1, 3, 4, 2, 6]"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "sasso\n[1, 3, 4, 2, 6]",
+        "5.0\n120\n6",
+        "sasso\n[1, 3, 4, 2, 5]"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "pierre\n[1, 3, 4, 2, 5]",
+        "pierre\n[1, 3, 4, 2, 6]",
+        "5.0\n120\n6"
+       ],
+       "right": 0
       }
      }
     },
@@ -15559,6 +18445,32 @@ window.PyvielCourse = {
        "it": "5",
        "fr": "5"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "5\n4.5",
+        "5.0\n120\n6",
+        "5\n4.6"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "5\n4.5",
+        "5.0\n120\n6",
+        "5\n4.6"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "5\n4.5",
+        "5.0\n120\n6",
+        "5\n4.6"
+       ],
+       "right": 0
+      }
      }
     }
    ]
@@ -15672,6 +18584,32 @@ window.PyvielCourse = {
        "en": "01/01/2030",
        "it": "01/01/2030",
        "fr": "01/01/2030"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "The clock says 2026 or later: True\nCounting took less than 5 seconds: True",
+        "2014-05-17\n2014 5 17\n17/05/2014",
+        "2014-05-17\n2014 5 17\n17/05/2015"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "L'orologio dice 2026 o dopo: True\nContare ha richiesto meno di 5 secondi: True",
+        "2014-05-17\n2014 5 17\n17/05/2014",
+        "2014-05-17\n2014 5 17\n17/05/2015"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "L'horloge dit 2026 ou après : True\nCompter a pris moins de 5 secondes : True",
+        "2014-05-17\n2014 5 17\n17/05/2014",
+        "2014-05-17\n2014 5 17\n17/05/2015"
+       ],
+       "right": 1
       }
      }
     },
@@ -15970,6 +18908,32 @@ window.PyvielCourse = {
        "it": "True",
        "fr": "True"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "2014-05-17\n2014 5 17\n17/05/2014",
+        "The clock says 2026 or later: True\nCounting took less than 5 seconds: True",
+        "The clock says 2026 or later: True\nCounting took less than 6 seconds: True"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "L'orologio dice 2026 o dopo: True\nContare ha richiesto meno di 5 secondi: True",
+        "L'orologio dice 2026 o dopo: True\nContare ha richiesto meno di 6 secondi: True",
+        "2014-05-17\n2014 5 17\n17/05/2014"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "2014-05-17\n2014 5 17\n17/05/2014",
+        "L'horloge dit 2026 ou après : True\nCompter a pris moins de 6 secondes : True",
+        "L'horloge dit 2026 ou après : True\nCompter a pris moins de 5 secondes : True"
+       ],
+       "right": 2
+      }
      }
     }
    ]
@@ -16098,6 +19062,32 @@ window.PyvielCourse = {
        "it": "fatto",
        "fr": "fini"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse",
+        "File written",
+        "First line\nSecond line"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "File scritto",
+        "Prima riga\nSeconda riga",
+        "True\nFalse"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Fichier écrit",
+        "True\nFalse",
+        "Première ligne\nDeuxième ligne"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -16182,6 +19172,32 @@ window.PyvielCourse = {
        "en": "11",
        "it": "12",
        "fr": "19"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "File written",
+        "First line\nSecond line",
+        "True\nFalse"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "File scritto",
+        "True\nFalse",
+        "Prima riga\nSeconda riga"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "True\nFalse",
+        "Fichier écrit",
+        "Première ligne\nDeuxième ligne"
+       ],
+       "right": 2
       }
      }
     },
@@ -16381,6 +19397,32 @@ window.PyvielCourse = {
        "it": "False",
        "fr": "False"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "File written",
+        "First line\nSecond line",
+        "True\nFalse"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "File scritto",
+        "Prima riga\nSeconda riga",
+        "True\nFalse"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Fichier écrit",
+        "Première ligne\nDeuxième ligne",
+        "True\nFalse"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -16493,6 +19535,32 @@ window.PyvielCourse = {
        "en": "False",
        "it": "False",
        "fr": "False"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "File written",
+        "True\nFalse",
+        "First line\nSecond line"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "File scritto",
+        "True\nFalse",
+        "Prima riga\nSeconda riga"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Fichier écrit",
+        "True\nFalse",
+        "Première ligne\nDeuxième ligne"
+       ],
+       "right": 1
       }
      }
     },
@@ -17622,6 +20690,32 @@ window.PyvielCourse = {
        "it": [],
        "fr": []
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "555-1234\n['555-1234', '555-9876']",
+        "<re.Match object; span=(12, 20), match='555-1234'>\nNone",
+        "<re.Match object; span=(12, 20), match='555-1233'>\nNone"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "<re.Match object; span=(18, 26), match='555-1233'>\nNone",
+        "<re.Match object; span=(18, 26), match='555-1234'>\nNone",
+        "555-1234\n['555-1234', '555-9876']"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "<re.Match object; span=(21, 29), match='555-1233'>\nNone",
+        "555-1234\n['555-1234', '555-9876']",
+        "<re.Match object; span=(21, 29), match='555-1234'>\nNone"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -17720,6 +20814,32 @@ window.PyvielCourse = {
        "en": "['1', '22', '333']",
        "it": "['1', '22', '333']",
        "fr": "['1', '22', '333']"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "<re.Match object; span=(12, 20), match='555-1234'>\nNone",
+        "555-1234\n['555-1234', '555-9875']",
+        "555-1234\n['555-1234', '555-9876']"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "555-1234\n['555-1234', '555-9875']",
+        "<re.Match object; span=(18, 26), match='555-1234'>\nNone",
+        "555-1234\n['555-1234', '555-9876']"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "555-1234\n['555-1234', '555-9876']",
+        "<re.Match object; span=(21, 29), match='555-1234'>\nNone",
+        "555-1234\n['555-1234', '555-9875']"
+       ],
+       "right": 0
       }
      }
     },
@@ -18117,6 +21237,32 @@ window.PyvielCourse = {
        "it": [],
        "fr": []
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>",
+        "True\nFalse\nFalse"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>",
+        "True\nFalse\nFalse"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>",
+        "True\nFalse\nFalse"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -18201,6 +21347,32 @@ window.PyvielCourse = {
        "en": "True",
        "it": "True",
        "fr": "True"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nFalse",
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nFalse",
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nFalse",
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 0
       }
      }
     },
@@ -18287,6 +21459,32 @@ window.PyvielCourse = {
        "it": "600",
        "fr": "600"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Rex 3\nFido\n4 6",
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Rex 3\nFido\n4 6",
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Rex 3\nFido\n4 6",
+        "Rex 3\nFido\n4 5",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -18372,6 +21570,32 @@ window.PyvielCourse = {
        "it": "4",
        "fr": "4"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True\nFalse\nFalse",
+        "Rex says Woof!\nMax says Woof!",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "True\nFalse\nFalse",
+        "Rex dice Bau!\nMax dice Bau!",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "True\nFalse\nFalse",
+        "Rex dit Ouaf!\nMax dit Ouaf!",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -18456,6 +21680,32 @@ window.PyvielCourse = {
        "en": "3",
        "it": "3",
        "fr": "3"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Canis familiaris Canis familiaris\n3",
+        "Canis familiaris Canis familiaris\n2",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Canis familiaris Canis familiaris\n3",
+        "Canis familiaris Canis familiaris\n2",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Canis familiaris Canis familiaris\n3",
+        "Canis familiaris Canis familiaris\n2",
+        "<class '__main__.Dog'>"
+       ],
+       "right": 1
       }
      }
     },
@@ -18555,6 +21805,32 @@ window.PyvielCourse = {
        "en": "15",
        "it": "15",
        "fr": "15"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "12\nTrue False",
+        "<class '__main__.Dog'>",
+        "13\nTrue False"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "12\nTrue False",
+        "<class '__main__.Dog'>",
+        "13\nTrue False"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "12\nTrue False",
+        "<class '__main__.Dog'>",
+        "13\nTrue False"
+       ],
+       "right": 0
       }
      }
     }
@@ -18656,6 +21932,32 @@ window.PyvielCourse = {
        "it": "300.0",
        "fr": "300.0"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Not enough money\nAda 121",
+        "Refused: only 20 available\n15",
+        "Not enough money\nAda 120"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Non ci sono abbastanza soldi\nAda 121",
+        "Rifiutato: ce ne sono solo 20\n15",
+        "Non ci sono abbastanza soldi\nAda 120"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Pas assez d'argent\nAda 120",
+        "Refusé : il n'y a que 20\n15",
+        "Pas assez d'argent\nAda 121"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -18725,6 +22027,32 @@ window.PyvielCourse = {
        "it": "troppo grande",
        "fr": "trop grand"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Refused: only 20 available\n16",
+        "Not enough money\nAda 120",
+        "Refused: only 20 available\n15"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Rifiutato: ce ne sono solo 20\n16",
+        "Non ci sono abbastanza soldi\nAda 120",
+        "Rifiutato: ce ne sono solo 20\n15"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Refusé : il n'y a que 20\n15",
+        "Refusé : il n'y a que 20\n16",
+        "Pas assez d'argent\nAda 120"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -18793,6 +22121,32 @@ window.PyvielCourse = {
        "en": "35",
        "it": "35",
        "fr": "35"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Not enough money\nAda 120",
+        "2 15\n- book: 12\n- pen: 4",
+        "2 15\n- book: 12\n- pen: 3"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "2 15\n- libro: 12\n- penna: 4",
+        "2 15\n- libro: 12\n- penna: 3",
+        "Non ci sono abbastanza soldi\nAda 120"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Pas assez d'argent\nAda 120",
+        "2 15\n- livre : 12\n- stylo : 4",
+        "2 15\n- livre : 12\n- stylo : 3"
+       ],
+       "right": 2
       }
      }
     },
@@ -19054,6 +22408,32 @@ window.PyvielCourse = {
        "it": "0",
        "fr": "0"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Robin has 2 legs and can fly\nPenguin has 2 legs and cannot fly",
+        "Robin has 2 legs and can fly\nPenguin has 3 legs and cannot fly",
+        "[9, 3.14, 4]\nTrue"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "[9, 3.14, 4]\nTrue",
+        "Pettirosso ha 2 zampe e può volare\nPinguino ha 3 zampe e non può volare",
+        "Pettirosso ha 2 zampe e può volare\nPinguino ha 2 zampe e non può volare"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Rouge-gorge a 2 pattes et peut voler\nPingouin a 3 pattes et ne peut pas voler",
+        "[9, 3.14, 4]\nTrue",
+        "Rouge-gorge a 2 pattes et peut voler\nPingouin a 2 pattes et ne peut pas voler"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -19139,6 +22519,32 @@ window.PyvielCourse = {
        "it": "10",
        "fr": "10"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[9, 3.14, 5]\nTrue",
+        "[9, 3.14, 4]\nTrue",
+        "Robin has 2 legs and can fly\nPenguin has 2 legs and cannot fly"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "[9, 3.14, 5]\nTrue",
+        "[9, 3.14, 4]\nTrue",
+        "Pettirosso ha 2 zampe e può volare\nPinguino ha 2 zampe e non può volare"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "[9, 3.14, 5]\nTrue",
+        "[9, 3.14, 4]\nTrue",
+        "Rouge-gorge a 2 pattes et peut voler\nPingouin a 2 pattes et ne peut pas voler"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -19207,6 +22613,32 @@ window.PyvielCourse = {
        "en": "Light!",
        "it": "Luce!",
        "fr": "Lumière!"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "The car says Vroom",
+        "[9, 3.14, 4]\nTrue",
+        "Robin has 2 legs and can fly\nPenguin has 2 legs and cannot fly"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "The car says Vroom",
+        "[9, 3.14, 4]\nTrue",
+        "Pettirosso ha 2 zampe e può volare\nPinguino ha 2 zampe e non può volare"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "The car says Vroom",
+        "[9, 3.14, 4]\nTrue",
+        "Rouge-gorge a 2 pattes et peut voler\nPingouin a 2 pattes et ne peut pas voler"
+       ],
+       "right": 0
       }
      }
     }
@@ -19308,6 +22740,32 @@ window.PyvielCourse = {
        "it": "Rex",
        "fr": "Rex"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "(3, 4)\n[Point(3, 4), Point(0, 1)]",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+        "Point(4, 6)\nPoint(3, 6)\nTrue False"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "(3, 4)\n[Point(3, 4), Point(0, 1)]",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+        "Point(4, 6)\nPoint(3, 6)\nTrue False"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "(3, 4)\n[Point(3, 4), Point(0, 1)]",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+        "Point(4, 6)\nPoint(3, 6)\nTrue False"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -19376,6 +22834,32 @@ window.PyvielCourse = {
        "en": "Point(3, 4)",
        "it": "Point(3, 4)",
        "fr": "Point(3, 4)"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Point(4, 6)\nPoint(3, 7)\nTrue False",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+        "Point(4, 6)\nPoint(3, 6)\nTrue False"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Point(4, 6)\nPoint(3, 7)\nTrue False",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+        "Point(4, 6)\nPoint(3, 6)\nTrue False"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Point(4, 6)\nPoint(3, 7)\nTrue False",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+        "Point(4, 6)\nPoint(3, 6)\nTrue False"
+       ],
+       "right": 2
       }
      }
     },
@@ -19531,6 +23015,32 @@ window.PyvielCourse = {
        "it": "2",
        "fr": "2"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue",
+        "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.1)\nTrue",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue",
+        "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.1)\nTrue",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue",
+        "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.1)\nTrue",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -19599,6 +23109,32 @@ window.PyvielCourse = {
        "en": "15",
        "it": "15",
        "fr": "15"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Point(4, 6)\nPoint(3, 6)\nTrue False",
+        "Hello, Ada!\nTrue\nTrue False",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Ciao, Ada!\nTrue\nTrue False",
+        "Point(4, 6)\nPoint(3, 6)\nTrue False",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+        "Bonjour, Ada !\nTrue\nTrue False",
+        "Point(4, 6)\nPoint(3, 6)\nTrue False"
+       ],
+       "right": 1
       }
      }
     }
@@ -19714,6 +23250,32 @@ window.PyvielCourse = {
        "it": "42",
        "fr": "42"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10 78.54\n20 314.17",
+        "13\nRefused: age cannot be negative\n13",
+        "10 78.54\n20 314.16"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "10 78.54\n20 314.17",
+        "13\nRifiutato: l'età non può essere negativa\n13",
+        "10 78.54\n20 314.16"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "10 78.54\n20 314.17",
+        "13\nRefusé : l'âge ne peut pas être négatif\n13",
+        "10 78.54\n20 314.16"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -19782,6 +23344,32 @@ window.PyvielCourse = {
        "en": "50",
        "it": "50",
        "fr": "50"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "13\nRefused: age cannot be negative\n13",
+        "10 78.54\n20 314.16",
+        "13\nRefused: age cannot be negative\n14"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "13\nRifiutato: l'età non può essere negativa\n13",
+        "13\nRifiutato: l'età non può essere negativa\n14",
+        "10 78.54\n20 314.16"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "13\nRefusé : l'âge ne peut pas être négatif\n14",
+        "10 78.54\n20 314.16",
+        "13\nRefusé : l'âge ne peut pas être négatif\n13"
+       ],
+       "right": 2
       }
      }
     },
@@ -19867,6 +23455,32 @@ window.PyvielCourse = {
        "en": "3",
        "it": "3",
        "fr": "3"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10 78.54\n20 314.16",
+        "2026 10 21\nTrue False",
+        "2026 10 20\nTrue False"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "10 78.54\n20 314.16",
+        "2026 10 21\nTrue False",
+        "2026 10 20\nTrue False"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "10 78.54\n20 314.16",
+        "2026 10 21\nTrue False",
+        "2026 10 20\nTrue False"
+       ],
+       "right": 2
       }
      }
     },
@@ -20855,6 +24469,32 @@ window.PyvielCourse = {
        "it": "hello ada",
        "fr": "hello ada"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd",
+        "HELLO ADA!\nhello ada",
+        "HELLO ADA!\nHELLO MAX!"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "CIAO ADA!\nCIAO MAX!",
+        "CIAO ADA!\nciao ada",
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "BONJOUR ADA!\nBONJOUR MAX!",
+        "BONJOUR ADA!\nbonjour ada",
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -20923,6 +24563,32 @@ window.PyvielCourse = {
        "en": "BYE ADA!",
        "it": "BYE ADA!",
        "fr": "BYE ADA!"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "HELLO ADA!\nHELLO MAX!",
+        "HELLO ADA!\nhello ada",
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "CIAO ADA!\nciao ada",
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd",
+        "CIAO ADA!\nCIAO MAX!"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "BONJOUR ADA!\nbonjour ada",
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd",
+        "BONJOUR ADA!\nBONJOUR MAX!"
+       ],
+       "right": 2
       }
      }
     },
@@ -21018,6 +24684,32 @@ window.PyvielCourse = {
        "it": [],
        "fr": []
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "HELLO ADA!\nhello ada",
+        "calling add with (2,) {'b': 3}\nadd returned 6\nadd",
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "CIAO ADA!\nciao ada",
+        "calling add with (2,) {'b': 3}\nadd returned 6\nadd",
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "BONJOUR ADA!\nbonjour ada",
+        "calling add with (2,) {'b': 3}\nadd returned 6\nadd",
+        "calling add with (2,) {'b': 3}\nadd returned 5\nadd"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -21092,6 +24784,32 @@ window.PyvielCourse = {
        "en": "hello\nhello",
        "it": "hello\nhello",
        "fr": "hello\nhello"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "HELLO ADA!\nhello ada",
+        "HELLO ADA!\nHELLO MAX!",
+        "hello\nhello\nhello"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "CIAO ADA!\nciao ada",
+        "CIAO ADA!\nCIAO MAX!",
+        "hello\nhello\nhello"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "BONJOUR ADA!\nbonjour ada",
+        "BONJOUR ADA!\nBONJOUR MAX!",
+        "hello\nhello\nhello"
+       ],
+       "right": 2
       }
      }
     },
@@ -22596,6 +26314,32 @@ window.PyvielCourse = {
        "it": "True",
        "fr": "True"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "The set is faster: True",
+        "True True\nA loop of 200,000 steps took less than 5 seconds: True",
+        "True True\nA loop of 200,000 steps took less than 6 seconds: True"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "L'insieme è più veloce: True",
+        "True True\nUn ciclo di 200.000 giri ha richiesto meno di 6 secondi: True",
+        "True True\nUn ciclo di 200.000 giri ha richiesto meno di 5 secondi: True"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "True True\nUne boucle de 200 000 tours a pris moins de 5 secondes : True",
+        "L'ensemble est plus rapide : True",
+        "True True\nUne boucle de 200 000 tours a pris moins de 6 secondes : True"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -22665,6 +26409,32 @@ window.PyvielCourse = {
        "it": "True",
        "fr": "True"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+        "The set is faster: True",
+        "True True\nA loop of 200,000 steps took less than 5 seconds: True"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "L'insieme è più veloce: True",
+        "True True\nUn ciclo di 200.000 giri ha richiesto meno di 5 secondi: True",
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+        "L'ensemble est plus rapide : True",
+        "True True\nUne boucle de 200 000 tours a pris moins de 5 secondes : True"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -22733,6 +26503,32 @@ window.PyvielCourse = {
        "en": "19",
        "it": "19",
        "fr": "19"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 10",
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+        "True True\nA loop of 200,000 steps took less than 5 seconds: True"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 10",
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+        "True True\nUn ciclo di 200.000 giri ha richiesto meno di 5 secondi: True"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 10",
+        "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+        "True True\nUne boucle de 200 000 tours a pris moins de 5 secondes : True"
+       ],
+       "right": 1
       }
      }
     },
@@ -22917,6 +26713,32 @@ window.PyvielCourse = {
        "it": "25",
        "fr": "25"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+        "200\n(200, 8)\n(-1, 10)",
+        "200\n(200, 8)\n(-1, 9)"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+        "200\n(200, 8)\n(-1, 10)",
+        "200\n(200, 8)\n(-1, 9)"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+        "200\n(200, 8)\n(-1, 10)",
+        "200\n(200, 8)\n(-1, 9)"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -22986,6 +26808,32 @@ window.PyvielCourse = {
        "it": "[1, 2, 3, 4]",
        "fr": "[1, 2, 3, 4]"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+        "200\n(200, 8)\n(-1, 9)",
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 4]"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+        "200\n(200, 8)\n(-1, 9)",
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 4]"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+        "200\n(200, 8)\n(-1, 9)",
+        "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 4]"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -23054,6 +26902,32 @@ window.PyvielCourse = {
        "en": "[1, 2, 3]",
        "it": "[1, 2, 3]",
        "fr": "[1, 2, 3]"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "200\n(200, 8)\n(-1, 9)",
+        "[3, 9, 10, 27, 38, 43, 82]\nTrue",
+        "[3, 9, 10, 27, 38, 43, 83]\nTrue"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "200\n(200, 8)\n(-1, 9)",
+        "[3, 9, 10, 27, 38, 43, 82]\nTrue",
+        "[3, 9, 10, 27, 38, 43, 83]\nTrue"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "200\n(200, 8)\n(-1, 9)",
+        "[3, 9, 10, 27, 38, 43, 82]\nTrue",
+        "[3, 9, 10, 27, 38, 43, 83]\nTrue"
+       ],
+       "right": 1
       }
      }
     },
@@ -23325,6 +27199,32 @@ window.PyvielCourse = {
        "it": "7",
        "fr": "7"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello\n42",
+        "Hello\nWorld\n42",
+        "Hello\n43"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Ciao\n42",
+        "Ciao\n43",
+        "Ciao\nMondo\n42"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Bonjour\n42",
+        "Bonjour\n43",
+        "Bonjour\nMonde\n42"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -23423,6 +27323,32 @@ window.PyvielCourse = {
        "en": "a\nb",
        "it": "a\nb",
        "fr": "a\nb"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello\n42",
+        "Hello\nWorld\n43",
+        "Hello\nWorld\n42"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Ciao\nMondo\n43",
+        "Ciao\nMondo\n42",
+        "Ciao\n42"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour\nMonde\n43",
+        "Bonjour\nMonde\n42",
+        "Bonjour\n42"
+       ],
+       "right": 1
       }
      }
     },
@@ -23730,6 +27656,32 @@ window.PyvielCourse = {
        "it": "ok",
        "fr": "ok"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello\nWorld\n42",
+        "Hello\n42",
+        "Too slow, gave up"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Ciao\n42",
+        "Ciao\nMondo\n42",
+        "Troppo lento, rinuncio"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Bonjour\nMonde\n42",
+        "Trop lent, j'abandonne",
+        "Bonjour\n42"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -23814,6 +27766,32 @@ window.PyvielCourse = {
        "en": "waiting\ndone",
        "it": "waiting\ndone",
        "fr": "waiting\ndone"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello\n42",
+        "Hello\nWorld\n42",
+        "doing other things\nbackground"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Ciao\nMondo\n42",
+        "Ciao\n42",
+        "faccio altre cose\nin secondo piano"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "je fais d'autres choses\nen arrière-plan",
+        "Bonjour\nMonde\n42",
+        "Bonjour\n42"
+       ],
+       "right": 0
       }
      }
     }
@@ -23929,6 +27907,32 @@ window.PyvielCourse = {
        "it": "3",
        "fr": "3"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['ant', 'ape']\n['bee', 'bat']\n2",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 5)]"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "['ant', 'ape']\n['bee', 'bat']\n2",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 5)]"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "['ant', 'ape']\n['bee', 'bat']\n2",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 5)]"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -24013,6 +28017,32 @@ window.PyvielCourse = {
        "en": "[2, 4, 6]",
        "it": "[2, 4, 6]",
        "fr": "[2, 4, 6]"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['ant', 'ape']\n['bee', 'bat']\n3",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "['ant', 'ape']\n['bee', 'bat']\n2"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "['ant', 'ape']\n['bee', 'bat']\n3",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "['ant', 'ape']\n['bee', 'bat']\n2"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "['ant', 'ape']\n['bee', 'bat']\n3",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "['ant', 'ape']\n['bee', 'bat']\n2"
+       ],
+       "right": 2
       }
      }
     },
@@ -24113,6 +28143,32 @@ window.PyvielCourse = {
        "it": "[20, 30]",
        "fr": "[20, 30]"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "1\n[2, 3, 5]",
+        "1\n[2, 3, 4]"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "1\n[2, 3, 5]",
+        "1\n[2, 3, 4]"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "1\n[2, 3, 5]",
+        "1\n[2, 3, 4]"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -24197,6 +28253,32 @@ window.PyvielCourse = {
        "en": "3",
        "it": "3",
        "fr": "3"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "Point(x=3, y=4)\n7\n3",
+        "Point(x=3, y=4)\n7\n4"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "Point(x=3, y=4)\n7\n3",
+        "Point(x=3, y=4)\n7\n4"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "Point(x=3, y=4)\n7\n3",
+        "Point(x=3, y=4)\n7\n4"
+       ],
+       "right": 1
       }
      }
     },
@@ -24424,6 +28506,32 @@ window.PyvielCourse = {
        "it": "[100, 101, 102, 103, 104]",
        "fr": "[100, 101, 102, 103, 104]"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 14]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 14]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 14]",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -24522,6 +28630,32 @@ window.PyvielCourse = {
        "en": "15",
        "it": "15",
        "fr": "15"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "24\n1025",
+        "24\n1024",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "24\n1025",
+        "24\n1024",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "24\n1025",
+        "24\n1024",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]"
+       ],
+       "right": 1
       }
      }
     },
@@ -24635,6 +28769,32 @@ window.PyvielCourse = {
        "en": "xyz",
        "it": "xyz",
        "fr": "xyz"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "abcdefghijklmnopqrstuvwxyz\n0123456789\nabcde",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "abcdefghijklmnopqrstuvwxyz\n123456790\nabcde"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "abcdefghijklmnopqrstuvwxyz\n0123456789\nabcde",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "abcdefghijklmnopqrstuvwxyz\n123456790\nabcde"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "abcdefghijklmnopqrstuvwxyz\n0123456789\nabcde",
+        "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+        "abcdefghijklmnopqrstuvwxyz\n123456790\nabcde"
+       ],
+       "right": 0
       }
      }
     },
@@ -25348,6 +29508,32 @@ window.PyvielCourse = {
        "it": "100",
        "fr": "100"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "banana\nNone\n12 ['Ada', 'Max']",
+        "12 4 6",
+        "12 4 7"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "banana\nNone\n12 ['Ada', 'Max']",
+        "12 4 6",
+        "12 4 7"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "banana\nNone\n12 ['Ada', 'Max']",
+        "12 4 6",
+        "12 4 7"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -25508,6 +29694,32 @@ window.PyvielCourse = {
        "en": "HI",
        "it": "HI",
        "fr": "HI"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "banana\nNone\n13 ['Ada', 'Max']",
+        "banana\nNone\n12 ['Ada', 'Max']",
+        "12 4 6"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "banana\nNone\n13 ['Ada', 'Max']",
+        "banana\nNone\n12 ['Ada', 'Max']",
+        "12 4 6"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "banana\nNone\n13 ['Ada', 'Max']",
+        "banana\nNone\n12 ['Ada', 'Max']",
+        "12 4 6"
+       ],
+       "right": 1
       }
      }
     }
@@ -26239,6 +30451,32 @@ window.PyvielCourse = {
        "it": "1. [ ] Learn Python\n2. [ ] Read a book",
        "fr": "1. [ ] Learn Python\n2. [ ] Read a book"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True False\n1. [ ] Buy milk\n2. [x] Do homework",
+        "1. [ ] Learn Python\n2. [x] Walk the dog",
+        "1. [ ] Learn Python\n3. [x] Walk the dog"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "1. [ ] Imparare Python\n2. [x] Portare fuori il cane",
+        "1. [ ] Imparare Python\n3. [x] Portare fuori il cane",
+        "True False\n1. [ ] Comprare il latte\n2. [x] Fare i compiti"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "True False\n1. [ ] Acheter du lait\n2. [x] Faire les devoirs",
+        "1. [ ] Apprendre Python\n2. [x] Promener le chien",
+        "1. [ ] Apprendre Python\n3. [x] Promener le chien"
+       ],
+       "right": 1
+      }
      }
     },
     {
@@ -26308,6 +30546,32 @@ window.PyvielCourse = {
        "it": "1",
        "fr": "1"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "True False\n1. [ ] Buy milk\n2. [x] Do homework",
+        "1. [ ] Learn Python\n2. [x] Walk the dog",
+        "True False\n1. [ ] Buy milk\n3. [x] Do homework"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "1. [ ] Imparare Python\n2. [x] Portare fuori il cane",
+        "True False\n1. [ ] Comprare il latte\n2. [x] Fare i compiti",
+        "True False\n1. [ ] Comprare il latte\n3. [x] Fare i compiti"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "True False\n1. [ ] Acheter du lait\n3. [x] Faire les devoirs",
+        "1. [ ] Apprendre Python\n2. [x] Promener le chien",
+        "True False\n1. [ ] Acheter du lait\n2. [x] Faire les devoirs"
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -26376,6 +30640,32 @@ window.PyvielCourse = {
        "en": "x",
        "it": "x",
        "fr": "x"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "1. [ ] Finish the project\nSame data after loading: True",
+        "1. [ ] Learn Python\n2. [x] Walk the dog",
+        "2. [ ] Finish the project\nSame data after loading: True"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "1. [ ] Imparare Python\n2. [x] Portare fuori il cane",
+        "2. [ ] Finire il progetto\nStessi dati dopo il caricamento: True",
+        "1. [ ] Finire il progetto\nStessi dati dopo il caricamento: True"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "2. [ ] Finir le projet\nMêmes données après le chargement : True",
+        "1. [ ] Apprendre Python\n2. [x] Promener le chien",
+        "1. [ ] Finir le projet\nMêmes données après le chargement : True"
+       ],
+       "right": 2
       }
      }
     },
@@ -27627,6 +31917,32 @@ window.PyvielCourse = {
        "it": "3",
        "fr": "3"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello, Ada\nThis program was run from a file.",
+        "Python 3\nThis is Python 4 and it is running your lines.",
+        "Python 3\nThis is Python 3 and it is running your lines."
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Ciao, Ada\nQuesto programma è stato eseguito da un file.",
+        "Python 3\nThis is Python 4 and it is running your lines.",
+        "Python 3\nThis is Python 3 and it is running your lines."
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Bonjour, Ada\nCe programme a été lancé depuis un fichier.",
+        "Python 3\nThis is Python 4 and it is running your lines.",
+        "Python 3\nThis is Python 3 and it is running your lines."
+       ],
+       "right": 2
+      }
      }
     },
     {
@@ -27694,6 +32010,32 @@ window.PyvielCourse = {
        "en": [],
        "it": [],
        "fr": []
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "4\nababab\n8",
+        "Python 3\nThis is Python 3 and it is running your lines.",
+        "Hello, Ada\nThis program was run from a file."
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Python 3\nThis is Python 3 and it is running your lines.",
+        "Ciao, Ada\nQuesto programma è stato eseguito da un file.",
+        "4\nababab\n8"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour, Ada\nCe programme a été lancé depuis un fichier.",
+        "Python 3\nThis is Python 3 and it is running your lines.",
+        "4\nababab\n8"
+       ],
+       "right": 0
       }
      }
     },
@@ -27769,6 +32111,32 @@ window.PyvielCourse = {
        "en": "100\nabcabc",
        "it": "100\nabcabc",
        "fr": "100\nabcabc"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "4\nababab\n9",
+        "4\nababab\n8",
+        "2 + 2\n\"ab\" * 3\n8"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "4\nababab\n9",
+        "4\nababab\n8",
+        "2 + 2\n\"ab\" * 3\n8"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "4\nababab\n9",
+        "4\nababab\n8",
+        "2 + 2\n\"ab\" * 3\n8"
+       ],
+       "right": 1
       }
      }
     }
@@ -27874,6 +32242,32 @@ window.PyvielCourse = {
        "it": "0",
        "fr": "0"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Usage: python3 greet.py NAME",
+        "No names given. Run it like: python3 hello.py Ada Linus",
+        "No names given. Run it like: python4 hello.py Ada Linus"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Nessun nome. Eseguilo così: python3 hello.py Ada Linus",
+        "Uso: python3 greet.py NOME",
+        "Nessun nome. Eseguilo così: python4 hello.py Ada Linus"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Aucun nom. Lance-le ainsi : python3 hello.py Ada Linus",
+        "Aucun nom. Lance-le ainsi : python4 hello.py Ada Linus",
+        "Usage : python3 greet.py NOM"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -27954,6 +32348,32 @@ window.PyvielCourse = {
        "it": [],
        "fr": []
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Usage: python3 greet.py NAME",
+        "Usage: python4 greet.py NAME",
+        "No names given. Run it like: python3 hello.py Ada Linus"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Nessun nome. Eseguilo così: python3 hello.py Ada Linus",
+        "Uso: python3 greet.py NOME",
+        "Uso: python4 greet.py NOME"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Usage : python3 greet.py NOM",
+        "Aucun nom. Lance-le ainsi : python3 hello.py Ada Linus",
+        "Usage : python4 greet.py NOM"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -28017,6 +32437,32 @@ window.PyvielCourse = {
        "en": [],
        "it": [],
        "fr": []
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Usage: python3 greet.py NAME",
+        "No names given. Run it like: python3 hello.py Ada Linus",
+        "The program starts here."
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Uso: python3 greet.py NOME",
+        "Nessun nome. Eseguilo così: python3 hello.py Ada Linus",
+        "Il programma parte da qui."
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Le programme démarre ici.",
+        "Usage : python3 greet.py NOM",
+        "Aucun nom. Lance-le ainsi : python3 hello.py Ada Linus"
+       ],
+       "right": 0
       }
      }
     },
@@ -28200,6 +32646,32 @@ window.PyvielCourse = {
        "en": "Hello, friend",
        "it": "Ciao, amico",
        "fr": "Bonjour, ami"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "No names given. Run it like: python3 hello.py Ada Linus",
+        "Hello, friend",
+        "Usage: python3 greet.py NAME"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Uso: python3 greet.py NOME",
+        "Ciao, amico",
+        "Nessun nome. Eseguilo così: python3 hello.py Ada Linus"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour, ami",
+        "Usage : python3 greet.py NOM",
+        "Aucun nom. Lance-le ainsi : python3 hello.py Ada Linus"
+       ],
+       "right": 0
       }
      }
     }

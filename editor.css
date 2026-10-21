@@ -465,3 +465,15 @@ dialog::backdrop { background: #2b242088; }
 .lesson-summary .meter i.read { position: absolute; left: 0; top: 0; background: var(--edge); }
 .lesson-summary .meter i.solved { position: relative; }
 .tutorial-lesson.read .lesson-number { box-shadow: inset 0 0 0 2px var(--go); }
+.choice-list { display: grid; gap: 6px; margin: 8px 0; }
+.choice { text-align: left; padding: 6px 10px; border: 2px solid var(--line); border-radius: 10px; background: var(--bg); }
+.choice:hover:not(:disabled) { border-color: var(--accent); }
+.choice pre { margin: 0; font: 13px/1.45 ui-monospace, "SF Mono", Menlo, monospace; white-space: pre-wrap; }
+.choice.right { border-color: var(--go); }
+.choice.wrong { border-color: var(--warn); opacity: .8; }
+.link-button { background: none; border: 0; padding: 2px 0; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; font-size: 13px; }
+.guess-said { margin: 0 0 8px; font-weight: 600; }
+.guess-said.yes { color: var(--go); }
+.guess-said.no { color: var(--warn); }
+.review { margin: 0 0 14px; padding: 10px 12px; border: 2px dashed var(--edge); border-radius: 12px; }
+.review-code { margin: 8px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--screen); color: var(--screen-ink); font: 13px/1.45 ui-monospace, "SF Mono", Menlo, monospace; white-space: pre-wrap; }

@@ -23,7 +23,7 @@
       })(),
       steps: lesson.steps.map(function (step) {
         return {
-          title: say(step.title), text: say(step.text), code: say(step.code), see: say(step.see), turn: say(step.turn), slip: say(step.slip), error: step.error,
+          title: say(step.title), text: say(step.text), code: say(step.code), see: say(step.see), choices: step.choices ? (step.choices[LANG] || step.choices.en) : null, turn: say(step.turn), slip: say(step.slip), error: step.error,
           news: (step.news || []).map(function (n) { return {key: n.k, word: n.w, text: say(n.d), shape: n.s ? say(n.s) : ''}; }),
           task: step.ex ? {text: say(step.ex.task), hint: say(step.ex.hint), solution: say(step.ex.sol), start: say(step.ex.start), spec: step.ex.spec[LANG] || step.ex.spec.en, answers: (step.ex.answers || {})[LANG] || [], expected: step.ex.expected ? say(step.ex.expected) : ''} : null
         };
@@ -418,7 +418,50 @@
   var solved = read(SOLVED, {});
   if (!solved || typeof solved !== 'object') solved = {};
   var revealed = {};
-  var taskLoaded = {};   // steps whose starting code was already put in the editor during this visit
+  var taskLoaded = {};
+  var guessed = {};      // step -> true/false: the answer picked in "Think first"
+  var reviewed = {};     // lesson -> the answer picked in "Remember?"
+
+  function reviewBox(step, lessonIndex) {
+    var box = element('div', 'review');
+    box.appendChild(element('b', null, UI.remember || 'Remember?'));
+    box.appendChild(element('span', null, ' ' + (UI.rememberText || 'From the lesson before: what does this program show?')));
+    box.appendChild(element('pre', 'review-code', step.code));
+    var picked = reviewed[lessonIndex];
+    var list = element('div', 'choice-list');
+    step.choices.options.forEach(function (option, i) {
+      var b = element('button', 'choice' + (picked !== undefined && i === step.choices.right ? ' right' : '') + (picked === i && i !== step.choices.right ? ' wrong' : ''));
+      b.type = 'button';
+      b.disabled = picked !== undefined;
+      b.appendChild(element('pre', null, option));
+      b.addEventListener('click', function () { reviewed[lessonIndex] = i; drawStep(); });
+      list.appendChild(b);
+    });
+    box.appendChild(list);
+    if (picked !== undefined) box.appendChild(element('p', 'guess-said ' + (picked === step.choices.right ? 'yes' : 'no'), picked === step.choices.right ? '✓ ' + (UI.rememberRight || 'Yes, you remember!') : (UI.rememberWrong || 'Not quite. The right answer is marked.')));
+    return box;
+  }
+
+  // Three possible outputs; one is right. The guess never blocks anything: it is there to make you think.
+  function choiceBox(choices, done) {
+    var box = element('div', 'predict choices');
+    box.appendChild(element('b', null, UI.predict || 'Think first'));
+    box.appendChild(element('span', null, UI.predictPick || 'What will this program show? Pick one.'));
+    var list = element('div', 'choice-list');
+    choices.options.forEach(function (option, i) {
+      var b = element('button', 'choice');
+      b.type = 'button';
+      b.appendChild(element('pre', null, option));
+      b.addEventListener('click', function () { done(i === choices.right); });
+      list.appendChild(b);
+    });
+    box.appendChild(list);
+    var skip = element('button', 'link-button', UI.showResult || 'Show what you will see');
+    skip.type = 'button';
+    skip.addEventListener('click', function () { done(undefined); });
+    box.appendChild(skip);
+    return box;
+  }   // steps whose starting code was already put in the editor during this visit
 
   function shortText(text, lines) {
     var rows = String(text).replace(/\s+$/, '').split('\n');
@@ -652,6 +695,11 @@
     }
 
     if (phase === 0) {
+      // A lesson starts with one question on the lesson before: remembering is part of learning.
+      if (position.step === 0 && position.lesson > 0) {
+        var before = TUTORIALS[position.lesson - 1].steps.filter(function (s) { return s.choices; }).pop();
+        if (before) stepBox.appendChild(reviewBox(before, position.lesson));
+      }
       // 1. Learn: the idea, the new words, the program line by line
       String(step.text).split('\n\n').forEach(function (paragraph) {
         stepBox.appendChild(element('p', 'tutorial-text', paragraph));
@@ -680,8 +728,11 @@
       if (step.see) {
         var see = element('div', 'see-box');
         if (revealed[stepKey]) {
+          if (guessed[stepKey] !== undefined) see.appendChild(element('p', 'guess-said ' + (guessed[stepKey] ? 'yes' : 'no'), guessed[stepKey] ? '✓ ' + (UI.guessRight || 'Right guess!') : (UI.guessWrong || 'Not this one. Here is what it really shows; read the program again and see why.')));
           see.appendChild(element('div', 'block-title', UI.see || 'What you will see'));
           see.appendChild(element('pre', 'screen', step.see));
+        } else if (step.choices) {
+          see.appendChild(choiceBox(step.choices, function (right) { guessed[stepKey] = right; revealed[stepKey] = true; drawStep(); }));
         } else {
           var ask = element('div', 'predict');
           ask.appendChild(element('b', null, UI.predict || 'Think first'));

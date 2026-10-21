@@ -49,6 +49,50 @@ function pick3(value, where, what, required) {
   return {en: value[0], it: value[1], fr: value[2]};
 }
 
+// "Think first" as a real question: the true output and two wrong ones that a beginner could believe.
+// Only for short outputs of programs without input, luck or errors. Wrong answers, in this order:
+// the sum written as text (print(2 + 3) -> 2 + 3), the text with its quotes (print("Hi") -> "Hi"),
+// a number one bigger, and what another program of the same lesson shows.
+function choicesFor(code, see, others) {
+  const lines = see.split('\n');
+  const wrong = [];
+  const add = text => { if (text && text !== see && !wrong.includes(text) && text.trim()) wrong.push(text); };
+  const src = code.split('\n').filter(x => x.trim() && !/^\s*#/.test(x));
+  const plainPrints = src.every(x => /^print\(.*\)\s*(#.*)?$/.test(x)) && src.length === lines.length;
+  if (plainPrints) {
+    const args = src.map(x => x.replace(/\s*#.*$/, '').replace(/^print\(/, '').replace(/\)$/, ''));
+    // an operator outside the quotes: the beginner reads the sum (or the repeat) as text to copy
+    const sum = arg => /[-+*\/%]/.test(arg.replace(/(["'])(?:(?!\1).)*\1/g, '""')) && !/^[\w.]+\(/.test(arg);
+    if (args.some(sum)) add(lines.map((line, i) => sum(args[i]) ? args[i] : line).join('\n'));
+    if (args.some(a => /^(["'])[^"']*\1$/.test(a))) add(lines.map((line, i) => /^(["'])[^"']*\1$/.test(args[i]) ? args[i] : line).join('\n'));
+  }
+  const number = see.match(/-?\d+(?![\d\s\S]*\d)/);
+  if (number) add(see.slice(0, number.index) + (Number(number[0]) + 1) + see.slice(number.index + number[0].length));
+  others.forEach(add);
+  if (wrong.length < 2) return null;
+  const options = [see, wrong[0], wrong[1]];
+  // the same order on every build: a shuffle that depends only on the program
+  let seed = 0;
+  for (const ch of code) seed = (seed * 31 + ch.charCodeAt(0)) >>> 0;
+  const order = [0, 1, 2].sort((a, b) => ((seed >> (a * 3)) & 7) - ((seed >> (b * 3)) & 7) || a - b);
+  return {options: order.map(i => options[i]), right: order.indexOf(0)};
+}
+function addChoices(steps) {
+  const short = s => s && s.split('\n').length <= 3 && s.length <= 80 && !s.includes('...') && !s.includes('⚠');
+  const ok = st => !st._raw.r && !st._raw.i && !st._raw.e && !st._raw.s && LANGS.every(l => short(st.see[l]));
+  steps.forEach(st => {
+    if (!ok(st)) return;
+    const c = {};
+    for (const l of LANGS) {
+      const others = steps.filter(o => o !== st && ok(o)).map(o => o.see[l]);
+      const got = choicesFor(st.code[l], st.see[l], others);
+      if (!got) return;
+      c[l] = got;
+    }
+    st.choices = c;
+  });
+}
+
 function shorten(text) {
   const lines = text.replace(/\s+$/, '').split('\n');
   if (lines.length <= MAX_SEE_LINES) return lines.join('\n');
@@ -235,9 +279,11 @@ async function main() {
             } catch (error) { bad(here, 'the task could not be run: ' + error); }
           }
         }
-        steps.push({code: Object.fromEntries(LANGS.map(l => [l, code[l].replace(/\n+$/, '')])), title: t, text: x, see, turn: d || undefined, slip: w, error: step.e || undefined, news: news.length ? news : undefined, ex});
+        steps.push({code: Object.fromEntries(LANGS.map(l => [l, code[l].replace(/\n+$/, '')])), title: t, text: x, see, turn: d || undefined, slip: w, error: step.e || undefined, news: news.length ? news : undefined, ex, _raw: step});
       }
       if (!steps.length) bad(where, 'no steps');
+      addChoices(steps);
+      steps.forEach(s => { delete s._raw; });
       lessons.push({group, title, subtitle, steps});
     }
   }

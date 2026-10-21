@@ -160,8 +160,12 @@
   document.querySelector('.big-next.to-try').click();
   check('the second phase shows the program and what you will see', phaseTab(1).classList.contains('current') && !!document.querySelector('.tutorial-code.plain') && !!document.querySelector('.see-box'));
   check('the result stays hidden until the student has thought about it', !!document.querySelector('.predict') && !document.querySelector('.see-box .screen'));
-  document.querySelector('.reveal').click();
-  check('and Show what you will see reveals it', !!document.querySelector('.see-box .screen'));
+  const options = document.querySelectorAll('.choices .choice');
+  check('"Think first" offers three answers to pick from', options.length === 3, options.length);
+  const rightOne = course[0].steps[0].choices.right;
+  options[(rightOne + 1) % 3].click();
+  check('a wrong guess is told kindly, and the real result is shown', !!document.querySelector('.guess-said.no') && !!document.querySelector('.see-box .screen'));
+  check('more than half of the steps ask a real question', course.reduce((n, l) => n + l.steps.filter(s => s.choices).length, 0) > 150);
   document.querySelector('.step-actions .put-code').click();
   check('Put it in the editor loads the step', /print\(/.test(code.value));
   // a practice task: wrong answer, hint, solution, right answer
@@ -192,6 +196,15 @@
   check('the list counts read and solved apart, and says what is left in a lesson', /read/.test(document.querySelector('.lesson-summary').textContent) && /1 of \d+ solved/.test(document.querySelector('.tutorial-lesson .lesson-count').textContent), document.querySelector('.lesson-summary').textContent + ' | ' + document.querySelector('.tutorial-lesson .lesson-count').textContent);
   document.querySelectorAll('.tutorial-lesson')[0].click();
   // on to step 5: the next-step button lives in the last phase
+  for (let i = 0; i < 4; i++) { phaseTab(2).click(); document.querySelector('.nav-row .next-step').click(); }
+  document.querySelector('.back-link').click();
+  document.querySelectorAll('.tutorial-lesson')[1].click();
+  const review = document.querySelector('.review');
+  check('a lesson starts with a question on the lesson before', !!review && review.querySelectorAll('.choice').length === 3);
+  review.querySelectorAll('.choice')[course[0].steps.filter(s => s.choices).pop().choices.right].click();
+  check('and a right answer is told', !!document.querySelector('.review .guess-said.yes'));
+  document.querySelector('.back-link').click();
+  document.querySelectorAll('.tutorial-lesson')[0].click();
   for (let i = 0; i < 4; i++) { phaseTab(2).click(); document.querySelector('.nav-row .next-step').click(); }
   check('a new step opens on its first phase', phaseTab(0).classList.contains('current') && /step 5 of/.test(document.querySelector('.step-count') ? document.querySelector('.step-count').textContent : ''), document.querySelector('.step-count') && document.querySelector('.step-count').textContent);
   phaseTab(1).click();

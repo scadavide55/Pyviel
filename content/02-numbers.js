@@ -23,7 +23,7 @@ Hai già usato + e *. Adesso li vedi con i numeri.`,
 Tu as déjà utilisé + et *. Maintenant tu les vois avec des nombres.`],
         ex: {
           t: ['How many minutes are in a day? A day has 24 hours and every hour has 60 minutes. Show the answer.', 'Quanti minuti ci sono in un giorno? Un giorno ha 24 ore e ogni ora ha 60 minuti. Mostra la risposta.', 'Combien de minutes y a-t-il dans un jour ? Un jour a 24 heures et chaque heure a 60 minutes. Affiche la réponse.'],
-          h: ['Multiply 24 by 60 inside print.', 'Moltiplica 24 per 60 dentro print.', 'Multiplie 24 par 60 dans print.'],
+          h: ['Hours times minutes in an hour. Which sign multiplies in Python? Let Python do the sum inside print.', 'Ore per minuti in un\'ora. Quale segno moltiplica in Python? Lascia fare il conto a Python dentro print.', 'Les heures fois les minutes d\'une heure. Quel signe multiplie en Python ? Laisse Python faire le calcul dans print.'],
           sol: 'print(24 * 60)', out: '1440', c: '\\*'
         }
       },
@@ -45,7 +45,7 @@ Python écrit les décimales avec un point, jamais avec une virgule.`],
         ex: {
           uses: ['/'],
           t: ['Share 12 sweets between 3 friends. Show how many each friend gets.', 'Dividi 12 caramelle tra 3 amici. Mostra quante ne prende ogni amico.', 'Partage 12 bonbons entre 3 amis. Affiche combien chaque ami en reçoit.'],
-          h: ['12 divided by 3, inside print.', '12 diviso 3, dentro print.', '12 divisé par 3, dans print.'],
+          h: ['Sharing is dividing. Look in the new words for the sign that divides.', 'Dividere tra amici è una divisione. Cerca nelle novità il segno che divide.', 'Partager, c\'est diviser. Cherche dans les nouveautés le signe qui divise.'],
           sol: 'print(12 / 3)', out: '4.0'
         }
       },
@@ -68,7 +68,7 @@ print(20 % 6)`,
         ex: {
           uses: ['//', '%'],
           t: ['A year has 100 days left. How many full weeks (7 days) is that, and how many days remain? Show the weeks on one line and the days on the next.', 'Restano 100 giorni. Quante settimane intere (di 7 giorni) sono, e quanti giorni avanzano? Mostra le settimane su una riga e i giorni sulla riga dopo.', 'Il reste 100 jours. Combien de semaines entières (de 7 jours) cela fait-il, et combien de jours restent ? Affiche les semaines sur une ligne et les jours sur la suivante.'],
-          h: ['100 // 7 for the weeks and 100 % 7 for the days.', '100 // 7 per le settimane e 100 % 7 per i giorni.', '100 // 7 pour les semaines et 100 % 7 pour les jours.'],
+          h: ['Two signs are new here: one keeps only the whole part of a division, the other gives what is left. One print for each.', 'Qui ci sono due segni nuovi: uno tiene solo la parte intera di una divisione, l\'altro dà quello che avanza. Un print per ciascuno.', 'Deux signes sont nouveaux ici : l\'un garde seulement la partie entière d\'une division, l\'autre donne ce qui reste. Un print pour chacun.'],
           sol: 'print(100 // 7)\nprint(100 % 7)', out: '14\n2'
         },
         w: ['A number % 2 is 0 for an even number and 1 for an odd one. You will use that a lot.', 'Un numero % 2 fa 0 se è pari e 1 se è dispari. Lo userai moltissimo.', 'Un nombre % 2 donne 0 s\'il est pair et 1 s\'il est impair. Tu l\'utiliseras beaucoup.']
@@ -90,7 +90,7 @@ Le potenze crescono in fretta: 2 ** 10 è già 1024.`,
 Les puissances grandissent très vite : 2 ** 10 fait déjà 1024.`],
         ex: {
           t: ['Show 3 to the power of 4.', 'Mostra 3 alla quarta.', 'Affiche 3 puissance 4.'],
-          h: ['3 ** 4', '3 ** 4', '3 ** 4'],
+          h: ['The power is written with two stars: first the number, then how many times it is multiplied by itself.', 'La potenza si scrive con due stelle: prima il numero, poi quante volte si moltiplica per se stesso.', 'La puissance s\'écrit avec deux étoiles : d\'abord le nombre, puis combien de fois il se multiplie par lui-même.'],
           sol: 'print(3 ** 4)', out: '81', c: '\\*\\*'
         }
       },
@@ -155,7 +155,7 @@ Con solo il numero, dà un numero intero.`,
 Avec le nombre seul, il donne un nombre entier.`],
         ex: {
           t: ['Round 9.87654 to one decimal and show it.', 'Arrotonda 9.87654 a un decimale e mostralo.', 'Arrondis 9.87654 à une décimale et affiche-le.'],
-          h: ['round(9.87654, 1) inside print.', 'round(9.87654, 1) dentro print.', 'round(9.87654, 1) dans print.'],
+          h: ['round takes two things in its brackets: the number, and how many decimals to keep.', 'round prende due cose tra le parentesi: il numero, e quanti decimali tenere.', 'round prend deux choses entre ses parenthèses : le nombre, et combien de décimales garder.'],
           sol: 'print(round(9.87654, 1))', out: '9.9', c: 'round'
         },
         w: ['round(2.5) gives 2, not 3: Python rounds a half to the even number next to it.', 'round(2.5) dà 2, non 3: Python arrotonda la metà al numero pari vicino.', 'round(2.5) donne 2, pas 3 : Python arrondit une moitié au nombre pair voisin.']
@@ -177,7 +177,7 @@ Come print, prendono quello che metti tra le parentesi.`,
 Comme print, ils prennent ce que tu mets entre les parenthèses.`],
         ex: {
           t: ['Show the biggest of the numbers 12, 7 and 30.', 'Mostra il più grande dei numeri 12, 7 e 30.', 'Affiche le plus grand des nombres 12, 7 et 30.'],
-          h: ['max(12, 7, 30) inside print.', 'max(12, 7, 30) dentro print.', 'max(12, 7, 30) dans print.'],
+          h: ['One of the new helpers gives the biggest of the numbers you put in its brackets, with commas between them.', 'Uno dei nuovi aiutanti dà il più grande dei numeri che metti tra le sue parentesi, con le virgole in mezzo.', 'Un des nouveaux outils donne le plus grand des nombres que tu mets entre ses parenthèses, avec des virgules entre eux.'],
           sol: 'print(max(12, 7, 30))', out: '30', c: 'max'
         }
       },
@@ -200,7 +200,7 @@ print(total)`,
 *= fait la même chose avec la multiplication. Il y en a un pour chaque calcul : -=, /= et les autres.`],
         ex: {
           t: ['Start with 100 in the box total, add 30 using +=, and show it.', 'Parti con 100 nella scatola total, aggiungi 30 usando += e mostralo.', 'Commence avec 100 dans la boîte total, ajoute 30 avec += et affiche-le.'],
-          h: ['+= adds to what is already in the box. Write it between the line that makes total and the print.', '+= aggiunge a quello che c\'è già nella scatola. Scrivilo tra la riga che crea total e il print.', '+= ajoute à ce qu\'il y a déjà dans la boîte. Écris-le entre la ligne qui crée total et le print.'],
+          h: ['+= takes what is already in the box and adds to it. It goes on a line of its own, after the box is made and before the print.', '+= prende quello che c\'è già nella scatola e ci aggiunge. Va su una riga sua, dopo che la scatola è creata e prima del print.', '+= prend ce qu\'il y a déjà dans la boîte et y ajoute. Il va sur sa propre ligne, après la création de la boîte et avant le print.'],
           start: 'total = 100', sol: 'total = 100\ntotal += 30\nprint(total)', out: '130', c: '\\+='
         }
       },
@@ -319,7 +319,7 @@ int("42") transforme le texte 42 en nombre 42, donc tu peux faire des calculs av
         ex: {
           uses: ['int', '*'],
           t: ['Turn the text "15" into a number, double it, and show it.', 'Trasforma il testo "15" in numero, raddoppialo e mostralo.', 'Transforme le texte "15" en nombre, double-le et affiche-le.'],
-          h: ['int("15") * 2 inside print.', 'int("15") * 2 dentro print.', 'int("15") * 2 dans print.'],
+          h: ['int turns a text made of digits into a number. Then that number can be multiplied.', 'int trasforma un testo fatto di cifre in un numero. Poi quel numero si può moltiplicare.', 'int transforme un texte fait de chiffres en nombre. Ensuite ce nombre peut être multiplié.'],
           sol: 'print(int("15") * 2)', out: '30', c: 'int'
         }
       },
@@ -341,7 +341,7 @@ Ti serve quando vuoi incollare un numero a un testo con +, perché + incolla sol
 Il t'en faut quand tu veux coller un nombre à un texte avec +, parce que + ne colle que des textes avec des textes.`],
         ex: {
           t: ['Show: 5 apples. Make the number 5 into a text with str and glue " apples" to it.', 'Mostra: 5 mele. Trasforma il numero 5 in testo con str e incolla " mele".', 'Affiche : 5 pommes. Transforme le nombre 5 en texte avec str et colle " pommes".'],
-          h: ['str(5) + " apples" inside print.', 'str(5) + " mele" dentro print.', 'str(5) + " pommes" dans print.'],
+          h: ['str turns the number into a text. Then two texts can be glued with +.', 'str trasforma il numero in un testo. Poi due testi si possono incollare con +.', 'str transforme le nombre en texte. Ensuite deux textes peuvent être collés avec +.'],
           sol: ['print(str(5) + " apples")', 'print(str(5) + " mele")', 'print(str(5) + " pommes")'], out: ['5 apples', '5 mele', '5 pommes'], c: 'str'
         }
       },
@@ -361,7 +361,7 @@ Lis ce que dit Pyviel : il nomme les deux sortes qui ne vont pas ensemble. Appui
         ex: {
           uses: ['str', '+'],
           t: ['Fix it with str, so the program shows: I am 12', 'Correggilo con str, così il programma mostra: Ho 12', 'Corrige-le avec str, pour que le programme affiche : J\'ai 12'],
-          h: ['Put str( ) around the number 12.', 'Metti str( ) intorno al numero 12.', 'Mets str( ) autour du nombre 12.'],
+          h: ['Python cannot glue a text and a number. Which helper turns the number into a text?', 'Python non sa incollare un testo e un numero. Quale aiutante trasforma il numero in un testo?', 'Python ne sait pas coller un texte et un nombre. Quel outil transforme le nombre en texte ?'],
           start: ['print("I am " + 12)', 'print("Ho " + 12)', 'print("J\'ai " + 12)'],
           sol: ['print("I am " + str(12))', 'print("Ho " + str(12))', 'print("J\'ai " + str(12))'],
           out: ['I am 12', 'Ho 12', "J'ai 12"]
@@ -516,7 +516,7 @@ Ce programme demande deux nombres, les additionne et affiche la somme. C'est le 
         ex: {
           uses: ['input', '*'],
           t: ['Change the program so that it multiplies the two numbers instead of adding them.', 'Cambia il programma così che moltiplichi i due numeri invece di sommarli.', 'Change le programme pour qu\'il multiplie les deux nombres au lieu de les additionner.'],
-          h: ['Replace the + with a *.', 'Sostituisci il + con un *.', 'Remplace le + par un *.'],
+          h: ['Find the line that works out total. Which sign multiplies?', 'Trova la riga che calcola total. Quale segno moltiplica?', 'Trouve la ligne qui calcule total. Quel signe multiplie ?'],
           start: ['first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first + second\nprint("The sum is", total)', 'first = int(input("Primo numero: "))\nsecond = int(input("Secondo numero: "))\ntotal = first + second\nprint("La somma è", total)', 'first = int(input("Premier nombre : "))\nsecond = int(input("Deuxième nombre : "))\ntotal = first + second\nprint("La somme est", total)'],
           sol: ['first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first * second\nprint("The sum is", total)', 'first = int(input("Primo numero: "))\nsecond = int(input("Secondo numero: "))\ntotal = first * second\nprint("La somma è", total)', 'first = int(input("Premier nombre : "))\nsecond = int(input("Deuxième nombre : "))\ntotal = first * second\nprint("La somme est", total)'], i: ['6', '7'], m: '42$'
         }
@@ -600,7 +600,7 @@ Dans ce texte, tout ce qui est entre accolades { } est remplacé par sa valeur. 
         ex: {
           uses: ['f-string'],
           t: ['Make the program show: Ada is 13 years old   Change the age in the box, and keep the f-string.', 'Fai mostrare al programma: Ada ha 13 anni   Cambia l\'età nella scatola e tieni la f-string.', 'Fais afficher au programme : Ada a 13 ans   Change l\'âge dans la boîte et garde la f-string.'],
-          h: ['Change the 12 to 13 in the box, and keep the f-string.', 'Cambia il 12 in 13 nella scatola e tieni la f-string.', 'Change le 12 en 13 dans la boîte et garde la f-string.'],
+          h: ['The f-string takes the age from its box: change what is in the box, not the sentence.', 'La f-string prende l\'età dalla sua scatola: cambia quello che c\'è nella scatola, non la frase.', 'La f-string prend l\'âge dans sa boîte : change ce qu\'il y a dans la boîte, pas la phrase.'],
           start: ['name = "Ada"\nage = 12\nprint(f"{name} is {age} years old")', 'name = "Ada"\nage = 12\nprint(f"{name} ha {age} anni")', 'name = "Ada"\nage = 12\nprint(f"{name} a {age} ans")'],
           sol: ['name = "Ada"\nage = 13\nprint(f"{name} is {age} years old")', 'name = "Ada"\nage = 13\nprint(f"{name} ha {age} anni")', 'name = "Ada"\nage = 13\nprint(f"{name} a {age} ans")'],
           out: ['Ada is 13 years old', 'Ada ha 13 anni', 'Ada a 13 ans']

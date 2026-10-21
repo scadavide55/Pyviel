@@ -52,7 +52,7 @@ Ogni volta che scrivi Dog() costruisci un oggetto nuovo e separato: per questo r
 Chaque fois que tu écris Dog() tu construis un objet nouveau et séparé : c'est pourquoi rex is Dog() est False. Ce sont deux chiens différents.`],
         ex: {
           t: ['With the class Dog, build an object called fido and show whether it is a Dog.', 'Con la classe Dog, costruisci un oggetto che si chiama fido e mostra se è un Dog.', 'Avec la classe Dog, construis un objet qui s\'appelle fido et affiche si c\'est un Dog.'],
-          h: ['print(isinstance(fido, Dog))', 'print(isinstance(fido, Dog))', 'print(isinstance(fido, Dog))'],
+          h: ['First build fido by calling the class. Then isinstance asks: is this object of this class?', 'Prima costruisci fido chiamando la classe. Poi isinstance chiede: questo oggetto è di questa classe?', 'D\'abord construis fido en appelant la classe. Puis isinstance demande : cet objet est-il de cette classe ?'],
           start: 'class Dog:\n    pass', sol: 'class Dog:\n    pass\n\nfido = Dog()\nprint(isinstance(fido, Dog))', out: 'True', c: 'isinstance'
         }
       },
@@ -81,7 +81,7 @@ Ogni oggetto ha i suoi dati: cambiare rex.age non cambia fido.age.`,
 Chaque objet a ses propres données : changer rex.age ne change pas fido.age.`],
         ex: {
           t: ['Make a class Book with __init__ that keeps title and pages. Build Book("Dune", 600) and show its pages.', 'Crea una classe Book con __init__ che tiene title e pages. Costruisci Book("Dune", 600) e mostra le sue pages.', 'Crée une classe Book avec __init__ qui garde title et pages. Construis Book("Dune", 600) et affiche ses pages.'],
-          h: ['def __init__(self, title, pages): and self.title = title, self.pages = pages.', 'def __init__(self, title, pages): e self.title = title, self.pages = pages.', 'def __init__(self, title, pages): et self.title = title, self.pages = pages.'],
+          h: ['Inside the class, __init__ gets self and the two values, and keeps each one on self under its own name.', 'Dentro la classe, __init__ riceve self e i due valori, e tiene ciascuno su self con il suo nome.', 'Dans la classe, __init__ reçoit self et les deux valeurs, et garde chacune sur self sous son propre nom.'],
           sol: 'class Book:\n    def __init__(self, title, pages):\n        self.title = title\n        self.pages = pages\n\nb = Book("Dune", 600)\nprint(b.pages)', out: '600', c: '__init__'
         }
       },
@@ -139,7 +139,7 @@ Un metodo può leggere i dati del suo oggetto con self.name, e anche cambiarli, 
 Une méthode peut lire les données de son objet avec self.name, et aussi les changer, comme le fait rename.`],
         ex: {
           t: ['Add a method called birthday to the class Dog that adds 1 to self.age. Build Dog("Rex", 3), call birthday, and show the age (4).', 'Aggiungi alla classe Dog un metodo che si chiama birthday che aggiunge 1 a self.age. Costruisci Dog("Rex", 3), chiama birthday e mostra l\'età (4).', 'Ajoute à la classe Dog une méthode qui s\'appelle birthday qui ajoute 1 à self.age. Construis Dog("Rex", 3), appelle birthday et affiche l\'âge (4).'],
-          h: ['def birthday(self): and self.age += 1 inside it.', 'def birthday(self): e self.age += 1 dentro.', 'def birthday(self): et self.age += 1 dedans.'],
+          h: ['A method is a def inside the class, pushed in, with self first. Inside it, add 1 to the age kept on self. Then build the dog, call birthday on it, and show its age.', 'Un metodo è un def dentro la classe, rientrato, con self per primo. Dentro, aggiungi 1 all\'età tenuta su self. Poi costruisci il cane, chiama birthday su di lui, e mostra la sua età.', 'Une méthode est un def dans la classe, décalé, avec self en premier. Dedans, ajoute 1 à l\'âge gardé sur self. Puis construis le chien, appelle birthday dessus, et affiche son âge.'],
           start: 'class Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age', sol: 'class Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def birthday(self):\n        self.age += 1\n\nrex = Dog("Rex", 3)\nrex.birthday()\nprint(rex.age)', out: '4', c: 'def birthday'
         }
       },
@@ -199,7 +199,7 @@ hasattr chiede se un oggetto ha un certo nome dentro di sé: è True per value e
 hasattr demande si un objet a un certain nom en lui : c'est True pour value et False pour colour.`],
         ex: {
           t: ['Use chaining to add 5, then 5, then 5, and show the value (15).', 'Usa il concatenamento per aggiungere 5, poi 5, poi 5, e mostra il valore (15).', 'Utilise l\'enchaînement pour ajouter 5, puis 5, puis 5, et affiche la valeur (15).'],
-          h: ['c.add(5).add(5).add(5)', 'c.add(5).add(5).add(5)', 'c.add(5).add(5).add(5)'],
+          h: ['add gives back the object itself, so another .add(5) can follow right after it on the same line. Then show the value of c.', 'add restituisce l\'oggetto stesso, quindi un altro .add(5) può seguire subito dopo sulla stessa riga. Poi mostra il valore di c.', 'add rend l\'objet lui-même, donc un autre .add(5) peut suivre juste après sur la même ligne. Puis affiche la valeur de c.'],
           start: 'class Counter:\n    def __init__(self):\n        self.value = 0\n\n    def add(self, amount=1):\n        self.value += amount\n        return self\n\nc = Counter()', sol: 'class Counter:\n    def __init__(self):\n        self.value = 0\n\n    def add(self, amount=1):\n        self.value += amount\n        return self\n\nc = Counter()\nc.add(5).add(5).add(5)\nprint(c.value)', out: '15', c: 'add\\(5\\)\\.add'
         }
       },
@@ -300,7 +300,7 @@ Leggi il programma dall'alto in basso: deposita 50, preleva 30, prova a prelevar
 Lis le programme de haut en bas : il dépose 50, retire 30, essaie de retirer 500 et est refusé.`],
         ex: {
           t: ['Add a method interest(rate) that adds balance * rate to the balance. With a balance of 200 and a rate of 0.5 it must show 300.0.', 'Aggiungi un metodo interest(rate) che aggiunge balance * rate al saldo. Con un saldo di 200 e un tasso di 0.5 deve mostrare 300.0.', 'Ajoute une méthode interest(rate) qui ajoute balance * rate au solde. Avec un solde de 200 et un taux de 0.5 elle doit afficher 300.0.'],
-          h: ['self.balance += self.balance * rate', 'self.balance += self.balance * rate', 'self.balance += self.balance * rate'],
+          h: ['A new def inside the class, with self and rate. It adds the balance times the rate to the balance. Then build the account, call interest, and show the balance.', 'Un nuovo def dentro la classe, con self e rate. Aggiunge al saldo il saldo per il tasso. Poi costruisci il conto, chiama interest, e mostra il saldo.', 'Un nouveau def dans la classe, avec self et rate. Il ajoute au solde le solde fois le taux. Puis construis le compte, appelle interest, et affiche le solde.'],
           start: 'class Account:\n    def __init__(self, balance=0):\n        self.balance = balance', sol: 'class Account:\n    def __init__(self, balance=0):\n        self.balance = balance\n\n    def interest(self, rate):\n        self.balance += self.balance * rate\n\nacc = Account(200)\nacc.interest(0.5)\nprint(acc.balance)', out: '300.0', c: 'def interest'
         }
       },
@@ -372,7 +372,7 @@ Puoi inventare un tuo tipo di errore: una classe che eredita da Exception, scrit
 Tu peux inventer ta propre sorte d'erreur : une classe qui hérite de Exception, écrite class InsufficientFunds(Exception). Le pass veut dire qu'elle n'a besoin de rien de plus. C'est un nom avec un sens.`],
         ex: {
           t: ['Make your own error class called TooBig(Exception). Raise it with the message too big, catch it, and show the message.', 'Crea una tua classe di errore che si chiama TooBig(Exception). Alzala con il messaggio troppo grande, prendila e mostra il messaggio.', 'Crée ta propre classe d\'erreur qui s\'appelle TooBig(Exception). Lève-la avec le message trop grand, attrape-la et affiche le message.'],
-          h: ['class TooBig(Exception): pass, then try: raise TooBig("...") except TooBig as error: print(error).', 'class TooBig(Exception): pass, poi try: raise TooBig("...") except TooBig as error: print(error).', 'class TooBig(Exception): pass, puis try: raise TooBig("...") except TooBig as error: print(error).'],
+          h: ['An error class has Exception in its brackets and pass inside. Inside a try, raise it with its message; in the except, as error gives you the error: show it.', 'Una classe di errore ha Exception tra le parentesi e pass dentro. In un try, sollevala con il suo messaggio; nell\'except, as error ti dà l\'errore: mostralo.', 'Une classe d\'erreur a Exception entre ses parenthèses et pass dedans. Dans un try, lève-la avec son message ; dans le except, as error te donne l\'erreur : affiche-la.'],
           sol: ['class TooBig(Exception):\n    pass\n\ntry:\n    raise TooBig("too big")\nexcept TooBig as error:\n    print(error)', 'class TooBig(Exception):\n    pass\n\ntry:\n    raise TooBig("troppo grande")\nexcept TooBig as error:\n    print(error)', 'class TooBig(Exception):\n    pass\n\ntry:\n    raise TooBig("trop grand")\nexcept TooBig as error:\n    print(error)'],
           out: ['too big', 'troppo grande', 'trop grand'], c: 'TooBig'
         }
@@ -451,7 +451,7 @@ Dividere un problema in oggetti che conoscono ognuno il proprio compito è il cu
 Découper un problème en objets qui connaissent chacun leur travail est le cœur de cette façon de programmer.`],
         ex: {
           t: ['Add a third item to the cart and show the total again. With a book (12), a pen (3) and a bag (20) it must show 35.', 'Aggiungi un terzo articolo al carrello e mostra di nuovo il totale. Con un libro (12), una penna (3) e una borsa (20) deve mostrare 35.', 'Ajoute un troisième article au panier et affiche de nouveau le total. Avec un livre (12), un stylo (3) et un sac (20) il doit afficher 35.'],
-          h: ['cart.add(Item("bag", 20)) before the print of the total.', 'cart.add(Item("borsa", 20)) prima del print del totale.', 'cart.add(Item("sac", 20)) avant le print du total.'],
+          h: ['Build a new Item with the name and the price of the bag, and add it to the cart like the other two. Then show the total.', 'Costruisci un nuovo Item con il nome e il prezzo della borsa, e aggiungilo al carrello come gli altri due. Poi mostra il totale.', 'Construis un nouvel Item avec le nom et le prix du sac, et ajoute-le au panier comme les deux autres. Puis affiche le total.'],
           start: 'class Item:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n\nclass Cart:\n    def __init__(self):\n        self.items = []\n\n    def add(self, item):\n        self.items.append(item)\n\n    def total(self):\n        return sum([item.price for item in self.items])\n\ncart = Cart()\ncart.add(Item("book", 12))\ncart.add(Item("pen", 3))',
           sol: 'class Item:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n\nclass Cart:\n    def __init__(self):\n        self.items = []\n\n    def add(self, item):\n        self.items.append(item)\n\n    def total(self):\n        return sum([item.price for item in self.items])\n\ncart = Cart()\ncart.add(Item("book", 12))\ncart.add(Item("pen", 3))\ncart.add(Item("bag", 20))\nprint(cart.total())', out: '35', c: 'add\\(Item'
         }
@@ -720,7 +720,7 @@ Scrivere di nuovo speak in Dog sostituisce la versione di Animal per i cani: si 
 Écrire de nouveau speak dans Dog remplace la version d'Animal pour les chiens : cela s'appelle redéfinir. La boucle traite tous les animaux de la même façon, et chacun répond à sa manière.`],
         ex: {
           t: ['Add a class Cow that is an Animal, and whose speak returns Moo. Show the speak of Cow("Bella").', 'Aggiungi una classe Cow che è un Animal e il cui speak restituisce Muu. Mostra lo speak di Cow("Bella").', 'Ajoute une classe Cow qui est un Animal et dont speak rend Meuh. Affiche le speak de Cow("Bella").'],
-          h: ['class Cow(Animal): and def speak(self): return "Moo".', 'class Cow(Animal): e def speak(self): return "Muu".', 'class Cow(Animal): et def speak(self): return "Meuh".'],
+          h: ['The child class has the name of the parent in its brackets. Inside it, its own speak gives back the sound of the cow.', 'La classe figlia ha il nome della madre tra le parentesi. Dentro, il suo speak restituisce il verso della mucca.', 'La classe enfant a le nom du parent entre ses parenthèses. Dedans, son propre speak rend le cri de la vache.'],
           start: 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."',
           sol: ['class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cow(Animal):\n    def speak(self):\n        return "Moo"\n\nprint(Cow("Bella").speak())', 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cow(Animal):\n    def speak(self):\n        return "Muu"\n\nprint(Cow("Bella").speak())', 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cow(Animal):\n    def speak(self):\n        return "Meuh"\n\nprint(Cow("Bella").speak())'],
           out: ['Moo', 'Muu', 'Meuh'], c: 'class Cow\\(Animal\\)'
@@ -783,7 +783,7 @@ super() vuol dire "la classe da cui eredito". Senza, l'__init__ del genitore non
 super() veut dire "la classe dont j'hérite". Sans lui, le __init__ du parent ne tournerait pas, et name et legs ne seraient jamais fixés.`],
         ex: {
           t: ['Make a class Fish that is an Animal with 0 legs, built with only a name, using super(). Show the legs of Fish("Nemo") (0).', 'Crea una classe Fish che è un Animal con 0 zampe, costruita solo con un nome, usando super(). Mostra le legs di Fish("Nemo") (0).', 'Crée une classe Fish qui est un Animal avec 0 patte, construite avec seulement un nom, en utilisant super(). Affiche les legs de Fish("Nemo") (0).'],
-          h: ['def __init__(self, name): and super().__init__(name, 0).', 'def __init__(self, name): e super().__init__(name, 0).', 'def __init__(self, name): et super().__init__(name, 0).'],
+          h: ['Fish gets only a name. Its __init__ calls the __init__ of the parent through super(), giving it the name and 0 for the legs.', 'Fish riceve solo un nome. Il suo __init__ chiama l\'__init__ della madre attraverso super(), passandogli il nome e 0 per le zampe.', 'Fish reçoit seulement un nom. Son __init__ appelle le __init__ du parent par super(), en lui donnant le nom et 0 pour les pattes.'],
           start: 'class Animal:\n    def __init__(self, name, legs):\n        self.name = name\n        self.legs = legs', sol: 'class Animal:\n    def __init__(self, name, legs):\n        self.name = name\n        self.legs = legs\n\nclass Fish(Animal):\n    def __init__(self, name):\n        super().__init__(name, 0)\n\nprint(Fish("Nemo").legs)', out: '0', c: 'super\\(\\)'
         }
       },
@@ -820,7 +820,7 @@ isinstance(shapes[0], Shape) è True: un Square è una Shape.`,
 isinstance(shapes[0], Shape) est True : un Square est une Shape.`],
         ex: {
           t: ['Add a class Rectangle(Shape) with a width and a height, and its area. Show the area of Rectangle(2, 5) (10).', 'Aggiungi una classe Rectangle(Shape) con una larghezza e un\'altezza, e la sua area. Mostra l\'area di Rectangle(2, 5) (10).', 'Ajoute une classe Rectangle(Shape) avec une largeur et une hauteur, et son aire. Affiche l\'aire de Rectangle(2, 5) (10).'],
-          h: ['def __init__(self, width, height): and def area(self): return self.width * self.height.', 'def __init__(self, width, height): e def area(self): return self.width * self.height.', 'def __init__(self, width, height): et def area(self): return self.width * self.height.'],
+          h: ['Like the other shapes: an __init__ that keeps the width and the height on self, and an area that multiplies them.', 'Come le altre forme: un __init__ che tiene la larghezza e l\'altezza su self, e un area che le moltiplica.', 'Comme les autres formes : un __init__ qui garde la largeur et la hauteur sur self, et un area qui les multiplie.'],
           start: 'class Shape:\n    def area(self):\n        raise NotImplementedError("each shape must say its area")', sol: 'class Shape:\n    def area(self):\n        raise NotImplementedError("each shape must say its area")\n\nclass Rectangle(Shape):\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n    def area(self):\n        return self.width * self.height\n\nprint(Rectangle(2, 5).area())', out: '10', c: 'class Rectangle\\(Shape\\)'
         }
       },
@@ -849,7 +849,7 @@ Una buona regola: quando non sei sicuro, preferisci "ha un". Tiene le classi sem
 Une bonne règle : quand tu n'es pas sûr, préfère "a un". Ça garde les classes simples et séparées.`],
         ex: {
           t: ['Make a class Lamp with a method on() that returns Light! Make a class Room that keeps a Lamp inside, and whose method light() returns the lamp\'s answer. Show Room().light().', 'Crea una classe Lamp con un metodo on() che restituisce Luce! Crea una classe Room che tiene una Lamp dentro, e il cui metodo light() restituisce la risposta della lampada. Mostra Room().light().', 'Crée une classe Lamp avec une méthode on() qui rend Lumière! Crée une classe Room qui garde une Lamp dedans, et dont la méthode light() rend la réponse de la lampe. Affiche Room().light().'],
-          h: ['self.lamp = Lamp() in __init__ of Room, then return self.lamp.on().', 'self.lamp = Lamp() in __init__ di Room, poi return self.lamp.on().', 'self.lamp = Lamp() dans __init__ de Room, puis return self.lamp.on().'],
+          h: ['Room builds a Lamp in its __init__ and keeps it on self. Its light method asks that lamp for on() and gives back the answer.', 'Room costruisce una Lamp nel suo __init__ e la tiene su self. Il suo metodo light chiede on() a quella lampada e restituisce la risposta.', 'Room construit une Lamp dans son __init__ et la garde sur self. Sa méthode light demande on() à cette lampe et rend la réponse.'],
           sol: ['class Lamp:\n    def on(self):\n        return "Light!"\n\nclass Room:\n    def __init__(self):\n        self.lamp = Lamp()\n\n    def light(self):\n        return self.lamp.on()\n\nprint(Room().light())', 'class Lamp:\n    def on(self):\n        return "Luce!"\n\nclass Room:\n    def __init__(self):\n        self.lamp = Lamp()\n\n    def light(self):\n        return self.lamp.on()\n\nprint(Room().light())', 'class Lamp:\n    def on(self):\n        return "Lumière!"\n\nclass Room:\n    def __init__(self):\n        self.lamp = Lamp()\n\n    def light(self):\n        return self.lamp.on()\n\nprint(Room().light())'],
           out: ['Light!', 'Luce!', 'Lumière!'], c: 'self\\.lamp'
         }
@@ -872,7 +872,7 @@ print(rex.name, rex.speak())`,
         x: ['Dog inherits from Animal: it gets __init__ and name for free, and changes only speak. A child class says only what is different.', 'Dog eredita da Animal: riceve __init__ e name gratis, e cambia solo speak. Una classe figlia dice solo quello che è diverso.', 'Dog hérite de Animal : il reçoit __init__ et name gratuitement, et ne change que speak. Une classe fille dit seulement ce qui est différent.'],
         ex: {
           t: ['Add a class Cat that inherits from Animal and says Meow. Show what Cat("Tom").speak() gives back.', 'Aggiungi una classe Cat che eredita da Animal e dice Miao. Mostra cosa restituisce Cat("Tom").speak().', 'Ajoute une classe Cat qui hérite de Animal et dit Miaou. Affiche ce que rend Cat("Tom").speak().'],
-          h: ['Copy the shape of Dog: class Cat(Animal): with its own speak.', 'Copia la forma di Dog: class Cat(Animal): con il suo speak.', 'Copie la forme de Dog : class Cat(Animal): avec son propre speak.'],
+          h: ['Copy the shape of Dog: a class with the parent in its brackets, and its own speak that gives back the sound of the cat.', 'Copia la forma di Dog: una classe con la madre tra le parentesi, e il suo speak che restituisce il verso del gatto.', 'Copie la forme de Dog : une classe avec le parent entre ses parenthèses, et son propre speak qui rend le cri du chat.'],
           start: 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."',
           sol: ['class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cat(Animal):\n    def speak(self):\n        return "Meow"\n\nprint(Cat("Tom").speak())', 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cat(Animal):\n    def speak(self):\n        return "Miao"\n\nprint(Cat("Tom").speak())', 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cat(Animal):\n    def speak(self):\n        return "Miaou"\n\nprint(Cat("Tom").speak())'],
           out: ['Meow', 'Miao', 'Miaou'], uses: ['class'], c: 'class\\s+Cat\\(\\s*Animal\\s*\\)'

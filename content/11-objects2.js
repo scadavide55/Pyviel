@@ -34,7 +34,7 @@ __str__ decide cosa mostra print. __repr__ decide cosa si vede dentro le liste, 
 __str__ décide ce qu'affiche print. __repr__ décide ce qui s'affiche dans les listes, et quand les programmeurs regardent de près un objet.`],
         ex: {
           t: ['Give the class Pet a __str__ that returns the name. Show Pet("Rex").', 'Dai alla classe Pet un __str__ che restituisce il nome. Mostra Pet("Rex").', 'Donne à la classe Pet un __str__ qui rend le nom. Affiche Pet("Rex").'],
-          h: ['def __str__(self): return self.name', 'def __str__(self): return self.name', 'def __str__(self): return self.name'],
+          h: ['__str__ is a method with only self: it gives back the text that print must show, here the name.', '__str__ è un metodo con solo self: restituisce il testo che print deve mostrare, qui il nome.', '__str__ est une méthode avec seulement self : elle rend le texte que print doit afficher, ici le nom.'],
           start: 'class Pet:\n    def __init__(self, name):\n        self.name = name', sol: 'class Pet:\n    def __init__(self, name):\n        self.name = name\n\n    def __str__(self):\n        return self.name\n\nprint(Pet("Rex"))', out: 'Rex', c: '__str__'
         }
       },
@@ -73,7 +73,7 @@ Python trasforma a + b in a.__add__(b). È lo stesso meccanismo che fa funzionar
 Python transforme a + b en a.__add__(b). C'est la même mécanique qui fait marcher + pour les nombres et pour les textes.`],
         ex: {
           t: ['Add a __sub__ method to the class Point, so that Point(5, 5) - Point(2, 1) gives Point(3, 4). Show it.', 'Aggiungi un metodo __sub__ alla classe Point, così che Point(5, 5) - Point(2, 1) dia Point(3, 4). Mostralo.', 'Ajoute une méthode __sub__ à la classe Point, pour que Point(5, 5) - Point(2, 1) donne Point(3, 4). Affiche-le.'],
-          h: ['def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)', 'def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)', 'def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)'],
+          h: ['Copy the shape of __add__ and change the sign: a new Point whose x and y are the differences.', 'Copia la forma di __add__ e cambia il segno: un nuovo Point i cui x e y sono le differenze.', 'Copie la forme de __add__ et change le signe : un nouveau Point dont x et y sont les différences.'],
           start: 'class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __repr__(self):\n        return f"Point({self.x}, {self.y})"', sol: 'class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __sub__(self, other):\n        return Point(self.x - other.x, self.y - other.y)\n\n    def __repr__(self):\n        return f"Point({self.x}, {self.y})"\n\nprint(Point(5, 5) - Point(2, 1))', out: 'Point(3, 4)', c: '__sub__'
         }
       },
@@ -152,7 +152,7 @@ Non te le servono tutte: scrivi quelle che hanno senso per il tuo oggetto.`,
 Tu n'as pas besoin de toutes : écris celles qui ont du sens pour ton objet.`],
         ex: {
           t: ['Make a class Bag with a list inside and a __len__ that gives how many items it has. Show len(Bag([1, 2, 3])) (3).', 'Crea una classe Bag con una lista dentro e un __len__ che dà quanti elementi ha. Mostra len(Bag([1, 2, 3])) (3).', 'Crée une classe Bag avec une liste dedans et un __len__ qui donne combien d\'éléments elle a. Affiche len(Bag([1, 2, 3])) (3).'],
-          h: ['def __len__(self): return len(self.items)', 'def __len__(self): return len(self.items)', 'def __len__(self): return len(self.items)'],
+          h: ['__init__ keeps the list on self. __len__ gives back the length of that list.', '__init__ tiene la lista su self. __len__ restituisce la lunghezza di quella lista.', '__init__ garde la liste sur self. __len__ rend la longueur de cette liste.'],
           sol: 'class Bag:\n    def __init__(self, items):\n        self.items = list(items)\n\n    def __len__(self):\n        return len(self.items)\n\nprint(len(Bag([1, 2, 3])))', out: '3', c: '__len__'
         }
       },
@@ -183,7 +183,7 @@ Le versioni sono un buon esempio: "1.10" viene dopo "1.2", anche se come testi v
 Les versions sont un bon exemple : "1.10" vient après "1.2", même si comme textes il viendrait avant. Comparer les nombres dans un tuple le fait bien.`],
         ex: {
           t: ['Make a class Money with an amount, and a __lt__ that compares the amounts. Show the smallest of Money(5), Money(2), Money(9) with min, as its amount (2).', 'Crea una classe Money con un amount e un __lt__ che confronta gli amount. Mostra il più piccolo tra Money(5), Money(2), Money(9) con min, come amount (2).', 'Crée une classe Money avec un amount et un __lt__ qui compare les amount. Affiche le plus petit de Money(5), Money(2), Money(9) avec min, comme amount (2).'],
-          h: ['def __lt__(self, other): return self.amount < other.amount, then print(min(...).amount).', 'def __lt__(self, other): return self.amount < other.amount, poi print(min(...).amount).', 'def __lt__(self, other): return self.amount < other.amount, puis print(min(...).amount).'],
+          h: ['__lt__ answers "is self smaller than other?" by comparing the two amounts. min uses it: show the amount of what min gives back.', '__lt__ risponde a "self è più piccolo di other?" confrontando i due importi. min lo usa: mostra l\'importo di quello che min restituisce.', '__lt__ répond à "self est-il plus petit que other ?" en comparant les deux montants. min l\'utilise : affiche le montant de ce que min rend.'],
           sol: 'class Money:\n    def __init__(self, amount):\n        self.amount = amount\n\n    def __lt__(self, other):\n        return self.amount < other.amount\n\nprint(min(Money(5), Money(2), Money(9)).amount)', out: '2', c: '__lt__'
         }
       },
@@ -255,7 +255,7 @@ Ci sono decine di metodi speciali, e puoi sempre cercarne uno quando ti serve. S
 Il y a des dizaines de méthodes spéciales, et tu peux toujours en chercher une quand tu en as besoin. Elles suivent toutes la même idée : tu apprends à tes objets à se comporter comme des choses de Python.`],
         ex: {
           t: ['Make a class Adder whose objects can be called: Adder(10)(5) must give 15 (add the number given at the start).', 'Crea una classe Adder i cui oggetti si possono chiamare: Adder(10)(5) deve dare 15 (somma il numero dato all\'inizio).', 'Crée une classe Adder dont les objets peuvent être appelés : Adder(10)(5) doit donner 15 (ajoute le nombre donné au début).'],
-          h: ['__init__(self, n) keeps n, and __call__(self, x) returns self.n + x.', '__init__(self, n) tiene n e __call__(self, x) restituisce self.n + x.', '__init__(self, n) garde n et __call__(self, x) rend self.n + x.'],
+          h: ['__init__ keeps the first number on self. __call__ gets the second one and gives back their sum.', '__init__ tiene il primo numero su self. __call__ riceve il secondo e restituisce la loro somma.', '__init__ garde le premier nombre sur self. __call__ reçoit le second et rend leur somme.'],
           sol: 'class Adder:\n    def __init__(self, n):\n        self.n = n\n\n    def __call__(self, x):\n        return self.n + x\n\nprint(Adder(10)(5))', out: '15', c: '__call__'
         }
       },
@@ -275,7 +275,7 @@ print(Money(3) + Money(4))`,
         x: ['__add__ says what + does with two Money objects, and __str__ says what print shows. With them, your objects work with the signs and functions of Python.', '__add__ dice cosa fa + con due oggetti Money, e __str__ dice cosa mostra print. Con questi, i tuoi oggetti funzionano con i segni e le funzioni di Python.', '__add__ dit ce que fait + avec deux objets Money, et __str__ dit ce qu\'affiche print. Avec elles, tes objets marchent avec les signes et les fonctions de Python.'],
         ex: {
           t: ['Give the class Point a __str__, so that print(Point(2, 3)) shows (2, 3).', 'Dai alla classe Point un __str__, così print(Point(2, 3)) mostra (2, 3).', 'Donne à la classe Point un __str__, pour que print(Point(2, 3)) affiche (2, 3).'],
-          h: ['def __str__(self): returns an f-string with self.x and self.y between brackets.', 'def __str__(self): restituisce una f-string con self.x e self.y tra parentesi.', 'def __str__(self): rend une f-string avec self.x et self.y entre parenthèses.'],
+          h: ['__str__ gives back a text: an f-string with the x and the y of self, a comma and a space between them, in round brackets.', '__str__ restituisce un testo: una f-string con la x e la y di self, una virgola e uno spazio in mezzo, tra parentesi tonde.', '__str__ rend un texte : une f-string avec le x et le y de self, une virgule et un espace entre eux, entre parenthèses.'],
           start: 'class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\nprint(Point(2, 3))',
           sol: 'class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f"({self.x}, {self.y})"\n\nprint(Point(2, 3))',
           out: '(2, 3)', uses: ['def'], c: 'def\\s+__str__'
@@ -317,7 +317,7 @@ It is perfect for values that depend on others: when the radius changes, the dia
 C'est parfait pour des valeurs qui dépendent d'autres : quand le rayon change, le diamètre et l'aire suivent tout seuls.`],
         ex: {
           t: ['Add a property called double to the class Number that gives self.value * 2. Show Number(21).double (42, no brackets).', 'Aggiungi una proprietà che si chiama double alla classe Number che dà self.value * 2. Mostra Number(21).double (42, senza parentesi).', 'Ajoute une propriété qui s\'appelle double à la classe Number qui donne self.value * 2. Affiche Number(21).double (42, sans parenthèses).'],
-          h: ['@property above def double(self):', '@property sopra def double(self):', '@property au-dessus de def double(self):'],
+          h: ['A property is a method with @property on the line just above it. It gives back the value times 2.', 'Una proprietà è un metodo con @property sulla riga subito sopra. Restituisce il valore per 2.', 'Une propriété est une méthode avec @property sur la ligne juste au-dessus. Elle rend la valeur fois 2.'],
           start: 'class Number:\n    def __init__(self, value):\n        self.value = value', sol: 'class Number:\n    def __init__(self, value):\n        self.value = value\n\n    @property\n    def double(self):\n        return self.value * 2\n\nprint(Number(21).double)', out: '42', c: '@property'
         }
       },
@@ -398,7 +398,7 @@ Il valore vero viene tenuto sotto un nome con il trattino basso, _age. Per conve
 La vraie valeur est gardée sous un nom avec un tiret bas, _age. Par convention, ce tiret bas veut dire "ceci est privé, merci d'utiliser la propriété".`],
         ex: {
           t: ['Make a class Score with a property points whose setter refuses a value above 100 (raise ValueError). Setting 50 must work: show the points (50).', 'Crea una classe Score con una proprietà points il cui setter rifiuta un valore sopra 100 (alza ValueError). Impostare 50 deve funzionare: mostra i punti (50).', 'Crée une classe Score avec une propriété points dont le setter refuse une valeur au-dessus de 100 (lève ValueError). Mettre 50 doit marcher : affiche les points (50).'],
-          h: ['@property def points, then @points.setter with if value > 100: raise ValueError.', '@property def points, poi @points.setter con if value > 100: raise ValueError.', '@property def points, puis @points.setter avec if value > 100: raise ValueError.'],
+          h: ['First the property points, which gives back what is kept. Then a second def points with @points.setter above it: it raises ValueError when the value is above 100, and otherwise keeps it.', 'Prima la proprietà points, che restituisce quello che è tenuto. Poi un secondo def points con @points.setter sopra: solleva ValueError quando il valore è sopra 100, e altrimenti lo tiene.', 'D\'abord la propriété points, qui rend ce qui est gardé. Puis un second def points avec @points.setter au-dessus : il lève ValueError quand la valeur dépasse 100, et sinon la garde.'],
           sol: 'class Score:\n    def __init__(self):\n        self._points = 0\n\n    @property\n    def points(self):\n        return self._points\n\n    @points.setter\n    def points(self, value):\n        if value > 100:\n            raise ValueError("too many")\n        self._points = value\n\ns = Score()\ns.points = 50\nprint(s.points)', out: '50', c: 'setter'
         }
       },
@@ -434,7 +434,7 @@ print(Date.is_leap(2024), Date.is_leap(2100))`,
 @staticmethod ne reçoit rien de spécial : c'est juste une fonction qui vit dans la classe parce qu'elle appartient au sujet.`],
         ex: {
           t: ['Add a class method from_pair to Point that builds a Point from a text like "3,4". Show the x of Point.from_pair("3,4") (3).', 'Aggiungi a Point un metodo di classe from_pair che costruisce un Point da un testo come "3,4". Mostra la x di Point.from_pair("3,4") (3).', 'Ajoute à Point une méthode de classe from_pair qui construit un Point à partir d\'un texte comme "3,4". Affiche le x de Point.from_pair("3,4") (3).'],
-          h: ['@classmethod, then x, y = text.split(","), then return cls(int(x), int(y)).', '@classmethod, poi x, y = text.split(","), poi return cls(int(x), int(y)).', '@classmethod, puis x, y = text.split(","), puis return cls(int(x), int(y)).'],
+          h: ['@classmethod above a def that gets cls and the text. split cuts the text at the comma, int makes numbers, and cls(...) builds the Point.', '@classmethod sopra un def che riceve cls e il testo. split taglia il testo alla virgola, int fa i numeri, e cls(...) costruisce il Point.', '@classmethod au-dessus d\'un def qui reçoit cls et le texte. split coupe le texte à la virgule, int fait les nombres, et cls(...) construit le Point.'],
           start: 'class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y', sol: 'class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    @classmethod\n    def from_pair(cls, text):\n        x, y = text.split(",")\n        return cls(int(x), int(y))\n\nprint(Point.from_pair("3,4").x)', out: '3', c: '@classmethod'
         }
       },
@@ -466,7 +466,7 @@ Due trattini bassi, come in __secret, fanno sì che Python lo rinomini _Safe__se
 Deux tirets bas, comme dans __secret, font que Python le renomme _Safe__secret, pour éviter les accidents. Ce n'est quand même pas un vrai cadenas : c'est seulement plus difficile à toucher par erreur.`],
         ex: {
           t: ['Make a class Wallet that keeps its money in _money (one underscore), with a method show() that returns it. Show Wallet().show() when the money is 20.', 'Crea una classe Wallet che tiene i suoi soldi in _money (un trattino basso), con un metodo show() che li restituisce. Mostra Wallet().show() quando i soldi sono 20.', 'Crée une classe Wallet qui garde son argent dans _money (un tiret bas), avec une méthode show() qui le rend. Affiche Wallet().show() quand l\'argent vaut 20.'],
-          h: ['self._money = 20 in __init__, and return self._money in show.', 'self._money = 20 in __init__ e return self._money in show.', 'self._money = 20 dans __init__ et return self._money dans show.'],
+          h: ['__init__ puts 20 in the name with one underscore, on self; show gives it back.', '__init__ mette 20 nel nome con un trattino basso, su self; show lo restituisce.', '__init__ met 20 dans le nom avec un tiret bas, sur self ; show le rend.'],
           sol: 'class Wallet:\n    def __init__(self):\n        self._money = 20\n\n    def show(self):\n        return self._money\n\nprint(Wallet().show())', out: '20', c: '_money'
         }
       }
@@ -502,7 +502,7 @@ Un valore dopo = è un valore predefinito. I tipi, come str e int, sono note per
 Une valeur après = est une valeur par défaut. Les sortes, comme str et int, sont des notes pour celui qui lit : Python ne les vérifie pas pendant qu'il tourne.`],
         ex: {
           t: ['Make a dataclass called Pet with the name (str) and the age (int). Show Pet("Rex", 3).', 'Crea una dataclass che si chiama Pet con il nome (str) e l\'età (int). Mostra Pet("Rex", 3).', 'Crée une dataclass qui s\'appelle Pet avec le nom (str) et l\'âge (int). Affiche Pet("Rex", 3).'],
-          h: ['@dataclass, class Pet:, name: str and age: int.', '@dataclass, class Pet:, name: str e age: int.', '@dataclass, class Pet:, name: str et age: int.'],
+          h: ['Bring in dataclass, put @dataclass above the class, and inside it write one line for each field: its name, a colon and its kind.', 'Porta dentro dataclass, metti @dataclass sopra la classe, e dentro scrivi una riga per ogni campo: il nome, i due punti e il tipo.', 'Fais entrer dataclass, mets @dataclass au-dessus de la classe, et dedans écris une ligne pour chaque champ : son nom, deux-points et son type.'],
           sol: 'from dataclasses import dataclass\n\n@dataclass\nclass Pet:\n    name: str\n    age: int\n\nprint(Pet("Rex", 3))', out: "Pet(name='Rex', age=3)", c: '@dataclass'
         }
       },
@@ -543,7 +543,7 @@ Per un valore predefinito che è una lista, scrivi field(default_factory=list): 
 Pour une valeur par défaut qui est une liste, écris field(default_factory=list) : chaque objet reçoit sa propre nouvelle liste vide, et ils n'en partagent pas une par erreur.`],
         ex: {
           t: ['Make a frozen dataclass Point with x and y (ints). Show replace(Point(1, 2), y=9).', 'Crea una dataclass congelata Point con x e y (interi). Mostra replace(Point(1, 2), y=9).', 'Crée une dataclass gelée Point avec x et y (entiers). Affiche replace(Point(1, 2), y=9).'],
-          h: ['@dataclass(frozen=True), then print(replace(Point(1, 2), y=9)).', '@dataclass(frozen=True), poi print(replace(Point(1, 2), y=9)).', '@dataclass(frozen=True), puis print(replace(Point(1, 2), y=9)).'],
+          h: ['frozen=True goes in the brackets of @dataclass. replace builds a copy with one field changed: show it.', 'frozen=True va tra le parentesi di @dataclass. replace costruisce una copia con un campo cambiato: mostrala.', 'frozen=True va entre les parenthèses de @dataclass. replace construit une copie avec un champ changé : affiche-la.'],
           sol: 'from dataclasses import dataclass, replace\n\n@dataclass(frozen=True)\nclass Point:\n    x: int\n    y: int\n\nprint(replace(Point(1, 2), y=9))', out: 'Point(x=1, y=9)', c: 'frozen=True'
         }
       },
@@ -573,7 +573,7 @@ Ogni scelta ha un nome e un valore, e le puoi scorrere tutte con un ciclo for. C
 Chaque choix a un nom et une valeur, et tu peux tous les parcourir avec une boucle for. Colour(2) trouve le choix qui a la valeur 2.`],
         ex: {
           t: ['Make an Enum called Size with SMALL = 1 and LARGE = 2. Show the name of Size(2) (LARGE).', 'Crea un Enum che si chiama Size con SMALL = 1 e LARGE = 2. Mostra il nome di Size(2) (LARGE).', 'Crée un Enum qui s\'appelle Size avec SMALL = 1 et LARGE = 2. Affiche le nom de Size(2) (LARGE).'],
-          h: ['class Size(Enum): and then print(Size(2).name).', 'class Size(Enum): e poi print(Size(2).name).', 'class Size(Enum): puis print(Size(2).name).'],
+          h: ['An Enum is a class with Enum in its brackets and one line for each choice. Size(2) finds the choice whose value is 2; .name gives its name.', 'Un Enum è una classe con Enum tra le parentesi e una riga per ogni scelta. Size(2) trova la scelta con il valore 2; .name dà il suo nome.', 'Un Enum est une classe avec Enum entre ses parenthèses et une ligne pour chaque choix. Size(2) trouve le choix dont la valeur est 2 ; .name donne son nom.'],
           sol: 'from enum import Enum\n\nclass Size(Enum):\n    SMALL = 1\n    LARGE = 2\n\nprint(Size(2).name)', out: 'LARGE', c: 'Enum'
         }
       },
@@ -613,7 +613,7 @@ Confronta le scelte di un enum con is, perché ogni scelta esiste una volta sola
 Compare les choix d'un enum avec is, parce que chaque choix n'existe qu'une fois. Un choix mal écrit, comme State.DOEN, s'arrête avec une erreur au lieu de faire silencieusement la mauvaise chose.`],
         ex: {
           t: ['Add a fourth state, FAILED, to the enum, and show the name of State.FAILED (FAILED).', 'Aggiungi un quarto stato, FAILED, all\'enum e mostra il nome di State.FAILED (FAILED).', 'Ajoute un quatrième état, FAILED, à l\'enum et affiche le nom de State.FAILED (FAILED).'],
-          h: ['FAILED = auto() inside the class State.', 'FAILED = auto() dentro la classe State.', 'FAILED = auto() dans la classe State.'],
+          h: ['Add one line inside the class, like the others, with auto().', 'Aggiungi una riga dentro la classe, come le altre, con auto().', 'Ajoute une ligne dans la classe, comme les autres, avec auto().'],
           start: 'from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()', sol: 'from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n    FAILED = auto()\n\nprint(State.FAILED.name)', out: 'FAILED', c: 'FAILED = auto'
         }
       },

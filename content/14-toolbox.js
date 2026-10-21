@@ -25,7 +25,7 @@ Ricordi il ciclo per contare le parole della lezione sui dizionari? Counter lo s
 Tu te souviens de la boucle pour compter les mots dans la leçon sur les dictionnaires ? Counter la remplace.`],
         ex: {
           t: ['Count the letters of "banana" with Counter and show how many a there are (3).', 'Conta le lettere di "banana" con Counter e mostra quante a ci sono (3).', 'Compte les lettres de "banana" avec Counter et affiche combien de a il y a (3).'],
-          h: ['Counter("banana")["a"]', 'Counter("banana")["a"]', 'Counter("banana")["a"]'],
+          h: ['Counter counts every letter of a text; read the count of one letter with square brackets.', 'Counter conta ogni lettera di un testo; leggi il conto di una lettera con le parentesi quadre.', 'Counter compte chaque lettre d\'un texte ; lis le compte d\'une lettre avec des crochets.'],
           sol: 'from collections import Counter\nprint(Counter("banana")["a"])', out: '3', c: 'Counter'
         }
       },
@@ -50,7 +50,7 @@ Qui raggruppa le parole per la loro prima lettera, senza nessun controllo.`,
 Ici il regroupe les mots par leur première lettre, sans aucune vérification.`],
         ex: {
           t: ['Group the numbers 1 to 6 by whether they are even or odd: the key is n % 2. Show the list of the key 0 ([2, 4, 6]).', 'Raggruppa i numeri da 1 a 6 in pari o dispari: la chiave è n % 2. Mostra la lista della chiave 0 ([2, 4, 6]).', 'Regroupe les nombres de 1 à 6 en pairs ou impairs : la clé est n % 2. Affiche la liste de la clé 0 ([2, 4, 6]).'],
-          h: ['groups[n % 2].append(n) in a loop.', 'groups[n % 2].append(n) in un ciclo.', 'groups[n % 2].append(n) dans une boucle.'],
+          h: ['A defaultdict(list) makes an empty list the first time a key is used. For each number, append it to the list of its key.', 'Un defaultdict(list) crea una lista vuota la prima volta che si usa una chiave. Per ogni numero, aggiungilo con append alla lista della sua chiave.', 'Un defaultdict(list) crée une liste vide la première fois qu\'une clé est utilisée. Pour chaque nombre, ajoute-le avec append à la liste de sa clé.'],
           sol: 'from collections import defaultdict\ngroups = defaultdict(list)\nfor n in range(1, 7):\n    groups[n % 2].append(n)\nprint(groups[0])', out: '[2, 4, 6]', c: 'defaultdict'
         }
       },
@@ -73,7 +73,7 @@ Una lista normale è lenta davanti, perché tutto deve spostarsi. Una deque no.`
 Une liste normale est lente devant, parce que tout doit se décaler. Une deque non.`],
         ex: {
           t: ['Make a deque with 10, 20, 30, take out the first with popleft, and show what is left as a list ([20, 30]).', 'Fai una deque con 10, 20, 30, togli il primo con popleft e mostra quello che resta come lista ([20, 30]).', 'Fais une deque avec 10, 20, 30, enlève le premier avec popleft et affiche ce qui reste sous forme de liste ([20, 30]).'],
-          h: ['queue.popleft() and then print(list(queue)).', 'queue.popleft() e poi print(list(queue)).', 'queue.popleft() puis print(list(queue)).'],
+          h: ['popleft takes out the first item. list(...) turns what is left into a list that print can show.', 'popleft toglie il primo elemento. list(...) trasforma quello che resta in una lista che print può mostrare.', 'popleft enlève le premier élément. list(...) transforme ce qui reste en une liste que print peut afficher.'],
           sol: 'from collections import deque\nqueue = deque([10, 20, 30])\nqueue.popleft()\nprint(list(queue))', out: '[20, 30]', c: 'popleft'
         }
       },
@@ -97,7 +97,7 @@ It is a light way to keep a small group of values together, without writing a wh
 C'est une façon légère de garder ensemble un petit groupe de valeurs, sans écrire toute une classe.`],
         ex: {
           t: ['Make a namedtuple called Pet with the parts name and age. Build Pet("Rex", 3) and show its age (3).', 'Fai una namedtuple che si chiama Pet con le parti name e age. Costruisci Pet("Rex", 3) e mostra la sua age (3).', 'Fais un namedtuple qui s\'appelle Pet avec les parties name et age. Construis Pet("Rex", 3) et affiche son age (3).'],
-          h: ['Pet = namedtuple("Pet", ["name", "age"])', 'Pet = namedtuple("Pet", ["name", "age"])', 'Pet = namedtuple("Pet", ["name", "age"])'],
+          h: ['namedtuple takes the name of the new kind and the list of its parts. Build a Pet, then read its age with a dot.', 'namedtuple prende il nome del nuovo tipo e la lista delle sue parti. Costruisci un Pet, poi leggi la sua età con un punto.', 'namedtuple prend le nom du nouveau type et la liste de ses parties. Construis un Pet, puis lis son âge avec un point.'],
           sol: 'from collections import namedtuple\nPet = namedtuple("Pet", ["name", "age"])\nprint(Pet("Rex", 3).age)', out: '3', c: 'namedtuple'
         }
       },
@@ -119,7 +119,7 @@ Danno un risultato "pigro", quindi lo trasformi in lista con list(...) per veder
 Ils donnent un résultat "paresseux", donc tu le transformes en liste avec list(...) pour le voir.`],
         ex: {
           t: ['Show how many ways there are to choose 2 items out of 5, using combinations (10).', 'Mostra in quanti modi si possono scegliere 2 elementi su 5, usando combinations (10).', 'Affiche de combien de façons on peut choisir 2 éléments parmi 5, en utilisant combinations (10).'],
-          h: ['len(list(combinations(range(5), 2)))', 'len(list(combinations(range(5), 2)))', 'len(list(combinations(range(5), 2)))'],
+          h: ['combinations gives every pair, one at a time: list collects them, and len counts them.', 'combinations dà ogni coppia, una alla volta: list le raccoglie, e len le conta.', 'combinations donne chaque paire, une à la fois : list les rassemble, et len les compte.'],
           sol: 'from itertools import combinations\nprint(len(list(combinations(range(5), 2))))', out: '10', c: 'combinations'
         }
       },
@@ -140,7 +140,7 @@ islice(count(10), 4) prende i primi quattro numeri di quel conteggio infinito.`,
 islice(count(10), 4) prend les quatre premiers nombres de ce compte infini.`],
         ex: {
           t: ['Show the first 5 numbers counted from 100 (100 to 104), with count and islice.', 'Mostra i primi 5 numeri contati da 100 (da 100 a 104), con count e islice.', 'Affiche les 5 premiers nombres comptés à partir de 100 (de 100 à 104), avec count et islice.'],
-          h: ['list(islice(count(100), 5))', 'list(islice(count(100), 5))', 'list(islice(count(100), 5))'],
+          h: ['count counts for ever from the number you give it; islice takes only the first few. list shows them.', 'count conta all\'infinito dal numero che gli dai; islice prende solo i primi. list li mostra.', 'count compte sans fin à partir du nombre que tu lui donnes ; islice ne prend que les premiers. list les affiche.'],
           sol: 'from itertools import islice, count\nprint(list(islice(count(100), 5)))', out: '[100, 101, 102, 103, 104]', c: 'islice'
         }
       },
@@ -162,7 +162,7 @@ partial fa una funzione nuova da una vecchia, con alcuni valori già riempiti: p
 partial fait une nouvelle fonction à partir d'une ancienne, avec certaines valeurs déjà remplies : partial(pow, 2) est une fonction qui élève 2 à n'importe quelle puissance que tu lui donnes.`],
         ex: {
           t: ['Use reduce to add up [1, 2, 3, 4, 5] (15).', 'Usa reduce per sommare [1, 2, 3, 4, 5] (15).', 'Utilise reduce pour additionner [1, 2, 3, 4, 5] (15).'],
-          h: ['reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])', 'reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])', 'reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])'],
+          h: ['reduce takes a function of two values and a list: it keeps adding the next item to what it has so far.', 'reduce prende una funzione di due valori e una lista: continua ad aggiungere l\'elemento seguente a quello che ha finora.', 'reduce prend une fonction de deux valeurs et une liste : il ajoute à chaque fois l\'élément suivant à ce qu\'il a déjà.'],
           sol: 'from functools import reduce\nprint(reduce(lambda a, b: a + b, [1, 2, 3, 4, 5]))', out: '15', c: 'reduce'
         }
       },
@@ -184,7 +184,7 @@ Le puoi tagliare come qualsiasi testo. Sono comode per i codici segreti e per fa
 Tu peux les découper comme n'importe quel texte. Elles sont pratiques pour les codes secrets et pour faire des mots de passe au hasard.`],
         ex: {
           t: ['Show the last 3 letters of the alphabet, with string.ascii_lowercase (xyz).', 'Mostra le ultime 3 lettere dell\'alfabeto, con string.ascii_lowercase (xyz).', 'Affiche les 3 dernières lettres de l\'alphabet, avec string.ascii_lowercase (xyz).'],
-          h: ['string.ascii_lowercase[-3:]', 'string.ascii_lowercase[-3:]', 'string.ascii_lowercase[-3:]'],
+          h: ['string.ascii_lowercase is the whole alphabet, as a text. A slice that starts with a minus number takes the end.', 'string.ascii_lowercase è tutto l\'alfabeto, come testo. Una fetta che comincia con un numero col meno prende la fine.', 'string.ascii_lowercase est tout l\'alphabet, sous forme de texte. Une tranche qui commence par un nombre avec un moins prend la fin.'],
           sol: 'import string\nprint(string.ascii_lowercase[-3:])', out: 'xyz', c: 'ascii_lowercase'
         }
       },
@@ -218,7 +218,7 @@ Era solo un giro: la libreria standard ha strumenti per quasi tutto. Quando ti s
 Ce n'était qu'un tour : la bibliothèque standard a des outils pour presque tout. Quand tu as besoin de quelque chose, demande-toi "Python l'a-t-il déjà ?"`],
         ex: {
           t: ['Break the text "one two three four five six" into lines of at most 10 characters, with fill, and show it.', 'Spezza il testo "one two three four five six" in righe di al massimo 10 caratteri, con fill, e mostralo.', 'Coupe le texte "one two three four five six" en lignes d\'au plus 10 caractères, avec fill, et affiche-le.'],
-          h: ['print(fill("one two three four five six", width=10))', 'print(fill("one two three four five six", width=10))', 'print(fill("one two three four five six", width=10))'],
+          h: ['fill takes the text, and width= for the longest line. Show what it gives back.', 'fill prende il testo, e width= per la riga più lunga. Mostra quello che restituisce.', 'fill prend le texte, et width= pour la ligne la plus longue. Affiche ce qu\'il rend.'],
           sol: 'from textwrap import fill\nprint(fill("one two three four five six", width=10))', out: 'one two\nthree four\nfive six', c: 'fill'
         }
       }
@@ -266,7 +266,7 @@ Scrivi qualche assert vicino alla tua funzione, con casi piccoli di cui conosci 
         ex: {
           uses: ['assert'],
           t: ['Fix the last promise, so it is true, and the program ends without an error.', 'Correggi l\'ultima promessa, così è vera, e il programma finisce senza errori.', 'Corrige la dernière promesse, pour qu\'elle soit vraie, et que le programme finisse sans erreur.'],
-          h: ['double(5) is 10, not 11.', 'double(5) fa 10, non 11.', 'double(5) vaut 10, pas 11.'],
+          h: ['Work out double(5) yourself. The promise after assert must say what is really true.', 'Calcola tu double(5). La promessa dopo assert deve dire quello che è vero davvero.', 'Calcule toi-même double(5). La promesse après assert doit dire ce qui est vraiment vrai.'],
           start: 'def double(n):\n    return n * 2\n\nassert double(5) == 11, "wrong"\nprint("ok")', sol: 'def double(n):\n    return n * 2\n\nassert double(5) == 10, "wrong"\nprint("ok")', out: 'ok'
         }
       },
@@ -330,9 +330,9 @@ Dai a quei print un'etichetta chiara, come DEBUG, così li trovi e li togli quan
 Donne à ces print une étiquette claire, comme DEBUG, pour pouvoir les retrouver et les enlever quand tu as fini.`],
         ex: {
           uses: ['def', 'for'],
-          t: ['The function sum_to is meant to add 1 to n but has a mistake: sum_to(3) shows 3 instead of 6. Fix the loop (range(1, n + 1)) so it shows 6.', 'La funzione sum_to deve sommare da 1 a n ma ha uno sbaglio: sum_to(3) mostra 3 invece di 6. Correggi il ciclo (range(1, n + 1)) così mostra 6.', 'La fonction sum_to doit additionner de 1 à n mais a une erreur : sum_to(3) affiche 3 au lieu de 6. Corrige la boucle (range(1, n + 1)) pour qu\'elle affiche 6.'],
-          h: ['range(1, n) stops one number too early.', 'range(1, n) si ferma un numero troppo presto.', 'range(1, n) s\'arrête un nombre trop tôt.'],
-          start: 'def sum_to(n):\n    total = 0\n    for i in range(1, n):\n        total += i\n    return total\n\nprint(sum_to(3))', sol: 'def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total\n\nprint(sum_to(3))', out: '6'
+          t: ['The function sum_to is meant to add 1 to n but has a mistake: sum_to(3) shows 3 instead of 6. Find the mistake in the loop and fix it, so that the last line shows 6. Your print lines may stay.', 'La funzione sum_to deve sommare da 1 a n ma ha uno sbaglio: sum_to(3) mostra 3 invece di 6. Trova lo sbaglio nel ciclo e correggilo, così l\'ultima riga mostra 6. I tuoi print possono restare.', 'La fonction sum_to doit additionner de 1 à n mais a une erreur : sum_to(3) affiche 3 au lieu de 6. Trouve l\'erreur dans la boucle et corrige-la, pour que la dernière ligne affiche 6. Tes print peuvent rester.'],
+          h: ['Add a print inside the loop to see which numbers i takes. Is n among them?', 'Aggiungi un print dentro il ciclo per vedere quali numeri prende i. C\'è anche n?', 'Ajoute un print dans la boucle pour voir quels nombres prend i. Est-ce que n en fait partie ?'],
+          start: 'def sum_to(n):\n    total = 0\n    for i in range(1, n):\n        total += i\n    return total\n\nprint(sum_to(3))', sol: 'def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total\n\nprint(sum_to(3))', m: '(^|\\n)6$', uses: ['for']
         }
       },
       {
@@ -361,7 +361,7 @@ La prima riga dice "Traceback", l'ultima riga dice cos'è successo. I programmi 
 La première ligne dit "Traceback", la dernière ligne dit ce qui s'est passé. Les vrais programmes l'utilisent pour écrire un rapport de ce qui a mal tourné, par exemple dans un fichier.`],
         ex: {
           t: ['Catch the error of int("x") and show the last line of its full error (ValueError: invalid literal for int() with base 10: \'x\').', 'Prendi l\'errore di int("x") e mostra l\'ultima riga del suo errore completo.', 'Attrape l\'erreur de int("x") et affiche la dernière ligne de son erreur complète.'],
-          h: ['except ValueError: and traceback.format_exc().splitlines()[-1].', 'except ValueError: e traceback.format_exc().splitlines()[-1].', 'except ValueError: et traceback.format_exc().splitlines()[-1].'],
+          h: ['Inside the except, traceback.format_exc() gives the whole error as text. splitlines cuts it into lines; the last line is at place -1.', 'Dentro l\'except, traceback.format_exc() dà tutto l\'errore come testo. splitlines lo taglia in righe; l\'ultima riga è al posto -1.', 'Dans le except, traceback.format_exc() donne toute l\'erreur sous forme de texte. splitlines la coupe en lignes ; la dernière ligne est à la place -1.'],
           sol: 'import traceback\n\ntry:\n    int("x")\nexcept ValueError:\n    print(traceback.format_exc().splitlines()[-1])', m: 'ValueError', c: 'format_exc'
         }
       }
@@ -411,7 +411,7 @@ Vedrai questa forma in quasi ogni programma Python. Permette a un file di essere
 Tu verras cette forme dans presque tous les programmes Python. Elle permet à un fichier d'être à la fois un programme et une boîte à outils de fonctions que d'autres peuvent importer sans risque.`],
         ex: {
           t: ['Add a second function bye(name) that returns "Bye, " + name + "!" and make main show it after the greeting. With the name Ada it must show two lines.', 'Aggiungi una seconda funzione bye(name) che restituisce "Bye, " + name + "!" e fai in modo che main la mostri dopo il saluto. Con il nome Ada deve mostrare due righe.', 'Ajoute une deuxième fonction bye(name) qui rend "Bye, " + name + "!" et fais en sorte que main l\'affiche après le salut. Avec le nom Ada il doit afficher deux lignes.'],
-          h: ['def bye(name): and print(bye(name)) in main.', 'def bye(name): e print(bye(name)) in main.', 'def bye(name): et print(bye(name)) dans main.'],
+          h: ['bye is like greeting: a def that gives back a text. Then main shows what bye gives back, after the greeting.', 'bye è come greeting: un def che restituisce un testo. Poi main mostra quello che bye restituisce, dopo il saluto.', 'bye est comme greeting : un def qui rend un texte. Puis main affiche ce que bye rend, après la salutation.'],
           start: 'def main():\n    name = input("Name: ")\n    print(greeting(name))\n\ndef greeting(name):\n    return f"Hello, {name}!"\n\nif __name__ == "__main__":\n    main()', sol: 'def main():\n    name = input("Name: ")\n    print(greeting(name))\n    print(bye(name))\n\ndef greeting(name):\n    return f"Hello, {name}!"\n\ndef bye(name):\n    return "Bye, " + name + "!"\n\nif __name__ == "__main__":\n    main()', i: ['Ada'], m: 'Hello, Ada!\\nBye, Ada!', c: 'def bye'
         }
       },
@@ -499,9 +499,9 @@ Una piccola funzione che continua a chiedere finché la risposta è valida si pu
 
 Une petite fonction qui continue à demander jusqu'à ce que la réponse soit valide peut servir encore et encore. L'écrire une fois te protège des mêmes erreurs partout.`],
         ex: {
-          t: ['Use ask_number to ask for a number from 1 to 10, with the answers 0, x and 7. It must end showing: 7', 'Usa ask_number per chiedere un numero da 1 a 10, con le risposte 0, x e 7. Deve finire mostrando: 7', 'Utilise ask_number pour demander un nombre de 1 à 10, avec les réponses 0, x et 7. Il doit finir en affichant : 7'],
+          t: ['Use ask_number to ask for a number from 1 to 10, with the answers 0, x and 7. Show the number it gives back: the last line must be only 7.', 'Usa ask_number per chiedere un numero da 1 a 10, con le risposte 0, x e 7. Mostra il numero che restituisce: l\'ultima riga deve essere solo 7.', 'Utilise ask_number pour demander un nombre de 1 à 10, avec les réponses 0, x et 7. Affiche le nombre qu\'elle rend : la dernière ligne doit être seulement 7.'],
           h: ['ask_number takes the question, the lowest and the highest number, and gives back the first good answer. Show it.', 'ask_number prende la domanda, il numero più basso e quello più alto, e restituisce la prima risposta buona. Mostrala.', 'ask_number prend la question, le plus petit et le plus grand nombre, et rend la première bonne réponse. Affiche-la.'],
-          start: 'def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip("-").isdigit():\n            print("Please type a whole number.")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print("Out of range.")', sol: 'def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip("-").isdigit():\n            print("Please type a whole number.")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print("Out of range.")\n\nprint(ask_number("Number: ", 1, 10))', i: ['0', 'x', '7'], m: '7$', c: 'ask_number\\('
+          start: 'def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip("-").isdigit():\n            print("Please type a whole number.")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print("Out of range.")', sol: 'def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip("-").isdigit():\n            print("Please type a whole number.")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print("Out of range.")\n\nprint(ask_number("Number: ", 1, 10))', i: ['0', 'x', '7'], m: '(^|\\n)7$', uses: ['ask_number']
         }
       },
       {
@@ -528,7 +528,7 @@ Python non li controlla mentre gira, ma dicono a chi legge, e al tuo editor, cos
 Python ne les vérifie pas pendant qu'il tourne, mais ils disent à celui qui lit, et à ton éditeur, ce qui est attendu. Ils rendent un programme plus facile à comprendre.`],
         ex: {
           t: ['Write a function shout(text: str) -> str that returns the text in capitals. Show shout("hi") (HI).', 'Scrivi una funzione shout(text: str) -> str che restituisce il testo in maiuscolo. Mostra shout("hi") (HI).', 'Écris une fonction shout(text: str) -> str qui rend le texte en majuscules. Affiche shout("hi") (HI).'],
-          h: ['def shout(text: str) -> str: and return text.upper().', 'def shout(text: str) -> str: e return text.upper().', 'def shout(text: str) -> str: et return text.upper().'],
+          h: ['After the name of the parameter, a colon and its kind; before the last colon of the def line, -> and the kind given back. Inside, the text in capitals.', 'Dopo il nome del parametro, i due punti e il suo tipo; prima degli ultimi due punti della riga def, -> e il tipo restituito. Dentro, il testo in maiuscolo.', 'Après le nom du paramètre, deux-points et son type ; avant le dernier deux-points de la ligne def, -> et le type rendu. Dedans, le texte en majuscules.'],
           sol: 'def shout(text: str) -> str:\n    return text.upper()\n\nprint(shout("hi"))', out: 'HI', c: '-> str'
         }
       }

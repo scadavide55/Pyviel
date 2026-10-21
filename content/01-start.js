@@ -261,7 +261,7 @@ age = age + 1 a l'air étrange, mais ça marche. Python calcule d'abord le côt�
         ex: {
           uses: ['=', '+'],
           t: ['The age starts at 10. Add 5 to it with age = age + 5, then show it. It must show 15.', 'L\'età parte da 10. Aggiungi 5 con age = age + 5 e poi mostrala. Deve mostrare 15.', 'L\'âge commence à 10. Ajoute-lui 5 avec age = age + 5, puis affiche-le. Il doit afficher 15.'],
-          h: ['Put the line age = age + 5 between the two other lines.', 'Metti la riga age = age + 5 tra le altre due righe.', 'Mets la ligne age = age + 5 entre les deux autres lignes.'],
+          h: ['The order matters: the line that adds 5 must come after the box is filled and before it is shown.', 'Conta l\'ordine: la riga che aggiunge 5 deve venire dopo che la scatola è riempita e prima che venga mostrata.', 'L\'ordre compte : la ligne qui ajoute 5 doit venir après que la boîte est remplie et avant qu\'elle soit affichée.'],
           start: 'age = 10\nprint(age)', sol: 'age = 10\nage = age + 5\nprint(age)', out: '15'
         }
       },
@@ -480,7 +480,7 @@ C'est pratique pour dessiner des lignes : "-" * 20 donne vingt tirets.`],
         ex: {
           uses: ['*'],
           t: ['Show a row of 10 stars: **********', 'Mostra una fila di 10 stelle: **********', 'Affiche une rangée de 10 étoiles : **********'],
-          h: ['The text is "*" and the number is 10.', 'Il testo è "*" e il numero è 10.', 'Le texte est "*" et le nombre est 10.'],
+          h: ['The star repeats a text: first the text in quotes, then the star, then how many times.', 'La stella ripete un testo: prima il testo tra virgolette, poi la stella, poi quante volte.', 'L\'étoile répète un texte : d\'abord le texte entre guillemets, puis l\'étoile, puis combien de fois.'],
           sol: 'print("*" * 10)', out: '**********', c: '\\*'
         }
       },
@@ -682,7 +682,7 @@ print(word[-2])`,
           `Comment prendre la dernière lettre si tu ne sais pas quelle est la longueur du texte ? Compte depuis la fin, avec un moins : word[-1] est la dernière lettre et word[-2] celle d'avant.`],
         ex: {
           t: ['Show the last letter of the word "banana", using a minus place.', 'Mostra l\'ultima lettera della parola "banana", usando un posto con il meno.', 'Affiche la dernière lettre du mot "banane", en utilisant une place avec un moins.'],
-          h: ['word[-1]', 'word[-1]', 'word[-1]'],
+          h: ['Places with a minus count from the end: -1 is the last letter, -2 the one before it.', 'I posti con il meno contano dalla fine: -1 è l\'ultima lettera, -2 quella prima.', 'Les places avec un moins comptent depuis la fin : -1 est la dernière lettre, -2 celle d\'avant.'],
           start: ['word = "banana"', 'word = "banana"', 'word = "banane"'],
           sol: ['word = "banana"\nprint(word[-1])', 'word = "banana"\nprint(word[-1])', 'word = "banane"\nprint(word[-1])'],
           out: ['a', 'a', 'e'], c: '\\[-1\\]'

@@ -141,8 +141,8 @@ Il programma funziona già come gioco. I passi dopo lo rendono più sicuro e pi�
 
 Le programme marche déjà comme un jeu. Les étapes suivantes le rendent plus sûr et plus joli.`],
         ex: {
-          t: ['This version keeps asking, but it does not count. Add the counter: tries = 0 before the loop, tries += 1 after each guess, and a last message that says how many tries it took. With the answers 50, 30 and 42 it must end with "You got it in 3 tries!".', 'Questa versione continua a chiedere, ma non conta. Aggiungi il contatore: tries = 0 prima del ciclo, tries += 1 dopo ogni tentativo, e un ultimo messaggio che dice quanti tentativi ci sono voluti. Con le risposte 50, 30 e 42 deve finire con "Ce l\'hai fatta in 3 tentativi!".', 'Cette version continue à demander, mais elle ne compte pas. Ajoute le compteur : tries = 0 avant la boucle, tries += 1 après chaque essai, et un dernier message qui dit combien d\'essais il a fallu. Avec les réponses 50, 30 et 42 il doit finir par "Tu as réussi en 3 essais !".'],
-          h: ['The last print becomes an f-string: print(f"You got it in {tries} tries!").', 'L\'ultimo print diventa una f-string: print(f"Ce l\'hai fatta in {tries} tentativi!").', 'Le dernier print devient une f-string : print(f"Tu as réussi en {tries} essais !").'],
+          t: ['This version keeps asking, but it does not count. Add a counter of the tries: a box that starts at 0 before the loop and grows by 1 at each guess. After the loop, show the word Tries: and the counter. With the answers 50, 30 and 42 the last line must be Tries: 3', 'Questa versione continua a chiedere, ma non conta. Aggiungi un contatore dei tentativi: una scatola che parte da 0 prima del ciclo e cresce di 1 a ogni tentativo. Dopo il ciclo, mostra la parola Tentativi: e il contatore. Con le risposte 50, 30 e 42 l\'ultima riga deve essere Tentativi: 3', 'Cette version continue à demander, mais elle ne compte pas. Ajoute un compteur des essais : une boîte qui commence à 0 avant la boucle et grandit de 1 à chaque essai. Après la boucle, affiche le mot Essais: et le compteur. Avec les réponses 50, 30 et 42 la dernière ligne doit être Essais: 3'],
+          h: ['Three new lines: one before the loop makes the box, one inside the loop, right after the guess, adds 1 to it, and one after the loop, not pushed in, shows it.', 'Tre righe nuove: una prima del ciclo crea la scatola, una dentro il ciclo, subito dopo il tentativo, ci aggiunge 1, e una dopo il ciclo, non rientrata, la mostra.', 'Trois nouvelles lignes : une avant la boucle crée la boîte, une dans la boucle, juste après l\'essai, lui ajoute 1, et une après la boucle, sans décalage, l\'affiche.'],
           start: [c`secret = 42
 while True:
     guess = int(input("Guess the number: "))
@@ -181,8 +181,9 @@ while True:
     elif guess > secret:
         print("Too high")
     else:
-        print(f"You got it in {tries} tries!")
-        break`, c`secret = 42
+        print("You got it!")
+        break
+print("Tries:", tries)`, c`secret = 42
 tries = 0
 while True:
     guess = int(input("Indovina il numero: "))
@@ -192,8 +193,9 @@ while True:
     elif guess > secret:
         print("Troppo alto")
     else:
-        print(f"Ce l'hai fatta in {tries} tentativi!")
-        break`, c`secret = 42
+        print("Ce l'hai fatta!")
+        break
+print("Tentativi:", tries)`, c`secret = 42
 tries = 0
 while True:
     guess = int(input("Devine le nombre : "))
@@ -203,9 +205,10 @@ while True:
     elif guess > secret:
         print("Trop grand")
     else:
-        print(f"Tu as réussi en {tries} essais !")
-        break`],
-          i: ['50', '30', '42'], m: ['in 3 tries!$', 'in 3 tentativi!$', 'en 3 essais !$'], c: 'while True'
+        print("Tu as réussi !")
+        break
+print("Essais:", tries)`],
+          i: ['50', '30', '42'], m: ['Tries: 3$', 'Tentativi: 3$', 'Essais: 3$'], uses: ['+=']
         }
       },
       {
@@ -282,8 +285,8 @@ Nota l'ultima riga del ciclo: un if in una riga sceglie tra "troppo basso" e "tr
 
 Remarque la dernière ligne de la boucle : un if sur une ligne choisit entre "trop petit" et "trop grand".`],
         ex: {
-          t: ['Make the game use ask_number for every guess. With the answers abc, 500, 50 and 42, the program must end by saying you got it in 2 tries: the refused answers do not count as tries.', 'Fai usare ask_number al gioco per ogni tentativo. Con le risposte abc, 500, 50 e 42, il programma deve finire dicendo che ce l\'hai fatta in 2 tentativi: le risposte rifiutate non contano come tentativi.', 'Fais utiliser ask_number au jeu pour chaque essai. Avec les réponses abc, 500, 50 et 42, le programme doit finir en disant que tu as réussi en 2 essais : les réponses refusées ne comptent pas comme essais.'],
-          h: ['The function is already written, but nobody calls it: the guess still comes from int(input(...)), which stops with an error on abc. Replace that line with guess = ask_number("Guess (1-100): ", 1, 100).', 'La funzione è già scritta, ma nessuno la chiama: il tentativo viene ancora da int(input(...)), che si ferma con un errore su abc. Sostituisci quella riga con guess = ask_number("Indovina (1-100): ", 1, 100).', 'La fonction est déjà écrite, mais personne ne l\'appelle : l\'essai vient encore de int(input(...)), qui s\'arrête sur une erreur avec abc. Remplace cette ligne par guess = ask_number("Devine (1-100) : ", 1, 100).'],
+          t: ['Make the game use ask_number for every guess, and accept only the numbers from 1 to 60 (say so in the question too). With the answers abc, 70, 50 and 42, the program must end by saying you got it in 2 tries: the refused answers do not count.', 'Fai usare ask_number al gioco per ogni tentativo, e accetta solo i numeri da 1 a 60 (dillo anche nella domanda). Con le risposte abc, 70, 50 e 42, il programma deve finire dicendo che ce l\'hai fatta in 2 tentativi: le risposte rifiutate non contano.', 'Fais utiliser ask_number au jeu pour chaque essai, et accepte seulement les nombres de 1 à 60 (dis-le aussi dans la question). Avec les réponses abc, 70, 50 et 42, le programme doit finir en disant que tu as réussi en 2 essais : les réponses refusées ne comptent pas.'],
+          h: ['The function is written, but nobody calls it: the guess still comes from int(input(...)). Replace that with a call of ask_number, and give it the question, the lowest and the highest number.', 'La funzione è scritta, ma nessuno la chiama: il tentativo viene ancora da int(input(...)). Sostituiscilo con una chiamata di ask_number, e dagli la domanda, il numero più basso e quello più alto.', 'La fonction est écrite, mais personne ne l\'appelle : l\'essai vient encore de int(input(...)). Remplace-le par un appel de ask_number, et donne-lui la question, le plus petit et le plus grand nombre.'],
           start: [c`def ask_number(question, low, high):
     while True:
         text = input(question)
@@ -356,7 +359,7 @@ while True:
 secret = 42
 tries = 0
 while True:
-    guess = ask_number("Guess (1-100): ", 1, 100)
+    guess = ask_number("Guess (1-60): ", 1, 60)
     tries += 1
     if guess == secret:
         print(f"You got it in {tries} tries!")
@@ -375,7 +378,7 @@ while True:
 secret = 42
 tries = 0
 while True:
-    guess = ask_number("Indovina (1-100): ", 1, 100)
+    guess = ask_number("Indovina (1-60): ", 1, 60)
     tries += 1
     if guess == secret:
         print(f"Ce l'hai fatta in {tries} tentativi!")
@@ -394,13 +397,13 @@ while True:
 secret = 42
 tries = 0
 while True:
-    guess = ask_number("Devine (1-100) : ", 1, 100)
+    guess = ask_number("Devine (1-60) : ", 1, 60)
     tries += 1
     if guess == secret:
         print(f"Tu as réussi en {tries} essais !")
         break
     print("Trop petit" if guess < secret else "Trop grand")`],
-          i: ['abc', '500', '50', '42'], m: ['in 2 tries!$', 'in 2 tentativi!$', 'en 2 essais !$'], c: 'ask_number'
+          i: ['abc', '70', '50', '42'], m: ['in 2 tries!$', 'in 2 tentativi!$', 'en 2 essais !$'], uses: ['ask_number']
         }
       },
       {
@@ -614,7 +617,7 @@ set(word) <= guessed demande "toutes les lettres du mot sont-elles devinées ?" 
         ex: {
           uses: ['for'],
           t: ['The player has only 1 life, so a wrong first guess loses the game. Give the player 2 lives, so that the guesses x, p, y, t, h, o, n win: it must show You win!', 'Il giocatore ha una sola vita, quindi un primo tentativo sbagliato fa perdere. Dai al giocatore 2 vite, così i tentativi x, p, y, t, h, o, n vincono: deve mostrare You win!', 'Le joueur n\'a qu\'une seule vie, donc un premier mauvais essai fait perdre. Donne 2 vies au joueur, pour que les essais x, p, y, t, h, o, n gagnent : il doit afficher You win!'],
-          h: ['Change lives = 1 into lives = 2.', 'Cambia lives = 1 in lives = 2.', 'Change lives = 1 en lives = 2.'],
+          h: ['The number of lives is set on one line near the top.', 'Il numero di vite è deciso in una riga in alto.', 'Le nombre de vies est fixé sur une ligne en haut.'],
           start: 'word = "python"\nguessed = set()\nlives = 1\nfor guess in ["x", "p", "y", "t", "h", "o", "n"]:\n    if lives == 0 or set(word) <= guessed:\n        break\n    guessed.add(guess)\n    if guess not in word:\n        lives -= 1\nif set(word) <= guessed:\n    print("You win!")\nelse:\n    print("You lose.")', sol: 'word = "python"\nguessed = set()\nlives = 2\nfor guess in ["x", "p", "y", "t", "h", "o", "n"]:\n    if lives == 0 or set(word) <= guessed:\n        break\n    guessed.add(guess)\n    if guess not in word:\n        lives -= 1\nif set(word) <= guessed:\n    print("You win!")\nelse:\n    print("You lose.")', out: 'You win!'
         }
       },
@@ -835,7 +838,7 @@ Siccome sono funzioni separate, puoi provare ognuna da sola, e il menu del passo
 Comme ce sont des fonctions séparées, tu peux tester chacune toute seule, et le menu de l'étape suivante ne fera que les appeler.`],
         ex: {
           t: ['Add a function remove(tasks, number) that deletes the task with that number (use pop). Remove task 1 and show the number of tasks left (1).', 'Aggiungi una funzione remove(tasks, number) che cancella il compito con quel numero (usa pop). Rimuovi il compito 1 e mostra quanti compiti restano (1).', 'Ajoute une fonction remove(tasks, number) qui supprime la tâche avec ce numéro (utilise pop). Supprime la tâche 1 et affiche combien de tâches restent (1).'],
-          h: ['tasks.pop(number - 1) inside remove.', 'tasks.pop(number - 1) dentro remove.', 'tasks.pop(number - 1) dans remove.'],
+          h: ['pop takes out the item at a place. The places start at 0, but the tasks are numbered from 1.', 'pop toglie l\'elemento in un posto. I posti partono da 0, ma i compiti sono numerati da 1.', 'pop enlève l\'élément à une place. Les places commencent à 0, mais les tâches sont numérotées à partir de 1.'],
           sol: 'def remove(tasks, number):\n    tasks.pop(number - 1)\n\ntasks = [{"title": "a", "done": False}, {"title": "b", "done": False}]\nremove(tasks, 1)\nprint(len(tasks))', out: '1', c: 'def remove'
         }
       },
@@ -931,7 +934,7 @@ Chiama save dopo ogni modifica e load una volta all'inizio. L'ultima riga dimost
 Appelle save après chaque changement, et load une fois au début. La dernière ligne prouve que ce qui a été enregistré est ce que tu récupères.`],
         ex: {
           t: ['Save the list [{"title": "x", "done": true}] with the function save, load it again with load, and show the title of the first task (x).', 'Salva la lista [{"title": "x", "done": true}] con la funzione save, ricaricala con load e mostra il titolo del primo compito (x).', 'Enregistre la liste [{"title": "x", "done": true}] avec la fonction save, recharge-la avec load et affiche le titre de la première tâche (x).'],
-          h: ['save([...]) then print(load()[0]["title"]).', 'save([...]) poi print(load()[0]["title"]).', 'save([...]) puis print(load()[0]["title"]).'],
+          h: ['save takes the list; load gives it back. Then take the first task, and its title.', 'save prende la lista; load la restituisce. Poi prendi il primo compito, e il suo titolo.', 'save prend la liste ; load la rend. Puis prends la première tâche, et son titre.'],
           start: 'import json, os\n\nFILE = "demo_tasks2.json"\n\ndef load():\n    if os.path.exists(FILE):\n        with open(FILE) as f:\n            return json.load(f)\n    return []\n\ndef save(tasks):\n    with open(FILE, "w") as f:\n        json.dump(tasks, f)', sol: 'import json, os\n\nFILE = "demo_tasks2.json"\n\ndef load():\n    if os.path.exists(FILE):\n        with open(FILE) as f:\n            return json.load(f)\n    return []\n\ndef save(tasks):\n    with open(FILE, "w") as f:\n        json.dump(tasks, f)\n\nsave([{"title": "x", "done": True}])\nprint(load()[0]["title"])', out: 'x', c: 'save\\(\\['
         }
       },
@@ -1170,7 +1173,7 @@ La variabile here dice dove si trova il giocatore. Muoversi è solo mettere in h
 La variable here dit où se trouve le joueur. Se déplacer, c'est juste mettre le nom d'une nouvelle pièce dans here.`],
         ex: {
           t: ['Add a room called attic that is reached going "up" from the hall, and show the description of the attic.', 'Aggiungi una stanza che si chiama attic raggiungibile andando "up" dalla hall e mostra la descrizione dell\'attic.', 'Ajoute une pièce qui s\'appelle attic qu\'on atteint en allant "up" depuis le hall et affiche la description du attic.'],
-          h: ['A new key "attic" in rooms, and "up": "attic" in the exits of the hall.', 'Una chiave nuova "attic" in rooms e "up": "attic" nelle uscite della hall.', 'Une nouvelle clé "attic" dans rooms et "up": "attic" dans les sorties du hall.'],
+          h: ['Two changes: a new entry for the attic in rooms, and a new exit up in the exits of the hall. Then show the description of the attic.', 'Due cambi: una nuova voce per la soffitta in rooms, e una nuova uscita up nelle uscite dell\'ingresso. Poi mostra la descrizione della soffitta.', 'Deux changements : une nouvelle entrée pour le grenier dans rooms, et une nouvelle sortie up dans les sorties du hall. Puis affiche la description du grenier.'],
           sol: 'rooms = {\n    "hall": {"text": "A hall.", "exits": {"up": "attic"}},\n    "attic": {"text": "Dusty boxes.", "exits": {"down": "hall"}},\n}\nhere = rooms["hall"]["exits"]["up"]\nprint(rooms[here]["text"])', out: 'Dusty boxes.', c: 'attic'
         }
       },
@@ -1315,7 +1318,7 @@ Un oggetto che tiene i suoi dati è più facile da ampliare: dopo puoi aggiunger
 Un objet qui garde ses propres données est plus facile à étendre : plus tard tu peux ajouter la santé, un nom ou un score.`],
         ex: {
           t: ['Add a method count() to Player that returns how many things it carries. Take the lamp and show the count (1).', 'Aggiungi a Player un metodo count() che restituisce quante cose porta. Prendi la lampada e mostra il conteggio (1).', 'Ajoute à Player une méthode count() qui rend combien de choses il porte. Prends la lampe et affiche le compte (1).'],
-          h: ['def count(self): return len(self.inventory)', 'def count(self): return len(self.inventory)', 'def count(self): return len(self.inventory)'],
+          h: ['A method with self that gives back how many things are in the list of the player.', 'Un metodo con self che restituisce quante cose ci sono nella lista del giocatore.', 'Une méthode avec self qui rend combien de choses il y a dans la liste du joueur.'],
           sol: 'class Player:\n    def __init__(self):\n        self.inventory = []\n\n    def count(self):\n        return len(self.inventory)\n\nplayer = Player()\nplayer.inventory.append("lamp")\nprint(player.count())', out: '1', c: 'def count'
         }
       },
@@ -1468,7 +1471,7 @@ La chiave apre la strada: andare a est viene rifiutato finché la chiave non è 
 La clé ouvre le chemin : aller à l'est est refusé tant que la clé n'est pas dans le sac. Le script à la fin joue une partie entière et s'échappe.`],
         ex: {
           t: ['Write a function do(words) with a match: the list ["hello"] gives back "hi", and anything else gives back "I do not understand." Show do(["hello"]).', 'Scrivi una funzione do(words) con un match: la lista ["hello"] restituisce "ciao" e qualsiasi altra cosa restituisce "Non capisco." Mostra do(["hello"]).', 'Écris une fonction do(words) avec un match : la liste ["hello"] rend "salut" et tout le reste rend "Je ne comprends pas." Affiche do(["hello"]).'],
-          h: ['match words: with case ["hello"]: return ... and case _: return ...', 'match words: con case ["hello"]: return ... e case _: return ...', 'match words: avec case ["hello"]: return ... et case _: return ...'],
+          h: ['match on words: one case for the list with hello in it, and case _ for everything else.', 'match su words: un case per la lista con hello dentro, e case _ per tutto il resto.', 'match sur words : un case pour la liste avec hello dedans, et case _ pour tout le reste.'],
           sol: ['def do(words):\n    match words:\n        case ["hello"]:\n            return "hi"\n        case _:\n            return "I do not understand."\n\nprint(do(["hello"]))', 'def do(words):\n    match words:\n        case ["hello"]:\n            return "ciao"\n        case _:\n            return "Non capisco."\n\nprint(do(["hello"]))', 'def do(words):\n    match words:\n        case ["hello"]:\n            return "salut"\n        case _:\n            return "Je ne comprends pas."\n\nprint(do(["hello"]))'],
           out: ['hi', 'ciao', 'salut'], c: 'match '
         }
@@ -1507,9 +1510,9 @@ Questo esempio pianifica un registro delle spese. Lo puoi seguire, o scegliere u
 
 Cet exemple planifie un suivi de dépenses. Tu peux le suivre, ou choisir ton idée : un livre de recettes, un quiz sur ton passe-temps, un emploi du temps, un jeu à toi.`],
         ex: {
-          t: ['Write your own plan: three comment lines (starting with #) that say what your program will do, and then a print line.', 'Scrivi il tuo piano: tre righe di commento (che iniziano con #) che dicono cosa farà il tuo programma, e poi una riga print.', 'Écris ton propre plan : trois lignes de commentaire (qui commencent par #) qui disent ce que fera ton programme, puis une ligne print.'],
-          h: ['# one idea per line, then print("...").', '# un\'idea per riga, poi print("...").', '# une idée par ligne, puis print("...").'],
-          sol: '# PROJECT: Recipe book\n# 1. Keep recipes\n# 2. Show a recipe\nprint("Plan written.")', m: 'Plan', c: '#[\\s\\S]*#[\\s\\S]*#'
+          t: ['Write your own plan: three comment lines (starting with #) that say what your own program will do (your idea, not the expense tracker of the example), and then a print line.', 'Scrivi il tuo piano: tre righe di commento (che iniziano con #) che dicono cosa farà il tuo programma (la tua idea, non il registro delle spese dell\'esempio), e poi una riga print.', 'Écris ton propre plan : trois lignes de commentaire (qui commencent par #) qui disent ce que fera ton programme (ton idée, pas le suivi de dépenses de l\'exemple), puis une ligne print.'],
+          h: ['A comment is a line that starts with #: Python skips it. Write one line for each part of your idea, then a print with any message.', 'Un commento è una riga che comincia con #: Python la salta. Scrivi una riga per ogni parte della tua idea, poi un print con un messaggio qualsiasi.', 'Un commentaire est une ligne qui commence par # : Python la saute. Écris une ligne pour chaque partie de ton idée, puis un print avec n\'importe quel message.'],
+          sol: '# PROJECT: Recipe book\n# 1. Keep recipes\n# 2. Show a recipe\nprint("Plan written.")', m: '.', c: '^(?![\\s\\S]*(Expense|spese|dépenses))[\\s\\S]*#[\\s\\S]*#[\\s\\S]*#'
         }
       },
       {

@@ -162,7 +162,7 @@ Funzionano tutti e due nei cicli for e nei cicli while. Nel primo ciclo il 4 non
 Les deux marchent dans les boucles for et dans les boucles while. Dans la première boucle, le 4 n'est jamais affiché et la boucle s'arrête. Dans la deuxième, seul le 3 est sauté.`],
         ex: {
           t: ['Show the numbers from 1 to 10, but stop as soon as you reach 6. The 6 must not be shown.', 'Mostra i numeri da 1 a 10, ma fermati appena arrivi a 6. Il 6 non deve essere mostrato.', 'Affiche les nombres de 1 à 10, mais arrête-toi dès que tu arrives à 6. Le 6 ne doit pas être affiché.'],
-          h: ['if n == 6: and then break, before the print.', 'if n == 6: e poi break, prima di print.', 'if n == 6: puis break, avant print.'],
+          h: ['Inside the loop, before the print: ask if n has reached 6, and in that case leave the loop with break.', 'Dentro il ciclo, prima del print: chiedi se n è arrivato a 6, e in quel caso esci dal ciclo con break.', 'Dans la boucle, avant le print : demande si n est arrivé à 6, et dans ce cas sors de la boucle avec break.'],
           sol: 'for n in range(1, 11):\n    if n == 6:\n        break\n    print(n)', out: '1\n2\n3\n4\n5', c: 'break'
         }
       },
@@ -434,7 +434,7 @@ Per questo le liste sono così utili: possono crescere e cambiare mentre il prog
 C'est pourquoi les listes sont si utiles : elles peuvent grandir et changer pendant que le programme tourne.`],
         ex: {
           t: ['Replace the first item of the list with the word owl and show the list.', 'Sostituisci il primo elemento della lista con la parola gufo e mostra la lista.', 'Remplace le premier élément de la liste par le mot hibou et affiche la liste.'],
-          h: ['pets[0] = ... on its own line, before the print.', 'pets[0] = ... su una riga a parte, prima di print.', 'pets[0] = ... sur une ligne à part, avant print.'],
+          h: ['A place in square brackets works on the left of = too: it puts a new value at that place. The first place is 0.', 'Un posto tra parentesi quadre funziona anche a sinistra di =: mette un nuovo valore in quel posto. Il primo posto è 0.', 'Une place entre crochets marche aussi à gauche de = : elle met une nouvelle valeur à cette place. La première place est 0.'],
           start: ['pets = ["cat", "dog", "fox"]', 'pets = ["gatto", "cane", "volpe"]', 'pets = ["chat", "chien", "renard"]'],
           sol: ['pets = ["cat", "dog", "fox"]\npets[0] = "owl"\nprint(pets)', 'pets = ["gatto", "cane", "volpe"]\npets[0] = "gufo"\nprint(pets)', 'pets = ["chat", "chien", "renard"]\npets[0] = "hibou"\nprint(pets)'],
           exact: true, c: '\\[0\\] ='
@@ -467,7 +467,7 @@ append aggiunge un elemento in fondo. insert mette un elemento in un posto a tua
 append ajoute un élément à la fin. insert met un élément à une place de ton choix, et les autres se décalent.`],
         ex: {
           t: ['The list has two items. Add a third one, with append, and show the list.', 'La lista ha due elementi. Aggiungine un terzo, con append, e mostra la lista.', 'La liste a deux éléments. Ajoute-en un troisième, avec append, et affiche la liste.'],
-          h: ['pets.append("...") and then print(pets).', 'pets.append("...") e poi print(pets).', 'pets.append("...") puis print(pets).'],
+          h: ['append is called on the list, after a dot, with the new item in its brackets. Show the list after it.', 'append si chiama sulla lista, dopo un punto, con il nuovo elemento tra le parentesi. Mostra la lista dopo.', 'append s\'appelle sur la liste, après un point, avec le nouvel élément entre ses parenthèses. Affiche la liste après.'],
           start: ['pets = ["cat", "dog"]', 'pets = ["gatto", "cane"]', 'pets = ["chat", "chien"]'],
           sol: ['pets = ["cat", "dog"]\npets.append("bird")\nprint(pets)', 'pets = ["gatto", "cane"]\npets.append("uccello")\nprint(pets)', 'pets = ["chat", "chien"]\npets.append("oiseau")\nprint(pets)'],
           exact: true, c: 'append'
@@ -592,7 +592,7 @@ Insieme agli altri che conosci, sono quasi tutto quello che ti serve per lavorar
 Avec les autres que tu connais, c'est presque tout ce qu'il te faut pour travailler avec les listes.`],
         ex: {
           t: ['Show how many times the name Ada is in the list.', 'Mostra quante volte il nome Ada è nella lista.', 'Affiche combien de fois le nom Ada est dans la liste.'],
-          h: ['names.count("Ada") inside print.', 'names.count("Ada") dentro print.', 'names.count("Ada") dans print.'],
+          h: ['A list can count how many times a value is inside it: a dot after the list, the method, and the name between quotes.', 'Una lista sa contare quante volte contiene un valore: un punto dopo la lista, il metodo, e il nome tra virgolette.', 'Une liste sait compter combien de fois elle contient une valeur : un point après la liste, la méthode, et le nom entre guillemets.'],
           start: 'names = ["Zoe", "Ada", "Max", "Ada"]', sol: 'names = ["Zoe", "Ada", "Max", "Ada"]\nprint(names.count("Ada"))', out: '2', c: 'count'
         }
       },
@@ -700,7 +700,7 @@ Toutes les lignes d'un même bloc doivent commencer exactement au même endroit.
         ex: {
           uses: ['if'],
           t: ['Fix the line so the program shows yes.', 'Correggi la riga così il programma mostra sì.', 'Corrige la ligne pour que le programme affiche oui.'],
-          h: ['Put four spaces before the print line.', 'Metti quattro spazi prima della riga print.', 'Mets quatre espaces avant la ligne print.'],
+          h: ['Python wants the line under an if pushed in. How far are the lines pushed in, everywhere else in the course?', 'Python vuole la riga sotto un if rientrata. Di quanto sono rientrate le righe, nel resto del corso?', 'Python veut la ligne sous un if décalée. De combien sont décalées les lignes, partout ailleurs dans le cours ?'],
           start: [c`if 5 > 3:
 print("yes")`, c`if 5 > 3:
 print("sì")`, c`if 5 > 3:
@@ -773,7 +773,7 @@ Les erreurs comme celle-ci viennent souvent d'une boîte qui contient 0 alors qu
         ex: {
           uses: ['/'],
           t: ['Fix the second line so it divides 10 by 5.', 'Correggi la seconda riga così divide 10 per 5.', 'Corrige la deuxième ligne pour qu\'elle divise 10 par 5.'],
-          h: ['Change the 0 into a 5.', 'Cambia lo 0 in 5.', 'Change le 0 en 5.'],
+          h: ['Only one number of the second line is wrong.', 'Solo un numero della seconda riga è sbagliato.', 'Un seul nombre de la deuxième ligne est faux.'],
           start: 'print(10 / 2)\nprint(10 / 0)', sol: 'print(10 / 2)\nprint(10 / 5)', out: '5.0\n2.0'
         }
       },
@@ -799,7 +799,7 @@ Personne n'écrit un programme sans erreurs. Les programmeurs sont juste rapides
         ex: {
           uses: ['int'],
           t: ['The text "abc" is not a number. Change it to "42" and show the number at the end.', 'Il testo "abc" non è un numero. Cambialo in "42" e mostra il numero alla fine.', 'Le texte "abc" n\'est pas un nombre. Change-le en "42" et affiche le nombre à la fin.'],
-          h: ['int("42") works. Then print(number) at the end.', 'int("42") funziona. Poi print(number) alla fine.', 'int("42") marche. Puis print(number) à la fin.'],
+          h: ['int can only read a text made of digits. Then, in the last line, show the box number instead of the old message.', 'int sa leggere solo un testo fatto di cifre. Poi, nell\'ultima riga, mostra la scatola number al posto del vecchio messaggio.', 'int ne sait lire qu\'un texte fait de chiffres. Puis, à la dernière ligne, affiche la boîte number à la place de l\'ancien message.'],
           start: [c`print("Start")
 number = int("abc")
 print("Never reached")`, c`print("Inizio")

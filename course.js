@@ -811,9 +811,9 @@ window.PyvielCourse = {
        "fr": "L'âge commence à 10. Ajoute-lui 5 avec age = age + 5, puis affiche-le. Il doit afficher 15."
       },
       "hint": {
-       "en": "Put the line age = age + 5 between the two other lines.",
-       "it": "Metti la riga age = age + 5 tra le altre due righe.",
-       "fr": "Mets la ligne age = age + 5 entre les deux autres lignes."
+       "en": "The order matters: the line that adds 5 must come after the box is filled and before it is shown.",
+       "it": "Conta l'ordine: la riga che aggiunge 5 deve venire dopo che la scatola è riempita e prima che venga mostrata.",
+       "fr": "L'ordre compte : la ligne qui ajoute 5 doit venir après que la boîte est remplie et avant qu'elle soit affichée."
       },
       "sol": {
        "en": "age = 10\nage = age + 5\nprint(age)",
@@ -1646,9 +1646,9 @@ window.PyvielCourse = {
        "fr": "Affiche une rangée de 10 étoiles : **********"
       },
       "hint": {
-       "en": "The text is \"*\" and the number is 10.",
-       "it": "Il testo è \"*\" e il numero è 10.",
-       "fr": "Le texte est \"*\" et le nombre est 10."
+       "en": "The star repeats a text: first the text in quotes, then the star, then how many times.",
+       "it": "La stella ripete un testo: prima il testo tra virgolette, poi la stella, poi quante volte.",
+       "fr": "L'étoile répète un texte : d'abord le texte entre guillemets, puis l'étoile, puis combien de fois."
       },
       "sol": {
        "en": "print(\"*\" * 10)",
@@ -2459,9 +2459,9 @@ window.PyvielCourse = {
        "fr": "Affiche la dernière lettre du mot \"banane\", en utilisant une place avec un moins."
       },
       "hint": {
-       "en": "word[-1]",
-       "it": "word[-1]",
-       "fr": "word[-1]"
+       "en": "Places with a minus count from the end: -1 is the last letter, -2 the one before it.",
+       "it": "I posti con il meno contano dalla fine: -1 è l'ultima lettera, -2 quella prima.",
+       "fr": "Les places avec un moins comptent depuis la fin : -1 est la dernière lettre, -2 celle d'avant."
       },
       "sol": {
        "en": "word = \"banana\"\nprint(word[-1])",
@@ -2757,9 +2757,9 @@ window.PyvielCourse = {
        "fr": "Combien de minutes y a-t-il dans un jour ? Un jour a 24 heures et chaque heure a 60 minutes. Affiche la réponse."
       },
       "hint": {
-       "en": "Multiply 24 by 60 inside print.",
-       "it": "Moltiplica 24 per 60 dentro print.",
-       "fr": "Multiplie 24 par 60 dans print."
+       "en": "Hours times minutes in an hour. Which sign multiplies in Python? Let Python do the sum inside print.",
+       "it": "Ore per minuti in un'ora. Quale segno moltiplica in Python? Lascia fare il conto a Python dentro print.",
+       "fr": "Les heures fois les minutes d'une heure. Quel signe multiplie en Python ? Laisse Python faire le calcul dans print."
       },
       "sol": {
        "en": "print(24 * 60)",
@@ -2868,9 +2868,9 @@ window.PyvielCourse = {
        "fr": "Partage 12 bonbons entre 3 amis. Affiche combien chaque ami en reçoit."
       },
       "hint": {
-       "en": "12 divided by 3, inside print.",
-       "it": "12 diviso 3, dentro print.",
-       "fr": "12 divisé par 3, dans print."
+       "en": "Sharing is dividing. Look in the new words for the sign that divides.",
+       "it": "Dividere tra amici è una divisione. Cerca nelle novità il segno che divide.",
+       "fr": "Partager, c'est diviser. Cherche dans les nouveautés le signe qui divise."
       },
       "sol": {
        "en": "print(12 / 3)",
@@ -3003,9 +3003,9 @@ window.PyvielCourse = {
        "fr": "Il reste 100 jours. Combien de semaines entières (de 7 jours) cela fait-il, et combien de jours restent ? Affiche les semaines sur une ligne et les jours sur la suivante."
       },
       "hint": {
-       "en": "100 // 7 for the weeks and 100 % 7 for the days.",
-       "it": "100 // 7 per le settimane e 100 % 7 per i giorni.",
-       "fr": "100 // 7 pour les semaines et 100 % 7 pour les jours."
+       "en": "Two signs are new here: one keeps only the whole part of a division, the other gives what is left. One print for each.",
+       "it": "Qui ci sono due segni nuovi: uno tiene solo la parte intera di una divisione, l'altro dà quello che avanza. Un print per ciascuno.",
+       "fr": "Deux signes sont nouveaux ici : l'un garde seulement la partie entière d'une division, l'autre donne ce qui reste. Un print pour chacun."
       },
       "sol": {
        "en": "print(100 // 7)\nprint(100 % 7)",
@@ -3097,9 +3097,9 @@ window.PyvielCourse = {
        "fr": "Affiche 3 puissance 4."
       },
       "hint": {
-       "en": "3 ** 4",
-       "it": "3 ** 4",
-       "fr": "3 ** 4"
+       "en": "The power is written with two stars: first the number, then how many times it is multiplied by itself.",
+       "it": "La potenza si scrive con due stelle: prima il numero, poi quante volte si moltiplica per se stesso.",
+       "fr": "La puissance s'écrit avec deux étoiles : d'abord le nombre, puis combien de fois il se multiplie par lui-même."
       },
       "sol": {
        "en": "print(3 ** 4)",
@@ -3449,9 +3449,9 @@ window.PyvielCourse = {
        "fr": "Arrondis 9.87654 à une décimale et affiche-le."
       },
       "hint": {
-       "en": "round(9.87654, 1) inside print.",
-       "it": "round(9.87654, 1) dentro print.",
-       "fr": "round(9.87654, 1) dans print."
+       "en": "round takes two things in its brackets: the number, and how many decimals to keep.",
+       "it": "round prende due cose tra le parentesi: il numero, e quanti decimali tenere.",
+       "fr": "round prend deux choses entre ses parenthèses : le nombre, et combien de décimales garder."
       },
       "sol": {
        "en": "print(round(9.87654, 1))",
@@ -3588,9 +3588,9 @@ window.PyvielCourse = {
        "fr": "Affiche le plus grand des nombres 12, 7 et 30."
       },
       "hint": {
-       "en": "max(12, 7, 30) inside print.",
-       "it": "max(12, 7, 30) dentro print.",
-       "fr": "max(12, 7, 30) dans print."
+       "en": "One of the new helpers gives the biggest of the numbers you put in its brackets, with commas between them.",
+       "it": "Uno dei nuovi aiutanti dà il più grande dei numeri che metti tra le sue parentesi, con le virgole in mezzo.",
+       "fr": "Un des nouveaux outils donne le plus grand des nombres que tu mets entre ses parenthèses, avec des virgules entre eux."
       },
       "sol": {
        "en": "print(max(12, 7, 30))",
@@ -3713,9 +3713,9 @@ window.PyvielCourse = {
        "fr": "Commence avec 100 dans la boîte total, ajoute 30 avec += et affiche-le."
       },
       "hint": {
-       "en": "+= adds to what is already in the box. Write it between the line that makes total and the print.",
-       "it": "+= aggiunge a quello che c'è già nella scatola. Scrivilo tra la riga che crea total e il print.",
-       "fr": "+= ajoute à ce qu'il y a déjà dans la boîte. Écris-le entre la ligne qui crée total et le print."
+       "en": "+= takes what is already in the box and adds to it. It goes on a line of its own, after the box is made and before the print.",
+       "it": "+= prende quello che c'è già nella scatola e ci aggiunge. Va su una riga sua, dopo che la scatola è creata e prima del print.",
+       "fr": "+= prend ce qu'il y a déjà dans la boîte et y ajoute. Il va sur sa propre ligne, après la création de la boîte et avant le print."
       },
       "sol": {
        "en": "total = 100\ntotal += 30\nprint(total)",
@@ -4218,9 +4218,9 @@ window.PyvielCourse = {
        "fr": "Transforme le texte \"15\" en nombre, double-le et affiche-le."
       },
       "hint": {
-       "en": "int(\"15\") * 2 inside print.",
-       "it": "int(\"15\") * 2 dentro print.",
-       "fr": "int(\"15\") * 2 dans print."
+       "en": "int turns a text made of digits into a number. Then that number can be multiplied.",
+       "it": "int trasforma un testo fatto di cifre in un numero. Poi quel numero si può moltiplicare.",
+       "fr": "int transforme un texte fait de chiffres en nombre. Ensuite ce nombre peut être multiplié."
       },
       "sol": {
        "en": "print(int(\"15\") * 2)",
@@ -4341,9 +4341,9 @@ window.PyvielCourse = {
        "fr": "Affiche : 5 pommes. Transforme le nombre 5 en texte avec str et colle \" pommes\"."
       },
       "hint": {
-       "en": "str(5) + \" apples\" inside print.",
-       "it": "str(5) + \" mele\" dentro print.",
-       "fr": "str(5) + \" pommes\" dans print."
+       "en": "str turns the number into a text. Then two texts can be glued with +.",
+       "it": "str trasforma il numero in un testo. Poi due testi si possono incollare con +.",
+       "fr": "str transforme le nombre en texte. Ensuite deux textes peuvent être collés avec +."
       },
       "sol": {
        "en": "print(str(5) + \" apples\")",
@@ -4437,9 +4437,9 @@ window.PyvielCourse = {
        "fr": "Corrige-le avec str, pour que le programme affiche : J'ai 12"
       },
       "hint": {
-       "en": "Put str( ) around the number 12.",
-       "it": "Metti str( ) intorno al numero 12.",
-       "fr": "Mets str( ) autour du nombre 12."
+       "en": "Python cannot glue a text and a number. Which helper turns the number into a text?",
+       "it": "Python non sa incollare un testo e un numero. Quale aiutante trasforma il numero in un testo?",
+       "fr": "Python ne sait pas coller un texte et un nombre. Quel outil transforme le nombre en texte ?"
       },
       "sol": {
        "en": "print(\"I am \" + str(12))",
@@ -4966,9 +4966,9 @@ window.PyvielCourse = {
        "fr": "Change le programme pour qu'il multiplie les deux nombres au lieu de les additionner."
       },
       "hint": {
-       "en": "Replace the + with a *.",
-       "it": "Sostituisci il + con un *.",
-       "fr": "Remplace le + par un *."
+       "en": "Find the line that works out total. Which sign multiplies?",
+       "it": "Trova la riga che calcola total. Quale segno moltiplica?",
+       "fr": "Trouve la ligne qui calcule total. Quel signe multiplie ?"
       },
       "sol": {
        "en": "first = int(input(\"First number: \"))\nsecond = int(input(\"Second number: \"))\ntotal = first * second\nprint(\"The sum is\", total)",
@@ -5232,9 +5232,9 @@ window.PyvielCourse = {
        "fr": "Fais afficher au programme : Ada a 13 ans   Change l'âge dans la boîte et garde la f-string."
       },
       "hint": {
-       "en": "Change the 12 to 13 in the box, and keep the f-string.",
-       "it": "Cambia il 12 in 13 nella scatola e tieni la f-string.",
-       "fr": "Change le 12 en 13 dans la boîte et garde la f-string."
+       "en": "The f-string takes the age from its box: change what is in the box, not the sentence.",
+       "it": "La f-string prende l'età dalla sua scatola: cambia quello che c'è nella scatola, non la frase.",
+       "fr": "La f-string prend l'âge dans sa boîte : change ce qu'il y a dans la boîte, pas la phrase."
       },
       "sol": {
        "en": "name = \"Ada\"\nage = 13\nprint(f\"{name} is {age} years old\")",
@@ -7410,9 +7410,9 @@ window.PyvielCourse = {
        "fr": "Le nombre est 8. S'il est plus grand que 0, affiche Pair si le reste de la division par 2 est 0 (utilise %), et Impair sinon. S'il n'est pas plus grand que 0, affiche Pas positif."
       },
       "hint": {
-       "en": "An if number > 0: with, inside it, an if number % 2 == 0: and else.",
-       "it": "Un if number > 0: con, dentro, un if number % 2 == 0: e un else.",
-       "fr": "Un if number > 0: avec, dedans, un if number % 2 == 0: et un else."
+       "en": "Two levels of if. The outer if asks if the number is bigger than 0; inside it, pushed in further, a second if with % asks if it is even, with its own else. The outer if gets an else too.",
+       "it": "Due livelli di if. L'if di fuori chiede se il numero è più grande di 0; dentro, rientrato di più, un secondo if con % chiede se è pari, con il suo else. Anche l'if di fuori ha un else.",
+       "fr": "Deux niveaux de if. Le if extérieur demande si le nombre est plus grand que 0 ; dedans, plus décalé, un second if avec % demande s'il est pair, avec son propre else. Le if extérieur a aussi un else."
       },
       "sol": {
        "en": "number = 8\nif number > 0:\n    if number % 2 == 0:\n        print(\"Even\")\n    else:\n        print(\"Odd\")\nelse:\n    print(\"Not positive\")",
@@ -7521,9 +7521,9 @@ window.PyvielCourse = {
        "fr": "Le nombre est 7. En une ligne, fais une boîte kind qui contient pair ou impair, et affiche-la. Utilise %."
       },
       "hint": {
-       "en": "kind = \"even\" if number % 2 == 0 else \"odd\"",
-       "it": "kind = \"pari\" if number % 2 == 0 else \"dispari\"",
-       "fr": "kind = \"pair\" if number % 2 == 0 else \"impair\""
+       "en": "One line that reads like a sentence: the first value, if, the question, else, the other value. The question uses % to see if the number is even.",
+       "it": "Una riga che si legge come una frase: il primo valore, if, la domanda, else, l'altro valore. La domanda usa % per vedere se il numero è pari.",
+       "fr": "Une ligne qui se lit comme une phrase : la première valeur, if, la question, else, l'autre valeur. La question utilise % pour voir si le nombre est pair."
       },
       "sol": {
        "en": "number = 7\nkind = \"even\" if number % 2 == 0 else \"odd\"\nprint(kind)",
@@ -7839,9 +7839,9 @@ window.PyvielCourse = {
        "fr": "Fais dire Bonjour 4 fois au programme."
       },
       "hint": {
-       "en": "Change the 3 into a 4.",
-       "it": "Cambia il 3 in 4.",
-       "fr": "Change le 3 en 4."
+       "en": "Which number in the for line says how many times the loop runs?",
+       "it": "Quale numero nella riga del for dice quante volte gira il ciclo?",
+       "fr": "Quel nombre dans la ligne for dit combien de fois la boucle tourne ?"
       },
       "sol": {
        "en": "for i in range(4):\n    print(\"Hello\")",
@@ -7934,9 +7934,9 @@ window.PyvielCourse = {
        "fr": "Affiche les nombres de 0 à 6, un par ligne."
       },
       "hint": {
-       "en": "range(7) stops before 7.",
-       "it": "range(7) si ferma prima del 7.",
-       "fr": "range(7) s'arrête avant 7."
+       "en": "A loop with range, and a print of i inside it. range stops just before the number you give it.",
+       "it": "Un ciclo con range, e dentro un print di i. range si ferma subito prima del numero che gli dai.",
+       "fr": "Une boucle avec range, et dedans un print de i. range s'arrête juste avant le nombre que tu lui donnes."
       },
       "sol": {
        "en": "for i in range(7):\n    print(i)",
@@ -8003,9 +8003,9 @@ window.PyvielCourse = {
        "fr": "Affiche 10, 20 et 30, un par ligne, avec un range qui a un pas."
       },
       "hint": {
-       "en": "range(10, 40, 10)",
-       "it": "range(10, 40, 10)",
-       "fr": "range(10, 40, 10)"
+       "en": "range can take three numbers: where to start, where to stop (it stops just before) and how big each jump is.",
+       "it": "range può prendere tre numeri: da dove partire, dove fermarsi (si ferma subito prima) e quanto è grande ogni salto.",
+       "fr": "range peut prendre trois nombres : où commencer, où s'arrêter (il s'arrête juste avant) et la taille de chaque saut."
       },
       "sol": {
        "en": "for i in range(10, 40, 10):\n    print(i)",
@@ -8151,9 +8151,9 @@ window.PyvielCourse = {
        "fr": "Change le programme pour additionner les nombres de 1 à 10. Il doit afficher 55."
       },
       "hint": {
-       "en": "range(1, 11) stops before 11.",
-       "it": "range(1, 11) si ferma prima di 11.",
-       "fr": "range(1, 11) s'arrête avant 11."
+       "en": "Which number decides where the loop stops? Remember that range stops just before it.",
+       "it": "Quale numero decide dove si ferma il ciclo? Ricorda che range si ferma subito prima.",
+       "fr": "Quel nombre décide où la boucle s'arrête ? Souviens-toi que range s'arrête juste avant."
       },
       "sol": {
        "en": "total = 0\nfor i in range(1, 11):\n    total += i\nprint(total)",
@@ -8252,9 +8252,9 @@ window.PyvielCourse = {
        "fr": "Affiche chaque lettre du mot chat sur sa propre ligne."
       },
       "hint": {
-       "en": "for letter in \"cat\":",
-       "it": "for letter in \"gatto\":",
-       "fr": "for letter in \"chat\":"
+       "en": "A for loop can walk through a text: at each turn, the name after for holds the next letter. Show it inside the loop.",
+       "it": "Un ciclo for può percorrere un testo: a ogni giro, il nome dopo for contiene la lettera seguente. Mostralo dentro il ciclo.",
+       "fr": "Une boucle for peut parcourir un texte : à chaque tour, le nom après for contient la lettre suivante. Affiche-le dans la boucle."
       },
       "sol": {
        "en": "for letter in \"cat\":\n    print(letter)",
@@ -8321,9 +8321,9 @@ window.PyvielCourse = {
        "fr": "Change le programme pour dessiner 2 lignes de 5 étoiles."
       },
       "hint": {
-       "en": "Change range(3) to range(2) and range(4) to range(5).",
-       "it": "Cambia range(3) in range(2) e range(4) in range(5).",
-       "fr": "Change range(3) en range(2) et range(4) en range(5)."
+       "en": "The outer range says how many rows, the inner one how many stars in each row.",
+       "it": "Il range di fuori dice quante righe, quello di dentro quante stelle per riga.",
+       "fr": "Le range extérieur dit combien de lignes, celui de l'intérieur combien d'étoiles par ligne."
       },
       "sol": {
        "en": "for row in range(2):\n    for column in range(5):\n        print(\"*\", end=\"\")\n    print()",
@@ -8853,9 +8853,9 @@ window.PyvielCourse = {
        "fr": "Affiche les nombres de 1 à 10, mais arrête-toi dès que tu arrives à 6. Le 6 ne doit pas être affiché."
       },
       "hint": {
-       "en": "if n == 6: and then break, before the print.",
-       "it": "if n == 6: e poi break, prima di print.",
-       "fr": "if n == 6: puis break, avant print."
+       "en": "Inside the loop, before the print: ask if n has reached 6, and in that case leave the loop with break.",
+       "it": "Dentro il ciclo, prima del print: chiedi se n è arrivato a 6, e in quel caso esci dal ciclo con break.",
+       "fr": "Dans la boucle, avant le print : demande si n est arrivé à 6, et dans ce cas sors de la boucle avec break."
       },
       "sol": {
        "en": "for n in range(1, 11):\n    if n == 6:\n        break\n    print(n)",
@@ -9335,9 +9335,9 @@ window.PyvielCourse = {
        "fr": "Remplace le premier élément de la liste par le mot hibou et affiche la liste."
       },
       "hint": {
-       "en": "pets[0] = ... on its own line, before the print.",
-       "it": "pets[0] = ... su una riga a parte, prima di print.",
-       "fr": "pets[0] = ... sur une ligne à part, avant print."
+       "en": "A place in square brackets works on the left of = too: it puts a new value at that place. The first place is 0.",
+       "it": "Un posto tra parentesi quadre funziona anche a sinistra di =: mette un nuovo valore in quel posto. Il primo posto è 0.",
+       "fr": "Une place entre crochets marche aussi à gauche de = : elle met une nouvelle valeur à cette place. La première place est 0."
       },
       "sol": {
        "en": "pets = [\"cat\", \"dog\", \"fox\"]\npets[0] = \"owl\"\nprint(pets)",
@@ -9460,9 +9460,9 @@ window.PyvielCourse = {
        "fr": "La liste a deux éléments. Ajoute-en un troisième, avec append, et affiche la liste."
       },
       "hint": {
-       "en": "pets.append(\"...\") and then print(pets).",
-       "it": "pets.append(\"...\") e poi print(pets).",
-       "fr": "pets.append(\"...\") puis print(pets)."
+       "en": "append is called on the list, after a dot, with the new item in its brackets. Show the list after it.",
+       "it": "append si chiama sulla lista, dopo un punto, con il nuovo elemento tra le parentesi. Mostra la lista dopo.",
+       "fr": "append s'appelle sur la liste, après un point, avec le nouvel élément entre ses parenthèses. Affiche la liste après."
       },
       "sol": {
        "en": "pets = [\"cat\", \"dog\"]\npets.append(\"bird\")\nprint(pets)",
@@ -9974,9 +9974,9 @@ window.PyvielCourse = {
        "fr": "Affiche combien de fois le nom Ada est dans la liste."
       },
       "hint": {
-       "en": "names.count(\"Ada\") inside print.",
-       "it": "names.count(\"Ada\") dentro print.",
-       "fr": "names.count(\"Ada\") dans print."
+       "en": "A list can count how many times a value is inside it: a dot after the list, the method, and the name between quotes.",
+       "it": "Una lista sa contare quante volte contiene un valore: un punto dopo la lista, il metodo, e il nome tra virgolette.",
+       "fr": "Une liste sait compter combien de fois elle contient une valeur : un point après la liste, la méthode, et le nom entre guillemets."
       },
       "sol": {
        "en": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]\nprint(names.count(\"Ada\"))",
@@ -10352,9 +10352,9 @@ window.PyvielCourse = {
        "fr": "Corrige la ligne pour que le programme affiche oui."
       },
       "hint": {
-       "en": "Put four spaces before the print line.",
-       "it": "Metti quattro spazi prima della riga print.",
-       "fr": "Mets quatre espaces avant la ligne print."
+       "en": "Python wants the line under an if pushed in. How far are the lines pushed in, everywhere else in the course?",
+       "it": "Python vuole la riga sotto un if rientrata. Di quanto sono rientrate le righe, nel resto del corso?",
+       "fr": "Python veut la ligne sous un if décalée. De combien sont décalées les lignes, partout ailleurs dans le cours ?"
       },
       "sol": {
        "en": "if 5 > 3:\n    print(\"yes\")",
@@ -10580,9 +10580,9 @@ window.PyvielCourse = {
        "fr": "Corrige la deuxième ligne pour qu'elle divise 10 par 5."
       },
       "hint": {
-       "en": "Change the 0 into a 5.",
-       "it": "Cambia lo 0 in 5.",
-       "fr": "Change le 0 en 5."
+       "en": "Only one number of the second line is wrong.",
+       "it": "Solo un numero della seconda riga è sbagliato.",
+       "fr": "Un seul nombre de la deuxième ligne est faux."
       },
       "sol": {
        "en": "print(10 / 2)\nprint(10 / 5)",
@@ -10656,9 +10656,9 @@ window.PyvielCourse = {
        "fr": "Le texte \"abc\" n'est pas un nombre. Change-le en \"42\" et affiche le nombre à la fin."
       },
       "hint": {
-       "en": "int(\"42\") works. Then print(number) at the end.",
-       "it": "int(\"42\") funziona. Poi print(number) alla fine.",
-       "fr": "int(\"42\") marche. Puis print(number) à la fin."
+       "en": "int can only read a text made of digits. Then, in the last line, show the box number instead of the old message.",
+       "it": "int sa leggere solo un testo fatto di cifre. Poi, nell'ultima riga, mostra la scatola number al posto del vecchio messaggio.",
+       "fr": "int ne sait lire qu'un texte fait de chiffres. Puis, à la dernière ligne, affiche la boîte number à la place de l'ancien message."
       },
       "sol": {
        "en": "print(\"Start\")\nnumber = int(\"42\")\nprint(number)",
@@ -10849,9 +10849,9 @@ window.PyvielCourse = {
        "fr": "Affiche le mot salut en majuscules."
       },
       "hint": {
-       "en": "\"hello\".upper() inside print.",
-       "it": "\"ciao\".upper() dentro print.",
-       "fr": "\"salut\".upper() dans print."
+       "en": "Texts have a method that turns every letter into a capital: a dot after the text, then the name of the method and brackets.",
+       "it": "I testi hanno un metodo che trasforma ogni lettera in maiuscola: un punto dopo il testo, poi il nome del metodo e le parentesi.",
+       "fr": "Les textes ont une méthode qui met chaque lettre en majuscule : un point après le texte, puis le nom de la méthode et des parenthèses."
       },
       "sol": {
        "en": "print(\"hello\".upper())",
@@ -10974,9 +10974,9 @@ window.PyvielCourse = {
        "fr": "Le texte a des espaces autour. Affiche-le sans."
       },
       "hint": {
-       "en": "text.strip() inside print.",
-       "it": "text.strip() dentro print.",
-       "fr": "text.strip() dans print."
+       "en": "One of the new methods takes the spaces off both ends. Call it on text, after a dot, inside print.",
+       "it": "Uno dei nuovi metodi toglie gli spazi dalle due estremità. Chiamalo su text, dopo un punto, dentro print.",
+       "fr": "Une des nouvelles méthodes enlève les espaces aux deux bouts. Appelle-la sur text, après un point, dans print."
       },
       "sol": {
        "en": "text = \"   hi   \"\nprint(text.strip())",
@@ -11085,9 +11085,9 @@ window.PyvielCourse = {
        "fr": "Remplace le mot chat par chien dans le texte et affiche-le."
       },
       "hint": {
-       "en": "text.replace(\"cat\", \"dog\") inside print.",
-       "it": "text.replace(\"gatto\", \"cane\") dentro print.",
-       "fr": "text.replace(\"chat\", \"chien\") dans print."
+       "en": "replace takes two texts: first the one to look for, then the one to put in its place.",
+       "it": "replace prende due testi: prima quello da cercare, poi quello da mettere al suo posto.",
+       "fr": "replace prend deux textes : d'abord celui à chercher, puis celui à mettre à sa place."
       },
       "sol": {
        "en": "text = \"my cat is big\"\nprint(text.replace(\"cat\", \"dog\"))",
@@ -11210,9 +11210,9 @@ window.PyvielCourse = {
        "fr": "Affiche combien de fois la lettre a est dans le mot banane."
       },
       "hint": {
-       "en": "\"banana\".count(\"a\") inside print.",
-       "it": "\"banana\".count(\"a\") dentro print.",
-       "fr": "\"banane\".count(\"a\") dans print."
+       "en": "A text can count how many times a smaller text is inside it: a dot after the word, then the method, with the letter between quotes.",
+       "it": "Un testo sa contare quante volte contiene un testo più piccolo: un punto dopo la parola, poi il metodo, con la lettera tra virgolette.",
+       "fr": "Un texte sait compter combien de fois il contient un texte plus petit : un point après le mot, puis la méthode, avec la lettre entre guillemets."
       },
       "sol": {
        "en": "print(\"banana\".count(\"a\"))",
@@ -11335,9 +11335,9 @@ window.PyvielCourse = {
        "fr": "Demande si le texte \"python\" finit par \"on\" et affiche la réponse."
       },
       "hint": {
-       "en": "\"python\".endswith(\"on\") inside print.",
-       "it": "\"python\".endswith(\"on\") dentro print.",
-       "fr": "\"python\".endswith(\"on\") dans print."
+       "en": "One method asks how a text ends. It answers True or False: show its answer.",
+       "it": "Un metodo chiede come finisce un testo. Risponde True o False: mostra la sua risposta.",
+       "fr": "Une méthode demande comment finit un texte. Elle répond True ou False : affiche sa réponse."
       },
       "sol": {
        "en": "print(\"python\".endswith(\"on\"))",
@@ -11460,9 +11460,9 @@ window.PyvielCourse = {
        "fr": "Affiche combien de mots il y a dans le texte \"a b c d\" (coupe-le, puis compte avec len)."
       },
       "hint": {
-       "en": "len(\"a b c d\".split()) inside print.",
-       "it": "len(\"a b c d\".split()) dentro print.",
-       "fr": "len(\"a b c d\".split()) dans print."
+       "en": "Two steps in one line: split cuts the text into a list of words, and len counts the items of that list.",
+       "it": "Due passi in una riga: split taglia il testo in una lista di parole, e len conta gli elementi di quella lista.",
+       "fr": "Deux étapes en une ligne : split coupe le texte en une liste de mots, et len compte les éléments de cette liste."
       },
       "sol": {
        "en": "print(len(\"a b c d\".split()))",
@@ -11571,9 +11571,9 @@ window.PyvielCourse = {
        "fr": "Affiche le mot \"Python\" à l'envers."
       },
       "hint": {
-       "en": "word[::-1]",
-       "it": "word[::-1]",
-       "fr": "word[::-1]"
+       "en": "A slice can have a step, after a second colon. A step of minus one walks backwards.",
+       "it": "Una fetta può avere un passo, dopo un secondo due punti. Un passo di meno uno cammina all'indietro.",
+       "fr": "Une tranche peut avoir un pas, après un deuxième deux-points. Un pas de moins un marche à l'envers."
       },
       "sol": {
        "en": "word = \"Python\"\nprint(word[::-1])",
@@ -11710,9 +11710,9 @@ window.PyvielCourse = {
        "fr": "Demande si le texte \"2024\" n'est fait que de chiffres et affiche la réponse."
       },
       "hint": {
-       "en": "\"2024\".isdigit() inside print.",
-       "it": "\"2024\".isdigit() dentro print.",
-       "fr": "\"2024\".isdigit() dans print."
+       "en": "Among the new methods, one asks if a text has only digits. Call it on the text, after a dot.",
+       "it": "Tra i nuovi metodi, uno chiede se un testo ha solo cifre. Chiamalo sul testo, dopo un punto.",
+       "fr": "Parmi les nouvelles méthodes, l'une demande si un texte n'a que des chiffres. Appelle-la sur le texte, après un point."
       },
       "sol": {
        "en": "print(\"2024\".isdigit())",
@@ -11809,9 +11809,9 @@ window.PyvielCourse = {
        "fr": "Demande si \"python\" n'a que des minuscules et affiche la réponse."
       },
       "hint": {
-       "en": "\"python\".islower() inside print.",
-       "it": "\"python\".islower() dentro print.",
-       "fr": "\"python\".islower() dans print."
+       "en": "One of the methods starts with is and asks if all the letters are small. Its answer is True or False.",
+       "it": "Uno dei metodi comincia con is e chiede se tutte le lettere sono minuscole. La sua risposta è True o False.",
+       "fr": "Une des méthodes commence par is et demande si toutes les lettres sont minuscules. Sa réponse est True ou False."
       },
       "sol": {
        "en": "print(\"python\".islower())",
@@ -11934,9 +11934,9 @@ window.PyvielCourse = {
        "fr": "Affiche la lettre après \"B\" dans l'alphabet, en utilisant ord et chr."
       },
       "hint": {
-       "en": "chr(ord(\"B\") + 1) inside print.",
-       "it": "chr(ord(\"B\") + 1) dentro print.",
-       "fr": "chr(ord(\"B\") + 1) dans print."
+       "en": "ord gives the number of a letter; add 1 to it; chr turns a number back into a letter. Put them one inside the other.",
+       "it": "ord dà il numero di una lettera; aggiungici 1; chr trasforma di nuovo un numero in una lettera. Mettili uno dentro l'altro.",
+       "fr": "ord donne le nombre d'une lettre ; ajoute-lui 1 ; chr retransforme un nombre en lettre. Mets-les l'un dans l'autre."
       },
       "sol": {
        "en": "print(chr(ord(\"B\") + 1))",
@@ -12284,9 +12284,9 @@ window.PyvielCourse = {
        "fr": "Affiche les trois premiers éléments de la liste."
       },
       "hint": {
-       "en": "nums[:3]",
-       "it": "nums[:3]",
-       "fr": "nums[:3]"
+       "en": "A slice with nothing before the colon starts at the beginning. It stops just before the number after the colon.",
+       "it": "Una fetta senza niente prima dei due punti parte dall'inizio. Si ferma subito prima del numero dopo i due punti.",
+       "fr": "Une tranche sans rien avant le deux-points commence au début. Elle s'arrête juste avant le nombre après le deux-points."
       },
       "sol": {
        "en": "nums = [10, 20, 30, 40, 50]\nprint(nums[:3])",
@@ -12494,9 +12494,9 @@ window.PyvielCourse = {
        "fr": "Affiche l'élément au milieu du tableau (ligne 1, colonne 1)."
       },
       "hint": {
-       "en": "grid[1][1]",
-       "it": "grid[1][1]",
-       "fr": "grid[1][1]"
+       "en": "The first square brackets choose the row, the second ones the place inside that row. Both start at 0.",
+       "it": "Le prime parentesi quadre scelgono la riga, le seconde il posto dentro quella riga. Entrambe partono da 0.",
+       "fr": "Les premiers crochets choisissent la ligne, les seconds la place dans cette ligne. Les deux commencent à 0."
       },
       "sol": {
        "en": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nprint(grid[1][1])",
@@ -12607,9 +12607,9 @@ window.PyvielCourse = {
        "fr": "Numérote les joueurs à partir de 1 et affiche chaque numéro avec le nom, un par ligne."
       },
       "hint": {
-       "en": "for position, name in enumerate(players, start=1):",
-       "it": "for position, name in enumerate(players, start=1):",
-       "fr": "for position, name in enumerate(players, start=1):"
+       "en": "enumerate gives pairs: a number and an item. It counts from 1 if you tell it with start=. A for can take each pair into two names.",
+       "it": "enumerate dà coppie: un numero e un elemento. Conta da 1 se glielo dici con start=. Un for può prendere ogni coppia in due nomi.",
+       "fr": "enumerate donne des paires : un nombre et un élément. Il compte à partir de 1 si tu le lui dis avec start=. Un for peut prendre chaque paire dans deux noms."
       },
       "sol": {
        "en": "players = [\"Ada\", \"Max\", \"Zoe\"]\nfor position, name in enumerate(players, start=1):\n    print(position, name)",
@@ -12706,9 +12706,9 @@ window.PyvielCourse = {
        "fr": "Affiche les nombres [5, 2, 9, 1] du plus grand au plus petit."
       },
       "hint": {
-       "en": "sorted([5, 2, 9, 1], reverse=True)",
-       "it": "sorted([5, 2, 9, 1], reverse=True)",
-       "fr": "sorted([5, 2, 9, 1], reverse=True)"
+       "en": "sorted can take one more thing after the list: reverse=, set to True, gives the opposite order.",
+       "it": "sorted può prendere una cosa in più dopo la lista: reverse=, messo a True, dà l'ordine opposto.",
+       "fr": "sorted peut prendre une chose de plus après la liste : reverse=, mis à True, donne l'ordre inverse."
       },
       "sol": {
        "en": "print(sorted([5, 2, 9, 1], reverse=True))",
@@ -12791,9 +12791,9 @@ window.PyvielCourse = {
        "fr": "Affiche la liste des nombres de 1 à 5, avec list et range."
       },
       "hint": {
-       "en": "list(range(1, 6))",
-       "it": "list(range(1, 6))",
-       "fr": "list(range(1, 6))"
+       "en": "range makes the numbers, and list turns them into a real list that print can show. Remember where range stops.",
+       "it": "range fa i numeri, e list li trasforma in una vera lista che print può mostrare. Ricorda dove si ferma range.",
+       "fr": "range fait les nombres, et list les transforme en une vraie liste que print peut afficher. Souviens-toi où range s'arrête."
       },
       "sol": {
        "en": "print(list(range(1, 6)))",
@@ -13097,9 +13097,9 @@ window.PyvielCourse = {
        "fr": "Fais un tuple avec seulement le nombre 7 et affiche son type."
       },
       "hint": {
-       "en": "(7,) with the comma.",
-       "it": "(7,) con la virgola.",
-       "fr": "(7,) avec la virgule."
+       "en": "With only one item, the round brackets are not enough: the comma is what makes a tuple.",
+       "it": "Con un solo elemento, le parentesi tonde non bastano: è la virgola che fa una tupla.",
+       "fr": "Avec un seul élément, les parenthèses ne suffisent pas : c'est la virgule qui fait un tuple."
       },
       "sol": {
        "en": "seven = (7,)\nprint(type(seven))",
@@ -13716,9 +13716,9 @@ window.PyvielCourse = {
        "fr": "Affiche l'âge de Zoe, en sécurité avec get, en donnant 0 quand elle n'est pas dans le dictionnaire."
       },
       "hint": {
-       "en": "ages.get(\"Zoe\", 0)",
-       "it": "ages.get(\"Zoe\", 0)",
-       "fr": "ages.get(\"Zoe\", 0)"
+       "en": "get takes two things: the key, and what to give back when the key is not there.",
+       "it": "get prende due cose: la chiave, e cosa restituire quando la chiave non c'è.",
+       "fr": "get prend deux choses : la clé, et ce qu'il faut rendre quand la clé n'est pas là."
       },
       "sol": {
        "en": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages.get(\"Zoe\", 0))",
@@ -14009,9 +14009,9 @@ window.PyvielCourse = {
        "fr": "Compte les lettres du mot \"hello\" avec un dictionnaire et affiche le dictionnaire."
       },
       "hint": {
-       "en": "A for loop over the letters, and counts[letter] = counts.get(letter, 0) + 1.",
-       "it": "Un ciclo for sulle lettere e counts[letter] = counts.get(letter, 0) + 1.",
-       "fr": "Une boucle for sur les lettres et counts[letter] = counts.get(letter, 0) + 1."
+       "en": "Loop over the letters. For each one, get gives what is counted so far (0 the first time): add 1 and put it back under that letter.",
+       "it": "Fai un ciclo sulle lettere. Per ciascuna, get dà quello che è contato finora (0 la prima volta): aggiungi 1 e rimettilo sotto quella lettera.",
+       "fr": "Fais une boucle sur les lettres. Pour chacune, get donne ce qui est compté jusque-là (0 la première fois) : ajoute 1 et remets-le sous cette lettre."
       },
       "sol": {
        "en": "counts = {}\nfor letter in \"hello\":\n    counts[letter] = counts.get(letter, 0) + 1\nprint(counts)",
@@ -14104,9 +14104,9 @@ window.PyvielCourse = {
        "fr": "Affiche le code postal de l'adresse de la personne."
       },
       "hint": {
-       "en": "person[\"address\"][\"zip\"]",
-       "it": "person[\"address\"][\"zip\"]",
-       "fr": "person[\"address\"][\"zip\"]"
+       "en": "Go in one step at a time: first the key of the address, then, in a second pair of square brackets, the key of the zip code.",
+       "it": "Entra un passo alla volta: prima la chiave dell'indirizzo, poi, in un secondo paio di parentesi quadre, la chiave del codice postale.",
+       "fr": "Entre une étape à la fois : d'abord la clé de l'adresse, puis, dans une deuxième paire de crochets, la clé du code postal."
       },
       "sol": {
        "en": "person = {\"name\": \"Ada\", \"address\": {\"city\": \"Rome\", \"zip\": \"00100\"}}\nprint(person[\"address\"][\"zip\"])",
@@ -14415,9 +14415,9 @@ window.PyvielCourse = {
        "fr": "Affiche combien de nombres différents il y a dans la liste [1, 1, 2, 3, 3, 3]."
       },
       "hint": {
-       "en": "len(set([1, 1, 2, 3, 3, 3]))",
-       "it": "len(set([1, 1, 2, 3, 3, 3]))",
-       "fr": "len(set([1, 1, 2, 3, 3, 3]))"
+       "en": "A set keeps each value only once. Make a set from the list, then count it with len.",
+       "it": "Un insieme tiene ogni valore una volta sola. Fai un insieme dalla lista, poi contalo con len.",
+       "fr": "Un ensemble garde chaque valeur une seule fois. Fais un ensemble à partir de la liste, puis compte-le avec len."
       },
       "sol": {
        "en": "print(len(set([1, 1, 2, 3, 3, 3])))",
@@ -14653,9 +14653,9 @@ window.PyvielCourse = {
        "fr": "Affiche ce que les ensembles {1, 2, 3} et {2, 3, 4} ont en commun, sous forme de liste triée."
       },
       "hint": {
-       "en": "sorted({1, 2, 3} & {2, 3, 4})",
-       "it": "sorted({1, 2, 3} & {2, 3, 4})",
-       "fr": "sorted({1, 2, 3} & {2, 3, 4})"
+       "en": "One sign between two sets keeps only what is in both. sorted turns the result into a list in order.",
+       "it": "Un segno tra due insiemi tiene solo quello che c'è in entrambi. sorted trasforma il risultato in una lista in ordine.",
+       "fr": "Un signe entre deux ensembles garde seulement ce qui est dans les deux. sorted transforme le résultat en liste dans l'ordre."
       },
       "sol": {
        "en": "print(sorted({1, 2, 3} & {2, 3, 4}))",
@@ -14738,9 +14738,9 @@ window.PyvielCourse = {
        "fr": "Enlève les répétitions de [3, 1, 3, 2, 1] en gardant l'ordre d'arrivée : le résultat doit être [3, 1, 2]."
       },
       "hint": {
-       "en": "Loop, and use if n not in result: then result.append(n).",
-       "it": "Fai un ciclo e usa if n not in result: poi result.append(n).",
-       "fr": "Fais une boucle et utilise if n not in result: puis result.append(n)."
+       "en": "Go through the numbers. Put a number in result only when it is not there yet: in can ask that, with not in front of it.",
+       "it": "Percorri i numeri. Metti un numero in result solo quando non c'è ancora: in può chiederlo, con not davanti.",
+       "fr": "Parcours les nombres. Mets un nombre dans result seulement s'il n'y est pas encore : in peut le demander, avec not devant."
       },
       "sol": {
        "en": "numbers = [3, 1, 3, 2, 1]\nresult = []\nfor n in numbers:\n    if n not in result:\n        result.append(n)\nprint(result)",
@@ -14967,9 +14967,9 @@ window.PyvielCourse = {
        "fr": "Crée une fonction qui s'appelle hello et qui affiche Bonjour!  Puis appelle-la deux fois."
       },
       "hint": {
-       "en": "def hello(): then, pushed in, a print line; then hello() two times.",
-       "it": "def hello(): poi, rientrata, una riga print; poi hello() due volte.",
-       "fr": "def hello(): puis, décalée, une ligne print ; puis hello() deux fois."
+       "en": "def, the name, empty brackets and a colon; under it, pushed in, what the function does. Then call it by its name with brackets, two times, not pushed in.",
+       "it": "def, il nome, parentesi vuote e i due punti; sotto, rientrato, quello che fa la funzione. Poi chiamala col suo nome e le parentesi, due volte, non rientrato.",
+       "fr": "def, le nom, des parenthèses vides et deux-points ; dessous, décalé, ce que fait la fonction. Puis appelle-la par son nom avec des parenthèses, deux fois, sans décalage."
       },
       "sol": {
        "en": "def hello():\n    print(\"Hello!\")\n\nhello()\nhello()",
@@ -15258,9 +15258,9 @@ window.PyvielCourse = {
        "fr": "La fonction add affiche la somme au lieu de la rendre, donc le programme s'arrête sur une erreur. Corrige-la pour que le programme affiche 10."
       },
       "hint": {
-       "en": "Change print into return inside add.",
-       "it": "Cambia print in return dentro add.",
-       "fr": "Change print en return dans add."
+       "en": "print only shows the sum: the caller gets nothing back. Which word gives a value back to the caller?",
+       "it": "print mostra soltanto la somma: chi chiama non riceve niente. Quale parola restituisce un valore a chi chiama?",
+       "fr": "print ne fait qu'afficher la somme : celui qui appelle ne reçoit rien. Quel mot rend une valeur à celui qui appelle ?"
       },
       "sol": {
        "en": "def add(a, b):\n    return a + b\n\nresult = add(2, 3)\nprint(result * 2)",
@@ -15369,9 +15369,9 @@ window.PyvielCourse = {
        "fr": "Crée une fonction is_adult(age) qui rend True quand l'âge vaut 18 ou plus. Affiche is_adult(20)."
       },
       "hint": {
-       "en": "return age >= 18",
-       "it": "return age >= 18",
-       "fr": "return age >= 18"
+       "en": "A comparison is already True or False: the function can give it back as it is, without an if.",
+       "it": "Un confronto è già True o False: la funzione può restituirlo così com'è, senza un if.",
+       "fr": "Une comparaison est déjà True ou False : la fonction peut la rendre telle quelle, sans if."
       },
       "sol": {
        "en": "def is_adult(age):\n    return age >= 18\n\nprint(is_adult(20))",
@@ -15464,9 +15464,9 @@ window.PyvielCourse = {
        "fr": "Crée une fonction bigger(a, b) qui rend le plus grand de deux nombres, en utilisant un if. Affiche bigger(3, 9)."
       },
       "hint": {
-       "en": "if a > b: return a, and after it return b.",
-       "it": "if a > b: return a, e dopo return b.",
-       "fr": "if a > b: return a, et après return b."
+       "en": "Inside the function, an if asks which number is bigger and gives that one back. If the if gave nothing back, the answer is the other number.",
+       "it": "Dentro la funzione, un if chiede quale numero è più grande e restituisce quello. Se l'if non ha restituito niente, la risposta è l'altro numero.",
+       "fr": "Dans la fonction, un if demande quel nombre est le plus grand et rend celui-là. Si le if n'a rien rendu, la réponse est l'autre nombre."
       },
       "sol": {
        "en": "def bigger(a, b):\n    if a > b:\n        return a\n    return b\n\nprint(bigger(3, 9))",
@@ -15786,9 +15786,9 @@ window.PyvielCourse = {
        "fr": "L'appel greet(\"Ada\") s'arrête sur une erreur. Donne au paramètre greeting la valeur par défaut \"Bonjour\" pour que le programme affiche : Bonjour Ada"
       },
       "hint": {
-       "en": "def greet(name, greeting=\"...\"):",
-       "it": "def greet(name, greeting=\"...\"):",
-       "fr": "def greet(name, greeting=\"...\"):"
+       "en": "A default value is written in the def line, right after the name of the parameter, with = and the value.",
+       "it": "Un valore predefinito si scrive nella riga def, subito dopo il nome del parametro, con = e il valore.",
+       "fr": "Une valeur par défaut s'écrit dans la ligne def, juste après le nom du paramètre, avec = et la valeur."
       },
       "sol": {
        "en": "def greet(name, greeting=\"Hello\"):\n    print(greeting, name)\n\ngreet(\"Ada\")",
@@ -15962,9 +15962,9 @@ window.PyvielCourse = {
        "fr": "Crée une fonction count_items(*items) qui rend combien de valeurs elle a reçues. Affiche count_items(5, 6, 7, 8)."
       },
       "hint": {
-       "en": "return len(items)",
-       "it": "return len(items)",
-       "fr": "return len(items)"
+       "en": "items holds all the values together, like a tuple. What counts the items of a tuple?",
+       "it": "items contiene tutti i valori insieme, come una tupla. Cosa conta gli elementi di una tupla?",
+       "fr": "items contient toutes les valeurs ensemble, comme un tuple. Qu'est-ce qui compte les éléments d'un tuple ?"
       },
       "sol": {
        "en": "def count_items(*items):\n    return len(items)\n\nprint(count_items(5, 6, 7, 8))",
@@ -16591,9 +16591,9 @@ window.PyvielCourse = {
        "fr": "Crée une fonction reset qui utilise global pour remettre 0 dans la boîte total. Appelle-la et affiche total."
       },
       "hint": {
-       "en": "global total, then total = 0 inside reset.",
-       "it": "global total, poi total = 0 dentro reset.",
-       "fr": "global total, puis total = 0 dans reset."
+       "en": "Inside reset, the first line says that total is the box from outside (the word global). Only then can reset put 0 in it.",
+       "it": "Dentro reset, la prima riga dice che total è la scatola di fuori (la parola global). Solo dopo reset può metterci 0.",
+       "fr": "Dans reset, la première ligne dit que total est la boîte de dehors (le mot global). Ensuite seulement reset peut y mettre 0."
       },
       "sol": {
        "en": "total = 50\n\ndef reset():\n    global total\n    total = 0\n\nreset()\nprint(total)",
@@ -17263,9 +17263,9 @@ window.PyvielCourse = {
        "fr": "Crée une fonction récursive stop_at(n) qui rend n quand n vaut 3 ou plus, et sinon s'appelle avec n + 1. Affiche stop_at(1)."
       },
       "hint": {
-       "en": "if n >= 3: return n, and after it return stop_at(n + 1).",
-       "it": "if n >= 3: return n, e dopo return stop_at(n + 1).",
-       "fr": "if n >= 3: return n, et après return stop_at(n + 1)."
+       "en": "Two cases: when n is already 3 or more, give n back. Otherwise, give back what the function says for the next number.",
+       "it": "Due casi: quando n è già 3 o più, restituisci n. Altrimenti, restituisci quello che la funzione dice per il numero seguente.",
+       "fr": "Deux cas : quand n est déjà 3 ou plus, rends n. Sinon, rends ce que la fonction dit pour le nombre suivant."
       },
       "sol": {
        "en": "def stop_at(n):\n    if n >= 3:\n        return n\n    return stop_at(n + 1)\n\nprint(stop_at(1))",
@@ -17473,9 +17473,9 @@ window.PyvielCourse = {
        "fr": "Avec une compréhension, fais la liste des doubles de 1 à 5 : [2, 4, 6, 8, 10]"
       },
       "hint": {
-       "en": "[n * 2 for n in range(1, 6)]",
-       "it": "[n * 2 for n in range(1, 6)]",
-       "fr": "[n * 2 for n in range(1, 6)]"
+       "en": "Inside square brackets: first what goes in the list (the number doubled), then a for that takes each number from 1 to 5.",
+       "it": "Tra parentesi quadre: prima cosa va nella lista (il numero raddoppiato), poi un for che prende ogni numero da 1 a 5.",
+       "fr": "Entre crochets : d'abord ce qui va dans la liste (le nombre doublé), puis un for qui prend chaque nombre de 1 à 5."
       },
       "sol": {
        "en": "print([n * 2 for n in range(1, 6)])",
@@ -17568,9 +17568,9 @@ window.PyvielCourse = {
        "fr": "À partir de la liste nums, fais la liste des nombres plus grands que 5, avec une compréhension et un if."
       },
       "hint": {
-       "en": "[n for n in nums if n > 5]",
-       "it": "[n for n in nums if n > 5]",
-       "fr": "[n for n in nums if n > 5]"
+       "en": "Like the comprehensions of the example, with an if at the end that keeps only the numbers you want.",
+       "it": "Come le comprensioni dell'esempio, con un if alla fine che tiene solo i numeri che vuoi.",
+       "fr": "Comme les compréhensions de l'exemple, avec un if à la fin qui garde seulement les nombres voulus."
       },
       "sol": {
        "en": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nprint([n for n in nums if n > 5])",
@@ -17663,9 +17663,9 @@ window.PyvielCourse = {
        "fr": "Avec une compréhension de dictionnaire, fais un dictionnaire des carrés : chaque nombre de 1 à 3 avec son carré. Affiche-le."
       },
       "hint": {
-       "en": "{n: n * n for n in range(1, 4)}",
-       "it": "{n: n * n for n in range(1, 4)}",
-       "fr": "{n: n * n for n in range(1, 4)}"
+       "en": "Curly brackets, and before the for a pair key: value, where the key is the number and the value its square.",
+       "it": "Parentesi graffe, e prima del for una coppia chiave: valore, dove la chiave è il numero e il valore il suo quadrato.",
+       "fr": "Des accolades, et avant le for une paire clé : valeur, où la clé est le nombre et la valeur son carré."
       },
       "sol": {
        "en": "print({n: n * n for n in range(1, 4)})",
@@ -17758,9 +17758,9 @@ window.PyvielCourse = {
        "fr": "Fais la liste plate des paires (a, b) pour a dans 1, 2 et b dans 1, 2, avec deux parties for. Affiche-la."
       },
       "hint": {
-       "en": "[(a, b) for a in (1, 2) for b in (1, 2)]",
-       "it": "[(a, b) for a in (1, 2) for b in (1, 2)]",
-       "fr": "[(a, b) for a in (1, 2) for b in (1, 2)]"
+       "en": "In front, the pair in round brackets; after it, two for parts one after the other: first the one for a, then the one for b.",
+       "it": "Davanti, la coppia tra parentesi tonde; dopo, due parti for una dopo l'altra: prima quella per a, poi quella per b.",
+       "fr": "Devant, la paire entre parenthèses ; après, deux parties for l'une après l'autre : d'abord celle pour a, puis celle pour b."
       },
       "sol": {
        "en": "print([(a, b) for a in (1, 2) for b in (1, 2)])",
@@ -17843,9 +17843,9 @@ window.PyvielCourse = {
        "fr": "Fais une lambda qui s'appelle triple et qui multiplie par 3. Affiche triple(7)."
       },
       "hint": {
-       "en": "triple = lambda n: n * 3",
-       "it": "triple = lambda n: n * 3",
-       "fr": "triple = lambda n: n * 3"
+       "en": "lambda, the name of the value it gets, a colon, and what it gives back. Keep it in a box called triple, then call triple like a function.",
+       "it": "lambda, il nome del valore che riceve, i due punti, e cosa restituisce. Tienila in una scatola chiamata triple, poi chiama triple come una funzione.",
+       "fr": "lambda, le nom de la valeur qu'il reçoit, deux-points, et ce qu'il rend. Garde-le dans une boîte appelée triple, puis appelle triple comme une fonction."
       },
       "sol": {
        "en": "triple = lambda n: n * 3\nprint(triple(7))",
@@ -17968,9 +17968,9 @@ window.PyvielCourse = {
        "fr": "Avec map et une lambda, affiche la liste des nombres [1, 2, 3] multipliés par 10."
       },
       "hint": {
-       "en": "list(map(lambda n: n * 10, [1, 2, 3]))",
-       "it": "list(map(lambda n: n * 10, [1, 2, 3]))",
-       "fr": "list(map(lambda n: n * 10, [1, 2, 3]))"
+       "en": "map takes a function and a list, and uses the function on every item. Give it a lambda that multiplies by 10, and turn the result into a list to show it.",
+       "it": "map prende una funzione e una lista, e usa la funzione su ogni elemento. Dagli una lambda che moltiplica per 10, e trasforma il risultato in una lista per mostrarlo.",
+       "fr": "map prend une fonction et une liste, et utilise la fonction sur chaque élément. Donne-lui un lambda qui multiplie par 10, et transforme le résultat en liste pour l'afficher."
       },
       "sol": {
        "en": "print(list(map(lambda n: n * 10, [1, 2, 3])))",
@@ -18674,9 +18674,9 @@ window.PyvielCourse = {
        "fr": "Affiche 7.1 arrondi par excès à l'entier suivant."
       },
       "hint": {
-       "en": "math.ceil(7.1)",
-       "it": "math.ceil(7.1)",
-       "fr": "math.ceil(7.1)"
+       "en": "ceil rounds up, floor rounds down. Both live in math, so bring it in with import first.",
+       "it": "ceil arrotonda per eccesso, floor per difetto. Stanno tutti e due in math, quindi portalo dentro prima con import.",
+       "fr": "ceil arrondit vers le haut, floor vers le bas. Les deux sont dans math, alors fais-le entrer d'abord avec import."
       },
       "sol": {
        "en": "import math\nprint(math.ceil(7.1))",
@@ -18910,9 +18910,9 @@ window.PyvielCourse = {
        "fr": "Affiche combien de noms qui commencent par la lettre a le module math contient."
       },
       "hint": {
-       "en": "len([name for name in dir(math) if name.startswith(\"a\")])",
-       "it": "len([name for name in dir(math) if name.startswith(\"a\")])",
-       "fr": "len([name for name in dir(math) if name.startswith(\"a\")])"
+       "en": "dir(math) gives the list of its names. A comprehension with an if can keep the ones that start with a (startswith), and len counts them.",
+       "it": "dir(math) dà la lista dei suoi nomi. Una comprensione con un if può tenere quelli che cominciano con a (startswith), e len li conta.",
+       "fr": "dir(math) donne la liste de ses noms. Une compréhension avec un if peut garder ceux qui commencent par a (startswith), et len les compte."
       },
       "sol": {
        "en": "import math\nprint(len([name for name in dir(math) if name.startswith(\"a\")]))",
@@ -19239,9 +19239,9 @@ window.PyvielCourse = {
        "fr": "Affiche 6 factorielle (6 x 5 x 4 x 3 x 2 x 1), en utilisant math."
       },
       "hint": {
-       "en": "math.factorial(6)",
-       "it": "math.factorial(6)",
-       "fr": "math.factorial(6)"
+       "en": "math has a tool for the factorial, and its name is the English word factorial. Do not forget the import.",
+       "it": "math ha uno strumento per il fattoriale, e il suo nome è la parola inglese factorial. Non dimenticare l'import.",
+       "fr": "math a un outil pour la factorielle, et son nom est le mot anglais factorial. N'oublie pas l'import."
       },
       "sol": {
        "en": "import math\nprint(math.factorial(6))",
@@ -19378,9 +19378,9 @@ window.PyvielCourse = {
        "fr": "Un cercle a un rayon de 10. Affiche son aire, arrondie à 2 décimales."
       },
       "hint": {
-       "en": "round(math.pi * r ** 2, 2)",
-       "it": "round(math.pi * r ** 2, 2)",
-       "fr": "round(math.pi * r ** 2, 2)"
+       "en": "The area is pi times the radius times itself. math.pi is pi, ** 2 squares, and round with 2 keeps two decimals.",
+       "it": "L'area è pi greco per il raggio per se stesso. math.pi è pi greco, ** 2 eleva al quadrato, e round con 2 tiene due decimali.",
+       "fr": "L'aire est pi fois le rayon fois lui-même. math.pi est pi, ** 2 met au carré, et round avec 2 garde deux décimales."
       },
       "sol": {
        "en": "import math\nr = 10\nprint(round(math.pi * r ** 2, 2))",
@@ -19477,9 +19477,9 @@ window.PyvielCourse = {
        "fr": "Utilise la graine 1, puis affiche un nombre entier de 1 à 10 avec randint. Lance-le deux fois : il doit être le même."
       },
       "hint": {
-       "en": "random.seed(1) and then print(random.randint(1, 10)).",
-       "it": "random.seed(1) e poi print(random.randint(1, 10)).",
-       "fr": "random.seed(1) puis print(random.randint(1, 10))."
+       "en": "First fix the luck with seed and the number 1; then ask randint for a number from 1 to 10, and show it.",
+       "it": "Prima fissa la fortuna con seed e il numero 1; poi chiedi a randint un numero da 1 a 10, e mostralo.",
+       "fr": "D'abord fixe la chance avec seed et le nombre 1 ; puis demande à randint un nombre de 1 à 10, et affiche-le."
       },
       "sol": {
        "en": "import random\nrandom.seed(1)\nprint(random.randint(1, 10))",
@@ -19687,9 +19687,9 @@ window.PyvielCourse = {
        "fr": "Change le jeu pour qu'il joue 5 tours au lieu de 3."
       },
       "hint": {
-       "en": "range(1, 6) gives 5 rounds.",
-       "it": "range(1, 6) dà 5 giri.",
-       "fr": "range(1, 6) donne 5 tours."
+       "en": "Which range decides how many rounds are played? Remember that it stops just before its last number.",
+       "it": "Quale range decide quanti giri si fanno? Ricorda che si ferma subito prima del suo ultimo numero.",
+       "fr": "Quel range décide combien de tours on joue ? Souviens-toi qu'il s'arrête juste avant son dernier nombre."
       },
       "sol": {
        "en": "import random\nchoices = [\"rock\", \"paper\", \"scissors\"]\nrandom.seed(3)\nfor round_number in range(1, 6):\n    print(\"Round\", round_number, random.choice(choices))",
@@ -19801,9 +19801,9 @@ window.PyvielCourse = {
        "fr": "Affiche la médiane de la liste [3, 9, 1, 7, 5]."
       },
       "hint": {
-       "en": "statistics.median([3, 9, 1, 7, 5])",
-       "it": "statistics.median([3, 9, 1, 7, 5])",
-       "fr": "statistics.median([3, 9, 1, 7, 5])"
+       "en": "statistics has a tool for the value in the middle of a list: its English name is median.",
+       "it": "statistics ha uno strumento per il valore in mezzo a una lista: il suo nome inglese è median.",
+       "fr": "statistics a un outil pour la valeur du milieu d'une liste : son nom anglais est median."
       },
       "sol": {
        "en": "import statistics\nprint(statistics.median([3, 9, 1, 7, 5]))",
@@ -20061,9 +20061,9 @@ window.PyvielCourse = {
        "fr": "Fais la date du 1er janvier 2030 et affiche-la comme 01/01/2030 avec strftime."
       },
       "hint": {
-       "en": "date(2030, 1, 1).strftime(\"%d/%m/%Y\")",
-       "it": "date(2030, 1, 1).strftime(\"%d/%m/%Y\")",
-       "fr": "date(2030, 1, 1).strftime(\"%d/%m/%Y\")"
+       "en": "Build the date with year, month and day. Then strftime writes it: %d is the day, %m the month, %Y the year, with / between them.",
+       "it": "Costruisci la data con anno, mese e giorno. Poi strftime la scrive: %d è il giorno, %m il mese, %Y l'anno, con / in mezzo.",
+       "fr": "Construis la date avec année, mois et jour. Puis strftime l'écrit : %d est le jour, %m le mois, %Y l'année, avec / entre eux."
       },
       "sol": {
        "en": "from datetime import date\nprint(date(2030, 1, 1).strftime(\"%d/%m/%Y\"))",
@@ -20172,9 +20172,9 @@ window.PyvielCourse = {
        "fr": "Combien de jours y a-t-il entre le 1er janvier 2027 et le 31 décembre 2027 ? Affiche-le."
       },
       "hint": {
-       "en": "(date(2027, 12, 31) - date(2027, 1, 1)).days",
-       "it": "(date(2027, 12, 31) - date(2027, 1, 1)).days",
-       "fr": "(date(2027, 12, 31) - date(2027, 1, 1)).days"
+       "en": "Subtract the first date from the last one: the result has .days.",
+       "it": "Sottrai la prima data dall'ultima: il risultato ha .days.",
+       "fr": "Soustrais la première date de la dernière : le résultat a .days."
       },
       "sol": {
        "en": "from datetime import date\nprint((date(2027, 12, 31) - date(2027, 1, 1)).days)",
@@ -20271,9 +20271,9 @@ window.PyvielCourse = {
        "fr": "Lis le texte \"2030-06-15 18:45\" avec strptime et affiche l'heure et les minutes comme 18:45, en utilisant strftime."
       },
       "hint": {
-       "en": "datetime.strptime(\"2030-06-15 18:45\", \"%Y-%m-%d %H:%M\").strftime(\"%H:%M\")",
-       "it": "datetime.strptime(\"2030-06-15 18:45\", \"%Y-%m-%d %H:%M\").strftime(\"%H:%M\")",
-       "fr": "datetime.strptime(\"2030-06-15 18:45\", \"%Y-%m-%d %H:%M\").strftime(\"%H:%M\")"
+       "en": "strptime reads the text with a pattern of codes: %Y year, %m month, %d day, %H hour, %M minute, with the same dashes, space and colon as the text. Then strftime with only the codes of the hour and the minute.",
+       "it": "strptime legge il testo con uno schema di codici: %Y anno, %m mese, %d giorno, %H ora, %M minuto, con gli stessi trattini, spazio e due punti del testo. Poi strftime con solo i codici dell'ora e del minuto.",
+       "fr": "strptime lit le texte avec un modèle de codes : %Y année, %m mois, %d jour, %H heure, %M minute, avec les mêmes tirets, espace et deux-points que le texte. Puis strftime avec seulement les codes de l'heure et de la minute."
       },
       "sol": {
        "en": "from datetime import datetime\nwhen = datetime.strptime(\"2030-06-15 18:45\", \"%Y-%m-%d %H:%M\")\nprint(when.strftime(\"%H:%M\"))",
@@ -20384,9 +20384,9 @@ window.PyvielCourse = {
        "fr": "Mesure combien de temps il faut pour additionner les nombres jusqu'à 100000 avec sum(range(100000)) et affiche si c'était moins de 5 secondes (il doit afficher True)."
       },
       "hint": {
-       "en": "start = time.time(), the sum, then time.time() - start < 5.",
-       "it": "start = time.time(), la somma, poi time.time() - start < 5.",
-       "fr": "start = time.time(), la somme, puis time.time() - start < 5."
+       "en": "Keep time.time() in a box before the sum. After it, time.time() minus that box is how long it took: compare it with 5.",
+       "it": "Tieni time.time() in una scatola prima della somma. Dopo, time.time() meno quella scatola è quanto ci ha messo: confrontalo con 5.",
+       "fr": "Garde time.time() dans une boîte avant la somme. Après, time.time() moins cette boîte est le temps qu'il a fallu : compare-le à 5."
       },
       "sol": {
        "en": "import time\nstart = time.time()\ntotal = sum(range(100000))\nprint(time.time() - start < 5)",
@@ -20642,9 +20642,9 @@ window.PyvielCourse = {
        "fr": "Écris un fichier qui s'appelle demo_hello.txt avec le texte salut dedans et affiche : fini"
       },
       "hint": {
-       "en": "with open(\"demo_hello.txt\", \"w\") as f: and f.write(\"...\") inside.",
-       "it": "with open(\"demo_hello.txt\", \"w\") as f: e f.write(\"...\") dentro.",
-       "fr": "with open(\"demo_hello.txt\", \"w\") as f: et f.write(\"...\") dedans."
+       "en": "The program of this step writes a file the same way: change the file name and the text, and add the print at the end, not pushed in.",
+       "it": "Il programma di questo passo scrive un file allo stesso modo: cambia il nome del file e il testo, e aggiungi il print alla fine, non rientrato.",
+       "fr": "Le programme de cette étape écrit un fichier de la même façon : change le nom du fichier et le texte, et ajoute le print à la fin, sans décalage."
       },
       "sol": {
        "en": "with open(\"demo_hello.txt\", \"w\") as f:\n    f.write(\"hello\")\nprint(\"done\")",
@@ -20753,9 +20753,9 @@ window.PyvielCourse = {
        "fr": "Écris le texte salut tout le monde dans un fichier, relis-le et affiche combien de lettres il a (19)."
       },
       "hint": {
-       "en": "Write the text, then open the file to read, f.read(), and print(len(text)).",
-       "it": "Scrivi il testo, poi apri il file per leggere, f.read() e print(len(text)).",
-       "fr": "Écris le texte, puis ouvre le fichier pour lire, f.read() et print(len(text))."
+       "en": "Two with blocks: the first writes (mode \"w\"), the second opens the same file to read and keeps the whole text with read. len counts its letters.",
+       "it": "Due blocchi with: il primo scrive (modo \"w\"), il secondo apre lo stesso file per leggere e tiene tutto il testo con read. len conta le sue lettere.",
+       "fr": "Deux blocs with : le premier écrit (mode \"w\"), le second ouvre le même fichier pour lire et garde tout le texte avec read. len compte ses lettres."
       },
       "sol": {
        "en": "with open(\"demo_t.txt\", \"w\") as f:\n    f.write(\"hello world\")\nwith open(\"demo_t.txt\") as f:\n    text = f.read()\nprint(len(text))",
@@ -20977,9 +20977,9 @@ window.PyvielCourse = {
        "fr": "Demande si un fichier qui s'appelle demo_nope.txt existe et affiche la réponse."
       },
       "hint": {
-       "en": "print(os.path.exists(\"demo_nope.txt\"))",
-       "it": "print(os.path.exists(\"demo_nope.txt\"))",
-       "fr": "print(os.path.exists(\"demo_nope.txt\"))"
+       "en": "os.path has a tool that asks if a file exists. Bring in os first, then show its answer.",
+       "it": "os.path ha uno strumento che chiede se un file esiste. Porta dentro os prima, poi mostra la sua risposta.",
+       "fr": "os.path a un outil qui demande si un fichier existe. Fais entrer os d'abord, puis affiche sa réponse."
       },
       "sol": {
        "en": "import os\nprint(os.path.exists(\"demo_nope.txt\"))",
@@ -21116,9 +21116,9 @@ window.PyvielCourse = {
        "fr": "Crée un fichier demo_x.txt, supprime-le avec os.remove et affiche s'il existe encore (il doit afficher False)."
       },
       "hint": {
-       "en": "Write the file, os.remove(\"demo_x.txt\"), then print(os.path.exists(\"demo_x.txt\")).",
-       "it": "Scrivi il file, os.remove(\"demo_x.txt\"), poi print(os.path.exists(\"demo_x.txt\")).",
-       "fr": "Écris le fichier, os.remove(\"demo_x.txt\"), puis print(os.path.exists(\"demo_x.txt\"))."
+       "en": "Three steps: write the file, delete it with the tool of os, then ask os.path if it still exists.",
+       "it": "Tre passi: scrivi il file, cancellalo con lo strumento di os, poi chiedi a os.path se esiste ancora.",
+       "fr": "Trois étapes : écris le fichier, supprime-le avec l'outil de os, puis demande à os.path s'il existe encore."
       },
       "sol": {
        "en": "import os\nwith open(\"demo_x.txt\", \"w\") as f:\n    f.write(\"x\")\nos.remove(\"demo_x.txt\")\nprint(os.path.exists(\"demo_x.txt\"))",
@@ -21463,9 +21463,9 @@ window.PyvielCourse = {
        "fr": "Fais attraper par le programme l'erreur de int(\"x\") et afficher : oups"
       },
       "hint": {
-       "en": "try: int(\"x\") then except ValueError: and print.",
-       "it": "try: int(\"x\") poi except ValueError: e print.",
-       "fr": "try: int(\"x\") puis except ValueError: et print."
+       "en": "The risky line goes pushed in under try:. Then except with the name of the error, and under it, pushed in, the print.",
+       "it": "La riga rischiosa va rientrata sotto try:. Poi except con il nome dell'errore, e sotto, rientrato, il print.",
+       "fr": "La ligne risquée va décalée sous try:. Puis except avec le nom de l'erreur, et dessous, décalé, le print."
       },
       "sol": {
        "en": "try:\n    int(\"x\")\nexcept ValueError:\n    print(\"oops\")",
@@ -21532,9 +21532,9 @@ window.PyvielCourse = {
        "fr": "Parcours la liste [\"4\", \"z\", \"9\"] et pour chaque texte affiche son double, ou le mot mauvais quand ce n'est pas un nombre."
       },
       "hint": {
-       "en": "for ... in ...: then try: print(int(text) * 2) and except ValueError: print(\"bad\").",
-       "it": "for ... in ...: poi try: print(int(text) * 2) ed except ValueError: print(\"male\").",
-       "fr": "for ... in ...: puis try: print(int(text) * 2) et except ValueError: print(\"mauvais\")."
+       "en": "A for over the list. Inside it, a try that shows the double of the number, and an except for ValueError that shows the other word.",
+       "it": "Un for sulla lista. Dentro, un try che mostra il doppio del numero, e un except per ValueError che mostra l'altra parola.",
+       "fr": "Un for sur la liste. Dedans, un try qui affiche le double du nombre, et un except pour ValueError qui affiche l'autre mot."
       },
       "sol": {
        "en": "for text in [\"4\", \"z\", \"9\"]:\n    try:\n        print(int(text) * 2)\n    except ValueError:\n        print(\"bad\")",
@@ -21726,9 +21726,9 @@ window.PyvielCourse = {
        "fr": "Enlève la dernière ligne, qui arrête le programme, pour que le programme finisse sans erreur."
       },
       "hint": {
-       "en": "Delete the line set_age(-1).",
-       "it": "Cancella la riga set_age(-1).",
-       "fr": "Supprime la ligne set_age(-1)."
+       "en": "Which line asks for an age below zero? That is the one that stops the program.",
+       "it": "Quale riga chiede un'età sotto zero? È quella che ferma il programma.",
+       "fr": "Quelle ligne demande un âge en dessous de zéro ? C'est celle qui arrête le programme."
       },
       "sol": {
        "en": "def set_age(age):\n    if age < 0:\n        raise ValueError(\"negative\")\n    return age\n\nprint(set_age(12))",
@@ -21801,9 +21801,9 @@ window.PyvielCourse = {
        "fr": "Change le programme pour qu'il n'accepte que des âges de 1 à 120 : avec les réponses x, 0 et 30 il doit finir en affichant 30."
       },
       "hint": {
-       "en": "if age < 1 or age > 120: then raise ValueError.",
-       "it": "if age < 1 or age > 120: poi raise ValueError.",
-       "fr": "if age < 1 or age > 120: puis raise ValueError."
+       "en": "Inside the try, after int: when the age is too small or too big, raise a ValueError yourself. The except that is already there catches it.",
+       "it": "Dentro il try, dopo int: quando l'età è troppo piccola o troppo grande, solleva tu un ValueError. L'except che c'è già lo prende.",
+       "fr": "Dans le try, après int : quand l'âge est trop petit ou trop grand, lève toi-même une ValueError. Le except qui est déjà là l'attrape."
       },
       "sol": {
        "en": "while True:\n    text = input(\"Age: \")\n    try:\n        age = int(text)\n        if age < 1 or age > 120:\n            raise ValueError(\"range\")\n        break\n    except ValueError:\n        print(\"Again\")\nprint(age)",
@@ -21877,9 +21877,9 @@ window.PyvielCourse = {
        "fr": "Écris safe_divide(a, b) : elle rend a / b, ou None quand b vaut 0 (utilise try et except ZeroDivisionError). Affiche safe_divide(10, 4) puis safe_divide(1, 0)."
       },
       "hint": {
-       "en": "Inside the function: try: return a / b, and under except ZeroDivisionError: return None.",
-       "it": "Dentro la funzione: try: return a / b, e sotto except ZeroDivisionError: return None.",
-       "fr": "Dans la fonction : try: return a / b, et sous except ZeroDivisionError: return None."
+       "en": "Inside the function, a try that gives back the division, and an except for ZeroDivisionError that gives back None.",
+       "it": "Dentro la funzione, un try che restituisce la divisione, e un except per ZeroDivisionError che restituisce None.",
+       "fr": "Dans la fonction, un try qui rend la division, et un except pour ZeroDivisionError qui rend None."
       },
       "sol": {
        "en": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n\nprint(safe_divide(10, 4))\nprint(safe_divide(1, 0))",
@@ -22040,9 +22040,9 @@ window.PyvielCourse = {
        "fr": "Transforme le dictionnaire {\"a\": 1} en texte JSON et affiche-le."
       },
       "hint": {
-       "en": "print(json.dumps({\"a\": 1}))",
-       "it": "print(json.dumps({\"a\": 1}))",
-       "fr": "print(json.dumps({\"a\": 1}))"
+       "en": "Bring in json first. json.dumps turns a dictionary into JSON text: show what it gives back.",
+       "it": "Porta dentro json prima. json.dumps trasforma un dizionario in testo JSON: mostra quello che restituisce.",
+       "fr": "Fais entrer json d'abord. json.dumps transforme un dictionnaire en texte JSON : affiche ce qu'il rend."
       },
       "sol": {
        "en": "import json\nprint(json.dumps({\"a\": 1}))",
@@ -22153,9 +22153,9 @@ window.PyvielCourse = {
        "fr": "Enregistre la liste [1, 2, 3] dans un fichier qui s'appelle demo_list.json, recharge-la et affiche-la."
       },
       "hint": {
-       "en": "json.dump([1, 2, 3], f) with the file open to write, then json.load(f) with it open to read.",
-       "it": "json.dump([1, 2, 3], f) con il file aperto per scrivere, poi json.load(f) con il file aperto per leggere.",
-       "fr": "json.dump([1, 2, 3], f) avec le fichier ouvert pour écrire, puis json.load(f) avec lui ouvert pour lire."
+       "en": "json.dump writes the list into a file open for writing; json.load reads it back from the same file open for reading.",
+       "it": "json.dump scrive la lista in un file aperto per scrivere; json.load la rilegge dallo stesso file aperto per leggere.",
+       "fr": "json.dump écrit la liste dans un fichier ouvert en écriture ; json.load la relit depuis le même fichier ouvert en lecture."
       },
       "sol": {
        "en": "import json\nwith open(\"demo_list.json\", \"w\") as f:\n    json.dump([1, 2, 3], f)\nwith open(\"demo_list.json\") as f:\n    print(json.load(f))",
@@ -22280,9 +22280,9 @@ window.PyvielCourse = {
        "fr": "Écris un fichier CSV qui s'appelle demo_pets.csv avec les lignes [\"chat\", 2] et [\"chien\", 3] et affiche le texte du fichier."
       },
       "hint": {
-       "en": "csv.writer(f) and writerows([...]), then print(open(\"demo_pets.csv\").read()).",
-       "it": "csv.writer(f) e writerows([...]), poi print(open(\"demo_pets.csv\").read()).",
-       "fr": "csv.writer(f) et writerows([...]), puis print(open(\"demo_pets.csv\").read())."
+       "en": "csv.writer on a file open for writing, and its writerows with the list of rows. Then open the file again, read it and show the text.",
+       "it": "csv.writer su un file aperto per scrivere, e il suo writerows con la lista delle righe. Poi riapri il file, leggilo e mostra il testo.",
+       "fr": "csv.writer sur un fichier ouvert en écriture, et son writerows avec la liste des lignes. Puis rouvre le fichier, lis-le et affiche le texte."
       },
       "sol": {
        "en": "import csv\nwith open(\"demo_pets.csv\", \"w\", newline=\"\") as f:\n    csv.writer(f).writerows([[\"cat\", 2], [\"dog\", 3]])\nprint(open(\"demo_pets.csv\").read())",
@@ -22629,9 +22629,9 @@ window.PyvielCourse = {
        "fr": "Cherche trois chiffres de suite dans le texte \"room 204 and 305\" et affiche la correspondance."
       },
       "hint": {
-       "en": "re.search(r\"\\d{3}\", text)",
-       "it": "re.search(r\"\\d{3}\", text)",
-       "fr": "re.search(r\"\\d{3}\", text)"
+       "en": "re.search takes the pattern first, then the text. \\d is one digit, and {3} right after it asks for three in a row.",
+       "it": "re.search prende prima lo schema, poi il testo. \\d è una cifra, e {3} subito dopo ne chiede tre di fila.",
+       "fr": "re.search prend d'abord le motif, puis le texte. \\d est un chiffre, et {3} juste après en demande trois d'affilée."
       },
       "sol": {
        "en": "import re\ntext = \"room 204 and 305\"\nprint(re.search(r\"\\d{3}\", text))",
@@ -22749,9 +22749,9 @@ window.PyvielCourse = {
        "fr": "Affiche la liste de tous les nombres (chiffres de suite, avec \\d+) dans le texte \"a1 b22 c333\"."
       },
       "hint": {
-       "en": "re.findall(r\"\\d+\", text)",
-       "it": "re.findall(r\"\\d+\", text)",
-       "fr": "re.findall(r\"\\d+\", text)"
+       "en": "findall gives every match, as a list. \\d+ means one digit or more.",
+       "it": "findall dà ogni corrispondenza, come lista. \\d+ vuol dire una cifra o più.",
+       "fr": "findall donne chaque correspondance, sous forme de liste. \\d+ veut dire un chiffre ou plus."
       },
       "sol": {
        "en": "import re\ntext = \"a1 b22 c333\"\nprint(re.findall(r\"\\d+\", text))",
@@ -22874,9 +22874,9 @@ window.PyvielCourse = {
        "fr": "Affiche la liste des mots faits de lettres ou de chiffres (\\w+) dans \"one, two; three\"."
       },
       "hint": {
-       "en": "re.findall(r\"\\w+\", ...)",
-       "it": "re.findall(r\"\\w+\", ...)",
-       "fr": "re.findall(r\"\\w+\", ...)"
+       "en": "findall again, with the pattern \\w+ and the text of the task.",
+       "it": "Ancora findall, con lo schema \\w+ e il testo del compito.",
+       "fr": "Encore findall, avec le motif \\w+ et le texte de la consigne."
       },
       "sol": {
        "en": "import re\nprint(re.findall(r\"\\w+\", \"one, two; three\"))",
@@ -22973,9 +22973,9 @@ window.PyvielCourse = {
        "fr": "Remplace chaque chiffre dans le texte \"a1b2c3\" par une étoile (*), en utilisant re.sub avec \\d. Affiche le résultat."
       },
       "hint": {
-       "en": "re.sub(r\"\\d\", \"*\", \"a1b2c3\")",
-       "it": "re.sub(r\"\\d\", \"*\", \"a1b2c3\")",
-       "fr": "re.sub(r\"\\d\", \"*\", \"a1b2c3\")"
+       "en": "re.sub takes three things: the pattern to find, what to put instead, and the text.",
+       "it": "re.sub prende tre cose: lo schema da trovare, cosa mettere al suo posto, e il testo.",
+       "fr": "re.sub prend trois choses : le motif à trouver, ce qu'il faut mettre à la place, et le texte."
       },
       "sol": {
        "en": "import re\nprint(re.sub(r\"\\d\", \"*\", \"a1b2c3\"))",
@@ -23058,9 +23058,9 @@ window.PyvielCourse = {
        "fr": "Utilise re.fullmatch avec \\d+ pour vérifier que \"2024\" n'est fait que de chiffres et affiche True ou False."
       },
       "hint": {
-       "en": "print(bool(re.fullmatch(r\"\\d+\", \"2024\")))",
-       "it": "print(bool(re.fullmatch(r\"\\d+\", \"2024\")))",
-       "fr": "print(bool(re.fullmatch(r\"\\d+\", \"2024\")))"
+       "en": "fullmatch says yes only when the whole text matches. It gives a match or None: bool turns that into True or False.",
+       "it": "fullmatch dice sì solo quando tutto il testo corrisponde. Dà una corrispondenza o None: bool lo trasforma in True o False.",
+       "fr": "fullmatch dit oui seulement quand tout le texte correspond. Il donne une correspondance ou None : bool le transforme en True ou False."
       },
       "sol": {
        "en": "import re\nprint(bool(re.fullmatch(r\"\\d+\", \"2024\")))",
@@ -23383,9 +23383,9 @@ window.PyvielCourse = {
        "fr": "Avec la classe Dog, construis un objet qui s'appelle fido et affiche si c'est un Dog."
       },
       "hint": {
-       "en": "print(isinstance(fido, Dog))",
-       "it": "print(isinstance(fido, Dog))",
-       "fr": "print(isinstance(fido, Dog))"
+       "en": "First build fido by calling the class. Then isinstance asks: is this object of this class?",
+       "it": "Prima costruisci fido chiamando la classe. Poi isinstance chiede: questo oggetto è di questa classe?",
+       "fr": "D'abord construis fido en appelant la classe. Puis isinstance demande : cet objet est-il de cette classe ?"
       },
       "sol": {
        "en": "class Dog:\n    pass\n\nfido = Dog()\nprint(isinstance(fido, Dog))",
@@ -23494,9 +23494,9 @@ window.PyvielCourse = {
        "fr": "Crée une classe Book avec __init__ qui garde title et pages. Construis Book(\"Dune\", 600) et affiche ses pages."
       },
       "hint": {
-       "en": "def __init__(self, title, pages): and self.title = title, self.pages = pages.",
-       "it": "def __init__(self, title, pages): e self.title = title, self.pages = pages.",
-       "fr": "def __init__(self, title, pages): et self.title = title, self.pages = pages."
+       "en": "Inside the class, __init__ gets self and the two values, and keeps each one on self under its own name.",
+       "it": "Dentro la classe, __init__ riceve self e i due valori, e tiene ciascuno su self con il suo nome.",
+       "fr": "Dans la classe, __init__ reçoit self et les deux valeurs, et garde chacune sur self sous son propre nom."
       },
       "sol": {
        "en": "class Book:\n    def __init__(self, title, pages):\n        self.title = title\n        self.pages = pages\n\nb = Book(\"Dune\", 600)\nprint(b.pages)",
@@ -23605,9 +23605,9 @@ window.PyvielCourse = {
        "fr": "Ajoute à la classe Dog une méthode qui s'appelle birthday qui ajoute 1 à self.age. Construis Dog(\"Rex\", 3), appelle birthday et affiche l'âge (4)."
       },
       "hint": {
-       "en": "def birthday(self): and self.age += 1 inside it.",
-       "it": "def birthday(self): e self.age += 1 dentro.",
-       "fr": "def birthday(self): et self.age += 1 dedans."
+       "en": "A method is a def inside the class, pushed in, with self first. Inside it, add 1 to the age kept on self. Then build the dog, call birthday on it, and show its age.",
+       "it": "Un metodo è un def dentro la classe, rientrato, con self per primo. Dentro, aggiungi 1 all'età tenuta su self. Poi costruisci il cane, chiama birthday su di lui, e mostra la sua età.",
+       "fr": "Une méthode est un def dans la classe, décalé, avec self en premier. Dedans, ajoute 1 à l'âge gardé sur self. Puis construis le chien, appelle birthday dessus, et affiche son âge."
       },
       "sol": {
        "en": "class Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def birthday(self):\n        self.age += 1\n\nrex = Dog(\"Rex\", 3)\nrex.birthday()\nprint(rex.age)",
@@ -23841,9 +23841,9 @@ window.PyvielCourse = {
        "fr": "Utilise l'enchaînement pour ajouter 5, puis 5, puis 5, et affiche la valeur (15)."
       },
       "hint": {
-       "en": "c.add(5).add(5).add(5)",
-       "it": "c.add(5).add(5).add(5)",
-       "fr": "c.add(5).add(5).add(5)"
+       "en": "add gives back the object itself, so another .add(5) can follow right after it on the same line. Then show the value of c.",
+       "it": "add restituisce l'oggetto stesso, quindi un altro .add(5) può seguire subito dopo sulla stessa riga. Poi mostra il valore di c.",
+       "fr": "add rend l'objet lui-même, donc un autre .add(5) peut suivre juste après sur la même ligne. Puis affiche la valeur de c."
       },
       "sol": {
        "en": "class Counter:\n    def __init__(self):\n        self.value = 0\n\n    def add(self, amount=1):\n        self.value += amount\n        return self\n\nc = Counter()\nc.add(5).add(5).add(5)\nprint(c.value)",
@@ -24074,9 +24074,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une méthode interest(rate) qui ajoute balance * rate au solde. Avec un solde de 200 et un taux de 0.5 elle doit afficher 300.0."
       },
       "hint": {
-       "en": "self.balance += self.balance * rate",
-       "it": "self.balance += self.balance * rate",
-       "fr": "self.balance += self.balance * rate"
+       "en": "A new def inside the class, with self and rate. It adds the balance times the rate to the balance. Then build the account, call interest, and show the balance.",
+       "it": "Un nuovo def dentro la classe, con self e rate. Aggiunge al saldo il saldo per il tasso. Poi costruisci il conto, chiama interest, e mostra il saldo.",
+       "fr": "Un nouveau def dans la classe, avec self et rate. Il ajoute au solde le solde fois le taux. Puis construis le compte, appelle interest, et affiche le solde."
       },
       "sol": {
        "en": "class Account:\n    def __init__(self, balance=0):\n        self.balance = balance\n\n    def interest(self, rate):\n        self.balance += self.balance * rate\n\nacc = Account(200)\nacc.interest(0.5)\nprint(acc.balance)",
@@ -24169,9 +24169,9 @@ window.PyvielCourse = {
        "fr": "Crée ta propre classe d'erreur qui s'appelle TooBig(Exception). Lève-la avec le message trop grand, attrape-la et affiche le message."
       },
       "hint": {
-       "en": "class TooBig(Exception): pass, then try: raise TooBig(\"...\") except TooBig as error: print(error).",
-       "it": "class TooBig(Exception): pass, poi try: raise TooBig(\"...\") except TooBig as error: print(error).",
-       "fr": "class TooBig(Exception): pass, puis try: raise TooBig(\"...\") except TooBig as error: print(error)."
+       "en": "An error class has Exception in its brackets and pass inside. Inside a try, raise it with its message; in the except, as error gives you the error: show it.",
+       "it": "Una classe di errore ha Exception tra le parentesi e pass dentro. In un try, sollevala con il suo messaggio; nell'except, as error ti dà l'errore: mostralo.",
+       "fr": "Une classe d'erreur a Exception entre ses parenthèses et pass dedans. Dans un try, lève-la avec son message ; dans le except, as error te donne l'erreur : affiche-la."
       },
       "sol": {
        "en": "class TooBig(Exception):\n    pass\n\ntry:\n    raise TooBig(\"too big\")\nexcept TooBig as error:\n    print(error)",
@@ -24264,9 +24264,9 @@ window.PyvielCourse = {
        "fr": "Ajoute un troisième article au panier et affiche de nouveau le total. Avec un livre (12), un stylo (3) et un sac (20) il doit afficher 35."
       },
       "hint": {
-       "en": "cart.add(Item(\"bag\", 20)) before the print of the total.",
-       "it": "cart.add(Item(\"borsa\", 20)) prima del print del totale.",
-       "fr": "cart.add(Item(\"sac\", 20)) avant le print du total."
+       "en": "Build a new Item with the name and the price of the bag, and add it to the cart like the other two. Then show the total.",
+       "it": "Costruisci un nuovo Item con il nome e il prezzo della borsa, e aggiungilo al carrello come gli altri due. Poi mostra il totale.",
+       "fr": "Construis un nouvel Item avec le nom et le prix du sac, et ajoute-le au panier comme les deux autres. Puis affiche le total."
       },
       "sol": {
        "en": "class Item:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n\nclass Cart:\n    def __init__(self):\n        self.items = []\n\n    def add(self, item):\n        self.items.append(item)\n\n    def total(self):\n        return sum([item.price for item in self.items])\n\ncart = Cart()\ncart.add(Item(\"book\", 12))\ncart.add(Item(\"pen\", 3))\ncart.add(Item(\"bag\", 20))\nprint(cart.total())",
@@ -24465,9 +24465,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une classe Cow qui est un Animal et dont speak rend Meuh. Affiche le speak de Cow(\"Bella\")."
       },
       "hint": {
-       "en": "class Cow(Animal): and def speak(self): return \"Moo\".",
-       "it": "class Cow(Animal): e def speak(self): return \"Muu\".",
-       "fr": "class Cow(Animal): et def speak(self): return \"Meuh\"."
+       "en": "The child class has the name of the parent in its brackets. Inside it, its own speak gives back the sound of the cow.",
+       "it": "La classe figlia ha il nome della madre tra le parentesi. Dentro, il suo speak restituisce il verso della mucca.",
+       "fr": "La classe enfant a le nom du parent entre ses parenthèses. Dedans, son propre speak rend le cri de la vache."
       },
       "sol": {
        "en": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Cow(Animal):\n    def speak(self):\n        return \"Moo\"\n\nprint(Cow(\"Bella\").speak())",
@@ -24550,9 +24550,9 @@ window.PyvielCourse = {
        "fr": "Crée une classe Fish qui est un Animal avec 0 patte, construite avec seulement un nom, en utilisant super(). Affiche les legs de Fish(\"Nemo\") (0)."
       },
       "hint": {
-       "en": "def __init__(self, name): and super().__init__(name, 0).",
-       "it": "def __init__(self, name): e super().__init__(name, 0).",
-       "fr": "def __init__(self, name): et super().__init__(name, 0)."
+       "en": "Fish gets only a name. Its __init__ calls the __init__ of the parent through super(), giving it the name and 0 for the legs.",
+       "it": "Fish riceve solo un nome. Il suo __init__ chiama l'__init__ della madre attraverso super(), passandogli il nome e 0 per le zampe.",
+       "fr": "Fish reçoit seulement un nom. Son __init__ appelle le __init__ du parent par super(), en lui donnant le nom et 0 pour les pattes."
       },
       "sol": {
        "en": "class Animal:\n    def __init__(self, name, legs):\n        self.name = name\n        self.legs = legs\n\nclass Fish(Animal):\n    def __init__(self, name):\n        super().__init__(name, 0)\n\nprint(Fish(\"Nemo\").legs)",
@@ -24661,9 +24661,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une classe Rectangle(Shape) avec une largeur et une hauteur, et son aire. Affiche l'aire de Rectangle(2, 5) (10)."
       },
       "hint": {
-       "en": "def __init__(self, width, height): and def area(self): return self.width * self.height.",
-       "it": "def __init__(self, width, height): e def area(self): return self.width * self.height.",
-       "fr": "def __init__(self, width, height): et def area(self): return self.width * self.height."
+       "en": "Like the other shapes: an __init__ that keeps the width and the height on self, and an area that multiplies them.",
+       "it": "Come le altre forme: un __init__ che tiene la larghezza e l'altezza su self, e un area che le moltiplica.",
+       "fr": "Comme les autres formes : un __init__ qui garde la largeur et la hauteur sur self, et un area qui les multiplie."
       },
       "sol": {
        "en": "class Shape:\n    def area(self):\n        raise NotImplementedError(\"each shape must say its area\")\n\nclass Rectangle(Shape):\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n    def area(self):\n        return self.width * self.height\n\nprint(Rectangle(2, 5).area())",
@@ -24756,9 +24756,9 @@ window.PyvielCourse = {
        "fr": "Crée une classe Lamp avec une méthode on() qui rend Lumière! Crée une classe Room qui garde une Lamp dedans, et dont la méthode light() rend la réponse de la lampe. Affiche Room().light()."
       },
       "hint": {
-       "en": "self.lamp = Lamp() in __init__ of Room, then return self.lamp.on().",
-       "it": "self.lamp = Lamp() in __init__ di Room, poi return self.lamp.on().",
-       "fr": "self.lamp = Lamp() dans __init__ de Room, puis return self.lamp.on()."
+       "en": "Room builds a Lamp in its __init__ and keeps it on self. Its light method asks that lamp for on() and gives back the answer.",
+       "it": "Room costruisce una Lamp nel suo __init__ e la tiene su self. Il suo metodo light chiede on() a quella lampada e restituisce la risposta.",
+       "fr": "Room construit une Lamp dans son __init__ et la garde sur self. Sa méthode light demande on() à cette lampe et rend la réponse."
       },
       "sol": {
        "en": "class Lamp:\n    def on(self):\n        return \"Light!\"\n\nclass Room:\n    def __init__(self):\n        self.lamp = Lamp()\n\n    def light(self):\n        return self.lamp.on()\n\nprint(Room().light())",
@@ -24851,9 +24851,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une classe Cat qui hérite de Animal et dit Miaou. Affiche ce que rend Cat(\"Tom\").speak()."
       },
       "hint": {
-       "en": "Copy the shape of Dog: class Cat(Animal): with its own speak.",
-       "it": "Copia la forma di Dog: class Cat(Animal): con il suo speak.",
-       "fr": "Copie la forme de Dog : class Cat(Animal): avec son propre speak."
+       "en": "Copy the shape of Dog: a class with the parent in its brackets, and its own speak that gives back the sound of the cat.",
+       "it": "Copia la forma di Dog: una classe con la madre tra le parentesi, e il suo speak che restituisce il verso del gatto.",
+       "fr": "Copie la forme de Dog : une classe avec le parent entre ses parenthèses, et son propre speak qui rend le cri du chat."
       },
       "sol": {
        "en": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow\"\n\nprint(Cat(\"Tom\").speak())",
@@ -24986,9 +24986,9 @@ window.PyvielCourse = {
        "fr": "Donne à la classe Pet un __str__ qui rend le nom. Affiche Pet(\"Rex\")."
       },
       "hint": {
-       "en": "def __str__(self): return self.name",
-       "it": "def __str__(self): return self.name",
-       "fr": "def __str__(self): return self.name"
+       "en": "__str__ is a method with only self: it gives back the text that print must show, here the name.",
+       "it": "__str__ è un metodo con solo self: restituisce il testo che print deve mostrare, qui il nome.",
+       "fr": "__str__ est une méthode avec seulement self : elle rend le texte que print doit afficher, ici le nom."
       },
       "sol": {
        "en": "class Pet:\n    def __init__(self, name):\n        self.name = name\n\n    def __str__(self):\n        return self.name\n\nprint(Pet(\"Rex\"))",
@@ -25081,9 +25081,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une méthode __sub__ à la classe Point, pour que Point(5, 5) - Point(2, 1) donne Point(3, 4). Affiche-le."
       },
       "hint": {
-       "en": "def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)",
-       "it": "def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)",
-       "fr": "def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)"
+       "en": "Copy the shape of __add__ and change the sign: a new Point whose x and y are the differences.",
+       "it": "Copia la forma di __add__ e cambia il segno: un nuovo Point i cui x e y sono le differenze.",
+       "fr": "Copie la forme de __add__ et change le signe : un nouveau Point dont x et y sont les différences."
       },
       "sol": {
        "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __sub__(self, other):\n        return Point(self.x - other.x, self.y - other.y)\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\nprint(Point(5, 5) - Point(2, 1))",
@@ -25192,9 +25192,9 @@ window.PyvielCourse = {
        "fr": "Crée une classe Bag avec une liste dedans et un __len__ qui donne combien d'éléments elle a. Affiche len(Bag([1, 2, 3])) (3)."
       },
       "hint": {
-       "en": "def __len__(self): return len(self.items)",
-       "it": "def __len__(self): return len(self.items)",
-       "fr": "def __len__(self): return len(self.items)"
+       "en": "__init__ keeps the list on self. __len__ gives back the length of that list.",
+       "it": "__init__ tiene la lista su self. __len__ restituisce la lunghezza di quella lista.",
+       "fr": "__init__ garde la liste sur self. __len__ rend la longueur de cette liste."
       },
       "sol": {
        "en": "class Bag:\n    def __init__(self, items):\n        self.items = list(items)\n\n    def __len__(self):\n        return len(self.items)\n\nprint(len(Bag([1, 2, 3])))",
@@ -25261,9 +25261,9 @@ window.PyvielCourse = {
        "fr": "Crée une classe Money avec un amount et un __lt__ qui compare les amount. Affiche le plus petit de Money(5), Money(2), Money(9) avec min, comme amount (2)."
       },
       "hint": {
-       "en": "def __lt__(self, other): return self.amount < other.amount, then print(min(...).amount).",
-       "it": "def __lt__(self, other): return self.amount < other.amount, poi print(min(...).amount).",
-       "fr": "def __lt__(self, other): return self.amount < other.amount, puis print(min(...).amount)."
+       "en": "__lt__ answers \"is self smaller than other?\" by comparing the two amounts. min uses it: show the amount of what min gives back.",
+       "it": "__lt__ risponde a \"self è più piccolo di other?\" confrontando i due importi. min lo usa: mostra l'importo di quello che min restituisce.",
+       "fr": "__lt__ répond à \"self est-il plus petit que other ?\" en comparant les deux montants. min l'utilise : affiche le montant de ce que min rend."
       },
       "sol": {
        "en": "class Money:\n    def __init__(self, amount):\n        self.amount = amount\n\n    def __lt__(self, other):\n        return self.amount < other.amount\n\nprint(min(Money(5), Money(2), Money(9)).amount)",
@@ -25356,9 +25356,9 @@ window.PyvielCourse = {
        "fr": "Crée une classe Adder dont les objets peuvent être appelés : Adder(10)(5) doit donner 15 (ajoute le nombre donné au début)."
       },
       "hint": {
-       "en": "__init__(self, n) keeps n, and __call__(self, x) returns self.n + x.",
-       "it": "__init__(self, n) tiene n e __call__(self, x) restituisce self.n + x.",
-       "fr": "__init__(self, n) garde n et __call__(self, x) rend self.n + x."
+       "en": "__init__ keeps the first number on self. __call__ gets the second one and gives back their sum.",
+       "it": "__init__ tiene il primo numero su self. __call__ riceve il secondo e restituisce la loro somma.",
+       "fr": "__init__ garde le premier nombre sur self. __call__ reçoit le second et rend leur somme."
       },
       "sol": {
        "en": "class Adder:\n    def __init__(self, n):\n        self.n = n\n\n    def __call__(self, x):\n        return self.n + x\n\nprint(Adder(10)(5))",
@@ -25451,9 +25451,9 @@ window.PyvielCourse = {
        "fr": "Donne à la classe Point un __str__, pour que print(Point(2, 3)) affiche (2, 3)."
       },
       "hint": {
-       "en": "def __str__(self): returns an f-string with self.x and self.y between brackets.",
-       "it": "def __str__(self): restituisce una f-string con self.x e self.y tra parentesi.",
-       "fr": "def __str__(self): rend une f-string avec self.x et self.y entre parenthèses."
+       "en": "__str__ gives back a text: an f-string with the x and the y of self, a comma and a space between them, in round brackets.",
+       "it": "__str__ restituisce un testo: una f-string con la x e la y di self, una virgola e uno spazio in mezzo, tra parentesi tonde.",
+       "fr": "__str__ rend un texte : une f-string avec le x et le y de self, une virgule et un espace entre eux, entre parenthèses."
       },
       "sol": {
        "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\nprint(Point(2, 3))",
@@ -25600,9 +25600,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une propriété qui s'appelle double à la classe Number qui donne self.value * 2. Affiche Number(21).double (42, sans parenthèses)."
       },
       "hint": {
-       "en": "@property above def double(self):",
-       "it": "@property sopra def double(self):",
-       "fr": "@property au-dessus de def double(self):"
+       "en": "A property is a method with @property on the line just above it. It gives back the value times 2.",
+       "it": "Una proprietà è un metodo con @property sulla riga subito sopra. Restituisce il valore per 2.",
+       "fr": "Une propriété est une méthode avec @property sur la ligne juste au-dessus. Elle rend la valeur fois 2."
       },
       "sol": {
        "en": "class Number:\n    def __init__(self, value):\n        self.value = value\n\n    @property\n    def double(self):\n        return self.value * 2\n\nprint(Number(21).double)",
@@ -25695,9 +25695,9 @@ window.PyvielCourse = {
        "fr": "Crée une classe Score avec une propriété points dont le setter refuse une valeur au-dessus de 100 (lève ValueError). Mettre 50 doit marcher : affiche les points (50)."
       },
       "hint": {
-       "en": "@property def points, then @points.setter with if value > 100: raise ValueError.",
-       "it": "@property def points, poi @points.setter con if value > 100: raise ValueError.",
-       "fr": "@property def points, puis @points.setter avec if value > 100: raise ValueError."
+       "en": "First the property points, which gives back what is kept. Then a second def points with @points.setter above it: it raises ValueError when the value is above 100, and otherwise keeps it.",
+       "it": "Prima la proprietà points, che restituisce quello che è tenuto. Poi un secondo def points con @points.setter sopra: solleva ValueError quando il valore è sopra 100, e altrimenti lo tiene.",
+       "fr": "D'abord la propriété points, qui rend ce qui est gardé. Puis un second def points avec @points.setter au-dessus : il lève ValueError quand la valeur dépasse 100, et sinon la garde."
       },
       "sol": {
        "en": "class Score:\n    def __init__(self):\n        self._points = 0\n\n    @property\n    def points(self):\n        return self._points\n\n    @points.setter\n    def points(self, value):\n        if value > 100:\n            raise ValueError(\"too many\")\n        self._points = value\n\ns = Score()\ns.points = 50\nprint(s.points)",
@@ -25806,9 +25806,9 @@ window.PyvielCourse = {
        "fr": "Ajoute à Point une méthode de classe from_pair qui construit un Point à partir d'un texte comme \"3,4\". Affiche le x de Point.from_pair(\"3,4\") (3)."
       },
       "hint": {
-       "en": "@classmethod, then x, y = text.split(\",\"), then return cls(int(x), int(y)).",
-       "it": "@classmethod, poi x, y = text.split(\",\"), poi return cls(int(x), int(y)).",
-       "fr": "@classmethod, puis x, y = text.split(\",\"), puis return cls(int(x), int(y))."
+       "en": "@classmethod above a def that gets cls and the text. split cuts the text at the comma, int makes numbers, and cls(...) builds the Point.",
+       "it": "@classmethod sopra un def che riceve cls e il testo. split taglia il testo alla virgola, int fa i numeri, e cls(...) costruisce il Point.",
+       "fr": "@classmethod au-dessus d'un def qui reçoit cls et le texte. split coupe le texte à la virgule, int fait les nombres, et cls(...) construit le Point."
       },
       "sol": {
        "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    @classmethod\n    def from_pair(cls, text):\n        x, y = text.split(\",\")\n        return cls(int(x), int(y))\n\nprint(Point.from_pair(\"3,4\").x)",
@@ -25917,9 +25917,9 @@ window.PyvielCourse = {
        "fr": "Crée une classe Wallet qui garde son argent dans _money (un tiret bas), avec une méthode show() qui le rend. Affiche Wallet().show() quand l'argent vaut 20."
       },
       "hint": {
-       "en": "self._money = 20 in __init__, and return self._money in show.",
-       "it": "self._money = 20 in __init__ e return self._money in show.",
-       "fr": "self._money = 20 dans __init__ et return self._money dans show."
+       "en": "__init__ puts 20 in the name with one underscore, on self; show gives it back.",
+       "it": "__init__ mette 20 nel nome con un trattino basso, su self; show lo restituisce.",
+       "fr": "__init__ met 20 dans le nom avec un tiret bas, sur self ; show le rend."
       },
       "sol": {
        "en": "class Wallet:\n    def __init__(self):\n        self._money = 20\n\n    def show(self):\n        return self._money\n\nprint(Wallet().show())",
@@ -26031,9 +26031,9 @@ window.PyvielCourse = {
        "fr": "Crée une dataclass qui s'appelle Pet avec le nom (str) et l'âge (int). Affiche Pet(\"Rex\", 3)."
       },
       "hint": {
-       "en": "@dataclass, class Pet:, name: str and age: int.",
-       "it": "@dataclass, class Pet:, name: str e age: int.",
-       "fr": "@dataclass, class Pet:, name: str et age: int."
+       "en": "Bring in dataclass, put @dataclass above the class, and inside it write one line for each field: its name, a colon and its kind.",
+       "it": "Porta dentro dataclass, metti @dataclass sopra la classe, e dentro scrivi una riga per ogni campo: il nome, i due punti e il tipo.",
+       "fr": "Fais entrer dataclass, mets @dataclass au-dessus de la classe, et dedans écris une ligne pour chaque champ : son nom, deux-points et son type."
       },
       "sol": {
        "en": "from dataclasses import dataclass\n\n@dataclass\nclass Pet:\n    name: str\n    age: int\n\nprint(Pet(\"Rex\", 3))",
@@ -26156,9 +26156,9 @@ window.PyvielCourse = {
        "fr": "Crée une dataclass gelée Point avec x et y (entiers). Affiche replace(Point(1, 2), y=9)."
       },
       "hint": {
-       "en": "@dataclass(frozen=True), then print(replace(Point(1, 2), y=9)).",
-       "it": "@dataclass(frozen=True), poi print(replace(Point(1, 2), y=9)).",
-       "fr": "@dataclass(frozen=True), puis print(replace(Point(1, 2), y=9))."
+       "en": "frozen=True goes in the brackets of @dataclass. replace builds a copy with one field changed: show it.",
+       "it": "frozen=True va tra le parentesi di @dataclass. replace costruisce una copia con un campo cambiato: mostrala.",
+       "fr": "frozen=True va entre les parenthèses de @dataclass. replace construit une copie avec un champ changé : affiche-la."
       },
       "sol": {
        "en": "from dataclasses import dataclass, replace\n\n@dataclass(frozen=True)\nclass Point:\n    x: int\n    y: int\n\nprint(replace(Point(1, 2), y=9))",
@@ -26241,9 +26241,9 @@ window.PyvielCourse = {
        "fr": "Crée un Enum qui s'appelle Size avec SMALL = 1 et LARGE = 2. Affiche le nom de Size(2) (LARGE)."
       },
       "hint": {
-       "en": "class Size(Enum): and then print(Size(2).name).",
-       "it": "class Size(Enum): e poi print(Size(2).name).",
-       "fr": "class Size(Enum): puis print(Size(2).name)."
+       "en": "An Enum is a class with Enum in its brackets and one line for each choice. Size(2) finds the choice whose value is 2; .name gives its name.",
+       "it": "Un Enum è una classe con Enum tra le parentesi e una riga per ogni scelta. Size(2) trova la scelta con il valore 2; .name dà il suo nome.",
+       "fr": "Un Enum est une classe avec Enum entre ses parenthèses et une ligne pour chaque choix. Size(2) trouve le choix dont la valeur est 2 ; .name donne son nom."
       },
       "sol": {
        "en": "from enum import Enum\n\nclass Size(Enum):\n    SMALL = 1\n    LARGE = 2\n\nprint(Size(2).name)",
@@ -26326,9 +26326,9 @@ window.PyvielCourse = {
        "fr": "Ajoute un quatrième état, FAILED, à l'enum et affiche le nom de State.FAILED (FAILED)."
       },
       "hint": {
-       "en": "FAILED = auto() inside the class State.",
-       "it": "FAILED = auto() dentro la classe State.",
-       "fr": "FAILED = auto() dans la classe State."
+       "en": "Add one line inside the class, like the others, with auto().",
+       "it": "Aggiungi una riga dentro la classe, come le altre, con auto().",
+       "fr": "Ajoute une ligne dans la classe, comme les autres, avec auto()."
       },
       "sol": {
        "en": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n    FAILED = auto()\n\nprint(State.FAILED.name)",
@@ -26626,9 +26626,9 @@ window.PyvielCourse = {
        "fr": "Crée un générateur qui s'appelle evens(limit) qui distribue les nombres pairs de 2 jusqu'à la limite. Affiche list(evens(10))."
       },
       "hint": {
-       "en": "n = 2, then while n <= limit: yield n and n += 2.",
-       "it": "n = 2, poi while n <= limit: yield n e n += 2.",
-       "fr": "n = 2, puis while n <= limit: yield n et n += 2."
+       "en": "A box that starts at 2, a while that goes on up to the limit, and inside it: yield the box, then add 2 to it.",
+       "it": "Una scatola che parte da 2, un while che continua fino al limite, e dentro: yield della scatola, poi aggiungici 2.",
+       "fr": "Une boîte qui commence à 2, un while qui continue jusqu'à la limite, et dedans : yield de la boîte, puis ajoute-lui 2."
       },
       "sol": {
        "en": "def evens(limit):\n    n = 2\n    while n <= limit:\n        yield n\n        n += 2\n\nprint(list(evens(10)))",
@@ -26806,9 +26806,9 @@ window.PyvielCourse = {
        "fr": "Avec une expression génératrice dans sum, additionne les cubes de 1 à 4 (1 + 8 + 27 + 64 = 100)."
       },
       "hint": {
-       "en": "sum(n ** 3 for n in range(1, 5))",
-       "it": "sum(n ** 3 for n in range(1, 5))",
-       "fr": "sum(n ** 3 for n in range(1, 5))"
+       "en": "sum can take a generator expression straight in its brackets: the cube of n for each n in a range that ends with 4.",
+       "it": "sum può prendere una generator expression direttamente tra le sue parentesi: il cubo di n per ogni n in un range che finisce con 4.",
+       "fr": "sum peut prendre une expression génératrice directement entre ses parenthèses : le cube de n pour chaque n dans un range qui finit par 4."
       },
       "sol": {
        "en": "print(sum(n ** 3 for n in range(1, 5)))",
@@ -27174,9 +27174,9 @@ window.PyvielCourse = {
        "fr": "Utilise @shout sur une nouvelle fonction qui s'appelle bye(name) qui rend \"bye \" + name. Affiche bye(\"ada\") (BYE ADA!)."
       },
       "hint": {
-       "en": "@shout on the line above def bye(name):",
-       "it": "@shout sulla riga sopra def bye(name):",
-       "fr": "@shout sur la ligne au-dessus de def bye(name):"
+       "en": "Write bye like any function that gives back a text. On the line just above its def, put @ and the name of the decorator.",
+       "it": "Scrivi bye come una funzione qualsiasi che restituisce un testo. Sulla riga subito sopra il suo def, metti @ e il nome del decoratore.",
+       "fr": "Écris bye comme n'importe quelle fonction qui rend un texte. Sur la ligne juste au-dessus de son def, mets @ et le nom du décorateur."
       },
       "sol": {
        "en": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\n@shout\ndef bye(name):\n    return \"bye \" + name\n\nprint(bye(\"ada\"))",
@@ -27299,9 +27299,9 @@ window.PyvielCourse = {
        "fr": "Utilise @log_calls sur une fonction qui s'appelle double(n) qui rend n * 2 et affiche double(4). D'abord les lignes du journal, puis 8."
       },
       "hint": {
-       "en": "@log_calls above def double(n):, then print(double(4)).",
-       "it": "@log_calls sopra def double(n):, poi print(double(4)).",
-       "fr": "@log_calls au-dessus de def double(n):, puis print(double(4))."
+       "en": "Write double, with @ and the name of the decorator on the line above it. Then show what double gives back for 4.",
+       "it": "Scrivi double, con @ e il nome del decoratore sulla riga sopra. Poi mostra quello che double restituisce per 4.",
+       "fr": "Écris double, avec @ et le nom du décorateur sur la ligne au-dessus. Puis affiche ce que double rend pour 4."
       },
       "sol": {
        "en": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef double(n):\n    return n * 2\n\nprint(double(4))",
@@ -27506,9 +27506,9 @@ window.PyvielCourse = {
        "fr": "Utilise @remember sur une fonction qui s'appelle triple(n) qui affiche \"working\" et rend n * 3. Appelle triple(5) deux fois : \"working\" ne doit apparaître qu'une fois."
       },
       "hint": {
-       "en": "@remember above def triple(n): with print(\"working\") inside.",
-       "it": "@remember sopra def triple(n): con print(\"working\") dentro.",
-       "fr": "@remember au-dessus de def triple(n): avec print(\"working\") dedans."
+       "en": "Write triple with a print and a return inside, and the decorator just above it. Then call it two times.",
+       "it": "Scrivi triple con un print e un return dentro, e il decoratore subito sopra. Poi chiamala due volte.",
+       "fr": "Écris triple avec un print et un return dedans, et le décorateur juste au-dessus. Puis appelle-la deux fois."
       },
       "sol": {
        "en": "def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef triple(n):\n    print(\"working\")\n    return n * 3\n\ntriple(5)\ntriple(5)",
@@ -27880,9 +27880,9 @@ window.PyvielCourse = {
        "fr": "Utilise suppress pour essayer de supprimer un fichier qui s'appelle demo_nothing.txt qui n'existe pas, puis affiche : ok"
       },
       "hint": {
-       "en": "with suppress(FileNotFoundError): and os.remove(...) pushed in.",
-       "it": "with suppress(FileNotFoundError): e os.remove(...) rientrato.",
-       "fr": "with suppress(FileNotFoundError): et os.remove(...) décalé."
+       "en": "suppress takes the name of the error, and it is used with with. Under it, pushed in, the line that removes the file. Then the print, not pushed in.",
+       "it": "suppress prende il nome dell'errore, e si usa con with. Sotto, rientrata, la riga che cancella il file. Poi il print, non rientrato.",
+       "fr": "suppress prend le nom de l'erreur, et s'utilise avec with. Dessous, décalée, la ligne qui supprime le fichier. Puis le print, sans décalage."
       },
       "sol": {
        "en": "from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove(\"demo_nothing.txt\")\nprint(\"ok\")",
@@ -27980,9 +27980,9 @@ window.PyvielCourse = {
        "fr": "Crée une fonction colour_name(code) avec un match : le code \"r\" donne \"rouge\", \"g\" donne \"vert\" et tout autre donne \"inconnu\". Affiche colour_name(\"g\")."
       },
       "hint": {
-       "en": "match code: with case \"r\": return ..., case \"g\": return ..., case _: return ...",
-       "it": "match code: con case \"r\": return ..., case \"g\": return ..., case _: return ...",
-       "fr": "match code: avec case \"r\": return ..., case \"g\": return ..., case _: return ..."
+       "en": "Inside the function: match on the code, then one case for each value, each giving back its colour. case _ catches everything else.",
+       "it": "Dentro la funzione: match sul codice, poi un case per ogni valore, ognuno restituisce il suo colore. case _ prende tutto il resto.",
+       "fr": "Dans la fonction : match sur le code, puis un case pour chaque valeur, chacun rend sa couleur. case _ attrape tout le reste."
       },
       "sol": {
        "en": "def colour_name(code):\n    match code:\n        case \"r\":\n            return \"red\"\n        case \"g\":\n            return \"green\"\n        case _:\n            return \"unknown\"\n\nprint(colour_name(\"g\"))",
@@ -28164,9 +28164,9 @@ window.PyvielCourse = {
        "fr": "À partir de la liste [10, 20, 30, 40], mets le premier élément dans head et tous les autres dans tail, avec une étoile, et affiche tail ([20, 30, 40])."
       },
       "hint": {
-       "en": "head, *tail = [10, 20, 30, 40]",
-       "it": "head, *tail = [10, 20, 30, 40]",
-       "fr": "head, *tail = [10, 20, 30, 40]"
+       "en": "Two names on the left of =: the first gets one item, the one with a star in front gets all the rest.",
+       "it": "Due nomi a sinistra di =: il primo riceve un elemento, quello con la stella davanti riceve tutto il resto.",
+       "fr": "Deux noms à gauche de = : le premier reçoit un élément, celui avec une étoile devant reçoit tout le reste."
       },
       "sol": {
        "en": "head, *tail = [10, 20, 30, 40]\nprint(tail)",
@@ -28277,9 +28277,9 @@ window.PyvielCourse = {
        "fr": "Fais une grille de 2 lignes de 2 zéros où les lignes ne sont PAS partagées (utilise une compréhension). Change le premier élément de la première ligne en 9 et affiche la grille : [[9, 0], [0, 0]]"
       },
       "hint": {
-       "en": "grid = [[0] * 2 for row in range(2)]",
-       "it": "grid = [[0] * 2 for row in range(2)]",
-       "fr": "grid = [[0] * 2 for row in range(2)]"
+       "en": "Build each row inside a comprehension, so every row is a new list. Then change one item and show the grid.",
+       "it": "Costruisci ogni riga dentro una comprensione, così ogni riga è una lista nuova. Poi cambia un elemento e mostra la griglia.",
+       "fr": "Construis chaque ligne dans une compréhension, pour que chaque ligne soit une nouvelle liste. Puis change un élément et affiche la grille."
       },
       "sol": {
        "en": "grid = [[0] * 2 for row in range(2)]\ngrid[0][0] = 9\nprint(grid)",
@@ -28377,9 +28377,9 @@ window.PyvielCourse = {
        "fr": "Affiche la somme exacte de \"0.7\" et \"0.1\" comme nombres Decimal."
       },
       "hint": {
-       "en": "Decimal(\"0.7\") + Decimal(\"0.1\")",
-       "it": "Decimal(\"0.7\") + Decimal(\"0.1\")",
-       "fr": "Decimal(\"0.7\") + Decimal(\"0.1\")"
+       "en": "Bring in Decimal, and give it the numbers as texts, between quotes. Then add the two.",
+       "it": "Porta dentro Decimal, e dagli i numeri come testi, tra virgolette. Poi somma i due.",
+       "fr": "Fais entrer Decimal, et donne-lui les nombres comme textes, entre guillemets. Puis additionne les deux."
       },
       "sol": {
        "en": "from decimal import Decimal\nprint(Decimal(\"0.7\") + Decimal(\"0.1\"))",
@@ -28462,9 +28462,9 @@ window.PyvielCourse = {
        "fr": "Affiche 1/4 + 1/4 + 1/2 comme fraction exacte (il doit afficher 1)."
       },
       "hint": {
-       "en": "Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)",
-       "it": "Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)",
-       "fr": "Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)"
+       "en": "Fraction takes the number on top and the number below. Add the three fractions.",
+       "it": "Fraction prende il numero sopra e il numero sotto. Somma le tre frazioni.",
+       "fr": "Fraction prend le nombre du haut et le nombre du bas. Additionne les trois fractions."
       },
       "sol": {
        "en": "from fractions import Fraction\nprint(Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2))",
@@ -28575,9 +28575,9 @@ window.PyvielCourse = {
        "fr": "Affiche le nombre 255 en hexadécimal."
       },
       "hint": {
-       "en": "hex(255)",
-       "it": "hex(255)",
-       "fr": "hex(255)"
+       "en": "A ready-made helper whose name is short for hexadecimal turns a number into that base.",
+       "it": "Un aiutante già pronto, il cui nome è l'abbreviazione di hexadecimal, trasforma un numero in quella base.",
+       "fr": "Un outil tout prêt, dont le nom est l'abréviation de hexadecimal, transforme un nombre dans cette base."
       },
       "sol": {
        "en": "print(hex(255))",
@@ -28787,9 +28787,9 @@ window.PyvielCourse = {
        "fr": "Affiche combien d'octets prend le texte \"ça va\" en utf-8 (6)."
       },
       "hint": {
-       "en": "len(\"ça va\".encode(\"utf-8\"))",
-       "it": "len(\"ça va\".encode(\"utf-8\"))",
-       "fr": "len(\"ça va\".encode(\"utf-8\"))"
+       "en": "encode turns a text into bytes, and len counts the bytes. The letter ç takes more than one.",
+       "it": "encode trasforma un testo in byte, e len conta i byte. La lettera ç ne occupa più di uno.",
+       "fr": "encode transforme un texte en octets, et len compte les octets. La lettre ç en prend plus d'un."
       },
       "sol": {
        "en": "print(len(\"ça va\".encode(\"utf-8\")))",
@@ -29028,9 +29028,9 @@ window.PyvielCourse = {
        "fr": "Utilise timeit.timeit pour chronométrer le code \"sum(range(100))\", lancé 10 fois, et affiche si le temps est plus grand que 0 (True)."
       },
       "hint": {
-       "en": "timeit.timeit(\"sum(range(100))\", number=10) > 0",
-       "it": "timeit.timeit(\"sum(range(100))\", number=10) > 0",
-       "fr": "timeit.timeit(\"sum(range(100))\", number=10) > 0"
+       "en": "timeit.timeit takes the code as a text, and number= for how many runs. Compare what it gives back with 0.",
+       "it": "timeit.timeit prende il codice come testo, e number= per quante volte eseguirlo. Confronta quello che restituisce con 0.",
+       "fr": "timeit.timeit prend le code comme texte, et number= pour le nombre d'exécutions. Compare ce qu'il rend avec 0."
       },
       "sol": {
        "en": "import timeit\nprint(timeit.timeit(\"sum(range(100))\", number=10) > 0)",
@@ -29343,9 +29343,9 @@ window.PyvielCourse = {
        "fr": "Mets @lru_cache(maxsize=None) sur la fonction fact(n) = n * fact(n - 1), avec le cas de base fact(0) = 1, et affiche fact(10) (3628800)."
       },
       "hint": {
-       "en": "@lru_cache(maxsize=None) above def fact(n):",
-       "it": "@lru_cache(maxsize=None) sopra def fact(n):",
-       "fr": "@lru_cache(maxsize=None) au-dessus de def fact(n):"
+       "en": "Bring in lru_cache and put it above the def, with maxsize=None in its brackets. Then write fact the recursive way.",
+       "it": "Porta dentro lru_cache e mettilo sopra il def, con maxsize=None tra le parentesi. Poi scrivi fact in modo ricorsivo.",
+       "fr": "Fais entrer lru_cache et mets-le au-dessus du def, avec maxsize=None entre ses parenthèses. Puis écris fact de façon récursive."
       },
       "sol": {
        "en": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fact(n):\n    return 1 if n == 0 else n * fact(n - 1)\n\nprint(fact(10))",
@@ -29913,9 +29913,9 @@ window.PyvielCourse = {
        "fr": "Crée une coroutine qui s'appelle answer qui rend 7. Lance-la avec asyncio.run et affiche le résultat."
       },
       "hint": {
-       "en": "async def answer(): return 7, then print(asyncio.run(answer())).",
-       "it": "async def answer(): return 7, poi print(asyncio.run(answer())).",
-       "fr": "async def answer(): return 7, puis print(asyncio.run(answer()))."
+       "en": "async def makes a coroutine; inside it, return gives back the 7. asyncio.run runs it and gives back what it returned.",
+       "it": "async def fa una coroutine; dentro, return restituisce il 7. asyncio.run la esegue e restituisce quello che ha restituito.",
+       "fr": "async def fait une coroutine ; dedans, return rend le 7. asyncio.run l'exécute et rend ce qu'elle a rendu."
       },
       "sol": {
        "en": "import asyncio\n\nasync def answer():\n    return 7\n\nprint(asyncio.run(answer()))",
@@ -30038,9 +30038,9 @@ window.PyvielCourse = {
        "fr": "Crée une coroutine qui affiche \"a\", attend 0.01 seconde avec await et affiche \"b\". Lance-la."
       },
       "hint": {
-       "en": "async def, print(\"a\"), await asyncio.sleep(0.01), print(\"b\"), then asyncio.run(...).",
-       "it": "async def, print(\"a\"), await asyncio.sleep(0.01), print(\"b\"), poi asyncio.run(...).",
-       "fr": "async def, print(\"a\"), await asyncio.sleep(0.01), print(\"b\"), puis asyncio.run(...)."
+       "en": "Inside an async def: a print, then await with asyncio.sleep, then the second print. Run the coroutine with asyncio.run.",
+       "it": "Dentro un async def: un print, poi await con asyncio.sleep, poi il secondo print. Esegui la coroutine con asyncio.run.",
+       "fr": "Dans un async def : un print, puis await avec asyncio.sleep, puis le second print. Exécute la coroutine avec asyncio.run."
       },
       "sol": {
        "en": "import asyncio\n\nasync def letters():\n    print(\"a\")\n    await asyncio.sleep(0.01)\n    print(\"b\")\n\nasyncio.run(letters())",
@@ -30149,9 +30149,9 @@ window.PyvielCourse = {
        "fr": "Lance ensemble avec gather les deux fetch \"a\" (0.02 seconde) et \"b\" (0.01 seconde) et affiche la liste des résultats ([\"A\", \"B\"])."
       },
       "hint": {
-       "en": "await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01)) inside main().",
-       "it": "await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01)) dentro main().",
-       "fr": "await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01)) dans main()."
+       "en": "Inside main, await asyncio.gather with the two calls of fetch: it gives back their results as a list.",
+       "it": "Dentro main, await asyncio.gather con le due chiamate di fetch: restituisce i loro risultati come lista.",
+       "fr": "Dans main, await asyncio.gather avec les deux appels de fetch : il rend leurs résultats sous forme de liste."
       },
       "sol": {
        "en": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01))\n    print(results)\n\nasyncio.run(main())",
@@ -30248,9 +30248,9 @@ window.PyvielCourse = {
        "fr": "Change le producteur pour qu'il fasse 2 éléments au lieu de 3. Le consommateur ne doit en utiliser que 2."
       },
       "hint": {
-       "en": "range(2) in the producer.",
-       "it": "range(2) nel produttore.",
-       "fr": "range(2) dans le producteur."
+       "en": "Which number in the producer says how many items it makes?",
+       "it": "Quale numero nel producer dice quanti elementi fa?",
+       "fr": "Quel nombre dans le producer dit combien d'éléments il fabrique ?"
       },
       "sol": {
        "en": "import asyncio\n\nasync def producer(queue):\n    for n in range(2):\n        await queue.put(n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"used\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())",
@@ -30370,9 +30370,9 @@ window.PyvielCourse = {
        "fr": "Fais afficher \"ok\" au programme après avoir attendu asyncio.sleep(0.01) avec une limite de temps de 1 seconde."
       },
       "hint": {
-       "en": "await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) and then print(\"ok\").",
-       "it": "await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) e poi print(\"ok\").",
-       "fr": "await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) puis print(\"ok\")."
+       "en": "asyncio.wait_for takes what to wait for, and timeout=. Use await with it inside a coroutine, then show the word.",
+       "it": "asyncio.wait_for prende cosa aspettare, e timeout=. Usa await con lui dentro una coroutine, poi mostra la parola.",
+       "fr": "asyncio.wait_for prend ce qu'il faut attendre, et timeout=. Utilise await avec lui dans une coroutine, puis affiche le mot."
       },
       "sol": {
        "en": "import asyncio\n\nasync def main():\n    await asyncio.wait_for(asyncio.sleep(0.01), timeout=1)\n    print(\"ok\")\n\nasyncio.run(main())",
@@ -30481,9 +30481,9 @@ window.PyvielCourse = {
        "fr": "Lance work() comme tâche en arrière-plan, affiche \"j'attends\" et puis affiche le résultat de la tâche."
       },
       "hint": {
-       "en": "task = asyncio.create_task(work()), print(...), then print(await task).",
-       "it": "task = asyncio.create_task(work()), print(...), poi print(await task).",
-       "fr": "task = asyncio.create_task(work()), print(...), puis print(await task)."
+       "en": "create_task starts work() at once and gives back a task. Show the first word, then await the task to get its result, and show it.",
+       "it": "create_task fa partire work() subito e restituisce un task. Mostra la prima parola, poi await del task per avere il suo risultato, e mostralo.",
+       "fr": "create_task lance work() tout de suite et rend une tâche. Affiche le premier mot, puis await la tâche pour avoir son résultat, et affiche-le."
       },
       "sol": {
        "en": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"done\"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print(\"waiting\")\n    print(await task)\n\nasyncio.run(main())",
@@ -30621,9 +30621,9 @@ window.PyvielCourse = {
        "fr": "Compte les lettres de \"banana\" avec Counter et affiche combien de a il y a (3)."
       },
       "hint": {
-       "en": "Counter(\"banana\")[\"a\"]",
-       "it": "Counter(\"banana\")[\"a\"]",
-       "fr": "Counter(\"banana\")[\"a\"]"
+       "en": "Counter counts every letter of a text; read the count of one letter with square brackets.",
+       "it": "Counter conta ogni lettera di un testo; leggi il conto di una lettera con le parentesi quadre.",
+       "fr": "Counter compte chaque lettre d'un texte ; lis le compte d'une lettre avec des crochets."
       },
       "sol": {
        "en": "from collections import Counter\nprint(Counter(\"banana\")[\"a\"])",
@@ -30732,9 +30732,9 @@ window.PyvielCourse = {
        "fr": "Regroupe les nombres de 1 à 6 en pairs ou impairs : la clé est n % 2. Affiche la liste de la clé 0 ([2, 4, 6])."
       },
       "hint": {
-       "en": "groups[n % 2].append(n) in a loop.",
-       "it": "groups[n % 2].append(n) in un ciclo.",
-       "fr": "groups[n % 2].append(n) dans une boucle."
+       "en": "A defaultdict(list) makes an empty list the first time a key is used. For each number, append it to the list of its key.",
+       "it": "Un defaultdict(list) crea una lista vuota la prima volta che si usa una chiave. Per ogni numero, aggiungilo con append alla lista della sua chiave.",
+       "fr": "Un defaultdict(list) crée une liste vide la première fois qu'une clé est utilisée. Pour chaque nombre, ajoute-le avec append à la liste de sa clé."
       },
       "sol": {
        "en": "from collections import defaultdict\ngroups = defaultdict(list)\nfor n in range(1, 7):\n    groups[n % 2].append(n)\nprint(groups[0])",
@@ -30857,9 +30857,9 @@ window.PyvielCourse = {
        "fr": "Fais une deque avec 10, 20, 30, enlève le premier avec popleft et affiche ce qui reste sous forme de liste ([20, 30])."
       },
       "hint": {
-       "en": "queue.popleft() and then print(list(queue)).",
-       "it": "queue.popleft() e poi print(list(queue)).",
-       "fr": "queue.popleft() puis print(list(queue))."
+       "en": "popleft takes out the first item. list(...) turns what is left into a list that print can show.",
+       "it": "popleft toglie il primo elemento. list(...) trasforma quello che resta in una lista che print può mostrare.",
+       "fr": "popleft enlève le premier élément. list(...) transforme ce qui reste en une liste que print peut afficher."
       },
       "sol": {
        "en": "from collections import deque\nqueue = deque([10, 20, 30])\nqueue.popleft()\nprint(list(queue))",
@@ -30968,9 +30968,9 @@ window.PyvielCourse = {
        "fr": "Fais un namedtuple qui s'appelle Pet avec les parties name et age. Construis Pet(\"Rex\", 3) et affiche son age (3)."
       },
       "hint": {
-       "en": "Pet = namedtuple(\"Pet\", [\"name\", \"age\"])",
-       "it": "Pet = namedtuple(\"Pet\", [\"name\", \"age\"])",
-       "fr": "Pet = namedtuple(\"Pet\", [\"name\", \"age\"])"
+       "en": "namedtuple takes the name of the new kind and the list of its parts. Build a Pet, then read its age with a dot.",
+       "it": "namedtuple prende il nome del nuovo tipo e la lista delle sue parti. Costruisci un Pet, poi leggi la sua età con un punto.",
+       "fr": "namedtuple prend le nom du nouveau type et la liste de ses parties. Construis un Pet, puis lis son âge avec un point."
       },
       "sol": {
        "en": "from collections import namedtuple\nPet = namedtuple(\"Pet\", [\"name\", \"age\"])\nprint(Pet(\"Rex\", 3).age)",
@@ -31107,9 +31107,9 @@ window.PyvielCourse = {
        "fr": "Affiche de combien de façons on peut choisir 2 éléments parmi 5, en utilisant combinations (10)."
       },
       "hint": {
-       "en": "len(list(combinations(range(5), 2)))",
-       "it": "len(list(combinations(range(5), 2)))",
-       "fr": "len(list(combinations(range(5), 2)))"
+       "en": "combinations gives every pair, one at a time: list collects them, and len counts them.",
+       "it": "combinations dà ogni coppia, una alla volta: list le raccoglie, e len le conta.",
+       "fr": "combinations donne chaque paire, une à la fois : list les rassemble, et len les compte."
       },
       "sol": {
        "en": "from itertools import combinations\nprint(len(list(combinations(range(5), 2))))",
@@ -31220,9 +31220,9 @@ window.PyvielCourse = {
        "fr": "Affiche les 5 premiers nombres comptés à partir de 100 (de 100 à 104), avec count et islice."
       },
       "hint": {
-       "en": "list(islice(count(100), 5))",
-       "it": "list(islice(count(100), 5))",
-       "fr": "list(islice(count(100), 5))"
+       "en": "count counts for ever from the number you give it; islice takes only the first few. list shows them.",
+       "it": "count conta all'infinito dal numero che gli dai; islice prende solo i primi. list li mostra.",
+       "fr": "count compte sans fin à partir du nombre que tu lui donnes ; islice ne prend que les premiers. list les affiche."
       },
       "sol": {
        "en": "from itertools import islice, count\nprint(list(islice(count(100), 5)))",
@@ -31345,9 +31345,9 @@ window.PyvielCourse = {
        "fr": "Utilise reduce pour additionner [1, 2, 3, 4, 5] (15)."
       },
       "hint": {
-       "en": "reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])",
-       "it": "reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])",
-       "fr": "reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])"
+       "en": "reduce takes a function of two values and a list: it keeps adding the next item to what it has so far.",
+       "it": "reduce prende una funzione di due valori e una lista: continua ad aggiungere l'elemento seguente a quello che ha finora.",
+       "fr": "reduce prend une fonction de deux valeurs et une liste : il ajoute à chaque fois l'élément suivant à ce qu'il a déjà."
       },
       "sol": {
        "en": "from functools import reduce\nprint(reduce(lambda a, b: a + b, [1, 2, 3, 4, 5]))",
@@ -31484,9 +31484,9 @@ window.PyvielCourse = {
        "fr": "Affiche les 3 dernières lettres de l'alphabet, avec string.ascii_lowercase (xyz)."
       },
       "hint": {
-       "en": "string.ascii_lowercase[-3:]",
-       "it": "string.ascii_lowercase[-3:]",
-       "fr": "string.ascii_lowercase[-3:]"
+       "en": "string.ascii_lowercase is the whole alphabet, as a text. A slice that starts with a minus number takes the end.",
+       "it": "string.ascii_lowercase è tutto l'alfabeto, come testo. Una fetta che comincia con un numero col meno prende la fine.",
+       "fr": "string.ascii_lowercase est tout l'alphabet, sous forme de texte. Une tranche qui commence par un nombre avec un moins prend la fin."
       },
       "sol": {
        "en": "import string\nprint(string.ascii_lowercase[-3:])",
@@ -31609,9 +31609,9 @@ window.PyvielCourse = {
        "fr": "Coupe le texte \"one two three four five six\" en lignes d'au plus 10 caractères, avec fill, et affiche-le."
       },
       "hint": {
-       "en": "print(fill(\"one two three four five six\", width=10))",
-       "it": "print(fill(\"one two three four five six\", width=10))",
-       "fr": "print(fill(\"one two three four five six\", width=10))"
+       "en": "fill takes the text, and width= for the longest line. Show what it gives back.",
+       "it": "fill prende il testo, e width= per la riga più lunga. Mostra quello che restituisce.",
+       "fr": "fill prend le texte, et width= pour la ligne la plus longue. Affiche ce qu'il rend."
       },
       "sol": {
        "en": "from textwrap import fill\nprint(fill(\"one two three four five six\", width=10))",
@@ -31710,9 +31710,9 @@ window.PyvielCourse = {
        "fr": "Corrige la dernière promesse, pour qu'elle soit vraie, et que le programme finisse sans erreur."
       },
       "hint": {
-       "en": "double(5) is 10, not 11.",
-       "it": "double(5) fa 10, non 11.",
-       "fr": "double(5) vaut 10, pas 11."
+       "en": "Work out double(5) yourself. The promise after assert must say what is really true.",
+       "it": "Calcola tu double(5). La promessa dopo assert deve dire quello che è vero davvero.",
+       "fr": "Calcule toi-même double(5). La promesse après assert doit dire ce qui est vraiment vrai."
       },
       "sol": {
        "en": "def double(n):\n    return n * 2\n\nassert double(5) == 10, \"wrong\"\nprint(\"ok\")",
@@ -31930,14 +31930,14 @@ window.PyvielCourse = {
      "slip": null,
      "ex": {
       "task": {
-       "en": "The function sum_to is meant to add 1 to n but has a mistake: sum_to(3) shows 3 instead of 6. Fix the loop (range(1, n + 1)) so it shows 6.",
-       "it": "La funzione sum_to deve sommare da 1 a n ma ha uno sbaglio: sum_to(3) mostra 3 invece di 6. Correggi il ciclo (range(1, n + 1)) così mostra 6.",
-       "fr": "La fonction sum_to doit additionner de 1 à n mais a une erreur : sum_to(3) affiche 3 au lieu de 6. Corrige la boucle (range(1, n + 1)) pour qu'elle affiche 6."
+       "en": "The function sum_to is meant to add 1 to n but has a mistake: sum_to(3) shows 3 instead of 6. Find the mistake in the loop and fix it, so that the last line shows 6. Your print lines may stay.",
+       "it": "La funzione sum_to deve sommare da 1 a n ma ha uno sbaglio: sum_to(3) mostra 3 invece di 6. Trova lo sbaglio nel ciclo e correggilo, così l'ultima riga mostra 6. I tuoi print possono restare.",
+       "fr": "La fonction sum_to doit additionner de 1 à n mais a une erreur : sum_to(3) affiche 3 au lieu de 6. Trouve l'erreur dans la boucle et corrige-la, pour que la dernière ligne affiche 6. Tes print peuvent rester."
       },
       "hint": {
-       "en": "range(1, n) stops one number too early.",
-       "it": "range(1, n) si ferma un numero troppo presto.",
-       "fr": "range(1, n) s'arrête un nombre trop tôt."
+       "en": "Add a print inside the loop to see which numbers i takes. Is n among them?",
+       "it": "Aggiungi un print dentro il ciclo per vedere quali numeri prende i. C'è anche n?",
+       "fr": "Ajoute un print dans la boucle pour voir quels nombres prend i. Est-ce que n en fait partie ?"
       },
       "sol": {
        "en": "def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total\n\nprint(sum_to(3))",
@@ -31951,23 +31951,20 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "6",
+        "m": "(^|\\n)6$",
         "uses": [
-         "def",
          "for"
         ]
        },
        "it": {
-        "out": "6",
+        "m": "(^|\\n)6$",
         "uses": [
-         "def",
          "for"
         ]
        },
        "fr": {
-        "out": "6",
+        "m": "(^|\\n)6$",
         "uses": [
-         "def",
          "for"
         ]
        }
@@ -31976,11 +31973,6 @@ window.PyvielCourse = {
        "en": [],
        "it": [],
        "fr": []
-      },
-      "expected": {
-       "en": "6",
-       "it": "6",
-       "fr": "6"
       }
      }
     },
@@ -32057,9 +32049,9 @@ window.PyvielCourse = {
        "fr": "Attrape l'erreur de int(\"x\") et affiche la dernière ligne de son erreur complète."
       },
       "hint": {
-       "en": "except ValueError: and traceback.format_exc().splitlines()[-1].",
-       "it": "except ValueError: e traceback.format_exc().splitlines()[-1].",
-       "fr": "except ValueError: et traceback.format_exc().splitlines()[-1]."
+       "en": "Inside the except, traceback.format_exc() gives the whole error as text. splitlines cuts it into lines; the last line is at place -1.",
+       "it": "Dentro l'except, traceback.format_exc() dà tutto l'errore come testo. splitlines lo taglia in righe; l'ultima riga è al posto -1.",
+       "fr": "Dans le except, traceback.format_exc() donne toute l'erreur sous forme de texte. splitlines la coupe en lignes ; la dernière ligne est à la place -1."
       },
       "sol": {
        "en": "import traceback\n\ntry:\n    int(\"x\")\nexcept ValueError:\n    print(traceback.format_exc().splitlines()[-1])",
@@ -32152,9 +32144,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une deuxième fonction bye(name) qui rend \"Bye, \" + name + \"!\" et fais en sorte que main l'affiche après le salut. Avec le nom Ada il doit afficher deux lignes."
       },
       "hint": {
-       "en": "def bye(name): and print(bye(name)) in main.",
-       "it": "def bye(name): e print(bye(name)) in main.",
-       "fr": "def bye(name): et print(bye(name)) dans main."
+       "en": "bye is like greeting: a def that gives back a text. Then main shows what bye gives back, after the greeting.",
+       "it": "bye è come greeting: un def che restituisce un testo. Poi main mostra quello che bye restituisce, dopo il saluto.",
+       "fr": "bye est comme greeting : un def qui rend un texte. Puis main affiche ce que bye rend, après la salutation."
       },
       "sol": {
        "en": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n    print(bye(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\ndef bye(name):\n    return \"Bye, \" + name + \"!\"\n\nif __name__ == \"__main__\":\n    main()",
@@ -32328,9 +32320,9 @@ window.PyvielCourse = {
      ],
      "ex": {
       "task": {
-       "en": "Use ask_number to ask for a number from 1 to 10, with the answers 0, x and 7. It must end showing: 7",
-       "it": "Usa ask_number per chiedere un numero da 1 a 10, con le risposte 0, x e 7. Deve finire mostrando: 7",
-       "fr": "Utilise ask_number pour demander un nombre de 1 à 10, avec les réponses 0, x et 7. Il doit finir en affichant : 7"
+       "en": "Use ask_number to ask for a number from 1 to 10, with the answers 0, x and 7. Show the number it gives back: the last line must be only 7.",
+       "it": "Usa ask_number per chiedere un numero da 1 a 10, con le risposte 0, x e 7. Mostra il numero che restituisce: l'ultima riga deve essere solo 7.",
+       "fr": "Utilise ask_number pour demander un nombre de 1 à 10, avec les réponses 0, x et 7. Affiche le nombre qu'elle rend : la dernière ligne doit être seulement 7."
       },
       "hint": {
        "en": "ask_number takes the question, the lowest and the highest number, and gives back the first good answer. Show it.",
@@ -32349,16 +32341,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "7$",
-        "c": "ask_number\\("
+        "m": "(^|\\n)7$",
+        "uses": [
+         "ask_number"
+        ]
        },
        "it": {
-        "m": "7$",
-        "c": "ask_number\\("
+        "m": "(^|\\n)7$",
+        "uses": [
+         "ask_number"
+        ]
        },
        "fr": {
-        "m": "7$",
-        "c": "ask_number\\("
+        "m": "(^|\\n)7$",
+        "uses": [
+         "ask_number"
+        ]
        }
       },
       "answers": {
@@ -32409,9 +32407,9 @@ window.PyvielCourse = {
        "fr": "Écris une fonction shout(text: str) -> str qui rend le texte en majuscules. Affiche shout(\"hi\") (HI)."
       },
       "hint": {
-       "en": "def shout(text: str) -> str: and return text.upper().",
-       "it": "def shout(text: str) -> str: e return text.upper().",
-       "fr": "def shout(text: str) -> str: et return text.upper()."
+       "en": "After the name of the parameter, a colon and its kind; before the last colon of the def line, -> and the kind given back. Inside, the text in capitals.",
+       "it": "Dopo il nome del parametro, i due punti e il suo tipo; prima degli ultimi due punti della riga def, -> e il tipo restituito. Dentro, il testo in maiuscolo.",
+       "fr": "Après le nom du paramètre, deux-points et son type ; avant le dernier deux-points de la ligne def, -> et le type rendu. Dedans, le texte en majuscules."
       },
       "sol": {
        "en": "def shout(text: str) -> str:\n    return text.upper()\n\nprint(shout(\"hi\"))",
@@ -32597,19 +32595,19 @@ window.PyvielCourse = {
      "slip": null,
      "ex": {
       "task": {
-       "en": "This version keeps asking, but it does not count. Add the counter: tries = 0 before the loop, tries += 1 after each guess, and a last message that says how many tries it took. With the answers 50, 30 and 42 it must end with \"You got it in 3 tries!\".",
-       "it": "Questa versione continua a chiedere, ma non conta. Aggiungi il contatore: tries = 0 prima del ciclo, tries += 1 dopo ogni tentativo, e un ultimo messaggio che dice quanti tentativi ci sono voluti. Con le risposte 50, 30 e 42 deve finire con \"Ce l'hai fatta in 3 tentativi!\".",
-       "fr": "Cette version continue à demander, mais elle ne compte pas. Ajoute le compteur : tries = 0 avant la boucle, tries += 1 après chaque essai, et un dernier message qui dit combien d'essais il a fallu. Avec les réponses 50, 30 et 42 il doit finir par \"Tu as réussi en 3 essais !\"."
+       "en": "This version keeps asking, but it does not count. Add a counter of the tries: a box that starts at 0 before the loop and grows by 1 at each guess. After the loop, show the word Tries: and the counter. With the answers 50, 30 and 42 the last line must be Tries: 3",
+       "it": "Questa versione continua a chiedere, ma non conta. Aggiungi un contatore dei tentativi: una scatola che parte da 0 prima del ciclo e cresce di 1 a ogni tentativo. Dopo il ciclo, mostra la parola Tentativi: e il contatore. Con le risposte 50, 30 e 42 l'ultima riga deve essere Tentativi: 3",
+       "fr": "Cette version continue à demander, mais elle ne compte pas. Ajoute un compteur des essais : une boîte qui commence à 0 avant la boucle et grandit de 1 à chaque essai. Après la boucle, affiche le mot Essais: et le compteur. Avec les réponses 50, 30 et 42 la dernière ligne doit être Essais: 3"
       },
       "hint": {
-       "en": "The last print becomes an f-string: print(f\"You got it in {tries} tries!\").",
-       "it": "L'ultimo print diventa una f-string: print(f\"Ce l'hai fatta in {tries} tentativi!\").",
-       "fr": "Le dernier print devient une f-string : print(f\"Tu as réussi en {tries} essais !\")."
+       "en": "Three new lines: one before the loop makes the box, one inside the loop, right after the guess, adds 1 to it, and one after the loop, not pushed in, shows it.",
+       "it": "Tre righe nuove: una prima del ciclo crea la scatola, una dentro il ciclo, subito dopo il tentativo, ci aggiunge 1, e una dopo il ciclo, non rientrata, la mostra.",
+       "fr": "Trois nouvelles lignes : une avant la boucle crée la boîte, une dans la boucle, juste après l'essai, lui ajoute 1, et une après la boucle, sans décalage, l'affiche."
       },
       "sol": {
-       "en": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Guess the number: \"))\n    tries += 1\n    if guess < secret:\n        print(\"Too low\")\n    elif guess > secret:\n        print(\"Too high\")\n    else:\n        print(f\"You got it in {tries} tries!\")\n        break",
-       "it": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Indovina il numero: \"))\n    tries += 1\n    if guess < secret:\n        print(\"Troppo basso\")\n    elif guess > secret:\n        print(\"Troppo alto\")\n    else:\n        print(f\"Ce l'hai fatta in {tries} tentativi!\")\n        break",
-       "fr": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Devine le nombre : \"))\n    tries += 1\n    if guess < secret:\n        print(\"Trop petit\")\n    elif guess > secret:\n        print(\"Trop grand\")\n    else:\n        print(f\"Tu as réussi en {tries} essais !\")\n        break"
+       "en": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Guess the number: \"))\n    tries += 1\n    if guess < secret:\n        print(\"Too low\")\n    elif guess > secret:\n        print(\"Too high\")\n    else:\n        print(\"You got it!\")\n        break\nprint(\"Tries:\", tries)",
+       "it": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Indovina il numero: \"))\n    tries += 1\n    if guess < secret:\n        print(\"Troppo basso\")\n    elif guess > secret:\n        print(\"Troppo alto\")\n    else:\n        print(\"Ce l'hai fatta!\")\n        break\nprint(\"Tentativi:\", tries)",
+       "fr": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Devine le nombre : \"))\n    tries += 1\n    if guess < secret:\n        print(\"Trop petit\")\n    elif guess > secret:\n        print(\"Trop grand\")\n    else:\n        print(\"Tu as réussi !\")\n        break\nprint(\"Essais:\", tries)"
       },
       "start": {
        "en": "secret = 42\nwhile True:\n    guess = int(input(\"Guess the number: \"))\n    if guess < secret:\n        print(\"Too low\")\n    elif guess > secret:\n        print(\"Too high\")\n    else:\n        print(\"You got it!\")\n        break",
@@ -32618,16 +32616,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "in 3 tries!$",
-        "c": "while True"
+        "m": "Tries: 3$",
+        "uses": [
+         "+="
+        ]
        },
        "it": {
-        "m": "in 3 tentativi!$",
-        "c": "while True"
+        "m": "Tentativi: 3$",
+        "uses": [
+         "+="
+        ]
        },
        "fr": {
-        "m": "en 3 essais !$",
-        "c": "while True"
+        "m": "Essais: 3$",
+        "uses": [
+         "+="
+        ]
        }
       },
       "answers": {
@@ -32673,19 +32677,19 @@ window.PyvielCourse = {
      "slip": null,
      "ex": {
       "task": {
-       "en": "Make the game use ask_number for every guess. With the answers abc, 500, 50 and 42, the program must end by saying you got it in 2 tries: the refused answers do not count as tries.",
-       "it": "Fai usare ask_number al gioco per ogni tentativo. Con le risposte abc, 500, 50 e 42, il programma deve finire dicendo che ce l'hai fatta in 2 tentativi: le risposte rifiutate non contano come tentativi.",
-       "fr": "Fais utiliser ask_number au jeu pour chaque essai. Avec les réponses abc, 500, 50 et 42, le programme doit finir en disant que tu as réussi en 2 essais : les réponses refusées ne comptent pas comme essais."
+       "en": "Make the game use ask_number for every guess, and accept only the numbers from 1 to 60 (say so in the question too). With the answers abc, 70, 50 and 42, the program must end by saying you got it in 2 tries: the refused answers do not count.",
+       "it": "Fai usare ask_number al gioco per ogni tentativo, e accetta solo i numeri da 1 a 60 (dillo anche nella domanda). Con le risposte abc, 70, 50 e 42, il programma deve finire dicendo che ce l'hai fatta in 2 tentativi: le risposte rifiutate non contano.",
+       "fr": "Fais utiliser ask_number au jeu pour chaque essai, et accepte seulement les nombres de 1 à 60 (dis-le aussi dans la question). Avec les réponses abc, 70, 50 et 42, le programme doit finir en disant que tu as réussi en 2 essais : les réponses refusées ne comptent pas."
       },
       "hint": {
-       "en": "The function is already written, but nobody calls it: the guess still comes from int(input(...)), which stops with an error on abc. Replace that line with guess = ask_number(\"Guess (1-100): \", 1, 100).",
-       "it": "La funzione è già scritta, ma nessuno la chiama: il tentativo viene ancora da int(input(...)), che si ferma con un errore su abc. Sostituisci quella riga con guess = ask_number(\"Indovina (1-100): \", 1, 100).",
-       "fr": "La fonction est déjà écrite, mais personne ne l'appelle : l'essai vient encore de int(input(...)), qui s'arrête sur une erreur avec abc. Remplace cette ligne par guess = ask_number(\"Devine (1-100) : \", 1, 100)."
+       "en": "The function is written, but nobody calls it: the guess still comes from int(input(...)). Replace that with a call of ask_number, and give it the question, the lowest and the highest number.",
+       "it": "La funzione è scritta, ma nessuno la chiama: il tentativo viene ancora da int(input(...)). Sostituiscilo con una chiamata di ask_number, e dagli la domanda, il numero più basso e quello più alto.",
+       "fr": "La fonction est écrite, mais personne ne l'appelle : l'essai vient encore de int(input(...)). Remplace-le par un appel de ask_number, et donne-lui la question, le plus petit et le plus grand nombre."
       },
       "sol": {
-       "en": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"It must be between {low} and {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Guess (1-100): \", 1, 100)\n    tries += 1\n    if guess == secret:\n        print(f\"You got it in {tries} tries!\")\n        break\n    print(\"Too low\" if guess < secret else \"Too high\")",
-       "it": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Scrivi un numero intero.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Deve essere tra {low} e {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Indovina (1-100): \", 1, 100)\n    tries += 1\n    if guess == secret:\n        print(f\"Ce l'hai fatta in {tries} tentativi!\")\n        break\n    print(\"Troppo basso\" if guess < secret else \"Troppo alto\")",
-       "fr": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Tape un nombre entier.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Il doit être entre {low} et {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Devine (1-100) : \", 1, 100)\n    tries += 1\n    if guess == secret:\n        print(f\"Tu as réussi en {tries} essais !\")\n        break\n    print(\"Trop petit\" if guess < secret else \"Trop grand\")"
+       "en": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"It must be between {low} and {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Guess (1-60): \", 1, 60)\n    tries += 1\n    if guess == secret:\n        print(f\"You got it in {tries} tries!\")\n        break\n    print(\"Too low\" if guess < secret else \"Too high\")",
+       "it": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Scrivi un numero intero.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Deve essere tra {low} e {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Indovina (1-60): \", 1, 60)\n    tries += 1\n    if guess == secret:\n        print(f\"Ce l'hai fatta in {tries} tentativi!\")\n        break\n    print(\"Troppo basso\" if guess < secret else \"Troppo alto\")",
+       "fr": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Tape un nombre entier.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Il doit être entre {low} et {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Devine (1-60) : \", 1, 60)\n    tries += 1\n    if guess == secret:\n        print(f\"Tu as réussi en {tries} essais !\")\n        break\n    print(\"Trop petit\" if guess < secret else \"Trop grand\")"
       },
       "start": {
        "en": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"It must be between {low} and {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Guess (1-100): \"))\n    tries += 1\n    if guess == secret:\n        print(f\"You got it in {tries} tries!\")\n        break\n    print(\"Too low\" if guess < secret else \"Too high\")",
@@ -32695,33 +32699,39 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "m": "in 2 tries!$",
-        "c": "ask_number"
+        "uses": [
+         "ask_number"
+        ]
        },
        "it": {
         "m": "in 2 tentativi!$",
-        "c": "ask_number"
+        "uses": [
+         "ask_number"
+        ]
        },
        "fr": {
         "m": "en 2 essais !$",
-        "c": "ask_number"
+        "uses": [
+         "ask_number"
+        ]
        }
       },
       "answers": {
        "en": [
         "abc",
-        "500",
+        "70",
         "50",
         "42"
        ],
        "it": [
         "abc",
-        "500",
+        "70",
         "50",
         "42"
        ],
        "fr": [
         "abc",
-        "500",
+        "70",
         "50",
         "42"
        ]
@@ -32997,9 +33007,9 @@ window.PyvielCourse = {
        "fr": "Le joueur n'a qu'une seule vie, donc un premier mauvais essai fait perdre. Donne 2 vies au joueur, pour que les essais x, p, y, t, h, o, n gagnent : il doit afficher You win!"
       },
       "hint": {
-       "en": "Change lives = 1 into lives = 2.",
-       "it": "Cambia lives = 1 in lives = 2.",
-       "fr": "Change lives = 1 en lives = 2."
+       "en": "The number of lives is set on one line near the top.",
+       "it": "Il numero di vite è deciso in una riga in alto.",
+       "fr": "Le nombre de vies est fixé sur une ligne en haut."
       },
       "sol": {
        "en": "word = \"python\"\nguessed = set()\nlives = 2\nfor guess in [\"x\", \"p\", \"y\", \"t\", \"h\", \"o\", \"n\"]:\n    if lives == 0 or set(word) <= guessed:\n        break\n    guessed.add(guess)\n    if guess not in word:\n        lives -= 1\nif set(word) <= guessed:\n    print(\"You win!\")\nelse:\n    print(\"You lose.\")",
@@ -33260,9 +33270,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une fonction remove(tasks, number) qui supprime la tâche avec ce numéro (utilise pop). Supprime la tâche 1 et affiche combien de tâches restent (1)."
       },
       "hint": {
-       "en": "tasks.pop(number - 1) inside remove.",
-       "it": "tasks.pop(number - 1) dentro remove.",
-       "fr": "tasks.pop(number - 1) dans remove."
+       "en": "pop takes out the item at a place. The places start at 0, but the tasks are numbered from 1.",
+       "it": "pop toglie l'elemento in un posto. I posti partono da 0, ma i compiti sono numerati da 1.",
+       "fr": "pop enlève l'élément à une place. Les places commencent à 0, mais les tâches sont numérotées à partir de 1."
       },
       "sol": {
        "en": "def remove(tasks, number):\n    tasks.pop(number - 1)\n\ntasks = [{\"title\": \"a\", \"done\": False}, {\"title\": \"b\", \"done\": False}]\nremove(tasks, 1)\nprint(len(tasks))",
@@ -33355,9 +33365,9 @@ window.PyvielCourse = {
        "fr": "Enregistre la liste [{\"title\": \"x\", \"done\": true}] avec la fonction save, recharge-la avec load et affiche le titre de la première tâche (x)."
       },
       "hint": {
-       "en": "save([...]) then print(load()[0][\"title\"]).",
-       "it": "save([...]) poi print(load()[0][\"title\"]).",
-       "fr": "save([...]) puis print(load()[0][\"title\"])."
+       "en": "save takes the list; load gives it back. Then take the first task, and its title.",
+       "it": "save prende la lista; load la restituisce. Poi prendi il primo compito, e il suo titolo.",
+       "fr": "save prend la liste ; load la rend. Puis prends la première tâche, et son titre."
       },
       "sol": {
        "en": "import json, os\n\nFILE = \"demo_tasks2.json\"\n\ndef load():\n    if os.path.exists(FILE):\n        with open(FILE) as f:\n            return json.load(f)\n    return []\n\ndef save(tasks):\n    with open(FILE, \"w\") as f:\n        json.dump(tasks, f)\n\nsave([{\"title\": \"x\", \"done\": True}])\nprint(load()[0][\"title\"])",
@@ -33560,9 +33570,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une pièce qui s'appelle attic qu'on atteint en allant \"up\" depuis le hall et affiche la description du attic."
       },
       "hint": {
-       "en": "A new key \"attic\" in rooms, and \"up\": \"attic\" in the exits of the hall.",
-       "it": "Una chiave nuova \"attic\" in rooms e \"up\": \"attic\" nelle uscite della hall.",
-       "fr": "Une nouvelle clé \"attic\" dans rooms et \"up\": \"attic\" dans les sorties du hall."
+       "en": "Two changes: a new entry for the attic in rooms, and a new exit up in the exits of the hall. Then show the description of the attic.",
+       "it": "Due cambi: una nuova voce per la soffitta in rooms, e una nuova uscita up nelle uscite dell'ingresso. Poi mostra la descrizione della soffitta.",
+       "fr": "Deux changements : une nouvelle entrée pour le grenier dans rooms, et une nouvelle sortie up dans les sorties du hall. Puis affiche la description du grenier."
       },
       "sol": {
        "en": "rooms = {\n    \"hall\": {\"text\": \"A hall.\", \"exits\": {\"up\": \"attic\"}},\n    \"attic\": {\"text\": \"Dusty boxes.\", \"exits\": {\"down\": \"hall\"}},\n}\nhere = rooms[\"hall\"][\"exits\"][\"up\"]\nprint(rooms[here][\"text\"])",
@@ -33704,9 +33714,9 @@ window.PyvielCourse = {
        "fr": "Ajoute à Player une méthode count() qui rend combien de choses il porte. Prends la lampe et affiche le compte (1)."
       },
       "hint": {
-       "en": "def count(self): return len(self.inventory)",
-       "it": "def count(self): return len(self.inventory)",
-       "fr": "def count(self): return len(self.inventory)"
+       "en": "A method with self that gives back how many things are in the list of the player.",
+       "it": "Un metodo con self che restituisce quante cose ci sono nella lista del giocatore.",
+       "fr": "Une méthode avec self qui rend combien de choses il y a dans la liste du joueur."
       },
       "sol": {
        "en": "class Player:\n    def __init__(self):\n        self.inventory = []\n\n    def count(self):\n        return len(self.inventory)\n\nplayer = Player()\nplayer.inventory.append(\"lamp\")\nprint(player.count())",
@@ -33773,9 +33783,9 @@ window.PyvielCourse = {
        "fr": "Écris une fonction do(words) avec un match : la liste [\"hello\"] rend \"salut\" et tout le reste rend \"Je ne comprends pas.\" Affiche do([\"hello\"])."
       },
       "hint": {
-       "en": "match words: with case [\"hello\"]: return ... and case _: return ...",
-       "it": "match words: con case [\"hello\"]: return ... e case _: return ...",
-       "fr": "match words: avec case [\"hello\"]: return ... et case _: return ..."
+       "en": "match on words: one case for the list with hello in it, and case _ for everything else.",
+       "it": "match su words: un case per la lista con hello dentro, e case _ per tutto il resto.",
+       "fr": "match sur words : un case pour la liste avec hello dedans, et case _ pour tout le reste."
       },
       "sol": {
        "en": "def do(words):\n    match words:\n        case [\"hello\"]:\n            return \"hi\"\n        case _:\n            return \"I do not understand.\"\n\nprint(do([\"hello\"]))",
@@ -33852,14 +33862,14 @@ window.PyvielCourse = {
      "slip": null,
      "ex": {
       "task": {
-       "en": "Write your own plan: three comment lines (starting with #) that say what your program will do, and then a print line.",
-       "it": "Scrivi il tuo piano: tre righe di commento (che iniziano con #) che dicono cosa farà il tuo programma, e poi una riga print.",
-       "fr": "Écris ton propre plan : trois lignes de commentaire (qui commencent par #) qui disent ce que fera ton programme, puis une ligne print."
+       "en": "Write your own plan: three comment lines (starting with #) that say what your own program will do (your idea, not the expense tracker of the example), and then a print line.",
+       "it": "Scrivi il tuo piano: tre righe di commento (che iniziano con #) che dicono cosa farà il tuo programma (la tua idea, non il registro delle spese dell'esempio), e poi una riga print.",
+       "fr": "Écris ton propre plan : trois lignes de commentaire (qui commencent par #) qui disent ce que fera ton programme (ton idée, pas le suivi de dépenses de l'exemple), puis une ligne print."
       },
       "hint": {
-       "en": "# one idea per line, then print(\"...\").",
-       "it": "# un'idea per riga, poi print(\"...\").",
-       "fr": "# une idée par ligne, puis print(\"...\")."
+       "en": "A comment is a line that starts with #: Python skips it. Write one line for each part of your idea, then a print with any message.",
+       "it": "Un commento è una riga che comincia con #: Python la salta. Scrivi una riga per ogni parte della tua idea, poi un print con un messaggio qualsiasi.",
+       "fr": "Un commentaire est une ligne qui commence par # : Python la saute. Écris une ligne pour chaque partie de ton idée, puis un print avec n'importe quel message."
       },
       "sol": {
        "en": "# PROJECT: Recipe book\n# 1. Keep recipes\n# 2. Show a recipe\nprint(\"Plan written.\")",
@@ -33873,16 +33883,16 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "Plan",
-        "c": "#[\\s\\S]*#[\\s\\S]*#"
+        "m": ".",
+        "c": "^(?![\\s\\S]*(Expense|spese|dépenses))[\\s\\S]*#[\\s\\S]*#[\\s\\S]*#"
        },
        "it": {
-        "m": "Plan",
-        "c": "#[\\s\\S]*#[\\s\\S]*#"
+        "m": ".",
+        "c": "^(?![\\s\\S]*(Expense|spese|dépenses))[\\s\\S]*#[\\s\\S]*#[\\s\\S]*#"
        },
        "fr": {
-        "m": "Plan",
-        "c": "#[\\s\\S]*#[\\s\\S]*#"
+        "m": ".",
+        "c": "^(?![\\s\\S]*(Expense|spese|dépenses))[\\s\\S]*#[\\s\\S]*#[\\s\\S]*#"
        }
       },
       "answers": {
@@ -34153,14 +34163,14 @@ window.PyvielCourse = {
      "slip": null,
      "ex": {
       "task": {
-       "en": "Change the values of name and age and show a new sentence with them in an f-string.",
-       "it": "Cambia i valori di name e age e mostra una frase nuova con loro in una f-string.",
-       "fr": "Change les valeurs de name et age et affiche une nouvelle phrase avec eux dans une f-string."
+       "en": "Make your own boxes: Max in name and 9 in age. Then show a sentence with both, using an f-string.",
+       "it": "Crea le tue scatole: Max in name e 9 in age. Poi mostra una frase con tutti e due, usando una f-string.",
+       "fr": "Crée tes boîtes : Max dans name et 9 dans age. Puis affiche une phrase avec les deux, en utilisant une f-string."
       },
       "hint": {
-       "en": "name = \"Max\", age = 9, then print(f\"... {name} ... {age}\").",
-       "it": "name = \"Max\", age = 9, poi print(f\"... {name} ... {age}\").",
-       "fr": "name = \"Max\", age = 9, puis print(f\"... {name} ... {age}\")."
+       "en": "Two boxes, then an f before the quotes, and each box between curly brackets inside the sentence.",
+       "it": "Due scatole, poi una f prima delle virgolette, e ogni scatola tra parentesi graffe dentro la frase.",
+       "fr": "Deux boîtes, puis un f avant les guillemets, et chaque boîte entre accolades dans la phrase."
       },
       "sol": {
        "en": "name, age = \"Max\", 9\nprint(f\"{name} is {age}\")",
@@ -34174,16 +34184,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "Max.*9",
-        "c": "f\""
+        "m": "^(?=[\\s\\S]*Max)(?=[\\s\\S]*9)",
+        "uses": [
+         "f-string"
+        ]
        },
        "it": {
-        "m": "Max.*9",
-        "c": "f\""
+        "m": "^(?=[\\s\\S]*Max)(?=[\\s\\S]*9)",
+        "uses": [
+         "f-string"
+        ]
        },
        "fr": {
-        "m": "Max.*9",
-        "c": "f\""
+        "m": "^(?=[\\s\\S]*Max)(?=[\\s\\S]*9)",
+        "uses": [
+         "f-string"
+        ]
        }
       },
       "answers": {
@@ -34360,9 +34376,9 @@ window.PyvielCourse = {
        "fr": "Écris une fonction cube(n) qui rend n * n * n et affiche cube(4) (64)."
       },
       "hint": {
-       "en": "def cube(n): return n * n * n",
-       "it": "def cube(n): return n * n * n",
-       "fr": "def cube(n): return n * n * n"
+       "en": "def, the name and n; inside, give back n times n times n. Then show cube(4).",
+       "it": "def, il nome e n; dentro, restituisci n per n per n. Poi mostra cube(4).",
+       "fr": "def, le nom et n ; dedans, rends n fois n fois n. Puis affiche cube(4)."
       },
       "sol": {
        "en": "def cube(n):\n    return n * n * n\n\nprint(cube(4))",
@@ -34445,9 +34461,9 @@ window.PyvielCourse = {
        "fr": "Écris une classe Cat qui est un Animal et dont speak rend Miaou. Affiche Cat(\"Tom\").speak() (Miaou)."
       },
       "hint": {
-       "en": "class Cat(Animal): and def speak(self): return \"Meow\".",
-       "it": "class Cat(Animal): e def speak(self): return \"Miao\".",
-       "fr": "class Cat(Animal): et def speak(self): return \"Miaou\"."
+       "en": "Cat has Animal in its brackets, and its own speak that gives back the sound.",
+       "it": "Cat ha Animal tra le parentesi, e il suo speak che restituisce il verso.",
+       "fr": "Cat a Animal entre ses parenthèses, et son propre speak qui rend le cri."
       },
       "sol": {
        "en": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow\"\n\nprint(Cat(\"Tom\").speak())",
@@ -34514,9 +34530,9 @@ window.PyvielCourse = {
        "fr": "Utilise random.choice avec la graine 1 pour choisir une lettre dans \"xyz\" et affiche-la (n'importe quelle lettre convient)."
       },
       "hint": {
-       "en": "random.seed(1) and print(random.choice(\"xyz\"))",
-       "it": "random.seed(1) e print(random.choice(\"xyz\"))",
-       "fr": "random.seed(1) puis print(random.choice(\"xyz\"))"
+       "en": "Set the seed first; then random.choice can pick from a text, like from a list.",
+       "it": "Fissa prima il seme; poi random.choice può scegliere da un testo, come da una lista.",
+       "fr": "Fixe d'abord la graine ; puis random.choice peut choisir dans un texte, comme dans une liste."
       },
       "sol": {
        "en": "import random\nrandom.seed(1)\nprint(random.choice(\"xyz\"))",
@@ -34725,19 +34741,19 @@ window.PyvielCourse = {
      },
      "ex": {
       "task": {
-       "en": "Write a program that shows your own greeting, with a note at the top that says the file name: # hello.py",
-       "it": "Scrivi un programma che mostra un tuo saluto, con una nota in cima che dice il nome del file: # hello.py",
-       "fr": "Écris un programme qui affiche ta propre salutation, avec une note en haut qui dit le nom du fichier : # hello.py"
+       "en": "Write a second program, for a file called greet.py: a note at the top with its file name, then a line that shows your own greeting.",
+       "it": "Scrivi un secondo programma, per un file chiamato greet.py: una nota in cima con il nome del file, poi una riga che mostra un tuo saluto.",
+       "fr": "Écris un second programme, pour un fichier appelé greet.py : une note en haut avec le nom du fichier, puis une ligne qui affiche ta propre salutation."
       },
       "hint": {
-       "en": "# hello.py on the first line, then a print.",
-       "it": "# hello.py sulla prima riga, poi un print.",
-       "fr": "# hello.py sur la première ligne, puis un print."
+       "en": "A note starts with # and Python skips it. It goes on the very first line, before the print.",
+       "it": "Una nota comincia con # e Python la salta. Va sulla primissima riga, prima del print.",
+       "fr": "Une note commence par # et Python la saute. Elle va sur la toute première ligne, avant le print."
       },
       "sol": {
-       "en": "# hello.py\nprint(\"Hi!\")",
-       "it": "# hello.py\nprint(\"Hi!\")",
-       "fr": "# hello.py\nprint(\"Hi!\")"
+       "en": "# greet.py\nprint(\"Hi!\")",
+       "it": "# greet.py\nprint(\"Hi!\")",
+       "fr": "# greet.py\nprint(\"Hi!\")"
       },
       "start": {
        "en": "",
@@ -34747,15 +34763,15 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "m": ".",
-        "c": "# hello\\.py"
+        "c": "^# greet\\.py"
        },
        "it": {
         "m": ".",
-        "c": "# hello\\.py"
+        "c": "^# greet\\.py"
        },
        "fr": {
         "m": ".",
-        "c": "# hello\\.py"
+        "c": "^# greet\\.py"
        }
       },
       "answers": {
@@ -34956,9 +34972,9 @@ window.PyvielCourse = {
        "fr": "Affiche combien de mots ont été tapés après le nom du fichier : len(sys.argv[1:]) (ici 0)."
       },
       "hint": {
-       "en": "print(len(sys.argv[1:]))",
-       "it": "print(len(sys.argv[1:]))",
-       "fr": "print(len(sys.argv[1:]))"
+       "en": "sys.argv is a list; the slice [1:] leaves out the file name, and len counts the rest. Bring in sys first.",
+       "it": "sys.argv è una lista; la fetta [1:] lascia fuori il nome del file, e len conta il resto. Porta dentro sys prima.",
+       "fr": "sys.argv est une liste ; la tranche [1:] laisse de côté le nom du fichier, et len compte le reste. Fais entrer sys d'abord."
       },
       "sol": {
        "en": "import sys\nprint(len(sys.argv[1:]))",
@@ -35062,19 +35078,19 @@ window.PyvielCourse = {
      ],
      "ex": {
       "task": {
-       "en": "Here no name is given, so sys.argv[1] does not exist and the program stops with an IndexError. Check first: when no name is given, print the usage line \"Usage: python3 greet.py NAME\" and stop with sys.exit(1).",
-       "it": "Qui non è dato nessun nome, quindi sys.argv[1] non esiste e il programma si ferma con un IndexError. Controlla prima: quando non è dato nessun nome, scrivi la riga di uso \"Uso: python3 greet.py NOME\" e fermati con sys.exit(1).",
-       "fr": "Ici aucun nom n'est donné, donc sys.argv[1] n'existe pas et le programme s'arrête sur une IndexError. Vérifie d'abord : quand aucun nom n'est donné, affiche la ligne d'usage \"Usage : python3 greet.py NOM\" et arrête-toi avec sys.exit(1)."
+       "en": "Here no name is given, so sys.argv[1] does not exist and the program stops with an IndexError. Check first: when no name is given, show the line Please give a name. and stop with the exit code 1.",
+       "it": "Qui non è dato nessun nome, quindi sys.argv[1] non esiste e il programma si ferma con un IndexError. Controlla prima: quando non è dato nessun nome, mostra la riga Scrivi un nome. e fermati con il codice di uscita 1.",
+       "fr": "Ici aucun nom n'est donné, donc sys.argv[1] n'existe pas et le programme s'arrête sur une IndexError. Vérifie d'abord : quand aucun nom n'est donné, affiche la ligne Donne un nom. et arrête-toi avec le code de sortie 1."
       },
       "hint": {
-       "en": "Before the last line: if len(sys.argv) < 2:, and inside it a print of the usage line and sys.exit(1).",
-       "it": "Prima dell'ultima riga: if len(sys.argv) < 2:, e dentro un print della riga di uso e sys.exit(1).",
-       "fr": "Avant la dernière ligne : if len(sys.argv) < 2:, et dedans un print de la ligne d'usage et sys.exit(1)."
+       "en": "Before the line that uses sys.argv[1], ask how long sys.argv is: with only the file name in it, it is too short. Then show the message and stop with sys.exit.",
+       "it": "Prima della riga che usa sys.argv[1], chiedi quanto è lunga sys.argv: con dentro solo il nome del file, è troppo corta. Poi mostra il messaggio e fermati con sys.exit.",
+       "fr": "Avant la ligne qui utilise sys.argv[1], demande quelle est la longueur de sys.argv : avec seulement le nom du fichier dedans, elle est trop courte. Puis affiche le message et arrête-toi avec sys.exit."
       },
       "sol": {
-       "en": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])",
-       "it": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Uso: python3 greet.py NOME\")\n    sys.exit(1)\nprint(\"Ciao,\", sys.argv[1])",
-       "fr": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage : python3 greet.py NOM\")\n    sys.exit(1)\nprint(\"Bonjour,\", sys.argv[1])"
+       "en": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Please give a name.\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])",
+       "it": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Scrivi un nome.\")\n    sys.exit(1)\nprint(\"Ciao,\", sys.argv[1])",
+       "fr": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Donne un nom.\")\n    sys.exit(1)\nprint(\"Bonjour,\", sys.argv[1])"
       },
       "start": {
        "en": "import sys\n\nprint(\"Hello,\", sys.argv[1])",
@@ -35083,15 +35099,15 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "^Usage",
+        "m": "^Please give a name\\.$",
         "c": "sys\\.exit\\(1\\)"
        },
        "it": {
-        "m": "^Uso",
+        "m": "^Scrivi un nome\\.$",
         "c": "sys\\.exit\\(1\\)"
        },
        "fr": {
-        "m": "^Usage",
+        "m": "^Donne un nom\\.$",
         "c": "sys\\.exit\\(1\\)"
        }
       },
@@ -35157,9 +35173,9 @@ window.PyvielCourse = {
        "fr": "Ajoute une deuxième fonction qui s'appelle other qui affiche \"other\" et appelle-la depuis main."
       },
       "hint": {
-       "en": "def other(): print(\"other\"), and other() inside main.",
-       "it": "def other(): print(\"other\"), e other() dentro main.",
-       "fr": "def other(): print(\"other\"), et other() dans main."
+       "en": "A def other with a print inside, and a call of other inside main, pushed in.",
+       "it": "Un def other con un print dentro, e una chiamata di other dentro main, rientrata.",
+       "fr": "Un def other avec un print dedans, et un appel de other dans main, décalé."
       },
       "sol": {
        "en": "def other():\n    print(\"other\")\n\ndef main():\n    print(\"start\")\n    other()\n\nif __name__ == \"__main__\":\n    main()",
@@ -35356,19 +35372,19 @@ window.PyvielCourse = {
      ],
      "ex": {
       "task": {
-       "en": "Here the name must be typed, so with no words argparse stops with an error (exit code 2). Make the name optional, with \"friend\" when nothing is typed: the program must show Hello, friend.",
-       "it": "Qui il nome va scritto per forza, quindi senza parole argparse si ferma con un errore (codice di uscita 2). Rendi il nome facoltativo, con \"amico\" quando non si scrive niente: il programma deve mostrare Ciao, amico.",
-       "fr": "Ici le nom doit être tapé, donc sans mots argparse s'arrête sur une erreur (code de sortie 2). Rends le nom facultatif, avec \"ami\" quand rien n'est tapé : le programme doit afficher Bonjour, ami."
+       "en": "Here the name must be typed, so with no words argparse stops with an error (exit code 2). Make the name optional, with \"world\" when nothing is typed: the program must show Hello, world",
+       "it": "Qui il nome va scritto per forza, quindi senza parole argparse si ferma con un errore (codice di uscita 2). Rendi il nome facoltativo, con \"mondo\" quando non si scrive niente: il programma deve mostrare Ciao, mondo",
+       "fr": "Ici le nom doit être tapé, donc sans mots argparse s'arrête sur une erreur (code de sortie 2). Rends le nom facultatif, avec \"monde\" quand rien n'est tapé : le programme doit afficher Bonjour, monde"
       },
       "hint": {
-       "en": "Add two things inside add_argument(\"name\"): nargs=\"?\" and default=\"friend\".",
-       "it": "Aggiungi due cose dentro add_argument(\"name\"): nargs=\"?\" e default=\"amico\".",
-       "fr": "Ajoute deux choses dans add_argument(\"name\") : nargs=\"?\" et default=\"ami\"."
+       "en": "add_argument can take two more things after the name: nargs with a question mark makes it optional, and default= gives the value to use when nothing is typed.",
+       "it": "add_argument può prendere due cose in più dopo il nome: nargs con un punto di domanda lo rende facoltativo, e default= dà il valore da usare quando non si scrive niente.",
+       "fr": "add_argument peut prendre deux choses de plus après le nom : nargs avec un point d'interrogation le rend facultatif, et default= donne la valeur à utiliser quand rien n'est tapé."
       },
       "sol": {
-       "en": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Greets people\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"friend\")\nargs = parser.parse_args()\nprint(\"Hello, \" + args.name)",
-       "it": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Saluta le persone\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"amico\")\nargs = parser.parse_args()\nprint(\"Ciao, \" + args.name)",
-       "fr": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Salue les gens\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"ami\")\nargs = parser.parse_args()\nprint(\"Bonjour, \" + args.name)"
+       "en": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Greets people\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"world\")\nargs = parser.parse_args()\nprint(\"Hello, \" + args.name)",
+       "it": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Saluta le persone\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"mondo\")\nargs = parser.parse_args()\nprint(\"Ciao, \" + args.name)",
+       "fr": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Salue les gens\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"monde\")\nargs = parser.parse_args()\nprint(\"Bonjour, \" + args.name)"
       },
       "start": {
        "en": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Greets people\")\nparser.add_argument(\"name\")\nargs = parser.parse_args()\nprint(\"Hello, \" + args.name)",
@@ -35377,15 +35393,15 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "Hello, friend",
+        "out": "Hello, world",
         "c": "argparse"
        },
        "it": {
-        "out": "Ciao, amico",
+        "out": "Ciao, mondo",
         "c": "argparse"
        },
        "fr": {
-        "out": "Bonjour, ami",
+        "out": "Bonjour, monde",
         "c": "argparse"
        }
       },
@@ -35395,9 +35411,9 @@ window.PyvielCourse = {
        "fr": []
       },
       "expected": {
-       "en": "Hello, friend",
-       "it": "Ciao, amico",
-       "fr": "Bonjour, ami"
+       "en": "Hello, world",
+       "it": "Ciao, mondo",
+       "fr": "Bonjour, monde"
       }
      },
      "choices": {
@@ -35471,9 +35487,9 @@ window.PyvielCourse = {
        "fr": "Affiche le dictionnaire {\"a\": [1, 2]} comme texte JSON décalé de 2 espaces."
       },
       "hint": {
-       "en": "print(json.dumps({\"a\": [1, 2]}, indent=2))",
-       "it": "print(json.dumps({\"a\": [1, 2]}, indent=2))",
-       "fr": "print(json.dumps({\"a\": [1, 2]}, indent=2))"
+       "en": "json.dumps can take indent= to say how many spaces each level is pushed in.",
+       "it": "json.dumps può prendere indent= per dire di quanti spazi è rientrato ogni livello.",
+       "fr": "json.dumps peut prendre indent= pour dire de combien d'espaces chaque niveau est décalé."
       },
       "sol": {
        "en": "import json\nprint(json.dumps({\"a\": [1, 2]}, indent=2))",
@@ -35565,9 +35581,9 @@ window.PyvielCourse = {
        "fr": "Affiche si sys.prefix est égal à sys.base_prefix (ici True, parce qu'il n'y a pas d'environnement virtuel)."
       },
       "hint": {
-       "en": "print(sys.prefix == sys.base_prefix)",
-       "it": "print(sys.prefix == sys.base_prefix)",
-       "fr": "print(sys.prefix == sys.base_prefix)"
+       "en": "Bring in sys, then compare sys.prefix and sys.base_prefix with == and show the answer.",
+       "it": "Porta dentro sys, poi confronta sys.prefix e sys.base_prefix con == e mostra la risposta.",
+       "fr": "Fais entrer sys, puis compare sys.prefix et sys.base_prefix avec == et affiche la réponse."
       },
       "sol": {
        "en": "import sys\nprint(sys.prefix == sys.base_prefix)",
@@ -35635,9 +35651,9 @@ window.PyvielCourse = {
        "fr": "Appuie sur Lancer, puis View full error et trouve le numéro de ligne. Puis corrige le deuxième appel pour qu'il divise 8 par 2 et affiche 4.0."
       },
       "hint": {
-       "en": "divide(8, 2)",
-       "it": "divide(8, 2)",
-       "fr": "divide(8, 2)"
+       "en": "Read the error: which call divides by zero? Change its second number.",
+       "it": "Leggi l'errore: quale chiamata divide per zero? Cambia il suo secondo numero.",
+       "fr": "Lis l'erreur : quel appel divise par zéro ? Change son second nombre."
       },
       "sol": {
        "en": "def divide(a, b):\n    return a / b\n\nprint(divide(8, 2))",
@@ -35708,19 +35724,19 @@ window.PyvielCourse = {
      "slip": null,
      "ex": {
       "task": {
-       "en": "Write a script with the shebang line first and then a print line.",
-       "it": "Scrivi uno script con la riga shebang per prima e poi una riga print.",
-       "fr": "Écris un script avec la ligne shebang en premier puis une ligne print."
+       "en": "Write a script of your own: the shebang line first, then a line that shows Ready",
+       "it": "Scrivi uno script tuo: prima la riga shebang, poi una riga che mostra Pronto",
+       "fr": "Écris ton propre script : d'abord la ligne shebang, puis une ligne qui affiche Prêt"
       },
       "hint": {
-       "en": "#!/usr/bin/env python3 on the first line.",
-       "it": "#!/usr/bin/env python3 sulla prima riga.",
-       "fr": "#!/usr/bin/env python3 sur la première ligne."
+       "en": "The shebang is the very first line of the file, and it starts with #!. Look at the first line of the program of this step.",
+       "it": "La shebang è la primissima riga del file, e comincia con #!. Guarda la prima riga del programma di questo passo.",
+       "fr": "Le shebang est la toute première ligne du fichier, et il commence par #!. Regarde la première ligne du programme de cette étape."
       },
       "sol": {
-       "en": "#!/usr/bin/env python3\nprint(\"I run by my name\")",
-       "it": "#!/usr/bin/env python3\nprint(\"I run by my name\")",
-       "fr": "#!/usr/bin/env python3\nprint(\"I run by my name\")"
+       "en": "#!/usr/bin/env python3\nprint(\"Ready\")",
+       "it": "#!/usr/bin/env python3\nprint(\"Pronto\")",
+       "fr": "#!/usr/bin/env python3\nprint(\"Prêt\")"
       },
       "start": {
        "en": "",
@@ -35729,15 +35745,15 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": ".",
+        "out": "Ready",
         "c": "^#!/usr/bin/env python3"
        },
        "it": {
-        "m": ".",
+        "out": "Pronto",
         "c": "^#!/usr/bin/env python3"
        },
        "fr": {
-        "m": ".",
+        "out": "Prêt",
         "c": "^#!/usr/bin/env python3"
        }
       },
@@ -35745,6 +35761,11 @@ window.PyvielCourse = {
        "en": [],
        "it": [],
        "fr": []
+      },
+      "expected": {
+       "en": "Ready",
+       "it": "Pronto",
+       "fr": "Prêt"
       }
      }
     }

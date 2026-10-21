@@ -26,7 +26,7 @@ Con Decimal, 0.1 + 0.2 fa esattamente 0.3, e 19.99 per 3 fa esattamente 59.97.`,
 Avec Decimal, 0.1 + 0.2 fait exactement 0.3, et 19.99 fois 3 fait exactement 59.97.`],
         ex: {
           t: ['Show the exact sum of "0.7" and "0.1" as Decimal numbers.', 'Mostra la somma esatta di "0.7" e "0.1" come numeri Decimal.', 'Affiche la somme exacte de "0.7" et "0.1" comme nombres Decimal.'],
-          h: ['Decimal("0.7") + Decimal("0.1")', 'Decimal("0.7") + Decimal("0.1")', 'Decimal("0.7") + Decimal("0.1")'],
+          h: ['Bring in Decimal, and give it the numbers as texts, between quotes. Then add the two.', 'Porta dentro Decimal, e dagli i numeri come testi, tra virgolette. Poi somma i due.', 'Fais entrer Decimal, et donne-lui les nombres comme textes, entre guillemets. Puis additionne les deux.'],
           sol: 'from decimal import Decimal\nprint(Decimal("0.7") + Decimal("0.1"))', out: '0.8', c: 'Decimal\\("0\\.7"\\)'
         }
       },
@@ -51,7 +51,7 @@ It is perfect for recipes, music and maths, wherever "about one third" is not go
 C'est parfait pour les recettes, la musique et les maths, partout où "environ un tiers" ne suffit pas.`],
         ex: {
           t: ['Show 1/4 + 1/4 + 1/2 as an exact fraction (it must show 1).', 'Mostra 1/4 + 1/4 + 1/2 come frazione esatta (deve mostrare 1).', 'Affiche 1/4 + 1/4 + 1/2 comme fraction exacte (il doit afficher 1).'],
-          h: ['Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)', 'Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)', 'Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)'],
+          h: ['Fraction takes the number on top and the number below. Add the three fractions.', 'Fraction prende il numero sopra e il numero sotto. Somma le tre frazioni.', 'Fraction prend le nombre du haut et le nombre du bas. Additionne les trois fractions.'],
           sol: 'from fractions import Fraction\nprint(Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2))', out: '1', c: 'Fraction'
         }
       },
@@ -75,7 +75,7 @@ int(testo, base) ne rilegge uno: il secondo numero è la base. E puoi scrivere i
 int(texte, base) en relit un : le deuxième nombre est la base. Et tu peux écrire des nombres comme ça directement : 0b1010 est binaire et 0xff est hexadécimal.`],
         ex: {
           t: ['Show the number 255 in hexadecimal.', 'Mostra il numero 255 in esadecimale.', 'Affiche le nombre 255 en hexadécimal.'],
-          h: ['hex(255)', 'hex(255)', 'hex(255)'],
+          h: ['A ready-made helper whose name is short for hexadecimal turns a number into that base.', 'Un aiutante già pronto, il cui nome è l\'abbreviazione di hexadecimal, trasforma un numero in quella base.', 'Un outil tout prêt, dont le nom est l\'abréviation de hexadecimal, transforme un nombre dans cette base.'],
           sol: 'print(hex(255))', out: '0xff', c: 'hex'
         }
       },
@@ -123,7 +123,7 @@ Le lettere accentate occupano più di un byte: "café" ha 4 caratteri, ma 5 byte
 Les lettres accentuées prennent plus d'un octet : "café" a 4 caractères, mais 5 octets. Le b avant le guillemet dans la sortie veut dire "bytes" (octets).`],
         ex: {
           t: ['Show how many bytes the text "ça va" takes in utf-8 (6).', 'Mostra quanti byte occupa il testo "ça va" in utf-8 (6).', 'Affiche combien d\'octets prend le texte "ça va" en utf-8 (6).'],
-          h: ['len("ça va".encode("utf-8"))', 'len("ça va".encode("utf-8"))', 'len("ça va".encode("utf-8"))'],
+          h: ['encode turns a text into bytes, and len counts the bytes. The letter ç takes more than one.', 'encode trasforma un testo in byte, e len conta i byte. La lettera ç ne occupa più di uno.', 'encode transforme un texte en octets, et len compte les octets. La lettre ç en prend plus d\'un.'],
           sol: 'print(len("ça va".encode("utf-8")))', out: '6', c: 'encode'
         }
       },
@@ -205,7 +205,7 @@ I programmatori sbagliano spesso su cosa è lento. L'unico modo per essere sicur
 Les programmeurs se trompent souvent sur ce qui est lent. La seule façon d'être sûr est de mesurer. Ici on vérifie seulement que les temps sont réels : les nombres exacts changent sur chaque ordinateur.`],
         ex: {
           t: ['Use timeit.timeit to time the code "sum(range(100))", run 10 times, and show whether the time is bigger than 0 (True).', 'Usa timeit.timeit per misurare il codice "sum(range(100))", eseguito 10 volte, e mostra se il tempo è maggiore di 0 (True).', 'Utilise timeit.timeit pour chronométrer le code "sum(range(100))", lancé 10 fois, et affiche si le temps est plus grand que 0 (True).'],
-          h: ['timeit.timeit("sum(range(100))", number=10) > 0', 'timeit.timeit("sum(range(100))", number=10) > 0', 'timeit.timeit("sum(range(100))", number=10) > 0'],
+          h: ['timeit.timeit takes the code as a text, and number= for how many runs. Compare what it gives back with 0.', 'timeit.timeit prende il codice come testo, e number= per quante volte eseguirlo. Confronta quello che restituisce con 0.', 'timeit.timeit prend le code comme texte, et number= pour le nombre d\'exécutions. Compare ce qu\'il rend avec 0.'],
           sol: 'import timeit\nprint(timeit.timeit("sum(range(100))", number=10) > 0)', out: 'True', c: 'timeit\\.timeit'
         }
       },
@@ -332,7 +332,7 @@ fast_fib(200) è istantaneo, mentre slow_fib(200) non finirebbe nella tua vita. 
 fast_fib(200) est instantané, alors que slow_fib(200) ne finirait pas de ta vie. cache_info dit combien de fois la mémoire a aidé.`],
         ex: {
           t: ['Make a cached function fact(n) with @lru_cache(maxsize=None): it returns 1 when n is 0, and otherwise n * fact(n - 1). Show fact(10) (3628800).', 'Metti @lru_cache(maxsize=None) sulla funzione fact(n) = n * fact(n - 1), con il caso base fact(0) = 1, e mostra fact(10) (3628800).', 'Mets @lru_cache(maxsize=None) sur la fonction fact(n) = n * fact(n - 1), avec le cas de base fact(0) = 1, et affiche fact(10) (3628800).'],
-          h: ['@lru_cache(maxsize=None) above def fact(n):', '@lru_cache(maxsize=None) sopra def fact(n):', '@lru_cache(maxsize=None) au-dessus de def fact(n):'],
+          h: ['Bring in lru_cache and put it above the def, with maxsize=None in its brackets. Then write fact the recursive way.', 'Porta dentro lru_cache e mettilo sopra il def, con maxsize=None tra le parentesi. Poi scrivi fact in modo ricorsivo.', 'Fais entrer lru_cache et mets-le au-dessus du def, avec maxsize=None entre ses parenthèses. Puis écris fact de façon récursive.'],
           sol: 'from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fact(n):\n    return 1 if n == 0 else n * fact(n - 1)\n\nprint(fact(10))', out: '3628800', c: 'lru_cache'
         }
       }
@@ -583,7 +583,7 @@ Chiamare una coroutine non la esegue. asyncio.run, dalla cassetta asyncio, la es
 Appeler une coroutine ne la lance pas. asyncio.run, de la boîte asyncio, la lance depuis la partie normale du programme, et rend ce qu'elle rend.`],
         ex: {
           t: ['Make a coroutine called answer that returns 7. Run it with asyncio.run and show the result.', 'Crea una coroutine che si chiama answer che restituisce 7. Eseguila con asyncio.run e mostra il risultato.', 'Crée une coroutine qui s\'appelle answer qui rend 7. Lance-la avec asyncio.run et affiche le résultat.'],
-          h: ['async def answer(): return 7, then print(asyncio.run(answer())).', 'async def answer(): return 7, poi print(asyncio.run(answer())).', 'async def answer(): return 7, puis print(asyncio.run(answer())).'],
+          h: ['async def makes a coroutine; inside it, return gives back the 7. asyncio.run runs it and gives back what it returned.', 'async def fa una coroutine; dentro, return restituisce il 7. asyncio.run la esegue e restituisce quello che ha restituito.', 'async def fait une coroutine ; dedans, return rend le 7. asyncio.run l\'exécute et rend ce qu\'elle a rendu.'],
           sol: 'import asyncio\n\nasync def answer():\n    return 7\n\nprint(asyncio.run(answer()))', out: '7', c: 'async def answer'
         },
         w: ['async needs a recent browser on the website. The desktop app always has it.', 'async ha bisogno di un browser recente sul sito. L\'app per computer ce l\'ha sempre.', 'async a besoin d\'un navigateur récent sur le site. L\'application de bureau l\'a toujours.']
@@ -630,7 +630,7 @@ Qui la coroutine dice la prima parola, aspetta un tempo brevissimo e dice la sec
 Ici la coroutine dit le premier mot, attend un temps très court et dit le deuxième mot. Tu n'écris await que dans un async def.`],
         ex: {
           t: ['Make a coroutine that shows "a", waits 0.01 seconds with await, and shows "b". Run it.', 'Crea una coroutine che mostra "a", aspetta 0.01 secondi con await e mostra "b". Eseguila.', 'Crée une coroutine qui affiche "a", attend 0.01 seconde avec await et affiche "b". Lance-la.'],
-          h: ['async def, print("a"), await asyncio.sleep(0.01), print("b"), then asyncio.run(...).', 'async def, print("a"), await asyncio.sleep(0.01), print("b"), poi asyncio.run(...).', 'async def, print("a"), await asyncio.sleep(0.01), print("b"), puis asyncio.run(...).'],
+          h: ['Inside an async def: a print, then await with asyncio.sleep, then the second print. Run the coroutine with asyncio.run.', 'Dentro un async def: un print, poi await con asyncio.sleep, poi il secondo print. Esegui la coroutine con asyncio.run.', 'Dans un async def : un print, puis await avec asyncio.sleep, puis le second print. Exécute la coroutine avec asyncio.run.'],
           sol: 'import asyncio\n\nasync def letters():\n    print("a")\n    await asyncio.sleep(0.01)\n    print("b")\n\nasyncio.run(letters())', out: 'a\nb', c: 'await'
         }
       },
@@ -664,7 +664,7 @@ Le risposte tornano in una lista, nell'ordine in cui hai scritto le coroutine, n
 Les réponses reviennent dans une liste, dans l'ordre où tu as écrit les coroutines, pas dans l'ordre où elles ont fini.`],
         ex: {
           t: ['Run the two fetches "a" (0.02 seconds) and "b" (0.01 seconds) together with gather and show the list of the results (["A", "B"]).', 'Esegui insieme con gather i due fetch "a" (0.02 secondi) e "b" (0.01 secondi) e mostra la lista dei risultati (["A", "B"]).', 'Lance ensemble avec gather les deux fetch "a" (0.02 seconde) et "b" (0.01 seconde) et affiche la liste des résultats (["A", "B"]).'],
-          h: ['await asyncio.gather(fetch("a", 0.02), fetch("b", 0.01)) inside main().', 'await asyncio.gather(fetch("a", 0.02), fetch("b", 0.01)) dentro main().', 'await asyncio.gather(fetch("a", 0.02), fetch("b", 0.01)) dans main().'],
+          h: ['Inside main, await asyncio.gather with the two calls of fetch: it gives back their results as a list.', 'Dentro main, await asyncio.gather con le due chiamate di fetch: restituisce i loro risultati come lista.', 'Dans main, await asyncio.gather avec les deux appels de fetch : il rend leurs résultats sous forme de liste.'],
           start: 'import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()', sol: 'import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(fetch("a", 0.02), fetch("b", 0.01))\n    print(results)\n\nasyncio.run(main())', out: "['A', 'B']", c: 'gather'
         }
       },
@@ -744,7 +744,7 @@ Les deux travaillent ensemble en même temps, en se passant les éléments. Ce s
         ex: {
           uses: ['import', 'await'],
           t: ['Change the producer to make 2 items instead of 3. The consumer must use only 2.', 'Cambia il produttore perché faccia 2 elementi invece di 3. Il consumatore deve usarne solo 2.', 'Change le producteur pour qu\'il fasse 2 éléments au lieu de 3. Le consommateur ne doit en utiliser que 2.'],
-          h: ['range(2) in the producer.', 'range(2) nel produttore.', 'range(2) dans le producteur.'],
+          h: ['Which number in the producer says how many items it makes?', 'Quale numero nel producer dice quanti elementi fa?', 'Quel nombre dans le producer dit combien d\'éléments il fabrique ?'],
           start: [c`import asyncio
 
 async def producer(queue):
@@ -909,7 +909,7 @@ It is how programs avoid waiting forever for something that does not answer.`,
 C'est ainsi que les programmes évitent d'attendre pour toujours quelque chose qui ne répond pas.`],
         ex: {
           t: ['Make the program show "ok" after waiting for asyncio.sleep(0.01) with a time limit of 1 second.', 'Fai mostrare al programma "ok" dopo aver aspettato asyncio.sleep(0.01) con un limite di tempo di 1 secondo.', 'Fais afficher "ok" au programme après avoir attendu asyncio.sleep(0.01) avec une limite de temps de 1 seconde.'],
-          h: ['await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) and then print("ok").', 'await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) e poi print("ok").', 'await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) puis print("ok").'],
+          h: ['asyncio.wait_for takes what to wait for, and timeout=. Use await with it inside a coroutine, then show the word.', 'asyncio.wait_for prende cosa aspettare, e timeout=. Usa await con lui dentro una coroutine, poi mostra la parola.', 'asyncio.wait_for prend ce qu\'il faut attendre, et timeout=. Utilise await avec lui dans une coroutine, puis affiche le mot.'],
           sol: 'import asyncio\n\nasync def main():\n    await asyncio.wait_for(asyncio.sleep(0.01), timeout=1)\n    print("ok")\n\nasyncio.run(main())', out: 'ok', c: 'wait_for'
         }
       },
@@ -961,7 +961,7 @@ This is how a program can start a long job, keep talking with the user, and pick
 C'est ainsi qu'un programme peut lancer un long travail, continuer à parler avec l'utilisateur et récupérer le résultat quand il est prêt.`],
         ex: {
           t: ['Start work() as a background task, show "waiting", and then show the result of the task.', 'Fai partire work() come compito in secondo piano, mostra "attendo" e poi mostra il risultato del compito.', 'Lance work() comme tâche en arrière-plan, affiche "j\'attends" et puis affiche le résultat de la tâche.'],
-          h: ['task = asyncio.create_task(work()), print(...), then print(await task).', 'task = asyncio.create_task(work()), print(...), poi print(await task).', 'task = asyncio.create_task(work()), print(...), puis print(await task).'],
+          h: ['create_task starts work() at once and gives back a task. Show the first word, then await the task to get its result, and show it.', 'create_task fa partire work() subito e restituisce un task. Mostra la prima parola, poi await del task per avere il suo risultato, e mostralo.', 'create_task lance work() tout de suite et rend une tâche. Affiche le premier mot, puis await la tâche pour avoir son résultat, et affiche-le.'],
           start: 'import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return "done"', sol: 'import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return "done"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print("waiting")\n    print(await task)\n\nasyncio.run(main())', out: 'waiting\ndone', c: 'create_task'
         }
       }

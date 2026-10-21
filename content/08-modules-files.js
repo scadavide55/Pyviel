@@ -48,7 +48,7 @@ math.floor arrotonda per difetto e math.ceil per eccesso. Vanno sempre a un nume
 math.floor arrondit par défaut et math.ceil par excès. Ils vont toujours à un nombre entier : floor à celui d'en dessous, ceil à celui d'au-dessus.`],
         ex: {
           t: ['Show 7.1 rounded up to the next whole number.', 'Mostra 7.1 arrotondato per eccesso all\'intero successivo.', 'Affiche 7.1 arrondi par excès à l\'entier suivant.'],
-          h: ['math.ceil(7.1)', 'math.ceil(7.1)', 'math.ceil(7.1)'],
+          h: ['ceil rounds up, floor rounds down. Both live in math, so bring it in with import first.', 'ceil arrotonda per eccesso, floor per difetto. Stanno tutti e due in math, quindi portalo dentro prima con import.', 'ceil arrondit vers le haut, floor vers le bas. Les deux sont dans math, alors fais-le entrer d\'abord avec import.'],
           sol: 'import math\nprint(math.ceil(7.1))', out: '8', c: 'ceil'
         }
       },
@@ -94,7 +94,7 @@ Qui una comprensione tiene solo i nomi che iniziano con s, e mostriamo i primi s
 Ici une compréhension ne garde que les noms qui commencent par s, et on montre les six premiers. Quand tu ne te souviens pas d'un outil, demander à dir est plus rapide que le chercher.`],
         ex: {
           t: ['Show how many names the math module holds that start with the letter a.', 'Mostra quanti nomi che iniziano con la lettera a contiene il modulo math.', 'Affiche combien de noms qui commencent par la lettre a le module math contient.'],
-          h: ['len([name for name in dir(math) if name.startswith("a")])', 'len([name for name in dir(math) if name.startswith("a")])', 'len([name for name in dir(math) if name.startswith("a")])'],
+          h: ['dir(math) gives the list of its names. A comprehension with an if can keep the ones that start with a (startswith), and len counts them.', 'dir(math) dà la lista dei suoi nomi. Una comprensione con un if può tenere quelli che cominciano con a (startswith), e len li conta.', 'dir(math) donne la liste de ses noms. Une compréhension avec un if peut garder ceux qui commencent par a (startswith), et len les compte.'],
           sol: 'import math\nprint(len([name for name in dir(math) if name.startswith("a")]))', m: '^\\d+$', c: 'dir\\(math\\)'
         }
       },
@@ -151,7 +151,7 @@ print(math.gcd(12, 18))`,
           `math a d'autres outils des maths. hypot donne le grand côté d'un triangle rectangle à partir des deux petits côtés. factorial multiplie tous les nombres entiers de 1 jusqu'à celui que tu donnes. gcd donne le plus grand nombre entier qui divise les deux nombres.`],
         ex: {
           t: ['Show 6 factorial (6 x 5 x 4 x 3 x 2 x 1), using math.', 'Mostra 6 fattoriale (6 x 5 x 4 x 3 x 2 x 1), usando math.', 'Affiche 6 factorielle (6 x 5 x 4 x 3 x 2 x 1), en utilisant math.'],
-          h: ['math.factorial(6)', 'math.factorial(6)', 'math.factorial(6)'],
+          h: ['math has a tool for the factorial, and its name is the English word factorial. Do not forget the import.', 'math ha uno strumento per il fattoriale, e il suo nome è la parola inglese factorial. Non dimenticare l\'import.', 'math a un outil pour la factorielle, et son nom est le mot anglais factorial. N\'oublie pas l\'import.'],
           sol: 'import math\nprint(math.factorial(6))', out: '720', c: 'factorial'
         }
       },
@@ -185,7 +185,7 @@ degrees e radians passano da un modo di misurare gli angoli all'altro. E isclose
 degrees et radians passent d'une façon de mesurer les angles à l'autre. Et isclose compare les décimaux avec un peu de tolérance : souviens-toi que 0.1 + 0.2 n'est pas exactement 0.3, mais isclose dit qu'ils sont pareils pour tout usage pratique.`],
         ex: {
           t: ['A circle has radius 10. Show its area, rounded to 2 decimals.', 'Un cerchio ha raggio 10. Mostra la sua area, arrotondata a 2 decimali.', 'Un cercle a un rayon de 10. Affiche son aire, arrondie à 2 décimales.'],
-          h: ['round(math.pi * r ** 2, 2)', 'round(math.pi * r ** 2, 2)', 'round(math.pi * r ** 2, 2)'],
+          h: ['The area is pi times the radius times itself. math.pi is pi, ** 2 squares, and round with 2 keeps two decimals.', 'L\'area è pi greco per il raggio per se stesso. math.pi è pi greco, ** 2 eleva al quadrato, e round con 2 tiene due decimali.', 'L\'aire est pi fois le rayon fois lui-même. math.pi est pi, ** 2 met au carré, et round avec 2 garde deux décimales.'],
           start: 'import math\nr = 10', sol: 'import math\nr = 10\nprint(round(math.pi * r ** 2, 2))', out: '314.16', c: 'round'
         }
       },
@@ -207,7 +207,7 @@ random.seed(7) fissa la fortuna: con lo stesso seme, escono ogni volta che esegu
 random.seed(7) fixe la chance : avec la même graine, les mêmes nombres "au hasard" sortent à chaque fois que tu lances le programme. C'est parfait pour les tests et pour les leçons, quand tu as besoin d'être sûr du résultat.`],
         ex: {
           t: ['Use the seed 1, then show a whole number from 1 to 10 with randint. Run it twice: it must be the same.', 'Usa il seme 1, poi mostra un numero intero da 1 a 10 con randint. Eseguilo due volte: deve essere lo stesso.', 'Utilise la graine 1, puis affiche un nombre entier de 1 à 10 avec randint. Lance-le deux fois : il doit être le même.'],
-          h: ['random.seed(1) and then print(random.randint(1, 10)).', 'random.seed(1) e poi print(random.randint(1, 10)).', 'random.seed(1) puis print(random.randint(1, 10)).'],
+          h: ['First fix the luck with seed and the number 1; then ask randint for a number from 1 to 10, and show it.', 'Prima fissa la fortuna con seed e il numero 1; poi chiedi a randint un numero da 1 a 10, e mostralo.', 'D\'abord fixe la chance avec seed et le nombre 1 ; puis demande à randint un nombre de 1 à 10, et affiche-le.'],
           sol: 'import random\nrandom.seed(1)\nprint(random.randint(1, 10))', m: '^\\d+$', c: 'seed\\(1\\)'
         }
       },
@@ -302,7 +302,7 @@ Pour jouer contre l'ordinateur, remplace le premier choix par un input.`],
         ex: {
           uses: ['for'],
           t: ['Change the game so that it plays 5 rounds instead of 3.', 'Cambia il gioco così che faccia 5 giri invece di 3.', 'Change le jeu pour qu\'il joue 5 tours au lieu de 3.'],
-          h: ['range(1, 6) gives 5 rounds.', 'range(1, 6) dà 5 giri.', 'range(1, 6) donne 5 tours.'],
+          h: ['Which range decides how many rounds are played? Remember that it stops just before its last number.', 'Quale range decide quanti giri si fanno? Ricorda che si ferma subito prima del suo ultimo numero.', 'Quel range décide combien de tours on joue ? Souviens-toi qu\'il s\'arrête juste avant son dernier nombre.'],
           start: [c`import random
 choices = ["rock", "paper", "scissors"]
 random.seed(3)
@@ -350,7 +350,7 @@ Una buona abitudine è controllare un risultato a mano, per esempio la media com
 Une bonne habitude est de vérifier un résultat à la main, par exemple la moyenne comme sum divisé par len.`],
         ex: {
           t: ['Show the median of the list [3, 9, 1, 7, 5].', 'Mostra la mediana della lista [3, 9, 1, 7, 5].', 'Affiche la médiane de la liste [3, 9, 1, 7, 5].'],
-          h: ['statistics.median([3, 9, 1, 7, 5])', 'statistics.median([3, 9, 1, 7, 5])', 'statistics.median([3, 9, 1, 7, 5])'],
+          h: ['statistics has a tool for the value in the middle of a list: its English name is median.', 'statistics ha uno strumento per il valore in mezzo a una lista: il suo nome inglese è median.', 'statistics a un outil pour la valeur du milieu d\'une liste : son nom anglais est median.'],
           sol: 'import statistics\nprint(statistics.median([3, 9, 1, 7, 5]))', out: '5', c: 'median'
         }
       },
@@ -397,7 +397,7 @@ strftime scrive la data nella forma che descrivi: %d è il giorno, %m il mese e 
 strftime écrit la date sous la forme que tu décris : %d est le jour, %m le mois et %Y l'année.`],
         ex: {
           t: ['Make the date 1 January 2030 and show it as 01/01/2030 with strftime.', 'Fai la data 1 gennaio 2030 e mostrala come 01/01/2030 con strftime.', 'Fais la date du 1er janvier 2030 et affiche-la comme 01/01/2030 avec strftime.'],
-          h: ['date(2030, 1, 1).strftime("%d/%m/%Y")', 'date(2030, 1, 1).strftime("%d/%m/%Y")', 'date(2030, 1, 1).strftime("%d/%m/%Y")'],
+          h: ['Build the date with year, month and day. Then strftime writes it: %d is the day, %m the month, %Y the year, with / between them.', 'Costruisci la data con anno, mese e giorno. Poi strftime la scrive: %d è il giorno, %m il mese, %Y l\'anno, con / in mezzo.', 'Construis la date avec année, mois et jour. Puis strftime l\'écrit : %d est le jour, %m le mois, %Y l\'année, avec / entre eux.'],
           sol: 'from datetime import date\nprint(date(2030, 1, 1).strftime("%d/%m/%Y"))', out: '01/01/2030', c: 'strftime'
         }
       },
@@ -434,7 +434,7 @@ Python conosce il calendario, anche gli anni bisestili: il 28 febbraio 2028 più
 Python connaît le calendrier, même les années bissextiles : le 28 février 2028 plus un jour donne le 29.`],
         ex: {
           t: ['How many days are there between 1 January 2027 and 31 December 2027? Show it.', 'Quanti giorni ci sono tra il 1 gennaio 2027 e il 31 dicembre 2027? Mostralo.', 'Combien de jours y a-t-il entre le 1er janvier 2027 et le 31 décembre 2027 ? Affiche-le.'],
-          h: ['(date(2027, 12, 31) - date(2027, 1, 1)).days', '(date(2027, 12, 31) - date(2027, 1, 1)).days', '(date(2027, 12, 31) - date(2027, 1, 1)).days'],
+          h: ['Subtract the first date from the last one: the result has .days.', 'Sottrai la prima data dall\'ultima: il risultato ha .days.', 'Soustrais la première date de la dernière : le résultat a .days.'],
           sol: 'from datetime import date\nprint((date(2027, 12, 31) - date(2027, 1, 1)).days)', out: '364', c: '\\.days'
         }
       },
@@ -459,7 +459,7 @@ Il suo gemello strptime fa il contrario: legge un testo scritto in una forma che
 Son jumeau strptime va dans l'autre sens : il lit un texte écrit sous une forme que tu décris, et fait un datetime. C'est ainsi que tu lis les dates que les gens tapent, ou qui viennent d'un fichier.`],
         ex: {
           t: ['Read the text "2030-06-15 18:45" with strptime and show the hour and minute like 18:45, using strftime.', 'Leggi il testo "2030-06-15 18:45" con strptime e mostra l\'ora e i minuti come 18:45, usando strftime.', 'Lis le texte "2030-06-15 18:45" avec strptime et affiche l\'heure et les minutes comme 18:45, en utilisant strftime.'],
-          h: ['datetime.strptime("2030-06-15 18:45", "%Y-%m-%d %H:%M").strftime("%H:%M")', 'datetime.strptime("2030-06-15 18:45", "%Y-%m-%d %H:%M").strftime("%H:%M")', 'datetime.strptime("2030-06-15 18:45", "%Y-%m-%d %H:%M").strftime("%H:%M")'],
+          h: ['strptime reads the text with a pattern of codes: %Y year, %m month, %d day, %H hour, %M minute, with the same dashes, space and colon as the text. Then strftime with only the codes of the hour and the minute.', 'strptime legge il testo con uno schema di codici: %Y anno, %m mese, %d giorno, %H ora, %M minuto, con gli stessi trattini, spazio e due punti del testo. Poi strftime con solo i codici dell\'ora e del minuto.', 'strptime lit le texte avec un modèle de codes : %Y année, %m mois, %d jour, %H heure, %M minute, avec les mêmes tirets, espace et deux-points que le texte. Puis strftime avec seulement les codes de l\'heure et de la minute.'],
           sol: 'from datetime import datetime\nwhen = datetime.strptime("2030-06-15 18:45", "%Y-%m-%d %H:%M")\nprint(when.strftime("%H:%M"))', out: '18:45', c: 'strptime'
         }
       },
@@ -499,7 +499,7 @@ That is perfect to measure how long something takes: take the time before, take 
 C'est parfait pour mesurer combien de temps prend quelque chose : prends l'heure avant, prends-la après, et soustrais.`],
         ex: {
           t: ['Measure how long it takes to add the numbers up to 100000 with sum(range(100000)), and show whether it was less than 5 seconds (it must show True).', 'Misura quanto ci vuole a sommare i numeri fino a 100000 con sum(range(100000)) e mostra se è stato meno di 5 secondi (deve mostrare True).', 'Mesure combien de temps il faut pour additionner les nombres jusqu\'à 100000 avec sum(range(100000)) et affiche si c\'était moins de 5 secondes (il doit afficher True).'],
-          h: ['start = time.time(), the sum, then time.time() - start < 5.', 'start = time.time(), la somma, poi time.time() - start < 5.', 'start = time.time(), la somme, puis time.time() - start < 5.'],
+          h: ['Keep time.time() in a box before the sum. After it, time.time() minus that box is how long it took: compare it with 5.', 'Tieni time.time() in una scatola prima della somma. Dopo, time.time() meno quella scatola è quanto ci ha messo: confrontalo con 5.', 'Garde time.time() dans une boîte avant la somme. Après, time.time() moins cette boîte est le temps qu\'il a fallu : compare-le à 5.'],
           sol: 'import time\nstart = time.time()\ntotal = sum(range(100000))\nprint(time.time() - start < 5)', out: 'True', c: 'time\\.time'
         }
       },
@@ -550,7 +550,7 @@ open("nome", "w") apre un file per scrivere: crea il file, oppure cancella il ve
 open("nom", "w") ouvre un fichier pour écrire : il crée le fichier, ou efface l'ancien. with l'ouvre, lance les lignes décalées et le ferme tout seul à la fin. write met du texte dedans, et tu ajoutes \\n pour une nouvelle ligne. Les fichiers de ces leçons commencent par demo_, donc ils ne touchent jamais tes propres fichiers.`],
         ex: {
           t: ['Write a file called demo_hello.txt with the text hello inside, and show: done', 'Scrivi un file che si chiama demo_hello.txt con dentro il testo ciao e mostra: fatto', 'Écris un fichier qui s\'appelle demo_hello.txt avec le texte salut dedans et affiche : fini'],
-          h: ['with open("demo_hello.txt", "w") as f: and f.write("...") inside.', 'with open("demo_hello.txt", "w") as f: e f.write("...") dentro.', 'with open("demo_hello.txt", "w") as f: et f.write("...") dedans.'],
+          h: ['The program of this step writes a file the same way: change the file name and the text, and add the print at the end, not pushed in.', 'Il programma di questo passo scrive un file allo stesso modo: cambia il nome del file e il testo, e aggiungi il print alla fine, non rientrato.', 'Le programme de cette étape écrit un fichier de la même façon : change le nom du fichier et le texte, et ajoute le print à la fin, sans décalage.'],
           sol: ['with open("demo_hello.txt", "w") as f:\n    f.write("hello")\nprint("done")', 'with open("demo_hello.txt", "w") as f:\n    f.write("ciao")\nprint("fatto")', 'with open("demo_hello.txt", "w") as f:\n    f.write("salut")\nprint("fini")'],
           out: ['done', 'fatto', 'fini'], c: 'demo_hello\\.txt'
         }
@@ -585,7 +585,7 @@ Prima il programma scrive il file, poi lo rilegge e lo mostra. Il testo che otti
 D'abord le programme écrit le fichier, puis il le relit et l'affiche. Le texte que tu obtiens est exactement ce que tu as écrit, retours à la ligne compris.`],
         ex: {
           t: ['Write the text hello world in a file, read it back, and show how many letters it has (11).', 'Scrivi il testo ciao a tutti in un file, rileggilo e mostra quante lettere ha (12).', 'Écris le texte salut tout le monde dans un fichier, relis-le et affiche combien de lettres il a (19).'],
-          h: ['Write the text, then open the file to read, f.read(), and print(len(text)).', 'Scrivi il testo, poi apri il file per leggere, f.read() e print(len(text)).', 'Écris le texte, puis ouvre le fichier pour lire, f.read() et print(len(text)).'],
+          h: ['Two with blocks: the first writes (mode "w"), the second opens the same file to read and keeps the whole text with read. len counts its letters.', 'Due blocchi with: il primo scrive (modo "w"), il secondo apre lo stesso file per leggere e tiene tutto il testo con read. len conta le sue lettere.', 'Deux blocs with : le premier écrit (mode "w"), le second ouvre le même fichier pour lire et garde tout le texte avec read. len compte ses lettres.'],
           sol: ['with open("demo_t.txt", "w") as f:\n    f.write("hello world")\nwith open("demo_t.txt") as f:\n    text = f.read()\nprint(len(text))', 'with open("demo_t.txt", "w") as f:\n    f.write("ciao a tutti")\nwith open("demo_t.txt") as f:\n    text = f.read()\nprint(len(text))', 'with open("demo_t.txt", "w") as f:\n    f.write("salut tout le monde")\nwith open("demo_t.txt") as f:\n    text = f.read()\nprint(len(text))'],
           out: ['11', '12', '19'], c: 'read'
         }
@@ -658,7 +658,7 @@ Chiedi con exists prima di leggere un file che potrebbe non esserci.`,
 Demande avec exists avant de lire un fichier qui pourrait ne pas être là.`],
         ex: {
           t: ['Ask if a file called demo_nope.txt exists, and show the answer.', 'Chiedi se esiste un file che si chiama demo_nope.txt e mostra la risposta.', 'Demande si un fichier qui s\'appelle demo_nope.txt existe et affiche la réponse.'],
-          h: ['print(os.path.exists("demo_nope.txt"))', 'print(os.path.exists("demo_nope.txt"))', 'print(os.path.exists("demo_nope.txt"))'],
+          h: ['os.path has a tool that asks if a file exists. Bring in os first, then show its answer.', 'os.path ha uno strumento che chiede se un file esiste. Porta dentro os prima, poi mostra la sua risposta.', 'os.path a un outil qui demande si un fichier existe. Fais entrer os d\'abord, puis affiche sa réponse.'],
           sol: 'import os\nprint(os.path.exists("demo_nope.txt"))', out: 'False', c: 'exists'
         }
       },
@@ -683,7 +683,7 @@ Attenzione con remove: non c'è il cestino. Per questo queste lezioni cancellano
 Fais attention avec remove : il n'y a pas de corbeille. C'est pourquoi ces leçons ne suppriment que des fichiers qui commencent par demo_.`],
         ex: {
           t: ['Make a file demo_x.txt, delete it with os.remove, and show whether it still exists (it must show False).', 'Crea un file demo_x.txt, cancellalo con os.remove e mostra se esiste ancora (deve mostrare False).', 'Crée un fichier demo_x.txt, supprime-le avec os.remove et affiche s\'il existe encore (il doit afficher False).'],
-          h: ['Write the file, os.remove("demo_x.txt"), then print(os.path.exists("demo_x.txt")).', 'Scrivi il file, os.remove("demo_x.txt"), poi print(os.path.exists("demo_x.txt")).', 'Écris le fichier, os.remove("demo_x.txt"), puis print(os.path.exists("demo_x.txt")).'],
+          h: ['Three steps: write the file, delete it with the tool of os, then ask os.path if it still exists.', 'Tre passi: scrivi il file, cancellalo con lo strumento di os, poi chiedi a os.path se esiste ancora.', 'Trois étapes : écris le fichier, supprime-le avec l\'outil de os, puis demande à os.path s\'il existe encore.'],
           sol: 'import os\nwith open("demo_x.txt", "w") as f:\n    f.write("x")\nos.remove("demo_x.txt")\nprint(os.path.exists("demo_x.txt"))', out: 'False', c: 'remove'
         }
       },
@@ -773,7 +773,7 @@ It is like a safety net: you say "try this, and if it goes wrong in this way, do
 C'est comme un filet de sécurité : tu dis "essaie ceci, et si ça tourne mal de cette façon, fais cela".`],
         ex: {
           t: ['Make the program catch the error of int("x") and show: oops', 'Fai in modo che il programma prenda l\'errore di int("x") e mostri: ops', 'Fais attraper par le programme l\'erreur de int("x") et afficher : oups'],
-          h: ['try: int("x") then except ValueError: and print.', 'try: int("x") poi except ValueError: e print.', 'try: int("x") puis except ValueError: et print.'],
+          h: ['The risky line goes pushed in under try:. Then except with the name of the error, and under it, pushed in, the print.', 'La riga rischiosa va rientrata sotto try:. Poi except con il nome dell\'errore, e sotto, rientrato, il print.', 'La ligne risquée va décalée sous try:. Puis except avec le nom de l\'erreur, et dessous, décalé, le print.'],
           sol: ['try:\n    int("x")\nexcept ValueError:\n    print("oops")', 'try:\n    int("x")\nexcept ValueError:\n    print("ops")', 'try:\n    int("x")\nexcept ValueError:\n    print("oups")'],
           out: ['oops', 'ops', 'oups'], c: 'except ValueError'
         }
@@ -832,7 +832,7 @@ Une boucle avec try dedans laisse le programme traiter chaque élément seul : u
         ex: {
           uses: ['for', 'try'],
           t: ['Go through the list ["4", "z", "9"], and for each text show its double, or the word bad when it is not a number.', 'Scorri la lista ["4", "z", "9"] e per ogni testo mostra il suo doppio, o la parola male quando non è un numero.', 'Parcours la liste ["4", "z", "9"] et pour chaque texte affiche son double, ou le mot mauvais quand ce n\'est pas un nombre.'],
-          h: ['for ... in ...: then try: print(int(text) * 2) and except ValueError: print("bad").', 'for ... in ...: poi try: print(int(text) * 2) ed except ValueError: print("male").', 'for ... in ...: puis try: print(int(text) * 2) et except ValueError: print("mauvais").'],
+          h: ['A for over the list. Inside it, a try that shows the double of the number, and an except for ValueError that shows the other word.', 'Un for sulla lista. Dentro, un try che mostra il doppio del numero, e un except per ValueError che mostra l\'altra parola.', 'Un for sur la liste. Dedans, un try qui affiche le double du nombre, et un except pour ValueError qui affiche l\'autre mot.'],
           sol: ['for text in ["4", "z", "9"]:\n    try:\n        print(int(text) * 2)\n    except ValueError:\n        print("bad")', 'for text in ["4", "z", "9"]:\n    try:\n        print(int(text) * 2)\n    except ValueError:\n        print("male")', 'for text in ["4", "z", "9"]:\n    try:\n        print(int(text) * 2)\n    except ValueError:\n        print("mauvais")'],
           out: ['8\nbad\n18', '8\nmale\n18', '8\nmauvais\n18']
         }
@@ -937,7 +937,7 @@ Celui qui appelle peut l'attraper avec try et except, ou pas : la dernière lign
         ex: {
           uses: ['def'],
           t: ['Remove the last line, which stops the program, so that the program ends without an error.', 'Togli l\'ultima riga, che ferma il programma, così il programma finisce senza errori.', 'Enlève la dernière ligne, qui arrête le programme, pour que le programme finisse sans erreur.'],
-          h: ['Delete the line set_age(-1).', 'Cancella la riga set_age(-1).', 'Supprime la ligne set_age(-1).'],
+          h: ['Which line asks for an age below zero? That is the one that stops the program.', 'Quale riga chiede un\'età sotto zero? È quella che ferma il programma.', 'Quelle ligne demande un âge en dessous de zéro ? C\'est celle qui arrête le programme.'],
           start: 'def set_age(age):\n    if age < 0:\n        raise ValueError("negative")\n    return age\n\nprint(set_age(12))\nset_age(-1)', sol: 'def set_age(age):\n    if age < 0:\n        raise ValueError("negative")\n    return age\n\nprint(set_age(12))', out: '12'
         }
       },
@@ -983,7 +983,7 @@ break esce dal ciclo solo quando tutto è andato bene.`,
 break sort de la boucle seulement quand tout s'est bien passé.`],
         ex: {
           t: ['Change the program so that it only accepts ages from 1 to 120: with the answers x, 0 and 30 it must end by showing 30.', 'Cambia il programma così che accetti solo età da 1 a 120: con le risposte x, 0 e 30 deve finire mostrando 30.', 'Change le programme pour qu\'il n\'accepte que des âges de 1 à 120 : avec les réponses x, 0 et 30 il doit finir en affichant 30.'],
-          h: ['if age < 1 or age > 120: then raise ValueError.', 'if age < 1 or age > 120: poi raise ValueError.', 'if age < 1 or age > 120: puis raise ValueError.'],
+          h: ['Inside the try, after int: when the age is too small or too big, raise a ValueError yourself. The except that is already there catches it.', 'Dentro il try, dopo int: quando l\'età è troppo piccola o troppo grande, solleva tu un ValueError. L\'except che c\'è già lo prende.', 'Dans le try, après int : quand l\'âge est trop petit ou trop grand, lève toi-même une ValueError. Le except qui est déjà là l\'attrape.'],
           start: 'while True:\n    text = input("Age: ")\n    try:\n        age = int(text)\n        break\n    except ValueError:\n        print("Again")\nprint(age)',
           sol: 'while True:\n    text = input("Age: ")\n    try:\n        age = int(text)\n        if age < 1 or age > 120:\n            raise ValueError("range")\n        break\n    except ValueError:\n        print("Again")\nprint(age)',
           i: ['x', '0', '30'], m: '30$', c: '120'
@@ -999,7 +999,7 @@ break sort de la boucle seulement quand tout s'est bien passé.`],
         x: ['try runs the risky line; when it raises a ValueError, except catches it and the loop goes on with the next text. The program never stops.', 'try esegue la riga rischiosa; quando solleva un ValueError, except lo prende e il ciclo continua con il testo dopo. Il programma non si ferma mai.', 'try lance la ligne risquée ; quand elle lève une ValueError, except l\'attrape et la boucle continue avec le texte suivant. Le programme ne s\'arrête jamais.'],
         ex: {
           t: ['Write safe_divide(a, b): it returns a / b, or None when b is 0 (use try and except ZeroDivisionError). Show safe_divide(10, 4) and then safe_divide(1, 0).', 'Scrivi safe_divide(a, b): restituisce a / b, oppure None quando b è 0 (usa try ed except ZeroDivisionError). Mostra safe_divide(10, 4) e poi safe_divide(1, 0).', 'Écris safe_divide(a, b) : elle rend a / b, ou None quand b vaut 0 (utilise try et except ZeroDivisionError). Affiche safe_divide(10, 4) puis safe_divide(1, 0).'],
-          h: ['Inside the function: try: return a / b, and under except ZeroDivisionError: return None.', 'Dentro la funzione: try: return a / b, e sotto except ZeroDivisionError: return None.', 'Dans la fonction : try: return a / b, et sous except ZeroDivisionError: return None.'],
+          h: ['Inside the function, a try that gives back the division, and an except for ZeroDivisionError that gives back None.', 'Dentro la funzione, un try che restituisce la divisione, e un except per ZeroDivisionError che restituisce None.', 'Dans la fonction, un try qui rend la division, et un except pour ZeroDivisionError qui rend None.'],
           start: '',
           sol: 'def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n\nprint(safe_divide(10, 4))\nprint(safe_divide(1, 0))',
           out: '2.5\nNone', uses: ['try', 'def']
@@ -1032,7 +1032,7 @@ json.dumps trasforma i dati in testo e json.loads trasforma il testo di nuovo in
 json.dumps transforme des données en texte, et json.loads retransforme le texte en données. Presque tous les sites utilisent JSON pour parler à d'autres programmes.`],
         ex: {
           t: ['Turn the dictionary {"a": 1} into JSON text and show it.', 'Trasforma il dizionario {"a": 1} in testo JSON e mostralo.', 'Transforme le dictionnaire {"a": 1} en texte JSON et affiche-le.'],
-          h: ['print(json.dumps({"a": 1}))', 'print(json.dumps({"a": 1}))', 'print(json.dumps({"a": 1}))'],
+          h: ['Bring in json first. json.dumps turns a dictionary into JSON text: show what it gives back.', 'Porta dentro json prima. json.dumps trasforma un dizionario in testo JSON: mostra quello che restituisce.', 'Fais entrer json d\'abord. json.dumps transforme un dictionnaire en texte JSON : affiche ce qu\'il rend.'],
           sol: 'import json\nprint(json.dumps({"a": 1}))', out: '{"a": 1}', c: 'dumps'
         }
       },
@@ -1060,7 +1060,7 @@ indent=2 rende il testo JSON facile da leggere, con ogni livello rientrato. È i
 indent=2 rend le texte JSON facile à lire, avec chaque niveau décalé. C'est la façon la plus facile de faire se souvenir un programme.`],
         ex: {
           t: ['Save the list [1, 2, 3] in a file called demo_list.json, load it back, and show it.', 'Salva la lista [1, 2, 3] in un file che si chiama demo_list.json, ricaricala e mostrala.', 'Enregistre la liste [1, 2, 3] dans un fichier qui s\'appelle demo_list.json, recharge-la et affiche-la.'],
-          h: ['json.dump([1, 2, 3], f) with the file open to write, then json.load(f) with it open to read.', 'json.dump([1, 2, 3], f) con il file aperto per scrivere, poi json.load(f) con il file aperto per leggere.', 'json.dump([1, 2, 3], f) avec le fichier ouvert pour écrire, puis json.load(f) avec lui ouvert pour lire.'],
+          h: ['json.dump writes the list into a file open for writing; json.load reads it back from the same file open for reading.', 'json.dump scrive la lista in un file aperto per scrivere; json.load la rilegge dallo stesso file aperto per leggere.', 'json.dump écrit la liste dans un fichier ouvert en écriture ; json.load la relit depuis le même fichier ouvert en lecture.'],
           sol: 'import json\nwith open("demo_list.json", "w") as f:\n    json.dump([1, 2, 3], f)\nwith open("demo_list.json") as f:\n    print(json.load(f))', out: '[1, 2, 3]', c: 'json\\.load'
         }
       },
@@ -1085,7 +1085,7 @@ Apri sempre il file con newline="" quando scrivi un CSV, così le righe vengono 
 Ouvre toujours le fichier avec newline="" quand tu écris un CSV, pour que les lignes soient bonnes sur tous les ordinateurs.`],
         ex: {
           t: ['Write a CSV file called demo_pets.csv with the rows ["cat", 2] and ["dog", 3], and show the text of the file.', 'Scrivi un file CSV che si chiama demo_pets.csv con le righe ["gatto", 2] e ["cane", 3] e mostra il testo del file.', 'Écris un fichier CSV qui s\'appelle demo_pets.csv avec les lignes ["chat", 2] et ["chien", 3] et affiche le texte du fichier.'],
-          h: ['csv.writer(f) and writerows([...]), then print(open("demo_pets.csv").read()).', 'csv.writer(f) e writerows([...]), poi print(open("demo_pets.csv").read()).', 'csv.writer(f) et writerows([...]), puis print(open("demo_pets.csv").read()).'],
+          h: ['csv.writer on a file open for writing, and its writerows with the list of rows. Then open the file again, read it and show the text.', 'csv.writer su un file aperto per scrivere, e il suo writerows con la lista delle righe. Poi riapri il file, leggilo e mostra il testo.', 'csv.writer sur un fichier ouvert en écriture, et son writerows avec la liste des lignes. Puis rouvre le fichier, lis-le et affiche le texte.'],
           sol: ['import csv\nwith open("demo_pets.csv", "w", newline="") as f:\n    csv.writer(f).writerows([["cat", 2], ["dog", 3]])\nprint(open("demo_pets.csv").read())', 'import csv\nwith open("demo_pets.csv", "w", newline="") as f:\n    csv.writer(f).writerows([["gatto", 2], ["cane", 3]])\nprint(open("demo_pets.csv").read())', 'import csv\nwith open("demo_pets.csv", "w", newline="") as f:\n    csv.writer(f).writerows([["chat", 2], ["chien", 3]])\nprint(open("demo_pets.csv").read())'],
           m: ['cat,2\\ndog,3', 'gatto,2\\ncane,3', 'chat,2\\nchien,3'], c: 'writerows'
         }

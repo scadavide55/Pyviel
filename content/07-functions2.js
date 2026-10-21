@@ -185,7 +185,7 @@ Se lo vedi, controlla il caso base e controlla che ogni chiamata si avvicini dav
 Si tu la vois, vérifie le cas de base, et vérifie que chaque appel s'en rapproche vraiment.`],
         ex: {
           t: ['Make a recursive function stop_at(n) that returns n when n is 3 or more, and otherwise calls itself with n + 1. Show stop_at(1).', 'Crea una funzione ricorsiva stop_at(n) che restituisce n quando n è 3 o più, e altrimenti chiama se stessa con n + 1. Mostra stop_at(1).', 'Crée une fonction récursive stop_at(n) qui rend n quand n vaut 3 ou plus, et sinon s\'appelle avec n + 1. Affiche stop_at(1).'],
-          h: ['if n >= 3: return n, and after it return stop_at(n + 1).', 'if n >= 3: return n, e dopo return stop_at(n + 1).', 'if n >= 3: return n, et après return stop_at(n + 1).'],
+          h: ['Two cases: when n is already 3 or more, give n back. Otherwise, give back what the function says for the next number.', 'Due casi: quando n è già 3 o più, restituisci n. Altrimenti, restituisci quello che la funzione dice per il numero seguente.', 'Deux cas : quand n est déjà 3 ou plus, rends n. Sinon, rends ce que la fonction dit pour le nombre suivant.'],
           sol: 'def stop_at(n):\n    if n >= 3:\n        return n\n    return stop_at(n + 1)\n\nprint(stop_at(1))', out: '3', c: 'stop_at'
         }
       },
@@ -233,7 +233,7 @@ Leggila come in inglese: "n per n, per ogni n nel range".`,
 Lis-la comme de l'anglais : "n fois n, pour chaque n dans le range".`],
         ex: {
           t: ['With a comprehension, make the list of the doubles of 1 to 5: [2, 4, 6, 8, 10]', 'Con una comprensione, fai la lista dei doppi da 1 a 5: [2, 4, 6, 8, 10]', 'Avec une compréhension, fais la liste des doubles de 1 à 5 : [2, 4, 6, 8, 10]'],
-          h: ['[n * 2 for n in range(1, 6)]', '[n * 2 for n in range(1, 6)]', '[n * 2 for n in range(1, 6)]'],
+          h: ['Inside square brackets: first what goes in the list (the number doubled), then a for that takes each number from 1 to 5.', 'Tra parentesi quadre: prima cosa va nella lista (il numero raddoppiato), poi un for che prende ogni numero da 1 a 5.', 'Entre crochets : d\'abord ce qui va dans la liste (le nombre doublé), puis un for qui prend chaque nombre de 1 à 5.'],
           sol: 'print([n * 2 for n in range(1, 6)])', out: '[2, 4, 6, 8, 10]', c: '\\[.* for .* in .*\\]'
         }
       },
@@ -266,7 +266,7 @@ Se vuoi cambiare il valore in base a una domanda, metti la scelta davanti: n * 1
 Si tu veux changer la valeur selon une question, mets le choix devant : n * 10 if n > 5 else n.`],
         ex: {
           t: ['From the list nums, make the list of the numbers bigger than 5, with a comprehension and an if.', 'Dalla lista nums, fai la lista dei numeri più grandi di 5, con una comprensione e un if.', 'À partir de la liste nums, fais la liste des nombres plus grands que 5, avec une compréhension et un if.'],
-          h: ['[n for n in nums if n > 5]', '[n for n in nums if n > 5]', '[n for n in nums if n > 5]'],
+          h: ['Like the comprehensions of the example, with an if at the end that keeps only the numbers you want.', 'Come le comprensioni dell\'esempio, con un if alla fine che tiene solo i numeri che vuoi.', 'Comme les compréhensions de l\'exemple, avec un if à la fin qui garde seulement les nombres voulus.'],
           start: 'nums = [1, 2, 3, 4, 5, 6, 7, 8]', sol: 'nums = [1, 2, 3, 4, 5, 6, 7, 8]\nprint([n for n in nums if n > 5])', out: '[6, 7, 8]', c: ' if n > 5'
         }
       },
@@ -290,7 +290,7 @@ Le comprensioni di dizionario sono ottime per scambiare chiavi e valori, o per f
 Les compréhensions de dictionnaire sont super pour échanger clés et valeurs, ou pour faire une table de recherche.`],
         ex: {
           t: ['With a dictionary comprehension, make a dictionary of the squares: each number from 1 to 3 with its square. Show it.', 'Con una comprensione di dizionario, fai un dizionario dei quadrati: ogni numero da 1 a 3 con il suo quadrato. Mostralo.', 'Avec une compréhension de dictionnaire, fais un dictionnaire des carrés : chaque nombre de 1 à 3 avec son carré. Affiche-le.'],
-          h: ['{n: n * n for n in range(1, 4)}', '{n: n * n for n in range(1, 4)}', '{n: n * n for n in range(1, 4)}'],
+          h: ['Curly brackets, and before the for a pair key: value, where the key is the number and the value its square.', 'Parentesi graffe, e prima del for una coppia chiave: valore, dove la chiave è il numero e il valore il suo quadrato.', 'Des accolades, et avant le for une paire clé : valeur, où la clé est le nombre et la valeur son carré.'],
           sol: 'print({n: n * n for n in range(1, 4)})', out: '{1: 1, 2: 4, 3: 9}', c: '\\{.*:.* for'
         }
       },
@@ -313,7 +313,7 @@ Usala con parsimonia. Quando una comprensione diventa difficile da leggere, un c
 Utilise ça avec modération. Quand une compréhension devient difficile à lire, une boucle normale est plus gentille.`],
         ex: {
           t: ['Make the flat list of the pairs (a, b) for a in 1, 2 and b in 1, 2, with two for parts. Show it.', 'Fai la lista piatta delle coppie (a, b) per a in 1, 2 e b in 1, 2, con due parti for. Mostrala.', 'Fais la liste plate des paires (a, b) pour a dans 1, 2 et b dans 1, 2, avec deux parties for. Affiche-la.'],
-          h: ['[(a, b) for a in (1, 2) for b in (1, 2)]', '[(a, b) for a in (1, 2) for b in (1, 2)]', '[(a, b) for a in (1, 2) for b in (1, 2)]'],
+          h: ['In front, the pair in round brackets; after it, two for parts one after the other: first the one for a, then the one for b.', 'Davanti, la coppia tra parentesi tonde; dopo, due parti for una dopo l\'altra: prima quella per a, poi quella per b.', 'Devant, la paire entre parenthèses ; après, deux parties for l\'une après l\'autre : d\'abord celle pour a, puis celle pour b.'],
           sol: 'print([(a, b) for a in (1, 2) for b in (1, 2)])', out: '[(1, 1), (1, 2), (2, 1), (2, 2)]', c: 'for .* for'
         }
       },
@@ -336,7 +336,7 @@ double = lambda n: n * 2 è come def double(n): return n * 2.`,
 double = lambda n: n * 2 est pareil que def double(n): return n * 2.`],
         ex: {
           t: ['Make a lambda called triple that multiplies by 3. Show triple(7).', 'Fai una lambda che si chiama triple e moltiplica per 3. Mostra triple(7).', 'Fais une lambda qui s\'appelle triple et qui multiplie par 3. Affiche triple(7).'],
-          h: ['triple = lambda n: n * 3', 'triple = lambda n: n * 3', 'triple = lambda n: n * 3'],
+          h: ['lambda, the name of the value it gets, a colon, and what it gives back. Keep it in a box called triple, then call triple like a function.', 'lambda, il nome del valore che riceve, i due punti, e cosa restituisce. Tienila in una scatola chiamata triple, poi chiama triple come una funzione.', 'lambda, le nom de la valeur qu\'il reçoit, deux-points, et ce qu\'il rend. Garde-le dans une boîte appelée triple, puis appelle triple comme une fonction.'],
           sol: 'triple = lambda n: n * 3\nprint(triple(7))', out: '21', c: 'lambda'
         }
       },
@@ -358,7 +358,7 @@ Va bene qualsiasi funzione, anche una già pronta come str. Le comprensioni di s
 N'importe quelle fonction marche, même une toute prête comme str. Les compréhensions se lisent en général mieux, mais tu verras map et filter dans le code des autres.`],
         ex: {
           t: ['With map and a lambda, show the list of the numbers [1, 2, 3] multiplied by 10.', 'Con map e una lambda, mostra la lista dei numeri [1, 2, 3] moltiplicati per 10.', 'Avec map et une lambda, affiche la liste des nombres [1, 2, 3] multipliés par 10.'],
-          h: ['list(map(lambda n: n * 10, [1, 2, 3]))', 'list(map(lambda n: n * 10, [1, 2, 3]))', 'list(map(lambda n: n * 10, [1, 2, 3]))'],
+          h: ['map takes a function and a list, and uses the function on every item. Give it a lambda that multiplies by 10, and turn the result into a list to show it.', 'map prende una funzione e una lista, e usa la funzione su ogni elemento. Dagli una lambda che moltiplica per 10, e trasforma il risultato in una lista per mostrarlo.', 'map prend une fonction et une liste, et utilise la fonction sur chaque élément. Donne-lui un lambda qui multiplie par 10, et transforme le résultat en liste pour l\'afficher.'],
           sol: 'print(list(map(lambda n: n * 10, [1, 2, 3])))', out: '[10, 20, 30]', c: 'map'
         }
       },

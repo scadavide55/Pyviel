@@ -46,9 +46,9 @@ Leggi ogni riga e di' a voce alta cosa ti aspetti prima di guardare il risultato
 
 Lis chaque ligne et dis à voix haute ce que tu attends avant de regarder le résultat. Si l'une te surprend, retourne à cette leçon.`],
         ex: {
-          t: ['Change the values of name and age and show a new sentence with them in an f-string.', 'Cambia i valori di name e age e mostra una frase nuova con loro in una f-string.', 'Change les valeurs de name et age et affiche une nouvelle phrase avec eux dans une f-string.'],
-          h: ['name = "Max", age = 9, then print(f"... {name} ... {age}").', 'name = "Max", age = 9, poi print(f"... {name} ... {age}").', 'name = "Max", age = 9, puis print(f"... {name} ... {age}").'],
-          sol: 'name, age = "Max", 9\nprint(f"{name} is {age}")', m: 'Max.*9', c: 'f"'
+          t: ['Make your own boxes: Max in name and 9 in age. Then show a sentence with both, using an f-string.', 'Crea le tue scatole: Max in name e 9 in age. Poi mostra una frase con tutti e due, usando una f-string.', 'Crée tes boîtes : Max dans name et 9 dans age. Puis affiche une phrase avec les deux, en utilisant une f-string.'],
+          h: ['Two boxes, then an f before the quotes, and each box between curly brackets inside the sentence.', 'Due scatole, poi una f prima delle virgolette, e ogni scatola tra parentesi graffe dentro la frase.', 'Deux boîtes, puis un f avant les guillemets, et chaque boîte entre accolades dans la phrase.'],
+          sol: 'name, age = "Max", 9\nprint(f"{name} is {age}")', m: '^(?=[\\s\\S]*Max)(?=[\\s\\S]*9)', uses: ['f-string']
         }
       },
       {
@@ -208,7 +208,7 @@ Prova a chiamare area con altri numeri.`,
 Essaie d'appeler area avec d'autres nombres.`],
         ex: {
           t: ['Write a function cube(n) that returns n * n * n and show cube(4) (64).', 'Scrivi una funzione cube(n) che restituisce n * n * n e mostra cube(4) (64).', 'Écris une fonction cube(n) qui rend n * n * n et affiche cube(4) (64).'],
-          h: ['def cube(n): return n * n * n', 'def cube(n): return n * n * n', 'def cube(n): return n * n * n'],
+          h: ['def, the name and n; inside, give back n times n times n. Then show cube(4).', 'def, il nome e n; dentro, restituisci n per n per n. Poi mostra cube(4).', 'def, le nom et n ; dedans, rends n fois n fois n. Puis affiche cube(4).'],
           sol: 'def cube(n):\n    return n * n * n\n\nprint(cube(4))', out: '64', c: 'def cube'
         }
       },
@@ -260,7 +260,7 @@ Aggiungi una nuova classe figlia, per esempio Cat, e mettine una nella lista.`,
 Ajoute une nouvelle classe enfant, par exemple Cat, et mets-en une dans la liste.`],
         ex: {
           t: ['Write a class Cat that is an Animal and whose speak returns Meow. Show Cat("Tom").speak() (Meow).', 'Scrivi una classe Cat che è un Animal e il cui speak restituisce Miao. Mostra Cat("Tom").speak() (Miao).', 'Écris une classe Cat qui est un Animal et dont speak rend Miaou. Affiche Cat("Tom").speak() (Miaou).'],
-          h: ['class Cat(Animal): and def speak(self): return "Meow".', 'class Cat(Animal): e def speak(self): return "Miao".', 'class Cat(Animal): et def speak(self): return "Miaou".'],
+          h: ['Cat has Animal in its brackets, and its own speak that gives back the sound.', 'Cat ha Animal tra le parentesi, e il suo speak che restituisce il verso.', 'Cat a Animal entre ses parenthèses, et son propre speak qui rend le cri.'],
           sol: ['class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return "Meow"\n\nprint(Cat("Tom").speak())', 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return "Miao"\n\nprint(Cat("Tom").speak())', 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return "Miaou"\n\nprint(Cat("Tom").speak())'],
           out: ['Meow', 'Miao', 'Miaou'], c: 'class Cat\\(Animal\\)'
         }
@@ -313,7 +313,7 @@ Questo è tutto il linguaggio in una pagina. Quando dimentichi qualcosa, torna q
 C'est tout le langage sur une page. Quand tu oublies quelque chose, reviens ici, ou à la leçon.`],
         ex: {
           t: ['Use random.choice with the seed 1 to pick a letter from "xyz" and show it (any letter is fine).', 'Usa random.choice con il seme 1 per scegliere una lettera da "xyz" e mostrala (va bene qualsiasi lettera).', 'Utilise random.choice avec la graine 1 pour choisir une lettre dans "xyz" et affiche-la (n\'importe quelle lettre convient).'],
-          h: ['random.seed(1) and print(random.choice("xyz"))', 'random.seed(1) e print(random.choice("xyz"))', 'random.seed(1) puis print(random.choice("xyz"))'],
+          h: ['Set the seed first; then random.choice can pick from a text, like from a list.', 'Fissa prima il seme; poi random.choice può scegliere da un testo, come da una lista.', 'Fixe d\'abord la graine ; puis random.choice peut choisir dans un texte, comme dans une liste.'],
           sol: 'import random\nrandom.seed(1)\nprint(random.choice("xyz"))', m: '^[xyz]$', c: 'random\\.choice'
         }
       }
@@ -386,9 +386,9 @@ Pas à pas dans le terminal : 1) va dans le dossier qui contient le fichier avec
 
 Dans l'application de bureau de Pyviel, le bouton Commande fait la première partie pour toi : il enregistre ton programme dans le dossier Pyviel et montre les lignes exactes à taper.`],
         ex: {
-          t: ['Write a program that shows your own greeting, with a note at the top that says the file name: # hello.py', 'Scrivi un programma che mostra un tuo saluto, con una nota in cima che dice il nome del file: # hello.py', 'Écris un programme qui affiche ta propre salutation, avec une note en haut qui dit le nom du fichier : # hello.py'],
-          h: ['# hello.py on the first line, then a print.', '# hello.py sulla prima riga, poi un print.', '# hello.py sur la première ligne, puis un print.'],
-          sol: '# hello.py\nprint("Hi!")', m: '.', c: '# hello\\.py'
+          t: ['Write a second program, for a file called greet.py: a note at the top with its file name, then a line that shows your own greeting.', 'Scrivi un secondo programma, per un file chiamato greet.py: una nota in cima con il nome del file, poi una riga che mostra un tuo saluto.', 'Écris un second programme, pour un fichier appelé greet.py : une note en haut avec le nom du fichier, puis une ligne qui affiche ta propre salutation.'],
+          h: ['A note starts with # and Python skips it. It goes on the very first line, before the print.', 'Una nota comincia con # e Python la salta. Va sulla primissima riga, prima del print.', 'Une note commence par # et Python la saute. Elle va sur la toute première ligne, avant le print.'],
+          sol: '# greet.py\nprint("Hi!")', m: '.', c: '^# greet\\.py'
         },
         w: ['Python must find the file. If it says "No such file or directory", you are in the wrong folder, or the name is spelled differently. Capital letters count.', 'Python deve trovare il file. Se dice "No such file or directory", sei nella cartella sbagliata o il nome è scritto diversamente. Le maiuscole contano.', 'Python doit trouver le fichier. S\'il dit "No such file or directory", tu es dans le mauvais dossier ou le nom est écrit autrement. Les majuscules comptent.']
       },
@@ -455,7 +455,7 @@ Dentro il programma, sys.argv è ["hello.py", "Ada", "Linus"]. Il primo elemento
 Dans le programme, sys.argv vaut ["hello.py", "Ada", "Linus"]. Le premier élément est toujours le nom du fichier, donc les vrais arguments commencent à la place 1 : sys.argv[1:]. Les mots avec des espaces veulent des guillemets : python3 hello.py "Ada Lovelace". Ici personne n'a donné de noms, alors le programme explique comment le lancer.`],
         ex: {
           t: ['Show how many words were typed after the file name: len(sys.argv[1:]) (0 here).', 'Mostra quante parole sono state scritte dopo il nome del file: len(sys.argv[1:]) (qui 0).', 'Affiche combien de mots ont été tapés après le nom du fichier : len(sys.argv[1:]) (ici 0).'],
-          h: ['print(len(sys.argv[1:]))', 'print(len(sys.argv[1:]))', 'print(len(sys.argv[1:]))'],
+          h: ['sys.argv is a list; the slice [1:] leaves out the file name, and len counts the rest. Bring in sys first.', 'sys.argv è una lista; la fetta [1:] lascia fuori il nome del file, e len conta il resto. Porta dentro sys prima.', 'sys.argv est une liste ; la tranche [1:] laisse de côté le nom du fichier, et len compte le reste. Fais entrer sys d\'abord.'],
           sol: 'import sys\nprint(len(sys.argv[1:]))', out: '0', c: 'argv'
         },
         w: ['Arguments always arrive as text. The word 5 is "5", not the number 5: use int() to turn it into a number.', 'Gli argomenti arrivano sempre come testo. La parola 5 è "5", non il numero 5: usa int() per trasformarla in numero.', 'Les arguments arrivent toujours sous forme de texte. Le mot 5 est "5", pas le nombre 5 : utilise int() pour en faire un nombre.']
@@ -489,10 +489,10 @@ Puoi guardare l'ultimo codice nel terminale: su Mac e Linux scrivi echo $? e su 
 
 Tu peux voir le dernier code dans le terminal : sur Mac et Linux tape echo $? et sous Windows PowerShell tape echo $LASTEXITCODE. D'autres programmes utilisent ce nombre pour savoir si le tien a marché. C'est pourquoi un bon programme mal utilisé affiche une courte ligne d'usage et sort avec 1.`],
         ex: {
-          t: ['Here no name is given, so sys.argv[1] does not exist and the program stops with an IndexError. Check first: when no name is given, print the usage line "Usage: python3 greet.py NAME" and stop with sys.exit(1).', 'Qui non è dato nessun nome, quindi sys.argv[1] non esiste e il programma si ferma con un IndexError. Controlla prima: quando non è dato nessun nome, scrivi la riga di uso "Uso: python3 greet.py NOME" e fermati con sys.exit(1).', 'Ici aucun nom n\'est donné, donc sys.argv[1] n\'existe pas et le programme s\'arrête sur une IndexError. Vérifie d\'abord : quand aucun nom n\'est donné, affiche la ligne d\'usage "Usage : python3 greet.py NOM" et arrête-toi avec sys.exit(1).'],
-          h: ['Before the last line: if len(sys.argv) < 2:, and inside it a print of the usage line and sys.exit(1).', 'Prima dell\'ultima riga: if len(sys.argv) < 2:, e dentro un print della riga di uso e sys.exit(1).', 'Avant la dernière ligne : if len(sys.argv) < 2:, et dedans un print de la ligne d\'usage et sys.exit(1).'],
+          t: ['Here no name is given, so sys.argv[1] does not exist and the program stops with an IndexError. Check first: when no name is given, show the line Please give a name. and stop with the exit code 1.', 'Qui non è dato nessun nome, quindi sys.argv[1] non esiste e il programma si ferma con un IndexError. Controlla prima: quando non è dato nessun nome, mostra la riga Scrivi un nome. e fermati con il codice di uscita 1.', 'Ici aucun nom n\'est donné, donc sys.argv[1] n\'existe pas et le programme s\'arrête sur une IndexError. Vérifie d\'abord : quand aucun nom n\'est donné, affiche la ligne Donne un nom. et arrête-toi avec le code de sortie 1.'],
+          h: ['Before the line that uses sys.argv[1], ask how long sys.argv is: with only the file name in it, it is too short. Then show the message and stop with sys.exit.', 'Prima della riga che usa sys.argv[1], chiedi quanto è lunga sys.argv: con dentro solo il nome del file, è troppo corta. Poi mostra il messaggio e fermati con sys.exit.', 'Avant la ligne qui utilise sys.argv[1], demande quelle est la longueur de sys.argv : avec seulement le nom du fichier dedans, elle est trop courte. Puis affiche le message et arrête-toi avec sys.exit.'],
           start: ['import sys\n\nprint("Hello,", sys.argv[1])', 'import sys\n\nprint("Ciao,", sys.argv[1])', 'import sys\n\nprint("Bonjour,", sys.argv[1])'],
-          sol: ['import sys\n\nif len(sys.argv) < 2:\n    print("Usage: python3 greet.py NAME")\n    sys.exit(1)\nprint("Hello,", sys.argv[1])', 'import sys\n\nif len(sys.argv) < 2:\n    print("Uso: python3 greet.py NOME")\n    sys.exit(1)\nprint("Ciao,", sys.argv[1])', 'import sys\n\nif len(sys.argv) < 2:\n    print("Usage : python3 greet.py NOM")\n    sys.exit(1)\nprint("Bonjour,", sys.argv[1])'], m: ['^Usage', '^Uso', '^Usage'], c: 'sys\\.exit\\(1\\)'
+          sol: ['import sys\n\nif len(sys.argv) < 2:\n    print("Please give a name.")\n    sys.exit(1)\nprint("Hello,", sys.argv[1])', 'import sys\n\nif len(sys.argv) < 2:\n    print("Scrivi un nome.")\n    sys.exit(1)\nprint("Ciao,", sys.argv[1])', 'import sys\n\nif len(sys.argv) < 2:\n    print("Donne un nom.")\n    sys.exit(1)\nprint("Bonjour,", sys.argv[1])'], m: ['^Please give a name\\.$', '^Scrivi un nome\\.$', '^Donne un nom\\.$'], c: 'sys\\.exit\\(1\\)'
         }
       },
       {
@@ -521,7 +521,7 @@ Quindi la guardia esegue main solo quando il file parte da solo. Un file può es
 Donc la garde ne lance main que quand le fichier démarre tout seul. Un fichier peut être à la fois un programme et une boîte à outils de fonctions que d'autres importent sans risque.`],
         ex: {
           t: ['Add a second function called other that shows "other" and call it from main.', 'Aggiungi una seconda funzione che si chiama other che mostra "other" e chiamala da main.', 'Ajoute une deuxième fonction qui s\'appelle other qui affiche "other" et appelle-la depuis main.'],
-          h: ['def other(): print("other"), and other() inside main.', 'def other(): print("other"), e other() dentro main.', 'def other(): print("other"), et other() dans main.'],
+          h: ['A def other with a print inside, and a call of other inside main, pushed in.', 'Un def other con un print dentro, e una chiamata di other dentro main, rientrata.', 'Un def other avec un print dedans, et un appel de other dans main, décalé.'],
           sol: 'def other():\n    print("other")\n\ndef main():\n    print("start")\n    other()\n\nif __name__ == "__main__":\n    main()', m: 'other', c: 'def other'
         }
       },
@@ -570,11 +570,11 @@ Poi parse_args() legge la riga di comando e riempie un oggetto: args.name e args
 
 Puis parse_args() lit la ligne de commande et remplit un objet : args.name et args.shout. Dans un terminal : python3 greet.py Ada --shout affiche BONJOUR, ADA ! et python3 greet.py --help affiche une page d'aide qu'argparse a écrite tout seul. Une mauvaise option reçoit une erreur claire et le code de sortie 2.`],
         ex: {
-          t: ['Here the name must be typed, so with no words argparse stops with an error (exit code 2). Make the name optional, with "friend" when nothing is typed: the program must show Hello, friend.', 'Qui il nome va scritto per forza, quindi senza parole argparse si ferma con un errore (codice di uscita 2). Rendi il nome facoltativo, con "amico" quando non si scrive niente: il programma deve mostrare Ciao, amico.', 'Ici le nom doit être tapé, donc sans mots argparse s\'arrête sur une erreur (code de sortie 2). Rends le nom facultatif, avec "ami" quand rien n\'est tapé : le programme doit afficher Bonjour, ami.'],
-          h: ['Add two things inside add_argument("name"): nargs="?" and default="friend".', 'Aggiungi due cose dentro add_argument("name"): nargs="?" e default="amico".', 'Ajoute deux choses dans add_argument("name") : nargs="?" et default="ami".'],
+          t: ['Here the name must be typed, so with no words argparse stops with an error (exit code 2). Make the name optional, with "world" when nothing is typed: the program must show Hello, world', 'Qui il nome va scritto per forza, quindi senza parole argparse si ferma con un errore (codice di uscita 2). Rendi il nome facoltativo, con "mondo" quando non si scrive niente: il programma deve mostrare Ciao, mondo', 'Ici le nom doit être tapé, donc sans mots argparse s\'arrête sur une erreur (code de sortie 2). Rends le nom facultatif, avec "monde" quand rien n\'est tapé : le programme doit afficher Bonjour, monde'],
+          h: ['add_argument can take two more things after the name: nargs with a question mark makes it optional, and default= gives the value to use when nothing is typed.', 'add_argument può prendere due cose in più dopo il nome: nargs con un punto di domanda lo rende facoltativo, e default= dà il valore da usare quando non si scrive niente.', 'add_argument peut prendre deux choses de plus après le nom : nargs avec un point d\'interrogation le rend facultatif, et default= donne la valeur à utiliser quand rien n\'est tapé.'],
           start: ['import argparse\n\nparser = argparse.ArgumentParser(description="Greets people")\nparser.add_argument("name")\nargs = parser.parse_args()\nprint("Hello, " + args.name)', 'import argparse\n\nparser = argparse.ArgumentParser(description="Saluta le persone")\nparser.add_argument("name")\nargs = parser.parse_args()\nprint("Ciao, " + args.name)', 'import argparse\n\nparser = argparse.ArgumentParser(description="Salue les gens")\nparser.add_argument("name")\nargs = parser.parse_args()\nprint("Bonjour, " + args.name)'],
-          sol: ['import argparse\n\nparser = argparse.ArgumentParser(description="Greets people")\nparser.add_argument("name", nargs="?", default="friend")\nargs = parser.parse_args()\nprint("Hello, " + args.name)', 'import argparse\n\nparser = argparse.ArgumentParser(description="Saluta le persone")\nparser.add_argument("name", nargs="?", default="amico")\nargs = parser.parse_args()\nprint("Ciao, " + args.name)', 'import argparse\n\nparser = argparse.ArgumentParser(description="Salue les gens")\nparser.add_argument("name", nargs="?", default="ami")\nargs = parser.parse_args()\nprint("Bonjour, " + args.name)'],
-          out: ['Hello, friend', 'Ciao, amico', 'Bonjour, ami'], c: 'argparse'
+          sol: ['import argparse\n\nparser = argparse.ArgumentParser(description="Greets people")\nparser.add_argument("name", nargs="?", default="world")\nargs = parser.parse_args()\nprint("Hello, " + args.name)', 'import argparse\n\nparser = argparse.ArgumentParser(description="Saluta le persone")\nparser.add_argument("name", nargs="?", default="mondo")\nargs = parser.parse_args()\nprint("Ciao, " + args.name)', 'import argparse\n\nparser = argparse.ArgumentParser(description="Salue les gens")\nparser.add_argument("name", nargs="?", default="monde")\nargs = parser.parse_args()\nprint("Bonjour, " + args.name)'],
+          out: ['Hello, world', 'Ciao, mondo', 'Bonjour, monde'], c: 'argparse'
         }
       }
     ]
@@ -601,7 +601,7 @@ Alcuni moduli utili ogni giorno: python3 -m http.server condivide la cartella at
 Quelques modules utiles tous les jours : python3 -m http.server partage le dossier actuel sur localhost:8000. python3 -m unittest lance tes tests. python3 -m venv .venv crée un environnement virtuel. python3 -m pip install requests installe un paquet.`],
         ex: {
           t: ['Show the dictionary {"a": [1, 2]} as JSON text indented by 2 spaces.', 'Mostra il dizionario {"a": [1, 2]} come testo JSON rientrato di 2 spazi.', 'Affiche le dictionnaire {"a": [1, 2]} comme texte JSON décalé de 2 espaces.'],
-          h: ['print(json.dumps({"a": [1, 2]}, indent=2))', 'print(json.dumps({"a": [1, 2]}, indent=2))', 'print(json.dumps({"a": [1, 2]}, indent=2))'],
+          h: ['json.dumps can take indent= to say how many spaces each level is pushed in.', 'json.dumps può prendere indent= per dire di quanti spazi è rientrato ogni livello.', 'json.dumps peut prendre indent= pour dire de combien d\'espaces chaque niveau est décalé.'],
           sol: 'import json\nprint(json.dumps({"a": [1, 2]}, indent=2))', c: 'indent=2', m: '"a"'
         }
       },
@@ -623,7 +623,7 @@ Se ogni progetto installa nello stesso posto, iniziano a litigare per le version
 Si chaque projet installe au même endroit, les versions se disputent. Le remède est un environnement virtuel : un dossier privé avec son propre Python et ses propres paquets, un pour chaque projet. python3 -m venv .venv le crée, et source .venv/bin/activate (Mac et Linux) ou .venv\\Scripts\\activate (Windows) l'active. Après l'activation, la ligne du terminal commence par (.venv). Tape deactivate pour revenir. Le programme vérifie si tu es dans un environnement : ici la réponse est False.`],
         ex: {
           t: ['Show whether sys.prefix is equal to sys.base_prefix (True here, because there is no virtual environment).', 'Mostra se sys.prefix è uguale a sys.base_prefix (qui True, perché non c\'è un ambiente virtuale).', 'Affiche si sys.prefix est égal à sys.base_prefix (ici True, parce qu\'il n\'y a pas d\'environnement virtuel).'],
-          h: ['print(sys.prefix == sys.base_prefix)', 'print(sys.prefix == sys.base_prefix)', 'print(sys.prefix == sys.base_prefix)'],
+          h: ['Bring in sys, then compare sys.prefix and sys.base_prefix with == and show the answer.', 'Porta dentro sys, poi confronta sys.prefix e sys.base_prefix con == e mostra la risposta.', 'Fais entrer sys, puis compare sys.prefix et sys.base_prefix avec == et affiche la réponse.'],
           sol: 'import sys\nprint(sys.prefix == sys.base_prefix)', out: 'True', c: 'base_prefix'
         }
       },
@@ -668,7 +668,7 @@ Lis-le de bas en haut. La dernière ligne est le genre d'erreur et ce qui s'est 
         ex: {
           uses: ['def', '/'],
           t: ['Press Run, then View full error, and find the line number. Then fix the second call so it divides 8 by 2 and shows 4.0.', 'Premi Esegui, poi View full error e trova il numero di riga. Poi correggi la seconda chiamata così divide 8 per 2 e mostra 4.0.', 'Appuie sur Lancer, puis View full error et trouve le numéro de ligne. Puis corrige le deuxième appel pour qu\'il divise 8 par 2 et affiche 4.0.'],
-          h: ['divide(8, 2)', 'divide(8, 2)', 'divide(8, 2)'],
+          h: ['Read the error: which call divides by zero? Change its second number.', 'Leggi l\'errore: quale chiamata divide per zero? Cambia il suo secondo numero.', 'Lis l\'erreur : quel appel divise par zéro ? Change son second nombre.'],
           start: 'def divide(a, b):\n    return a / b\n\nprint(divide(1, 0))', sol: 'def divide(a, b):\n    return a / b\n\nprint(divide(8, 2))', out: '4.0'
         }
       },
@@ -689,9 +689,9 @@ Secondo, dì al sistema che il file può essere eseguito: chmod +x hello.py. Ora
 
 Ensuite, dis au système que le fichier peut être lancé : chmod +x hello.py. Maintenant tu le lances avec ./hello.py, sans python3 devant. Sous Windows le shebang ne fait rien et le chemin est py hello.py. Pour Python la ligne n'est qu'un commentaire, donc elle est sans danger partout.`],
         ex: {
-          t: ['Write a script with the shebang line first and then a print line.', 'Scrivi uno script con la riga shebang per prima e poi una riga print.', 'Écris un script avec la ligne shebang en premier puis une ligne print.'],
-          h: ['#!/usr/bin/env python3 on the first line.', '#!/usr/bin/env python3 sulla prima riga.', '#!/usr/bin/env python3 sur la première ligne.'],
-          sol: '#!/usr/bin/env python3\nprint("I run by my name")', m: '.', c: '^#!/usr/bin/env python3'
+          t: ['Write a script of your own: the shebang line first, then a line that shows Ready', 'Scrivi uno script tuo: prima la riga shebang, poi una riga che mostra Pronto', 'Écris ton propre script : d\'abord la ligne shebang, puis une ligne qui affiche Prêt'],
+          h: ['The shebang is the very first line of the file, and it starts with #!. Look at the first line of the program of this step.', 'La shebang è la primissima riga del file, e comincia con #!. Guarda la prima riga del programma di questo passo.', 'Le shebang est la toute première ligne du fichier, et il commence par #!. Regarde la première ligne du programme de cette étape.'],
+          sol: ['#!/usr/bin/env python3\nprint("Ready")', '#!/usr/bin/env python3\nprint("Pronto")', '#!/usr/bin/env python3\nprint("Prêt")'], out: ['Ready', 'Pronto', 'Prêt'], c: '^#!/usr/bin/env python3'
         }
       }
     ]

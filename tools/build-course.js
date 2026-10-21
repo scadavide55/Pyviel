@@ -227,13 +227,20 @@ async function main() {
               if (t3 && t3[l] === t3.en) bad(here, 'ex.t is not translated in ' + l);
               if (h3 && h3[l] === h3.en && !/[()=*\[\]]/.test(h3.en)) bad(here, 'ex.h is not translated in ' + l);
             }
-            // A hint points the way, never the whole answer: the page has no solution to show.
-            // Allowed: a hint that names the one line to change in a given start.
+            // A hint points the way, never the answer: the page has no solution to show. No line that the
+            // student must write may be in the hint, not even without the print( ) around it (a bare keyword,
+            // a decorator's name, an empty call, or what the task itself already says are fine).
             if (h3) {
               const squash = text => String(text).replace(/\s+/g, '');
-              const startLines = (starts ? starts.en : '').split('\n').map(x => x.trim());
-              const added = sols.en.split('\n').filter(x => x.trim() && !startLines.includes(x.trim())).map(squash);
-              if (added.length && added.every(x => squash(h3.en).includes(x)) && !(starts && starts.en.trim() && added.length === 1)) bad(here, 'ex.h gives the whole solution away: let the hint point the way instead');
+              const heart = line => { const s = squash(line); const p = s.match(/^print\((.*)\)$/); return p ? p[1] : s; };
+              for (const l of LANGS) {
+                const startLines = (starts ? starts[l] : '').split('\n').map(squash);
+                const given = sols[l].split('\n')
+                  .filter(x => x.trim() && !/^\s*#/.test(x) && !startLines.includes(squash(x)))
+                  .map(heart).filter(x => x.length >= 5 && !/^(\w+:?|@[\w.]+|\w+\(\))$/.test(x) && !squash(t3[l]).includes(x))
+                  .filter(x => squash(h3[l]).includes(x));
+                if (given.length) bad(here, 'ex.h in ' + l + ' holds a line of the solution (' + given[0] + '): let the hint point the way instead');
+              }
             }
             const spec = {}, answers = {}, expected = {};
             try {
@@ -266,6 +273,11 @@ async function main() {
                 const cheat = await play(shortcut);
                 if (!e.plain && !cheat.result.error && Check.check(sp, cheat.printed, shortcut, cheat.result.used).ok) bad(here, l + ': printing the expected text passes: say in uses what the task teaches (or plain: true if the print is the answer)');
                 if (e.plain && l === 'en' && !Check.check(sp, cheat.printed, shortcut, cheat.result.used).ok) bad(here, 'plain: true, but printing the expected text does not pass: remove plain');
+                // Copying the program of the step must not solve its task: the task asks for something new.
+                if (!step.e) {
+                  const copied = await play(code[l]);
+                  if (!copied.result.error && Check.check(sp, copied.printed, code[l], copied.result.used).ok) bad(here, l + ': the program of the step already passes the task: ask for something it does not do');
+                }
                 if (starts && starts[l].trim()) {
                   const began = await play(starts[l]);
                   if (!began.result.error && Check.check(sp, began.printed, starts[l], began.result.used).ok) bad(here, l + ': the start already passes the check: the task is done before the student does anything');

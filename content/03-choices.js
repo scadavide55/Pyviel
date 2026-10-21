@@ -403,7 +403,7 @@ Leggilo dall'alto: prima si controlla l'età, e solo per chi è abbastanza grand
 Lis-le depuis le haut : on vérifie d'abord l'âge, et seulement pour les personnes assez grandes on vérifie ensuite le billet.`],
         ex: {
           t: ['The number is 8. If it is bigger than 0, then show Even for a number that leaves 0 when divided by 2 (use %), and Odd otherwise. If it is not bigger than 0, show Not positive.', 'Il numero è 8. Se è più grande di 0, mostra Pari se la divisione per 2 non avanza niente (usa %), e Dispari altrimenti. Se non è più grande di 0, mostra Non positivo.', 'Le nombre est 8. S\'il est plus grand que 0, affiche Pair si le reste de la division par 2 est 0 (utilise %), et Impair sinon. S\'il n\'est pas plus grand que 0, affiche Pas positif.'],
-          h: ['An if number > 0: with, inside it, an if number % 2 == 0: and else.', 'Un if number > 0: con, dentro, un if number % 2 == 0: e un else.', 'Un if number > 0: avec, dedans, un if number % 2 == 0: et un else.'],
+          h: ['Two levels of if. The outer if asks if the number is bigger than 0; inside it, pushed in further, a second if with % asks if it is even, with its own else. The outer if gets an else too.', 'Due livelli di if. L\'if di fuori chiede se il numero è più grande di 0; dentro, rientrato di più, un secondo if con % chiede se è pari, con il suo else. Anche l\'if di fuori ha un else.', 'Deux niveaux de if. Le if extérieur demande si le nombre est plus grand que 0 ; dedans, plus décalé, un second if avec % demande s\'il est pair, avec son propre else. Le if extérieur a aussi un else.'],
           start: 'number = 8',
           sol: ['number = 8\nif number > 0:\n    if number % 2 == 0:\n        print("Even")\n    else:\n        print("Odd")\nelse:\n    print("Not positive")', 'number = 8\nif number > 0:\n    if number % 2 == 0:\n        print("Pari")\n    else:\n        print("Dispari")\nelse:\n    print("Non positivo")', 'number = 8\nif number > 0:\n    if number % 2 == 0:\n        print("Pair")\n    else:\n        print("Impair")\nelse:\n    print("Pas positif")'],
           out: ['Even', 'Pari', 'Pair'], c: 'if[\\s\\S]*if'
@@ -430,7 +430,7 @@ Si legge quasi come in inglese: "adulto se age è 18 o più, altrimenti bambino"
 Ça se lit presque comme en anglais : "adulte si age vaut 18 ou plus, sinon enfant".`],
         ex: {
           t: ['The number is 7. In one line, make a box kind that holds even or odd, and show it. Use %.', 'Il numero è 7. In una riga, fai una scatola kind che contenga pari o dispari, e mostrala. Usa %.', 'Le nombre est 7. En une ligne, fais une boîte kind qui contient pair ou impair, et affiche-la. Utilise %.'],
-          h: ['kind = "even" if number % 2 == 0 else "odd"', 'kind = "pari" if number % 2 == 0 else "dispari"', 'kind = "pair" if number % 2 == 0 else "impair"'],
+          h: ['One line that reads like a sentence: the first value, if, the question, else, the other value. The question uses % to see if the number is even.', 'Una riga che si legge come una frase: il primo valore, if, la domanda, else, l\'altro valore. La domanda usa % per vedere se il numero è pari.', 'Une ligne qui se lit comme une phrase : la première valeur, if, la question, else, l\'autre valeur. La question utilise % pour voir si le nombre est pair.'],
           start: 'number = 7', sol: ['number = 7\nkind = "even" if number % 2 == 0 else "odd"\nprint(kind)', 'number = 7\nkind = "pari" if number % 2 == 0 else "dispari"\nprint(kind)', 'number = 7\nkind = "pair" if number % 2 == 0 else "impair"\nprint(kind)'], out: ['odd', 'dispari', 'impair'], c: ' if .* else '
         }
       },
@@ -523,7 +523,7 @@ range(3) fa i numeri 0, 1 e 2, e il nome i contiene il numero del momento a ogni
 range(3) fait les nombres 0, 1 et 2, et le nom i contient le nombre du moment à chaque tour. Ici on n'utilise pas i, on répète seulement.`],
         ex: {
           t: ['Make the program say Hello 4 times.', 'Fai dire al programma Ciao 4 volte.', 'Fais dire Bonjour 4 fois au programme.'],
-          h: ['Change the 3 into a 4.', 'Cambia il 3 in 4.', 'Change le 3 en 4.'],
+          h: ['Which number in the for line says how many times the loop runs?', 'Quale numero nella riga del for dice quante volte gira il ciclo?', 'Quel nombre dans la ligne for dit combien de fois la boucle tourne ?'],
           start: ['for i in range(3):\n    print("Hello")', 'for i in range(3):\n    print("Ciao")', 'for i in range(3):\n    print("Bonjour")'],
           sol: ['for i in range(4):\n    print("Hello")', 'for i in range(4):\n    print("Ciao")', 'for i in range(4):\n    print("Bonjour")'], exact: true, c: 'for '
         },
@@ -544,7 +544,7 @@ Puoi usare i dentro il ciclo come qualsiasi altra scatola.`,
 Tu peux utiliser i dans la boucle comme n'importe quelle autre boîte.`],
         ex: {
           t: ['Show the numbers 0 to 6, one on each line.', 'Mostra i numeri da 0 a 6, uno per riga.', 'Affiche les nombres de 0 à 6, un par ligne.'],
-          h: ['range(7) stops before 7.', 'range(7) si ferma prima del 7.', 'range(7) s\'arrête avant 7.'],
+          h: ['A loop with range, and a print of i inside it. range stops just before the number you give it.', 'Un ciclo con range, e dentro un print di i. range si ferma subito prima del numero che gli dai.', 'Une boucle avec range, et dedans un print de i. range s\'arrête juste avant le nombre que tu lui donnes.'],
           sol: 'for i in range(7):\n    print(i)', out: '0\n1\n2\n3\n4\n5\n6', c: 'for '
         }
       },
@@ -566,7 +566,7 @@ Con un terzo numero scegli il passo: range(0, 10, 2) va 0, 2, 4, 6, 8.`,
 Avec un troisième nombre tu choisis le pas : range(0, 10, 2) va 0, 2, 4, 6, 8.`],
         ex: {
           t: ['Show 10, 20 and 30, one on each line, with a range that has a step.', 'Mostra 10, 20 e 30, uno per riga, con un range che ha un passo.', 'Affiche 10, 20 et 30, un par ligne, avec un range qui a un pas.'],
-          h: ['range(10, 40, 10)', 'range(10, 40, 10)', 'range(10, 40, 10)'],
+          h: ['range can take three numbers: where to start, where to stop (it stops just before) and how big each jump is.', 'range può prendere tre numeri: da dove partire, dove fermarsi (si ferma subito prima) e quanto è grande ogni salto.', 'range peut prendre trois nombres : où commencer, où s\'arrêter (il s\'arrête juste avant) et la taille de chaque saut.'],
           sol: 'for i in range(10, 40, 10):\n    print(i)', out: '10\n20\n30', c: 'range\\(.*,.*,.*\\)'
         }
       },
@@ -608,7 +608,7 @@ Ici : 1 + 2 + 3 + 4 + 5 = 15. Remarque que print n'est pas décalée : elle tour
         ex: {
           uses: ['for'],
           t: ['Change the program to add the numbers from 1 to 10. It must show 55.', 'Cambia il programma per sommare i numeri da 1 a 10. Deve mostrare 55.', 'Change le programme pour additionner les nombres de 1 à 10. Il doit afficher 55.'],
-          h: ['range(1, 11) stops before 11.', 'range(1, 11) si ferma prima di 11.', 'range(1, 11) s\'arrête avant 11.'],
+          h: ['Which number decides where the loop stops? Remember that range stops just before it.', 'Quale numero decide dove si ferma il ciclo? Ricorda che range si ferma subito prima.', 'Quel nombre décide où la boucle s\'arrête ? Souviens-toi que range s\'arrête juste avant.'],
           start: 'total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)', sol: 'total = 0\nfor i in range(1, 11):\n    total += i\nprint(total)', out: '55'
         },
         w: ['If you push print in, it shows the total on every turn instead of once.', 'Se rientri print, mostra il totale a ogni giro invece di una volta sola.', 'Si tu décales print, il affiche le total à chaque tour au lieu d\'une seule fois.']
@@ -628,7 +628,7 @@ Più avanti userai la stessa idea per le liste e altre cose.`,
 Plus tard tu utiliseras la même idée pour les listes et d'autres choses.`],
         ex: {
           t: ['Show each letter of the word cat on its own line.', 'Mostra ogni lettera della parola gatto su una riga a parte.', 'Affiche chaque lettre du mot chat sur sa propre ligne.'],
-          h: ['for letter in "cat":', 'for letter in "gatto":', 'for letter in "chat":'],
+          h: ['A for loop can walk through a text: at each turn, the name after for holds the next letter. Show it inside the loop.', 'Un ciclo for può percorrere un testo: a ogni giro, il nome dopo for contiene la lettera seguente. Mostralo dentro il ciclo.', 'Une boucle for peut parcourir un texte : à chaque tour, le nom après for contient la lettre suivante. Affiche-le dans la boucle.'],
           sol: ['for letter in "cat":\n    print(letter)', 'for letter in "gatto":\n    print(letter)', 'for letter in "chat":\n    print(letter)'], exact: true, c: 'for '
         }
       },
@@ -650,7 +650,7 @@ Ici, pour chacune des 3 lignes, la boucle intérieure écrit 4 étoiles sans cha
         ex: {
           uses: ['for'],
           t: ['Change the program to draw 2 rows of 5 stars.', 'Cambia il programma per disegnare 2 righe di 5 stelle.', 'Change le programme pour dessiner 2 lignes de 5 étoiles.'],
-          h: ['Change range(3) to range(2) and range(4) to range(5).', 'Cambia range(3) in range(2) e range(4) in range(5).', 'Change range(3) en range(2) et range(4) en range(5).'],
+          h: ['The outer range says how many rows, the inner one how many stars in each row.', 'Il range di fuori dice quante righe, quello di dentro quante stelle per riga.', 'Le range extérieur dit combien de lignes, celui de l\'intérieur combien d\'étoiles par ligne.'],
           start: 'for row in range(3):\n    for column in range(4):\n        print("*", end="")\n    print()', sol: 'for row in range(2):\n    for column in range(5):\n        print("*", end="")\n    print()', out: '*****\n*****'
         }
       },

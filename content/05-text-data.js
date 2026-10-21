@@ -26,7 +26,7 @@ upper dà il testo in lettere maiuscole e lower lo dà in lettere minuscole. Il 
 upper donne le texte en majuscules et lower le donne en minuscules. Le texte d'origine ne change pas : tu en obtiens un nouveau, comme le montre la dernière ligne.`],
         ex: {
           t: ['Show the word hello in capital letters.', 'Mostra la parola ciao in lettere maiuscole.', 'Affiche le mot salut en majuscules.'],
-          h: ['"hello".upper() inside print.', '"ciao".upper() dentro print.', '"salut".upper() dans print.'],
+          h: ['Texts have a method that turns every letter into a capital: a dot after the text, then the name of the method and brackets.', 'I testi hanno un metodo che trasforma ogni lettera in maiuscola: un punto dopo il testo, poi il nome del metodo e le parentesi.', 'Les textes ont une méthode qui met chaque lettre en majuscule : un point après le texte, puis le nom de la méthode et des parenthèses.'],
           sol: ['print("hello".upper())', 'print("ciao".upper())', 'print("salut".upper())'], out: ['HELLO', 'CIAO', 'SALUT'], c: 'upper'
         }
       },
@@ -54,7 +54,7 @@ title fa iniziare ogni parola con la lettera maiuscola. L'ultima riga mostra che
 title fait commencer chaque mot par une majuscule. La dernière ligne montre que strip a vraiment raccourci le texte.`],
         ex: {
           t: ['The text has spaces around it. Show it without them.', 'Il testo ha degli spazi intorno. Mostralo senza.', 'Le texte a des espaces autour. Affiche-le sans.'],
-          h: ['text.strip() inside print.', 'text.strip() dentro print.', 'text.strip() dans print.'],
+          h: ['One of the new methods takes the spaces off both ends. Call it on text, after a dot, inside print.', 'Uno dei nuovi metodi toglie gli spazi dalle due estremità. Chiamalo su text, dopo un punto, dentro print.', 'Une des nouvelles méthodes enlève les espaces aux deux bouts. Appelle-la sur text, après un point, dans print.'],
           start: ['text = "   hi   "', 'text = "   ciao   "', 'text = "   salut   "'],
           sol: ['text = "   hi   "\nprint(text.strip())', 'text = "   ciao   "\nprint(text.strip())', 'text = "   salut   "\nprint(text.strip())'], out: ['hi', 'ciao', 'salut'], c: 'strip'
         }
@@ -80,7 +80,7 @@ Anche qui l'originale non cambia: ottieni un testo nuovo. Il secondo print lo di
 Là encore l'original ne change pas : tu obtiens un nouveau texte. Le deuxième print le prouve.`],
         ex: {
           t: ['Replace the word cat with dog in the text and show it.', 'Sostituisci la parola gatto con cane nel testo e mostralo.', 'Remplace le mot chat par chien dans le texte et affiche-le.'],
-          h: ['text.replace("cat", "dog") inside print.', 'text.replace("gatto", "cane") dentro print.', 'text.replace("chat", "chien") dans print.'],
+          h: ['replace takes two texts: first the one to look for, then the one to put in its place.', 'replace prende due testi: prima quello da cercare, poi quello da mettere al suo posto.', 'replace prend deux textes : d\'abord celui à chercher, puis celui à mettre à sa place.'],
           start: ['text = "my cat is big"', 'text = "il mio gatto è grande"', 'text = "mon chat est grand"'],
           sol: ['text = "my cat is big"\nprint(text.replace("cat", "dog"))', 'text = "il mio gatto è grande"\nprint(text.replace("gatto", "cane"))', 'text = "mon chat est grand"\nprint(text.replace("chat", "chien"))'], exact: true, c: 'replace'
         }
@@ -109,7 +109,7 @@ count dice quante volte un pezzo compare nel testo.`,
 count dit combien de fois un morceau apparaît dans le texte.`],
         ex: {
           t: ['Show how many times the letter a is in the word banana.', 'Mostra quante volte la lettera a è nella parola banana.', 'Affiche combien de fois la lettre a est dans le mot banane.'],
-          h: ['"banana".count("a") inside print.', '"banana".count("a") dentro print.', '"banane".count("a") dans print.'],
+          h: ['A text can count how many times a smaller text is inside it: a dot after the word, then the method, with the letter between quotes.', 'Un testo sa contare quante volte contiene un testo più piccolo: un punto dopo la parola, poi il metodo, con la lettera tra virgolette.', 'Un texte sait compter combien de fois il contient un texte plus petit : un point après le mot, puis la méthode, avec la lettre entre guillemets.'],
           sol: ['print("banana".count("a"))', 'print("banana".count("a"))', 'print("banane".count("a"))'], out: ['3', '3', '2'], c: 'count'
         }
       },
@@ -134,7 +134,7 @@ Sono comodi per guardare l'inizio di un nome o la fine del nome di un file.`,
 Ils sont pratiques pour regarder le début d'un nom ou la fin du nom d'un fichier.`],
         ex: {
           t: ['Ask if the text "python" ends with "on", and show the answer.', 'Chiedi se il testo "python" finisce con "on" e mostra la risposta.', 'Demande si le texte "python" finit par "on" et affiche la réponse.'],
-          h: ['"python".endswith("on") inside print.', '"python".endswith("on") dentro print.', '"python".endswith("on") dans print.'],
+          h: ['One method asks how a text ends. It answers True or False: show its answer.', 'Un metodo chiede come finisce un testo. Risponde True o False: mostra la sua risposta.', 'Une méthode demande comment finit un texte. Elle répond True ou False : affiche sa réponse.'],
           sol: 'print("python".endswith("on"))', out: 'True', c: 'endswith'
         }
       },
@@ -165,7 +165,7 @@ join fa il contrario: incolla i testi di una lista in un solo testo. Il testo da
 join fait le contraire : il colle les textes d'une liste en un seul texte. Le texte de devant va entre les morceaux.`],
         ex: {
           t: ['Show how many words are in the text "a b c d" (split it, then count with len).', 'Mostra quante parole ci sono nel testo "a b c d" (dividilo, poi conta con len).', 'Affiche combien de mots il y a dans le texte "a b c d" (coupe-le, puis compte avec len).'],
-          h: ['len("a b c d".split()) inside print.', 'len("a b c d".split()) dentro print.', 'len("a b c d".split()) dans print.'],
+          h: ['Two steps in one line: split cuts the text into a list of words, and len counts the items of that list.', 'Due passi in una riga: split taglia il testo in una lista di parole, e len conta gli elementi di quella lista.', 'Deux étapes en une ligne : split coupe le texte en une liste de mots, et len compte les éléments de cette liste.'],
           sol: 'print(len("a b c d".split()))', out: '4', c: 'split'
         }
       },
@@ -187,7 +187,7 @@ Un passo negativo va all'indietro, quindi word[::-1] legge tutto il testo dalla 
 Un pas négatif va en arrière, donc word[::-1] lit tout le texte depuis la fin. C'est la façon la plus rapide de retourner un texte.`],
         ex: {
           t: ['Show the word "Python" backwards.', 'Mostra la parola "Python" al contrario.', 'Affiche le mot "Python" à l\'envers.'],
-          h: ['word[::-1]', 'word[::-1]', 'word[::-1]'],
+          h: ['A slice can have a step, after a second colon. A step of minus one walks backwards.', 'Una fetta può avere un passo, dopo un secondo due punti. Un passo di meno uno cammina all\'indietro.', 'Une tranche peut avoir un pas, après un deuxième deux-points. Un pas de moins un marche à l\'envers.'],
           start: 'word = "Python"', sol: 'word = "Python"\nprint(word[::-1])', out: 'nohtyP', c: '\\[::-1\\]'
         }
       },
@@ -209,7 +209,7 @@ Sono perfetti per controllare quello che ha scritto una persona prima di usarlo.
 Elles sont parfaites pour vérifier ce qu'une personne a tapé avant de l'utiliser.`],
         ex: {
           t: ['Ask if the text "2024" is made only of digits, and show the answer.', 'Chiedi se il testo "2024" è fatto solo di cifre e mostra la risposta.', 'Demande si le texte "2024" n\'est fait que de chiffres et affiche la réponse.'],
-          h: ['"2024".isdigit() inside print.', '"2024".isdigit() dentro print.', '"2024".isdigit() dans print.'],
+          h: ['Among the new methods, one asks if a text has only digits. Call it on the text, after a dot.', 'Tra i nuovi metodi, uno chiede se un testo ha solo cifre. Chiamalo sul testo, dopo un punto.', 'Parmi les nouvelles méthodes, l\'une demande si un texte n\'a que des chiffres. Appelle-la sur le texte, après un point.'],
           sol: 'print("2024".isdigit())', out: 'True', c: 'isdigit'
         }
       },
@@ -230,7 +230,7 @@ print("hello".islower())`,
 "Hello" a une majuscule et des minuscules, donc ce n'est ni l'un ni l'autre.`],
         ex: {
           t: ['Ask if "python" has only small letters, and show the answer.', 'Chiedi se "python" ha solo lettere minuscole e mostra la risposta.', 'Demande si "python" n\'a que des minuscules et affiche la réponse.'],
-          h: ['"python".islower() inside print.', '"python".islower() dentro print.', '"python".islower() dans print.'],
+          h: ['One of the methods starts with is and asks if all the letters are small. Its answer is True or False.', 'Uno dei metodi comincia con is e chiede se tutte le lettere sono minuscole. La sua risposta è True o False.', 'Une des méthodes commence par is et demande si toutes les lettres sont minuscules. Sa réponse est True ou False.'],
           sol: 'print("python".islower())', out: 'True', c: 'islower'
         }
       },
@@ -252,7 +252,7 @@ Quindi chr(ord("A") + 2) si sposta di due lettere nell'alfabeto: dà C. È l'ini
 Donc chr(ord("A") + 2) avance de deux lettres dans l'alphabet : il donne C. C'est le début de tout code secret.`],
         ex: {
           t: ['Show the letter after "B" in the alphabet, using ord and chr.', 'Mostra la lettera dopo "B" nell\'alfabeto, usando ord e chr.', 'Affiche la lettre après "B" dans l\'alphabet, en utilisant ord et chr.'],
-          h: ['chr(ord("B") + 1) inside print.', 'chr(ord("B") + 1) dentro print.', 'chr(ord("B") + 1) dans print.'],
+          h: ['ord gives the number of a letter; add 1 to it; chr turns a number back into a letter. Put them one inside the other.', 'ord dà il numero di una lettera; aggiungici 1; chr trasforma di nuovo un numero in una lettera. Mettili uno dentro l\'altro.', 'ord donne le nombre d\'une lettre ; ajoute-lui 1 ; chr retransforme un nombre en lettre. Mets-les l\'un dans l\'autre.'],
           sol: 'print(chr(ord("B") + 1))', out: 'C', c: 'chr'
         }
       },
@@ -399,7 +399,7 @@ nums[-2:] prende gli ultimi due elementi. nums[::-1] è la lista al contrario.`,
 nums[-2:] prend les deux derniers éléments. nums[::-1] est la liste à l'envers.`],
         ex: {
           t: ['Show the first three items of the list.', 'Mostra i primi tre elementi della lista.', 'Affiche les trois premiers éléments de la liste.'],
-          h: ['nums[:3]', 'nums[:3]', 'nums[:3]'],
+          h: ['A slice with nothing before the colon starts at the beginning. It stops just before the number after the colon.', 'Una fetta senza niente prima dei due punti parte dall\'inizio. Si ferma subito prima del numero dopo i due punti.', 'Une tranche sans rien avant le deux-points commence au début. Elle s\'arrête juste avant le nombre après le deux-points.'],
           start: 'nums = [10, 20, 30, 40, 50]', sol: 'nums = [10, 20, 30, 40, 50]\nprint(nums[:3])', out: '[10, 20, 30]', c: '\\[:3\\]'
         }
       },
@@ -453,7 +453,7 @@ Le tabelle sono dappertutto: scacchiere dei giochi, foto, fogli di calcolo.`,
 Les tableaux sont partout : plateaux de jeux, photos, tableurs.`],
         ex: {
           t: ['Show the item in the middle of the table (row 1, column 1).', 'Mostra l\'elemento in mezzo alla tabella (riga 1, colonna 1).', 'Affiche l\'élément au milieu du tableau (ligne 1, colonne 1).'],
-          h: ['grid[1][1]', 'grid[1][1]', 'grid[1][1]'],
+          h: ['The first square brackets choose the row, the second ones the place inside that row. Both start at 0.', 'Le prime parentesi quadre scelgono la riga, le seconde il posto dentro quella riga. Entrambe partono da 0.', 'Les premiers crochets choisissent la ligne, les seconds la place dans cette ligne. Les deux commencent à 0.'],
           start: 'grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]', sol: 'grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nprint(grid[1][1])', out: '5', c: '\\]\\['
         }
       },
@@ -477,7 +477,7 @@ enumerate dà ogni elemento con il suo numero, e start=1 fa iniziare il conteggi
 enumerate donne chaque élément avec son numéro, et start=1 fait commencer le comptage à 1. Les deux sont plus agréables que de compter les places à la main.`],
         ex: {
           t: ['Number the players from 1, and show each number with the name, one per line.', 'Numera i giocatori da 1 e mostra ogni numero con il nome, uno per riga.', 'Numérote les joueurs à partir de 1 et affiche chaque numéro avec le nom, un par ligne.'],
-          h: ['for position, name in enumerate(players, start=1):', 'for position, name in enumerate(players, start=1):', 'for position, name in enumerate(players, start=1):'],
+          h: ['enumerate gives pairs: a number and an item. It counts from 1 if you tell it with start=. A for can take each pair into two names.', 'enumerate dà coppie: un numero e un elemento. Conta da 1 se glielo dici con start=. Un for può prendere ogni coppia in due nomi.', 'enumerate donne des paires : un nombre et un élément. Il compte à partir de 1 si tu le lui dis avec start=. Un for peut prendre chaque paire dans deux noms.'],
           start: 'players = ["Ada", "Max", "Zoe"]', sol: 'players = ["Ada", "Max", "Zoe"]\nfor position, name in enumerate(players, start=1):\n    print(position, name)', out: '1 Ada\n2 Max\n3 Zoe', c: 'enumerate'
         }
       },
@@ -508,7 +508,7 @@ reverse=True gira l'ordine. E max(words, key=len) trova la parola più lunga.`,
 reverse=True retourne l'ordre. Et max(words, key=len) trouve le mot le plus long.`],
         ex: {
           t: ['Show the numbers [5, 2, 9, 1] from the biggest to the smallest.', 'Mostra i numeri [5, 2, 9, 1] dal più grande al più piccolo.', 'Affiche les nombres [5, 2, 9, 1] du plus grand au plus petit.'],
-          h: ['sorted([5, 2, 9, 1], reverse=True)', 'sorted([5, 2, 9, 1], reverse=True)', 'sorted([5, 2, 9, 1], reverse=True)'],
+          h: ['sorted can take one more thing after the list: reverse=, set to True, gives the opposite order.', 'sorted può prendere una cosa in più dopo la lista: reverse=, messo a True, dà l\'ordine opposto.', 'sorted peut prendre une chose de plus après la liste : reverse=, mis à True, donne l\'ordre inverse.'],
           sol: 'print(sorted([5, 2, 9, 1], reverse=True))', out: '[9, 5, 2, 1]', c: 'reverse'
         }
       },
@@ -531,7 +531,7 @@ Conosci già range. list(range(5)) è il modo più rapido per vedere cosa fa. Il
 Tu connais déjà range. list(range(5)) est la façon la plus rapide de voir ce qu'il fait. Le pas peut être négatif pour compter à rebours.`],
         ex: {
           t: ['Show the list of the numbers from 1 to 5, with list and range.', 'Mostra la lista dei numeri da 1 a 5, con list e range.', 'Affiche la liste des nombres de 1 à 5, avec list et range.'],
-          h: ['list(range(1, 6))', 'list(range(1, 6))', 'list(range(1, 6))'],
+          h: ['range makes the numbers, and list turns them into a real list that print can show. Remember where range stops.', 'range fa i numeri, e list li trasforma in una vera lista che print può mostrare. Ricorda dove si ferma range.', 'range fait les nombres, et list les transforme en une vraie liste que print peut afficher. Souviens-toi où range s\'arrête.'],
           sol: 'print(list(range(1, 6)))', out: '[1, 2, 3, 4, 5]', c: 'list'
         }
       },
@@ -613,7 +613,7 @@ Sembra una piccolezza, ma è una trappola famosa.`,
 Ça a l'air d'un détail, mais c'est un piège célèbre.`],
         ex: {
           t: ['Make a tuple with only the number 7, and show its type.', 'Fai una tupla con solo il numero 7 e mostra il suo tipo.', 'Fais un tuple avec seulement le nombre 7 et affiche son type.'],
-          h: ['(7,) with the comma.', '(7,) con la virgola.', '(7,) avec la virgule.'],
+          h: ['With only one item, the round brackets are not enough: the comma is what makes a tuple.', 'Con un solo elemento, le parentesi tonde non bastano: è la virgola che fa una tupla.', 'Avec un seul élément, les parenthèses ne suffisent pas : c\'est la virgule qui fait un tuple.'],
           sol: 'seven = (7,)\nprint(type(seven))', out: "<class 'tuple'>", c: '\\(7,\\)'
         }
       },
@@ -778,7 +778,7 @@ L'ultima riga usa il modo pericoloso, con le parentesi quadre, e Python si ferma
 La dernière ligne utilise la façon dangereuse, avec les crochets, et Python s'arrête avec une KeyError : cette clé n'existe pas. Lis l'explication.`],
         ex: {
           t: ['Show the age of Zoe, safely with get, giving 0 when she is not in the dictionary.', 'Mostra l\'età di Zoe, in modo sicuro con get, dando 0 quando non è nel dizionario.', 'Affiche l\'âge de Zoe, en sécurité avec get, en donnant 0 quand elle n\'est pas dans le dictionnaire.'],
-          h: ['ages.get("Zoe", 0)', 'ages.get("Zoe", 0)', 'ages.get("Zoe", 0)'],
+          h: ['get takes two things: the key, and what to give back when the key is not there.', 'get prende due cose: la chiave, e cosa restituire quando la chiave non c\'è.', 'get prend deux choses : la clé, et ce qu\'il faut rendre quand la clé n\'est pas là.'],
           start: 'ages = {"Ada": 12, "Max": 9}', sol: 'ages = {"Ada": 12, "Max": 9}\nprint(ages.get("Zoe", 0))', out: '0', c: 'get'
         }
       },
@@ -865,7 +865,7 @@ max(counts, key=counts.get) trova la chiave con il valore più grande.`,
 max(counts, key=counts.get) trouve la clé avec la plus grande valeur.`],
         ex: {
           t: ['Count the letters of the word "hello" with a dictionary, and show the dictionary.', 'Conta le lettere della parola "hello" con un dizionario e mostra il dizionario.', 'Compte les lettres du mot "hello" avec un dictionnaire et affiche le dictionnaire.'],
-          h: ['A for loop over the letters, and counts[letter] = counts.get(letter, 0) + 1.', 'Un ciclo for sulle lettere e counts[letter] = counts.get(letter, 0) + 1.', 'Une boucle for sur les lettres et counts[letter] = counts.get(letter, 0) + 1.'],
+          h: ['Loop over the letters. For each one, get gives what is counted so far (0 the first time): add 1 and put it back under that letter.', 'Fai un ciclo sulle lettere. Per ciascuna, get dà quello che è contato finora (0 la prima volta): aggiungi 1 e rimettilo sotto quella lettera.', 'Fais une boucle sur les lettres. Pour chacune, get donne ce qui est compté jusque-là (0 la première fois) : ajoute 1 et remets-le sous cette lettre.'],
           start: 'counts = {}', sol: 'counts = {}\nfor letter in "hello":\n    counts[letter] = counts.get(letter, 0) + 1\nprint(counts)', out: "{'h': 1, 'e': 1, 'l': 2, 'o': 1}", c: 'get'
         }
       },
@@ -910,7 +910,7 @@ This is how real data looks, for example what websites send to each other.`,
 C'est ainsi que sont faites les vraies données, par exemple celles que les sites s'envoient entre eux.`],
         ex: {
           t: ['Show the zip code of the address of the person.', 'Mostra il codice postale dell\'indirizzo della persona.', 'Affiche le code postal de l\'adresse de la personne.'],
-          h: ['person["address"]["zip"]', 'person["address"]["zip"]', 'person["address"]["zip"]'],
+          h: ['Go in one step at a time: first the key of the address, then, in a second pair of square brackets, the key of the zip code.', 'Entra un passo alla volta: prima la chiave dell\'indirizzo, poi, in un secondo paio di parentesi quadre, la chiave del codice postale.', 'Entre une étape à la fois : d\'abord la clé de l\'adresse, puis, dans une deuxième paire de crochets, la clé du code postal.'],
           start: ['person = {"name": "Ada", "address": {"city": "Rome", "zip": "00100"}}', 'person = {"name": "Ada", "address": {"city": "Roma", "zip": "00100"}}', 'person = {"name": "Ada", "address": {"city": "Paris", "zip": "75001"}}'],
           sol: ['person = {"name": "Ada", "address": {"city": "Rome", "zip": "00100"}}\nprint(person["address"]["zip"])', 'person = {"name": "Ada", "address": {"city": "Roma", "zip": "00100"}}\nprint(person["address"]["zip"])', 'person = {"name": "Ada", "address": {"city": "Paris", "zip": "75001"}}\nprint(person["address"]["zip"])'],
           out: ['00100', '00100', '75001'], c: '\\["zip"\\]'
@@ -1001,7 +1001,7 @@ set(...) costruisce un insieme da una lista o da un testo. È il modo più rapid
 set(...) construit un ensemble à partir d'une liste ou d'un texte. C'est la façon la plus rapide d'enlever les répétitions.`],
         ex: {
           t: ['Show how many different numbers are in the list [1, 1, 2, 3, 3, 3].', 'Mostra quanti numeri diversi ci sono nella lista [1, 1, 2, 3, 3, 3].', 'Affiche combien de nombres différents il y a dans la liste [1, 1, 2, 3, 3, 3].'],
-          h: ['len(set([1, 1, 2, 3, 3, 3]))', 'len(set([1, 1, 2, 3, 3, 3]))', 'len(set([1, 1, 2, 3, 3, 3]))'],
+          h: ['A set keeps each value only once. Make a set from the list, then count it with len.', 'Un insieme tiene ogni valore una volta sola. Fai un insieme dalla lista, poi contalo con len.', 'Un ensemble garde chaque valeur une seule fois. Fais un ensemble à partir de la liste, puis compte-le avec len.'],
           sol: 'print(len(set([1, 1, 2, 3, 3, 3])))', out: '3', c: 'set'
         }
       },
@@ -1063,7 +1063,7 @@ print({1, 2} <= a)`,
 <= demande si un ensemble est dans l'autre. Très bien pour trouver ce que deux groupes ont en commun.`],
         ex: {
           t: ['Show what the sets {1, 2, 3} and {2, 3, 4} have in common, as a sorted list.', 'Mostra cosa hanno in comune gli insiemi {1, 2, 3} e {2, 3, 4}, come lista ordinata.', 'Affiche ce que les ensembles {1, 2, 3} et {2, 3, 4} ont en commun, sous forme de liste triée.'],
-          h: ['sorted({1, 2, 3} & {2, 3, 4})', 'sorted({1, 2, 3} & {2, 3, 4})', 'sorted({1, 2, 3} & {2, 3, 4})'],
+          h: ['One sign between two sets keeps only what is in both. sorted turns the result into a list in order.', 'Un segno tra due insiemi tiene solo quello che c\'è in entrambi. sorted trasforma il risultato in una lista in ordine.', 'Un signe entre deux ensembles garde seulement ce qui est dans les deux. sorted transforme le résultat en liste dans l\'ordre.'],
           sol: 'print(sorted({1, 2, 3} & {2, 3, 4}))', out: '[2, 3]', c: '&'
         }
       },
@@ -1106,7 +1106,7 @@ not in è il contrario di in: è True quando la cosa non c'è dentro.`,
 not in est le contraire de in : il est True quand la chose n'est pas dedans.`],
         ex: {
           t: ['Remove the repeats from [3, 1, 3, 2, 1] keeping the first order: the result must be [3, 1, 2].', 'Togli le ripetizioni da [3, 1, 3, 2, 1] tenendo l\'ordine di arrivo: il risultato deve essere [3, 1, 2].', 'Enlève les répétitions de [3, 1, 3, 2, 1] en gardant l\'ordre d\'arrivée : le résultat doit être [3, 1, 2].'],
-          h: ['Loop, and use if n not in result: then result.append(n).', 'Fai un ciclo e usa if n not in result: poi result.append(n).', 'Fais une boucle et utilise if n not in result: puis result.append(n).'],
+          h: ['Go through the numbers. Put a number in result only when it is not there yet: in can ask that, with not in front of it.', 'Percorri i numeri. Metti un numero in result solo quando non c\'è ancora: in può chiederlo, con not davanti.', 'Parcours les nombres. Mets un nombre dans result seulement s\'il n\'y est pas encore : in peut le demander, avec not devant.'],
           start: 'numbers = [3, 1, 3, 2, 1]\nresult = []', sol: 'numbers = [3, 1, 3, 2, 1]\nresult = []\nfor n in numbers:\n    if n not in result:\n        result.append(n)\nprint(result)', out: '[3, 1, 2]', c: 'not in'
         }
       },

@@ -72,7 +72,7 @@ Un ciclo for, o list(...), chiede ancora e ancora finché la funzione finisce.`,
 Une boucle for, ou list(...), redemande encore et encore jusqu'à ce que la fonction se termine.`],
         ex: {
           t: ['Make a generator called evens(limit) that yields the even numbers from 2 up to the limit. Show list(evens(10)).', 'Crea un generatore che si chiama evens(limit) che consegna i numeri pari da 2 fino al limite. Mostra list(evens(10)).', 'Crée un générateur qui s\'appelle evens(limit) qui distribue les nombres pairs de 2 jusqu\'à la limite. Affiche list(evens(10)).'],
-          h: ['n = 2, then while n <= limit: yield n and n += 2.', 'n = 2, poi while n <= limit: yield n e n += 2.', 'n = 2, puis while n <= limit: yield n et n += 2.'],
+          h: ['A box that starts at 2, a while that goes on up to the limit, and inside it: yield the box, then add 2 to it.', 'Una scatola che parte da 2, un while che continua fino al limite, e dentro: yield della scatola, poi aggiungici 2.', 'Une boîte qui commence à 2, un while qui continue jusqu\'à la limite, et dedans : yield de la boîte, puis ajoute-lui 2.'],
           sol: 'def evens(limit):\n    n = 2\n    while n <= limit:\n        yield n\n        n += 2\n\nprint(list(evens(10)))', out: '[2, 4, 6, 8, 10]', c: 'yield'
         }
       },
@@ -131,7 +131,7 @@ It is the best choice when you only want to add the values up, or to look at the
 C'est le meilleur choix quand tu veux seulement additionner les valeurs, ou les regarder une fois. Dans un appel comme sum(...), les parenthèses rondes de l'appel suffisent.`],
         ex: {
           t: ['With a generator expression inside sum, add up the cubes of 1 to 4 (1 + 8 + 27 + 64 = 100).', 'Con un\'espressione generatrice dentro sum, somma i cubi da 1 a 4 (1 + 8 + 27 + 64 = 100).', 'Avec une expression génératrice dans sum, additionne les cubes de 1 à 4 (1 + 8 + 27 + 64 = 100).'],
-          h: ['sum(n ** 3 for n in range(1, 5))', 'sum(n ** 3 for n in range(1, 5))', 'sum(n ** 3 for n in range(1, 5))'],
+          h: ['sum can take a generator expression straight in its brackets: the cube of n for each n in a range that ends with 4.', 'sum può prendere una generator expression direttamente tra le sue parentesi: il cubo di n per ogni n in un range che finisce con 4.', 'sum peut prendre une expression génératrice directement entre ses parenthèses : le cube de n pour chaque n dans un range qui finit par 4.'],
           sol: 'print(sum(n ** 3 for n in range(1, 5)))', out: '100', c: 'sum\\(.* for '
         }
       },
@@ -286,7 +286,7 @@ D'ora in poi ogni chiamata a greet ha il nuovo potere.`,
 À partir de maintenant, chaque appel à greet a le nouveau pouvoir.`],
         ex: {
           t: ['Use @shout on a new function called bye(name) that returns "bye " + name. Show bye("ada") (BYE ADA!).', 'Usa @shout su una funzione nuova che si chiama bye(name) che restituisce "bye " + name. Mostra bye("ada") (BYE ADA!).', 'Utilise @shout sur une nouvelle fonction qui s\'appelle bye(name) qui rend "bye " + name. Affiche bye("ada") (BYE ADA!).'],
-          h: ['@shout on the line above def bye(name):', '@shout sulla riga sopra def bye(name):', '@shout sur la ligne au-dessus de def bye(name):'],
+          h: ['Write bye like any function that gives back a text. On the line just above its def, put @ and the name of the decorator.', 'Scrivi bye come una funzione qualsiasi che restituisce un testo. Sulla riga subito sopra il suo def, metti @ e il nome del decoratore.', 'Écris bye comme n\'importe quelle fonction qui rend un texte. Sur la ligne juste au-dessus de son def, mets @ et le nom du décorateur.'],
           start: 'def shout(function):\n    def wrapper(name):\n        return function(name).upper() + "!"\n    return wrapper', sol: 'def shout(function):\n    def wrapper(name):\n        return function(name).upper() + "!"\n    return wrapper\n\n@shout\ndef bye(name):\n    return "bye " + name\n\nprint(bye("ada"))', out: 'BYE ADA!', c: '@shout'
         }
       },
@@ -322,7 +322,7 @@ functools.wraps, usato come decoratore sul wrapper, tiene il nome e la descrizio
 functools.wraps, utilisé comme décorateur sur le wrapper, garde le nom et la description de la fonction d'origine. Sans lui, add apparaîtrait comme "wrapper".`],
         ex: {
           t: ['Use @log_calls on a function called double(n) that returns n * 2, and show double(4). The log lines come first, then 8.', 'Usa @log_calls su una funzione che si chiama double(n) che restituisce n * 2 e mostra double(4). Prima le righe del log, poi 8.', 'Utilise @log_calls sur une fonction qui s\'appelle double(n) qui rend n * 2 et affiche double(4). D\'abord les lignes du journal, puis 8.'],
-          h: ['@log_calls above def double(n):, then print(double(4)).', '@log_calls sopra def double(n):, poi print(double(4)).', '@log_calls au-dessus de def double(n):, puis print(double(4)).'],
+          h: ['Write double, with @ and the name of the decorator on the line above it. Then show what double gives back for 4.', 'Scrivi double, con @ e il nome del decoratore sulla riga sopra. Poi mostra quello che double restituisce per 4.', 'Écris double, avec @ et le nom du décorateur sur la ligne au-dessus. Puis affiche ce que double rend pour 4.'],
           start: 'import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f"calling {function.__name__} with {args} {kwargs}")\n        result = function(*args, **kwargs)\n        print(f"{function.__name__} returned {result}")\n        return result\n    return wrapper', sol: 'import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f"calling {function.__name__} with {args} {kwargs}")\n        result = function(*args, **kwargs)\n        print(f"{function.__name__} returned {result}")\n        return result\n    return wrapper\n\n@log_calls\ndef double(n):\n    return n * 2\n\nprint(double(4))', m: 'double returned 8\\n8$', c: '@log_calls'
         }
       },
@@ -472,7 +472,7 @@ I decoratori aggiungono un potere in più a una funzione, senza toccare la funzi
 Les décorateurs ajoutent un pouvoir en plus à une fonction, sans toucher à la fonction elle-même. Écrire un journal, mesurer le temps, mémoriser et vérifier sont les classiques.`],
         ex: {
           t: ['Use @remember on a function called triple(n) that shows "working" and returns n * 3. Call triple(5) twice: "working" must show only once.', 'Usa @remember su una funzione che si chiama triple(n) che mostra "working" e restituisce n * 3. Chiama triple(5) due volte: "working" deve comparire una sola volta.', 'Utilise @remember sur une fonction qui s\'appelle triple(n) qui affiche "working" et rend n * 3. Appelle triple(5) deux fois : "working" ne doit apparaître qu\'une fois.'],
-          h: ['@remember above def triple(n): with print("working") inside.', '@remember sopra def triple(n): con print("working") dentro.', '@remember au-dessus de def triple(n): avec print("working") dedans.'],
+          h: ['Write triple with a print and a return inside, and the decorator just above it. Then call it two times.', 'Scrivi triple con un print e un return dentro, e il decoratore subito sopra. Poi chiamala due volte.', 'Écris triple avec un print et un return dedans, et le décorateur juste au-dessus. Puis appelle-la deux fois.'],
           start: 'def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper', sol: 'def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef triple(n):\n    print("working")\n    return n * 3\n\ntriple(5)\ntriple(5)', out: 'working', c: '@remember'
         }
       },
@@ -652,7 +652,7 @@ Un solo with può anche aprire più cose insieme, separate da virgole. Ogni volt
 Un seul with peut aussi ouvrir plusieurs choses à la fois, séparées par des virgules. Chaque fois que tu vois "ouvre quelque chose, utilise-le, ferme-le toujours", la réponse est un with.`],
         ex: {
           t: ['Use suppress to try to remove a file called demo_nothing.txt that does not exist, and then show: ok', 'Usa suppress per provare a cancellare un file che si chiama demo_nothing.txt che non esiste, e poi mostra: ok', 'Utilise suppress pour essayer de supprimer un fichier qui s\'appelle demo_nothing.txt qui n\'existe pas, puis affiche : ok'],
-          h: ['with suppress(FileNotFoundError): and os.remove(...) pushed in.', 'with suppress(FileNotFoundError): e os.remove(...) rientrato.', 'with suppress(FileNotFoundError): et os.remove(...) décalé.'],
+          h: ['suppress takes the name of the error, and it is used with with. Under it, pushed in, the line that removes the file. Then the print, not pushed in.', 'suppress prende il nome dell\'errore, e si usa con with. Sotto, rientrata, la riga che cancella il file. Poi il print, non rientrato.', 'suppress prend le nom de l\'erreur, et s\'utilise avec with. Dessous, décalée, la ligne qui supprime le fichier. Puis le print, sans décalage.'],
           sol: 'from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove("demo_nothing.txt")\nprint("ok")', out: 'ok', c: 'suppress'
         }
       }
@@ -725,7 +725,7 @@ It is like a long if-elif chain, but it can look inside lists and dictionaries a
 C'est comme une longue chaîne if-elif, mais il peut regarder dans des listes et des dictionnaires et donner un nom aux morceaux qu'il trouve : ["prendre", item] attrape l'objet.`],
         ex: {
           t: ['Make a function colour_name(code) with a match: the code "r" gives "red", "g" gives "green", and anything else gives "unknown". Show colour_name("g").', 'Crea una funzione colour_name(code) con un match: il codice "r" dà "rosso", "g" dà "verde" e qualsiasi altra cosa dà "ignoto". Mostra colour_name("g").', 'Crée une fonction colour_name(code) avec un match : le code "r" donne "rouge", "g" donne "vert" et tout autre donne "inconnu". Affiche colour_name("g").'],
-          h: ['match code: with case "r": return ..., case "g": return ..., case _: return ...', 'match code: con case "r": return ..., case "g": return ..., case _: return ...', 'match code: avec case "r": return ..., case "g": return ..., case _: return ...'],
+          h: ['Inside the function: match on the code, then one case for each value, each giving back its colour. case _ catches everything else.', 'Dentro la funzione: match sul codice, poi un case per ogni valore, ognuno restituisce il suo colore. case _ prende tutto il resto.', 'Dans la fonction : match sur le code, puis un case pour chaque valeur, chacun rend sa couleur. case _ attrape tout le reste.'],
           sol: ['def colour_name(code):\n    match code:\n        case "r":\n            return "red"\n        case "g":\n            return "green"\n        case _:\n            return "unknown"\n\nprint(colour_name("g"))', 'def colour_name(code):\n    match code:\n        case "r":\n            return "rosso"\n        case "g":\n            return "verde"\n        case _:\n            return "ignoto"\n\nprint(colour_name("g"))', 'def colour_name(code):\n    match code:\n        case "r":\n            return "rouge"\n        case "g":\n            return "vert"\n        case _:\n            return "inconnu"\n\nprint(colour_name("g"))'],
           out: ['green', 'verde', 'vert'], c: 'match '
         }
@@ -799,7 +799,7 @@ Due dizionari si uniscono con | (vince il secondo quando una chiave è in tutti 
 Deux dictionnaires se fusionnent avec | (le deuxième gagne quand une clé est dans les deux), ou avec ** dans des accolades. Une étoile devant une liste dans des crochets étale ses éléments. Le déballage peut même aller dans des paires imbriquées.`],
         ex: {
           t: ['From the list [10, 20, 30, 40], put the first item in head and all the others in tail, with a star, and show tail ([20, 30, 40]).', 'Dalla lista [10, 20, 30, 40], metti il primo elemento in head e tutti gli altri in tail, con una stella, e mostra tail ([20, 30, 40]).', 'À partir de la liste [10, 20, 30, 40], mets le premier élément dans head et tous les autres dans tail, avec une étoile, et affiche tail ([20, 30, 40]).'],
-          h: ['head, *tail = [10, 20, 30, 40]', 'head, *tail = [10, 20, 30, 40]', 'head, *tail = [10, 20, 30, 40]'],
+          h: ['Two names on the left of =: the first gets one item, the one with a star in front gets all the rest.', 'Due nomi a sinistra di =: il primo riceve un elemento, quello con la stella davanti riceve tutto il resto.', 'Deux noms à gauche de = : le premier reçoit un élément, celui avec une étoile devant reçoit tout le reste.'],
           sol: 'head, *tail = [10, 20, 30, 40]\nprint(tail)', out: '[20, 30, 40]', c: '\\*tail'
         }
       },
@@ -832,7 +832,7 @@ La trappola famosa: [[0] * 2] * 2 ripete due volte la stessa lista interna, quin
 Le piège célèbre : [[0] * 2] * 2 répète deux fois la même liste intérieure, donc changer une ligne change les deux. Et a = b = [0] donne deux noms à une seule liste. Si tu veux des lignes séparées, fais chaque ligne à part, par exemple avec une compréhension.`],
         ex: {
           t: ['Make a grid of 2 rows of 2 zeros where the rows are NOT shared (use a comprehension). Change the first item of the first row to 9 and show the grid: [[9, 0], [0, 0]]', 'Fai una griglia di 2 righe di 2 zeri dove le righe NON sono condivise (usa una comprensione). Cambia il primo elemento della prima riga in 9 e mostra la griglia: [[9, 0], [0, 0]]', 'Fais une grille de 2 lignes de 2 zéros où les lignes ne sont PAS partagées (utilise une compréhension). Change le premier élément de la première ligne en 9 et affiche la grille : [[9, 0], [0, 0]]'],
-          h: ['grid = [[0] * 2 for row in range(2)]', 'grid = [[0] * 2 for row in range(2)]', 'grid = [[0] * 2 for row in range(2)]'],
+          h: ['Build each row inside a comprehension, so every row is a new list. Then change one item and show the grid.', 'Costruisci ogni riga dentro una comprensione, così ogni riga è una lista nuova. Poi cambia un elemento e mostra la griglia.', 'Construis chaque ligne dans une compréhension, pour que chaque ligne soit une nouvelle liste. Puis change un élément et affiche la grille.'],
           sol: 'grid = [[0] * 2 for row in range(2)]\ngrid[0][0] = 9\nprint(grid)', out: '[[9, 0], [0, 0]]', c: 'for row in range'
         }
       }

@@ -38,7 +38,7 @@ def la inizia, poi il nome, le parentesi tonde e i due punti. Le righe rientrate
 def la commence, puis le nom, des parenthèses rondes et deux points. Les lignes décalées dessous sont ce qu'elle fait. La créer ne la lance pas : pour la lancer, tu l'appelles en écrivant son nom avec des parenthèses, comme greet(). Tu peux l'appeler autant de fois que tu veux.`],
         ex: {
           t: ['Make a function called hello that shows Hello!  Then call it two times.', 'Crea una funzione che si chiama hello che mostra Ciao!  Poi chiamala due volte.', 'Crée une fonction qui s\'appelle hello et qui affiche Bonjour!  Puis appelle-la deux fois.'],
-          h: ['def hello(): then, pushed in, a print line; then hello() two times.', 'def hello(): poi, rientrata, una riga print; poi hello() due volte.', 'def hello(): puis, décalée, une ligne print ; puis hello() deux fois.'],
+          h: ['def, the name, empty brackets and a colon; under it, pushed in, what the function does. Then call it by its name with brackets, two times, not pushed in.', 'def, il nome, parentesi vuote e i due punti; sotto, rientrato, quello che fa la funzione. Poi chiamala col suo nome e le parentesi, due volte, non rientrato.', 'def, le nom, des parenthèses vides et deux-points ; dessous, décalé, ce que fait la fonction. Puis appelle-la par son nom avec des parenthèses, deux fois, sans décalage.'],
           sol: ['def hello():\n    print("Hello!")\n\nhello()\nhello()', 'def hello():\n    print("Ciao!")\n\nhello()\nhello()', 'def hello():\n    print("Bonjour!")\n\nhello()\nhello()'],
           exact: true, c: 'def hello'
         },
@@ -137,7 +137,7 @@ Se vuoi usare la risposta più avanti nel programma, usa return, non print.`,
 Si tu veux utiliser la réponse plus tard dans le programme, utilise return, pas print.`],
         ex: {
           t: ['The function add shows the sum instead of giving it back, so the program stops with an error. Fix it so that the program shows 10.', 'La funzione add mostra la somma invece di restituirla, quindi il programma si ferma con un errore. Correggila così il programma mostra 10.', 'La fonction add affiche la somme au lieu de la rendre, donc le programme s\'arrête sur une erreur. Corrige-la pour que le programme affiche 10.'],
-          h: ['Change print into return inside add.', 'Cambia print in return dentro add.', 'Change print en return dans add.'],
+          h: ['print only shows the sum: the caller gets nothing back. Which word gives a value back to the caller?', 'print mostra soltanto la somma: chi chiama non riceve niente. Quale parola restituisce un valore a chi chiama?', 'print ne fait qu\'afficher la somme : celui qui appelle ne reçoit rien. Quel mot rend une valeur à celui qui appelle ?'],
           start: 'def add(a, b):\n    print(a + b)\n\nresult = add(2, 3)\nprint(result * 2)', sol: 'def add(a, b):\n    return a + b\n\nresult = add(2, 3)\nprint(result * 2)', out: '10', c: 'return'
         }
       },
@@ -192,7 +192,7 @@ Il testo tra tre virgolette subito sotto def è una descrizione della funzione, 
 Le texte entre trois guillemets juste sous def est une description de la fonction, appelée docstring. Il ne sert à rien pour Python, mais il est là pour les personnes qui lisent le code.`],
         ex: {
           t: ['Make a function is_adult(age) that returns True when the age is 18 or more. Show is_adult(20).', 'Crea una funzione is_adult(age) che restituisce True quando l\'età è 18 o più. Mostra is_adult(20).', 'Crée une fonction is_adult(age) qui rend True quand l\'âge vaut 18 ou plus. Affiche is_adult(20).'],
-          h: ['return age >= 18', 'return age >= 18', 'return age >= 18'],
+          h: ['A comparison is already True or False: the function can give it back as it is, without an if.', 'Un confronto è già True o False: la funzione può restituirlo così com\'è, senza un if.', 'Une comparaison est déjà True ou False : la fonction peut la rendre telle quelle, sans if.'],
           sol: 'def is_adult(age):\n    return age >= 18\n\nprint(is_adult(20))', out: 'True', c: 'def is_adult'
         }
       },
@@ -240,7 +240,7 @@ Se ti accorgi di copiare le stesse righe due volte, è un segnale: mettile in un
 Si tu te surprends à copier les mêmes lignes deux fois, c'est un signe : mets-les dans une fonction.`],
         ex: {
           t: ['Make a function bigger(a, b) that returns the bigger of two numbers, using an if. Show bigger(3, 9).', 'Crea una funzione bigger(a, b) che restituisce il più grande di due numeri, usando un if. Mostra bigger(3, 9).', 'Crée une fonction bigger(a, b) qui rend le plus grand de deux nombres, en utilisant un if. Affiche bigger(3, 9).'],
-          h: ['if a > b: return a, and after it return b.', 'if a > b: return a, e dopo return b.', 'if a > b: return a, et après return b.'],
+          h: ['Inside the function, an if asks which number is bigger and gives that one back. If the if gave nothing back, the answer is the other number.', 'Dentro la funzione, un if chiede quale numero è più grande e restituisce quello. Se l\'if non ha restituito niente, la risposta è l\'altro numero.', 'Dans la fonction, un if demande quel nombre est le plus grand et rend celui-là. Si le if n\'a rien rendu, la réponse est l\'autre nombre.'],
           sol: 'def bigger(a, b):\n    if a > b:\n        return a\n    return b\n\nprint(bigger(3, 9))', out: '9', c: 'def bigger'
         }
       },
@@ -331,7 +331,7 @@ Les paramètres avec une valeur par défaut viennent après ceux sans.`],
         ex: {
           uses: ['def'],
           t: ['The call greet("Ada") stops with an error. Give the parameter greeting the default value "Hello" so the program shows: Hello Ada', 'La chiamata greet("Ada") si ferma con un errore. Dai al parametro greeting il valore predefinito "Ciao" così il programma mostra: Ciao Ada', 'L\'appel greet("Ada") s\'arrête sur une erreur. Donne au paramètre greeting la valeur par défaut "Bonjour" pour que le programme affiche : Bonjour Ada'],
-          h: ['def greet(name, greeting="..."):', 'def greet(name, greeting="..."):', 'def greet(name, greeting="..."):'],
+          h: ['A default value is written in the def line, right after the name of the parameter, with = and the value.', 'Un valore predefinito si scrive nella riga def, subito dopo il nome del parametro, con = e il valore.', 'Une valeur par défaut s\'écrit dans la ligne def, juste après le nom du paramètre, avec = et la valeur.'],
           start: 'def greet(name, greeting):\n    print(greeting, name)\n\ngreet("Ada")',
           sol: ['def greet(name, greeting="Hello"):\n    print(greeting, name)\n\ngreet("Ada")', 'def greet(name, greeting="Ciao"):\n    print(greeting, name)\n\ngreet("Ada")', 'def greet(name, greeting="Bonjour"):\n    print(greeting, name)\n\ngreet("Ada")'],
           out: ['Hello Ada', 'Ciao Ada', 'Bonjour Ada']
@@ -384,7 +384,7 @@ Anche print funziona così: prende tutte le cose che gli dai.`,
 print lui-même marche ainsi : il prend autant de choses que tu lui en donnes.`],
         ex: {
           t: ['Make a function count_items(*items) that returns how many values it got. Show count_items(5, 6, 7, 8).', 'Crea una funzione count_items(*items) che restituisce quanti valori ha ricevuto. Mostra count_items(5, 6, 7, 8).', 'Crée une fonction count_items(*items) qui rend combien de valeurs elle a reçues. Affiche count_items(5, 6, 7, 8).'],
-          h: ['return len(items)', 'return len(items)', 'return len(items)'],
+          h: ['items holds all the values together, like a tuple. What counts the items of a tuple?', 'items contiene tutti i valori insieme, come una tupla. Cosa conta gli elementi di una tupla?', 'items contient toutes les valeurs ensemble, comme un tuple. Qu\'est-ce qui compte les éléments d\'un tuple ?'],
           sol: 'def count_items(*items):\n    return len(items)\n\nprint(count_items(5, 6, 7, 8))', out: '4', c: '\\*items'
         }
       },
@@ -600,7 +600,7 @@ Il modo migliore è quello che hai appena visto: dare alla funzione il valore e 
 La meilleure façon est celle que tu viens de voir : donner la valeur à la fonction, et reprendre la réponse avec return, comme dans better.`],
         ex: {
           t: ['Make a function reset that uses global to put 0 back in the box total. Call it, and show total.', 'Crea una funzione reset che usa global per rimettere 0 nella scatola total. Chiamala e mostra total.', 'Crée une fonction reset qui utilise global pour remettre 0 dans la boîte total. Appelle-la et affiche total.'],
-          h: ['global total, then total = 0 inside reset.', 'global total, poi total = 0 dentro reset.', 'global total, puis total = 0 dans reset.'],
+          h: ['Inside reset, the first line says that total is the box from outside (the word global). Only then can reset put 0 in it.', 'Dentro reset, la prima riga dice che total è la scatola di fuori (la parola global). Solo dopo reset può metterci 0.', 'Dans reset, la première ligne dit que total est la boîte de dehors (le mot global). Ensuite seulement reset peut y mettre 0.'],
           start: 'total = 50', sol: 'total = 50\n\ndef reset():\n    global total\n    total = 0\n\nreset()\nprint(total)', out: '0', c: 'global'
         }
       },

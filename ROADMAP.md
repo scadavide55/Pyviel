@@ -21,6 +21,14 @@ Decisions taken (20 October 2026):
 
 Written on 20 October 2026: 54 lessons and 261 steps, each in three languages (stage 1: 13 lessons, stage 2: 11, stage 3: 10, stage 4: 14, stage 5: 5, and a cheat sheet as an appendix). Every program of every step is run for real by a test, and every Python error that the course can cause has a sentence in all three languages.
 
+## Version 1.2.1 — to decide
+
+Written on 21 October 2026, after the 1.2.0 release, from an outside review (checked: all three points are true). Nothing here is started: the author decides what goes in.
+
+- **Four errors with no plain sentence.** `JSONDecodeError`, `PatternError` (the name of `re.error` since Python 3.13), `IsADirectoryError` and `UnicodeDecodeError` fall back to "The program raised a ...", with Python's English message, in every language. The lessons on `json`, `re` and files can cause them. Proposal: a rule and a sentence in three languages for each, and a program for each in `test-errors.js`.
+- **Screen readers do not hear the result.** `#out` and `#problems` are not announced, so a blind student hears "Done" but not what the program printed or the error sentence. Proposal: announce the output and the problems when a run ends (not line by line, so a program that prints a lot is not read aloud for ever).
+- **`questions.py` in the project folder** is not tracked and not ignored, so `git add -A` would publish it. It is the author's file: delete it or add it to `.gitignore`. Possibly ignore every `*.py` at the top of the folder, since Pyviel itself has none there except `pyviel-host.py` and `pyviel-runner.py`.
+
 ## Version 1.5 — to decide
 
 Written on 21 October 2026, after the 1.0 beta. These are proposals: the author picks what goes in and in which order. Nothing here is started.

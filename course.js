@@ -10225,6 +10225,2493 @@ window.PyvielCourse = {
      }
     }
    ]
+  },
+  {
+   "group": {
+    "en": "Stage 3 · Functions",
+    "it": "Fase 3 · Le funzioni",
+    "fr": "Étape 3 · Les fonctions"
+   },
+   "title": {
+    "en": "Your own functions",
+    "it": "Le tue funzioni",
+    "fr": "Tes propres fonctions"
+   },
+   "subtitle": {
+    "en": "Give a few lines a name",
+    "it": "Dai un nome ad alcune righe",
+    "fr": "Donne un nom à quelques lignes"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def greet():\n    print(\"Hello!\")\n    print(\"Welcome to Pyviel.\")\n\ngreet()\ngreet()",
+      "it": "def greet():\n    print(\"Ciao!\")\n    print(\"Benvenuto in Pyviel.\")\n\ngreet()\ngreet()",
+      "fr": "def greet():\n    print(\"Bonjour!\")\n    print(\"Bienvenue dans Pyviel.\")\n\ngreet()\ngreet()"
+     },
+     "title": {
+      "en": "Make a function",
+      "it": "Crea una funzione",
+      "fr": "Crée une fonction"
+     },
+     "text": {
+      "en": "A function is a few lines with a name. You already used some: print, len, input. Now you make your own.\n\ndef starts it, then the name, round brackets and a colon. The lines pushed in below are what it does. Making it does not run it: to run it, call it by writing its name with brackets, as greet(). You can call it as many times as you like.",
+      "it": "Una funzione è un gruppo di righe con un nome. Ne hai già usate: print, len, input. Ora ne crei di tue.\n\ndef la inizia, poi il nome, le parentesi tonde e i due punti. Le righe rientrate sotto sono quello che fa. Crearla non la esegue: per eseguirla la chiami scrivendo il suo nome con le parentesi, come greet(). La puoi chiamare quante volte vuoi.",
+      "fr": "Une fonction est quelques lignes avec un nom. Tu en as déjà utilisé : print, len, input. Maintenant tu crées les tiennes.\n\ndef la commence, puis le nom, des parenthèses rondes et deux points. Les lignes décalées dessous sont ce qu'elle fait. La créer ne la lance pas : pour la lancer, tu l'appelles en écrivant son nom avec des parenthèses, comme greet(). Tu peux l'appeler autant de fois que tu veux."
+     },
+     "see": {
+      "en": "Hello!\nWelcome to Pyviel.\nHello!\nWelcome to Pyviel.",
+      "it": "Ciao!\nBenvenuto in Pyviel.\nCiao!\nBenvenuto in Pyviel.",
+      "fr": "Bonjour!\nBienvenue dans Pyviel.\nBonjour!\nBienvenue dans Pyviel."
+     },
+     "slip": {
+      "en": "Making a function shows nothing. If you forget to call it, the program seems to do nothing.",
+      "it": "Creare una funzione non mostra niente. Se dimentichi di chiamarla, il programma sembra non fare niente.",
+      "fr": "Créer une fonction n'affiche rien. Si tu oublies de l'appeler, le programme semble ne rien faire."
+     },
+     "news": [
+      {
+       "k": "def",
+       "w": "def",
+       "d": {
+        "en": "def makes your own function: a few lines with a name. Write def, the name, round brackets and a colon. The lines pushed in below are what it does. Making it does not run it: you run it later by writing its name with brackets.",
+        "it": "def crea una funzione tua: poche righe con un nome. Scrivi def, il nome, le parentesi tonde e i due punti. Le righe rientrate sotto sono quello che fa. Crearla non la esegue: la esegui dopo scrivendo il suo nome con le parentesi.",
+        "fr": "def crée ta propre fonction : quelques lignes avec un nom. Écris def, le nom, des parenthèses rondes et deux points. Les lignes décalées dessous sont ce qu'elle fait. La créer ne la lance pas : tu la lances plus tard en écrivant son nom avec des parenthèses."
+       },
+       "s": {
+        "en": "def greet():\n    print(\"Hello!\")\n\ngreet()",
+        "it": "def greet():\n    print(\"Ciao!\")\n\ngreet()",
+        "fr": "def greet():\n    print(\"Bonjour!\")\n\ngreet()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a function called hello that shows Hello!  Then call it two times.",
+       "it": "Crea una funzione che si chiama hello che mostra Ciao!  Poi chiamala due volte.",
+       "fr": "Crée une fonction qui s'appelle hello et qui affiche Bonjour!  Puis appelle-la deux fois."
+      },
+      "hint": {
+       "en": "def hello(): then, pushed in, a print line; then hello() two times.",
+       "it": "def hello(): poi, rientrata, una riga print; poi hello() due volte.",
+       "fr": "def hello(): puis, décalée, une ligne print ; puis hello() deux fois."
+      },
+      "sol": {
+       "en": "def hello():\n    print(\"Hello!\")\n\nhello()\nhello()",
+       "it": "def hello():\n    print(\"Ciao!\")\n\nhello()\nhello()",
+       "fr": "def hello():\n    print(\"Bonjour!\")\n\nhello()\nhello()"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Hello!\nHello!\n",
+        "c": "def hello"
+       },
+       "it": {
+        "out": "Ciao!\nCiao!\n",
+        "c": "def hello"
+       },
+       "fr": {
+        "out": "Bonjour!\nBonjour!\n",
+        "c": "def hello"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Hello!\nHello!",
+       "it": "Ciao!\nCiao!",
+       "fr": "Bonjour!\nBonjour!"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def greet(name):\n    print(\"Hello\", name)\n\ngreet(\"Ada\")\ngreet(\"Max\")\n\ndef add(a, b):\n    print(a + b)\n\nadd(3, 4)",
+      "it": "def greet(name):\n    print(\"Ciao\", name)\n\ngreet(\"Ada\")\ngreet(\"Max\")\n\ndef add(a, b):\n    print(a + b)\n\nadd(3, 4)",
+      "fr": "def greet(name):\n    print(\"Bonjour\", name)\n\ngreet(\"Ada\")\ngreet(\"Max\")\n\ndef add(a, b):\n    print(a + b)\n\nadd(3, 4)"
+     },
+     "title": {
+      "en": "Give it something to work with",
+      "it": "Dagli qualcosa su cui lavorare",
+      "fr": "Donne-lui quelque chose avec quoi travailler"
+     },
+     "text": {
+      "en": "A function can receive values. The names inside the brackets of def are called parameters: boxes that exist only inside the function.\n\ngreet(\"Ada\") puts \"Ada\" in the box name, and then runs the lines. A function can have as many parameters as it needs, separated by commas.",
+      "it": "Una funzione può ricevere dei valori. I nomi dentro le parentesi di def si chiamano parametri: scatole che esistono solo dentro la funzione.\n\ngreet(\"Ada\") mette \"Ada\" nella scatola name e poi esegue le righe. Una funzione può avere tutti i parametri che le servono, separati da virgole.",
+      "fr": "Une fonction peut recevoir des valeurs. Les noms entre les parenthèses de def s'appellent des paramètres : des boîtes qui n'existent qu'à l'intérieur de la fonction.\n\ngreet(\"Ada\") met \"Ada\" dans la boîte name, puis lance les lignes. Une fonction peut avoir autant de paramètres qu'il lui en faut, séparés par des virgules."
+     },
+     "see": {
+      "en": "Hello Ada\nHello Max\n7",
+      "it": "Ciao Ada\nCiao Max\n7",
+      "fr": "Bonjour Ada\nBonjour Max\n7"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "parameter",
+       "w": "def f(name):",
+       "d": {
+        "en": "A name inside the brackets of def is a parameter: a box that exists only inside the function, and that is filled when you call it. greet(\"Ada\") puts \"Ada\" in the box name. The values you give in the call are called arguments.",
+        "it": "Un nome dentro le parentesi di def è un parametro: una scatola che esiste solo dentro la funzione e che viene riempita quando la chiami. greet(\"Ada\") mette \"Ada\" nella scatola name. I valori che dai nella chiamata si chiamano argomenti.",
+        "fr": "Un nom entre les parenthèses de def est un paramètre : une boîte qui n'existe qu'à l'intérieur de la fonction, et qui est remplie quand tu l'appelles. greet(\"Ada\") met \"Ada\" dans la boîte name. Les valeurs que tu donnes dans l'appel s'appellent des arguments."
+       },
+       "s": {
+        "en": "def greet(name):\n    print(\"Hello\", name)",
+        "it": "def greet(name):\n    print(\"Hello\", name)",
+        "fr": "def greet(name):\n    print(\"Hello\", name)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a function double with one parameter n that shows n * 2. Call it with 21.",
+       "it": "Crea una funzione double con un parametro n che mostra n * 2. Chiamala con 21.",
+       "fr": "Crée une fonction double avec un paramètre n qui affiche n * 2. Appelle-la avec 21."
+      },
+      "hint": {
+       "en": "def double(n): and, pushed in, print(n * 2). Then double(21).",
+       "it": "def double(n): e, rientrata, print(n * 2). Poi double(21).",
+       "fr": "def double(n): et, décalée, print(n * 2). Puis double(21)."
+      },
+      "sol": {
+       "en": "def double(n):\n    print(n * 2)\n\ndouble(21)",
+       "it": "def double(n):\n    print(n * 2)\n\ndouble(21)",
+       "fr": "def double(n):\n    print(n * 2)\n\ndouble(21)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "42",
+        "c": "def double\\(n\\)"
+       },
+       "it": {
+        "out": "42",
+        "c": "def double\\(n\\)"
+       },
+       "fr": {
+        "out": "42",
+        "c": "def double\\(n\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "42",
+       "it": "42",
+       "fr": "42"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def square(n):\n    return n * n\n\nresult = square(5)\nprint(result)\nprint(square(3) + square(4))\nprint(square(square(2)))",
+      "it": "def square(n):\n    return n * n\n\nresult = square(5)\nprint(result)\nprint(square(3) + square(4))\nprint(square(square(2)))",
+      "fr": "def square(n):\n    return n * n\n\nresult = square(5)\nprint(result)\nprint(square(3) + square(4))\nprint(square(square(2)))"
+     },
+     "title": {
+      "en": "Give back an answer: return",
+      "it": "Restituisci una risposta: return",
+      "fr": "Rends une réponse : return"
+     },
+     "text": {
+      "en": "print only shows something on the screen. Often you want the function to give an answer back, so you can keep it in a box or use it in a sum. That is what return does.\n\nThe function ends at the return line. A call is a value like any other, so calls can be nested: square(square(2)).",
+      "it": "print mostra solo qualcosa sullo schermo. Spesso vuoi che la funzione ti restituisca una risposta, per tenerla in una scatola o usarla in un conto. Lo fa return.\n\nLa funzione finisce alla riga return. Una chiamata è un valore come gli altri, quindi le chiamate si possono annidare: square(square(2)).",
+      "fr": "print affiche seulement quelque chose à l'écran. Souvent tu veux que la fonction te rende une réponse, pour la garder dans une boîte ou l'utiliser dans un calcul. C'est ce que fait return.\n\nLa fonction se termine à la ligne return. Un appel est une valeur comme les autres, donc les appels peuvent être imbriqués : square(square(2))."
+     },
+     "see": {
+      "en": "25\n25\n16",
+      "it": "25\n25\n16",
+      "fr": "25\n25\n16"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "return",
+       "w": "return",
+       "d": {
+        "en": "return sends a value back to the place that called the function, so you can keep it in a box or use it in a sum. The function ends at the return line.",
+        "it": "return rimanda un valore al posto che ha chiamato la funzione, così lo puoi tenere in una scatola o usare in un conto. La funzione finisce alla riga return.",
+        "fr": "return renvoie une valeur à l'endroit qui a appelé la fonction, donc tu peux la garder dans une boîte ou l'utiliser dans un calcul. La fonction se termine à la ligne return."
+       },
+       "s": {
+        "en": "def square(n):\n    return n * n",
+        "it": "def square(n):\n    return n * n",
+        "fr": "def square(n):\n    return n * n"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a function cube that returns n * n * n. Show cube(3).",
+       "it": "Crea una funzione cube che restituisce n * n * n. Mostra cube(3).",
+       "fr": "Crée une fonction cube qui rend n * n * n. Affiche cube(3)."
+      },
+      "hint": {
+       "en": "def cube(n): then return n * n * n, and print(cube(3)).",
+       "it": "def cube(n): poi return n * n * n, e print(cube(3)).",
+       "fr": "def cube(n): puis return n * n * n, et print(cube(3))."
+      },
+      "sol": {
+       "en": "def cube(n):\n    return n * n * n\n\nprint(cube(3))",
+       "it": "def cube(n):\n    return n * n * n\n\nprint(cube(3))",
+       "fr": "def cube(n):\n    return n * n * n\n\nprint(cube(3))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "27",
+        "c": "return"
+       },
+       "it": {
+        "out": "27",
+        "c": "return"
+       },
+       "fr": {
+        "out": "27",
+        "c": "return"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "27",
+       "it": "27",
+       "fr": "27"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def show(n):\n    print(n * 2)\n\ndef give(n):\n    return n * 2\n\na = show(5)\nb = give(5)\nprint(a, b)",
+      "it": "def show(n):\n    print(n * 2)\n\ndef give(n):\n    return n * 2\n\na = show(5)\nb = give(5)\nprint(a, b)",
+      "fr": "def show(n):\n    print(n * 2)\n\ndef give(n):\n    return n * 2\n\na = show(5)\nb = give(5)\nprint(a, b)"
+     },
+     "title": {
+      "en": "print is not return",
+      "it": "print non è return",
+      "fr": "print n'est pas return"
+     },
+     "text": {
+      "en": "Look at the last line. show printed 10 on the screen, but it gave nothing back, so a holds None. give returned 10, so b holds 10.\n\nIf you want to use the answer later in the program, use return, not print.",
+      "it": "Guarda l'ultima riga. show ha stampato 10 sullo schermo ma non ha restituito niente, quindi a contiene None. give ha restituito 10, quindi b contiene 10.\n\nSe vuoi usare la risposta più avanti nel programma, usa return, non print.",
+      "fr": "Regarde la dernière ligne. show a affiché 10 à l'écran mais n'a rien rendu, donc a contient None. give a rendu 10, donc b contient 10.\n\nSi tu veux utiliser la réponse plus tard dans le programme, utilise return, pas print."
+     },
+     "see": {
+      "en": "10\nNone 10",
+      "it": "10\nNone 10",
+      "fr": "10\nNone 10"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The function add shows the sum instead of giving it back, so the program stops with an error. Fix it so that the program shows 10.",
+       "it": "La funzione add mostra la somma invece di restituirla, quindi il programma si ferma con un errore. Correggila così il programma mostra 10.",
+       "fr": "La fonction add affiche la somme au lieu de la rendre, donc le programme s'arrête sur une erreur. Corrige-la pour que le programme affiche 10."
+      },
+      "hint": {
+       "en": "Change print into return inside add.",
+       "it": "Cambia print in return dentro add.",
+       "fr": "Change print en return dans add."
+      },
+      "sol": {
+       "en": "def add(a, b):\n    return a + b\n\nresult = add(2, 3)\nprint(result * 2)",
+       "it": "def add(a, b):\n    return a + b\n\nresult = add(2, 3)\nprint(result * 2)",
+       "fr": "def add(a, b):\n    return a + b\n\nresult = add(2, 3)\nprint(result * 2)"
+      },
+      "start": {
+       "en": "def add(a, b):\n    print(a + b)\n\nresult = add(2, 3)\nprint(result * 2)",
+       "it": "def add(a, b):\n    print(a + b)\n\nresult = add(2, 3)\nprint(result * 2)",
+       "fr": "def add(a, b):\n    print(a + b)\n\nresult = add(2, 3)\nprint(result * 2)"
+      },
+      "spec": {
+       "en": {
+        "out": "10",
+        "c": "return"
+       },
+       "it": {
+        "out": "10",
+        "c": "return"
+       },
+       "fr": {
+        "out": "10",
+        "c": "return"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "10",
+       "it": "10",
+       "fr": "10"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def is_even(n):\n    \"\"\"Tell if a whole number is even.\"\"\"\n    return n % 2 == 0\n\ndef grade(score):\n    if score >= 90:\n        return \"A\"\n    if score >= 70:\n        return \"B\"\n    return \"C\"\n\nprint(is_even(4), is_even(7))\nprint(grade(95), grade(72), grade(10))",
+      "it": "def is_even(n):\n    \"\"\"Dice se un numero intero è pari.\"\"\"\n    return n % 2 == 0\n\ndef grade(score):\n    if score >= 90:\n        return \"A\"\n    if score >= 70:\n        return \"B\"\n    return \"C\"\n\nprint(is_even(4), is_even(7))\nprint(grade(95), grade(72), grade(10))",
+      "fr": "def is_even(n):\n    \"\"\"Dit si un nombre entier est pair.\"\"\"\n    return n % 2 == 0\n\ndef grade(score):\n    if score >= 90:\n        return \"A\"\n    if score >= 70:\n        return \"B\"\n    return \"C\"\n\nprint(is_even(4), is_even(7))\nprint(grade(95), grade(72), grade(10))"
+     },
+     "title": {
+      "en": "Functions that decide",
+      "it": "Funzioni che decidono",
+      "fr": "Des fonctions qui décident"
+     },
+     "text": {
+      "en": "A function can return True or False, or choose what to return with if. The first return that is reached ends the function, so the lines after it do not run.\n\nThe text between triple quotes right under def is a description of the function, called a docstring. It does nothing for Python, but it is there for the people who read the code.",
+      "it": "Una funzione può restituire True o False, oppure scegliere cosa restituire con un if. Il primo return raggiunto finisce la funzione, quindi le righe dopo non girano.\n\nIl testo tra tre virgolette subito sotto def è una descrizione della funzione, chiamata docstring. A Python non serve a niente, ma c'è per le persone che leggono il codice.",
+      "fr": "Une fonction peut rendre True ou False, ou choisir ce qu'elle rend avec un if. Le premier return atteint termine la fonction, donc les lignes d'après ne tournent pas.\n\nLe texte entre trois guillemets juste sous def est une description de la fonction, appelée docstring. Il ne sert à rien pour Python, mais il est là pour les personnes qui lisent le code."
+     },
+     "see": {
+      "en": "True False\nA B C",
+      "it": "True False\nA B C",
+      "fr": "True False\nA B C"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "docstring",
+       "w": "\"\"\" \"\"\"",
+       "d": {
+        "en": "A text in triple quotes right under the def line describes the function. Python does not run it: it is there for people (and for tools that show help).",
+        "it": "Un testo tra tre virgolette subito sotto la riga def descrive la funzione. Python non lo esegue: è lì per le persone (e per gli strumenti che mostrano l'aiuto).",
+        "fr": "Un texte entre trois guillemets juste sous la ligne def décrit la fonction. Python ne l'exécute pas : il est là pour les humains (et pour les outils qui affichent l'aide)."
+       },
+       "s": {
+        "en": "def is_even(n):\n    \"\"\"Tell if n is even.\"\"\"",
+        "it": "def is_even(n):\n    \"\"\"Dice se n è pari.\"\"\"",
+        "fr": "def is_even(n):\n    \"\"\"Dit si n est pair.\"\"\""
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a function is_adult(age) that returns True when the age is 18 or more. Show is_adult(20).",
+       "it": "Crea una funzione is_adult(age) che restituisce True quando l'età è 18 o più. Mostra is_adult(20).",
+       "fr": "Crée une fonction is_adult(age) qui rend True quand l'âge vaut 18 ou plus. Affiche is_adult(20)."
+      },
+      "hint": {
+       "en": "return age >= 18",
+       "it": "return age >= 18",
+       "fr": "return age >= 18"
+      },
+      "sol": {
+       "en": "def is_adult(age):\n    return age >= 18\n\nprint(is_adult(20))",
+       "it": "def is_adult(age):\n    return age >= 18\n\nprint(is_adult(20))",
+       "fr": "def is_adult(age):\n    return age >= 18\n\nprint(is_adult(20))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "def is_adult"
+       },
+       "it": {
+        "out": "True",
+        "c": "def is_adult"
+       },
+       "fr": {
+        "out": "True",
+        "c": "def is_adult"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def average(numbers):\n    total = 0\n    for n in numbers:\n        total += n\n    return total / len(numbers)\n\ndef describe(name, scores):\n    print(f\"{name}: average {average(scores):.1f}\")\n\ndescribe(\"Ada\", [8, 9, 7])\ndescribe(\"Max\", [6, 6, 9, 10])",
+      "it": "def average(numbers):\n    total = 0\n    for n in numbers:\n        total += n\n    return total / len(numbers)\n\ndef describe(name, scores):\n    print(f\"{name}: media {average(scores):.1f}\")\n\ndescribe(\"Ada\", [8, 9, 7])\ndescribe(\"Max\", [6, 6, 9, 10])",
+      "fr": "def average(numbers):\n    total = 0\n    for n in numbers:\n        total += n\n    return total / len(numbers)\n\ndef describe(name, scores):\n    print(f\"{name} : moyenne {average(scores):.1f}\")\n\ndescribe(\"Ada\", [8, 9, 7])\ndescribe(\"Max\", [6, 6, 9, 10])"
+     },
+     "title": {
+      "en": "Small functions that work together",
+      "it": "Piccole funzioni che lavorano insieme",
+      "fr": "Petites fonctions qui travaillent ensemble"
+     },
+     "text": {
+      "en": "Big programs are made of small functions, each doing one thing well. describe uses average, and average could be used anywhere else.\n\nIf you catch yourself copying the same lines twice, it is a sign: put them in a function.",
+      "it": "I programmi grandi sono fatti di piccole funzioni, ognuna che fa bene una cosa. describe usa average, e average si potrebbe usare ovunque.\n\nSe ti accorgi di copiare le stesse righe due volte, è un segnale: mettile in una funzione.",
+      "fr": "Les grands programmes sont faits de petites fonctions, chacune faisant bien une chose. describe utilise average, et average pourrait être utilisée n'importe où ailleurs.\n\nSi tu te surprends à copier les mêmes lignes deux fois, c'est un signe : mets-les dans une fonction."
+     },
+     "see": {
+      "en": "Ada: average 8.0\nMax: average 7.8",
+      "it": "Ada: media 8.0\nMax: media 7.8",
+      "fr": "Ada : moyenne 8.0\nMax : moyenne 7.8"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a function bigger(a, b) that returns the bigger of two numbers, using an if. Show bigger(3, 9).",
+       "it": "Crea una funzione bigger(a, b) che restituisce il più grande di due numeri, usando un if. Mostra bigger(3, 9).",
+       "fr": "Crée une fonction bigger(a, b) qui rend le plus grand de deux nombres, en utilisant un if. Affiche bigger(3, 9)."
+      },
+      "hint": {
+       "en": "if a > b: return a, and after it return b.",
+       "it": "if a > b: return a, e dopo return b.",
+       "fr": "if a > b: return a, et après return b."
+      },
+      "sol": {
+       "en": "def bigger(a, b):\n    if a > b:\n        return a\n    return b\n\nprint(bigger(3, 9))",
+       "it": "def bigger(a, b):\n    if a > b:\n        return a\n    return b\n\nprint(bigger(3, 9))",
+       "fr": "def bigger(a, b):\n    if a > b:\n        return a\n    return b\n\nprint(bigger(3, 9))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "9",
+        "c": "def bigger"
+       },
+       "it": {
+        "out": "9",
+        "c": "def bigger"
+       },
+       "fr": {
+        "out": "9",
+        "c": "def bigger"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "9",
+       "it": "9",
+       "fr": "9"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Function options",
+    "it": "Opzioni delle funzioni",
+    "fr": "Options des fonctions"
+   },
+   "subtitle": {
+    "en": "Defaults, names and many values",
+    "it": "Predefiniti, nomi e molti valori",
+    "fr": "Valeurs par défaut, noms et nombreuses valeurs"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def greet(name, greeting=\"Hello\"):\n    print(greeting, name)\n\ngreet(\"Ada\")\ngreet(\"Max\", \"Hi\")",
+      "it": "def greet(name, greeting=\"Ciao\"):\n    print(greeting, name)\n\ngreet(\"Ada\")\ngreet(\"Max\", \"Ehi\")",
+      "fr": "def greet(name, greeting=\"Bonjour\"):\n    print(greeting, name)\n\ngreet(\"Ada\")\ngreet(\"Max\", \"Salut\")"
+     },
+     "title": {
+      "en": "A default value",
+      "it": "Un valore predefinito",
+      "fr": "Une valeur par défaut"
+     },
+     "text": {
+      "en": "A parameter can have a default value: greeting=\"Hello\". If the call gives nothing for it, the default is used. If the call gives a value, that value wins.\n\nParameters with a default come after the ones without.",
+      "it": "Un parametro può avere un valore predefinito: greeting=\"Ciao\". Se la chiamata non dà niente per lui, si usa quello predefinito. Se la chiamata dà un valore, vince quel valore.\n\nI parametri con un valore predefinito vengono dopo quelli senza.",
+      "fr": "Un paramètre peut avoir une valeur par défaut : greeting=\"Bonjour\". Si l'appel ne donne rien pour lui, la valeur par défaut est utilisée. Si l'appel donne une valeur, c'est celle-ci qui gagne.\n\nLes paramètres avec une valeur par défaut viennent après ceux sans."
+     },
+     "see": {
+      "en": "Hello Ada\nHi Max",
+      "it": "Ciao Ada\nEhi Max",
+      "fr": "Bonjour Ada\nSalut Max"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "default-value",
+       "w": "def f(a, b=1):",
+       "d": {
+        "en": "A parameter can have a default value, written with an equal sign: greeting=\"Hello\". If the call gives nothing for it, the default is used. If the call gives a value, that value wins. Parameters with a default come after the others.",
+        "it": "Un parametro può avere un valore predefinito, scritto con un segno uguale: greeting=\"Ciao\". Se la chiamata non dà niente per lui, si usa quello predefinito. Se la chiamata dà un valore, vince quel valore. I parametri con un valore predefinito vengono dopo gli altri.",
+        "fr": "Un paramètre peut avoir une valeur par défaut, écrite avec un signe égal : greeting=\"Bonjour\". Si l'appel ne donne rien pour lui, la valeur par défaut est utilisée. Si l'appel donne une valeur, c'est celle-ci qui gagne. Les paramètres avec une valeur par défaut viennent après les autres."
+       },
+       "s": {
+        "en": "def greet(name, greeting=\"Hello\"):",
+        "it": "def greet(name, greeting=\"Hello\"):",
+        "fr": "def greet(name, greeting=\"Hello\"):"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "The call greet(\"Ada\") stops with an error. Give the parameter greeting the default value \"Hello\" so the program shows: Hello Ada",
+       "it": "La chiamata greet(\"Ada\") si ferma con un errore. Dai al parametro greeting il valore predefinito \"Ciao\" così il programma mostra: Ciao Ada",
+       "fr": "L'appel greet(\"Ada\") s'arrête sur une erreur. Donne au paramètre greeting la valeur par défaut \"Bonjour\" pour que le programme affiche : Bonjour Ada"
+      },
+      "hint": {
+       "en": "def greet(name, greeting=\"...\"):",
+       "it": "def greet(name, greeting=\"...\"):",
+       "fr": "def greet(name, greeting=\"...\"):"
+      },
+      "sol": {
+       "en": "def greet(name, greeting=\"Hello\"):\n    print(greeting, name)\n\ngreet(\"Ada\")",
+       "it": "def greet(name, greeting=\"Ciao\"):\n    print(greeting, name)\n\ngreet(\"Ada\")",
+       "fr": "def greet(name, greeting=\"Bonjour\"):\n    print(greeting, name)\n\ngreet(\"Ada\")"
+      },
+      "start": {
+       "en": "def greet(name, greeting):\n    print(greeting, name)\n\ngreet(\"Ada\")",
+       "it": "def greet(name, greeting):\n    print(greeting, name)\n\ngreet(\"Ada\")",
+       "fr": "def greet(name, greeting):\n    print(greeting, name)\n\ngreet(\"Ada\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Hello Ada"
+       },
+       "it": {
+        "out": "Ciao Ada"
+       },
+       "fr": {
+        "out": "Bonjour Ada"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Hello Ada",
+       "it": "Ciao Ada",
+       "fr": "Bonjour Ada"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)\n\nbox(5, 2)\nbox(3, 3, \"*\")\nbox(height=1, width=8, char=\"-\")",
+      "it": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)\n\nbox(5, 2)\nbox(3, 3, \"*\")\nbox(height=1, width=8, char=\"-\")",
+      "fr": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)\n\nbox(5, 2)\nbox(3, 3, \"*\")\nbox(height=1, width=8, char=\"-\")"
+     },
+     "title": {
+      "en": "Call with names",
+      "it": "Chiama con i nomi",
+      "fr": "Appelle avec les noms"
+     },
+     "text": {
+      "en": "When you call a function you can write the name of each parameter: height=1. The order no longer matters, and the call reads like a sentence.\n\nYou already did this with print, when you wrote sep= and end=.",
+      "it": "Quando chiami una funzione puoi scrivere il nome di ogni parametro: height=1. L'ordine non conta più e la chiamata si legge come una frase.\n\nLo hai già fatto con print, quando scrivevi sep= e end=.",
+      "fr": "Quand tu appelles une fonction tu peux écrire le nom de chaque paramètre : height=1. L'ordre ne compte plus et l'appel se lit comme une phrase.\n\nTu l'as déjà fait avec print, quand tu écrivais sep= et end=."
+     },
+     "see": {
+      "en": "#####\n#####\n***\n***\n***\n--------",
+      "it": "#####\n#####\n***\n***\n***\n--------",
+      "fr": "#####\n#####\n***\n***\n***\n--------"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "named-call",
+       "w": "f(height=1)",
+       "d": {
+        "en": "When you call a function you can write the name of each parameter before its value: height=1. The order no longer matters, and the call reads like a sentence.",
+        "it": "Quando chiami una funzione puoi scrivere il nome di ogni parametro davanti al suo valore: height=1. L'ordine non conta più e la chiamata si legge come una frase.",
+        "fr": "Quand tu appelles une fonction tu peux écrire le nom de chaque paramètre devant sa valeur : height=1. L'ordre ne compte plus, et l'appel se lit comme une phrase."
+       },
+       "s": {
+        "en": "box(height=1, width=8)",
+        "it": "box(height=1, width=8)",
+        "fr": "box(height=1, width=8)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Call box with the names: width 6, height 1 and char \"+\", in any order. It must show a row of six + signs.",
+       "it": "Chiama box con i nomi: width 6, height 1 e char \"+\", in qualsiasi ordine. Deve mostrare una fila di sei segni +.",
+       "fr": "Appelle box avec les noms : width 6, height 1 et char \"+\", dans n'importe quel ordre. Elle doit afficher une rangée de six signes +."
+      },
+      "hint": {
+       "en": "box(height=1, width=6, char=\"+\")",
+       "it": "box(height=1, width=6, char=\"+\")",
+       "fr": "box(height=1, width=6, char=\"+\")"
+      },
+      "sol": {
+       "en": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)\n\nbox(height=1, width=6, char=\"+\")",
+       "it": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)\n\nbox(height=1, width=6, char=\"+\")",
+       "fr": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)\n\nbox(height=1, width=6, char=\"+\")"
+      },
+      "start": {
+       "en": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)",
+       "it": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)",
+       "fr": "def box(width, height, char=\"#\"):\n    for row in range(height):\n        print(char * width)"
+      },
+      "spec": {
+       "en": {
+        "out": "++++++",
+        "c": "width=6"
+       },
+       "it": {
+        "out": "++++++",
+        "c": "width=6"
+       },
+       "fr": {
+        "out": "++++++",
+        "c": "width=6"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "++++++",
+       "it": "++++++",
+       "fr": "++++++"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def total(*numbers):\n    print(numbers)\n    return sum(numbers)\n\nprint(total(1, 2, 3))\nprint(total(10))\nprint(total())",
+      "it": "def total(*numbers):\n    print(numbers)\n    return sum(numbers)\n\nprint(total(1, 2, 3))\nprint(total(10))\nprint(total())",
+      "fr": "def total(*numbers):\n    print(numbers)\n    return sum(numbers)\n\nprint(total(1, 2, 3))\nprint(total(10))\nprint(total())"
+     },
+     "title": {
+      "en": "As many values as you like",
+      "it": "Tanti valori quanti vuoi",
+      "fr": "Autant de valeurs que tu veux"
+     },
+     "text": {
+      "en": "A star before a parameter, *numbers, collects every value given into one tuple. The function can then be called with any number of values, even none.\n\nprint itself works like that: it takes as many things as you give it.",
+      "it": "Una stella davanti a un parametro, *numbers, raccoglie tutti i valori dati in una sola tupla. La funzione si può chiamare con un numero qualsiasi di valori, anche nessuno.\n\nAnche print funziona così: prende tutte le cose che gli dai.",
+      "fr": "Une étoile devant un paramètre, *numbers, rassemble toutes les valeurs données dans un seul tuple. La fonction peut alors être appelée avec n'importe quel nombre de valeurs, même aucune.\n\nprint lui-même marche ainsi : il prend autant de choses que tu lui en donnes."
+     },
+     "see": {
+      "en": "(1, 2, 3)\n6\n(10,)\n10\n()\n0",
+      "it": "(1, 2, 3)\n6\n(10,)\n10\n()\n0",
+      "fr": "(1, 2, 3)\n6\n(10,)\n10\n()\n0"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "*args",
+       "w": "def f(*items):",
+       "d": {
+        "en": "A star before a parameter, *items, collects all the values given into one tuple. The function can then be called with any number of values, even none.",
+        "it": "Una stella davanti a un parametro, *items, raccoglie tutti i valori dati in una sola tupla. La funzione si può chiamare con un numero qualsiasi di valori, anche nessuno.",
+        "fr": "Une étoile devant un paramètre, *items, rassemble toutes les valeurs données dans un seul tuple. La fonction peut alors être appelée avec n'importe quel nombre de valeurs, même aucune."
+       },
+       "s": {
+        "en": "def total(*numbers):",
+        "it": "def total(*numbers):",
+        "fr": "def total(*numbers):"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a function count_items(*items) that returns how many values it got. Show count_items(5, 6, 7, 8).",
+       "it": "Crea una funzione count_items(*items) che restituisce quanti valori ha ricevuto. Mostra count_items(5, 6, 7, 8).",
+       "fr": "Crée une fonction count_items(*items) qui rend combien de valeurs elle a reçues. Affiche count_items(5, 6, 7, 8)."
+      },
+      "hint": {
+       "en": "return len(items)",
+       "it": "return len(items)",
+       "fr": "return len(items)"
+      },
+      "sol": {
+       "en": "def count_items(*items):\n    return len(items)\n\nprint(count_items(5, 6, 7, 8))",
+       "it": "def count_items(*items):\n    return len(items)\n\nprint(count_items(5, 6, 7, 8))",
+       "fr": "def count_items(*items):\n    return len(items)\n\nprint(count_items(5, 6, 7, 8))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "4",
+        "c": "\\*items"
+       },
+       "it": {
+        "out": "4",
+        "c": "\\*items"
+       },
+       "fr": {
+        "out": "4",
+        "c": "\\*items"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "4",
+       "it": "4",
+       "fr": "4"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def profile(**details):\n    for key, value in details.items():\n        print(key, \"=\", value)\n\nprofile(name=\"Ada\", age=12, city=\"Rome\")\n\nnumbers = [4, 8, 15]\nprint(*numbers)\nprint(*numbers, sep=\" | \")",
+      "it": "def profile(**details):\n    for key, value in details.items():\n        print(key, \"=\", value)\n\nprofile(name=\"Ada\", age=12, city=\"Rome\")\n\nnumbers = [4, 8, 15]\nprint(*numbers)\nprint(*numbers, sep=\" | \")",
+      "fr": "def profile(**details):\n    for key, value in details.items():\n        print(key, \"=\", value)\n\nprofile(name=\"Ada\", age=12, city=\"Rome\")\n\nnumbers = [4, 8, 15]\nprint(*numbers)\nprint(*numbers, sep=\" | \")"
+     },
+     "title": {
+      "en": "Many named values",
+      "it": "Molti valori con nome",
+      "fr": "Beaucoup de valeurs nommées"
+     },
+     "text": {
+      "en": "Two stars, **details, collect all the named values of the call into a dictionary, which the function can walk through with items().\n\nThe star works the other way too, when you call: print(*numbers) spreads the list into separate values, as if you had written them one by one.",
+      "it": "Due stelle, **details, raccolgono tutti i valori con nome della chiamata in un dizionario, che la funzione può scorrere con items().\n\nLa stella funziona anche al contrario, quando chiami: print(*numbers) spande la lista in valori separati, come se li avessi scritti uno a uno.",
+      "fr": "Deux étoiles, **details, rassemblent toutes les valeurs nommées de l'appel dans un dictionnaire, que la fonction peut parcourir avec items().\n\nL'étoile marche aussi dans l'autre sens, quand tu appelles : print(*numbers) étale la liste en valeurs séparées, comme si tu les avais écrites une par une."
+     },
+     "see": {
+      "en": "name = Ada\nage = 12\ncity = Rome\n4 8 15\n4 | 8 | 15",
+      "it": "name = Ada\nage = 12\ncity = Rome\n4 8 15\n4 | 8 | 15",
+      "fr": "name = Ada\nage = 12\ncity = Rome\n4 8 15\n4 | 8 | 15"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "**kwargs",
+       "w": "def f(**details):",
+       "d": {
+        "en": "Two stars before a parameter, **details, collect all the named values of the call into a dictionary.",
+        "it": "Due stelle davanti a un parametro, **details, raccolgono tutti i valori con nome della chiamata in un dizionario.",
+        "fr": "Deux étoiles devant un paramètre, **details, rassemblent toutes les valeurs nommées de l'appel dans un dictionnaire."
+       },
+       "s": {
+        "en": "def profile(**details):",
+        "it": "def profile(**details):",
+        "fr": "def profile(**details):"
+       }
+      },
+      {
+       "k": "star",
+       "w": "*list",
+       "d": {
+        "en": "The star also works when you call: *numbers spreads a list into separate values, as if you had written them one by one. With two stars, **data spreads a dictionary into named values.",
+        "it": "La stella funziona anche quando chiami: *numbers spande una lista in valori separati, come se li avessi scritti uno a uno. Con due stelle, **data spande un dizionario in valori con nome.",
+        "fr": "L'étoile marche aussi quand tu appelles : *numbers étale une liste en valeurs séparées, comme si tu les avais écrites une par une. Avec deux étoiles, **data étale un dictionnaire en valeurs nommées."
+       },
+       "s": {
+        "en": "print(*numbers)",
+        "it": "print(*numbers)",
+        "fr": "print(*numbers)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the numbers of the list with a dash between them, using the star: 3-6-9",
+       "it": "Mostra i numeri della lista con un trattino in mezzo, usando la stella: 3-6-9",
+       "fr": "Affiche les nombres de la liste avec un tiret entre eux, en utilisant l'étoile : 3-6-9"
+      },
+      "hint": {
+       "en": "print(*numbers, sep=\"-\")",
+       "it": "print(*numbers, sep=\"-\")",
+       "fr": "print(*numbers, sep=\"-\")"
+      },
+      "sol": {
+       "en": "numbers = [3, 6, 9]\nprint(*numbers, sep=\"-\")",
+       "it": "numbers = [3, 6, 9]\nprint(*numbers, sep=\"-\")",
+       "fr": "numbers = [3, 6, 9]\nprint(*numbers, sep=\"-\")"
+      },
+      "start": {
+       "en": "numbers = [3, 6, 9]",
+       "it": "numbers = [3, 6, 9]",
+       "fr": "numbers = [3, 6, 9]"
+      },
+      "spec": {
+       "en": {
+        "out": "3-6-9",
+        "c": "\\*numbers"
+       },
+       "it": {
+        "out": "3-6-9",
+        "c": "\\*numbers"
+       },
+       "fr": {
+        "out": "3-6-9",
+        "c": "\\*numbers"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3-6-9",
+       "it": "3-6-9",
+       "fr": "3-6-9"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def power(base, exponent=2):\n    \"\"\"Raise base to the exponent (the square by default).\"\"\"\n    return base ** exponent\n\nprint(power(5))\nprint(power(2, 10))\nprint(power(exponent=3, base=2))\nprint(callable(power), type(power))\nagain = power\nprint(again(4))",
+      "it": "def power(base, exponent=2):\n    \"\"\"Eleva base all'esponente (il quadrato se non dici altro).\"\"\"\n    return base ** exponent\n\nprint(power(5))\nprint(power(2, 10))\nprint(power(exponent=3, base=2))\nprint(callable(power), type(power))\nagain = power\nprint(again(4))",
+      "fr": "def power(base, exponent=2):\n    \"\"\"Élève base à l'exposant (le carré si on ne dit rien).\"\"\"\n    return base ** exponent\n\nprint(power(5))\nprint(power(2, 10))\nprint(power(exponent=3, base=2))\nprint(callable(power), type(power))\nagain = power\nprint(again(4))"
+     },
+     "title": {
+      "en": "A function is a value too",
+      "it": "Anche una funzione è un valore",
+      "fr": "Une fonction est aussi une valeur"
+     },
+     "text": {
+      "en": "In Python a function is a thing like any other. You can keep it in a box (again = power, with no brackets: it is not called), give it to another function, or ask about it with callable and type.\n\nRemember this idea. It opens a whole new way of writing programs, and you will use it soon.",
+      "it": "In Python una funzione è una cosa come le altre. La puoi tenere in una scatola (again = power, senza parentesi: non viene chiamata), darla a un'altra funzione o interrogarla con callable e type.\n\nRicorda questa idea. Apre un modo tutto nuovo di scrivere i programmi, e la userai presto.",
+      "fr": "En Python une fonction est une chose comme les autres. Tu peux la garder dans une boîte (again = power, sans parenthèses : elle n'est pas appelée), la donner à une autre fonction, ou l'interroger avec callable et type.\n\nSouviens-toi de cette idée. Elle ouvre une toute nouvelle façon d'écrire des programmes, et tu l'utiliseras bientôt."
+     },
+     "see": {
+      "en": "25\n1024\n8\nTrue <class 'function'>\n16",
+      "it": "25\n1024\n8\nTrue <class 'function'>\n16",
+      "fr": "25\n1024\n8\nTrue <class 'function'>\n16"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "callable",
+       "w": "callable( )",
+       "d": {
+        "en": "In Python a function is a value like any other: you can keep it in a box or give it to another function. callable asks \"can this be called like a function?\".",
+        "it": "In Python una funzione è un valore come gli altri: la puoi tenere in una scatola o darla a un'altra funzione. callable chiede \"questo si può chiamare come una funzione?\".",
+        "fr": "En Python une fonction est une valeur comme les autres : tu peux la garder dans une boîte ou la donner à une autre fonction. callable demande \"ceci peut-il être appelé comme une fonction ?\"."
+       },
+       "s": {
+        "en": "callable(print)",
+        "it": "callable(print)",
+        "fr": "callable(print)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Ask if print can be called like a function, with callable, and show the answer.",
+       "it": "Chiedi se print si può chiamare come una funzione, con callable, e mostra la risposta.",
+       "fr": "Demande si print peut être appelé comme une fonction, avec callable, et affiche la réponse."
+      },
+      "hint": {
+       "en": "print(callable(print))",
+       "it": "print(callable(print))",
+       "fr": "print(callable(print))"
+      },
+      "sol": {
+       "en": "print(callable(print))",
+       "it": "print(callable(print))",
+       "fr": "print(callable(print))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "callable"
+       },
+       "it": {
+        "out": "True",
+        "c": "callable"
+       },
+       "fr": {
+        "out": "True",
+        "c": "callable"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Where names live",
+    "it": "Dove vivono i nomi",
+    "fr": "Où vivent les noms"
+   },
+   "subtitle": {
+    "en": "Inside and outside a function",
+    "it": "Dentro e fuori da una funzione",
+    "fr": "Dedans et dehors d'une fonction"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def hello():\n    message = \"inside\"\n    print(message)\n\nhello()\nprint(message)",
+      "it": "def hello():\n    message = \"dentro\"\n    print(message)\n\nhello()\nprint(message)",
+      "fr": "def hello():\n    message = \"dedans\"\n    print(message)\n\nhello()\nprint(message)"
+     },
+     "title": {
+      "en": "A box that only lives inside",
+      "it": "Una scatola che vive solo dentro",
+      "fr": "Une boîte qui ne vit que dedans"
+     },
+     "text": {
+      "en": "A name made inside a function is local: it exists only while the function runs. Outside, Python does not know it, and the last line stops with a NameError.\n\nIt is a good thing: every function has its own private boxes, so names inside cannot clash with names elsewhere.",
+      "it": "Un nome creato dentro una funzione è locale: esiste solo mentre la funzione gira. Fuori, Python non lo conosce, e l'ultima riga si ferma con un NameError.\n\nÈ una buona cosa: ogni funzione ha le sue scatole private, quindi i nomi dentro non possono scontrarsi con i nomi altrove.",
+      "fr": "Un nom créé dans une fonction est local : il n'existe que pendant que la fonction tourne. Dehors, Python ne le connaît pas, et la dernière ligne s'arrête avec une NameError.\n\nC'est une bonne chose : chaque fonction a ses propres boîtes privées, donc les noms dedans ne peuvent pas se heurter aux noms d'ailleurs."
+     },
+     "see": {
+      "en": "inside\n⚠ Line 6: message does not exist yet.",
+      "it": "dentro\n⚠ Riga 6: message non esiste ancora.",
+      "fr": "dedans\n⚠ Ligne 6: message n'existe pas encore."
+     },
+     "slip": null,
+     "error": "NameError",
+     "ex": {
+      "task": {
+       "en": "Make it work: let the function return the message, and show it outside with print(hello()).",
+       "it": "Fallo funzionare: fai restituire il messaggio alla funzione e mostralo fuori con print(hello()).",
+       "fr": "Fais-le marcher : fais rendre le message par la fonction et affiche-le dehors avec print(hello())."
+      },
+      "hint": {
+       "en": "return message inside, and print(hello()) outside.",
+       "it": "return message dentro e print(hello()) fuori.",
+       "fr": "return message dedans et print(hello()) dehors."
+      },
+      "sol": {
+       "en": "def hello():\n    message = \"inside\"\n    return message\n\nprint(hello())",
+       "it": "def hello():\n    message = \"dentro\"\n    return message\n\nprint(hello())",
+       "fr": "def hello():\n    message = \"dedans\"\n    return message\n\nprint(hello())"
+      },
+      "start": {
+       "en": "def hello():\n    message = \"inside\"\n    print(message)\n\nhello()\nprint(message)",
+       "it": "def hello():\n    message = \"dentro\"\n    print(message)\n\nhello()\nprint(message)",
+       "fr": "def hello():\n    message = \"dedans\"\n    print(message)\n\nhello()\nprint(message)"
+      },
+      "spec": {
+       "en": {
+        "out": "inside",
+        "c": "return"
+       },
+       "it": {
+        "out": "dentro",
+        "c": "return"
+       },
+       "fr": {
+        "out": "dedans",
+        "c": "return"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "inside",
+       "it": "dentro",
+       "fr": "dedans"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "rate = 2\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))\n\nrate = 3\nprint(double_price(10))",
+      "it": "rate = 2\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))\n\nrate = 3\nprint(double_price(10))",
+      "fr": "rate = 2\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))\n\nrate = 3\nprint(double_price(10))"
+     },
+     "title": {
+      "en": "Looking outside",
+      "it": "Guardare fuori",
+      "fr": "Regarder dehors"
+     },
+     "text": {
+      "en": "A function can read a name from outside (a global one), if it has no local name that is the same. Python looks inside first, then outside.\n\nThe function reads rate when it runs, not when it is made: after rate = 3, the answer changes. Reading is easy. Changing is where care is needed, as the next steps show.",
+      "it": "Una funzione può leggere un nome da fuori (uno globale), se non ha un nome locale uguale. Python guarda prima dentro, poi fuori.\n\nLa funzione legge rate quando gira, non quando viene creata: dopo rate = 3 la risposta cambia. Leggere è facile. Cambiare è dove serve attenzione, come mostrano i passi seguenti.",
+      "fr": "Une fonction peut lire un nom de l'extérieur (un nom global), si elle n'a pas de nom local identique. Python regarde d'abord dedans, puis dehors.\n\nLa fonction lit rate quand elle tourne, pas quand elle est créée : après rate = 3, la réponse change. Lire est facile. Changer demande de l'attention, comme le montrent les étapes suivantes."
+     },
+     "see": {
+      "en": "20\n30",
+      "it": "20\n30",
+      "fr": "20\n30"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Change the rate to 5, so that double_price(10) shows 50.",
+       "it": "Cambia rate in 5, così double_price(10) mostra 50.",
+       "fr": "Change rate en 5, pour que double_price(10) affiche 50."
+      },
+      "hint": {
+       "en": "Change the first line.",
+       "it": "Cambia la prima riga.",
+       "fr": "Change la première ligne."
+      },
+      "sol": {
+       "en": "rate = 5\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))",
+       "it": "rate = 5\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))",
+       "fr": "rate = 5\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))"
+      },
+      "start": {
+       "en": "rate = 2\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))",
+       "it": "rate = 2\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))",
+       "fr": "rate = 2\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))"
+      },
+      "spec": {
+       "en": {
+        "out": "50"
+       },
+       "it": {
+        "out": "50"
+       },
+       "fr": {
+        "out": "50"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "50",
+       "it": "50",
+       "fr": "50"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "counter = 0\n\ndef add_one():\n    counter = counter + 1\n\nadd_one()\nprint(counter)",
+      "it": "counter = 0\n\ndef add_one():\n    counter = counter + 1\n\nadd_one()\nprint(counter)",
+      "fr": "counter = 0\n\ndef add_one():\n    counter = counter + 1\n\nadd_one()\nprint(counter)"
+     },
+     "title": {
+      "en": "Changing a name from outside",
+      "it": "Cambiare un nome da fuori",
+      "fr": "Changer un nom de l'extérieur"
+     },
+     "text": {
+      "en": "Because add_one gives counter a value, Python decides that counter is a local name of the function. But then reading it before it has a value fails: UnboundLocalError.\n\nThe best fix is to give the function the value and take the answer back with return. The next step shows that, and another way.",
+      "it": "Siccome add_one dà un valore a counter, Python decide che counter è un nome locale della funzione. Ma allora leggerlo prima che abbia un valore fallisce: UnboundLocalError.\n\nLa correzione migliore è dare alla funzione il valore e riprendere la risposta con return. Il passo dopo mostra questo, e un altro modo.",
+      "fr": "Comme add_one donne une valeur à counter, Python décide que counter est un nom local de la fonction. Mais alors le lire avant qu'il ait une valeur échoue : UnboundLocalError.\n\nLa meilleure correction est de donner la valeur à la fonction et de reprendre la réponse avec return. L'étape suivante montre cela, et une autre façon."
+     },
+     "see": {
+      "en": "⚠ Line 4: counter is used inside a function before it has a value.",
+      "it": "⚠ Riga 4: counter è usata dentro una funzione prima di avere un valore.",
+      "fr": "⚠ Ligne 4: counter est utilisée dans une fonction avant d'avoir une valeur."
+     },
+     "slip": null,
+     "error": "UnboundLocalError",
+     "ex": {
+      "task": {
+       "en": "Fix it the good way: give add_one the value as a parameter and return the new value. At the end, the program must show 1.",
+       "it": "Correggilo nel modo buono: dai ad add_one il valore come parametro e restituisci il nuovo valore. Alla fine il programma deve mostrare 1.",
+       "fr": "Corrige-le de la bonne façon : donne à add_one la valeur comme paramètre et rends la nouvelle valeur. À la fin, le programme doit afficher 1."
+      },
+      "hint": {
+       "en": "def add_one(counter): return counter + 1, and counter = add_one(counter).",
+       "it": "def add_one(counter): return counter + 1, e counter = add_one(counter).",
+       "fr": "def add_one(counter): return counter + 1, et counter = add_one(counter)."
+      },
+      "sol": {
+       "en": "counter = 0\n\ndef add_one(counter):\n    return counter + 1\n\ncounter = add_one(counter)\nprint(counter)",
+       "it": "counter = 0\n\ndef add_one(counter):\n    return counter + 1\n\ncounter = add_one(counter)\nprint(counter)",
+       "fr": "counter = 0\n\ndef add_one(counter):\n    return counter + 1\n\ncounter = add_one(counter)\nprint(counter)"
+      },
+      "start": {
+       "en": "counter = 0\n\ndef add_one():\n    counter = counter + 1\n\nadd_one()\nprint(counter)",
+       "it": "counter = 0\n\ndef add_one():\n    counter = counter + 1\n\nadd_one()\nprint(counter)",
+       "fr": "counter = 0\n\ndef add_one():\n    counter = counter + 1\n\nadd_one()\nprint(counter)"
+      },
+      "spec": {
+       "en": {
+        "out": "1",
+        "c": "return"
+       },
+       "it": {
+        "out": "1",
+        "c": "return"
+       },
+       "fr": {
+        "out": "1",
+        "c": "return"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1",
+       "it": "1",
+       "fr": "1"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "counter = 0\n\ndef add_one():\n    global counter\n    counter = counter + 1\n\nadd_one()\nadd_one()\nprint(counter)\n\ndef better(value):\n    return value + 1\n\ncounter = better(counter)\nprint(counter)",
+      "it": "counter = 0\n\ndef add_one():\n    global counter\n    counter = counter + 1\n\nadd_one()\nadd_one()\nprint(counter)\n\ndef better(value):\n    return value + 1\n\ncounter = better(counter)\nprint(counter)",
+      "fr": "counter = 0\n\ndef add_one():\n    global counter\n    counter = counter + 1\n\nadd_one()\nadd_one()\nprint(counter)\n\ndef better(value):\n    return value + 1\n\ncounter = better(counter)\nprint(counter)"
+     },
+     "title": {
+      "en": "global, and a better way",
+      "it": "global, e un modo migliore",
+      "fr": "global, et une meilleure façon"
+     },
+     "text": {
+      "en": "global counter says \"I mean the name that lives outside\". It works, but programmers avoid it: when many functions change the same box, a program gets hard to follow.\n\nThe better way is the one you just saw: give the function the value, and take the answer back with return, as in better.",
+      "it": "global counter dice \"intendo il nome che vive fuori\". Funziona, ma i programmatori lo evitano: quando molte funzioni cambiano la stessa scatola, il programma diventa difficile da seguire.\n\nIl modo migliore è quello che hai appena visto: dare alla funzione il valore e riprendere la risposta con return, come in better.",
+      "fr": "global counter dit \"je parle du nom qui vit à l'extérieur\". Ça marche, mais les programmeurs l'évitent : quand plusieurs fonctions changent la même boîte, un programme devient difficile à suivre.\n\nLa meilleure façon est celle que tu viens de voir : donner la valeur à la fonction, et reprendre la réponse avec return, comme dans better."
+     },
+     "see": {
+      "en": "2\n3",
+      "it": "2\n3",
+      "fr": "2\n3"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "global",
+       "w": "global",
+       "d": {
+        "en": "global name says \"I mean the name that lives outside\". It lets a function change a box that was made outside it. It works, but programmers avoid it, because many functions changing the same box make a program hard to follow.",
+        "it": "global nome dice \"intendo il nome che vive fuori\". Permette a una funzione di cambiare una scatola fatta fuori. Funziona, ma i programmatori lo evitano, perché molte funzioni che cambiano la stessa scatola rendono il programma difficile da seguire.",
+        "fr": "global nom dit \"je parle du nom qui vit à l'extérieur\". Il permet à une fonction de changer une boîte faite à l'extérieur. Ça marche, mais les programmeurs l'évitent, parce que plusieurs fonctions qui changent la même boîte rendent un programme difficile à suivre."
+       },
+       "s": {
+        "en": "global counter",
+        "it": "global counter",
+        "fr": "global counter"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a function reset that uses global to put 0 back in the box total. Call it, and show total.",
+       "it": "Crea una funzione reset che usa global per rimettere 0 nella scatola total. Chiamala e mostra total.",
+       "fr": "Crée une fonction reset qui utilise global pour remettre 0 dans la boîte total. Appelle-la et affiche total."
+      },
+      "hint": {
+       "en": "global total, then total = 0 inside reset.",
+       "it": "global total, poi total = 0 dentro reset.",
+       "fr": "global total, puis total = 0 dans reset."
+      },
+      "sol": {
+       "en": "total = 50\n\ndef reset():\n    global total\n    total = 0\n\nreset()\nprint(total)",
+       "it": "total = 50\n\ndef reset():\n    global total\n    total = 0\n\nreset()\nprint(total)",
+       "fr": "total = 50\n\ndef reset():\n    global total\n    total = 0\n\nreset()\nprint(total)"
+      },
+      "start": {
+       "en": "total = 50",
+       "it": "total = 50",
+       "fr": "total = 50"
+      },
+      "spec": {
+       "en": {
+        "out": "0",
+        "c": "global"
+       },
+       "it": {
+        "out": "0",
+        "c": "global"
+       },
+       "fr": {
+        "out": "0",
+        "c": "global"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "0",
+       "it": "0",
+       "fr": "0"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())",
+      "it": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())",
+      "fr": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())"
+     },
+     "title": {
+      "en": "A function inside a function",
+      "it": "Una funzione dentro una funzione",
+      "fr": "Une fonction dans une fonction"
+     },
+     "text": {
+      "en": "A function can make another function and give it back. The inner function step remembers count even after make_counter has finished, and nonlocal lets it change that box.\n\nEach call to make_counter makes its own separate counter: that is why b starts from 1. This is called a closure. It is a little advanced: it is fine if you need to read it twice.",
+      "it": "Una funzione può creare un'altra funzione e restituirla. La funzione interna step ricorda count anche dopo che make_counter è finita, e nonlocal le permette di cambiare quella scatola.\n\nOgni chiamata a make_counter crea il suo contatore separato: per questo b parte da 1. Si chiama closure. È un po' avanzato: va bene se devi leggerlo due volte.",
+      "fr": "Une fonction peut en créer une autre et la rendre. La fonction intérieure step se souvient de count même après que make_counter a fini, et nonlocal lui permet de changer cette boîte.\n\nChaque appel à make_counter crée son propre compteur séparé : c'est pourquoi b part de 1. On appelle ça une closure. C'est un peu avancé : ce n'est pas grave si tu dois le relire deux fois."
+     },
+     "see": {
+      "en": "1 2 3\n1",
+      "it": "1 2 3\n1",
+      "fr": "1 2 3\n1"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "nonlocal",
+       "w": "nonlocal",
+       "d": {
+        "en": "nonlocal name says \"I mean the box of the function around me\". It lets an inner function change a box that belongs to the outer function.",
+        "it": "nonlocal nome dice \"intendo la scatola della funzione che mi contiene\". Permette a una funzione interna di cambiare una scatola della funzione esterna.",
+        "fr": "nonlocal nom dit \"je parle de la boîte de la fonction qui m'entoure\". Il permet à une fonction intérieure de changer une boîte de la fonction extérieure."
+       },
+       "s": {
+        "en": "nonlocal count",
+        "it": "nonlocal count",
+        "fr": "nonlocal count"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Change step so that it adds 2 each time. It must show: 2 4 6  and then  2",
+       "it": "Cambia step così che aggiunga 2 ogni volta. Deve mostrare: 2 4 6  e poi  2",
+       "fr": "Change step pour qu'elle ajoute 2 à chaque fois. Elle doit afficher : 2 4 6  puis  2"
+      },
+      "hint": {
+       "en": "count += 2",
+       "it": "count += 2",
+       "fr": "count += 2"
+      },
+      "sol": {
+       "en": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 2\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())",
+       "it": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 2\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())",
+       "fr": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 2\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())"
+      },
+      "start": {
+       "en": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())",
+       "it": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())",
+       "fr": "def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())"
+      },
+      "spec": {
+       "en": {
+        "out": "2 4 6\n2"
+       },
+       "it": {
+        "out": "2 4 6\n2"
+       },
+       "fr": {
+        "out": "2 4 6\n2"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "2 4 6\n2",
+       "it": "2 4 6\n2",
+       "fr": "2 4 6\n2"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "A function that calls itself",
+    "it": "Una funzione che chiama se stessa",
+    "fr": "Une fonction qui s'appelle elle-même"
+   },
+   "subtitle": {
+    "en": "Recursion",
+    "it": "La ricorsione",
+    "fr": "La récursion"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def countdown(n):\n    if n == 0:\n        print(\"Liftoff!\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(3)",
+      "it": "def countdown(n):\n    if n == 0:\n        print(\"Decollo!\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(3)",
+      "fr": "def countdown(n):\n    if n == 0:\n        print(\"Décollage !\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(3)"
+     },
+     "title": {
+      "en": "The idea",
+      "it": "L'idea",
+      "fr": "L'idée"
+     },
+     "text": {
+      "en": "A function may call itself, as long as every call gets closer to an end. This is called recursion.\n\ncountdown(3) shows 3 and asks countdown(2) to do the rest, and so on down to 0, where it stops calling. That stopping case is called the base case, and every recursive function needs one.",
+      "it": "Una funzione può chiamare se stessa, purché ogni chiamata si avvicini a una fine. Si chiama ricorsione.\n\ncountdown(3) mostra 3 e chiede a countdown(2) di fare il resto, e così via fino a 0, dove smette di chiamare. Quel caso in cui si ferma si chiama caso base, e ogni funzione ricorsiva ne ha bisogno.",
+      "fr": "Une fonction peut s'appeler elle-même, tant que chaque appel se rapproche d'une fin. Cela s'appelle la récursion.\n\ncountdown(3) affiche 3 et demande à countdown(2) de faire le reste, et ainsi de suite jusqu'à 0, où elle arrête d'appeler. Ce cas d'arrêt s'appelle le cas de base, et chaque fonction récursive en a besoin."
+     },
+     "see": {
+      "en": "3\n2\n1\nLiftoff!",
+      "it": "3\n2\n1\nDecollo!",
+      "fr": "3\n2\n1\nDécollage !"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make the countdown start from 5 instead of 3.",
+       "it": "Fai partire il conto alla rovescia da 5 invece di 3.",
+       "fr": "Fais partir le compte à rebours de 5 au lieu de 3."
+      },
+      "hint": {
+       "en": "Change only the last line.",
+       "it": "Cambia solo l'ultima riga.",
+       "fr": "Change seulement la dernière ligne."
+      },
+      "sol": {
+       "en": "def countdown(n):\n    if n == 0:\n        print(\"Liftoff!\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(5)",
+       "it": "def countdown(n):\n    if n == 0:\n        print(\"Decollo!\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(5)",
+       "fr": "def countdown(n):\n    if n == 0:\n        print(\"Décollage !\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(5)"
+      },
+      "start": {
+       "en": "def countdown(n):\n    if n == 0:\n        print(\"Liftoff!\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(3)",
+       "it": "def countdown(n):\n    if n == 0:\n        print(\"Decollo!\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(3)",
+       "fr": "def countdown(n):\n    if n == 0:\n        print(\"Décollage !\")\n    else:\n        print(n)\n        countdown(n - 1)\n\ncountdown(3)"
+      },
+      "spec": {
+       "en": {
+        "out": "5\n4\n3\n2\n1\nLiftoff!\n"
+       },
+       "it": {
+        "out": "5\n4\n3\n2\n1\nDecollo!\n"
+       },
+       "fr": {
+        "out": "5\n4\n3\n2\n1\nDécollage !\n"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "5\n4\n3\n2\n1\nLiftoff!",
+       "it": "5\n4\n3\n2\n1\nDecollo!",
+       "fr": "5\n4\n3\n2\n1\nDécollage !"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))\nprint(factorial(10))",
+      "it": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))\nprint(factorial(10))",
+      "fr": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))\nprint(factorial(10))"
+     },
+     "title": {
+      "en": "Factorial",
+      "it": "Il fattoriale",
+      "fr": "La factorielle"
+     },
+     "text": {
+      "en": "5! (five factorial) means 5 x 4 x 3 x 2 x 1. And that is 5 times 4!. So factorial(5) is 5 * factorial(4), which is 5 * 4 * factorial(3), down to factorial(1), which is simply 1.\n\nEach call waits for the answer of the next one, then multiplies.",
+      "it": "5! (cinque fattoriale) vuol dire 5 x 4 x 3 x 2 x 1. E questo è 5 per 4!. Quindi factorial(5) è 5 * factorial(4), cioè 5 * 4 * factorial(3), fino a factorial(1), che è semplicemente 1.\n\nOgni chiamata aspetta la risposta della successiva, poi moltiplica.",
+      "fr": "5! (cinq factorielle) veut dire 5 x 4 x 3 x 2 x 1. Et c'est 5 fois 4!. Donc factorial(5) est 5 * factorial(4), c'est-à-dire 5 * 4 * factorial(3), jusqu'à factorial(1), qui vaut simplement 1.\n\nChaque appel attend la réponse du suivant, puis multiplie."
+     },
+     "see": {
+      "en": "120\n3628800",
+      "it": "120\n3628800",
+      "fr": "120\n3628800"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show factorial(6).",
+       "it": "Mostra factorial(6).",
+       "fr": "Affiche factorial(6)."
+      },
+      "hint": {
+       "en": "6 * 5 * 4 * 3 * 2 * 1 = 720",
+       "it": "6 * 5 * 4 * 3 * 2 * 1 = 720",
+       "fr": "6 * 5 * 4 * 3 * 2 * 1 = 720"
+      },
+      "sol": {
+       "en": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(6))",
+       "it": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(6))",
+       "fr": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(6))"
+      },
+      "start": {
+       "en": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+       "it": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+       "fr": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)"
+      },
+      "spec": {
+       "en": {
+        "out": "720",
+        "c": "factorial\\(6\\)"
+       },
+       "it": {
+        "out": "720",
+        "c": "factorial\\(6\\)"
+       },
+       "fr": {
+        "out": "720",
+        "c": "factorial\\(6\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "720",
+       "it": "720",
+       "fr": "720"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nfor i in range(8):\n    print(fib(i))",
+      "it": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nfor i in range(8):\n    print(fib(i))",
+      "fr": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nfor i in range(8):\n    print(fib(i))"
+     },
+     "title": {
+      "en": "Fibonacci numbers",
+      "it": "I numeri di Fibonacci",
+      "fr": "Les nombres de Fibonacci"
+     },
+     "text": {
+      "en": "Each Fibonacci number is the sum of the two before it: 0, 1, 1, 2, 3, 5, 8... The function says it almost word by word, with two base cases.\n\nIt is beautiful, but slow for big numbers, because it works out the same things many times. Later you will learn how to remember the answers.",
+      "it": "Ogni numero di Fibonacci è la somma dei due prima: 0, 1, 1, 2, 3, 5, 8... La funzione lo dice quasi parola per parola, con due casi base.\n\nÈ bella, ma lenta con i numeri grandi, perché calcola molte volte le stesse cose. Più avanti imparerai come ricordare le risposte.",
+      "fr": "Chaque nombre de Fibonacci est la somme des deux d'avant : 0, 1, 1, 2, 3, 5, 8... La fonction le dit presque mot pour mot, avec deux cas de base.\n\nElle est belle, mais lente pour les grands nombres, parce qu'elle recalcule plusieurs fois les mêmes choses. Plus tard tu apprendras à mémoriser les réponses."
+     },
+     "see": {
+      "en": "0\n1\n1\n2\n3\n5\n8\n13",
+      "it": "0\n1\n1\n2\n3\n5\n8\n13",
+      "fr": "0\n1\n1\n2\n3\n5\n8\n13"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show fib(10).",
+       "it": "Mostra fib(10).",
+       "fr": "Affiche fib(10)."
+      },
+      "hint": {
+       "en": "print(fib(10))",
+       "it": "print(fib(10))",
+       "fr": "print(fib(10))"
+      },
+      "sol": {
+       "en": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(10))",
+       "it": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(10))",
+       "fr": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(10))"
+      },
+      "start": {
+       "en": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)",
+       "it": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)",
+       "fr": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)"
+      },
+      "spec": {
+       "en": {
+        "out": "55",
+        "c": "fib\\(10\\)"
+       },
+       "it": {
+        "out": "55",
+        "c": "fib\\(10\\)"
+       },
+       "fr": {
+        "out": "55",
+        "c": "fib\\(10\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "55",
+       "it": "55",
+       "fr": "55"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])\n\ndef reverse(text):\n    if len(text) <= 1:\n        return text\n    return reverse(text[1:]) + text[0]\n\nprint(total([1, 2, 3, 4]))\nprint(reverse(\"python\"))",
+      "it": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])\n\ndef reverse(text):\n    if len(text) <= 1:\n        return text\n    return reverse(text[1:]) + text[0]\n\nprint(total([1, 2, 3, 4]))\nprint(reverse(\"python\"))",
+      "fr": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])\n\ndef reverse(text):\n    if len(text) <= 1:\n        return text\n    return reverse(text[1:]) + text[0]\n\nprint(total([1, 2, 3, 4]))\nprint(reverse(\"python\"))"
+     },
+     "title": {
+      "en": "Recursion on lists and texts",
+      "it": "Ricorsione su liste e testi",
+      "fr": "Récursion sur listes et textes"
+     },
+     "text": {
+      "en": "Recursion fits things made of smaller pieces. The sum of a list is its first item plus the sum of the rest. A reversed text is the reversed rest, followed by the first letter.\n\nThe base case is the smallest piece: an empty list, or a text of one letter.",
+      "it": "La ricorsione si adatta alle cose fatte di pezzi più piccoli. La somma di una lista è il suo primo elemento più la somma del resto. Un testo girato è il resto girato, seguito dalla prima lettera.\n\nIl caso base è il pezzo più piccolo: una lista vuota, o un testo di una lettera.",
+      "fr": "La récursion convient aux choses faites de morceaux plus petits. La somme d'une liste est son premier élément plus la somme du reste. Un texte retourné est le reste retourné, suivi de la première lettre.\n\nLe cas de base est le plus petit morceau : une liste vide, ou un texte d'une lettre."
+     },
+     "see": {
+      "en": "10\nnohtyp",
+      "it": "10\nnohtyp",
+      "fr": "10\nnohtyp"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show the sum of the list [5, 5, 5] using the function total.",
+       "it": "Mostra la somma della lista [5, 5, 5] usando la funzione total.",
+       "fr": "Affiche la somme de la liste [5, 5, 5] en utilisant la fonction total."
+      },
+      "hint": {
+       "en": "print(total([5, 5, 5]))",
+       "it": "print(total([5, 5, 5]))",
+       "fr": "print(total([5, 5, 5]))"
+      },
+      "sol": {
+       "en": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])\n\nprint(total([5, 5, 5]))",
+       "it": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])\n\nprint(total([5, 5, 5]))",
+       "fr": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])\n\nprint(total([5, 5, 5]))"
+      },
+      "start": {
+       "en": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])",
+       "it": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])",
+       "fr": "def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])"
+      },
+      "spec": {
+       "en": {
+        "out": "15",
+        "c": "total\\(\\["
+       },
+       "it": {
+        "out": "15",
+        "c": "total\\(\\["
+       },
+       "fr": {
+        "out": "15",
+        "c": "total\\(\\["
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "15",
+       "it": "15",
+       "fr": "15"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def forever(n):\n    return forever(n + 1)\n\nforever(1)",
+      "it": "def forever(n):\n    return forever(n + 1)\n\nforever(1)",
+      "fr": "def forever(n):\n    return forever(n + 1)\n\nforever(1)"
+     },
+     "title": {
+      "en": "When it never stops",
+      "it": "Quando non si ferma mai",
+      "fr": "Quand ça ne s'arrête jamais"
+     },
+     "text": {
+      "en": "Without a base case, a function calls itself forever. Python protects you: after about a thousand calls inside each other, it stops with a RecursionError.\n\nIf you see it, check the base case, and check that every call really gets closer to it.",
+      "it": "Senza un caso base, una funzione chiama se stessa all'infinito. Python ti protegge: dopo circa mille chiamate una dentro l'altra, si ferma con un RecursionError.\n\nSe lo vedi, controlla il caso base e controlla che ogni chiamata si avvicini davvero ad esso.",
+      "fr": "Sans cas de base, une fonction s'appelle elle-même pour toujours. Python te protège : après environ mille appels les uns dans les autres, il s'arrête avec une RecursionError.\n\nSi tu la vois, vérifie le cas de base, et vérifie que chaque appel s'en rapproche vraiment."
+     },
+     "see": {
+      "en": "⚠ Line 2: A function kept calling itself and never stopped.",
+      "it": "⚠ Riga 2: Una funzione ha continuato a richiamare se stessa senza fermarsi.",
+      "fr": "⚠ Ligne 2: Une fonction s'est rappelée elle-même sans jamais s'arrêter."
+     },
+     "slip": null,
+     "error": "RecursionError",
+     "ex": {
+      "task": {
+       "en": "Make a recursive function stop_at(n) that returns n when n is 3 or more, and otherwise calls itself with n + 1. Show stop_at(1).",
+       "it": "Crea una funzione ricorsiva stop_at(n) che restituisce n quando n è 3 o più, e altrimenti chiama se stessa con n + 1. Mostra stop_at(1).",
+       "fr": "Crée une fonction récursive stop_at(n) qui rend n quand n vaut 3 ou plus, et sinon s'appelle avec n + 1. Affiche stop_at(1)."
+      },
+      "hint": {
+       "en": "if n >= 3: return n, and after it return stop_at(n + 1).",
+       "it": "if n >= 3: return n, e dopo return stop_at(n + 1).",
+       "fr": "if n >= 3: return n, et après return stop_at(n + 1)."
+      },
+      "sol": {
+       "en": "def stop_at(n):\n    if n >= 3:\n        return n\n    return stop_at(n + 1)\n\nprint(stop_at(1))",
+       "it": "def stop_at(n):\n    if n >= 3:\n        return n\n    return stop_at(n + 1)\n\nprint(stop_at(1))",
+       "fr": "def stop_at(n):\n    if n >= 3:\n        return n\n    return stop_at(n + 1)\n\nprint(stop_at(1))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "stop_at"
+       },
+       "it": {
+        "out": "3",
+        "c": "stop_at"
+       },
+       "fr": {
+        "out": "3",
+        "c": "stop_at"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "3"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Short ways to build",
+    "it": "Modi brevi per costruire",
+    "fr": "Façons courtes de construire"
+   },
+   "subtitle": {
+    "en": "Comprehensions and one-line functions",
+    "it": "Comprensioni e funzioni in una riga",
+    "fr": "Compréhensions et fonctions en une ligne"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "squares = []\nfor n in range(1, 6):\n    squares.append(n * n)\nprint(squares)\n\nsquares2 = [n * n for n in range(1, 6)]\nprint(squares2)",
+      "it": "squares = []\nfor n in range(1, 6):\n    squares.append(n * n)\nprint(squares)\n\nsquares2 = [n * n for n in range(1, 6)]\nprint(squares2)",
+      "fr": "squares = []\nfor n in range(1, 6):\n    squares.append(n * n)\nprint(squares)\n\nsquares2 = [n * n for n in range(1, 6)]\nprint(squares2)"
+     },
+     "title": {
+      "en": "A list in one line",
+      "it": "Una lista in una riga",
+      "fr": "Une liste en une ligne"
+     },
+     "text": {
+      "en": "A list comprehension builds a list in one line: [what for item in things]. It says the same as the loop above it, but shorter.\n\nRead it like English: \"n times n, for each n in the range\".",
+      "it": "Una comprensione di lista costruisce una lista in una riga: [cosa for elemento in cose]. Dice la stessa cosa del ciclo sopra, ma più corto.\n\nLeggila come in inglese: \"n per n, per ogni n nel range\".",
+      "fr": "Une compréhension de liste construit une liste en une ligne : [quoi for élément in choses]. Elle dit la même chose que la boucle au-dessus, mais plus court.\n\nLis-la comme de l'anglais : \"n fois n, pour chaque n dans le range\"."
+     },
+     "see": {
+      "en": "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+      "it": "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+      "fr": "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "comprehension",
+       "w": "[x for x in y]",
+       "d": {
+        "en": "A comprehension builds a list in one line: [what for item in things]. It says the same as a loop that appends, but shorter. Read it like English: \"n times n, for each n in the range\".",
+        "it": "Una comprensione costruisce una lista in una riga: [cosa for elemento in cose]. Dice la stessa cosa di un ciclo che aggiunge, ma più corto. Leggila come in inglese: \"n per n, per ogni n nel range\".",
+        "fr": "Une compréhension construit une liste en une ligne : [quoi for élément in choses]. Elle dit la même chose qu'une boucle qui ajoute, mais en plus court. Lis-la comme de l'anglais : \"n fois n, pour chaque n dans le range\"."
+       },
+       "s": {
+        "en": "[n * n for n in range(1, 6)]",
+        "it": "[n * n for n in range(1, 6)]",
+        "fr": "[n * n for n in range(1, 6)]"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "With a comprehension, make the list of the doubles of 1 to 5: [2, 4, 6, 8, 10]",
+       "it": "Con una comprensione, fai la lista dei doppi da 1 a 5: [2, 4, 6, 8, 10]",
+       "fr": "Avec une compréhension, fais la liste des doubles de 1 à 5 : [2, 4, 6, 8, 10]"
+      },
+      "hint": {
+       "en": "[n * 2 for n in range(1, 6)]",
+       "it": "[n * 2 for n in range(1, 6)]",
+       "fr": "[n * 2 for n in range(1, 6)]"
+      },
+      "sol": {
+       "en": "print([n * 2 for n in range(1, 6)])",
+       "it": "print([n * 2 for n in range(1, 6)])",
+       "fr": "print([n * 2 for n in range(1, 6)])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[2, 4, 6, 8, 10]",
+        "c": "\\[.* for .* in .*\\]"
+       },
+       "it": {
+        "out": "[2, 4, 6, 8, 10]",
+        "c": "\\[.* for .* in .*\\]"
+       },
+       "fr": {
+        "out": "[2, 4, 6, 8, 10]",
+        "c": "\\[.* for .* in .*\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[2, 4, 6, 8, 10]",
+       "it": "[2, 4, 6, 8, 10]",
+       "fr": "[2, 4, 6, 8, 10]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nevens = [n for n in nums if n % 2 == 0]\nprint(evens)\nwords = [\"apple\", \"fig\", \"banana\"]\nprint([w.upper() for w in words if len(w) > 3])\nprint([n * 10 if n > 5 else n for n in nums])",
+      "it": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nevens = [n for n in nums if n % 2 == 0]\nprint(evens)\nwords = [\"mela\", \"fico\", \"banana\"]\nprint([w.upper() for w in words if len(w) > 4])\nprint([n * 10 if n > 5 else n for n in nums])",
+      "fr": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nevens = [n for n in nums if n % 2 == 0]\nprint(evens)\nwords = [\"pomme\", \"figue\", \"banane\"]\nprint([w.upper() for w in words if len(w) > 5])\nprint([n * 10 if n > 5 else n for n in nums])"
+     },
+     "title": {
+      "en": "Filter while building",
+      "it": "Filtra mentre costruisci",
+      "fr": "Filtre pendant que tu construis"
+     },
+     "text": {
+      "en": "Add if at the end to keep only some items: [n for n in nums if n % 2 == 0] keeps the even numbers.\n\nIf you want to change the value depending on a question, put the choice at the front: n * 10 if n > 5 else n.",
+      "it": "Aggiungi if alla fine per tenere solo alcuni elementi: [n for n in nums if n % 2 == 0] tiene i numeri pari.\n\nSe vuoi cambiare il valore in base a una domanda, metti la scelta davanti: n * 10 if n > 5 else n.",
+      "fr": "Ajoute if à la fin pour ne garder que certains éléments : [n for n in nums if n % 2 == 0] garde les nombres pairs.\n\nSi tu veux changer la valeur selon une question, mets le choix devant : n * 10 if n > 5 else n."
+     },
+     "see": {
+      "en": "[2, 4, 6, 8]\n['APPLE', 'BANANA']\n[1, 2, 3, 4, 5, 60, 70, 80]",
+      "it": "[2, 4, 6, 8]\n['BANANA']\n[1, 2, 3, 4, 5, 60, 70, 80]",
+      "fr": "[2, 4, 6, 8]\n['BANANE']\n[1, 2, 3, 4, 5, 60, 70, 80]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "From the list nums, make the list of the numbers bigger than 5, with a comprehension and an if.",
+       "it": "Dalla lista nums, fai la lista dei numeri più grandi di 5, con una comprensione e un if.",
+       "fr": "À partir de la liste nums, fais la liste des nombres plus grands que 5, avec une compréhension et un if."
+      },
+      "hint": {
+       "en": "[n for n in nums if n > 5]",
+       "it": "[n for n in nums if n > 5]",
+       "fr": "[n for n in nums if n > 5]"
+      },
+      "sol": {
+       "en": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nprint([n for n in nums if n > 5])",
+       "it": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nprint([n for n in nums if n > 5])",
+       "fr": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nprint([n for n in nums if n > 5])"
+      },
+      "start": {
+       "en": "nums = [1, 2, 3, 4, 5, 6, 7, 8]",
+       "it": "nums = [1, 2, 3, 4, 5, 6, 7, 8]",
+       "fr": "nums = [1, 2, 3, 4, 5, 6, 7, 8]"
+      },
+      "spec": {
+       "en": {
+        "out": "[6, 7, 8]",
+        "c": " if n > 5"
+       },
+       "it": {
+        "out": "[6, 7, 8]",
+        "c": " if n > 5"
+       },
+       "fr": {
+        "out": "[6, 7, 8]",
+        "c": " if n > 5"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[6, 7, 8]",
+       "it": "[6, 7, 8]",
+       "fr": "[6, 7, 8]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "names = [\"Ada\", \"Max\", \"Zoe\"]\nlengths = {name: len(name) for name in names}\nprint(lengths)\nletters = {ch for ch in \"hello world\" if ch != \" \"}\nprint(sorted(letters))\nswapped = {v: k for k, v in lengths.items()}\nprint(swapped)",
+      "it": "names = [\"Ada\", \"Max\", \"Zoe\"]\nlengths = {name: len(name) for name in names}\nprint(lengths)\nletters = {ch for ch in \"hello world\" if ch != \" \"}\nprint(sorted(letters))\nswapped = {v: k for k, v in lengths.items()}\nprint(swapped)",
+      "fr": "names = [\"Ada\", \"Max\", \"Zoe\"]\nlengths = {name: len(name) for name in names}\nprint(lengths)\nletters = {ch for ch in \"hello world\" if ch != \" \"}\nprint(sorted(letters))\nswapped = {v: k for k, v in lengths.items()}\nprint(swapped)"
+     },
+     "title": {
+      "en": "Dictionaries and sets too",
+      "it": "Anche dizionari e insiemi",
+      "fr": "Aussi des dictionnaires et des ensembles"
+     },
+     "text": {
+      "en": "The same trick works with curly brackets. {key: value for ...} builds a dictionary, and {item for ...} builds a set.\n\nDictionary comprehensions are great to swap keys and values, or to make a lookup table.",
+      "it": "Lo stesso trucco funziona con le parentesi graffe. {chiave: valore for ...} costruisce un dizionario, e {elemento for ...} costruisce un insieme.\n\nLe comprensioni di dizionario sono ottime per scambiare chiavi e valori, o per fare una tabella di ricerca.",
+      "fr": "Le même truc marche avec des accolades. {clé: valeur for ...} construit un dictionnaire, et {élément for ...} construit un ensemble.\n\nLes compréhensions de dictionnaire sont super pour échanger clés et valeurs, ou pour faire une table de recherche."
+     },
+     "see": {
+      "en": "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{3: 'Zoe'}",
+      "it": "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{3: 'Zoe'}",
+      "fr": "{'Ada': 3, 'Max': 3, 'Zoe': 3}\n['d', 'e', 'h', 'l', 'o', 'r', 'w']\n{3: 'Zoe'}"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "With a dictionary comprehension, make a dictionary of the squares: each number from 1 to 3 with its square. Show it.",
+       "it": "Con una comprensione di dizionario, fai un dizionario dei quadrati: ogni numero da 1 a 3 con il suo quadrato. Mostralo.",
+       "fr": "Avec une compréhension de dictionnaire, fais un dictionnaire des carrés : chaque nombre de 1 à 3 avec son carré. Affiche-le."
+      },
+      "hint": {
+       "en": "{n: n * n for n in range(1, 4)}",
+       "it": "{n: n * n for n in range(1, 4)}",
+       "fr": "{n: n * n for n in range(1, 4)}"
+      },
+      "sol": {
+       "en": "print({n: n * n for n in range(1, 4)})",
+       "it": "print({n: n * n for n in range(1, 4)})",
+       "fr": "print({n: n * n for n in range(1, 4)})"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "{1: 1, 2: 4, 3: 9}",
+        "c": "\\{.*:.* for"
+       },
+       "it": {
+        "out": "{1: 1, 2: 4, 3: 9}",
+        "c": "\\{.*:.* for"
+       },
+       "fr": {
+        "out": "{1: 1, 2: 4, 3: 9}",
+        "c": "\\{.*:.* for"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "{1: 1, 2: 4, 3: 9}",
+       "it": "{1: 1, 2: 4, 3: 9}",
+       "fr": "{1: 1, 2: 4, 3: 9}"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "grid = [[row * col for col in range(1, 4)] for row in range(1, 4)]\nprint(grid)\nflat = [x for line in grid for x in line]\nprint(flat)\npairs = [(a, b) for a in \"ab\" for b in (1, 2)]\nprint(pairs)",
+      "it": "grid = [[row * col for col in range(1, 4)] for row in range(1, 4)]\nprint(grid)\nflat = [x for line in grid for x in line]\nprint(flat)\npairs = [(a, b) for a in \"ab\" for b in (1, 2)]\nprint(pairs)",
+      "fr": "grid = [[row * col for col in range(1, 4)] for row in range(1, 4)]\nprint(grid)\nflat = [x for line in grid for x in line]\nprint(flat)\npairs = [(a, b) for a in \"ab\" for b in (1, 2)]\nprint(pairs)"
+     },
+     "title": {
+      "en": "Two loops in one",
+      "it": "Due cicli in uno",
+      "fr": "Deux boucles en une"
+     },
+     "text": {
+      "en": "A comprehension can have two for parts, like nested loops. Read them in the same order as you would write the loops: first the outer one, then the inner one.\n\nUse this sparingly. When a comprehension gets hard to read, a normal loop is kinder.",
+      "it": "Una comprensione può avere due parti for, come i cicli annidati. Leggile nello stesso ordine in cui scriveresti i cicli: prima quello esterno, poi quello interno.\n\nUsala con parsimonia. Quando una comprensione diventa difficile da leggere, un ciclo normale è più gentile.",
+      "fr": "Une compréhension peut avoir deux parties for, comme des boucles imbriquées. Lis-les dans le même ordre que tu écrirais les boucles : d'abord l'extérieure, puis l'intérieure.\n\nUtilise ça avec modération. Quand une compréhension devient difficile à lire, une boucle normale est plus gentille."
+     },
+     "see": {
+      "en": "[[1, 2, 3], [2, 4, 6], [3, 6, 9]]\n[1, 2, 3, 2, 4, 6, 3, 6, 9]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]",
+      "it": "[[1, 2, 3], [2, 4, 6], [3, 6, 9]]\n[1, 2, 3, 2, 4, 6, 3, 6, 9]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]",
+      "fr": "[[1, 2, 3], [2, 4, 6], [3, 6, 9]]\n[1, 2, 3, 2, 4, 6, 3, 6, 9]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make the flat list of the pairs (a, b) for a in 1, 2 and b in 1, 2, with two for parts. Show it.",
+       "it": "Fai la lista piatta delle coppie (a, b) per a in 1, 2 e b in 1, 2, con due parti for. Mostrala.",
+       "fr": "Fais la liste plate des paires (a, b) pour a dans 1, 2 et b dans 1, 2, avec deux parties for. Affiche-la."
+      },
+      "hint": {
+       "en": "[(a, b) for a in (1, 2) for b in (1, 2)]",
+       "it": "[(a, b) for a in (1, 2) for b in (1, 2)]",
+       "fr": "[(a, b) for a in (1, 2) for b in (1, 2)]"
+      },
+      "sol": {
+       "en": "print([(a, b) for a in (1, 2) for b in (1, 2)])",
+       "it": "print([(a, b) for a in (1, 2) for b in (1, 2)])",
+       "fr": "print([(a, b) for a in (1, 2) for b in (1, 2)])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[(1, 1), (1, 2), (2, 1), (2, 2)]",
+        "c": "for .* for"
+       },
+       "it": {
+        "out": "[(1, 1), (1, 2), (2, 1), (2, 2)]",
+        "c": "for .* for"
+       },
+       "fr": {
+        "out": "[(1, 1), (1, 2), (2, 1), (2, 2)]",
+        "c": "for .* for"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[(1, 1), (1, 2), (2, 1), (2, 2)]",
+       "it": "[(1, 1), (1, 2), (2, 1), (2, 2)]",
+       "fr": "[(1, 1), (1, 2), (2, 1), (2, 2)]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "double = lambda n: n * 2\nprint(double(21))\nprint((lambda a, b: a + b)(3, 4))\nwords = [\"pear\", \"fig\", \"banana\"]\nprint(sorted(words, key=lambda w: len(w)))",
+      "it": "double = lambda n: n * 2\nprint(double(21))\nprint((lambda a, b: a + b)(3, 4))\nwords = [\"pear\", \"fig\", \"banana\"]\nprint(sorted(words, key=lambda w: len(w)))",
+      "fr": "double = lambda n: n * 2\nprint(double(21))\nprint((lambda a, b: a + b)(3, 4))\nwords = [\"pear\", \"fig\", \"banana\"]\nprint(sorted(words, key=lambda w: len(w)))"
+     },
+     "title": {
+      "en": "A tiny function: lambda",
+      "it": "Una funzioncina: lambda",
+      "fr": "Une minuscule fonction : lambda"
+     },
+     "text": {
+      "en": "lambda makes a small function with no name, in one line: lambda inputs: result. It is handy when you need a function just for a moment, like key= in sorted.\n\ndouble = lambda n: n * 2 is the same as def double(n): return n * 2.",
+      "it": "lambda fa una piccola funzione senza nome, in una riga: lambda ingressi: risultato. È comoda quando ti serve una funzione solo per un momento, come key= in sorted.\n\ndouble = lambda n: n * 2 è come def double(n): return n * 2.",
+      "fr": "lambda fait une petite fonction sans nom, sur une ligne : lambda entrées: résultat. C'est pratique quand tu as besoin d'une fonction juste un instant, comme key= dans sorted.\n\ndouble = lambda n: n * 2 est pareil que def double(n): return n * 2."
+     },
+     "see": {
+      "en": "42\n7\n['fig', 'pear', 'banana']",
+      "it": "42\n7\n['fig', 'pear', 'banana']",
+      "fr": "42\n7\n['fig', 'pear', 'banana']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "lambda",
+       "w": "lambda",
+       "d": {
+        "en": "lambda makes a small function with no name, in one line: lambda inputs: result. It is handy when you need a function just for a moment, like key= in sorted.",
+        "it": "lambda fa una piccola funzione senza nome, in una riga: lambda ingressi: risultato. È comoda quando ti serve una funzione solo per un momento, come key= in sorted.",
+        "fr": "lambda fait une petite fonction sans nom, sur une ligne : lambda entrées: résultat. C'est pratique quand tu as besoin d'une fonction juste un instant, comme key= dans sorted."
+       },
+       "s": {
+        "en": "double = lambda n: n * 2",
+        "it": "double = lambda n: n * 2",
+        "fr": "double = lambda n: n * 2"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a lambda called triple that multiplies by 3. Show triple(7).",
+       "it": "Fai una lambda che si chiama triple e moltiplica per 3. Mostra triple(7).",
+       "fr": "Fais une lambda qui s'appelle triple et qui multiplie par 3. Affiche triple(7)."
+      },
+      "hint": {
+       "en": "triple = lambda n: n * 3",
+       "it": "triple = lambda n: n * 3",
+       "fr": "triple = lambda n: n * 3"
+      },
+      "sol": {
+       "en": "triple = lambda n: n * 3\nprint(triple(7))",
+       "it": "triple = lambda n: n * 3\nprint(triple(7))",
+       "fr": "triple = lambda n: n * 3\nprint(triple(7))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "21",
+        "c": "lambda"
+       },
+       "it": {
+        "out": "21",
+        "c": "lambda"
+       },
+       "fr": {
+        "out": "21",
+        "c": "lambda"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "21",
+       "it": "21",
+       "fr": "21"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "numbers = [1, 2, 3, 4]\nprint(list(map(lambda n: n + 1, numbers)))\nprint(list(filter(lambda n: n > 2, numbers)))\nprint(list(map(str, numbers)))",
+      "it": "numbers = [1, 2, 3, 4]\nprint(list(map(lambda n: n + 1, numbers)))\nprint(list(filter(lambda n: n > 2, numbers)))\nprint(list(map(str, numbers)))",
+      "fr": "numbers = [1, 2, 3, 4]\nprint(list(map(lambda n: n + 1, numbers)))\nprint(list(filter(lambda n: n > 2, numbers)))\nprint(list(map(str, numbers)))"
+     },
+     "title": {
+      "en": "map and filter",
+      "it": "map e filter",
+      "fr": "map et filter"
+     },
+     "text": {
+      "en": "map applies a function to every item. filter keeps the items for which a function answers True. Both give something that you turn into a list with list(...).\n\nAny function works, even a ready-made one like str. Comprehensions usually read better, but you will see map and filter in other people's code.",
+      "it": "map applica una funzione a ogni elemento. filter tiene gli elementi per i quali una funzione risponde True. Tutte e due danno qualcosa che trasformi in lista con list(...).\n\nVa bene qualsiasi funzione, anche una già pronta come str. Le comprensioni di solito si leggono meglio, ma vedrai map e filter nel codice degli altri.",
+      "fr": "map applique une fonction à chaque élément. filter garde les éléments pour lesquels une fonction répond True. Les deux donnent quelque chose que tu transformes en liste avec list(...).\n\nN'importe quelle fonction marche, même une toute prête comme str. Les compréhensions se lisent en général mieux, mais tu verras map et filter dans le code des autres."
+     },
+     "see": {
+      "en": "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '4']",
+      "it": "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '4']",
+      "fr": "[2, 3, 4, 5]\n[3, 4]\n['1', '2', '3', '4']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "map",
+       "w": "map( )",
+       "d": {
+        "en": "map applies a function to every item. list(map(f, items)) gives the list of the results.",
+        "it": "map applica una funzione a ogni elemento. list(map(f, items)) dà la lista dei risultati.",
+        "fr": "map applique une fonction à chaque élément. list(map(f, items)) donne la liste des résultats."
+       },
+       "s": {
+        "en": "list(map(len, words))",
+        "it": "list(map(len, words))",
+        "fr": "list(map(len, words))"
+       }
+      },
+      {
+       "k": "filter",
+       "w": "filter( )",
+       "d": {
+        "en": "filter keeps only the items for which a function answers True. list(filter(f, items)) gives the list of those items.",
+        "it": "filter tiene solo gli elementi per i quali una funzione risponde True. list(filter(f, items)) dà la lista di quegli elementi.",
+        "fr": "filter ne garde que les éléments pour lesquels une fonction répond True. list(filter(f, items)) donne la liste de ces éléments."
+       },
+       "s": {
+        "en": "list(filter(is_even, numbers))",
+        "it": "list(filter(is_even, numbers))",
+        "fr": "list(filter(is_even, numbers))"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "With map and a lambda, show the list of the numbers [1, 2, 3] multiplied by 10.",
+       "it": "Con map e una lambda, mostra la lista dei numeri [1, 2, 3] moltiplicati per 10.",
+       "fr": "Avec map et une lambda, affiche la liste des nombres [1, 2, 3] multipliés par 10."
+      },
+      "hint": {
+       "en": "list(map(lambda n: n * 10, [1, 2, 3]))",
+       "it": "list(map(lambda n: n * 10, [1, 2, 3]))",
+       "fr": "list(map(lambda n: n * 10, [1, 2, 3]))"
+      },
+      "sol": {
+       "en": "print(list(map(lambda n: n * 10, [1, 2, 3])))",
+       "it": "print(list(map(lambda n: n * 10, [1, 2, 3])))",
+       "fr": "print(list(map(lambda n: n * 10, [1, 2, 3])))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[10, 20, 30]",
+        "c": "map"
+       },
+       "it": {
+        "out": "[10, 20, 30]",
+        "c": "map"
+       },
+       "fr": {
+        "out": "[10, 20, 30]",
+        "c": "map"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[10, 20, 30]",
+       "it": "[10, 20, 30]",
+       "fr": "[10, 20, 30]"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "A quiz game",
+    "it": "Un gioco a quiz",
+    "fr": "Un jeu de quiz"
+   },
+   "subtitle": {
+    "en": "Put stage 3 together",
+    "it": "Metti insieme la fase 3",
+    "fr": "Rassemble l'étape 3"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "questions = {\n    \"Capital of Italy?\": \"rome\",\n    \"How many legs has a spider?\": \"8\",\n    \"Opposite of hot?\": \"cold\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)",
+      "it": "questions = {\n    \"Capitale d'Italia?\": \"roma\",\n    \"Quante zampe ha un ragno?\": \"8\",\n    \"Contrario di caldo?\": \"freddo\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)",
+      "fr": "questions = {\n    \"Capitale de l'Italie ?\": \"rome\",\n    \"Combien de pattes a une araignée ?\": \"8\",\n    \"Contraire de chaud ?\": \"froid\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)"
+     },
+     "title": {
+      "en": "The questions",
+      "it": "Le domande",
+      "fr": "Les questions"
+     },
+     "text": {
+      "en": "A good program starts with its data. Here a dictionary holds each question with its right answer, so adding a question is adding one line.\n\nFirst we only walk through it and check that the data is right.",
+      "it": "Un buon programma parte dai suoi dati. Qui un dizionario tiene ogni domanda con la sua risposta giusta, quindi aggiungere una domanda è aggiungere una riga.\n\nPer prima cosa lo scorriamo soltanto e controlliamo che i dati siano giusti.",
+      "fr": "Un bon programme commence par ses données. Ici un dictionnaire garde chaque question avec sa bonne réponse, donc ajouter une question c'est ajouter une ligne.\n\nD'abord on le parcourt seulement et on vérifie que les données sont justes."
+     },
+     "see": {
+      "en": "Capital of Italy? -> rome\nHow many legs has a spider? -> 8\nOpposite of hot? -> cold",
+      "it": "Capitale d'Italia? -> roma\nQuante zampe ha un ragno? -> 8\nContrario di caldo? -> freddo",
+      "fr": "Capitale de l'Italie ? -> rome\nCombien de pattes a une araignée ? -> 8\nContraire de chaud ? -> froid"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Add a fourth question of your own to the dictionary: 2 + 2? with the answer 4. Show the whole list again.",
+       "it": "Aggiungi al dizionario una quarta domanda tua: 2 + 2? con la risposta 4. Mostra di nuovo tutta la lista.",
+       "fr": "Ajoute au dictionnaire une quatrième question de ton choix : 2 + 2 ? avec la réponse 4. Affiche de nouveau toute la liste."
+      },
+      "hint": {
+       "en": "One more line inside the curly brackets: \"2 + 2?\": \"4\",",
+       "it": "Una riga in più dentro le parentesi graffe: \"2 + 2?\": \"4\",",
+       "fr": "Une ligne de plus dans les accolades : \"2 + 2 ?\": \"4\","
+      },
+      "sol": {
+       "en": "questions = {\n    \"Capital of Italy?\": \"rome\",\n    \"How many legs has a spider?\": \"8\",\n    \"Opposite of hot?\": \"cold\",\n    \"2 + 2?\": \"4\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)",
+       "it": "questions = {\n    \"Capitale d'Italia?\": \"roma\",\n    \"Quante zampe ha un ragno?\": \"8\",\n    \"Contrario di caldo?\": \"freddo\",\n    \"2 + 2?\": \"4\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)",
+       "fr": "questions = {\n    \"Capitale de l'Italie ?\": \"rome\",\n    \"Combien de pattes a une araignée ?\": \"8\",\n    \"Contraire de chaud ?\": \"froid\",\n    \"2 + 2 ?\": \"4\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)"
+      },
+      "start": {
+       "en": "questions = {\n    \"Capital of Italy?\": \"rome\",\n    \"How many legs has a spider?\": \"8\",\n    \"Opposite of hot?\": \"cold\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)",
+       "it": "questions = {\n    \"Capitale d'Italia?\": \"roma\",\n    \"Quante zampe ha un ragno?\": \"8\",\n    \"Contrario di caldo?\": \"freddo\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)",
+       "fr": "questions = {\n    \"Capitale de l'Italie ?\": \"rome\",\n    \"Combien de pattes a une araignée ?\": \"8\",\n    \"Contraire de chaud ?\": \"froid\",\n}\nfor question, answer in questions.items():\n    print(question, \"->\", answer)"
+      },
+      "spec": {
+       "en": {
+        "m": "(?:.*\\n){3}.*4$"
+       },
+       "it": {
+        "m": "(?:.*\\n){3}.*4$"
+       },
+       "fr": {
+        "m": "(?:.*\\n){3}.*4$"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def check(given, right):\n    return given.strip().lower() == right\n\nprint(check(\"  Rome \", \"rome\"))\nprint(check(\"Milan\", \"rome\"))",
+      "it": "def check(given, right):\n    return given.strip().lower() == right\n\nprint(check(\"  Rome \", \"rome\"))\nprint(check(\"Milan\", \"rome\"))",
+      "fr": "def check(given, right):\n    return given.strip().lower() == right\n\nprint(check(\"  Rome \", \"rome\"))\nprint(check(\"Milan\", \"rome\"))"
+     },
+     "title": {
+      "en": "A function to judge",
+      "it": "Una funzione per giudicare",
+      "fr": "Une fonction pour juger"
+     },
+     "text": {
+      "en": "One small function with one job: tell if an answer is right. strip removes stray spaces and lower makes small letters, so \"  Rome \" counts as right.\n\nWriting the judging in its own function means that you can improve it later without touching the rest.",
+      "it": "Una piccola funzione con un compito solo: dire se una risposta è giusta. strip toglie gli spazi in più e lower fa le lettere minuscole, quindi \"  Rome \" conta come giusta.\n\nScrivere il giudizio in una funzione a parte vuol dire che puoi migliorarlo dopo senza toccare il resto.",
+      "fr": "Une petite fonction avec un seul travail : dire si une réponse est juste. strip enlève les espaces en trop et lower fait des minuscules, donc \"  Rome \" compte comme juste.\n\nÉcrire le jugement dans sa propre fonction veut dire que tu peux l'améliorer plus tard sans toucher au reste."
+     },
+     "see": {
+      "en": "True\nFalse",
+      "it": "True\nFalse",
+      "fr": "True\nFalse"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show whether the answer \" PARIS \" is right for \"paris\", using check.",
+       "it": "Mostra se la risposta \" PARIS \" è giusta per \"paris\", usando check.",
+       "fr": "Affiche si la réponse \" PARIS \" est juste pour \"paris\", en utilisant check."
+      },
+      "hint": {
+       "en": "print(check(\" PARIS \", \"paris\"))",
+       "it": "print(check(\" PARIS \", \"paris\"))",
+       "fr": "print(check(\" PARIS \", \"paris\"))"
+      },
+      "sol": {
+       "en": "def check(given, right):\n    return given.strip().lower() == right\n\nprint(check(\" PARIS \", \"paris\"))",
+       "it": "def check(given, right):\n    return given.strip().lower() == right\n\nprint(check(\" PARIS \", \"paris\"))",
+       "fr": "def check(given, right):\n    return given.strip().lower() == right\n\nprint(check(\" PARIS \", \"paris\"))"
+      },
+      "start": {
+       "en": "def check(given, right):\n    return given.strip().lower() == right",
+       "it": "def check(given, right):\n    return given.strip().lower() == right",
+       "fr": "def check(given, right):\n    return given.strip().lower() == right"
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "check\\("
+       },
+       "it": {
+        "out": "True",
+        "c": "check\\("
+       },
+       "fr": {
+        "out": "True",
+        "c": "check\\("
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "questions = {\n    \"Capital of Italy?\": \"rome\",\n    \"How many legs has a spider?\": \"8\",\n    \"Opposite of hot?\": \"cold\",\n}\n\ndef check(given, right):\n    return given.strip().lower() == right\n\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if check(given, right):\n        print(\"Correct!\")\n        score += 1\n    else:\n        print(\"No, it was\", right)\nprint(f\"You scored {score} out of {len(questions)}\")",
+      "it": "questions = {\n    \"Capitale d'Italia?\": \"roma\",\n    \"Quante zampe ha un ragno?\": \"8\",\n    \"Contrario di caldo?\": \"freddo\",\n}\n\ndef check(given, right):\n    return given.strip().lower() == right\n\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if check(given, right):\n        print(\"Giusto!\")\n        score += 1\n    else:\n        print(\"No, era\", right)\nprint(f\"Hai fatto {score} punti su {len(questions)}\")",
+      "fr": "questions = {\n    \"Capitale de l'Italie ?\": \"rome\",\n    \"Combien de pattes a une araignée ?\": \"8\",\n    \"Contraire de chaud ?\": \"froid\",\n}\n\ndef check(given, right):\n    return given.strip().lower() == right\n\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if check(given, right):\n        print(\"Juste !\")\n        score += 1\n    else:\n        print(\"Non, c'était\", right)\nprint(f\"Tu as fait {score} points sur {len(questions)}\")"
+     },
+     "title": {
+      "en": "The whole game",
+      "it": "Tutto il gioco",
+      "fr": "Tout le jeu"
+     },
+     "text": {
+      "en": "Everything together: a dictionary of questions, a function to judge, a loop that asks, a counter for the score, and an f-string to finish.\n\nRun it and answer. Then change the questions and make it yours.",
+      "it": "Tutto insieme: un dizionario di domande, una funzione per giudicare, un ciclo che chiede, un contatore per il punteggio e una f-string per finire.\n\nEseguilo e rispondi. Poi cambia le domande e rendilo tuo.",
+      "fr": "Tout ensemble : un dictionnaire de questions, une fonction pour juger, une boucle qui demande, un compteur pour le score et une f-string pour finir.\n\nLance-le et réponds. Puis change les questions et fais-en le tien."
+     },
+     "see": {
+      "en": "Capital of Italy? Rome\nCorrect!\nHow many legs has a spider? 6\nNo, it was 8\nOpposite of hot? cold\nCorrect!\nYou scored 2 out of 3",
+      "it": "Capitale d'Italia? Roma\nGiusto!\nQuante zampe ha un ragno? 6\nNo, era 8\nContrario di caldo? freddo\nGiusto!\nHai fatto 2 punti su 3",
+      "fr": "Capitale de l'Italie ? Rome\nJuste !\nCombien de pattes a une araignée ? 6\nNon, c'était 8\nContraire de chaud ? froid\nJuste !\nTu as fait 2 points sur 3"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Change the game so that it gives 2 points for every right answer. With the answers Rome, 8 and cold it must end with 6 points.",
+       "it": "Cambia il gioco così che dia 2 punti per ogni risposta giusta. Con le risposte Roma, 8 e freddo deve finire con 6 punti.",
+       "fr": "Change le jeu pour qu'il donne 2 points pour chaque bonne réponse. Avec les réponses Rome, 8 et froid il doit finir avec 6 points."
+      },
+      "hint": {
+       "en": "score += 2 instead of score += 1.",
+       "it": "score += 2 invece di score += 1.",
+       "fr": "score += 2 au lieu de score += 1."
+      },
+      "sol": {
+       "en": "questions = {\"Capital of Italy?\": \"rome\", \"How many legs has a spider?\": \"8\", \"Opposite of hot?\": \"cold\"}\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if given.strip().lower() == right:\n        score += 2\nprint(\"Score:\", score)",
+       "it": "questions = {\"Capitale d'Italia?\": \"roma\", \"Quante zampe ha un ragno?\": \"8\", \"Contrario di caldo?\": \"freddo\"}\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if given.strip().lower() == right:\n        score += 2\nprint(\"Punti:\", score)",
+       "fr": "questions = {\"Capitale de l'Italie ?\": \"rome\", \"Combien de pattes a une araignée ?\": \"8\", \"Contraire de chaud ?\": \"froid\"}\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if given.strip().lower() == right:\n        score += 2\nprint(\"Points :\", score)"
+      },
+      "start": {
+       "en": "questions = {\"Capital of Italy?\": \"rome\", \"How many legs has a spider?\": \"8\", \"Opposite of hot?\": \"cold\"}\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if given.strip().lower() == right:\n        score += 1\nprint(\"Score:\", score)",
+       "it": "questions = {\"Capitale d'Italia?\": \"roma\", \"Quante zampe ha un ragno?\": \"8\", \"Contrario di caldo?\": \"freddo\"}\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if given.strip().lower() == right:\n        score += 1\nprint(\"Punti:\", score)",
+       "fr": "questions = {\"Capitale de l'Italie ?\": \"rome\", \"Combien de pattes a une araignée ?\": \"8\", \"Contraire de chaud ?\": \"froid\"}\nscore = 0\nfor question, right in questions.items():\n    given = input(question + \" \")\n    if given.strip().lower() == right:\n        score += 1\nprint(\"Points :\", score)"
+      },
+      "spec": {
+       "en": {
+        "m": "Score: 6$"
+       },
+       "it": {
+        "m": "Punti: 6$"
+       },
+       "fr": {
+        "m": "Points : 6$"
+       }
+      },
+      "answers": {
+       "en": [
+        "Rome",
+        "8",
+        "cold"
+       ],
+       "it": [
+        "Roma",
+        "8",
+        "freddo"
+       ],
+       "fr": [
+        "Rome",
+        "8",
+        "froid"
+       ]
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 3)\nfor q in asked:\n    print(q, \"->\", questions[q])",
+      "it": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 3)\nfor q in asked:\n    print(q, \"->\", questions[q])",
+      "fr": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 3)\nfor q in asked:\n    print(q, \"->\", questions[q])"
+     },
+     "title": {
+      "en": "Make it different each time",
+      "it": "Fallo diverso ogni volta",
+      "fr": "Fais-le différent à chaque fois"
+     },
+     "text": {
+      "en": "random.sample(list, 3) picks 3 different items by luck. With it, every game asks different questions, in a different order.\n\nlist(questions) turns the keys of the dictionary into a list, which is what sample needs.",
+      "it": "random.sample(lista, 3) sceglie 3 elementi diversi a caso. Con questo, ogni partita fa domande diverse, in un ordine diverso.\n\nlist(questions) trasforma le chiavi del dizionario in una lista, che è quello che serve a sample.",
+      "fr": "random.sample(liste, 3) choisit 3 éléments différents au hasard. Avec ça, chaque partie pose d'autres questions, dans un autre ordre.\n\nlist(questions) transforme les clés du dictionnaire en liste, ce dont sample a besoin."
+     },
+     "see": {
+      "en": "2 + 2? -> 4\n10 - 7? -> 3\n5 + 6? -> 11",
+      "it": "2 + 2? -> 4\n10 - 7? -> 3\n5 + 6? -> 11",
+      "fr": "2 + 2? -> 4\n10 - 7? -> 3\n5 + 6? -> 11"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "random.sample",
+       "w": "random.sample( )",
+       "d": {
+        "en": "random.sample(list, 3) picks 3 different items from a list, by luck. Every run gives other items, in another order.",
+        "it": "random.sample(lista, 3) sceglie 3 elementi diversi da una lista, a caso. Ogni esecuzione dà altri elementi, in un altro ordine.",
+        "fr": "random.sample(liste, 3) choisit 3 éléments différents dans une liste, au hasard. Chaque exécution donne d'autres éléments, dans un autre ordre."
+       },
+       "s": {
+        "en": "random.sample(items, 3)",
+        "it": "random.sample(items, 3)",
+        "fr": "random.sample(items, 3)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make the program pick 2 questions instead of 3. It must show 2 lines.",
+       "it": "Fai scegliere al programma 2 domande invece di 3. Deve mostrare 2 righe.",
+       "fr": "Fais choisir 2 questions au programme au lieu de 3. Il doit afficher 2 lignes."
+      },
+      "hint": {
+       "en": "random.sample(list(questions), 2)",
+       "it": "random.sample(list(questions), 2)",
+       "fr": "random.sample(list(questions), 2)"
+      },
+      "sol": {
+       "en": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 2)\nfor q in asked:\n    print(q, \"->\", questions[q])",
+       "it": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 2)\nfor q in asked:\n    print(q, \"->\", questions[q])",
+       "fr": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 2)\nfor q in asked:\n    print(q, \"->\", questions[q])"
+      },
+      "start": {
+       "en": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 3)\nfor q in asked:\n    print(q, \"->\", questions[q])",
+       "it": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 3)\nfor q in asked:\n    print(q, \"->\", questions[q])",
+       "fr": "import random\n\nquestions = {\"2 + 2?\": \"4\", \"3 x 3?\": \"9\", \"10 - 7?\": \"3\", \"5 + 6?\": \"11\"}\nasked = random.sample(list(questions), 3)\nfor q in asked:\n    print(q, \"->\", questions[q])"
+      },
+      "spec": {
+       "en": {
+        "m": "^[^\\n]+\\n[^\\n]+$",
+        "c": "sample\\(list\\(questions\\), 2\\)"
+       },
+       "it": {
+        "m": "^[^\\n]+\\n[^\\n]+$",
+        "c": "sample\\(list\\(questions\\), 2\\)"
+       },
+       "fr": {
+        "m": "^[^\\n]+\\n[^\\n]+$",
+        "c": "sample\\(list\\(questions\\), 2\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    }
+   ]
   }
  ]
 };

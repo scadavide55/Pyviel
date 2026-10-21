@@ -605,6 +605,17 @@
       delete document.body.dataset.checking;
       result.className = 'exercise-result';
       result.innerHTML = '';
+      // on a small screen the verdict may be under the edge, and the editor is behind the panel
+      setTimeout(function () {
+        if (window.innerWidth > 900) return;
+        if (/\bno\b/.test(result.className)) {
+          var back = element('button', 'btn go-editor', (UI.goEditor || 'Go to the editor') + ' →');
+          back.type = 'button';
+          back.addEventListener('click', function () { setOpen(false); code.focus(); });
+          result.appendChild(back);
+        }
+        if (result.scrollIntoView) result.scrollIntoView({block: 'nearest'});
+      }, 0);
       function say2(cls, title, text) {
         result.className += ' ' + cls;
         result.appendChild(element('b', null, title));

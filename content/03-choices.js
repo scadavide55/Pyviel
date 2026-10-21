@@ -23,7 +23,7 @@ print(10 > 20)`,
 5 > 3 demande "5 est-il plus grand que 3 ?" et la réponse est True. 5 < 3 demande "5 est-il plus petit que 3 ?" et la réponse est False. Remarque la majuscule : True, pas true.`],
         ex: {
           t: ['Ask if 10 is bigger than 20, and show the answer.', 'Chiedi se 10 è più grande di 20 e mostra la risposta.', 'Demande si 10 est plus grand que 20 et affiche la réponse.'],
-          h: ['print(10 > 20)', 'print(10 > 20)', 'print(10 > 20)'],
+          h: ['The sign > asks "is the left one bigger?". Put the whole question inside print.', 'Il segno > chiede "quello a sinistra è più grande?". Metti tutta la domanda dentro print.', 'Le signe > demande "celui de gauche est-il plus grand ?". Mets toute la question dans print.'],
           sol: 'print(10 > 20)', out: 'False'
         }
       },
@@ -45,7 +45,7 @@ Attenzione: un segno uguale = mette un valore in una scatola. Due segni uguale =
 Attention : un seul signe égal = met une valeur dans une boîte. Deux signes égal == posent une question. Ils sont très différents.`],
         ex: {
           t: ['Ask if 3 + 4 is equal to 7, and show the answer.', 'Chiedi se 3 + 4 è uguale a 7 e mostra la risposta.', 'Demande si 3 + 4 est égal à 7 et affiche la réponse.'],
-          h: ['print(3 + 4 == 7)', 'print(3 + 4 == 7)', 'print(3 + 4 == 7)'],
+          h: ['To ask "is it equal?" use two equal signs. One = would put a value in a box.', 'Per chiedere "è uguale?" usa due segni uguale. Un solo = metterebbe un valore in una scatola.', 'Pour demander "est-ce égal ?" utilise deux signes égal. Un seul = mettrait une valeur dans une boîte.'],
           sol: 'print(3 + 4 == 7)', out: 'True', c: '=='
         },
         w: ['Writing age = 12 where you wanted age == 12 is the most common slip. Pyviel will tell you.', 'Scrivere age = 12 dove volevi age == 12 è la distrazione più comune. Pyviel te lo dice.', 'Écrire age = 12 là où tu voulais age == 12 est la distraction la plus courante. Pyviel te le dit.']
@@ -68,7 +68,7 @@ Il segno uguale viene sempre per secondo: >=, non =>. 12 >= 12 è True, perché 
 Le signe égal vient toujours en second : >=, pas =>. 12 >= 12 est True, parce que 12 est égal à 12.`],
         ex: {
           t: ['Ask if 18 is at least 18 (bigger or equal), and show the answer.', 'Chiedi se 18 è almeno 18 (più grande o uguale) e mostra la risposta.', 'Demande si 18 est au moins 18 (plus grand ou égal) et affiche la réponse.'],
-          h: ['print(18 >= 18)', 'print(18 >= 18)', 'print(18 >= 18)'],
+          h: ['"Bigger or equal" is written with two signs next to each other: first >, then =.', '"Maggiore o uguale" si scrive con due segni vicini: prima >, poi =.', '"Plus grand ou égal" s\'écrit avec deux signes collés : d\'abord >, puis =.'],
           sol: 'print(18 >= 18)', out: 'True', c: '>='
         }
       },
@@ -92,7 +92,7 @@ print("abricot" < "banane")`],
 < et > suivent l'ordre de l'alphabet : "abricot" vient avant "banane", donc "abricot" < "banane" est True.`],
         ex: {
           t: ['Ask if "apple" is equal to "Apple", and show the answer.', 'Chiedi se "mela" è uguale a "Mela" e mostra la risposta.', 'Demande si "pomme" est égal à "Pomme" et affiche la réponse.'],
-          h: ['print("apple" == "Apple")', 'print("mela" == "Mela")', 'print("pomme" == "Pomme")'],
+          h: ['Compare the two texts with ==. Think: does a capital letter count as the same letter?', 'Confronta i due testi con ==. Pensa: una lettera maiuscola conta come la stessa lettera?', 'Compare les deux textes avec ==. Réfléchis : une majuscule compte-t-elle comme la même lettre ?'],
           sol: ['print("apple" == "Apple")', 'print("mela" == "Mela")', 'print("pomme" == "Pomme")'], out: 'False', c: '=='
         }
       },
@@ -117,7 +117,7 @@ print("nan" in "banane")`],
 "a" in "banane" est True. "z" in "banane" est False. Il peut chercher aussi un morceau plus long.`],
         ex: {
           t: ['Ask if "py" is inside "python", and show the answer.', 'Chiedi se "py" sta dentro "python" e mostra la risposta.', 'Demande si "py" est dans "python" et affiche la réponse.'],
-          h: ['print("py" in "python")', 'print("py" in "python")', 'print("py" in "python")'],
+          h: ['The word in asks if one text is inside another: the small text goes on the left.', 'La parola in chiede se un testo è dentro un altro: il testo piccolo va a sinistra.', 'Le mot in demande si un texte est dans un autre : le petit texte va à gauche.'],
           sol: 'print("py" in "python")', out: 'True', c: ' in '
         }
       },
@@ -139,7 +139,7 @@ La prima riga chiede "age è più grande di 10 e più piccolo di 15?". Sono vere
 La première ligne demande "age est-il plus grand que 10 et plus petit que 15 ?". Les deux sont vraies, donc la réponse est True.`],
         ex: {
           t: ['The number is 150. Ask if it is smaller than 0 or bigger than 100, and show the answer.', 'Il numero è 150. Chiedi se è più piccolo di 0 o più grande di 100 e mostra la risposta.', 'Le nombre est 150. Demande s\'il est plus petit que 0 ou plus grand que 100 et affiche la réponse.'],
-          h: ['print(number < 0 or number > 100)', 'print(number < 0 or number > 100)', 'print(number < 0 or number > 100)'],
+          h: ['Two comparisons joined by or: the answer is True if at least one of them is true.', 'Due confronti uniti da or: la risposta è True se almeno uno dei due è vero.', 'Deux comparaisons reliées par or : la réponse est True si au moins l\'une est vraie.'],
           start: 'number = 150', sol: 'number = 150\nprint(number < 0 or number > 100)', out: 'True', c: ' or '
         }
       },
@@ -159,7 +159,7 @@ It is the same as age > 10 and age < 15, but shorter and easy to read.`,
 C'est pareil que age > 10 and age < 15, mais plus court et facile à lire.`],
         ex: {
           t: ['Ask if 5 is between 1 and 10, with one chained comparison, and show the answer.', 'Chiedi se 5 è tra 1 e 10, con un solo confronto concatenato, e mostra la risposta.', 'Demande si 5 est entre 1 et 10, avec une seule comparaison enchaînée, et affiche la réponse.'],
-          h: ['print(1 < 5 < 10)', 'print(1 < 5 < 10)', 'print(1 < 5 < 10)'],
+          h: ['Write it as in maths: the small number, <, the number to test, <, the big number.', 'Scrivilo come in matematica: il numero piccolo, <, il numero da provare, <, il numero grande.', 'Écris-le comme en maths : le petit nombre, <, le nombre à tester, <, le grand nombre.'],
           sol: 'print(1 < 5 < 10)', out: 'True', c: '<.*<'
         }
       },
@@ -210,8 +210,32 @@ Python lo usa quando qualcosa non ha una risposta.`,
 Python l'utilise quand quelque chose n'a pas de réponse.`],
         ex: {
           t: ['Put None in a box called answer and show the box.', 'Metti None in una scatola che si chiama answer e mostra la scatola.', 'Mets None dans une boîte qui s\'appelle answer et affiche la boîte.'],
-          h: ['answer = None and then print(answer).', 'answer = None e poi print(answer).', 'answer = None puis print(answer).'],
+          h: ['None is written with a capital N and no quotes. Then show the box.', 'None si scrive con la N maiuscola e senza virgolette. Poi mostra la scatola.', 'None s\'écrit avec un N majuscule et sans guillemets. Puis affiche la boîte.'],
           sol: 'answer = None\nprint(answer)', out: 'None', c: 'None'
+        }
+      },
+      {
+        c: c`age = 15
+has_ticket = True
+print(age >= 12 and has_ticket)
+print("a" in "cat" or age > 18)
+print(not has_ticket)`,
+        t: ['Challenge: a password check', 'Sfida: controlla una password', 'Défi : vérifie un mot de passe'],
+        x: [`Comparisons give True or False, and and, or and not join them into bigger questions.
+
+and needs both sides to be true, or needs at least one, and not turns the answer around.`,
+          `I confronti danno True o False, e si possono unire in domande più grandi.
+
+and vuole veri tutti e due i lati, or ne vuole almeno uno, e not rovescia la risposta.`,
+          `Les comparaisons donnent True ou False, et on peut les relier en questions plus grandes.
+
+and veut que les deux côtés soient vrais, or en veut au moins un, et not retourne la réponse.`],
+        ex: {
+          t: ['A password is good when it has at least 8 letters and does not have the word password inside. The box pw holds sunflower7. Show whether it is good (True).', 'Una password è buona quando ha almeno 8 caratteri e non ha dentro la parola password. La scatola pw contiene girasole77. Mostra se è buona (True).', 'Un mot de passe est bon quand il a au moins 8 caractères et ne contient pas le mot password. La boîte pw contient tournesol7. Affiche s\'il est bon (True).'],
+          h: ['Two questions joined by and: one uses len and >=, the other uses not with in.', 'Due domande unite da and: una usa len e >=, l\'altra usa not con in.', 'Deux questions reliées par and : l\'une utilise len et >=, l\'autre utilise not avec in.'],
+          start: ['pw = "sunflower7"', 'pw = "girasole77"', 'pw = "tournesol7"'],
+          sol: ['pw = "sunflower7"\nprint(len(pw) >= 8 and not "password" in pw)', 'pw = "girasole77"\nprint(len(pw) >= 8 and not "password" in pw)', 'pw = "tournesol7"\nprint(len(pw) >= 8 and not "password" in pw)'],
+          out: 'True', c: 'len\\([\\s\\S]*and'
         }
       }
     ]
@@ -244,7 +268,7 @@ Qui l'età è 12, quindi la riga rientrata gira. L'ultima riga non è rientrata,
 Ici l'âge est 12, donc la ligne décalée tourne. La dernière ligne n'est pas décalée, donc elle tourne toujours.`],
         ex: {
           t: ['Make the program say Welcome only if number is 18 or more. The number is 20, so Welcome must appear.', 'Fai dire al programma Benvenuto solo se number è 18 o più. Il numero è 20, quindi Benvenuto deve comparire.', 'Fais dire Bienvenue au programme seulement si number vaut 18 ou plus. Le nombre est 20, donc Bienvenue doit apparaître.'],
-          h: ['if number >= 18: and then, pushed in with 4 spaces, the print line.', 'if number >= 18: e poi, rientrata di 4 spazi, la riga print.', 'if number >= 18: puis, décalée de 4 espaces, la ligne print.'],
+          h: ['The if line ends with a colon. The line that must run only sometimes goes under it, pushed in with 4 spaces.', 'La riga if finisce con i due punti. La riga che deve girare solo a volte va sotto, rientrata di 4 spazi.', 'La ligne if se termine par deux-points. La ligne qui ne doit tourner que parfois va dessous, décalée de 4 espaces.'],
           start: ['number = 20\nprint("Welcome")', 'number = 20\nprint("Benvenuto")', 'number = 20\nprint("Bienvenue")'],
           sol: ['number = 20\nif number >= 18:\n    print("Welcome")', 'number = 20\nif number >= 18:\n    print("Benvenuto")', 'number = 20\nif number >= 18:\n    print("Bienvenue")'], out: ['Welcome', 'Benvenuto', 'Bienvenue'], c: 'if '
         },
@@ -277,7 +301,7 @@ Quindi gira esattamente uno dei due gruppi di righe: mai tutti e due, mai nessun
 Donc exactement un des deux groupes de lignes tourne : jamais les deux, jamais aucun.`],
         ex: {
           t: ['The number is 12. Show Adult if it is 18 or more, and Child if not.', 'Il numero è 12. Mostra Adulto se è 18 o più, e Bambino se no.', 'Le nombre est 12. Affiche Adulte s\'il vaut 18 ou plus, et Enfant sinon.'],
-          h: ['if number >= 18: print("Adult") and else: print("Child").', 'if number >= 18: print("Adulto") ed else: print("Bambino").', 'if number >= 18: print("Adulte") et else: print("Enfant").'],
+          h: ['An if with its pushed-in print, then else: at the same level as the if, with its own pushed-in print.', 'Un if con il suo print rientrato, poi else: allo stesso livello dell\'if, con il suo print rientrato.', 'Un if avec son print décalé, puis else: au même niveau que le if, avec son propre print décalé.'],
           start: 'number = 12', sol: ['number = 12\nif number >= 18:\n    print("Adult")\nelse:\n    print("Child")', 'number = 12\nif number >= 18:\n    print("Adulto")\nelse:\n    print("Bambino")', 'number = 12\nif number >= 18:\n    print("Adulte")\nelse:\n    print("Enfant")'], out: ['Child', 'Bambino', 'Enfant'], c: 'else'
         }
       },
@@ -406,6 +430,44 @@ Si legge quasi come in inglese: "adulto se age è 18 o più, altrimenti bambino"
           t: ['The number is 7. In one line, make a box kind that holds even or odd, and show it. Use %.', 'Il numero è 7. In una riga, fai una scatola kind che contenga pari o dispari, e mostrala. Usa %.', 'Le nombre est 7. En une ligne, fais une boîte kind qui contient pair ou impair, et affiche-la. Utilise %.'],
           h: ['kind = "even" if number % 2 == 0 else "odd"', 'kind = "pari" if number % 2 == 0 else "dispari"', 'kind = "pair" if number % 2 == 0 else "impair"'],
           start: 'number = 7', sol: ['number = 7\nkind = "even" if number % 2 == 0 else "odd"\nprint(kind)', 'number = 7\nkind = "pari" if number % 2 == 0 else "dispari"\nprint(kind)', 'number = 7\nkind = "pair" if number % 2 == 0 else "impair"\nprint(kind)'], out: ['odd', 'dispari', 'impair'], c: ' if .* else '
+        }
+      },
+      {
+        c: [c`score = 72
+if score >= 90:
+    print("Great")
+elif score >= 60:
+    print("Pass")
+else:
+    print("Try again")`, c`score = 72
+if score >= 90:
+    print("Ottimo")
+elif score >= 60:
+    print("Promosso")
+else:
+    print("Riprova")`, c`score = 72
+if score >= 90:
+    print("Excellent")
+elif score >= 60:
+    print("Réussi")
+else:
+    print("Réessaie")`],
+        t: ['Challenge: three roads', 'Sfida: tre strade', 'Défi : trois routes'],
+        x: [`if, elif and else choose one road out of three. Python asks the questions from the top and takes the first road whose answer is True; else catches everything left.
+
+That is why the order matters: the biggest limit is asked first.`,
+          `if, elif ed else scelgono una strada su tre. Python fa le domande dall'alto e prende la prima strada la cui risposta è True; else prende tutto quello che resta.
+
+Per questo l'ordine conta: il limite più grande si chiede per primo.`,
+          `if, elif et else choisissent une route sur trois. Python pose les questions depuis le haut et prend la première route dont la réponse est True ; else attrape tout le reste.
+
+C'est pour ça que l'ordre compte : la plus grande limite est demandée en premier.`],
+        ex: {
+          t: ['The box temp holds 25. Show cold when it is below 10, nice from 10 to 24, and hot from 25 up. Here it must show hot.', 'La scatola temp contiene 25. Mostra freddo quando è sotto 10, bello da 10 a 24, e caldo da 25 in su. Qui deve mostrare caldo.', 'La boîte temp contient 25. Affiche froid quand c\'est sous 10, doux de 10 à 24, et chaud à partir de 25. Ici il doit afficher chaud.'],
+          h: ['if for the first limit, elif for the second, else for the rest. Each print is pushed in under its line.', 'if per il primo limite, elif per il secondo, else per il resto. Ogni print è rientrato sotto la sua riga.', 'if pour la première limite, elif pour la deuxième, else pour le reste. Chaque print est décalé sous sa ligne.'],
+          start: 'temp = 25',
+          sol: ['temp = 25\nif temp < 10:\n    print("cold")\nelif temp < 25:\n    print("nice")\nelse:\n    print("hot")', 'temp = 25\nif temp < 10:\n    print("freddo")\nelif temp < 25:\n    print("bello")\nelse:\n    print("caldo")', 'temp = 25\nif temp < 10:\n    print("froid")\nelif temp < 25:\n    print("doux")\nelse:\n    print("chaud")'],
+          out: ['hot', 'caldo', 'chaud'], c: 'elif'
         }
       }
     ]
@@ -558,6 +620,35 @@ Ici, pour chacune des 3 lignes, la boucle intérieure écrit 4 étoiles sans cha
           t: ['Change the program to draw 2 rows of 5 stars.', 'Cambia il programma per disegnare 2 righe di 5 stelle.', 'Change le programme pour dessiner 2 lignes de 5 étoiles.'],
           h: ['Change range(3) to range(2) and range(4) to range(5).', 'Cambia range(3) in range(2) e range(4) in range(5).', 'Change range(3) en range(2) et range(4) en range(5).'],
           start: 'for row in range(3):\n    for column in range(4):\n        print("*", end="")\n    print()', sol: 'for row in range(2):\n    for column in range(5):\n        print("*", end="")\n    print()', out: '*****\n*****'
+        }
+      },
+      {
+        c: [c`total = 0
+for n in range(1, 11):
+    total += n
+print("The sum of 1 to 10 is", total)`, c`total = 0
+for n in range(1, 11):
+    total += n
+print("La somma da 1 a 10 è", total)`, c`total = 0
+for n in range(1, 11):
+    total += n
+print("La somme de 1 à 10 est", total)`],
+        t: ['Challenge: a times table', 'Sfida: una tabellina', 'Défi : une table de multiplication'],
+        x: [`A loop and a box that adds up: n takes every value from 1 to 10, and each time total grows by n. The print is not pushed in, so it runs once, after the loop.
+
+Change 11 into 101 and the same three lines add up a hundred numbers.`,
+          `Un ciclo e una scatola che somma: n prende ogni valore da 1 a 10, e ogni volta total cresce di n. Il print non è rientrato, quindi gira una volta sola, dopo il ciclo.
+
+Cambia 11 in 101 e le stesse tre righe sommano cento numeri.`,
+          `Une boucle et une boîte qui additionne : n prend chaque valeur de 1 à 10, et à chaque fois total grandit de n. Le print n'est pas décalé, donc il tourne une seule fois, après la boucle.
+
+Change 11 en 101 et les trois mêmes lignes additionnent cent nombres.`],
+        ex: {
+          t: ['From an empty page: show the 5 times table from 5 x 1 to 5 x 5, one line each, like 5 x 3 = 15', 'Partendo da una pagina vuota: mostra la tabellina del 5 da 5 x 1 a 5 x 5, una riga ciascuna, come 5 x 3 = 15', 'En partant d\'une page vide : affiche la table de 5 de 5 x 1 à 5 x 5, une ligne chacune, comme 5 x 3 = 15'],
+          h: ['A for loop over range(1, 6). Inside, one print with commas: 5, the text x, the number of the loop, the text =, and the product.', 'Un ciclo for su range(1, 6). Dentro, un print con le virgole: 5, il testo x, il numero del ciclo, il testo = e il prodotto.', 'Une boucle for sur range(1, 6). Dedans, un print avec des virgules : 5, le texte x, le nombre de la boucle, le texte = et le produit.'],
+          start: '',
+          sol: 'for i in range(1, 6):\n    print(5, "x", i, "=", 5 * i)',
+          out: '5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25', c: 'for '
         }
       }
     ]

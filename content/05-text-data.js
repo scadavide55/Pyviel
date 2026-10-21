@@ -374,7 +374,7 @@ Per avere una vera copia usa a.copy(). La parola is chiede "queste sono esattame
 Pour avoir une vraie copie, utilise a.copy(). Le mot is demande "ces deux-là sont-ils exactement la même chose ?" : a is b est True, mais a is c est False.`],
         ex: {
           t: ['Change the program so that b is a real copy of a. Then a must still show [1, 2, 3] at the end.', 'Cambia il programma così che b sia una vera copia di a. Poi a deve mostrare ancora [1, 2, 3] alla fine.', 'Change le programme pour que b soit une vraie copie de a. Alors a doit toujours afficher [1, 2, 3] à la fin.'],
-          h: ['b = a.copy()', 'b = a.copy()', 'b = a.copy()'],
+          h: ['b = a gives the same list a second name. Ask the list for a copy of itself instead.', 'b = a dà alla stessa lista un secondo nome. Chiedi invece alla lista una copia di sé.', 'b = a donne un deuxième nom à la même liste. Demande plutôt à la liste une copie d\'elle-même.'],
           start: 'a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)', sol: 'a = [1, 2, 3]\nb = a.copy()\nb.append(4)\nprint(a)', out: '[1, 2, 3]', c: 'copy'
         }
       },
@@ -508,7 +508,7 @@ That is useful for things that belong together and should stay fixed, like the x
 C'est utile pour des choses qui vont ensemble et doivent rester fixes, comme le x et le y d'un point sur une carte.`],
         ex: {
           t: ['Make a tuple called size with the numbers 5 and 8, and show its second item.', 'Fai una tupla che si chiama size con i numeri 5 e 8 e mostra il suo secondo elemento.', 'Fais un tuple qui s\'appelle size avec les nombres 5 et 8 et affiche son deuxième élément.'],
-          h: ['size = (5, 8) and then print(size[1]).', 'size = (5, 8) e poi print(size[1]).', 'size = (5, 8) puis print(size[1]).'],
+          h: ['A tuple is written with round brackets. Places start from 0, so the second item is at place 1.', 'Una tupla si scrive con le parentesi tonde. I posti partono da 0, quindi il secondo elemento è al posto 1.', 'Un tuple s\'écrit avec des parenthèses. Les places commencent à 0, donc le deuxième élément est à la place 1.'],
           sol: 'size = (5, 8)\nprint(size[1])', out: '8', c: '\\(5, 8\\)'
         }
       },
@@ -561,7 +561,7 @@ Puoi scrivere la tupla anche lì: name, age, city = ("Ada", 12, "Roma"). Funzion
 Tu peux aussi écrire le tuple tout de suite : name, age, city = ("Ada", 12, "Rome"). Ça marche aussi avec les listes.`],
         ex: {
           t: ['Unpack the tuple (7, 9) into the names a and b, and show a + b.', 'Apri la tupla (7, 9) nei nomi a e b e mostra a + b.', 'Ouvre le tuple (7, 9) dans les noms a et b et affiche a + b.'],
-          h: ['a, b = (7, 9) and then print(a + b).', 'a, b = (7, 9) e poi print(a + b).', 'a, b = (7, 9) puis print(a + b).'],
+          h: ['Two names on the left of =, separated by a comma, take the two items in order.', 'Due nomi a sinistra di =, separati da una virgola, prendono i due elementi in ordine.', 'Deux noms à gauche de =, séparés par une virgule, prennent les deux éléments dans l\'ordre.'],
           sol: 'a, b = (7, 9)\nprint(a + b)', out: '16', c: 'a, b ='
         }
       },
@@ -582,7 +582,7 @@ Se ti serve cambiare le cose, usa una lista. Se ti serve una lista che si può c
 Si tu as besoin de changer des choses, utilise une liste. Si tu as besoin d'une liste qui a le droit de changer, tu peux en faire une à partir du tuple, à l'étape suivante.`],
         ex: {
           t: ['Make it work: use a list in square brackets instead of a tuple, so the first item can be changed. Show the list.', 'Fallo funzionare: usa una lista tra parentesi quadre invece di una tupla, così il primo elemento si può cambiare. Mostra la lista.', 'Fais-le marcher : utilise une liste entre crochets au lieu d\'un tuple, pour que le premier élément puisse être changé. Affiche la liste.'],
-          h: ['point = [3, 4] and then point[0] = 9 and print(point).', 'point = [3, 4] e poi point[0] = 9 e print(point).', 'point = [3, 4] puis point[0] = 9 et print(point).'],
+          h: ['Only the brackets change: a list uses square brackets [ ], and a list can be changed.', 'Cambiano solo le parentesi: una lista usa le quadre [ ], e una lista si può cambiare.', 'Seules les parenthèses changent : une liste utilise des crochets [ ], et une liste peut être changée.'],
           start: 'point = (3, 4)\nprint(point)\npoint[0] = 9', sol: 'point = [3, 4]\npoint[0] = 9\nprint(point)', out: '[9, 4]'
         }
       },
@@ -606,7 +606,7 @@ Scegli una lista quando il contenuto cambierà e una tupla quando deve restare e
 Choisis une liste quand le contenu va changer, et un tuple quand il doit rester exactement comme il est.`],
         ex: {
           t: ['Turn the list [1, 2, 3] into a tuple and show it.', 'Trasforma la lista [1, 2, 3] in una tupla e mostrala.', 'Transforme la liste [1, 2, 3] en tuple et affiche-le.'],
-          h: ['print(tuple([1, 2, 3]))', 'print(tuple([1, 2, 3]))', 'print(tuple([1, 2, 3]))'],
+          h: ['tuple(...) builds a tuple out of what you give it.', 'tuple(...) costruisce una tupla con quello che gli dai.', 'tuple(...) construit un tuple avec ce que tu lui donnes.'],
           sol: 'print(tuple([1, 2, 3]))', out: '(1, 2, 3)', c: 'tuple'
         }
       }
@@ -636,7 +636,7 @@ Mettere un valore in una chiave che non esiste ancora la aggiunge. Pensa a un ve
 Mettre une valeur dans une clé qui n'existe pas encore l'ajoute. Pense à un vrai dictionnaire : le mot est la clé, le sens est la valeur.`],
         ex: {
           t: ['Add a new key, Leo, with the value 11, and show the whole dictionary.', 'Aggiungi una chiave nuova, Leo, con il valore 11, e mostra tutto il dizionario.', 'Ajoute une nouvelle clé, Leo, avec la valeur 11, et affiche tout le dictionnaire.'],
-          h: ['ages["Leo"] = 11 and then print(ages).', 'ages["Leo"] = 11 e poi print(ages).', 'ages["Leo"] = 11 puis print(ages).'],
+          h: ['Write the dictionary name, the new key in square brackets, then = and the value.', 'Scrivi il nome del dizionario, la nuova chiave tra quadre, poi = e il valore.', 'Écris le nom du dictionnaire, la nouvelle clé entre crochets, puis = et la valeur.'],
           start: 'ages = {"Ada": 12, "Max": 9}', sol: 'ages = {"Ada": 12, "Max": 9}\nages["Leo"] = 11\nprint(ages)', out: "{'Ada': 12, 'Max': 9, 'Leo': 11}", c: '\\["Leo"\\]'
         }
       },
@@ -697,7 +697,7 @@ update mette in questo dizionario tutte le coppie di un altro dizionario. Un diz
 update met dans ce dictionnaire toutes les paires d'un autre dictionnaire. Un dictionnaire se souvient de l'ordre dans lequel les clés ont été ajoutées.`],
         ex: {
           t: ['Take the key pears out of the dictionary, and show the dictionary.', 'Togli la chiave pears dal dizionario e mostra il dizionario.', 'Enlève la clé pears du dictionnaire et affiche le dictionnaire.'],
-          h: ['del stock["pears"] and then print(stock).', 'del stock["pears"] e poi print(stock).', 'del stock["pears"] puis print(stock).'],
+          h: ['del, then the dictionary with the key in square brackets, takes that key away.', 'del, poi il dizionario con la chiave tra quadre, toglie quella chiave.', 'del, puis le dictionnaire avec la clé entre crochets, enlève cette clé.'],
           start: 'stock = {"apples": 5, "pears": 2}', sol: 'stock = {"apples": 5, "pears": 2}\ndel stock["pears"]\nprint(stock)', out: "{'apples': 5}", c: 'del'
         }
       },
@@ -722,7 +722,7 @@ items() è quello che userai di più.`,
 items() est celui que tu utiliseras le plus.`],
         ex: {
           t: ['Show every name with its age like this: Ada 12 (one per line), using items().', 'Mostra ogni nome con la sua età così: Ada 12 (uno per riga), usando items().', 'Affiche chaque nom avec son âge comme ceci : Ada 12 (un par ligne), en utilisant items().'],
-          h: ['for name, age in ages.items(): and print(name, age).', 'for name, age in ages.items(): e print(name, age).', 'for name, age in ages.items(): et print(name, age).'],
+          h: ['items() gives pairs: a for loop can take each pair into two names at once.', 'items() dà delle coppie: un ciclo for può prendere ogni coppia in due nomi insieme.', 'items() donne des paires : une boucle for peut prendre chaque paire dans deux noms à la fois.'],
           start: 'ages = {"Ada": 12, "Max": 9}', sol: 'ages = {"Ada": 12, "Max": 9}\nfor name, age in ages.items():\n    print(name, age)', out: 'Ada 12\nMax 9', c: 'items'
         }
       },
@@ -879,7 +879,7 @@ Un insieme non ha ordine, quindi usa sorted(...) quando vuoi mostrarlo in un ord
 Un ensemble n'a pas d'ordre, donc utilise sorted(...) quand tu veux l'afficher dans un ordre propre.`],
         ex: {
           t: ['Add the number 4 to the set and show the set in order.', 'Aggiungi il numero 4 all\'insieme e mostra l\'insieme in ordine.', 'Ajoute le nombre 4 à l\'ensemble et affiche l\'ensemble dans l\'ordre.'],
-          h: ['numbers.add(4) and then print(sorted(numbers)).', 'numbers.add(4) e poi print(sorted(numbers)).', 'numbers.add(4) puis print(sorted(numbers)).'],
+          h: ['Sets use .add(...). To show them in order, put the set inside sorted(...).', 'Gli insiemi usano .add(...). Per mostrarli in ordine, metti l\'insieme dentro sorted(...).', 'Les ensembles utilisent .add(...). Pour les afficher dans l\'ordre, mets l\'ensemble dans sorted(...).'],
           start: 'numbers = {1, 2, 3}', sol: 'numbers = {1, 2, 3}\nnumbers.add(4)\nprint(sorted(numbers))', out: '[1, 2, 3, 4]', c: 'add'
         }
       },

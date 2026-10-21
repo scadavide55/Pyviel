@@ -303,7 +303,7 @@ Le ultime due righe trovano i test della classe e li eseguono, e stampano un res
 Les deux dernières lignes trouvent les tests de la classe et les lancent, et affichent un rapport : un point pour chaque test réussi et un F pour chaque test échoué. Pour l'instant, copie ces deux lignes telles quelles. Si un test échoue, le rapport dit lequel et pourquoi.`],
         ex: {
           t: ['Add a test called test_ten to the class that checks is_even(10) is True. The report must say it ran 4 tests.', 'Aggiungi alla classe un test che si chiama test_ten che controlla che is_even(10) sia True. Il resoconto deve dire che ha eseguito 4 test.', 'Ajoute à la classe un test qui s\'appelle test_ten qui vérifie que is_even(10) est True. Le rapport doit dire qu\'il a lancé 4 tests.'],
-          h: ['def test_ten(self): and self.assertTrue(is_even(10)).', 'def test_ten(self): e self.assertTrue(is_even(10)).', 'def test_ten(self): et self.assertTrue(is_even(10)).'],
+          h: ['Copy the shape of the other tests: a method whose name starts with test_, with self, and an assert inside.', 'Copia la forma degli altri test: un metodo con il nome che inizia per test_, con self, e un assert dentro.', 'Copie la forme des autres tests : une méthode dont le nom commence par test_, avec self, et un assert dedans.'],
           start: 'import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)',
           sol: 'import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\n    def test_ten(self):\n        self.assertTrue(is_even(10))\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)', m: 'Ran 4 tests', c: 'test_ten'
         }
@@ -439,7 +439,7 @@ Quattro spazi per ogni rientro, due righe vuote tra le funzioni e una descrizion
 Quatre espaces pour chaque décalage, deux lignes vides entre les fonctions, et une description sous chaque def. Un code qui suit le style est un code que les autres, et toi dans un mois, peuvent lire.`],
         ex: {
           t: ['Make a constant called MAX_SCORE with the value 100, written the right way, and show it.', 'Fai una costante che si chiama MAX_SCORE con il valore 100, scritta nel modo giusto, e mostrala.', 'Fais une constante qui s\'appelle MAX_SCORE avec la valeur 100, écrite de la bonne façon, et affiche-la.'],
-          h: ['MAX_SCORE = 100 and print(MAX_SCORE).', 'MAX_SCORE = 100 e print(MAX_SCORE).', 'MAX_SCORE = 100 puis print(MAX_SCORE).'],
+          h: ['Constants are written all in capital letters, with underscores between the words.', 'Le costanti si scrivono tutte in maiuscolo, con i trattini bassi tra le parole.', 'Les constantes s\'écrivent tout en majuscules, avec des tirets bas entre les mots.'],
           sol: 'MAX_SCORE = 100\nprint(MAX_SCORE)', out: '100', c: 'MAX_SCORE'
         }
       },
@@ -498,7 +498,7 @@ Una piccola funzione che continua a chiedere finché la risposta è valida si pu
 Une petite fonction qui continue à demander jusqu'à ce que la réponse soit valide peut servir encore et encore. L'écrire une fois te protège des mêmes erreurs partout.`],
         ex: {
           t: ['Use ask_number to ask for a number from 1 to 10, with the answers 0, x and 7. It must end showing: 7', 'Usa ask_number per chiedere un numero da 1 a 10, con le risposte 0, x e 7. Deve finire mostrando: 7', 'Utilise ask_number pour demander un nombre de 1 à 10, avec les réponses 0, x et 7. Il doit finir en affichant : 7'],
-          h: ['print(ask_number("Number: ", 1, 10))', 'print(ask_number("Numero: ", 1, 10))', 'print(ask_number("Nombre : ", 1, 10))'],
+          h: ['ask_number takes the question, the lowest and the highest number, and gives back the first good answer. Show it.', 'ask_number prende la domanda, il numero più basso e quello più alto, e restituisce la prima risposta buona. Mostrala.', 'ask_number prend la question, le plus petit et le plus grand nombre, et rend la première bonne réponse. Affiche-la.'],
           start: 'def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip("-").isdigit():\n            print("Please type a whole number.")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print("Out of range.")', sol: 'def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip("-").isdigit():\n            print("Please type a whole number.")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print("Out of range.")\n\nprint(ask_number("Number: ", 1, 10))', i: ['0', 'x', '7'], m: '7$', c: 'ask_number\\('
         }
       },

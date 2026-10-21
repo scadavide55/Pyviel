@@ -133,7 +133,7 @@ It is beautiful, but slow for big numbers, because it works out the same things 
 Elle est belle, mais lente pour les grands nombres, parce qu'elle recalcule plusieurs fois les mêmes choses. Plus tard tu apprendras à mémoriser les réponses.`],
         ex: {
           t: ['Show fib(10).', 'Mostra fib(10).', 'Affiche fib(10).'],
-          h: ['print(fib(10))', 'print(fib(10))', 'print(fib(10))'],
+          h: ['The function is ready: call it with 10 inside print.', 'La funzione è pronta: chiamala con 10 dentro print.', 'La fonction est prête : appelle-la avec 10 dans print.'],
           start: 'def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)', sol: 'def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(10))', out: '55', c: 'fib\\(10\\)'
         }
       },
@@ -162,7 +162,7 @@ Il caso base è il pezzo più piccolo: una lista vuota, o un testo di una letter
 Le cas de base est le plus petit morceau : une liste vide, ou un texte d'une lettre.`],
         ex: {
           t: ['Show the sum of the list [5, 5, 5] using the function total.', 'Mostra la somma della lista [5, 5, 5] usando la funzione total.', 'Affiche la somme de la liste [5, 5, 5] en utilisant la fonction total.'],
-          h: ['print(total([5, 5, 5]))', 'print(total([5, 5, 5]))', 'print(total([5, 5, 5]))'],
+          h: ['Give total one list, written with square brackets, and show what it gives back.', 'Dai a total una lista, scritta con le quadre, e mostra quello che restituisce.', 'Donne à total une liste, écrite avec des crochets, et affiche ce qu\'elle rend.'],
           start: 'def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])', sol: 'def total(items):\n    if not items:\n        return 0\n    return items[0] + total(items[1:])\n\nprint(total([5, 5, 5]))', out: '15', c: 'total\\(\\['
         }
       },
@@ -382,7 +382,7 @@ Per prima cosa lo scorriamo soltanto e controlliamo che i dati siano giusti.`,
 D'abord on le parcourt seulement et on vérifie que les données sont justes.`],
         ex: {
           t: ['Add a fourth question of your own to the dictionary: 2 + 2? with the answer 4. Show the whole list again.', 'Aggiungi al dizionario una quarta domanda tua: 2 + 2? con la risposta 4. Mostra di nuovo tutta la lista.', 'Ajoute au dictionnaire une quatrième question de ton choix : 2 + 2 ? avec la réponse 4. Affiche de nouveau toute la liste.'],
-          h: ['One more line inside the curly brackets: "2 + 2?": "4",', 'Una riga in più dentro le parentesi graffe: "2 + 2?": "4",', 'Une ligne de plus dans les accolades : "2 + 2 ?": "4",'],
+          h: ['Each question is a pair "question": "answer" followed by a comma. Add one more pair before the closing curly bracket.', 'Ogni domanda è una coppia "domanda": "risposta" seguita da una virgola. Aggiungi un\'altra coppia prima della graffa che chiude.', 'Chaque question est une paire "question": "réponse" suivie d\'une virgule. Ajoute une paire de plus avant l\'accolade fermante.'],
           start: [c`questions = {
     "Capital of Italy?": "rome",
     "How many legs has a spider?": "8",
@@ -445,7 +445,7 @@ Scrivere il giudizio in una funzione a parte vuol dire che puoi migliorarlo dopo
 Écrire le jugement dans sa propre fonction veut dire que tu peux l'améliorer plus tard sans toucher au reste.`],
         ex: {
           t: ['Show whether the answer " PARIS " is right for "paris", using check.', 'Mostra se la risposta " PARIS " è giusta per "paris", usando check.', 'Affiche si la réponse " PARIS " est juste pour "paris", en utilisant check.'],
-          h: ['print(check(" PARIS ", "paris"))', 'print(check(" PARIS ", "paris"))', 'print(check(" PARIS ", "paris"))'],
+          h: ['Call check with the two texts, in the order the function expects them, and show the result.', 'Chiama check con i due testi, nell\'ordine in cui la funzione li aspetta, e mostra il risultato.', 'Appelle check avec les deux textes, dans l\'ordre où la fonction les attend, et affiche le résultat.'],
           start: 'def check(given, right):\n    return given.strip().lower() == right', sol: 'def check(given, right):\n    return given.strip().lower() == right\n\nprint(check(" PARIS ", "paris"))', out: 'True', c: 'check\\('
         }
       },
@@ -515,7 +515,7 @@ Eseguilo e rispondi. Poi cambia le domande e rendilo tuo.`,
 Lance-le et réponds. Puis change les questions et fais-en le tien.`],
         ex: {
           t: ['Change the game so that it gives 2 points for every right answer. With the answers Rome, 8 and cold it must end with 6 points.', 'Cambia il gioco così che dia 2 punti per ogni risposta giusta. Con le risposte Roma, 8 e freddo deve finire con 6 punti.', 'Change le jeu pour qu\'il donne 2 points pour chaque bonne réponse. Avec les réponses Rome, 8 et froid il doit finir avec 6 points.'],
-          h: ['score += 2 instead of score += 1.', 'score += 2 invece di score += 1.', 'score += 2 au lieu de score += 1.'],
+          h: ['Find the line that adds a point when the answer is right, and change how much it adds.', 'Trova la riga che aggiunge un punto quando la risposta è giusta, e cambia quanto aggiunge.', 'Trouve la ligne qui ajoute un point quand la réponse est juste, et change combien elle ajoute.'],
           start: [c`questions = {"Capital of Italy?": "rome", "How many legs has a spider?": "8", "Opposite of hot?": "cold"}
 score = 0
 for question, right in questions.items():

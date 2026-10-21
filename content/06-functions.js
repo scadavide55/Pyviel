@@ -86,7 +86,7 @@ greet("Ada") mette "Ada" nella scatola name e poi esegue le righe. Una funzione 
 greet("Ada") met "Ada" dans la boîte name, puis lance les lignes. Une fonction peut avoir autant de paramètres qu'il lui en faut, séparés par des virgules.`],
         ex: {
           t: ['Make a function double with one parameter n that shows n * 2. Call it with 21.', 'Crea una funzione double con un parametro n che mostra n * 2. Chiamala con 21.', 'Crée une fonction double avec un paramètre n qui affiche n * 2. Appelle-la avec 21.'],
-          h: ['def double(n): and, pushed in, print(n * 2). Then double(21).', 'def double(n): e, rientrata, print(n * 2). Poi double(21).', 'def double(n): et, décalée, print(n * 2). Puis double(21).'],
+          h: ['A def line with the name and n in brackets, ending with a colon; a pushed-in print; then a call, not pushed in.', 'Una riga def con il nome e n tra parentesi, che finisce con i due punti; un print rientrato; poi una chiamata, non rientrata.', 'Une ligne def avec le nom et n entre parenthèses, terminée par deux-points ; un print décalé ; puis un appel, non décalé.'],
           sol: 'def double(n):\n    print(n * 2)\n\ndouble(21)', out: '42', c: 'def double\\(n\\)'
         }
       },
@@ -111,7 +111,7 @@ La funzione finisce alla riga return. Una chiamata è un valore come gli altri, 
 La fonction se termine à la ligne return. Un appel est une valeur comme les autres, donc les appels peuvent être imbriqués : square(square(2)).`],
         ex: {
           t: ['Make a function cube that returns n * n * n. Show cube(3).', 'Crea una funzione cube che restituisce n * n * n. Mostra cube(3).', 'Crée une fonction cube qui rend n * n * n. Affiche cube(3).'],
-          h: ['def cube(n): then return n * n * n, and print(cube(3)).', 'def cube(n): poi return n * n * n, e print(cube(3)).', 'def cube(n): puis return n * n * n, et print(cube(3)).'],
+          h: ['Inside the function, return sends the result back. Outside, print shows what the call gave back.', 'Dentro la funzione, return rimanda indietro il risultato. Fuori, print mostra quello che la chiamata ha restituito.', 'Dans la fonction, return renvoie le résultat. Dehors, print affiche ce que l\'appel a rendu.'],
           sol: 'def cube(n):\n    return n * n * n\n\nprint(cube(3))', out: '27', c: 'return'
         }
       },
@@ -304,7 +304,7 @@ Lo hai già fatto con print, quando scrivevi sep= e end=.`,
 Tu l'as déjà fait avec print, quand tu écrivais sep= et end=.`],
         ex: {
           t: ['Call box with the names: width 6, height 1 and char "+", in any order. It must show a row of six + signs.', 'Chiama box con i nomi: width 6, height 1 e char "+", in qualsiasi ordine. Deve mostrare una fila di sei segni +.', 'Appelle box avec les noms : width 6, height 1 et char "+", dans n\'importe quel ordre. Elle doit afficher une rangée de six signes +.'],
-          h: ['box(height=1, width=6, char="+")', 'box(height=1, width=6, char="+")', 'box(height=1, width=6, char="+")'],
+          h: ['Each value is written name=value, separated by commas. With names, the order does not matter.', 'Ogni valore si scrive nome=valore, separato da virgole. Con i nomi, l\'ordine non conta.', 'Chaque valeur s\'écrit nom=valeur, séparée par des virgules. Avec les noms, l\'ordre ne compte pas.'],
           start: 'def box(width, height, char="#"):\n    for row in range(height):\n        print(char * width)',
           sol: 'def box(width, height, char="#"):\n    for row in range(height):\n        print(char * width)\n\nbox(height=1, width=6, char="+")', out: '++++++', c: 'width=6'
         }
@@ -357,7 +357,7 @@ La stella funziona anche al contrario, quando chiami: print(*numbers) spande la 
 L'étoile marche aussi dans l'autre sens, quand tu appelles : print(*numbers) étale la liste en valeurs séparées, comme si tu les avais écrites une par une.`],
         ex: {
           t: ['Show the numbers of the list with a dash between them, using the star: 3-6-9', 'Mostra i numeri della lista con un trattino in mezzo, usando la stella: 3-6-9', 'Affiche les nombres de la liste avec un tiret entre eux, en utilisant l\'étoile : 3-6-9'],
-          h: ['print(*numbers, sep="-")', 'print(*numbers, sep="-")', 'print(*numbers, sep="-")'],
+          h: ['A * before the list hands its items to print one by one; sep= chooses what goes between them.', 'Un * prima della lista passa a print i suoi elementi uno per uno; sep= sceglie cosa mettere in mezzo.', 'Un * devant la liste donne ses éléments à print un par un ; sep= choisit ce qu\'on met entre eux.'],
           start: 'numbers = [3, 6, 9]', sol: 'numbers = [3, 6, 9]\nprint(*numbers, sep="-")', out: '3-6-9', c: '\\*numbers'
         }
       },
@@ -403,7 +403,7 @@ Ricorda questa idea. Apre un modo tutto nuovo di scrivere i programmi, e la user
 Souviens-toi de cette idée. Elle ouvre une toute nouvelle façon d'écrire des programmes, et tu l'utiliseras bientôt.`],
         ex: {
           t: ['Ask if print can be called like a function, with callable, and show the answer.', 'Chiedi se print si può chiamare come una funzione, con callable, e mostra la risposta.', 'Demande si print peut être appelé comme une fonction, avec callable, et affiche la réponse.'],
-          h: ['print(callable(print))', 'print(callable(print))', 'print(callable(print))'],
+          h: ['callable(...) answers True or False. Give it print itself, with no brackets after print.', 'callable(...) risponde True o False. Dagli print stesso, senza parentesi dopo print.', 'callable(...) répond True ou False. Donne-lui print lui-même, sans parenthèses après print.'],
           sol: 'print(callable(print))', out: 'True', c: 'callable'
         }
       }
@@ -443,7 +443,7 @@ It is a good thing: every function has its own private boxes, so names inside ca
 C'est une bonne chose : chaque fonction a ses propres boîtes privées, donc les noms dedans ne peuvent pas se heurter aux noms d'ailleurs.`],
         ex: {
           t: ['Make it work: let the function return the message, and show it outside with print(hello()).', 'Fallo funzionare: fai restituire il messaggio alla funzione e mostralo fuori con print(hello()).', 'Fais-le marcher : fais rendre le message par la fonction et affiche-le dehors avec print(hello()).'],
-          h: ['return message inside, and print(hello()) outside.', 'return message dentro e print(hello()) fuori.', 'return message dedans et print(hello()) dehors.'],
+          h: ['The box message only lives inside the function: return hands its value out to whoever called.', 'La scatola message vive solo dentro la funzione: return ne passa il valore fuori, a chi ha chiamato.', 'La boîte message ne vit que dans la fonction : return donne sa valeur à celui qui a appelé.'],
           start: ['def hello():\n    message = "inside"\n    print(message)\n\nhello()\nprint(message)', 'def hello():\n    message = "dentro"\n    print(message)\n\nhello()\nprint(message)', 'def hello():\n    message = "dedans"\n    print(message)\n\nhello()\nprint(message)'],
           sol: ['def hello():\n    message = "inside"\n    return message\n\nprint(hello())', 'def hello():\n    message = "dentro"\n    return message\n\nprint(hello())', 'def hello():\n    message = "dedans"\n    return message\n\nprint(hello())'],
           out: ['inside', 'dentro', 'dedans'], c: 'return'
@@ -496,7 +496,7 @@ La correzione migliore è dare alla funzione il valore e riprendere la risposta 
 La meilleure correction est de donner la valeur à la fonction et de reprendre la réponse avec return. L'étape suivante montre cela, et une autre façon.`],
         ex: {
           t: ['Fix it the good way: give add_one the value as a parameter and return the new value. At the end, the program must show 1.', 'Correggilo nel modo buono: dai ad add_one il valore come parametro e restituisci il nuovo valore. Alla fine il programma deve mostrare 1.', 'Corrige-le de la bonne façon : donne à add_one la valeur comme paramètre et rends la nouvelle valeur. À la fin, le programme doit afficher 1.'],
-          h: ['def add_one(counter): return counter + 1, and counter = add_one(counter).', 'def add_one(counter): return counter + 1, e counter = add_one(counter).', 'def add_one(counter): return counter + 1, et counter = add_one(counter).'],
+          h: ['The function gets the old value as a parameter and returns the new one. Outside, put the answer back in counter.', 'La funzione riceve il vecchio valore come parametro e restituisce quello nuovo. Fuori, rimetti la risposta in counter.', 'La fonction reçoit l\'ancienne valeur en paramètre et rend la nouvelle. Dehors, remets la réponse dans counter.'],
           start: 'counter = 0\n\ndef add_one():\n    counter = counter + 1\n\nadd_one()\nprint(counter)', sol: 'counter = 0\n\ndef add_one(counter):\n    return counter + 1\n\ncounter = add_one(counter)\nprint(counter)', out: '1', c: 'return'
         }
       },
@@ -559,7 +559,7 @@ Ogni chiamata a make_counter crea il suo contatore separato: per questo b parte 
 Chaque appel à make_counter crée son propre compteur séparé : c'est pourquoi b part de 1. On appelle ça une closure. C'est un peu avancé : ce n'est pas grave si tu dois le relire deux fois.`],
         ex: {
           t: ['Change step so that it adds 2 each time. It must show: 2 4 6  and then  2', 'Cambia step così che aggiunga 2 ogni volta. Deve mostrare: 2 4 6  e poi  2', 'Change step pour qu\'elle ajoute 2 à chaque fois. Elle doit afficher : 2 4 6  puis  2'],
-          h: ['count += 2', 'count += 2', 'count += 2'],
+          h: ['Find the line inside step that adds to count, and change only the number it adds.', 'Trova la riga dentro step che aggiunge a count, e cambia solo il numero che aggiunge.', 'Trouve la ligne dans step qui ajoute à count, et change seulement le nombre ajouté.'],
           start: 'def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())',
           sol: 'def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 2\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())', out: '2 4 6\n2'
         }

@@ -167,6 +167,44 @@ print("Après")`],
           exact: true
         },
         w: ['Python stops at the first mistake. The lines after it do not run until you fix it.', 'Python si ferma al primo errore. Le righe dopo non girano finché non lo correggi.', 'Python s\'arrête à la première erreur. Les lignes d\'après ne tournent pas tant que tu ne l\'as pas corrigée.']
+      },
+      {
+        c: [c`# A small card about me
+print("Hi, I am Pyviel.")
+print("I can count:")
+print(40 + 2)`, c`# Un piccolo biglietto su di me
+print("Ciao, sono Pyviel.")
+print("So contare:")
+print(40 + 2)`, c`# Une petite carte sur moi
+print("Salut, je suis Pyviel.")
+print("Je sais compter :")
+print(40 + 2)`],
+        t: ['Challenge: a small card', 'Sfida: un piccolo biglietto', 'Défi : une petite carte'],
+        x: [`Time to put the whole lesson together: a note, a few lines of text, and a sum that Python works out.
+
+Read the program, guess what it shows, then try it. After that, your turn: you write one from an empty page.`,
+          `È ora di mettere insieme tutta la lezione: una nota, qualche riga di testo e un conto che Python fa da solo.
+
+Leggi il programma, indovina cosa mostra, poi provalo. Dopo tocca a te: ne scrivi uno partendo da una pagina vuota.`,
+          `C'est le moment de rassembler toute la leçon : une note, quelques lignes de texte et un calcul que Python fait tout seul.
+
+Lis le programme, devine ce qu'il affiche, puis essaie-le. Ensuite c'est à toi : tu en écris un en partant d'une page vide.`],
+        ex: {
+          t: ['From an empty page, write a program with a note on the first line, then three lines on the screen: your name, the result of 12 + 30 (let Python do it), and Bye!', 'Partendo da una pagina vuota, scrivi un programma con una nota sulla prima riga e poi tre righe sullo schermo: il tuo nome, il risultato di 12 + 30 (fallo fare a Python) e Ciao ciao!', 'En partant d\'une page vide, écris un programme avec une note sur la première ligne, puis trois lignes à l\'écran : ton prénom, le résultat de 12 + 30 (laisse Python le faire) et Au revoir !'],
+          h: ['A note starts with #. Text goes between quotes; the sum goes inside print without quotes.', 'Una nota inizia con #. Il testo va tra virgolette; il conto va dentro print senza virgolette.', 'Une note commence par #. Le texte va entre guillemets ; le calcul va dans print sans guillemets.'],
+          start: '',
+          sol: [c`# My first card
+print("Ada")
+print(12 + 30)
+print("Bye!")`, c`# Il mio primo biglietto
+print("Ada")
+print(12 + 30)
+print("Ciao ciao!")`, c`# Ma première carte
+print("Ada")
+print(12 + 30)
+print("Au revoir !")`],
+          m: ['^.+\\n42\\nBye!$', '^.+\\n42\\nCiao ciao!$', '^.+\\n42\\nAu revoir !$'], c: ['^#[^\\n]*\\n', '^#[^\\n]*\\n', '^#[^\\n]*\\n']
+        }
       }
     ]
   },
@@ -240,7 +278,7 @@ Le maiuscole contano: Age e age sono due scatole diverse. Chi programma in Pytho
 Les majuscules comptent : Age et age sont deux boîtes différentes. Les programmeurs Python écrivent les noms en minuscules, avec des tirets bas : player_name. Choisis des noms qui disent ce qu'il y a dedans.`],
         ex: {
           t: ['Make a box called favourite_colour that holds the text blue, and show it.', 'Fai una scatola che si chiama favourite_colour con dentro il testo blu e mostrala.', 'Fais une boîte qui s\'appelle favourite_colour et qui contient le texte bleu, et affiche-la.'],
-          h: ['favourite_colour = "blue", and then print(favourite_colour).', 'favourite_colour = "blu", e poi print(favourite_colour).', 'favourite_colour = "bleu", puis print(favourite_colour).'],
+          h: ['Two lines: the first puts the text in the box with =, the second shows the box. The name has no quotes around it, the text does.', 'Due righe: la prima mette il testo nella scatola con =, la seconda mostra la scatola. Il nome non ha virgolette, il testo sì.', 'Deux lignes : la première met le texte dans la boîte avec =, la seconde affiche la boîte. Le nom n\'a pas de guillemets, le texte oui.'],
           sol: ['favourite_colour = "blue"\nprint(favourite_colour)', 'favourite_colour = "blu"\nprint(favourite_colour)', 'favourite_colour = "bleu"\nprint(favourite_colour)'],
           out: ['blue', 'blu', 'bleu'], c: 'favourite_colour'
         },
@@ -302,6 +340,38 @@ sep= dit ce qu'on met entre les choses. end= dit ce qu'on met à la fin.`],
           out: ['red+green+blue', 'rosso+verde+blu', 'rouge+vert+bleu']
         },
         w: ['sep and end go after the things to show, and the text after the = needs quotes.', 'sep e end vanno dopo le cose da mostrare, e il testo dopo il = vuole le virgolette.', 'sep et end vont après les choses à afficher, et le texte après le = veut des guillemets.']
+      },
+      {
+        c: [c`name = "Ada"
+age = 12
+age = age + 1
+print(name, "will be", age)
+print(name, "will be", age, sep="...")`, c`name = "Ada"
+age = 12
+age = age + 1
+print(name, "avrà", age, "anni")
+print(name, "avrà", age, "anni", sep="...")`, c`name = "Ada"
+age = 12
+age = age + 1
+print(name, "aura", age, "ans")
+print(name, "aura", age, "ans", sep="...")`],
+        t: ['Challenge: boxes that work together', 'Sfida: scatole che lavorano insieme', 'Défi : des boîtes qui travaillent ensemble'],
+        x: [`Everything from this lesson in one program: two boxes, one box that changes, a print with commas, and a print with sep.
+
+Notice that age is changed before it is shown, so both lines show the new age.`,
+          `Tutto quello di questa lezione in un programma: due scatole, una scatola che cambia, un print con le virgole e un print con sep.
+
+Nota che age cambia prima di essere mostrata, quindi tutte e due le righe mostrano l'età nuova.`,
+          `Tout ce qu'il y a dans cette leçon en un programme : deux boîtes, une boîte qui change, un print avec des virgules et un print avec sep.
+
+Remarque que age change avant d'être affiché, donc les deux lignes montrent le nouvel âge.`],
+        ex: {
+          t: ['From an empty page: make a box pet with the text Rex and a box legs with the number 4. Show Rex has 4 legs using the boxes and commas. Then show the same words joined by dashes: Rex-has-4-legs', 'Partendo da una pagina vuota: fai una scatola pet con il testo Rex e una scatola legs con il numero 4. Mostra Rex ha 4 zampe usando le scatole e le virgole. Poi mostra le stesse parole unite da trattini: Rex-ha-4-zampe', 'En partant d\'une page vide : fais une boîte pet avec le texte Rex et une boîte legs avec le nombre 4. Affiche Rex a 4 pattes en utilisant les boîtes et des virgules. Puis affiche les mêmes mots reliés par des tirets : Rex-a-4-pattes'],
+          h: ['Two boxes, then two print lines with the same four things. The second print ends with sep= and the dash between quotes.', 'Due scatole, poi due righe print con le stesse quattro cose. Il secondo print finisce con sep= e il trattino tra virgolette.', 'Deux boîtes, puis deux lignes print avec les mêmes quatre choses. Le second print se termine par sep= et le tiret entre guillemets.'],
+          start: '',
+          sol: ['pet = "Rex"\nlegs = 4\nprint(pet, "has", legs, "legs")\nprint(pet, "has", legs, "legs", sep="-")', 'pet = "Rex"\nlegs = 4\nprint(pet, "ha", legs, "zampe")\nprint(pet, "ha", legs, "zampe", sep="-")', 'pet = "Rex"\nlegs = 4\nprint(pet, "a", legs, "pattes")\nprint(pet, "a", legs, "pattes", sep="-")'],
+          out: ['Rex has 4 legs\nRex-has-4-legs', 'Rex ha 4 zampe\nRex-ha-4-zampe', 'Rex a 4 pattes\nRex-a-4-pattes'], c: 'sep\\s*='
+        }
       }
     ]
   },
@@ -326,7 +396,7 @@ L'unica regola: la virgoletta che chiude deve essere dello stesso tipo di quella
 La seule règle : le guillemet qui ferme doit être du même genre que celui qui ouvre.`],
         ex: {
           t: ['Show the word hello, written with single quotes.', 'Mostra la parola ciao, scritta con le virgolette singole.', 'Affiche le mot salut, écrit avec des guillemets simples.'],
-          h: ['print(\'hello\') : a single quote before and after the word.', 'print(\'ciao\') : una virgoletta singola prima e dopo la parola.', 'print(\'salut\') : un guillemet simple avant et après le mot.'],
+          h: ['Like the double quotes, but use the key \' before and after the word.', 'Come con le virgolette doppie, ma usa il tasto \' prima e dopo la parola.', 'Comme avec les guillemets doubles, mais utilise la touche \' avant et après le mot.'],
           sol: ["print('hello')", "print('ciao')", "print('salut')"],
           out: ['hello', 'ciao', 'salut'], c: ["print\\('hello'\\)", "print\\('ciao'\\)", "print\\('salut'\\)"]
         },
@@ -428,8 +498,37 @@ Metti tra le parentesi il testo, o una scatola che lo contiene.`,
 Mets entre les parenthèses le texte, ou une boîte qui le contient.`],
         ex: {
           t: ['Show how many letters the word banana has.', 'Mostra quante lettere ha la parola banana.', 'Affiche combien de lettres a le mot banane.'],
-          h: ['print(len("banana"))', 'print(len("banana"))', 'print(len("banane"))'],
+          h: ['len(...) counts the letters of the text you put in its brackets. Then print the result.', 'len(...) conta le lettere del testo che metti tra le sue parentesi. Poi mostra il risultato con print.', 'len(...) compte les lettres du texte que tu mets dans ses parenthèses. Puis affiche le résultat avec print.'],
           sol: ['print(len("banana"))', 'print(len("banana"))', 'print(len("banane"))'], out: '6', c: 'len'
+        }
+      },
+      {
+        c: [c`greeting = "Hello" + " " + "world"
+print(greeting)
+print("-" * len(greeting))
+print("It's", len(greeting), "letters long")`, c`greeting = "Ciao" + " " + "mondo"
+print(greeting)
+print("-" * len(greeting))
+print("Sono", len(greeting), "caratteri")`, c`greeting = "Bonjour" + " " + "le monde"
+print(greeting)
+print("-" * len(greeting))
+print("C'est long de", len(greeting), "caractères")`],
+        t: ['Challenge: play with text', 'Sfida: gioca con il testo', 'Défi : joue avec le texte'],
+        x: [`Join, repeat and count, all in one program. The line of dashes is exactly as long as the greeting, because len counts the letters and * repeats the dash that many times.
+
+A space counts as a letter too.`,
+          `Unire, ripetere e contare, tutto in un programma. La riga di trattini è lunga esattamente come il saluto, perché len conta i caratteri e * ripete il trattino quel numero di volte.
+
+Anche uno spazio conta come carattere.`,
+          `Joindre, répéter et compter, tout dans un programme. La ligne de tirets est exactement aussi longue que la salutation, parce que len compte les caractères et * répète le tiret autant de fois.
+
+Une espace compte aussi comme un caractère.`],
+        ex: {
+          t: ['From an empty page: put ha in a box called laugh. Show it 3 times with an ! at the end (hahaha!), then show how many letters that has (7).', 'Partendo da una pagina vuota: metti ha in una scatola che si chiama laugh. Mostrala 3 volte con un ! alla fine (hahaha!), poi mostra quanti caratteri ha (7).', 'En partant d\'une page vide : mets ha dans une boîte qui s\'appelle laugh. Affiche-la 3 fois avec un ! à la fin (hahaha!), puis affiche combien de caractères ça fait (7).'],
+          h: ['laugh * 3 repeats it, and + "!" joins the mark. len(...) can count the whole thing, brackets and all.', 'laugh * 3 la ripete, e + "!" attacca il punto esclamativo. len(...) può contare tutto, con le parentesi.', 'laugh * 3 la répète, et + "!" colle le point d\'exclamation. len(...) peut tout compter, avec les parenthèses.'],
+          start: '',
+          sol: 'laugh = "ha"\nprint(laugh * 3 + "!")\nprint(len(laugh * 3 + "!"))',
+          out: 'hahaha!\n7', c: 'laugh\\s*\\*'
         }
       }
     ]
@@ -579,6 +678,35 @@ Si tu laisses de côté la première place, ça commence au début. Si tu laisse
           start: 'word = "Python"', sol: 'word = "Python"\nprint(word[2:5])', out: 'tho', c: '\\[\\s*2\\s*:\\s*5\\s*\\]'
         },
         w: ['The last place is not included: word[0:2] gives two letters, not three.', 'L\'ultimo posto non è incluso: word[0:2] dà due lettere, non tre.', 'La dernière place n\'est pas incluse : word[0:2] donne deux lettres, pas trois.']
+      },
+      {
+        c: [c`word = "banana"
+print(word[0], word[-1])
+print(word[2:5])
+print("first\tlast\nend")`, c`word = "banana"
+print(word[0], word[-1])
+print(word[2:5])
+print("prima\tultima\nfine")`, c`word = "banane"
+print(word[0], word[-1])
+print(word[2:5])
+print("première\tdernière\nfin")`],
+        t: ['Challenge: take a word apart', 'Sfida: smonta una parola', 'Défi : démonte un mot'],
+        x: [`Places, places from the end, and pieces, in one program. Remember: the first place is 0, the last is -1, and a piece [2:5] takes places 2, 3 and 4, not 5.
+
+The last line mixes a tab and a new line inside one text.`,
+          `Posti, posti dalla fine e pezzi, in un programma. Ricorda: il primo posto è 0, l'ultimo è -1, e un pezzo [2:5] prende i posti 2, 3 e 4, non il 5.
+
+L'ultima riga mescola un tab e una riga nuova dentro un solo testo.`,
+          `Des places, des places depuis la fin et des morceaux, dans un programme. Rappelle-toi : la première place est 0, la dernière est -1, et un morceau [2:5] prend les places 2, 3 et 4, pas la 5.
+
+La dernière ligne mélange une tabulation et un retour à la ligne dans un seul texte.`],
+        ex: {
+          t: ['From an empty page: put Python in a box called word. Show its first three letters (Pyt), then its last two letters (on), each on its own line.', 'Partendo da una pagina vuota: metti Python in una scatola che si chiama word. Mostra le sue prime tre lettere (Pyt), poi le sue ultime due lettere (on), ognuna su una riga.', 'En partant d\'une page vide : mets Python dans une boîte qui s\'appelle word. Affiche ses trois premières lettres (Pyt), puis ses deux dernières lettres (on), chacune sur sa ligne.'],
+          h: ['Count the places: P is 0, y is 1, t is 2, h is 3, o is 4, n is 5. A piece [a:b] stops just before b.', 'Conta i posti: P è 0, y è 1, t è 2, h è 3, o è 4, n è 5. Un pezzo [a:b] si ferma appena prima di b.', 'Compte les places : P est 0, y est 1, t est 2, h est 3, o est 4, n est 5. Un morceau [a:b] s\'arrête juste avant b.'],
+          start: '',
+          sol: 'word = "Python"\nprint(word[0:3])\nprint(word[4:6])',
+          out: 'Pyt\non', c: 'word\\['
+        }
       }
     ]
   }

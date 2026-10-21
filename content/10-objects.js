@@ -27,7 +27,7 @@ class Dog: crea un tipo nuovo, che si chiama Dog. pass vuol dire "qui ancora nie
 class Dog: crée une nouvelle sorte, appelée Dog. pass veut dire "rien ici pour l'instant". Dog() construit un objet de cette sorte, et type montre sa sorte.`],
         ex: {
           t: ['Make a class called Cat, build one object called tom from it, and show its type.', 'Crea una classe che si chiama Cat, costruisci un oggetto che si chiama tom, e mostra il suo tipo.', 'Crée une classe qui s\'appelle Cat, construis un objet qui s\'appelle tom, et affiche sa sorte.'],
-          h: ['class Cat: with pass, then tom = Cat() and print(type(tom)).', 'class Cat: con pass, poi tom = Cat() e print(type(tom)).', 'class Cat: avec pass, puis tom = Cat() et print(type(tom)).'],
+          h: ['An empty class needs one pushed-in line: pass. Build the object by calling the class like a function.', 'Una classe vuota ha bisogno di una riga rientrata: pass. Costruisci l\'oggetto chiamando la classe come una funzione.', 'Une classe vide a besoin d\'une ligne décalée : pass. Construis l\'objet en appelant la classe comme une fonction.'],
           sol: 'class Cat:\n    pass\n\ntom = Cat()\nprint(type(tom))', m: 'Cat', c: 'class Cat'
         }
       },
@@ -169,7 +169,7 @@ Usalo per quello che è uguale per tutti gli oggetti, o per contare quanti ne so
 Utilise-le pour ce qui est pareil pour tous les objets, ou pour compter combien ont été créés.`],
         ex: {
           t: ['Build three dogs and show how many were made (3).', 'Costruisci tre cani e mostra quanti ne sono stati creati (3).', 'Construis trois chiens et affiche combien ont été créés (3).'],
-          h: ['Dog("A"), Dog("B"), Dog("C") and then print(Dog.count).', 'Dog("A"), Dog("B"), Dog("C") e poi print(Dog.count).', 'Dog("A"), Dog("B"), Dog("C") puis print(Dog.count).'],
+          h: ['Every Dog(...) you build adds 1 to the count kept on the class. Build three, then show the count of the class.', 'Ogni Dog(...) che costruisci aggiunge 1 al conteggio tenuto dalla classe. Costruiscine tre, poi mostra il conteggio della classe.', 'Chaque Dog(...) que tu construis ajoute 1 au compte gardé par la classe. Construis-en trois, puis affiche le compte de la classe.'],
           start: 'class Dog:\n    count = 0\n\n    def __init__(self, name):\n        self.name = name\n        Dog.count += 1', sol: 'class Dog:\n    count = 0\n\n    def __init__(self, name):\n        self.name = name\n        Dog.count += 1\n\nDog("A")\nDog("B")\nDog("C")\nprint(Dog.count)', out: '3', c: 'Dog.count'
         }
       },

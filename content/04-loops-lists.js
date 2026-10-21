@@ -316,6 +316,38 @@ while n != 1:
 print("Arrivé à 1 après", steps, "étapes")`],
           exact: true
         }
+      },
+      {
+        c: [c`n = 3
+while n > 0:
+    print(n)
+    n = n - 1
+print("Go!")`, c`n = 3
+while n > 0:
+    print(n)
+    n = n - 1
+print("Via!")`, c`n = 3
+while n > 0:
+    print(n)
+    n = n - 1
+print("Partez !")`],
+        t: ['Challenge: keep doubling', 'Sfida: continua a raddoppiare', 'Défi : continue à doubler'],
+        x: [`A while loop runs as long as its question is True. Something inside the loop must change, or the question would stay True for ever: here n gets smaller each time.
+
+When n reaches 0 the question is False, the loop ends, and the line after it runs.`,
+          `Un ciclo while gira finché la sua domanda è True. Qualcosa dentro il ciclo deve cambiare, o la domanda resterebbe True per sempre: qui n diventa più piccolo ogni volta.
+
+Quando n arriva a 0 la domanda è False, il ciclo finisce e gira la riga dopo.`,
+          `Une boucle while tourne tant que sa question est True. Quelque chose dans la boucle doit changer, sinon la question resterait True pour toujours : ici n devient plus petit à chaque fois.
+
+Quand n arrive à 0 la question est False, la boucle s'arrête et la ligne d'après tourne.`],
+        ex: {
+          t: ['From an empty page: start from 1 and keep doubling while the number is below 100. Show every number: 1, 2, 4, 8, 16, 32, 64, one per line.', 'Partendo da una pagina vuota: parti da 1 e continua a raddoppiare finché il numero è sotto 100. Mostra ogni numero: 1, 2, 4, 8, 16, 32, 64, uno per riga.', 'En partant d\'une page vide : pars de 1 et continue à doubler tant que le nombre est sous 100. Affiche chaque nombre : 1, 2, 4, 8, 16, 32, 64, un par ligne.'],
+          h: ['A box that starts at 1, a while with < 100, and inside: show the box, then make it twice as big.', 'Una scatola che parte da 1, un while con < 100, e dentro: mostra la scatola, poi rendila due volte più grande.', 'Une boîte qui commence à 1, un while avec < 100, et dedans : affiche la boîte, puis rends-la deux fois plus grande.'],
+          start: '',
+          sol: 'n = 1\nwhile n < 100:\n    print(n)\n    n = n * 2',
+          out: '1\n2\n4\n8\n16\n32\n64', c: 'while'
+        }
       }
     ]
   },
@@ -450,7 +482,7 @@ remove si ferma con un errore se l'elemento non è nella lista. Controlla prima 
 remove s'arrête avec une erreur si l'élément n'est pas dans la liste. Vérifie d'abord avec in.`],
         ex: {
           t: ['Take the item dog out of the list, and show the list.', 'Togli l\'elemento cane dalla lista e mostra la lista.', 'Enlève l\'élément chien de la liste et affiche la liste.'],
-          h: ['pets.remove("dog") and then print(pets).', 'pets.remove("cane") e poi print(pets).', 'pets.remove("chien") puis print(pets).'],
+          h: ['.remove(...) takes an item out by its value. Write the item between quotes, then show the list.', '.remove(...) toglie un elemento dal suo valore. Scrivi l\'elemento tra virgolette, poi mostra la lista.', '.remove(...) enlève un élément par sa valeur. Écris l\'élément entre guillemets, puis affiche la liste.'],
           start: ['pets = ["cat", "dog", "fox"]', 'pets = ["gatto", "cane", "volpe"]', 'pets = ["chat", "chien", "renard"]'],
           sol: ['pets = ["cat", "dog", "fox"]\npets.remove("dog")\nprint(pets)', 'pets = ["gatto", "cane", "volpe"]\npets.remove("cane")\nprint(pets)', 'pets = ["chat", "chien", "renard"]\npets.remove("chien")\nprint(pets)'],
           exact: true, c: 'remove'
@@ -489,7 +521,7 @@ Python ha anche un aiutante già pronto: sum somma un'intera lista in un colpo s
 Python a aussi un assistant tout prêt : sum additionne toute une liste d'un coup. min et max marchent aussi sur toute une liste.`],
         ex: {
           t: ['Show the sum of the list [3, 5, 8, 4] with sum.', 'Mostra la somma della lista [3, 5, 8, 4] con sum.', 'Affiche la somme de la liste [3, 5, 8, 4] avec sum.'],
-          h: ['print(sum([3, 5, 8, 4]))', 'print(sum([3, 5, 8, 4]))', 'print(sum([3, 5, 8, 4]))'],
+          h: ['sum(...) adds up all the numbers of the list in its brackets.', 'sum(...) somma tutti i numeri della lista tra le sue parentesi.', 'sum(...) additionne tous les nombres de la liste dans ses parenthèses.'],
           sol: 'print(sum([3, 5, 8, 4]))', out: '20', c: 'sum'
         }
       },
@@ -513,7 +545,7 @@ sorted dà una lista nuova in ordine e lascia la vecchia com'era. Funzionano tut
 sorted donne une nouvelle liste dans l'ordre et laisse l'ancienne comme elle était. Les deux marchent avec des nombres et avec des textes (dans l'ordre alphabétique).`],
         ex: {
           t: ['Show the list [5, 2, 9, 1] in order, using sorted.', 'Mostra la lista [5, 2, 9, 1] in ordine, usando sorted.', 'Affiche la liste [5, 2, 9, 1] dans l\'ordre, en utilisant sorted.'],
-          h: ['print(sorted([5, 2, 9, 1]))', 'print(sorted([5, 2, 9, 1]))', 'print(sorted([5, 2, 9, 1]))'],
+          h: ['sorted(...) gives back a new list in order. Put the list in its brackets and show the result.', 'sorted(...) restituisce una nuova lista in ordine. Metti la lista tra le sue parentesi e mostra il risultato.', 'sorted(...) rend une nouvelle liste dans l\'ordre. Mets la liste dans ses parenthèses et affiche le résultat.'],
           sol: 'print(sorted([5, 2, 9, 1]))', out: '[1, 2, 5, 9]', c: 'sorted'
         }
       },

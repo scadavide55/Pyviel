@@ -26,7 +26,7 @@ import math porta la cassetta che si chiama math, che contiene gli strumenti del
 import math apporte la boîte qui s'appelle math, qui contient les outils des maths. Tu utilises ses outils avec un point : math.sqrt(144) donne la racine carrée de 144. Tu écris import une fois, en haut du programme.`],
         ex: {
           t: ['Show the square root of 81, using math.', 'Mostra la radice quadrata di 81, usando math.', 'Affiche la racine carrée de 81, en utilisant math.'],
-          h: ['import math, and then print(math.sqrt(81)).', 'import math, e poi print(math.sqrt(81)).', 'import math, puis print(math.sqrt(81)).'],
+          h: ['First bring in the module with import. Its tools are then written math.name(...): the square root is sqrt.', 'Prima porta dentro il modulo con import. I suoi strumenti si scrivono poi math.nome(...): la radice quadrata è sqrt.', 'D\'abord fais entrer le module avec import. Ses outils s\'écrivent ensuite math.nom(...) : la racine carrée est sqrt.'],
           sol: 'import math\nprint(math.sqrt(81))', out: '9.0', c: 'math\\.sqrt'
         }
       },
@@ -72,7 +72,7 @@ import math as m dà alla cassetta un nome più corto: m.sqrt(16). Vanno bene tu
 import math as m donne à la boîte un nom plus court : m.sqrt(16). Les deux façons sont bonnes. Ne prendre que ce qu'il faut rend le code plus court, et garder le nom de la boîte montre clairement d'où vient chaque outil.`],
         ex: {
           t: ['Take only the tool floor from math, with from, and show floor(9.99).', 'Prendi solo l\'attrezzo floor da math, con from, e mostra floor(9.99).', 'Prends seulement l\'outil floor de math, avec from, et affiche floor(9.99).'],
-          h: ['from math import floor, and then print(floor(9.99)).', 'from math import floor, e poi print(floor(9.99)).', 'from math import floor, puis print(floor(9.99)).'],
+          h: ['from module import tool brings in just that tool, and then you write it without math. in front.', 'from modulo import strumento porta dentro solo quello strumento, e poi lo scrivi senza math. davanti.', 'from module import outil fait entrer seulement cet outil, et ensuite tu l\'écris sans math. devant.'],
           sol: 'from math import floor\nprint(floor(9.99))', out: '9', c: 'from math import'
         }
       },
@@ -113,7 +113,7 @@ Python arriva con una libreria standard enorme, e in questa fase conoscerai le s
 Python vient avec une énorme bibliothèque standard, et tu en rencontreras les meilleures parties dans cette étape. Le site ne peut pas installer de paquets supplémentaires, et les modules qui ont besoin d'une fenêtre, comme turtle, ne marchent que dans l'application de bureau.`],
         ex: {
           t: ['Fix it: bring in the real module math and show math.pi.', 'Correggilo: porta il vero modulo math e mostra math.pi.', 'Corrige-le : apporte le vrai module math et affiche math.pi.'],
-          h: ['import math, and then print(math.pi).', 'import math, e poi print(math.pi).', 'import math, puis print(math.pi).'],
+          h: ['The first line brings in something that does not exist. Bring in math, then show its pi.', 'La prima riga porta dentro qualcosa che non esiste. Porta dentro math, poi mostra il suo pi.', 'La première ligne fait entrer quelque chose qui n\'existe pas. Fais entrer math, puis affiche son pi.'],
           start: 'import this_module_does_not_exist', sol: 'import math\nprint(math.pi)', out: '3.141592653589793'
         }
       }
@@ -225,7 +225,7 @@ Con questi due puoi fare carte, dadi, quiz e giochi.`,
 Avec ces deux-là, tu peux faire des cartes, des dés, des quiz et des jeux.`],
         ex: {
           t: ['With the seed already set, shuffle the list [1, 2, 3] and show it. It must be a list with the same three numbers.', 'Con il seme già impostato, mescola la lista [1, 2, 3] e mostrala. Deve essere una lista con gli stessi tre numeri.', 'Avec la graine déjà fixée, mélange la liste [1, 2, 3] et affiche-la. Ce doit être une liste avec les mêmes trois nombres.'],
-          h: ['random.shuffle(cards) and then print(cards).', 'random.shuffle(cards) e poi print(cards).', 'random.shuffle(cards) puis print(cards).'],
+          h: ['random.shuffle mixes the list in place and gives back nothing: shuffle first, then show the list.', 'random.shuffle mescola la lista sul posto e non restituisce niente: prima mescola, poi mostra la lista.', 'random.shuffle mélange la liste sur place et ne rend rien : mélange d\'abord, puis affiche la liste.'],
           start: 'import random\nrandom.seed(5)\ncards = [1, 2, 3]', sol: 'import random\nrandom.seed(5)\ncards = [1, 2, 3]\nrandom.shuffle(cards)\nprint(cards)', m: '^\\[[123], [123], [123]\\]$', c: 'shuffle'
         }
       },
@@ -801,7 +801,7 @@ L'ordine solito è try, except, else, finally. Ti servono solo try e uno degli a
 L'ordre habituel est try, except, else, finally. Il te faut seulement try et un des autres.`],
         ex: {
           t: ['Make a try that does int("7") and a finally that shows: end   Both must run, and nothing else must show.', 'Fai un try che fa int("7") e un finally che mostra: fine   Devono girare tutti e due, e non deve comparire altro.', 'Fais un try qui fait int("7") et un finally qui affiche : fin   Les deux doivent tourner, et rien d\'autre ne doit apparaître.'],
-          h: ['try: int("7") and finally: print("end").', 'try: int("7") e finally: print("fine").', 'try: int("7") et finally: print("fin").'],
+          h: ['try: with the risky line pushed in under it, then finally: with its own pushed-in print. No except is needed.', 'try: con la riga rischiosa rientrata sotto, poi finally: con il suo print rientrato. Non serve except.', 'try: avec la ligne risquée décalée dessous, puis finally: avec son propre print décalé. Pas besoin de except.'],
           sol: ['try:\n    int("7")\nfinally:\n    print("end")', 'try:\n    int("7")\nfinally:\n    print("fine")', 'try:\n    int("7")\nfinally:\n    print("fin")'],
           out: ['end', 'fine', 'fin'], c: 'finally'
         }

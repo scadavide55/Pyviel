@@ -1724,7 +1724,7 @@ parse_amount rifiuta i dati sbagliati come dovrebbe fare un programma vero: alza
 parse_amount refuse les mauvaises données comme le ferait un vrai programme : il lève une ValueError avec un message clair, et le code qui l'appelle attrape l'erreur. Remarque qu'il accepte aussi la virgule, comme 3,50.`],
         ex: {
           t: ['Use parse_amount to show the amount 12,5 as a number (12.5).', 'Usa parse_amount per mostrare l\'importo 12,5 come numero (12.5).', 'Utilise parse_amount pour afficher le montant 12,5 comme nombre (12.5).'],
-          h: ['print(parse_amount("12,5"))', 'print(parse_amount("12,5"))', 'print(parse_amount("12,5"))'],
+          h: ['parse_amount takes the amount as text, with its comma, and gives back a number.', 'parse_amount prende l\'importo come testo, con la sua virgola, e restituisce un numero.', 'parse_amount prend le montant comme texte, avec sa virgule, et rend un nombre.'],
           start: 'def parse_amount(text):\n    try:\n        amount = float(text.replace(",", "."))\n    except ValueError:\n        raise ValueError(text + " is not a number")\n    if amount <= 0:\n        raise ValueError("the amount must be more than zero")\n    return amount', sol: 'def parse_amount(text):\n    try:\n        amount = float(text.replace(",", "."))\n    except ValueError:\n        raise ValueError(text + " is not a number")\n    if amount <= 0:\n        raise ValueError("the amount must be more than zero")\n    return amount\n\nprint(parse_amount("12,5"))', out: '12.5', c: 'parse_amount\\("12,5"\\)'
         }
       },

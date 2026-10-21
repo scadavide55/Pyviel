@@ -134,7 +134,7 @@ Cambia n in un numero negativo e in 0 e guarda un'altra strada.`,
 Change n en un nombre négatif et en 0 et regarde une autre route.`],
         ex: {
           t: ['Show the word big when n is more than 100, and small otherwise, with a one-line if. n is 500.', 'Mostra la parola big quando n è più di 100, e small altrimenti, con un if in una riga. n vale 500.', 'Affiche le mot big quand n vaut plus de 100, et small sinon, avec un if sur une ligne. n vaut 500.'],
-          h: ['print("big" if n > 100 else "small")', 'print("big" if n > 100 else "small")', 'print("big" if n > 100 else "small")'],
+          h: ['A one-line if reads: value if condition else other value. Put it inside print.', 'Un if in una riga si legge: valore if condizione else altro valore. Mettilo dentro print.', 'Un if sur une ligne se lit : valeur if condition else autre valeur. Mets-le dans print.'],
           start: 'n = 500', sol: 'n = 500\nprint("big" if n > 100 else "small")', out: 'big', c: ' if .* else '
         }
       },
@@ -168,7 +168,7 @@ Scegli una collezione e cambiala, poi riesegui per vedere cosa si muove.`,
 Choisis une collection et change-la, puis relance pour voir ce qui bouge.`],
         ex: {
           t: ['Make a dictionary with two pets and their ages, and show the age of the first with its key.', 'Fai un dizionario con due animali e le loro età e mostra l\'età del primo con la sua chiave.', 'Fais un dictionnaire avec deux animaux et leurs âges et affiche l\'âge du premier avec sa clé.'],
-          h: ['pets = {"Rex": 3, "Tom": 5} and print(pets["Rex"]).', 'pets = {"Rex": 3, "Tom": 5} e print(pets["Rex"]).', 'pets = {"Rex": 3, "Tom": 5} puis print(pets["Rex"]).'],
+          h: ['Curly brackets, pairs key: value with commas between them. Then read a value with its key in square brackets.', 'Parentesi graffe, coppie chiave: valore separate da virgole. Poi leggi un valore con la sua chiave tra quadre.', 'Des accolades, des paires clé: valeur séparées par des virgules. Puis lis une valeur avec sa clé entre crochets.'],
           sol: 'pets = {"Rex": 3, "Tom": 5}\nprint(pets["Rex"])', out: '3', c: '\\{.*:.*\\}'
         }
       },
@@ -353,7 +353,7 @@ python3 --version
 L'ordinateur répond avec la version, quelque chose comme Python 3.14.8. Sous Windows la commande est py au lieu de python3. Le programme de cette page pose la même question à Python, de l'intérieur, avec la boîte sys.`],
         ex: {
           t: ['Show the big number of the Python version, with sys.version_info.major (3).', 'Mostra il numero grande della versione di Python, con sys.version_info.major (3).', 'Affiche le grand nombre de la version de Python, avec sys.version_info.major (3).'],
-          h: ['import sys, then print(sys.version_info.major).', 'import sys, poi print(sys.version_info.major).', 'import sys, puis print(sys.version_info.major).'],
+          h: ['Bring in sys first. version_info has parts with names: major is the big number.', 'Prima porta dentro sys. version_info ha delle parti con un nome: major è il numero grande.', 'Fais d\'abord entrer sys. version_info a des parties avec des noms : major est le grand nombre.'],
           sol: 'import sys\nprint(sys.version_info.major)', out: '3', c: 'version_info'
         },
         w: ['If the terminal says "command not found", Python is not installed on your computer yet. Get it free from python.org. Pyviel has its own Python inside, but the terminal cannot see it.', 'Se il terminale dice "command not found", Python non è ancora installato sul tuo computer. Scaricalo gratis da python.org. Pyviel ha un suo Python dentro, ma il terminale non lo vede.', 'Si le terminal dit "command not found", Python n\'est pas encore installé sur ton ordinateur. Prends-le gratuitement sur python.org. Pyviel a son propre Python à l\'intérieur, mais le terminal ne le voit pas.']
@@ -408,7 +408,7 @@ Il campo giochi: scrivi solo python3 e premi Invio. Vedi >>> e Python aspetta. S
 Le terrain de jeu : tape juste python3 et appuie sur Entrée. Tu vois >>> et Python attend. Tape 2 + 2 et appuie sur Entrée : il répond 4 tout de suite. Pour sortir, tape exit() ou appuie sur Ctrl+D (Ctrl+Z puis Entrée sous Windows). Le programme de cette page a les mêmes trois lignes que tu taperais là-bas.`],
         ex: {
           t: ['Show 10 * 10 and the word abc repeated 2 times, on two lines.', 'Mostra 10 * 10 e la parola abc ripetuta 2 volte, su due righe.', 'Affiche 10 * 10 et le mot abc répété 2 fois, sur deux lignes.'],
-          h: ['print(10 * 10) and print("abc" * 2)', 'print(10 * 10) e print("abc" * 2)', 'print(10 * 10) et print("abc" * 2)'],
+          h: ['Two print lines. * multiplies numbers, and it repeats a text too.', 'Due righe print. * moltiplica i numeri, e ripete anche un testo.', 'Deux lignes print. * multiplie les nombres, et répète aussi un texte.'],
           sol: 'print(10 * 10)\nprint("abc" * 2)', out: '100\nabcabc'
         }
       }

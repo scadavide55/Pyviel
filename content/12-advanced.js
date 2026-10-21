@@ -39,7 +39,7 @@ Quando non ce ne sono più, Python alza uno StopIteration, che il ciclo for pren
 Quand il n'y en a plus, Python lève une StopIteration, qu'une boucle for attrape pour toi. Avec une deuxième chose, next(items, "...") donne celle-ci au lieu de lever l'erreur. La dernière ligne montre l'erreur.`],
         ex: {
           t: ['Fix the program so that it ends without an error: ask for the next item a fourth time with a second thing, "end", and show it.', 'Correggi il programma così che finisca senza errori: chiedi per la quarta volta l\'elemento successivo con un secondo valore, "fine", e mostralo.', 'Corrige le programme pour qu\'il finisse sans erreur : demande pour la quatrième fois l\'élément suivant avec une deuxième chose, "fin", et affiche-le.'],
-          h: ['print(next(items, "end"))', 'print(next(items, "fine"))', 'print(next(items, "fin"))'],
+          h: ['next can take a second thing: what to give back when nothing is left. Add it to the last next.', 'next può prendere una seconda cosa: cosa restituire quando non resta niente. Aggiungila all\'ultimo next.', 'next peut prendre une deuxième chose : ce qu\'il faut rendre quand il ne reste rien. Ajoute-la au dernier next.'],
           start: 'items = iter(["a", "b", "c"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items))',
           sol: ['items = iter(["a", "b", "c"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, "end"))', 'items = iter(["a", "b", "c"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, "fine"))', 'items = iter(["a", "b", "c"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, "fin"))'],
           out: ['a\nb\nc\nend', 'a\nb\nc\nfine', 'a\nb\nc\nfin']
@@ -107,7 +107,7 @@ La stessa idea dà i numeri di Fibonacci, veloci e in poche righe. Una lista di 
 La même idée donne les nombres de Fibonacci, vite et en quelques lignes. Une liste de tous les nombres de Fibonacci ne pourrait jamais exister, mais un générateur les fait volontiers un par un.`],
         ex: {
           t: ['Show the first 8 numbers of the Fibonacci generator, using first.', 'Mostra i primi 8 numeri del generatore di Fibonacci, usando first.', 'Affiche les 8 premiers nombres du générateur de Fibonacci, en utilisant first.'],
-          h: ['print(list(first(8, fib())))', 'print(list(first(8, fib())))', 'print(list(first(8, fib())))'],
+          h: ['first takes how many and where from. A generator gives values one at a time: list(...) collects them.', 'first prende quanti e da dove. Un generatore dà i valori uno alla volta: list(...) li raccoglie.', 'first prend combien et d\'où. Un générateur donne les valeurs une à une : list(...) les rassemble.'],
           start: 'def first(count, source):\n    for i in range(count):\n        yield next(source)\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b', sol: 'def first(count, source):\n    for i in range(count):\n        yield next(source)\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nprint(list(first(8, fib())))', out: '[0, 1, 1, 2, 3, 5, 8, 13]', c: 'first\\(8'
         }
       },
@@ -165,7 +165,7 @@ Un generatore di solito è più corto, quindi questo serve più per capire cosa 
 Un générateur est en général plus court, donc ceci sert plutôt à comprendre ce qui se passe en coulisses. Maintenant tu sais comment for, list et sum obtiennent vraiment leurs valeurs.`],
         ex: {
           t: ['Use the class Countdown to show the list of a countdown from 4: [4, 3, 2, 1].', 'Usa la classe Countdown per mostrare la lista di un conto alla rovescia da 4: [4, 3, 2, 1].', 'Utilise la classe Countdown pour afficher la liste d\'un compte à rebours à partir de 4 : [4, 3, 2, 1].'],
-          h: ['print(list(Countdown(4)))', 'print(list(Countdown(4)))', 'print(list(Countdown(4)))'],
+          h: ['Countdown(4) is an object you can loop over, so list(...) can collect everything it gives.', 'Countdown(4) è un oggetto su cui puoi fare un ciclo, quindi list(...) può raccogliere tutto quello che dà.', 'Countdown(4) est un objet qu\'on peut parcourir, donc list(...) peut rassembler tout ce qu\'il donne.'],
           start: 'class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value', sol: 'class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nprint(list(Countdown(4)))', out: '[4, 3, 2, 1]', c: 'Countdown\\(4\\)'
         }
       }
@@ -337,7 +337,7 @@ Tre funzioni annidate fanno paura all'inizio. Leggile da fuori verso dentro: rep
 Trois fonctions imbriquées font peur au début. Lis-les de l'extérieur vers l'intérieur : repeat prend l'option, decorator prend la fonction, wrapper fait le travail.`],
         ex: {
           t: ['Change the option so that hello is repeated 2 times.', 'Cambia l\'opzione così che hello venga ripetuta 2 volte.', 'Change l\'option pour que hello soit répétée 2 fois.'],
-          h: ['@repeat(2)', '@repeat(2)', '@repeat(2)'],
+          h: ['Look at the line with @ above the function: the number in its brackets is how many times.', 'Guarda la riga con @ sopra la funzione: il numero tra le sue parentesi è quante volte.', 'Regarde la ligne avec @ au-dessus de la fonction : le nombre dans ses parenthèses, c\'est combien de fois.'],
           start: 'import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print("hello")\n\nhello()', sol: 'import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(2)\ndef hello():\n    print("hello")\n\nhello()', out: 'hello\nhello'
         }
       },
@@ -492,7 +492,7 @@ Qualsiasi classe con questi due metodi si può usare in un with. Qui un Tag scri
 Toute classe avec ces deux méthodes peut être utilisée dans un with. Ici un Tag écrit l'ouverture et la fermeture, et le travail au milieu est décalé.`],
         ex: {
           t: ['Use a Tag called p with a print("text") inside it. It must show: <p>, text, </p> on three lines.', 'Usa un Tag che si chiama p con un print("text") dentro. Deve mostrare: <p>, text, </p> su tre righe.', 'Utilise un Tag qui s\'appelle p avec un print("text") dedans. Il doit afficher : <p>, text, </p> sur trois lignes.'],
-          h: ['with Tag("p"): and, pushed in, print("text").', 'with Tag("p"): e, rientrato, print("text").', 'with Tag("p"): et, décalé, print("text").'],
+          h: ['with, then the object, then a colon. Everything pushed in under it happens between the opening and the closing.', 'with, poi l\'oggetto, poi i due punti. Tutto quello rientrato sotto succede tra l\'apertura e la chiusura.', 'with, puis l\'objet, puis deux-points. Tout ce qui est décalé dessous se passe entre l\'ouverture et la fermeture.'],
           start: 'class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print("<" + self.name + ">")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print("</" + self.name + ">")\n        return False', sol: 'class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print("<" + self.name + ">")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print("</" + self.name + ">")\n        return False\n\nwith Tag("p"):\n    print("text")', out: '<p>\ntext\n</p>', c: 'with Tag'
         }
       },
@@ -562,7 +562,7 @@ Il secondo esempio lo mostra: l'errore passa, ma "Fine" viene comunque mostrato 
 Le deuxième exemple le montre : l'erreur passe, mais "Fin" est quand même affiché d'abord.`],
         ex: {
           t: ['Use announce with a task called "test" and a print("inside") in it. It must show: Start: test, inside, End: test.', 'Usa announce con un compito che si chiama "test" e un print("inside") dentro. Deve mostrare: Inizio: test, inside, Fine: test.', 'Utilise announce avec une tâche qui s\'appelle "test" et un print("inside") dedans. Il doit afficher : Début : test, inside, Fin : test.'],
-          h: ['with announce("test"): and print("inside") pushed in.', 'with announce("test"): e print("inside") rientrato.', 'with announce("test"): et print("inside") décalé.'],
+          h: ['announce works with with, like Tag: give it the name of the task, and push the print in under it.', 'announce funziona con with, come Tag: dagli il nome del compito e rientra il print sotto.', 'announce marche avec with, comme Tag : donne-lui le nom de la tâche et décale le print dessous.'],
           start: ['from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print("Start:", task)\n    try:\n        yield\n    finally:\n        print("End:", task)', 'from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print("Inizio:", task)\n    try:\n        yield\n    finally:\n        print("Fine:", task)', 'from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print("Début :", task)\n    try:\n        yield\n    finally:\n        print("Fin :", task)'],
           sol: ['from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print("Start:", task)\n    try:\n        yield\n    finally:\n        print("End:", task)\n\nwith announce("test"):\n    print("inside")', 'from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print("Inizio:", task)\n    try:\n        yield\n    finally:\n        print("Fine:", task)\n\nwith announce("test"):\n    print("inside")', 'from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print("Début :", task)\n    try:\n        yield\n    finally:\n        print("Fin :", task)\n\nwith announce("test"):\n    print("inside")'],
           exact: true, c: 'with announce'
@@ -713,7 +713,7 @@ E f"{x=}" mostra sia il nome sia il valore: x=5. È il modo più rapido di guard
 Et f"{x=}" montre à la fois le nom et la valeur : x=5. C'est la façon la plus rapide de regarder une valeur quand tu cherches une erreur.`],
         ex: {
           t: ['With f"{...=}", show the value of the box price when it is 12: price=12', 'Con f"{...=}", mostra il valore della scatola price quando vale 12: price=12', 'Avec f"{...=}", affiche la valeur de la boîte price quand elle vaut 12 : price=12'],
-          h: ['print(f"{price=}")', 'print(f"{price=}")', 'print(f"{price=}")'],
+          h: ['Inside the curly brackets of an f-string, a = right after the name shows the name and its value.', 'Dentro le graffe di una f-string, un = subito dopo il nome mostra il nome e il suo valore.', 'Dans les accolades d\'une f-string, un = juste après le nom affiche le nom et sa valeur.'],
           start: 'price = 12', sol: 'price = 12\nprint(f"{price=}")', out: 'price=12', c: '=\\}'
         }
       },

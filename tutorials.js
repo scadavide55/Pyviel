@@ -79,16 +79,28 @@
       }
     }
     if (/^print\(/.test(t)) return e.print;
+    if ((m = t.match(/^(\w+)\s*=\s*(float|int)\(input\((["'])([^"']*)\3\)\)\s*(#.*)?$/)) && e.askNumberIn) return fill(e.askNumberIn, {question: m[4].trim(), name: m[1]});
+    if ((m = t.match(/^(\w+)\s*=\s*input\((["'])([^"']*)\2\)\s*(#.*)?$/)) && e.askIn) return fill(e.askIn, {question: m[3].trim(), name: m[1]});
     if (/^\w+\s*=\s*(float|int)\(input\(/.test(t)) return e.askNumber;
     if (/^[\w, ]+\s*=\s*input\(/.test(t)) return e.askNow;
     if (/^import\b|^from\b.*\bimport\b/.test(t)) return e.importIt;
     if (/^@/.test(t)) return e.decorator;
+    if ((m = t.match(/^if\s+(.+?):\s*(#.*)?$/)) && m[1].length <= 32 && e.ifThis) return fill(e.ifThis, {cond: m[1]});
+    if ((m = t.match(/^elif\s+(.+?):\s*(#.*)?$/)) && m[1].length <= 32 && e.elifThis) return fill(e.elifThis, {cond: m[1]});
     if (/^if\b/.test(t)) return e.ifBlock;
     if (/^elif\b/.test(t)) return e.elifBlock;
     if (/^else\s*:/.test(t)) return e.elseBlock;
+    if ((m = t.match(/^for\s+(\w+)\s+in\s+range\(\s*(-?\d+)\s*(?:,\s*(-?\d+)\s*)?(?:,\s*(-?\d+)\s*)?\):\s*$/)) && e.forValues) {
+      var a = m[3] === undefined ? 0 : Number(m[2]), b = m[3] === undefined ? Number(m[2]) : Number(m[3]), stepBy = m[4] === undefined ? 1 : Number(m[4]), values = [];
+      for (var v = a; stepBy > 0 ? v < b : v > b; v += stepBy) { values.push(v); if (values.length > 6) break; }
+      if (stepBy !== 0 && values.length && values.length <= 6) return fill(e.forValues, {name: m[1], values: values.join(', ')});
+      if (stepBy === 1 && values.length) return fill(e.forFromTo, {name: m[1], first: a, last: b - 1});
+    }
+    if ((m = t.match(/^for\s+(\w+)\s+in\s+([\w.]+|"[^"]*"|'[^']*'):\s*$/)) && e.forEachIn) return fill(e.forEachIn, {name: m[1], seq: m[2]});
     if (/^for\b.*\brange\(/.test(t)) return e.forRange;
     if (/^for\b/.test(t)) return e.forLoop;
     if (/^while\s+True\b/.test(t)) return e.whileForever;
+    if ((m = t.match(/^while\s+(.+?):\s*(#.*)?$/)) && m[1].length <= 32 && e.whileThis) return fill(e.whileThis, {cond: m[1]});
     if (/^while\b/.test(t)) return e.whileLoop;
     if ((m = t.match(/^async\s+def\s+(\w+)/))) return fill(e.asyncDef, {name: m[1]});
     if (/^await\b/.test(t)) return e.awaitIt;
@@ -97,6 +109,7 @@
     if ((m = t.match(/^def\s+(\w+)/))) return fill(/^def\s+\w+\(\s*self\b/.test(t) ? e.methodDef : e.fnDef, {name: m[1]});
     if ((m = t.match(/^class\s+(\w+)\s*\((\w+)\)/))) return fill(e.classInherit, {name: m[1], parent: m[2]});
     if ((m = t.match(/^class\s+(\w+)/))) return fill(e.classDef, {name: m[1]});
+    if ((m = t.match(/^return\s+(.+?)\s*(#.*)?$/)) && m[1].length <= 30 && e.returnThis) return fill(e.returnThis, {value: m[1]});
     if (/^return\b/.test(t)) return e.returnIt;
     if (/^yield\b/.test(t)) return e.yieldIt;
     if (/^break\b/.test(t)) return e.breakIt;
@@ -112,9 +125,14 @@
     if (/^(global|nonlocal)\b/.test(t)) return e.globalIt;
     if (/^match\b/.test(t)) return e.matchBlock;
     if (/^case\b/.test(t)) return e.caseBlock;
+    if ((m = t.match(/^(\w+)\s*(\+|-|\*)=\s*([^=].{0,24}?)\s*(#.*)?$/)) && e.addTo) return fill({'+': e.addTo, '-': e.takeFrom, '*': e.timesBy}[m[2]], {name: m[1], value: m[3]});
     if (/^[\w.\[\]]+\s*(\+|-|\*|\/|\/\/|%|\*\*)=/.test(t)) return e.augAssign;
     if (/^[\w.]+\s*=\s*lambda\b/.test(t)) return e.lambdaDef;
     if (/^[\w.]+\s*=\s*[\[\{(].*\bfor\b.*\bin\b/.test(t)) return e.comprehension;
+    if ((m = t.match(/^(\w+)\s*=\s*\[(.*)\]\s*$/)) && e.listOf && !/[\[\](]/.test(m[2])) {
+      var items = m[2].trim() ? topLevel(m[2]).length : 0;
+      return items ? fill(e.listOf, {name: m[1], count: items}) : fill(e.listEmpty, {name: m[1]});
+    }
     if (/^[\w.]+\s*=\s*\[\s*$/.test(t) || /^[\w.]+\s*=\s*\[.*\]\s*$/.test(t)) return e.listLiteral;
     if (/^[\w.]+\s*=\s*\{\s*$/.test(t) || /^[\w.]+\s*=\s*\{.*\}\s*$/.test(t)) return /^[\w.]+\s*=\s*\{\s*\}\s*$/.test(t) || /:/.test(t) || /\{\s*$/.test(t) ? e.dictLiteral : e.setLiteral;
     if (/^[\w.]+\s*=\s*\(.*,.*\)\s*$/.test(t) && !/\w\(/.test(t.replace(/^[\w.]+\s*=\s*/, '').slice(1))) return e.tupleLiteral;

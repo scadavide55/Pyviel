@@ -99,7 +99,7 @@ print(bin(5), bin(3), bin(5 & 3))`,
 << déplace les bits vers la gauche et >> vers la droite : chaque pas à gauche double le nombre, chaque pas à droite le divise par deux.`],
         ex: {
           t: ['Show what you get by moving the bits of 3 two steps to the left (3 << 2 is 12).', 'Mostra cosa ottieni spostando i bit di 3 di due passi a sinistra (3 << 2 fa 12).', 'Affiche ce que tu obtiens en déplaçant les bits de 3 de deux pas vers la gauche (3 << 2 fait 12).'],
-          h: ['print(3 << 2)', 'print(3 << 2)', 'print(3 << 2)'],
+          h: ['<< moves the bits to the left: the number on its right says by how many places.', '<< sposta i bit a sinistra: il numero alla sua destra dice di quanti posti.', '<< déplace les bits vers la gauche : le nombre à sa droite dit de combien de places.'],
           sol: 'print(3 << 2)', out: '12', c: '<<'
         }
       },
@@ -147,7 +147,7 @@ divmod dà insieme il quoziente e il resto, come coppia. pow(a, b, m) è a alla 
 divmod donne ensemble le quotient et le reste, sous forme de paire. pow(a, b, m) est a puissance b, mais ne donne que le reste après la division par m : il reste rapide même avec des nombres géants.`],
         ex: {
           t: ['Show the quotient and the remainder of 100 divided by 7, together, using divmod.', 'Mostra il quoziente e il resto di 100 diviso 7, insieme, usando divmod.', 'Affiche le quotient et le reste de 100 divisé par 7, ensemble, en utilisant divmod.'],
-          h: ['print(divmod(100, 7))', 'print(divmod(100, 7))', 'print(divmod(100, 7))'],
+          h: ['divmod takes the two numbers, the one to divide first, and gives back both answers at once.', 'divmod prende i due numeri, prima quello da dividere, e restituisce le due risposte insieme.', 'divmod prend les deux nombres, celui à diviser d\'abord, et rend les deux réponses à la fois.'],
           sol: 'print(divmod(100, 7))', out: '(14, 2)', c: 'divmod'
         }
       }
@@ -262,7 +262,7 @@ Se chiedi "c'è?" molte volte, usa un insieme. Se cerchi le cose da un nome, usa
 Si tu demandes "est-ce là ?" plusieurs fois, utilise un ensemble. Si tu cherches des choses par un nom, utilise un dictionnaire.`],
         ex: {
           t: ['Make a set of the numbers from 0 to 999, and show whether 500 is in it (True).', 'Fai un insieme dei numeri da 0 a 999 e mostra se 500 è dentro (True).', 'Fais un ensemble des nombres de 0 à 999 et affiche si 500 est dedans (True).'],
-          h: ['numbers = set(range(1000)) and print(500 in numbers)', 'numbers = set(range(1000)) e print(500 in numbers)', 'numbers = set(range(1000)) et print(500 in numbers)'],
+          h: ['range(1000) gives 0 to 999; set(...) turns it into a set. Then in asks if a number is there.', 'range(1000) dà da 0 a 999; set(...) lo trasforma in un insieme. Poi in chiede se un numero c\'è.', 'range(1000) donne 0 à 999 ; set(...) le transforme en ensemble. Puis in demande si un nombre y est.'],
           sol: 'numbers = set(range(1000))\nprint(500 in numbers)', out: 'True', c: 'set\\(range'
         }
       },
@@ -301,7 +301,7 @@ Guarda la tabella: per 1000 elementi il modo quadratico richiede un milione di p
 Regarde le tableau : pour 1000 éléments, la façon quadratique demande un million de pas, et celle qui divise par deux seulement 9. Cette façon de raisonner s'appelle big-O.`],
         ex: {
           t: ['Show how many steps count_steps_halving takes for 1,000,000 (19).', 'Mostra quanti passi richiede count_steps_halving per 1.000.000 (19).', 'Affiche combien de pas count_steps_halving prend pour 1 000 000 (19).'],
-          h: ['print(count_steps_halving(1000000))', 'print(count_steps_halving(1000000))', 'print(count_steps_halving(1000000))'],
+          h: ['Call the function with one million, written without commas or spaces, and show the result.', 'Chiama la funzione con un milione, scritto senza virgole né spazi, e mostra il risultato.', 'Appelle la fonction avec un million, écrit sans virgules ni espaces, et affiche le résultat.'],
           start: 'def count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps', sol: 'def count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps\n\nprint(count_steps_halving(1000000))', out: '19', c: 'count_steps_halving\\(1000000\\)'
         }
       },
@@ -379,7 +379,7 @@ Cercare 600 in 334 numeri richiede circa 9 passi, invece di 200. Il risultato è
 Chercher 600 dans 334 nombres prend environ 9 pas, au lieu de 200. Le résultat est une paire : la place, et combien de pas il a fallu. Si l'élément n'y est pas, il donne -1.`],
         ex: {
           t: ['In the list of the even numbers 0, 2, 4, ... 98, find the place of 50 with binary_search and show only the place (25).', 'Nella lista dei numeri pari 0, 2, 4, ... 98, trova il posto di 50 con binary_search e mostra solo il posto (25).', 'Dans la liste des nombres pairs 0, 2, 4, ... 98, trouve la place de 50 avec binary_search et affiche seulement la place (25).'],
-          h: ['place, steps = binary_search(list(range(0, 100, 2)), 50) and print(place).', 'place, steps = binary_search(list(range(0, 100, 2)), 50) e print(place).', 'place, steps = binary_search(list(range(0, 100, 2)), 50) et print(place).'],
+          h: ['range(0, 100, 2) gives the even numbers. binary_search gives back two things: take them into two names and show only the first.', 'range(0, 100, 2) dà i numeri pari. binary_search restituisce due cose: prendile in due nomi e mostra solo la prima.', 'range(0, 100, 2) donne les nombres pairs. binary_search rend deux choses : prends-les dans deux noms et affiche seulement la première.'],
           start: 'def binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps', sol: 'def binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps\n\nplace, steps = binary_search(list(range(0, 100, 2)), 50)\nprint(place)', out: '25', c: 'binary_search\\('
         }
       },
@@ -417,7 +417,7 @@ L'insertion sort costruisce una lista nuova e mette ogni elemento al posto giust
 Le tri par insertion construit une nouvelle liste et met chaque élément à la bonne place, comme trier des cartes dans ta main. Les deux laissent tranquille la liste d'origine : la dernière ligne montre que data n'a pas changé.`],
         ex: {
           t: ['Use bubble_sort to sort the list [4, 1, 3, 2] and show it.', 'Usa bubble_sort per ordinare la lista [4, 1, 3, 2] e mostrala.', 'Utilise bubble_sort pour trier la liste [4, 1, 3, 2] et affiche-la.'],
-          h: ['print(bubble_sort([4, 1, 3, 2]))', 'print(bubble_sort([4, 1, 3, 2]))', 'print(bubble_sort([4, 1, 3, 2]))'],
+          h: ['The function is written: give it the list and show what it gives back.', 'La funzione è scritta: dagli la lista e mostra quello che restituisce.', 'La fonction est écrite : donne-lui la liste et affiche ce qu\'elle rend.'],
           start: 'def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items', sol: 'def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items\n\nprint(bubble_sort([4, 1, 3, 2]))', out: '[1, 2, 3, 4]', c: 'bubble_sort\\(\\['
         }
       },
@@ -458,7 +458,7 @@ It is much faster than bubble sort on big lists. The last line checks it against
 Il est bien plus rapide que le tri à bulles sur de grandes listes. La dernière ligne le vérifie contre le sorted de Python sur 500 nombres au hasard : il dit True.`],
         ex: {
           t: ['Use merge_sort to sort [3, 1, 2] and show it.', 'Usa merge_sort per ordinare [3, 1, 2] e mostralo.', 'Utilise merge_sort pour trier [3, 1, 2] et affiche-le.'],
-          h: ['print(merge_sort([3, 1, 2]))', 'print(merge_sort([3, 1, 2]))', 'print(merge_sort([3, 1, 2]))'],
+          h: ['Same as with bubble_sort: the function takes a list and gives back a sorted one.', 'Come con bubble_sort: la funzione prende una lista e ne restituisce una ordinata.', 'Comme avec bubble_sort : la fonction prend une liste et en rend une triée.'],
           start: 'def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))',
           sol: 'def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))\n\nprint(merge_sort([3, 1, 2]))', out: '[1, 2, 3]', c: 'merge_sort\\(\\['
         }
@@ -496,7 +496,7 @@ Per trovare tutti i primi fino a un limite, il crivello di Eratostene cancella i
 Pour trouver tous les nombres premiers jusqu'à une limite, le crible d'Ératosthène barre les multiples de chaque nombre premier. Ce qui reste debout est premier. Il y a 1229 nombres premiers sous 10 000.`],
         ex: {
           t: ['Show whether 97 is prime, using is_prime (True).', 'Mostra se 97 è primo, usando is_prime (True).', 'Affiche si 97 est premier, en utilisant is_prime (True).'],
-          h: ['print(is_prime(97))', 'print(is_prime(97))', 'print(is_prime(97))'],
+          h: ['is_prime gives back True or False: show what it says about 97.', 'is_prime restituisce True o False: mostra cosa dice di 97.', 'is_prime rend True ou False : affiche ce qu\'elle dit de 97.'],
           start: 'def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True', sol: 'def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nprint(is_prime(97))', out: 'True', c: 'is_prime\\(97\\)'
         }
       },
@@ -537,7 +537,7 @@ Il numero di mosse raddoppia a ogni disco: 10 dischi richiedono 1023 mosse. E pe
 Le nombre de coups double à chaque disque : 10 disques demandent 1023 coups. Et permutations liste chaque ordre de quelques éléments, toujours avec la récursion : prends un élément, et arrange le reste.`],
         ex: {
           t: ['Show how many moves are needed for 5 discs (31), using len and solve.', 'Mostra quante mosse servono per 5 dischi (31), usando len e solve.', 'Affiche combien de coups il faut pour 5 disques (31), en utilisant len et solve.'],
-          h: ['print(len(solve(5)))', 'print(len(solve(5)))', 'print(len(solve(5)))'],
+          h: ['solve gives back the list of moves. len counts the items of a list.', 'solve restituisce la lista delle mosse. len conta gli elementi di una lista.', 'solve rend la liste des coups. len compte les éléments d\'une liste.'],
           start: 'def solve(n, start="A", spare="B", goal="C", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f"{start}->{goal}")\n    solve(n - 1, spare, start, goal, moves)\n    return moves', sol: 'def solve(n, start="A", spare="B", goal="C", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f"{start}->{goal}")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(len(solve(5)))', out: '31', c: 'solve\\(5\\)'
         }
       }

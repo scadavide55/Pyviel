@@ -459,3 +459,6 @@ dialog::backdrop { background: #2b242088; }
 .example-group { display: grid; gap: 8px; margin-bottom: 14px; }
 .example-group h3 { margin: 4px 0 0; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .example-none { color: var(--muted); }
+.example-group button { position: relative; padding-right: 34px; }
+.example-group button::after { content: "▶"; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--muted); }
+.example-group button:hover::after { color: var(--go, #3f9b55); }

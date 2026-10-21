@@ -6,7 +6,7 @@
    Pyviel.start() begins loading Python early, so the first Run is quick. */
 (function (root) {
   'use strict';
-  var VERSION = '1.1.0-beta';
+  var VERSION = '1.2.0';
   var SLOW_STOP_MS = 2500;
   var BUILD = '1.1.0-2';      // cache key of the worker and the runner: bump it when either changes
 

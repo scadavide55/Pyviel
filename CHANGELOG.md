@@ -1,6 +1,8 @@
 # Changes
 
-## Next version (not released yet)
+## 1.2.0 — 21 October 2026
+
+The first stable version.
 
 The lessons are easier to follow and give much more practice.
 

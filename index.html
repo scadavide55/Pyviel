@@ -15,9 +15,9 @@
 <script>
   // Where the desktop installers live: in the GitHub release, not in the repository (each is over 100 MB).
   window.PYVIEL_APP = {
-    version: '1.1.0-beta',
-    release: 'https://github.com/scadavide55/Pyviel/releases/download/v1.1.0-beta/',
-    files: {mac: 'Pyviel-1.1.0-beta-arm64.dmg', mac_intel: 'Pyviel-1.1.0-beta-x64.dmg', win: 'Pyviel-1.1.0-beta-setup.exe', linux: 'Pyviel-1.1.0-beta-linux-x64.tar.gz'}
+    version: '1.2.0',
+    release: 'https://github.com/scadavide55/Pyviel/releases/download/v1.2.0/',
+    files: {mac: 'Pyviel-1.2.0-arm64.dmg', mac_intel: 'Pyviel-1.2.0-x64.dmg', win: 'Pyviel-1.2.0-setup.exe', linux: 'Pyviel-1.2.0-linux-x64.tar.gz'}
   };
   // The desktop app never shows the download button: it is already installed.
   if (window.pyvielDesktop) document.documentElement.dataset.desktop = '1';
@@ -47,7 +47,7 @@
 <header class="topbar">
   <a class="brand" href="./" aria-label="Pyviel, start page">
     <img class="logo" src="build/icon.svg" alt="" width="34" height="34">
-    <span class="brand-name">Pyviel</span><span class="brand-beta">beta</span><span class="brand-web" id="brand-web" title="This is the website: it runs Python inside your browser. The desktop app runs Python on your computer.">Web</span><span class="brand-version" id="brand-version" title="Version"></span>
+    <span class="brand-name">Pyviel</span><span class="brand-web" id="brand-web" title="This is the website: it runs Python inside your browser. The desktop app runs Python on your computer.">Web</span><span class="brand-version" id="brand-version" title="Version"></span>
   </a>
 
   <div class="filebox">

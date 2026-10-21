@@ -20030,6 +20030,1964 @@ window.PyvielCourse = {
      }
     }
    ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Numbers and text in depth",
+    "it": "Numeri e testo in profondità",
+    "fr": "Nombres et texte en profondeur"
+   },
+   "subtitle": {
+    "en": "Exact decimals, fractions, bits and letters",
+    "it": "Decimali esatti, frazioni, bit e lettere",
+    "fr": "Décimaux exacts, fractions, bits et lettres"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "from decimal import Decimal\nprint(0.1 + 0.2)\nprint(Decimal(\"0.1\") + Decimal(\"0.2\"))\nprice = Decimal(\"19.99\")\nprint(price * 3)\nprint(Decimal(\"10\") / Decimal(\"3\"))",
+      "it": "from decimal import Decimal\nprint(0.1 + 0.2)\nprint(Decimal(\"0.1\") + Decimal(\"0.2\"))\nprice = Decimal(\"19.99\")\nprint(price * 3)\nprint(Decimal(\"10\") / Decimal(\"3\"))",
+      "fr": "from decimal import Decimal\nprint(0.1 + 0.2)\nprint(Decimal(\"0.1\") + Decimal(\"0.2\"))\nprice = Decimal(\"19.99\")\nprint(price * 3)\nprint(Decimal(\"10\") / Decimal(\"3\"))"
+     },
+     "title": {
+      "en": "Exact decimals for money",
+      "it": "Decimali esatti per i soldi",
+      "fr": "Des décimaux exacts pour l'argent"
+     },
+     "text": {
+      "en": "Ordinary decimal numbers are never exact: 0.1 + 0.2 is not quite 0.3. For money you cannot accept that. Decimal keeps the numbers exactly, as long as you write them as texts: \"0.1\", not 0.1.\n\nWith Decimal, 0.1 + 0.2 is exactly 0.3, and 19.99 times 3 is exactly 59.97.",
+      "it": "I numeri decimali normali non sono mai esatti: 0.1 + 0.2 non fa proprio 0.3. Per i soldi non lo puoi accettare. Decimal tiene i numeri in modo esatto, purché li scrivi come testi: \"0.1\", non 0.1.\n\nCon Decimal, 0.1 + 0.2 fa esattamente 0.3, e 19.99 per 3 fa esattamente 59.97.",
+      "fr": "Les nombres décimaux ordinaires ne sont jamais exacts : 0.1 + 0.2 ne fait pas tout à fait 0.3. Pour l'argent tu ne peux pas accepter ça. Decimal garde les nombres exactement, à condition de les écrire comme des textes : \"0.1\", pas 0.1.\n\nAvec Decimal, 0.1 + 0.2 fait exactement 0.3, et 19.99 fois 3 fait exactement 59.97."
+     },
+     "see": {
+      "en": "0.30000000000000004\n0.3\n59.97\n3.333333333333333333333333333",
+      "it": "0.30000000000000004\n0.3\n59.97\n3.333333333333333333333333333",
+      "fr": "0.30000000000000004\n0.3\n59.97\n3.333333333333333333333333333"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "decimal.Decimal",
+       "w": "Decimal( )",
+       "d": {
+        "en": "Decimal keeps decimal numbers exactly. Write the number as a text, \"0.1\", so no error creeps in. With Decimal, 0.1 + 0.2 is exactly 0.3. It is the right tool for money.",
+        "it": "Decimal tiene i numeri decimali in modo esatto. Scrivi il numero come testo, \"0.1\", così non entra nessun errore. Con Decimal, 0.1 + 0.2 fa esattamente 0.3. È lo strumento giusto per i soldi.",
+        "fr": "Decimal garde les nombres décimaux exactement. Écris le nombre comme un texte, \"0.1\", pour qu'aucune erreur ne se glisse. Avec Decimal, 0.1 + 0.2 fait exactement 0.3. C'est le bon outil pour l'argent."
+       },
+       "s": {
+        "en": "Decimal(\"0.1\")",
+        "it": "Decimal(\"0.1\")",
+        "fr": "Decimal(\"0.1\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the exact sum of \"0.7\" and \"0.1\" as Decimal numbers.",
+       "it": "Mostra la somma esatta di \"0.7\" e \"0.1\" come numeri Decimal.",
+       "fr": "Affiche la somme exacte de \"0.7\" et \"0.1\" comme nombres Decimal."
+      },
+      "hint": {
+       "en": "Decimal(\"0.7\") + Decimal(\"0.1\")",
+       "it": "Decimal(\"0.7\") + Decimal(\"0.1\")",
+       "fr": "Decimal(\"0.7\") + Decimal(\"0.1\")"
+      },
+      "sol": {
+       "en": "from decimal import Decimal\nprint(Decimal(\"0.7\") + Decimal(\"0.1\"))",
+       "it": "from decimal import Decimal\nprint(Decimal(\"0.7\") + Decimal(\"0.1\"))",
+       "fr": "from decimal import Decimal\nprint(Decimal(\"0.7\") + Decimal(\"0.1\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "0.8",
+        "c": "Decimal\\(\"0\\.7\"\\)"
+       },
+       "it": {
+        "out": "0.8",
+        "c": "Decimal\\(\"0\\.7\"\\)"
+       },
+       "fr": {
+        "out": "0.8",
+        "c": "Decimal\\(\"0\\.7\"\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "0.8",
+       "it": "0.8",
+       "fr": "0.8"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from fractions import Fraction\nhalf = Fraction(1, 2)\nthird = Fraction(1, 3)\nprint(half + third)\nprint(half * third)\nprint(Fraction(6, 8))\nprint(half < third, half > third)",
+      "it": "from fractions import Fraction\nhalf = Fraction(1, 2)\nthird = Fraction(1, 3)\nprint(half + third)\nprint(half * third)\nprint(Fraction(6, 8))\nprint(half < third, half > third)",
+      "fr": "from fractions import Fraction\nhalf = Fraction(1, 2)\nthird = Fraction(1, 3)\nprint(half + third)\nprint(half * third)\nprint(Fraction(6, 8))\nprint(half < third, half > third)"
+     },
+     "title": {
+      "en": "Exact fractions",
+      "it": "Frazioni esatte",
+      "fr": "Fractions exactes"
+     },
+     "text": {
+      "en": "Fraction keeps a number as the ratio of two whole numbers, so 1/2 + 1/3 is exactly 5/6 and nothing is lost. Python simplifies for you: 6/8 becomes 3/4.\n\nIt is perfect for recipes, music and maths, wherever \"about one third\" is not good enough.",
+      "it": "Fraction tiene un numero come rapporto di due numeri interi, quindi 1/2 + 1/3 fa esattamente 5/6 e non si perde niente. Python semplifica per te: 6/8 diventa 3/4.\n\nÈ perfetto per ricette, musica e matematica, dovunque \"circa un terzo\" non basti.",
+      "fr": "Fraction garde un nombre comme le rapport de deux nombres entiers, donc 1/2 + 1/3 fait exactement 5/6 et rien n'est perdu. Python simplifie pour toi : 6/8 devient 3/4.\n\nC'est parfait pour les recettes, la musique et les maths, partout où \"environ un tiers\" ne suffit pas."
+     },
+     "see": {
+      "en": "5/6\n1/6\n3/4\nFalse True",
+      "it": "5/6\n1/6\n3/4\nFalse True",
+      "fr": "5/6\n1/6\n3/4\nFalse True"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "fractions.Fraction",
+       "w": "Fraction( )",
+       "d": {
+        "en": "Fraction keeps a number as the ratio of two whole numbers, so 1/2 + 1/3 is exactly 5/6 and nothing is lost. Python simplifies for you: 6/8 becomes 3/4.",
+        "it": "Fraction tiene un numero come rapporto di due numeri interi, quindi 1/2 + 1/3 fa esattamente 5/6 e non si perde niente. Python semplifica per te: 6/8 diventa 3/4.",
+        "fr": "Fraction garde un nombre comme le rapport de deux nombres entiers, donc 1/2 + 1/3 fait exactement 5/6 et rien n'est perdu. Python simplifie pour toi : 6/8 devient 3/4."
+       },
+       "s": {
+        "en": "Fraction(1, 2)",
+        "it": "Fraction(1, 2)",
+        "fr": "Fraction(1, 2)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show 1/4 + 1/4 + 1/2 as an exact fraction (it must show 1).",
+       "it": "Mostra 1/4 + 1/4 + 1/2 come frazione esatta (deve mostrare 1).",
+       "fr": "Affiche 1/4 + 1/4 + 1/2 comme fraction exacte (il doit afficher 1)."
+      },
+      "hint": {
+       "en": "Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)",
+       "it": "Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)",
+       "fr": "Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2)"
+      },
+      "sol": {
+       "en": "from fractions import Fraction\nprint(Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2))",
+       "it": "from fractions import Fraction\nprint(Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2))",
+       "fr": "from fractions import Fraction\nprint(Fraction(1, 4) + Fraction(1, 4) + Fraction(1, 2))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "1",
+        "c": "Fraction"
+       },
+       "it": {
+        "out": "1",
+        "c": "Fraction"
+       },
+       "fr": {
+        "out": "1",
+        "c": "Fraction"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1",
+       "it": "1",
+       "fr": "1"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "n = 202\nprint(bin(n))\nprint(oct(n))\nprint(hex(n))\nprint(int(\"11001010\", 2), int(\"ff\", 16))\nprint(0b1010, 0xff)",
+      "it": "n = 202\nprint(bin(n))\nprint(oct(n))\nprint(hex(n))\nprint(int(\"11001010\", 2), int(\"ff\", 16))\nprint(0b1010, 0xff)",
+      "fr": "n = 202\nprint(bin(n))\nprint(oct(n))\nprint(hex(n))\nprint(int(\"11001010\", 2), int(\"ff\", 16))\nprint(0b1010, 0xff)"
+     },
+     "title": {
+      "en": "Other bases: binary, octal, hex",
+      "it": "Altre basi: binario, ottale, esadecimale",
+      "fr": "D'autres bases : binaire, octal, hexadécimal"
+     },
+     "text": {
+      "en": "Computers store numbers in binary: only 0 and 1. bin, oct and hex show a number in base 2, 8 and 16. Base 16 uses the digits 0 to 9 and then a to f.\n\nint(text, base) reads one back: the second number is the base. And you can write numbers like that directly: 0b1010 is binary and 0xff is hexadecimal.",
+      "it": "I computer tengono i numeri in binario: solo 0 e 1. bin, oct e hex mostrano un numero in base 2, 8 e 16. La base 16 usa le cifre da 0 a 9 e poi da a a f.\n\nint(testo, base) ne rilegge uno: il secondo numero è la base. E puoi scrivere i numeri così direttamente: 0b1010 è binario e 0xff è esadecimale.",
+      "fr": "Les ordinateurs gardent les nombres en binaire : seulement 0 et 1. bin, oct et hex montrent un nombre en base 2, 8 et 16. La base 16 utilise les chiffres de 0 à 9 puis de a à f.\n\nint(texte, base) en relit un : le deuxième nombre est la base. Et tu peux écrire des nombres comme ça directement : 0b1010 est binaire et 0xff est hexadécimal."
+     },
+     "see": {
+      "en": "0b11001010\n0o312\n0xca\n202 255\n10 255",
+      "it": "0b11001010\n0o312\n0xca\n202 255\n10 255",
+      "fr": "0b11001010\n0o312\n0xca\n202 255\n10 255"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "bin",
+       "w": "bin( )",
+       "d": {
+        "en": "Computers store numbers in binary: only 0 and 1. bin shows a number in base 2.",
+        "it": "I computer tengono i numeri in binario: solo 0 e 1. bin mostra un numero in base 2.",
+        "fr": "Les ordinateurs gardent les nombres en binaire : seulement 0 et 1. bin montre un nombre en base 2."
+       },
+       "s": {
+        "en": "bin(10)",
+        "it": "bin(10)",
+        "fr": "bin(10)"
+       }
+      },
+      {
+       "k": "oct",
+       "w": "oct( )",
+       "d": {
+        "en": "oct shows a number in base 8, which uses the digits 0 to 7.",
+        "it": "oct mostra un numero in base 8, che usa le cifre da 0 a 7.",
+        "fr": "oct montre un nombre en base 8, qui utilise les chiffres de 0 à 7."
+       },
+       "s": {
+        "en": "oct(10)",
+        "it": "oct(10)",
+        "fr": "oct(10)"
+       }
+      },
+      {
+       "k": "hex",
+       "w": "hex( )",
+       "d": {
+        "en": "hex shows a number in base 16, which uses 0 to 9 and then a to f. It is used for colours and for memory.",
+        "it": "hex mostra un numero in base 16, che usa da 0 a 9 e poi da a a f. Si usa per i colori e per la memoria.",
+        "fr": "hex montre un nombre en base 16, qui utilise de 0 à 9 puis de a à f. On l'utilise pour les couleurs et pour la mémoire."
+       },
+       "s": {
+        "en": "hex(255)",
+        "it": "hex(255)",
+        "fr": "hex(255)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the number 255 in hexadecimal.",
+       "it": "Mostra il numero 255 in esadecimale.",
+       "fr": "Affiche le nombre 255 en hexadécimal."
+      },
+      "hint": {
+       "en": "hex(255)",
+       "it": "hex(255)",
+       "fr": "hex(255)"
+      },
+      "sol": {
+       "en": "print(hex(255))",
+       "it": "print(hex(255))",
+       "fr": "print(hex(255))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "0xff",
+        "c": "hex"
+       },
+       "it": {
+        "out": "0xff",
+        "c": "hex"
+       },
+       "fr": {
+        "out": "0xff",
+        "c": "hex"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "0xff",
+       "it": "0xff",
+       "fr": "0xff"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(5 & 3)\nprint(5 | 3)\nprint(5 ^ 3)\nprint(1 << 4)\nprint(64 >> 2)\nprint(bin(5), bin(3), bin(5 & 3))",
+      "it": "print(5 & 3)\nprint(5 | 3)\nprint(5 ^ 3)\nprint(1 << 4)\nprint(64 >> 2)\nprint(bin(5), bin(3), bin(5 & 3))",
+      "fr": "print(5 & 3)\nprint(5 | 3)\nprint(5 ^ 3)\nprint(1 << 4)\nprint(64 >> 2)\nprint(bin(5), bin(3), bin(5 & 3))"
+     },
+     "title": {
+      "en": "Bit tricks",
+      "it": "Trucchi con i bit",
+      "fr": "Astuces avec les bits"
+     },
+     "text": {
+      "en": "On whole numbers, & | ^ work on the bits one by one. 5 is 101 and 3 is 011 in binary. & keeps a bit only if both have it (001, which is 1), | keeps it if either has it (111, which is 7), and ^ keeps it if only one has it (110, which is 6).\n\n<< moves the bits to the left and >> to the right: every step left doubles the number, every step right halves it.",
+      "it": "Sui numeri interi, & | ^ lavorano sui bit uno per uno. 5 è 101 e 3 è 011 in binario. & tiene un bit solo se ce l'hanno tutti e due (001, cioè 1), | lo tiene se ce l'ha uno dei due (111, cioè 7), e ^ lo tiene se ce l'ha uno solo (110, cioè 6).\n\n<< sposta i bit a sinistra e >> a destra: ogni passo a sinistra raddoppia il numero, ogni passo a destra lo dimezza.",
+      "fr": "Sur les nombres entiers, & | ^ travaillent sur les bits un par un. 5 est 101 et 3 est 011 en binaire. & garde un bit seulement si les deux l'ont (001, soit 1), | le garde si l'un des deux l'a (111, soit 7), et ^ le garde si un seul l'a (110, soit 6).\n\n<< déplace les bits vers la gauche et >> vers la droite : chaque pas à gauche double le nombre, chaque pas à droite le divise par deux."
+     },
+     "see": {
+      "en": "1\n7\n6\n16\n16\n0b101 0b11 0b1",
+      "it": "1\n7\n6\n16\n16\n0b101 0b11 0b1",
+      "fr": "1\n7\n6\n16\n16\n0b101 0b11 0b1"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "<<",
+       "w": "<<  >>",
+       "d": {
+        "en": "<< moves the bits of a number to the left, and >> moves them to the right. Every step left doubles the number, every step right halves it.",
+        "it": "<< sposta i bit di un numero a sinistra e >> li sposta a destra. Ogni passo a sinistra raddoppia il numero, ogni passo a destra lo dimezza.",
+        "fr": "<< déplace les bits d'un nombre vers la gauche et >> les déplace vers la droite. Chaque pas à gauche double le nombre, chaque pas à droite le divise par deux."
+       },
+       "s": {
+        "en": "1 << 4",
+        "it": "1 << 4",
+        "fr": "1 << 4"
+       }
+      },
+      {
+       "k": ">>",
+       "w": ">>",
+       "d": {
+        "en": ">> moves the bits of a number to the right: every step halves the number.",
+        "it": ">> sposta i bit di un numero a destra: ogni passo dimezza il numero.",
+        "fr": ">> déplace les bits d'un nombre vers la droite : chaque pas divise le nombre par deux."
+       },
+       "s": {
+        "en": "64 >> 2",
+        "it": "64 >> 2",
+        "fr": "64 >> 2"
+       }
+      },
+      {
+       "k": "bit-ops",
+       "w": "&  |  ^",
+       "d": {
+        "en": "On whole numbers, & | ^ work on their bits one by one: & keeps a bit only if both numbers have it, | keeps it if either has it, ^ keeps it if only one has it.",
+        "it": "Sui numeri interi, & | ^ lavorano sui loro bit uno per uno: & tiene un bit solo se ce l'hanno tutti e due i numeri, | lo tiene se ce l'ha uno dei due, ^ lo tiene se ce l'ha uno solo.",
+        "fr": "Sur les nombres entiers, & | ^ travaillent sur leurs bits un par un : & garde un bit seulement si les deux nombres l'ont, | le garde si l'un des deux l'a, ^ le garde si un seul l'a."
+       },
+       "s": {
+        "en": "5 & 3",
+        "it": "5 & 3",
+        "fr": "5 & 3"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show what you get by moving the bits of 3 two steps to the left (3 << 2 is 12).",
+       "it": "Mostra cosa ottieni spostando i bit di 3 di due passi a sinistra (3 << 2 fa 12).",
+       "fr": "Affiche ce que tu obtiens en déplaçant les bits de 3 de deux pas vers la gauche (3 << 2 fait 12)."
+      },
+      "hint": {
+       "en": "print(3 << 2)",
+       "it": "print(3 << 2)",
+       "fr": "print(3 << 2)"
+      },
+      "sol": {
+       "en": "print(3 << 2)",
+       "it": "print(3 << 2)",
+       "fr": "print(3 << 2)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "12",
+        "c": "<<"
+       },
+       "it": {
+        "out": "12",
+        "c": "<<"
+       },
+       "fr": {
+        "out": "12",
+        "c": "<<"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "12",
+       "it": "12",
+       "fr": "12"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "word = \"café\"\nprint(len(word))\nraw = word.encode(\"utf-8\")\nprint(raw)\nprint(len(raw))\nprint(raw.decode(\"utf-8\"))",
+      "it": "word = \"café\"\nprint(len(word))\nraw = word.encode(\"utf-8\")\nprint(raw)\nprint(len(raw))\nprint(raw.decode(\"utf-8\"))",
+      "fr": "word = \"café\"\nprint(len(word))\nraw = word.encode(\"utf-8\")\nprint(raw)\nprint(len(raw))\nprint(raw.decode(\"utf-8\"))"
+     },
+     "title": {
+      "en": "Letters, bytes and unicode",
+      "it": "Lettere, byte e unicode",
+      "fr": "Lettres, octets et unicode"
+     },
+     "text": {
+      "en": "A text is made of characters. A file, or a network, carries bytes. encode turns a text into bytes, and \"utf-8\" is the usual way to do it. decode turns the bytes back into a text.\n\nAccented letters take more than one byte: \"café\" has 4 characters, but 5 bytes. The b before the quote in the output means \"bytes\".",
+      "it": "Un testo è fatto di caratteri. Un file, o una rete, trasporta byte. encode trasforma un testo in byte, e \"utf-8\" è il modo solito di farlo. decode trasforma i byte di nuovo in un testo.\n\nLe lettere accentate occupano più di un byte: \"café\" ha 4 caratteri, ma 5 byte. La b prima della virgoletta nell'uscita vuol dire \"byte\".",
+      "fr": "Un texte est fait de caractères. Un fichier, ou un réseau, transporte des octets. encode transforme un texte en octets, et \"utf-8\" est la façon habituelle de le faire. decode retransforme les octets en texte.\n\nLes lettres accentuées prennent plus d'un octet : \"café\" a 4 caractères, mais 5 octets. Le b avant le guillemet dans la sortie veut dire \"bytes\" (octets)."
+     },
+     "see": {
+      "en": "4\nb'caf\\xc3\\xa9'\n5\ncafé",
+      "it": "4\nb'caf\\xc3\\xa9'\n5\ncafé",
+      "fr": "4\nb'caf\\xc3\\xa9'\n5\ncafé"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".encode",
+       "w": ".encode( )",
+       "d": {
+        "en": "A text is made of characters; a file or a network carries bytes. encode turns a text into bytes. \"utf-8\" is the usual way to do it. Accented letters take more than one byte.",
+        "it": "Un testo è fatto di caratteri; un file o una rete trasportano byte. encode trasforma un testo in byte. \"utf-8\" è il modo solito di farlo. Le lettere accentate occupano più di un byte.",
+        "fr": "Un texte est fait de caractères ; un fichier ou un réseau transportent des octets. encode transforme un texte en octets. \"utf-8\" est la façon habituelle de le faire. Les lettres accentuées prennent plus d'un octet."
+       },
+       "s": {
+        "en": "\"café\".encode(\"utf-8\")",
+        "it": "\"café\".encode(\"utf-8\")",
+        "fr": "\"café\".encode(\"utf-8\")"
+       }
+      },
+      {
+       "k": ".decode",
+       "w": ".decode( )",
+       "d": {
+        "en": "decode turns bytes back into a text, with the same way of writing that was used to encode.",
+        "it": "decode trasforma i byte di nuovo in un testo, con lo stesso modo di scrivere usato per encode.",
+        "fr": "decode transforme les octets en texte, avec la même façon d'écrire que celle utilisée pour encode."
+       },
+       "s": {
+        "en": "raw.decode(\"utf-8\")",
+        "it": "raw.decode(\"utf-8\")",
+        "fr": "raw.decode(\"utf-8\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show how many bytes the text \"ça va\" takes in utf-8 (6).",
+       "it": "Mostra quanti byte occupa il testo \"ça va\" in utf-8 (6).",
+       "fr": "Affiche combien d'octets prend le texte \"ça va\" en utf-8 (6)."
+      },
+      "hint": {
+       "en": "len(\"ça va\".encode(\"utf-8\"))",
+       "it": "len(\"ça va\".encode(\"utf-8\"))",
+       "fr": "len(\"ça va\".encode(\"utf-8\"))"
+      },
+      "sol": {
+       "en": "print(len(\"ça va\".encode(\"utf-8\")))",
+       "it": "print(len(\"ça va\".encode(\"utf-8\")))",
+       "fr": "print(len(\"ça va\".encode(\"utf-8\")))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "6",
+        "c": "encode"
+       },
+       "it": {
+        "out": "6",
+        "c": "encode"
+       },
+       "fr": {
+        "out": "6",
+        "c": "encode"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "6",
+       "it": "6",
+       "fr": "6"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import math\nprint(10 ** 30)\nprint(2 ** 200)\nprint(math.isqrt(10 ** 20))\nprint(divmod(17, 5))\nprint(pow(2, 10, 1000))",
+      "it": "import math\nprint(10 ** 30)\nprint(2 ** 200)\nprint(math.isqrt(10 ** 20))\nprint(divmod(17, 5))\nprint(pow(2, 10, 1000))",
+      "fr": "import math\nprint(10 ** 30)\nprint(2 ** 200)\nprint(math.isqrt(10 ** 20))\nprint(divmod(17, 5))\nprint(pow(2, 10, 1000))"
+     },
+     "title": {
+      "en": "Huge numbers and small surprises",
+      "it": "Numeri enormi e piccole sorprese",
+      "fr": "Nombres énormes et petites surprises"
+     },
+     "text": {
+      "en": "Whole numbers in Python can be as big as the memory allows: 2 ** 200 is no problem at all. math.isqrt gives the exact whole part of a square root, even for huge numbers.\n\ndivmod gives the quotient and the remainder together, as a pair. pow(a, b, m) is a to the power of b, but gives only the remainder after dividing by m: it stays fast even with giant numbers.",
+      "it": "I numeri interi in Python possono essere grandi quanto permette la memoria: 2 ** 200 non è affatto un problema. math.isqrt dà la parte intera esatta di una radice quadrata, anche per numeri enormi.\n\ndivmod dà insieme il quoziente e il resto, come coppia. pow(a, b, m) è a alla potenza b, ma dà solo il resto dopo la divisione per m: resta veloce anche con numeri giganti.",
+      "fr": "Les nombres entiers en Python peuvent être aussi grands que la mémoire le permet : 2 ** 200 n'est pas un problème du tout. math.isqrt donne la partie entière exacte d'une racine carrée, même pour des nombres énormes.\n\ndivmod donne ensemble le quotient et le reste, sous forme de paire. pow(a, b, m) est a puissance b, mais ne donne que le reste après la division par m : il reste rapide même avec des nombres géants."
+     },
+     "see": {
+      "en": "1000000000000000000000000000000\n1606938044258990275541962092341162602522202993782792835301376\n10000000000\n(3, 2)\n24",
+      "it": "1000000000000000000000000000000\n1606938044258990275541962092341162602522202993782792835301376\n10000000000\n(3, 2)\n24",
+      "fr": "1000000000000000000000000000000\n1606938044258990275541962092341162602522202993782792835301376\n10000000000\n(3, 2)\n24"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "divmod",
+       "w": "divmod( )",
+       "d": {
+        "en": "divmod gives the quotient and the remainder of a division together, as a pair: divmod(17, 5) is (3, 2).",
+        "it": "divmod dà insieme il quoziente e il resto di una divisione, come coppia: divmod(17, 5) è (3, 2).",
+        "fr": "divmod donne ensemble le quotient et le reste d'une division, sous forme de paire : divmod(17, 5) donne (3, 2)."
+       },
+       "s": {
+        "en": "divmod(17, 5)",
+        "it": "divmod(17, 5)",
+        "fr": "divmod(17, 5)"
+       }
+      },
+      {
+       "k": "pow",
+       "w": "pow( )",
+       "d": {
+        "en": "pow(a, b) is a to the power of b, like a ** b. With a third number, pow(a, b, m) gives the remainder after dividing by m, and it works fast even with huge numbers.",
+        "it": "pow(a, b) è a alla potenza b, come a ** b. Con un terzo numero, pow(a, b, m) dà il resto dopo la divisione per m, e funziona in fretta anche con numeri enormi.",
+        "fr": "pow(a, b) est a puissance b, comme a ** b. Avec un troisième nombre, pow(a, b, m) donne le reste après la division par m, et ça marche vite même avec des nombres énormes."
+       },
+       "s": {
+        "en": "pow(2, 10, 1000)",
+        "it": "pow(2, 10, 1000)",
+        "fr": "pow(2, 10, 1000)"
+       }
+      },
+      {
+       "k": "math.isqrt",
+       "w": "math.isqrt( )",
+       "d": {
+        "en": "math.isqrt gives the whole part of the square root, exactly, even for huge numbers.",
+        "it": "math.isqrt dà la parte intera della radice quadrata, in modo esatto, anche per numeri enormi.",
+        "fr": "math.isqrt donne la partie entière de la racine carrée, exactement, même pour des nombres énormes."
+       },
+       "s": {
+        "en": "math.isqrt(10 ** 20)",
+        "it": "math.isqrt(10 ** 20)",
+        "fr": "math.isqrt(10 ** 20)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the quotient and the remainder of 100 divided by 7, together, using divmod.",
+       "it": "Mostra il quoziente e il resto di 100 diviso 7, insieme, usando divmod.",
+       "fr": "Affiche le quotient et le reste de 100 divisé par 7, ensemble, en utilisant divmod."
+      },
+      "hint": {
+       "en": "print(divmod(100, 7))",
+       "it": "print(divmod(100, 7))",
+       "fr": "print(divmod(100, 7))"
+      },
+      "sol": {
+       "en": "print(divmod(100, 7))",
+       "it": "print(divmod(100, 7))",
+       "fr": "print(divmod(100, 7))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "(14, 2)",
+        "c": "divmod"
+       },
+       "it": {
+        "out": "(14, 2)",
+        "c": "divmod"
+       },
+       "fr": {
+        "out": "(14, 2)",
+        "c": "divmod"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "(14, 2)",
+       "it": "(14, 2)",
+       "fr": "(14, 2)"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Fast and slow",
+    "it": "Veloce e lento",
+    "fr": "Vite et lent"
+   },
+   "subtitle": {
+    "en": "Measure, choose well, and a little big-O",
+    "it": "Misura, scegli bene, e un po' di big-O",
+    "fr": "Mesure, choisis bien, et un peu de big-O"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "import timeit\nslow = timeit.timeit(\"sum([n * n for n in range(1000)])\", number=200)\nfast = timeit.timeit(\"sum(n * n for n in range(1000))\", number=200)\nprint(slow > 0, fast > 0)\n\nimport time\nstart = time.perf_counter()\ntotal = 0\nfor n in range(200000):\n    total += n\nseconds = time.perf_counter() - start\nprint(\"A loop of 200,000 steps took less than 5 seconds:\", seconds < 5)",
+      "it": "import timeit\nslow = timeit.timeit(\"sum([n * n for n in range(1000)])\", number=200)\nfast = timeit.timeit(\"sum(n * n for n in range(1000))\", number=200)\nprint(slow > 0, fast > 0)\n\nimport time\nstart = time.perf_counter()\ntotal = 0\nfor n in range(200000):\n    total += n\nseconds = time.perf_counter() - start\nprint(\"Un ciclo di 200.000 giri ha richiesto meno di 5 secondi:\", seconds < 5)",
+      "fr": "import timeit\nslow = timeit.timeit(\"sum([n * n for n in range(1000)])\", number=200)\nfast = timeit.timeit(\"sum(n * n for n in range(1000))\", number=200)\nprint(slow > 0, fast > 0)\n\nimport time\nstart = time.perf_counter()\ntotal = 0\nfor n in range(200000):\n    total += n\nseconds = time.perf_counter() - start\nprint(\"Une boucle de 200 000 tours a pris moins de 5 secondes :\", seconds < 5)"
+     },
+     "title": {
+      "en": "Measure, do not guess",
+      "it": "Misura, non indovinare",
+      "fr": "Mesure, ne devine pas"
+     },
+     "text": {
+      "en": "When you wonder which way is faster, measure it. timeit.timeit runs a small piece of code, written as a text, many times (number= says how many) and gives the total time. time.perf_counter is a stopwatch.\n\nProgrammers are often wrong about what is slow. The only way to be sure is to measure. Here we only check that the times are real: the exact numbers change on every computer.",
+      "it": "Quando ti chiedi quale modo è più veloce, misuralo. timeit.timeit esegue un piccolo pezzo di codice, scritto come testo, molte volte (number= dice quante) e dà il tempo totale. time.perf_counter è un cronometro.\n\nI programmatori sbagliano spesso su cosa è lento. L'unico modo per essere sicuri è misurare. Qui controlliamo solo che i tempi siano veri: i numeri esatti cambiano su ogni computer.",
+      "fr": "Quand tu te demandes quelle façon est la plus rapide, mesure-la. timeit.timeit lance un petit morceau de code, écrit comme un texte, plusieurs fois (number= dit combien) et donne le temps total. time.perf_counter est un chronomètre.\n\nLes programmeurs se trompent souvent sur ce qui est lent. La seule façon d'être sûr est de mesurer. Ici on vérifie seulement que les temps sont réels : les nombres exacts changent sur chaque ordinateur."
+     },
+     "see": {
+      "en": "True True\nA loop of 200,000 steps took less than 5 seconds: True",
+      "it": "True True\nUn ciclo di 200.000 giri ha richiesto meno di 5 secondi: True",
+      "fr": "True True\nUne boucle de 200 000 tours a pris moins de 5 secondes : True"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "module:timeit",
+       "w": "timeit",
+       "d": {
+        "en": "timeit is a tool box to time small pieces of code by running them many times.",
+        "it": "timeit è una cassetta di attrezzi per misurare piccoli pezzi di codice eseguendoli molte volte.",
+        "fr": "timeit est une boîte à outils pour chronométrer de petits morceaux de code en les lançant plusieurs fois."
+       },
+       "s": {
+        "en": "import timeit",
+        "it": "import timeit",
+        "fr": "import timeit"
+       }
+      },
+      {
+       "k": "timeit.timeit",
+       "w": "timeit.timeit( )",
+       "d": {
+        "en": "timeit.timeit runs a piece of code (written as a text) many times, and gives the total time. number= says how many times.",
+        "it": "timeit.timeit esegue un pezzo di codice (scritto come testo) molte volte e dà il tempo totale. number= dice quante volte.",
+        "fr": "timeit.timeit lance un morceau de code (écrit comme un texte) plusieurs fois, et donne le temps total. number= dit combien de fois."
+       },
+       "s": {
+        "en": "timeit.timeit(\"sum(range(100))\", number=100)",
+        "it": "timeit.timeit(\"sum(range(100))\", number=100)",
+        "fr": "timeit.timeit(\"sum(range(100))\", number=100)"
+       }
+      },
+      {
+       "k": "arg:number",
+       "w": "number=",
+       "d": {
+        "en": "number= says how many times timeit runs the code.",
+        "it": "number= dice quante volte timeit esegue il codice.",
+        "fr": "number= dit combien de fois timeit lance le code."
+       },
+       "s": {
+        "en": "timeit.timeit(code, number=200)",
+        "it": "timeit.timeit(code, number=200)",
+        "fr": "timeit.timeit(code, number=200)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use timeit.timeit to time the code \"sum(range(100))\", run 10 times, and show whether the time is bigger than 0 (True).",
+       "it": "Usa timeit.timeit per misurare il codice \"sum(range(100))\", eseguito 10 volte, e mostra se il tempo è maggiore di 0 (True).",
+       "fr": "Utilise timeit.timeit pour chronométrer le code \"sum(range(100))\", lancé 10 fois, et affiche si le temps est plus grand que 0 (True)."
+      },
+      "hint": {
+       "en": "timeit.timeit(\"sum(range(100))\", number=10) > 0",
+       "it": "timeit.timeit(\"sum(range(100))\", number=10) > 0",
+       "fr": "timeit.timeit(\"sum(range(100))\", number=10) > 0"
+      },
+      "sol": {
+       "en": "import timeit\nprint(timeit.timeit(\"sum(range(100))\", number=10) > 0)",
+       "it": "import timeit\nprint(timeit.timeit(\"sum(range(100))\", number=10) > 0)",
+       "fr": "import timeit\nprint(timeit.timeit(\"sum(range(100))\", number=10) > 0)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "timeit\\.timeit"
+       },
+       "it": {
+        "out": "True",
+        "c": "timeit\\.timeit"
+       },
+       "fr": {
+        "out": "True",
+        "c": "timeit\\.timeit"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import time\nnames_list = list(range(50000))\nnames_set = set(names_list)\n\nstart = time.perf_counter()\nfor n in range(0, 50000, 500):\n    n in names_list\nlist_time = time.perf_counter() - start\n\nstart = time.perf_counter()\nfor n in range(0, 50000, 500):\n    n in names_set\nset_time = time.perf_counter() - start\nprint(\"The set is faster:\", set_time < list_time)",
+      "it": "import time\nnames_list = list(range(50000))\nnames_set = set(names_list)\n\nstart = time.perf_counter()\nfor n in range(0, 50000, 500):\n    n in names_list\nlist_time = time.perf_counter() - start\n\nstart = time.perf_counter()\nfor n in range(0, 50000, 500):\n    n in names_set\nset_time = time.perf_counter() - start\nprint(\"L'insieme è più veloce:\", set_time < list_time)",
+      "fr": "import time\nnames_list = list(range(50000))\nnames_set = set(names_list)\n\nstart = time.perf_counter()\nfor n in range(0, 50000, 500):\n    n in names_list\nlist_time = time.perf_counter() - start\n\nstart = time.perf_counter()\nfor n in range(0, 50000, 500):\n    n in names_set\nset_time = time.perf_counter() - start\nprint(\"L'ensemble est plus rapide :\", set_time < list_time)"
+     },
+     "title": {
+      "en": "The right box for the job",
+      "it": "La scatola giusta per il lavoro",
+      "fr": "La bonne boîte pour le travail"
+     },
+     "text": {
+      "en": "Asking \"is it in the list?\" makes Python look at the items one by one. A set or a dictionary jumps straight to the answer. With 50,000 items the difference is huge.\n\nIf you ask \"is it in there?\" many times, use a set. If you look things up by a name, use a dictionary.",
+      "it": "Chiedere \"c'è nella lista?\" fa guardare a Python gli elementi uno per uno. Un insieme o un dizionario salta dritto alla risposta. Con 50.000 elementi la differenza è enorme.\n\nSe chiedi \"c'è?\" molte volte, usa un insieme. Se cerchi le cose da un nome, usa un dizionario.",
+      "fr": "Demander \"est-ce dans la liste ?\" fait regarder à Python les éléments un par un. Un ensemble ou un dictionnaire saute droit à la réponse. Avec 50 000 éléments la différence est énorme.\n\nSi tu demandes \"est-ce là ?\" plusieurs fois, utilise un ensemble. Si tu cherches des choses par un nom, utilise un dictionnaire."
+     },
+     "see": {
+      "en": "The set is faster: True",
+      "it": "L'insieme è più veloce: True",
+      "fr": "L'ensemble est plus rapide : True"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a set of the numbers from 0 to 999, and show whether 500 is in it (True).",
+       "it": "Fai un insieme dei numeri da 0 a 999 e mostra se 500 è dentro (True).",
+       "fr": "Fais un ensemble des nombres de 0 à 999 et affiche si 500 est dedans (True)."
+      },
+      "hint": {
+       "en": "numbers = set(range(1000)) and print(500 in numbers)",
+       "it": "numbers = set(range(1000)) e print(500 in numbers)",
+       "fr": "numbers = set(range(1000)) et print(500 in numbers)"
+      },
+      "sol": {
+       "en": "numbers = set(range(1000))\nprint(500 in numbers)",
+       "it": "numbers = set(range(1000))\nprint(500 in numbers)",
+       "fr": "numbers = set(range(1000))\nprint(500 in numbers)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "set\\(range"
+       },
+       "it": {
+        "out": "True",
+        "c": "set\\(range"
+       },
+       "fr": {
+        "out": "True",
+        "c": "set\\(range"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def count_steps_linear(n):\n    steps = 0\n    for i in range(n):\n        steps += 1\n    return steps\n\ndef count_steps_quadratic(n):\n    steps = 0\n    for i in range(n):\n        for j in range(n):\n            steps += 1\n    return steps\n\ndef count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps\n\nfor n in [10, 100, 1000]:\n    print(n, count_steps_linear(n), count_steps_quadratic(n), count_steps_halving(n))",
+      "it": "def count_steps_linear(n):\n    steps = 0\n    for i in range(n):\n        steps += 1\n    return steps\n\ndef count_steps_quadratic(n):\n    steps = 0\n    for i in range(n):\n        for j in range(n):\n            steps += 1\n    return steps\n\ndef count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps\n\nfor n in [10, 100, 1000]:\n    print(n, count_steps_linear(n), count_steps_quadratic(n), count_steps_halving(n))",
+      "fr": "def count_steps_linear(n):\n    steps = 0\n    for i in range(n):\n        steps += 1\n    return steps\n\ndef count_steps_quadratic(n):\n    steps = 0\n    for i in range(n):\n        for j in range(n):\n            steps += 1\n    return steps\n\ndef count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps\n\nfor n in [10, 100, 1000]:\n    print(n, count_steps_linear(n), count_steps_quadratic(n), count_steps_halving(n))"
+     },
+     "title": {
+      "en": "How work grows: big-O",
+      "it": "Come cresce il lavoro: big-O",
+      "fr": "Comment le travail grandit : big-O"
+     },
+     "text": {
+      "en": "Computer scientists describe how the work grows when the amount of data grows. One loop: ten times more data, ten times more work (linear). A loop inside a loop: a hundred times more work (quadratic). Halving each time: only a few more steps (logarithmic).\n\nLook at the table: for 1000 items, the quadratic way needs a million steps, and the halving way only 9. This way of thinking is called big-O.",
+      "it": "Gli informatici descrivono come cresce il lavoro quando cresce la quantità di dati. Un ciclo: dieci volte più dati, dieci volte più lavoro (lineare). Un ciclo dentro un ciclo: cento volte più lavoro (quadratico). Dimezzare ogni volta: solo pochi passi in più (logaritmico).\n\nGuarda la tabella: per 1000 elementi il modo quadratico richiede un milione di passi e quello che dimezza solo 9. Questo modo di ragionare si chiama big-O.",
+      "fr": "Les informaticiens décrivent comment le travail grandit quand la quantité de données grandit. Une boucle : dix fois plus de données, dix fois plus de travail (linéaire). Une boucle dans une boucle : cent fois plus de travail (quadratique). Diviser par deux à chaque fois : seulement quelques pas de plus (logarithmique).\n\nRegarde le tableau : pour 1000 éléments, la façon quadratique demande un million de pas, et celle qui divise par deux seulement 9. Cette façon de raisonner s'appelle big-O."
+     },
+     "see": {
+      "en": "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+      "it": "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9",
+      "fr": "10 10 100 3\n100 100 10000 6\n1000 1000 1000000 9"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show how many steps count_steps_halving takes for 1,000,000 (19).",
+       "it": "Mostra quanti passi richiede count_steps_halving per 1.000.000 (19).",
+       "fr": "Affiche combien de pas count_steps_halving prend pour 1 000 000 (19)."
+      },
+      "hint": {
+       "en": "print(count_steps_halving(1000000))",
+       "it": "print(count_steps_halving(1000000))",
+       "fr": "print(count_steps_halving(1000000))"
+      },
+      "sol": {
+       "en": "def count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps\n\nprint(count_steps_halving(1000000))",
+       "it": "def count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps\n\nprint(count_steps_halving(1000000))",
+       "fr": "def count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps\n\nprint(count_steps_halving(1000000))"
+      },
+      "start": {
+       "en": "def count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps",
+       "it": "def count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps",
+       "fr": "def count_steps_halving(n):\n    steps = 0\n    while n > 1:\n        n = n // 2\n        steps += 1\n    return steps"
+      },
+      "spec": {
+       "en": {
+        "out": "19",
+        "c": "count_steps_halving\\(1000000\\)"
+       },
+       "it": {
+        "out": "19",
+        "c": "count_steps_halving\\(1000000\\)"
+       },
+       "fr": {
+        "out": "19",
+        "c": "count_steps_halving\\(1000000\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "19",
+       "it": "19",
+       "fr": "19"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from functools import lru_cache\n\ndef slow_fib(n):\n    return n if n < 2 else slow_fib(n - 1) + slow_fib(n - 2)\n\n@lru_cache(maxsize=None)\ndef fast_fib(n):\n    return n if n < 2 else fast_fib(n - 1) + fast_fib(n - 2)\n\nprint(slow_fib(20))\nprint(fast_fib(20))\nprint(fast_fib(200))\nprint(fast_fib.cache_info().hits > 0)",
+      "it": "from functools import lru_cache\n\ndef slow_fib(n):\n    return n if n < 2 else slow_fib(n - 1) + slow_fib(n - 2)\n\n@lru_cache(maxsize=None)\ndef fast_fib(n):\n    return n if n < 2 else fast_fib(n - 1) + fast_fib(n - 2)\n\nprint(slow_fib(20))\nprint(fast_fib(20))\nprint(fast_fib(200))\nprint(fast_fib.cache_info().hits > 0)",
+      "fr": "from functools import lru_cache\n\ndef slow_fib(n):\n    return n if n < 2 else slow_fib(n - 1) + slow_fib(n - 2)\n\n@lru_cache(maxsize=None)\ndef fast_fib(n):\n    return n if n < 2 else fast_fib(n - 1) + fast_fib(n - 2)\n\nprint(slow_fib(20))\nprint(fast_fib(20))\nprint(fast_fib(200))\nprint(fast_fib.cache_info().hits > 0)"
+     },
+     "title": {
+      "en": "Remember the answers",
+      "it": "Ricorda le risposte",
+      "fr": "Souviens-toi des réponses"
+     },
+     "text": {
+      "en": "The slow Fibonacci works out the same things again and again. With the decorator lru_cache, each answer is worked out once, and the next time the same question comes, it is given at once.\n\nfast_fib(200) is instant, while slow_fib(200) would not finish in your lifetime. cache_info tells how many times the memory helped.",
+      "it": "Il Fibonacci lento ricalcola le stesse cose ancora e ancora. Con il decoratore lru_cache, ogni risposta viene calcolata una volta e, quando la stessa domanda torna, viene data subito.\n\nfast_fib(200) è istantaneo, mentre slow_fib(200) non finirebbe nella tua vita. cache_info dice quante volte la memoria ha aiutato.",
+      "fr": "Le Fibonacci lent recalcule les mêmes choses encore et encore. Avec le décorateur lru_cache, chaque réponse est calculée une fois, et la fois suivante où la même question arrive, elle est donnée tout de suite.\n\nfast_fib(200) est instantané, alors que slow_fib(200) ne finirait pas de ta vie. cache_info dit combien de fois la mémoire a aidé."
+     },
+     "see": {
+      "en": "6765\n6765\n280571172992510140037611932413038677189525\nTrue",
+      "it": "6765\n6765\n280571172992510140037611932413038677189525\nTrue",
+      "fr": "6765\n6765\n280571172992510140037611932413038677189525\nTrue"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "functools.lru_cache",
+       "w": "@lru_cache",
+       "d": {
+        "en": "lru_cache is a decorator that remembers the answers of a function: each answer is worked out once, and the next time the same question comes it is given at once.",
+        "it": "lru_cache è un decoratore che ricorda le risposte di una funzione: ogni risposta viene calcolata una volta, e la volta dopo che arriva la stessa domanda viene data subito.",
+        "fr": "lru_cache est un décorateur qui se souvient des réponses d'une fonction : chaque réponse est calculée une fois, et la fois suivante où la même question arrive elle est donnée tout de suite."
+       },
+       "s": {
+        "en": "@lru_cache(maxsize=None)",
+        "it": "@lru_cache(maxsize=None)",
+        "fr": "@lru_cache(maxsize=None)"
+       }
+      },
+      {
+       "k": ".cache_info",
+       "w": ".cache_info( )",
+       "d": {
+        "en": "cache_info tells how many times the cache helped (hits) and how many times it had to work (misses).",
+        "it": "cache_info dice quante volte la memoria ha aiutato (hits) e quante volte ha dovuto lavorare (misses).",
+        "fr": "cache_info dit combien de fois le cache a aidé (hits) et combien de fois il a dû travailler (misses)."
+       },
+       "s": {
+        "en": "fib.cache_info()",
+        "it": "fib.cache_info()",
+        "fr": "fib.cache_info()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a cached function fact(n) with @lru_cache(maxsize=None): it returns 1 when n is 0, and otherwise n * fact(n - 1). Show fact(10) (3628800).",
+       "it": "Metti @lru_cache(maxsize=None) sulla funzione fact(n) = n * fact(n - 1), con il caso base fact(0) = 1, e mostra fact(10) (3628800).",
+       "fr": "Mets @lru_cache(maxsize=None) sur la fonction fact(n) = n * fact(n - 1), avec le cas de base fact(0) = 1, et affiche fact(10) (3628800)."
+      },
+      "hint": {
+       "en": "@lru_cache(maxsize=None) above def fact(n):",
+       "it": "@lru_cache(maxsize=None) sopra def fact(n):",
+       "fr": "@lru_cache(maxsize=None) au-dessus de def fact(n):"
+      },
+      "sol": {
+       "en": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fact(n):\n    return 1 if n == 0 else n * fact(n - 1)\n\nprint(fact(10))",
+       "it": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fact(n):\n    return 1 if n == 0 else n * fact(n - 1)\n\nprint(fact(10))",
+       "fr": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fact(n):\n    return 1 if n == 0 else n * fact(n - 1)\n\nprint(fact(10))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3628800",
+        "c": "lru_cache"
+       },
+       "it": {
+        "out": "3628800",
+        "c": "lru_cache"
+       },
+       "fr": {
+        "out": "3628800",
+        "c": "lru_cache"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3628800",
+       "it": "3628800",
+       "fr": "3628800"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Algorithms",
+    "it": "Algoritmi",
+    "fr": "Algorithmes"
+   },
+   "subtitle": {
+    "en": "Search, sort and think step by step",
+    "it": "Cerca, ordina e ragiona passo dopo passo",
+    "fr": "Cherche, trie et raisonne pas à pas"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def linear_search(items, target):\n    for index, item in enumerate(items):\n        if item == target:\n            return index\n    return -1\n\ndef binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps\n\nnumbers = list(range(0, 1000, 3))\nprint(linear_search(numbers, 600))\nprint(binary_search(numbers, 600))\nprint(binary_search(numbers, 601))",
+      "it": "def linear_search(items, target):\n    for index, item in enumerate(items):\n        if item == target:\n            return index\n    return -1\n\ndef binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps\n\nnumbers = list(range(0, 1000, 3))\nprint(linear_search(numbers, 600))\nprint(binary_search(numbers, 600))\nprint(binary_search(numbers, 601))",
+      "fr": "def linear_search(items, target):\n    for index, item in enumerate(items):\n        if item == target:\n            return index\n    return -1\n\ndef binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps\n\nnumbers = list(range(0, 1000, 3))\nprint(linear_search(numbers, 600))\nprint(binary_search(numbers, 600))\nprint(binary_search(numbers, 601))"
+     },
+     "title": {
+      "en": "Find it fast: binary search",
+      "it": "Trovalo in fretta: ricerca binaria",
+      "fr": "Trouve vite : recherche binaire"
+     },
+     "text": {
+      "en": "In a sorted list you do not need to look at every item. Look at the middle: if the target is bigger, forget the left half. If it is smaller, forget the right half. Repeat. Each step throws away half of what is left.\n\nLooking for 600 in 334 numbers takes about 9 steps, instead of 200. The result is a pair: the place, and how many steps it took. If the item is not there, it gives -1.",
+      "it": "In una lista ordinata non serve guardare ogni elemento. Guarda quello di mezzo: se il bersaglio è più grande, dimentica la metà di sinistra. Se è più piccolo, dimentica la metà di destra. Ripeti. Ogni passo butta via metà di quello che resta.\n\nCercare 600 in 334 numeri richiede circa 9 passi, invece di 200. Il risultato è una coppia: il posto e quanti passi ci sono voluti. Se l'elemento non c'è, dà -1.",
+      "fr": "Dans une liste triée tu n'as pas besoin de regarder chaque élément. Regarde celui du milieu : si la cible est plus grande, oublie la moitié de gauche. Si elle est plus petite, oublie la moitié de droite. Recommence. Chaque pas jette la moitié de ce qui reste.\n\nChercher 600 dans 334 nombres prend environ 9 pas, au lieu de 200. Le résultat est une paire : la place, et combien de pas il a fallu. Si l'élément n'y est pas, il donne -1."
+     },
+     "see": {
+      "en": "200\n(200, 8)\n(-1, 9)",
+      "it": "200\n(200, 8)\n(-1, 9)",
+      "fr": "200\n(200, 8)\n(-1, 9)"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "In the list of the even numbers 0, 2, 4, ... 98, find the place of 50 with binary_search and show only the place (25).",
+       "it": "Nella lista dei numeri pari 0, 2, 4, ... 98, trova il posto di 50 con binary_search e mostra solo il posto (25).",
+       "fr": "Dans la liste des nombres pairs 0, 2, 4, ... 98, trouve la place de 50 avec binary_search et affiche seulement la place (25)."
+      },
+      "hint": {
+       "en": "place, steps = binary_search(list(range(0, 100, 2)), 50) and print(place).",
+       "it": "place, steps = binary_search(list(range(0, 100, 2)), 50) e print(place).",
+       "fr": "place, steps = binary_search(list(range(0, 100, 2)), 50) et print(place)."
+      },
+      "sol": {
+       "en": "def binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps\n\nplace, steps = binary_search(list(range(0, 100, 2)), 50)\nprint(place)",
+       "it": "def binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps\n\nplace, steps = binary_search(list(range(0, 100, 2)), 50)\nprint(place)",
+       "fr": "def binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps\n\nplace, steps = binary_search(list(range(0, 100, 2)), 50)\nprint(place)"
+      },
+      "start": {
+       "en": "def binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps",
+       "it": "def binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps",
+       "fr": "def binary_search(sorted_items, target):\n    low, high = 0, len(sorted_items) - 1\n    steps = 0\n    while low <= high:\n        steps += 1\n        middle = (low + high) // 2\n        if sorted_items[middle] == target:\n            return middle, steps\n        if sorted_items[middle] < target:\n            low = middle + 1\n        else:\n            high = middle - 1\n    return -1, steps"
+      },
+      "spec": {
+       "en": {
+        "out": "25",
+        "c": "binary_search\\("
+       },
+       "it": {
+        "out": "25",
+        "c": "binary_search\\("
+       },
+       "fr": {
+        "out": "25",
+        "c": "binary_search\\("
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "25",
+       "it": "25",
+       "fr": "25"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items\n\ndef insertion_sort(items):\n    result = []\n    for item in items:\n        position = 0\n        while position < len(result) and result[position] < item:\n            position += 1\n        result.insert(position, item)\n    return result\n\ndata = [5, 2, 9, 1, 7, 3]\nprint(bubble_sort(data))\nprint(insertion_sort(data))\nprint(data)",
+      "it": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items\n\ndef insertion_sort(items):\n    result = []\n    for item in items:\n        position = 0\n        while position < len(result) and result[position] < item:\n            position += 1\n        result.insert(position, item)\n    return result\n\ndata = [5, 2, 9, 1, 7, 3]\nprint(bubble_sort(data))\nprint(insertion_sort(data))\nprint(data)",
+      "fr": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items\n\ndef insertion_sort(items):\n    result = []\n    for item in items:\n        position = 0\n        while position < len(result) and result[position] < item:\n            position += 1\n        result.insert(position, item)\n    return result\n\ndata = [5, 2, 9, 1, 7, 3]\nprint(bubble_sort(data))\nprint(insertion_sort(data))\nprint(data)"
+     },
+     "title": {
+      "en": "Sort by hand",
+      "it": "Ordina a mano",
+      "fr": "Trie à la main"
+     },
+     "text": {
+      "en": "Python has sorted(...), but writing a sort yourself teaches a lot. Bubble sort swaps neighbours that are in the wrong order, again and again, until the biggest bubbles up to the end.\n\nInsertion sort builds a new list and puts each item at the right place, like sorting cards in your hand. Both leave the original list alone: the last line shows that data did not change.",
+      "it": "Python ha sorted(...), ma scrivere un ordinamento da soli insegna molto. Il bubble sort scambia i vicini che sono nell'ordine sbagliato, ancora e ancora, finché il più grande risale in fondo.\n\nL'insertion sort costruisce una lista nuova e mette ogni elemento al posto giusto, come ordinare le carte in mano. Tutti e due lasciano in pace la lista originale: l'ultima riga mostra che data non è cambiata.",
+      "fr": "Python a sorted(...), mais écrire un tri soi-même apprend beaucoup. Le tri à bulles échange les voisins qui sont dans le mauvais ordre, encore et encore, jusqu'à ce que le plus grand remonte à la fin.\n\nLe tri par insertion construit une nouvelle liste et met chaque élément à la bonne place, comme trier des cartes dans ta main. Les deux laissent tranquille la liste d'origine : la dernière ligne montre que data n'a pas changé."
+     },
+     "see": {
+      "en": "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+      "it": "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]",
+      "fr": "[1, 2, 3, 5, 7, 9]\n[1, 2, 3, 5, 7, 9]\n[5, 2, 9, 1, 7, 3]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Use bubble_sort to sort the list [4, 1, 3, 2] and show it.",
+       "it": "Usa bubble_sort per ordinare la lista [4, 1, 3, 2] e mostrala.",
+       "fr": "Utilise bubble_sort pour trier la liste [4, 1, 3, 2] et affiche-la."
+      },
+      "hint": {
+       "en": "print(bubble_sort([4, 1, 3, 2]))",
+       "it": "print(bubble_sort([4, 1, 3, 2]))",
+       "fr": "print(bubble_sort([4, 1, 3, 2]))"
+      },
+      "sol": {
+       "en": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items\n\nprint(bubble_sort([4, 1, 3, 2]))",
+       "it": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items\n\nprint(bubble_sort([4, 1, 3, 2]))",
+       "fr": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items\n\nprint(bubble_sort([4, 1, 3, 2]))"
+      },
+      "start": {
+       "en": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items",
+       "it": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items",
+       "fr": "def bubble_sort(items):\n    items = list(items)\n    for end in range(len(items) - 1, 0, -1):\n        for i in range(end):\n            if items[i] > items[i + 1]:\n                items[i], items[i + 1] = items[i + 1], items[i]\n    return items"
+      },
+      "spec": {
+       "en": {
+        "out": "[1, 2, 3, 4]",
+        "c": "bubble_sort\\(\\["
+       },
+       "it": {
+        "out": "[1, 2, 3, 4]",
+        "c": "bubble_sort\\(\\["
+       },
+       "fr": {
+        "out": "[1, 2, 3, 4]",
+        "c": "bubble_sort\\(\\["
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[1, 2, 3, 4]",
+       "it": "[1, 2, 3, 4]",
+       "fr": "[1, 2, 3, 4]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import random\n\ndef merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))\n\nprint(merge_sort([38, 27, 43, 3, 9, 82, 10]))\nrandom.seed(1)\nbig = [random.randint(0, 1000) for n in range(500)]\nprint(merge_sort(big) == sorted(big))",
+      "it": "import random\n\ndef merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))\n\nprint(merge_sort([38, 27, 43, 3, 9, 82, 10]))\nrandom.seed(1)\nbig = [random.randint(0, 1000) for n in range(500)]\nprint(merge_sort(big) == sorted(big))",
+      "fr": "import random\n\ndef merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))\n\nprint(merge_sort([38, 27, 43, 3, 9, 82, 10]))\nrandom.seed(1)\nbig = [random.randint(0, 1000) for n in range(500)]\nprint(merge_sort(big) == sorted(big))"
+     },
+     "title": {
+      "en": "Divide and conquer: merge sort",
+      "it": "Dividi e conquista: merge sort",
+      "fr": "Diviser pour régner : tri fusion"
+     },
+     "text": {
+      "en": "Merge sort uses recursion: cut the list in half, sort each half the same way, and merge the two sorted halves by always taking the smaller front item.\n\nIt is much faster than bubble sort on big lists. The last line checks it against Python's own sorted on 500 random numbers: it says True.",
+      "it": "Il merge sort usa la ricorsione: taglia la lista a metà, ordina ogni metà allo stesso modo e unisci le due metà ordinate prendendo sempre l'elemento più piccolo davanti.\n\nÈ molto più veloce del bubble sort sulle liste grandi. L'ultima riga lo controlla contro il sorted di Python su 500 numeri a caso: dice True.",
+      "fr": "Le tri fusion utilise la récursion : coupe la liste en deux, trie chaque moitié de la même façon, et fusionne les deux moitiés triées en prenant toujours le plus petit élément de devant.\n\nIl est bien plus rapide que le tri à bulles sur de grandes listes. La dernière ligne le vérifie contre le sorted de Python sur 500 nombres au hasard : il dit True."
+     },
+     "see": {
+      "en": "[3, 9, 10, 27, 38, 43, 82]\nTrue",
+      "it": "[3, 9, 10, 27, 38, 43, 82]\nTrue",
+      "fr": "[3, 9, 10, 27, 38, 43, 82]\nTrue"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Use merge_sort to sort [3, 1, 2] and show it.",
+       "it": "Usa merge_sort per ordinare [3, 1, 2] e mostralo.",
+       "fr": "Utilise merge_sort pour trier [3, 1, 2] et affiche-le."
+      },
+      "hint": {
+       "en": "print(merge_sort([3, 1, 2]))",
+       "it": "print(merge_sort([3, 1, 2]))",
+       "fr": "print(merge_sort([3, 1, 2]))"
+      },
+      "sol": {
+       "en": "def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))\n\nprint(merge_sort([3, 1, 2]))",
+       "it": "def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))\n\nprint(merge_sort([3, 1, 2]))",
+       "fr": "def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))\n\nprint(merge_sort([3, 1, 2]))"
+      },
+      "start": {
+       "en": "def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))",
+       "it": "def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))",
+       "fr": "def merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    return result + left[i:] + right[j:]\n\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    middle = len(items) // 2\n    return merge(merge_sort(items[:middle]), merge_sort(items[middle:]))"
+      },
+      "spec": {
+       "en": {
+        "out": "[1, 2, 3]",
+        "c": "merge_sort\\(\\["
+       },
+       "it": {
+        "out": "[1, 2, 3]",
+        "c": "merge_sort\\(\\["
+       },
+       "fr": {
+        "out": "[1, 2, 3]",
+        "c": "merge_sort\\(\\["
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[1, 2, 3]",
+       "it": "[1, 2, 3]",
+       "fr": "[1, 2, 3]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\ndef sieve(limit):\n    marks = [True] * (limit + 1)\n    marks[0:2] = [False, False]\n    for p in range(2, int(limit ** 0.5) + 1):\n        if marks[p]:\n            for multiple in range(p * p, limit + 1, p):\n                marks[multiple] = False\n    return [n for n, ok in enumerate(marks) if ok]\n\nprint([n for n in range(30) if is_prime(n)])\nprint(sieve(50))\nprint(len(sieve(10000)))",
+      "it": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\ndef sieve(limit):\n    marks = [True] * (limit + 1)\n    marks[0:2] = [False, False]\n    for p in range(2, int(limit ** 0.5) + 1):\n        if marks[p]:\n            for multiple in range(p * p, limit + 1, p):\n                marks[multiple] = False\n    return [n for n, ok in enumerate(marks) if ok]\n\nprint([n for n in range(30) if is_prime(n)])\nprint(sieve(50))\nprint(len(sieve(10000)))",
+      "fr": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\ndef sieve(limit):\n    marks = [True] * (limit + 1)\n    marks[0:2] = [False, False]\n    for p in range(2, int(limit ** 0.5) + 1):\n        if marks[p]:\n            for multiple in range(p * p, limit + 1, p):\n                marks[multiple] = False\n    return [n for n, ok in enumerate(marks) if ok]\n\nprint([n for n in range(30) if is_prime(n)])\nprint(sieve(50))\nprint(len(sieve(10000)))"
+     },
+     "title": {
+      "en": "Prime numbers",
+      "it": "I numeri primi",
+      "fr": "Les nombres premiers"
+     },
+     "text": {
+      "en": "A prime has no divisor other than 1 and itself. To test one number you only need to check divisors up to its square root: that is the range in is_prime.\n\nTo find all the primes up to a limit, the sieve of Eratosthenes crosses out the multiples of each prime. What stays standing is prime. There are 1229 primes below 10,000.",
+      "it": "Un primo non ha divisori oltre a 1 e a se stesso. Per verificare un numero devi controllare solo i divisori fino alla sua radice quadrata: è il range in is_prime.\n\nPer trovare tutti i primi fino a un limite, il crivello di Eratostene cancella i multipli di ogni primo. Quello che resta in piedi è primo. Ci sono 1229 primi sotto 10.000.",
+      "fr": "Un nombre premier n'a pas d'autre diviseur que 1 et lui-même. Pour tester un nombre tu n'as qu'à vérifier les diviseurs jusqu'à sa racine carrée : c'est le range dans is_prime.\n\nPour trouver tous les nombres premiers jusqu'à une limite, le crible d'Ératosthène barre les multiples de chaque nombre premier. Ce qui reste debout est premier. Il y a 1229 nombres premiers sous 10 000."
+     },
+     "see": {
+      "en": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]\n1229",
+      "it": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]\n1229",
+      "fr": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]\n1229"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show whether 97 is prime, using is_prime (True).",
+       "it": "Mostra se 97 è primo, usando is_prime (True).",
+       "fr": "Affiche si 97 est premier, en utilisant is_prime (True)."
+      },
+      "hint": {
+       "en": "print(is_prime(97))",
+       "it": "print(is_prime(97))",
+       "fr": "print(is_prime(97))"
+      },
+      "sol": {
+       "en": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nprint(is_prime(97))",
+       "it": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nprint(is_prime(97))",
+       "fr": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nprint(is_prime(97))"
+      },
+      "start": {
+       "en": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True",
+       "it": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True",
+       "fr": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True"
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "is_prime\\(97\\)"
+       },
+       "it": {
+        "out": "True",
+        "c": "is_prime\\(97\\)"
+       },
+       "fr": {
+        "out": "True",
+        "c": "is_prime\\(97\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(solve(2))\nprint(solve(3))\nprint(len(solve(10)), 2 ** 10 - 1)\n\ndef permutations(items):\n    if len(items) <= 1:\n        return [items]\n    result = []\n    for i, item in enumerate(items):\n        for rest in permutations(items[:i] + items[i + 1:]):\n            result.append([item] + rest)\n    return result\n\nprint(permutations([1, 2, 3]))",
+      "it": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(solve(2))\nprint(solve(3))\nprint(len(solve(10)), 2 ** 10 - 1)\n\ndef permutations(items):\n    if len(items) <= 1:\n        return [items]\n    result = []\n    for i, item in enumerate(items):\n        for rest in permutations(items[:i] + items[i + 1:]):\n            result.append([item] + rest)\n    return result\n\nprint(permutations([1, 2, 3]))",
+      "fr": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(solve(2))\nprint(solve(3))\nprint(len(solve(10)), 2 ** 10 - 1)\n\ndef permutations(items):\n    if len(items) <= 1:\n        return [items]\n    result = []\n    for i, item in enumerate(items):\n        for rest in permutations(items[:i] + items[i + 1:]):\n            result.append([item] + rest)\n    return result\n\nprint(permutations([1, 2, 3]))"
+     },
+     "title": {
+      "en": "Hard puzzles with recursion",
+      "it": "Rompicapi difficili con la ricorsione",
+      "fr": "Casse-tête difficiles avec la récursion"
+     },
+     "text": {
+      "en": "The Towers of Hanoi: move n discs from one peg to another, one at a time, never putting a big disc on a small one. The recursion says: move n-1 discs out of the way, move the big one, then move the n-1 discs on top of it.\n\nThe number of moves doubles with each disc: 10 discs need 1023 moves. And permutations lists every order of some items, again with recursion: take one item, and arrange the rest.",
+      "it": "Le Torri di Hanoi: sposta n dischi da un piolo a un altro, uno alla volta, senza mai mettere un disco grande su uno piccolo. La ricorsione dice: sposta n-1 dischi fuori dai piedi, sposta quello grande, poi sposta gli n-1 dischi sopra di lui.\n\nIl numero di mosse raddoppia a ogni disco: 10 dischi richiedono 1023 mosse. E permutations elenca ogni ordine di alcuni elementi, sempre con la ricorsione: prendi un elemento e disponi il resto.",
+      "fr": "Les Tours de Hanoï : déplace n disques d'un piquet à un autre, un à la fois, sans jamais mettre un grand disque sur un petit. La récursion dit : écarte n-1 disques, déplace le grand, puis déplace les n-1 disques dessus.\n\nLe nombre de coups double à chaque disque : 10 disques demandent 1023 coups. Et permutations liste chaque ordre de quelques éléments, toujours avec la récursion : prends un élément, et arrange le reste."
+     },
+     "see": {
+      "en": "['A->B', 'A->C', 'B->C']\n['A->C', 'A->B', 'C->B', 'A->C', 'B->A', 'B->C', 'A->C']\n1023 1023\n[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+      "it": "['A->B', 'A->C', 'B->C']\n['A->C', 'A->B', 'C->B', 'A->C', 'B->A', 'B->C', 'A->C']\n1023 1023\n[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+      "fr": "['A->B', 'A->C', 'B->C']\n['A->C', 'A->B', 'C->B', 'A->C', 'B->A', 'B->C', 'A->C']\n1023 1023\n[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show how many moves are needed for 5 discs (31), using len and solve.",
+       "it": "Mostra quante mosse servono per 5 dischi (31), usando len e solve.",
+       "fr": "Affiche combien de coups il faut pour 5 disques (31), en utilisant len et solve."
+      },
+      "hint": {
+       "en": "print(len(solve(5)))",
+       "it": "print(len(solve(5)))",
+       "fr": "print(len(solve(5)))"
+      },
+      "sol": {
+       "en": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(len(solve(5)))",
+       "it": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(len(solve(5)))",
+       "fr": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves\n\nprint(len(solve(5)))"
+      },
+      "start": {
+       "en": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves",
+       "it": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves",
+       "fr": "def solve(n, start=\"A\", spare=\"B\", goal=\"C\", moves=None):\n    if moves is None:\n        moves = []\n    if n == 0:\n        return moves\n    solve(n - 1, start, goal, spare, moves)\n    moves.append(f\"{start}->{goal}\")\n    solve(n - 1, spare, start, goal, moves)\n    return moves"
+      },
+      "spec": {
+       "en": {
+        "out": "31",
+        "c": "solve\\(5\\)"
+       },
+       "it": {
+        "out": "31",
+        "c": "solve\\(5\\)"
+       },
+       "fr": {
+        "out": "31",
+        "c": "solve\\(5\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "31",
+       "it": "31",
+       "fr": "31"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Doing many things at once",
+    "it": "Fare molte cose insieme",
+    "fr": "Faire plein de choses à la fois"
+   },
+   "subtitle": {
+    "en": "async and await",
+    "it": "async e await",
+    "fr": "async et await"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "import asyncio\n\nasync def hello():\n    print(\"Hello\")\n    return 42\n\nresult = asyncio.run(hello())\nprint(result)",
+      "it": "import asyncio\n\nasync def hello():\n    print(\"Ciao\")\n    return 42\n\nresult = asyncio.run(hello())\nprint(result)",
+      "fr": "import asyncio\n\nasync def hello():\n    print(\"Bonjour\")\n    return 42\n\nresult = asyncio.run(hello())\nprint(result)"
+     },
+     "title": {
+      "en": "A function that can wait",
+      "it": "Una funzione che sa aspettare",
+      "fr": "Une fonction qui sait attendre"
+     },
+     "text": {
+      "en": "Until now, a program did one thing at a time. async def makes a coroutine: a function that can pause while it waits for something slow (a timer, a download) and let others work in the meantime.\n\nCalling a coroutine does not run it. asyncio.run, from the asyncio tool box, runs it from the normal part of the program, and gives back what it returns.",
+      "it": "Finora un programma faceva una cosa alla volta. async def crea una coroutine: una funzione che può fermarsi mentre aspetta qualcosa di lento (un timer, un download) e lasciar lavorare gli altri nel frattempo.\n\nChiamare una coroutine non la esegue. asyncio.run, dalla cassetta asyncio, la esegue dalla parte normale del programma e restituisce quello che lei restituisce.",
+      "fr": "Jusqu'ici un programme faisait une chose à la fois. async def crée une coroutine : une fonction qui peut faire une pause pendant qu'elle attend quelque chose de lent (une minuterie, un téléchargement) et laisser travailler les autres entre-temps.\n\nAppeler une coroutine ne la lance pas. asyncio.run, de la boîte asyncio, la lance depuis la partie normale du programme, et rend ce qu'elle rend."
+     },
+     "see": {
+      "en": "Hello\n42",
+      "it": "Ciao\n42",
+      "fr": "Bonjour\n42"
+     },
+     "slip": {
+      "en": "async needs a recent browser on the website. The desktop app always has it.",
+      "it": "async ha bisogno di un browser recente sul sito. L'app per computer ce l'ha sempre.",
+      "fr": "async a besoin d'un navigateur récent sur le site. L'application de bureau l'a toujours."
+     },
+     "news": [
+      {
+       "k": "async",
+       "w": "async def",
+       "d": {
+        "en": "async def makes a coroutine: a function that can pause while it waits for something slow (a timer, a download) and let others work in the meantime. Calling it gives back a coroutine, which does nothing until it is run.",
+        "it": "async def fa una coroutine: una funzione che può fermarsi mentre aspetta qualcosa di lento (un timer, un download) e lasciar lavorare gli altri nel frattempo. Chiamarla restituisce una coroutine, che non fa niente finché non viene eseguita.",
+        "fr": "async def fait une coroutine : une fonction qui peut faire une pause pendant qu'elle attend quelque chose de lent (une minuterie, un téléchargement) et laisser travailler les autres entre-temps. L'appeler rend une coroutine, qui ne fait rien tant qu'elle n'est pas lancée."
+       },
+       "s": {
+        "en": "async def hello():",
+        "it": "async def hello():",
+        "fr": "async def hello():"
+       }
+      },
+      {
+       "k": "module:asyncio",
+       "w": "asyncio",
+       "d": {
+        "en": "asyncio is the tool box for coroutines: running them, waiting, and doing many things at once.",
+        "it": "asyncio è la cassetta di attrezzi per le coroutine: eseguirle, aspettare e fare molte cose insieme.",
+        "fr": "asyncio est la boîte à outils pour les coroutines : les lancer, attendre et faire plein de choses à la fois."
+       },
+       "s": {
+        "en": "import asyncio",
+        "it": "import asyncio",
+        "fr": "import asyncio"
+       }
+      },
+      {
+       "k": "asyncio.run",
+       "w": "asyncio.run( )",
+       "d": {
+        "en": "asyncio.run runs a coroutine from the normal part of the program, and gives back what the coroutine returns.",
+        "it": "asyncio.run esegue una coroutine dalla parte normale del programma e restituisce quello che la coroutine restituisce.",
+        "fr": "asyncio.run lance une coroutine depuis la partie normale du programme, et rend ce que la coroutine rend."
+       },
+       "s": {
+        "en": "asyncio.run(hello())",
+        "it": "asyncio.run(hello())",
+        "fr": "asyncio.run(hello())"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a coroutine called answer that returns 7. Run it with asyncio.run and show the result.",
+       "it": "Crea una coroutine che si chiama answer che restituisce 7. Eseguila con asyncio.run e mostra il risultato.",
+       "fr": "Crée une coroutine qui s'appelle answer qui rend 7. Lance-la avec asyncio.run et affiche le résultat."
+      },
+      "hint": {
+       "en": "async def answer(): return 7, then print(asyncio.run(answer())).",
+       "it": "async def answer(): return 7, poi print(asyncio.run(answer())).",
+       "fr": "async def answer(): return 7, puis print(asyncio.run(answer()))."
+      },
+      "sol": {
+       "en": "import asyncio\n\nasync def answer():\n    return 7\n\nprint(asyncio.run(answer()))",
+       "it": "import asyncio\n\nasync def answer():\n    return 7\n\nprint(asyncio.run(answer()))",
+       "fr": "import asyncio\n\nasync def answer():\n    return 7\n\nprint(asyncio.run(answer()))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "7",
+        "c": "async def answer"
+       },
+       "it": {
+        "out": "7",
+        "c": "async def answer"
+       },
+       "fr": {
+        "out": "7",
+        "c": "async def answer"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "7",
+       "it": "7",
+       "fr": "7"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import asyncio\n\nasync def hello():\n    print(\"Hello\")\n    await asyncio.sleep(0.01)\n    print(\"World\")\n    return 42\n\nresult = asyncio.run(hello())\nprint(result)",
+      "it": "import asyncio\n\nasync def hello():\n    print(\"Ciao\")\n    await asyncio.sleep(0.01)\n    print(\"Mondo\")\n    return 42\n\nresult = asyncio.run(hello())\nprint(result)",
+      "fr": "import asyncio\n\nasync def hello():\n    print(\"Bonjour\")\n    await asyncio.sleep(0.01)\n    print(\"Monde\")\n    return 42\n\nresult = asyncio.run(hello())\nprint(result)"
+     },
+     "title": {
+      "en": "Waiting with await",
+      "it": "Aspettare con await",
+      "fr": "Attendre avec await"
+     },
+     "text": {
+      "en": "await marks the place where a coroutine waits and lets others work. asyncio.sleep waits for some seconds, without freezing the rest of the program, unlike a normal pause.\n\nHere the coroutine says the first word, waits a very short time, and says the second word. You only write await inside an async def.",
+      "it": "await segna il punto in cui una coroutine aspetta e lascia lavorare gli altri. asyncio.sleep aspetta alcuni secondi, senza bloccare il resto del programma, a differenza di una pausa normale.\n\nQui la coroutine dice la prima parola, aspetta un tempo brevissimo e dice la seconda parola. Scrivi await solo dentro un async def.",
+      "fr": "await marque l'endroit où une coroutine attend et laisse les autres travailler. asyncio.sleep attend quelques secondes, sans bloquer le reste du programme, contrairement à une pause normale.\n\nIci la coroutine dit le premier mot, attend un temps très court et dit le deuxième mot. Tu n'écris await que dans un async def."
+     },
+     "see": {
+      "en": "Hello\nWorld\n42",
+      "it": "Ciao\nMondo\n42",
+      "fr": "Bonjour\nMonde\n42"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "await",
+       "w": "await",
+       "d": {
+        "en": "await marks the place where a coroutine waits for something and lets others work. Write it before a call to another coroutine, or to something that takes time.",
+        "it": "await segna il punto in cui una coroutine aspetta qualcosa e lascia lavorare gli altri. Scrivilo prima di una chiamata a un'altra coroutine, o a qualcosa che richiede tempo.",
+        "fr": "await marque l'endroit où une coroutine attend quelque chose et laisse les autres travailler. Écris-le devant un appel à une autre coroutine, ou à quelque chose qui prend du temps."
+       },
+       "s": {
+        "en": "await asyncio.sleep(1)",
+        "it": "await asyncio.sleep(1)",
+        "fr": "await asyncio.sleep(1)"
+       }
+      },
+      {
+       "k": "asyncio.sleep",
+       "w": "asyncio.sleep( )",
+       "d": {
+        "en": "asyncio.sleep waits for some seconds, without stopping the other coroutines.",
+        "it": "asyncio.sleep aspetta alcuni secondi, senza fermare le altre coroutine.",
+        "fr": "asyncio.sleep attend quelques secondes, sans arrêter les autres coroutines."
+       },
+       "s": {
+        "en": "await asyncio.sleep(0.5)",
+        "it": "await asyncio.sleep(0.5)",
+        "fr": "await asyncio.sleep(0.5)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a coroutine that shows \"a\", waits 0.01 seconds with await, and shows \"b\". Run it.",
+       "it": "Crea una coroutine che mostra \"a\", aspetta 0.01 secondi con await e mostra \"b\". Eseguila.",
+       "fr": "Crée une coroutine qui affiche \"a\", attend 0.01 seconde avec await et affiche \"b\". Lance-la."
+      },
+      "hint": {
+       "en": "async def, print(\"a\"), await asyncio.sleep(0.01), print(\"b\"), then asyncio.run(...).",
+       "it": "async def, print(\"a\"), await asyncio.sleep(0.01), print(\"b\"), poi asyncio.run(...).",
+       "fr": "async def, print(\"a\"), await asyncio.sleep(0.01), print(\"b\"), puis asyncio.run(...)."
+      },
+      "sol": {
+       "en": "import asyncio\n\nasync def letters():\n    print(\"a\")\n    await asyncio.sleep(0.01)\n    print(\"b\")\n\nasyncio.run(letters())",
+       "it": "import asyncio\n\nasync def letters():\n    print(\"a\")\n    await asyncio.sleep(0.01)\n    print(\"b\")\n\nasyncio.run(letters())",
+       "fr": "import asyncio\n\nasync def letters():\n    print(\"a\")\n    await asyncio.sleep(0.01)\n    print(\"b\")\n\nasyncio.run(letters())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "a\nb",
+        "c": "await"
+       },
+       "it": {
+        "out": "a\nb",
+        "c": "await"
+       },
+       "fr": {
+        "out": "a\nb",
+        "c": "await"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "a\nb",
+       "it": "a\nb",
+       "fr": "a\nb"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    print(name, \"done\")\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(\n        fetch(\"slow\", 0.06),\n        fetch(\"fast\", 0.01),\n        fetch(\"medium\", 0.03),\n    )\n    print(results)\n\nasyncio.run(main())",
+      "it": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    print(name, \"done\")\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(\n        fetch(\"slow\", 0.06),\n        fetch(\"fast\", 0.01),\n        fetch(\"medium\", 0.03),\n    )\n    print(results)\n\nasyncio.run(main())",
+      "fr": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    print(name, \"done\")\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(\n        fetch(\"slow\", 0.06),\n        fetch(\"fast\", 0.01),\n        fetch(\"medium\", 0.03),\n    )\n    print(results)\n\nasyncio.run(main())"
+     },
+     "title": {
+      "en": "Wait for many at the same time",
+      "it": "Aspetta molte cose insieme",
+      "fr": "Attends plusieurs choses en même temps"
+     },
+     "text": {
+      "en": "gather starts several coroutines together and waits for all of them. They run at the same time: the fast one finishes first, even though it was started second. The total time is that of the slowest one, not the sum of all.\n\nThe answers come back in a list, in the order you wrote the coroutines, not in the order they finished.",
+      "it": "gather fa partire più coroutine insieme e le aspetta tutte. Girano nello stesso momento: quella veloce finisce per prima, anche se è partita per seconda. Il tempo totale è quello della più lenta, non la somma di tutte.\n\nLe risposte tornano in una lista, nell'ordine in cui hai scritto le coroutine, non in quello in cui sono finite.",
+      "fr": "gather lance plusieurs coroutines ensemble et les attend toutes. Elles tournent en même temps : la rapide finit la première, même si elle a démarré en deuxième. Le temps total est celui de la plus lente, pas la somme de toutes.\n\nLes réponses reviennent dans une liste, dans l'ordre où tu as écrit les coroutines, pas dans l'ordre où elles ont fini."
+     },
+     "see": {
+      "en": "fast done\nmedium done\nslow done\n['SLOW', 'FAST', 'MEDIUM']",
+      "it": "fast done\nmedium done\nslow done\n['SLOW', 'FAST', 'MEDIUM']",
+      "fr": "fast done\nmedium done\nslow done\n['SLOW', 'FAST', 'MEDIUM']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "asyncio.gather",
+       "w": "asyncio.gather( )",
+       "d": {
+        "en": "asyncio.gather starts several coroutines together and waits for all of them. They run at the same time, and the answers come back in a list, in the order you wrote them.",
+        "it": "asyncio.gather fa partire più coroutine insieme e le aspetta tutte. Girano nello stesso momento e le risposte tornano in una lista, nell'ordine in cui le hai scritte.",
+        "fr": "asyncio.gather lance plusieurs coroutines ensemble et les attend toutes. Elles tournent en même temps et les réponses reviennent dans une liste, dans l'ordre où tu les as écrites."
+       },
+       "s": {
+        "en": "await asyncio.gather(one(), two())",
+        "it": "await asyncio.gather(one(), two())",
+        "fr": "await asyncio.gather(one(), two())"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Run the two fetches \"a\" (0.02 seconds) and \"b\" (0.01 seconds) together with gather and show the list of the results ([\"A\", \"B\"]).",
+       "it": "Esegui insieme con gather i due fetch \"a\" (0.02 secondi) e \"b\" (0.01 secondi) e mostra la lista dei risultati ([\"A\", \"B\"]).",
+       "fr": "Lance ensemble avec gather les deux fetch \"a\" (0.02 seconde) et \"b\" (0.01 seconde) et affiche la liste des résultats ([\"A\", \"B\"])."
+      },
+      "hint": {
+       "en": "await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01)) inside main().",
+       "it": "await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01)) dentro main().",
+       "fr": "await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01)) dans main()."
+      },
+      "sol": {
+       "en": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01))\n    print(results)\n\nasyncio.run(main())",
+       "it": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01))\n    print(results)\n\nasyncio.run(main())",
+       "fr": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()\n\nasync def main():\n    results = await asyncio.gather(fetch(\"a\", 0.02), fetch(\"b\", 0.01))\n    print(results)\n\nasyncio.run(main())"
+      },
+      "start": {
+       "en": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()",
+       "it": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()",
+       "fr": "import asyncio\n\nasync def fetch(name, seconds):\n    await asyncio.sleep(seconds)\n    return name.upper()"
+      },
+      "spec": {
+       "en": {
+        "out": "['A', 'B']",
+        "c": "gather"
+       },
+       "it": {
+        "out": "['A', 'B']",
+        "c": "gather"
+       },
+       "fr": {
+        "out": "['A', 'B']",
+        "c": "gather"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['A', 'B']",
+       "it": "['A', 'B']",
+       "fr": "['A', 'B']"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import asyncio\n\nasync def producer(queue):\n    for n in range(3):\n        await queue.put(n)\n        print(\"made\", n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"used\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())\nprint(\"finished\")",
+      "it": "import asyncio\n\nasync def producer(queue):\n    for n in range(3):\n        await queue.put(n)\n        print(\"fatto\", n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"usato\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())\nprint(\"finito\")",
+      "fr": "import asyncio\n\nasync def producer(queue):\n    for n in range(3):\n        await queue.put(n)\n        print(\"fait\", n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"utilisé\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())\nprint(\"terminé\")"
+     },
+     "title": {
+      "en": "Tasks that pass things to each other",
+      "it": "Compiti che si passano le cose",
+      "fr": "Des tâches qui se passent des choses"
+     },
+     "text": {
+      "en": "A Queue lets one coroutine hand things to another. The producer puts items in, with put. The consumer takes them out as they come, with get, and None is the agreed sign for \"no more\".\n\nThe two work together at the same time, passing the items between them. This pattern is used a lot: one part makes the work, another part does it.",
+      "it": "Una Queue lascia che una coroutine passi cose a un'altra. Il produttore mette gli elementi dentro, con put. Il consumatore li toglie man mano che arrivano, con get, e None è il segno stabilito per \"non ce ne sono più\".\n\nI due lavorano insieme nello stesso momento, passandosi gli elementi. Questo schema si usa molto: una parte prepara il lavoro, un'altra lo fa.",
+      "fr": "Une Queue laisse une coroutine passer des choses à une autre. Le producteur met les éléments dedans, avec put. Le consommateur les enlève au fur et à mesure, avec get, et None est le signe convenu pour \"il n'y en a plus\".\n\nLes deux travaillent ensemble en même temps, en se passant les éléments. Ce schéma est très utilisé : une partie prépare le travail, une autre le fait."
+     },
+     "see": {
+      "en": "made 0\nmade 1\nmade 2\nused 0\nused 1\nused 2\nfinished",
+      "it": "fatto 0\nfatto 1\nfatto 2\nusato 0\nusato 1\nusato 2\nfinito",
+      "fr": "fait 0\nfait 1\nfait 2\nutilisé 0\nutilisé 1\nutilisé 2\nterminé"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "asyncio.Queue",
+       "w": "asyncio.Queue( )",
+       "d": {
+        "en": "A Queue lets one coroutine hand things to another. One side puts items in, the other takes them out as they come.",
+        "it": "Una Queue lascia che una coroutine passi cose a un'altra. Un lato mette gli elementi dentro, l'altro li toglie man mano che arrivano.",
+        "fr": "Une Queue laisse une coroutine passer des choses à une autre. Un côté met des éléments dedans, l'autre les enlève au fur et à mesure."
+       },
+       "s": {
+        "en": "queue = asyncio.Queue()",
+        "it": "queue = asyncio.Queue()",
+        "fr": "queue = asyncio.Queue()"
+       }
+      },
+      {
+       "k": ".put",
+       "w": ".put( )",
+       "d": {
+        "en": "put adds an item to a queue, with await in front of it.",
+        "it": "put aggiunge un elemento a una coda, con await davanti.",
+        "fr": "put ajoute un élément à une file, avec await devant."
+       },
+       "s": {
+        "en": "await queue.put(item)",
+        "it": "await queue.put(item)",
+        "fr": "await queue.put(item)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Change the producer to make 2 items instead of 3. The consumer must use only 2.",
+       "it": "Cambia il produttore perché faccia 2 elementi invece di 3. Il consumatore deve usarne solo 2.",
+       "fr": "Change le producteur pour qu'il fasse 2 éléments au lieu de 3. Le consommateur ne doit en utiliser que 2."
+      },
+      "hint": {
+       "en": "range(2) in the producer.",
+       "it": "range(2) nel produttore.",
+       "fr": "range(2) dans le producteur."
+      },
+      "sol": {
+       "en": "import asyncio\n\nasync def producer(queue):\n    for n in range(2):\n        await queue.put(n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"used\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())",
+       "it": "import asyncio\n\nasync def producer(queue):\n    for n in range(2):\n        await queue.put(n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"usato\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())",
+       "fr": "import asyncio\n\nasync def producer(queue):\n    for n in range(2):\n        await queue.put(n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"utilisé\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())"
+      },
+      "start": {
+       "en": "import asyncio\n\nasync def producer(queue):\n    for n in range(3):\n        await queue.put(n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"used\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())",
+       "it": "import asyncio\n\nasync def producer(queue):\n    for n in range(3):\n        await queue.put(n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"usato\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())",
+       "fr": "import asyncio\n\nasync def producer(queue):\n    for n in range(3):\n        await queue.put(n)\n    await queue.put(None)\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(\"utilisé\", item)\n\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\n\nasyncio.run(main())"
+      },
+      "spec": {
+       "en": {
+        "out": "used 0\nused 1\n"
+       },
+       "it": {
+        "out": "usato 0\nusato 1\n"
+       },
+       "fr": {
+        "out": "utilisé 0\nutilisé 1\n"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "used 0\nused 1",
+       "it": "usato 0\nusato 1",
+       "fr": "utilisé 0\nutilisé 1"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import asyncio\n\nasync def slow():\n    await asyncio.sleep(1)\n    return \"never reached\"\n\nasync def main():\n    try:\n        result = await asyncio.wait_for(slow(), timeout=0.05)\n    except asyncio.TimeoutError:\n        print(\"Too slow, gave up\")\n\nasyncio.run(main())",
+      "it": "import asyncio\n\nasync def slow():\n    await asyncio.sleep(1)\n    return \"mai raggiunto\"\n\nasync def main():\n    try:\n        result = await asyncio.wait_for(slow(), timeout=0.05)\n    except asyncio.TimeoutError:\n        print(\"Troppo lento, rinuncio\")\n\nasyncio.run(main())",
+      "fr": "import asyncio\n\nasync def slow():\n    await asyncio.sleep(1)\n    return \"jamais atteint\"\n\nasync def main():\n    try:\n        result = await asyncio.wait_for(slow(), timeout=0.05)\n    except asyncio.TimeoutError:\n        print(\"Trop lent, j'abandonne\")\n\nasyncio.run(main())"
+     },
+     "title": {
+      "en": "Time limits",
+      "it": "Limiti di tempo",
+      "fr": "Limites de temps"
+     },
+     "text": {
+      "en": "wait_for stops waiting after a time limit (timeout=) and raises TimeoutError, which you can catch with try and except. Here slow would take a whole second, but we only wait a twentieth of it.\n\nIt is how programs avoid waiting forever for something that does not answer.",
+      "it": "wait_for smette di aspettare dopo un limite di tempo (timeout=) e alza TimeoutError, che puoi prendere con try ed except. Qui slow ci metterebbe un secondo intero, ma noi aspettiamo solo un ventesimo.\n\nÈ così che i programmi evitano di aspettare per sempre qualcosa che non risponde.",
+      "fr": "wait_for arrête d'attendre après une limite de temps (timeout=) et lève TimeoutError, que tu peux attraper avec try et except. Ici slow prendrait toute une seconde, mais on n'attend qu'un vingtième.\n\nC'est ainsi que les programmes évitent d'attendre pour toujours quelque chose qui ne répond pas."
+     },
+     "see": {
+      "en": "Too slow, gave up",
+      "it": "Troppo lento, rinuncio",
+      "fr": "Trop lent, j'abandonne"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "asyncio.wait_for",
+       "w": "asyncio.wait_for( )",
+       "d": {
+        "en": "asyncio.wait_for waits for a coroutine, but only up to a time limit (timeout=). If it takes longer, it raises a TimeoutError.",
+        "it": "asyncio.wait_for aspetta una coroutine, ma solo fino a un limite di tempo (timeout=). Se ci mette di più, alza un TimeoutError.",
+        "fr": "asyncio.wait_for attend une coroutine, mais seulement jusqu'à une limite de temps (timeout=). Si elle met plus longtemps, il lève une TimeoutError."
+       },
+       "s": {
+        "en": "await asyncio.wait_for(slow(), timeout=1)",
+        "it": "await asyncio.wait_for(slow(), timeout=1)",
+        "fr": "await asyncio.wait_for(slow(), timeout=1)"
+       }
+      },
+      {
+       "k": "arg:timeout",
+       "w": "timeout=",
+       "d": {
+        "en": "timeout= is the time limit, in seconds, that wait_for is allowed to wait.",
+        "it": "timeout= è il limite di tempo, in secondi, che wait_for può aspettare.",
+        "fr": "timeout= est la limite de temps, en secondes, que wait_for a le droit d'attendre."
+       },
+       "s": {
+        "en": "asyncio.wait_for(job(), timeout=2)",
+        "it": "asyncio.wait_for(job(), timeout=2)",
+        "fr": "asyncio.wait_for(job(), timeout=2)"
+       }
+      },
+      {
+       "k": "asyncio.TimeoutError",
+       "w": "asyncio.TimeoutError",
+       "d": {
+        "en": "asyncio.TimeoutError is the kind of error that wait_for raises when the time limit is over.",
+        "it": "asyncio.TimeoutError è il tipo di errore che wait_for alza quando il limite di tempo è finito.",
+        "fr": "asyncio.TimeoutError est le genre d'erreur que wait_for lève quand la limite de temps est dépassée."
+       },
+       "s": {
+        "en": "except asyncio.TimeoutError:",
+        "it": "except asyncio.TimeoutError:",
+        "fr": "except asyncio.TimeoutError:"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make the program show \"ok\" after waiting for asyncio.sleep(0.01) with a time limit of 1 second.",
+       "it": "Fai mostrare al programma \"ok\" dopo aver aspettato asyncio.sleep(0.01) con un limite di tempo di 1 secondo.",
+       "fr": "Fais afficher \"ok\" au programme après avoir attendu asyncio.sleep(0.01) avec une limite de temps de 1 seconde."
+      },
+      "hint": {
+       "en": "await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) and then print(\"ok\").",
+       "it": "await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) e poi print(\"ok\").",
+       "fr": "await asyncio.wait_for(asyncio.sleep(0.01), timeout=1) puis print(\"ok\")."
+      },
+      "sol": {
+       "en": "import asyncio\n\nasync def main():\n    await asyncio.wait_for(asyncio.sleep(0.01), timeout=1)\n    print(\"ok\")\n\nasyncio.run(main())",
+       "it": "import asyncio\n\nasync def main():\n    await asyncio.wait_for(asyncio.sleep(0.01), timeout=1)\n    print(\"ok\")\n\nasyncio.run(main())",
+       "fr": "import asyncio\n\nasync def main():\n    await asyncio.wait_for(asyncio.sleep(0.01), timeout=1)\n    print(\"ok\")\n\nasyncio.run(main())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "ok",
+        "c": "wait_for"
+       },
+       "it": {
+        "out": "ok",
+        "c": "wait_for"
+       },
+       "fr": {
+        "out": "ok",
+        "c": "wait_for"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "ok",
+       "it": "ok",
+       "fr": "ok"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"background\"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print(\"doing other things\")\n    print(await task)\n\nasyncio.run(main())",
+      "it": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"in secondo piano\"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print(\"faccio altre cose\")\n    print(await task)\n\nasyncio.run(main())",
+      "fr": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"en arrière-plan\"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print(\"je fais d'autres choses\")\n    print(await task)\n\nasyncio.run(main())"
+     },
+     "title": {
+      "en": "Tasks in the background",
+      "it": "Compiti in secondo piano",
+      "fr": "Des tâches en arrière-plan"
+     },
+     "text": {
+      "en": "create_task starts a coroutine in the background and gives you a task. The program goes on with other things, and later you await the task to get its answer.\n\nThis is how a program can start a long job, keep talking with the user, and pick up the result when it is ready.",
+      "it": "create_task fa partire una coroutine in secondo piano e ti dà un task. Il programma va avanti con altre cose, e più tardi fai await sul task per avere la sua risposta.\n\nÈ così che un programma può far partire un lavoro lungo, continuare a parlare con l'utente e prendere il risultato quando è pronto.",
+      "fr": "create_task lance une coroutine en arrière-plan et te donne une tâche. Le programme continue avec d'autres choses, et plus tard tu fais await sur la tâche pour avoir sa réponse.\n\nC'est ainsi qu'un programme peut lancer un long travail, continuer à parler avec l'utilisateur et récupérer le résultat quand il est prêt."
+     },
+     "see": {
+      "en": "doing other things\nbackground",
+      "it": "faccio altre cose\nin secondo piano",
+      "fr": "je fais d'autres choses\nen arrière-plan"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "asyncio.create_task",
+       "w": "asyncio.create_task( )",
+       "d": {
+        "en": "asyncio.create_task starts a coroutine in the background and gives you a task. You await the task later to get its answer.",
+        "it": "asyncio.create_task fa partire una coroutine in secondo piano e ti dà un task. Più tardi fai await sul task per avere la sua risposta.",
+        "fr": "asyncio.create_task lance une coroutine en arrière-plan et te donne une tâche. Plus tard tu fais await sur la tâche pour avoir sa réponse."
+       },
+       "s": {
+        "en": "task = asyncio.create_task(work())",
+        "it": "task = asyncio.create_task(work())",
+        "fr": "task = asyncio.create_task(work())"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Start work() as a background task, show \"waiting\", and then show the result of the task.",
+       "it": "Fai partire work() come compito in secondo piano, mostra \"attendo\" e poi mostra il risultato del compito.",
+       "fr": "Lance work() comme tâche en arrière-plan, affiche \"j'attends\" et puis affiche le résultat de la tâche."
+      },
+      "hint": {
+       "en": "task = asyncio.create_task(work()), print(...), then print(await task).",
+       "it": "task = asyncio.create_task(work()), print(...), poi print(await task).",
+       "fr": "task = asyncio.create_task(work()), print(...), puis print(await task)."
+      },
+      "sol": {
+       "en": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"done\"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print(\"waiting\")\n    print(await task)\n\nasyncio.run(main())",
+       "it": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"done\"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print(\"waiting\")\n    print(await task)\n\nasyncio.run(main())",
+       "fr": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"done\"\n\nasync def main():\n    task = asyncio.create_task(work())\n    print(\"waiting\")\n    print(await task)\n\nasyncio.run(main())"
+      },
+      "start": {
+       "en": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"done\"",
+       "it": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"done\"",
+       "fr": "import asyncio\n\nasync def work():\n    await asyncio.sleep(0.01)\n    return \"done\""
+      },
+      "spec": {
+       "en": {
+        "out": "waiting\ndone",
+        "c": "create_task"
+       },
+       "it": {
+        "out": "waiting\ndone",
+        "c": "create_task"
+       },
+       "fr": {
+        "out": "waiting\ndone",
+        "c": "create_task"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "waiting\ndone",
+       "it": "waiting\ndone",
+       "fr": "waiting\ndone"
+      }
+     }
+    }
+   ]
   }
  ]
 };

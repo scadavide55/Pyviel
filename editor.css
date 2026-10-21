@@ -477,3 +477,7 @@ dialog::backdrop { background: #2b242088; }
 .guess-said.no { color: var(--warn); }
 .review { margin: 0 0 14px; padding: 10px 12px; border: 2px dashed var(--edge); border-radius: 12px; }
 .review-code { margin: 8px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--screen); color: var(--screen-ink); font: 13px/1.45 ui-monospace, "SF Mono", Menlo, monospace; white-space: pre-wrap; }
+/* Check next to Run: only on a small screen, only while a practice task is waiting. */
+.check-float { display: none !important; }
+.check-float { align-items: center; gap: 4px; height: 38px; padding: 0 12px; border: 2px solid var(--go); border-radius: 10px; background: var(--card); color: var(--ink); font-weight: 700; }
+@media (max-width: 900px) { body[data-task="open"] .check-float { display: inline-flex !important; } }

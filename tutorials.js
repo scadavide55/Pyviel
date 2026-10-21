@@ -299,6 +299,12 @@
     remember();
   }
   toggle.addEventListener('click', function () { setOpen(panel.hidden); });
+  // On a small screen the lessons cover the editor: while a task is open, Check sits next to Run.
+  $('check-float').addEventListener('click', function () {
+    setOpen(true);
+    var button = stepBox.querySelector('.check-task');
+    if (button) { button.scrollIntoView({block: 'center'}); button.click(); }
+  });
   $('tutorial-close').addEventListener('click', function () { setOpen(false); });
   $('tab-lessons').addEventListener('click', function () { showTab('lessons'); });
   $('tab-examples').addEventListener('click', function () { showTab('examples'); });
@@ -313,6 +319,7 @@
     stepBox.hidden = !showingStep;
     lessonsBox.hidden = showingStep;
     if (showingStep) drawStep();
+    else document.body.dataset.task = '';
     remember();
   }
 
@@ -470,6 +477,7 @@
 
   // A practice task: the student writes in the editor, then asks to be checked.
   function drawTask(task, key) {
+    document.body.dataset.task = solved[key] ? '' : 'open';
     var box = element('div', 'exercise' + (solved[key] ? ' solved' : ''));
     var head = element('div', 'block-title', UI.turn || 'Your turn');
     if (solved[key]) head.appendChild(element('span', 'solved-tag', '✓ ' + (UI.solved || 'Solved')));
@@ -576,6 +584,7 @@
       if (verdict.ok) {
         solved[key] = 1;
         write(SOLVED, solved);
+        document.body.dataset.task = '';
         say2('yes', '✓ ' + (UI.right || 'Yes! That is right.'), ' ' + (UI.rightMore || 'You can go on to the next step.'));
         var tag = stepBox.querySelector('.exercise .block-title');
         if (tag && !tag.querySelector('.solved-tag')) tag.appendChild(element('span', 'solved-tag', '✓ ' + (UI.solved || 'Solved')));
@@ -619,6 +628,7 @@
 
   function drawStep() {
     silence();
+    document.body.dataset.task = '';
     var lesson = TUTORIALS[position.lesson], step = lesson.steps[position.step];
     var last = position.step === lesson.steps.length - 1;
     var stepKey = position.lesson + ':' + position.step;

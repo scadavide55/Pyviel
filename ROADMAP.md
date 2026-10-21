@@ -21,13 +21,26 @@ Decisions taken (20 October 2026):
 
 Written on 20 October 2026: 54 lessons and 261 steps, each in three languages (stage 1: 13 lessons, stage 2: 11, stage 3: 10, stage 4: 14, stage 5: 5, and a cheat sheet as an appendix). Every program of every step is run for real by a test, and every Python error that the course can cause has a sentence in all three languages.
 
-## Version 1.2.1 — to decide
+## Plan agreed on 21 October 2026 (nothing started)
 
-Written on 21 October 2026, after the 1.2.0 release, from an outside review (checked: all three points are true). Nothing here is started: the author decides what goes in.
+### 1.2.1 — a patch that can be rebuilt and checked in one evening
+- **Tasks check the idea, not only the text.** Today 48 tasks pass with a single `print` of the expected text (53 pass, 5 of them rightly, because there the `print` is the answer; 16 of the 48 have a loop in their solution). Plan: `pyviel-runner.py` parses the program once with `ast` and returns `used` (the constructs it really uses: `for`, `while`, `def`, `+=`...), so strings and comments never count; the page, the desktop app and the build all get it from the same runner. A task can ask for `uses`; the message names what is missing ("this task asks for a `for` loop"). `tools/check-tasks.js` tries the `print` shortcut on every task and fails the build when it passes. 19 of the 48 steps already name the construct in `n`; for the other 29 Claude proposes one and the author checks the list.
+- **Two kinds of progress**: lessons read and lessons solved ("58 read · 41 solved"), with a mark on the lessons that still have tasks to do. Today a lesson counts as done when you press Next lesson.
+- **The four errors** without a plain sentence: `JSONDecodeError`, `PatternError`, `IsADirectoryError`, `UnicodeDecodeError` (three languages, a test each).
+- **Screen readers** hear the output and the problems when a run ends (not line by line).
+- `questions.py`: the author decides (delete or ignore).
+- To look at before promising: a Check button next to Run on a phone while a task is open.
 
-- **Four errors with no plain sentence.** `JSONDecodeError`, `PatternError` (the name of `re.error` since Python 3.13), `IsADirectoryError` and `UnicodeDecodeError` fall back to "The program raised a ...", with Python's English message, in every language. The lessons on `json`, `re` and files can cause them. Proposal: a rule and a sentence in three languages for each, and a program for each in `test-errors.js`.
-- **Screen readers do not hear the result.** `#out` and `#problems` are not announced, so a blind student hears "Done" but not what the program printed or the error sentence. Proposal: announce the output and the problems when a run ends (not line by line, so a program that prints a lot is not read aloud for ever).
-- **`questions.py` in the project folder** is not tracked and not ignored, so `git add -A` would publish it. It is the author's file: delete it or add it to `.gitignore`. Possibly ignore every `*.py` at the top of the folder, since Pyviel itself has none there except `pyviel-host.py` and `pyviel-runner.py`.
+### 1.3 — content
+- More "find the mistake" tasks: reading an error and fixing it is what beginners do most, and the course trains it in two places only.
+
+### 1.5 — bigger content
+- Challenges for lessons 21-58 (modules, files, json, objects): a whole program from an empty page.
+- A short review at the start of each lesson (one or two questions on the lesson before).
+- "Think first" with a real choice (two or three answers, one click), only where the output is short.
+
+### Always
+- A test with a real beginner, and the Italian and French read by people who speak them.
 
 ## Version 1.5 — to decide
 

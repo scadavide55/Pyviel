@@ -227,7 +227,7 @@ async function main() {
               if (t3 && t3[l] === t3.en) bad(here, 'ex.t is not translated in ' + l);
               if (h3 && h3[l] === h3.en && !/[()=*\[\]]/.test(h3.en)) bad(here, 'ex.h is not translated in ' + l);
             }
-            // A hint points the way; "Show a solution" is the button that gives the answer away.
+            // A hint points the way, never the whole answer: the page has no solution to show.
             // Allowed: a hint that names the one line to change in a given start.
             if (h3) {
               const squash = text => String(text).replace(/\s+/g, '');
@@ -300,7 +300,8 @@ async function main() {
     if (!value || typeof value !== 'object') return value;
     const keys = Object.keys(value);
     if (keys.length && keys.every(k => LANGS.includes(k))) return {[l]: only(value[l], l)};
-    return Object.fromEntries(keys.map(k => [k, only(value[k], l)]));
+    // The page never shows a solution: the student works it out. Only course.js (for the tools) keeps them.
+    return Object.fromEntries(keys.filter(k => k !== 'sol').map(k => [k, only(value[k], l)]));
   };
   for (const l of LANGS) {
     fs.writeFileSync(path.join(__dirname, '..', 'course-' + l + '.js'),

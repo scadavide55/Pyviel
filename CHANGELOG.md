@@ -9,6 +9,7 @@ The tutorials check real learning, and give much more practice.
 - **A question on the lesson before** opens every lesson from the second one: "Remember?".
 - **11 "find the mistake" steps** in lessons 3 to 20: mismatched quotes, `x` for times, text plus a number, 4 times 2 is 44, `=` in an if, a missing colon, a line not pushed in, `add` on a list, changing a letter of a text, a missing key, a function without `return`.
 - **17 more challenges**, in lessons 21 to 40 (function options, scope, recursion, comprehensions, modules, statistics, dates, files, errors, JSON, regular expressions, classes, inheritance, special methods, dataclasses, generators, decorators). The course has **349 steps**.
+- **No more "Show a solution"**: the student works the answer out, with the hint as help. The solutions are not even in the files the page loads.
 - **Lessons read and lessons solved** are counted apart, and a lesson shows how many of its tasks are solved.
 - On a phone, a **Check** button sits next to Run while a task is open.
 - **Plain sentences for four more errors**, in three languages: `JSONDecodeError`, `PatternError` (the regular expression is broken), `IsADirectoryError` and `UnicodeDecodeError`.

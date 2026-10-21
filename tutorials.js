@@ -25,7 +25,7 @@
         return {
           title: say(step.title), text: say(step.text), code: say(step.code), see: say(step.see), choices: step.choices ? (step.choices[LANG] || step.choices.en) : null, turn: say(step.turn), slip: say(step.slip), error: step.error,
           news: (step.news || []).map(function (n) { return {key: n.k, word: n.w, text: say(n.d), shape: n.s ? say(n.s) : ''}; }),
-          task: step.ex ? {text: say(step.ex.task), hint: say(step.ex.hint), solution: say(step.ex.sol), start: say(step.ex.start), spec: step.ex.spec[LANG] || step.ex.spec.en, answers: (step.ex.answers || {})[LANG] || [], expected: step.ex.expected ? say(step.ex.expected) : ''} : null
+          task: step.ex ? {text: say(step.ex.task), hint: say(step.ex.hint), start: say(step.ex.start), spec: step.ex.spec[LANG] || step.ex.spec.en, answers: (step.ex.answers || {})[LANG] || [], expected: step.ex.expected ? say(step.ex.expected) : ''} : null
         };
       })
     };
@@ -533,23 +533,6 @@
       hint.appendChild(element('b', null, UI.hintTitle || 'Hint'));
       hint.appendChild(document.createTextNode(task.hint));
       extra.appendChild(hint);
-    });
-    button(UI.solution || 'Show a solution', 'solution-task', function () {
-      extra.innerHTML = '';
-      var holder = element('div', 'solution-box');
-      holder.appendChild(element('b', null, UI.solutionTitle || 'One solution'));
-      holder.appendChild(element('pre', 'src', task.solution));
-      var put = element('button', 'btn', UI.putSolution || 'Put it in the editor');
-      put.type = 'button';
-      put.addEventListener('click', function () {
-        code.value = task.solution;
-        code.dispatchEvent(new Event('input', {bubbles: true}));
-        code.setSelectionRange(0, 0);
-        code.focus();
-        if (window.innerWidth <= 900) setOpen(false);
-      });
-      holder.appendChild(put);
-      extra.appendChild(holder);
     });
     box.appendChild(buttons);
     box.appendChild(result);

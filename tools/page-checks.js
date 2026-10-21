@@ -170,7 +170,7 @@
   check('Put it in the editor loads the step', /print\(/.test(code.value));
   // a practice task: wrong answer, hint, solution, right answer
   const task = course[0].steps[0].task;
-  check('every step has a practice task with a hint and a solution', course.every(l => l.steps.every(s => s.task && s.task.hint && s.task.solution)));
+  check('every step has a practice task with a hint', course.every(l => l.steps.every(s => s.task && s.task.hint)));
   code.value = 'print("left over")'; code.dispatchEvent(new Event('input', {bubbles: true}));
   document.querySelector('.big-next.to-do').click();
   check('the last phase is the task', phaseTab(2).classList.contains('current') && !!document.querySelector('.exercise'));
@@ -185,9 +185,11 @@
   check('Start over puts the starting code back', code.value === task.start);
   document.querySelector('.hint-task').click();
   check('the hint opens', !!document.querySelector('.hint-box'));
-  document.querySelector('.solution-task').click();
-  check('the solution opens, and goes to the editor', !!document.querySelector('.solution-box pre') && document.querySelector('.solution-box .btn'));
-  document.querySelector('.solution-box .btn').click();
+  check('there is no solution to show: no button, and none in what the page loads', !document.querySelector('.solution-task') && window.PyvielCourse.lessons.every(l => l.steps.every(s => !s.ex || s.ex.sol === undefined)));
+  // the tests take the solution from course.js, which the page itself never loads
+  const withSolutions = {};
+  new Function('window', await (await fetch("course.js")).text())(withSolutions);
+  code.value = withSolutions.PyvielCourse.lessons[0].steps[0].ex.sol.en; code.dispatchEvent(new Event('input', {bubbles: true}));
   document.querySelector('.check-task').click();
   for (let i = 0; i < 100 && !document.querySelector('.exercise-result.yes'); i++) await new Promise(r => setTimeout(r, 100));
   check('the right answer is recognised and remembered', !!document.querySelector('.exercise-result.yes') && !!document.querySelector('.solved-tag') && !!document.querySelector('.progress .solved'));

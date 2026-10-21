@@ -428,7 +428,7 @@
   var revealed = {};
   var taskLoaded = {};
   var misses = {};       // step -> wrong checks in this visit: after two, the page offers a way forward
-  var guessed = {};      // step -> true/false: the answer picked in "Think first"
+  var guessed = {};      // step -> the answer picked in "Think first": true, or the mistake behind it ('quotes'...) or false
   var reviewed = {};     // lesson -> the answer picked in "Remember?"
 
   function reviewBox(step, lessonIndex) {
@@ -447,7 +447,7 @@
       list.appendChild(b);
     });
     box.appendChild(list);
-    if (picked !== undefined) box.appendChild(element('p', 'guess-said ' + (picked === step.choices.right ? 'yes' : 'no'), picked === step.choices.right ? '✓ ' + (UI.rememberRight || 'Yes, you remember!') : (UI.rememberWrong || 'Not quite. The right answer is marked.')));
+    if (picked !== undefined) box.appendChild(element('p', 'guess-said ' + (picked === step.choices.right ? 'yes' : 'no'), picked === step.choices.right ? '✓ ' + (UI.rememberRight || 'Yes, you remember!') : (UI.rememberWrong || 'Not quite. The right answer is marked.') + (step.choices.why && UI.guessWhy && UI.guessWhy[step.choices.why[picked]] ? ' ' + UI.guessWhy[step.choices.why[picked]] : '')));
     return box;
   }
 
@@ -461,7 +461,8 @@
       var b = element('button', 'choice');
       b.type = 'button';
       b.appendChild(element('pre', null, option));
-      b.addEventListener('click', function () { done(i === choices.right); });
+      // a wrong pick keeps the mistake behind it ('quotes', 'sum'...), so the page can explain it
+      b.addEventListener('click', function () { done(i === choices.right ? true : ((choices.why && choices.why[i]) || false)); });
       list.appendChild(b);
     });
     box.appendChild(list);
@@ -612,6 +613,7 @@
       }
       if (verdict.why === 'code') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkCode || 'It shows the right thing, but the task asks you to write it in a special way. Read the task again.')); stuck(); return; }
       say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkWrong || 'Your program shows something different.'));
+      var almost = false;
       if (task.spec.out !== undefined) {
         var mine = window.PyvielCheck.tidy(run.text).split('\n'), want = window.PyvielCheck.tidy(task.spec.out).split('\n');
         var at = 0;
@@ -622,7 +624,7 @@
         result.appendChild(element('div', 'diff-line', why));
         // almost right: say which small thing is wrong, it is the mistake beginners do not see
         var close = window.PyvielCheck.near && window.PyvielCheck.near(run.text, task.spec.out);
-        if (close && UI.near && UI.near[close.why]) result.appendChild(element('div', 'near-miss', UI.near[close.why]));
+        if (close && UI.near && UI.near[close.why]) { result.appendChild(element('div', 'near-miss', UI.near[close.why])); almost = true; }
       }
       result.appendChild(element('div', 'expected-title', UI.yourShows || 'Your program showed:'));
       result.appendChild(element('pre', 'screen small', shortText(window.PyvielCheck.tidy(run.text), 8)));
@@ -630,7 +632,7 @@
         result.appendChild(element('div', 'expected-title', UI.shouldShow || 'Your program should show:'));
         result.appendChild(element('pre', 'screen small', task.expected));
       }
-      stuck();
+      if (!almost) stuck();
     }, function () {
       result.className = 'exercise-result no';
       result.textContent = UI.checkFailed || 'Something went wrong while checking. Try again.';
@@ -753,7 +755,11 @@
       if (step.see) {
         var see = element('div', 'see-box');
         if (revealed[stepKey]) {
-          if (guessed[stepKey] !== undefined) see.appendChild(element('p', 'guess-said ' + (guessed[stepKey] ? 'yes' : 'no'), guessed[stepKey] ? '✓ ' + (UI.guessRight || 'Right guess!') : (UI.guessWrong || 'Not this one. Here is what it really shows; read the program again and see why.')));
+          if (guessed[stepKey] !== undefined) {
+            var said = guessed[stepKey] === true ? '✓ ' + (UI.guessRight || 'Right guess!') : (UI.guessWrong || 'Not this one. Here is what it really shows; read the program again and see why.');
+            if (typeof guessed[stepKey] === 'string' && UI.guessWhy && UI.guessWhy[guessed[stepKey]]) said += ' ' + UI.guessWhy[guessed[stepKey]];
+            see.appendChild(element('p', 'guess-said ' + (guessed[stepKey] === true ? 'yes' : 'no'), said));
+          }
           see.appendChild(element('div', 'block-title', UI.see || 'What you will see'));
           see.appendChild(element('pre', 'screen', step.see));
         } else if (step.choices) {

@@ -162,9 +162,10 @@
   check('the result stays hidden until the student has thought about it', !!document.querySelector('.predict') && !document.querySelector('.see-box .screen'));
   const options = document.querySelectorAll('.choices .choice');
   check('"Think first" offers three answers to pick from', options.length === 3, options.length);
-  const rightOne = course[0].steps[0].choices.right;
-  options[(rightOne + 1) % 3].click();
+  const quotesOne = course[0].steps[0].choices.why.indexOf('quotes');
+  options[quotesOne].click();
   check('a wrong guess is told kindly, and the real result is shown', !!document.querySelector('.guess-said.no') && !!document.querySelector('.see-box .screen'));
+  check('and the mistake behind it is explained (the quotes do not show)', /quotes do not show/.test(document.querySelector('.guess-said.no').textContent), document.querySelector('.guess-said.no').textContent);
   check('more than half of the steps ask a real question', course.reduce((n, l) => n + l.steps.filter(s => s.choices).length, 0) > 150);
   document.querySelector('.step-actions .put-code').click();
   check('Put it in the editor loads the step', /print\(/.test(code.value));
@@ -186,7 +187,11 @@
   document.querySelector('.check-task').click();
   for (let i = 0; i < 100 && !document.querySelector('.exercise-result.no .diff-line'); i++) await new Promise(r => setTimeout(r, 100));
   check('an answer that is almost right says what small thing differs (capital letters)', /capital/.test((document.querySelector('.near-miss') || {}).textContent || ''), (document.querySelector('.exercise-result') || {}).textContent);
-  check('after two wrong checks, a way forward that is not the answer', !!document.querySelector('.stuck .stuck-buttons button'));
+  check('an answer that is almost right is not called stuck', !document.querySelector('.stuck'));
+  code.value = 'print("something else")'; code.dispatchEvent(new Event('input', {bubbles: true}));
+  document.querySelector('.check-task').click();
+  for (let i = 0; i < 100 && !/something else/.test((document.querySelector('.exercise-result.no') || {}).textContent || ''); i++) await new Promise(r => setTimeout(r, 100));
+  check('after more wrong checks, a way forward that is not the answer', !!document.querySelector('.stuck .stuck-buttons button'));
   document.querySelector('.start-task').click();
   check('Start over puts the starting code back', code.value === task.start);
   document.querySelector('.hint-task').click();

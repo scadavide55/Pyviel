@@ -50,32 +50,66 @@ function pick3(value, where, what, required) {
 }
 
 // "Think first" as a real question: the true output and two wrong ones that a beginner could believe.
-// Only for short outputs of programs without input, luck or errors. Wrong answers, in this order:
-// the sum written as text (print(2 + 3) -> 2 + 3), the text with its quotes (print("Hi") -> "Hi"),
-// a number one bigger, and what another program of the same lesson shows.
+// Only for short outputs of programs without input, luck or errors. Each wrong answer comes from a
+// real mistake, and keeps its name so the page can explain it; the first two that apply are used:
+//   quotes  the text with its quotes (print("Hi") -> "Hi")
+//   sum     the sum written as text (print(2 + 3) -> 2 + 3)
+//   name    the name of a box instead of what is in it (print(age) -> age)
+//   space   + adds a space between texts ("Py" + "thon" -> Py thon)
+//   comma   print adds no space between things split by commas (print("a", "b") -> ab)
+//   decimal a division with / gives a whole number (10 / 2 -> 5)
+//   bool    the other answer to a question (True -> False)
+//   number  one number one bigger
+//   other   what another program of the same lesson shows
 function choicesFor(code, see, others) {
   const lines = see.split('\n');
-  const wrong = [];
-  const add = text => { if (text && text !== see && !wrong.includes(text) && text.trim()) wrong.push(text); };
+  const wrong = [], kinds = [];
+  const add = (text, kind) => { if (text && text !== see && !wrong.includes(text) && text.trim()) { wrong.push(text); kinds.push(kind); } };
   const src = code.split('\n').filter(x => x.trim() && !/^\s*#/.test(x));
-  const plainPrints = src.every(x => /^print\(.*\)\s*(#.*)?$/.test(x)) && src.length === lines.length;
-  if (plainPrints) {
-    const args = src.map(x => x.replace(/\s*#.*$/, '').replace(/^print\(/, '').replace(/\)$/, ''));
+  // a straight program (no blocks) where each print shows one line: print number i is line i
+  const prints = src.filter(x => /^print\(.*\)\s*(#.*)?$/.test(x));
+  const straight = src.every(x => !/^\s/.test(x) && !/^(for|while|if|def|class|with|try)\b/.test(x)) && prints.length === lines.length;
+  if (straight) {
+    const args = prints.map(x => x.replace(/\s*#.*$/, '').replace(/^print\(/, '').replace(/\)$/, ''));
+    const any = test => args.some((arg, i) => test(arg, lines[i]));
+    const swap = (test, change) => lines.map((line, i) => test(args[i], line) ? change(args[i], line) : line).join('\n');
+    const quoted = arg => /^(["'])[^"']*\1$/.test(arg);
+    const outside = arg => arg.replace(/(["'])(?:(?!\1).)*\1/g, '""');
     // an operator outside the quotes: the beginner reads the sum (or the repeat) as text to copy
-    const sum = arg => /[-+*\/%]/.test(arg.replace(/(["'])(?:(?!\1).)*\1/g, '""')) && !/^[\w.]+\(/.test(arg);
-    if (args.some(sum)) add(lines.map((line, i) => sum(args[i]) ? args[i] : line).join('\n'));
-    if (args.some(a => /^(["'])[^"']*\1$/.test(a))) add(lines.map((line, i) => /^(["'])[^"']*\1$/.test(args[i]) ? args[i] : line).join('\n'));
+    const sum = arg => /[-+*\/%]/.test(outside(arg)) && !/^[\w.]+\(/.test(arg);
+    const parts = (arg, sign) => outside(arg).includes('=') ? null : arg.split(sign).map(x => x.trim());
+    // a box filled once with a text counts as that text
+    const known = {};
+    src.forEach(x => { const m = x.match(/^(\w+) = (["'])([^"']*)\2\s*$/); if (m) known[m[1]] = known[m[1]] === undefined ? m[3] : null; });
+    const text = x => quoted(x) ? x.slice(1, -1) : typeof known[x] === 'string' ? known[x] : null;
+    const texts = list => list && list.length > 1 && list.every(x => text(x) !== null) ? list.map(text) : null;
+    if (any(quoted)) add(swap(quoted, arg => arg), 'quotes');
+    const bare = (arg, line) => /^[A-Za-z_]\w*$/.test(arg) && !['True', 'False', 'None'].includes(arg) && line !== arg;
+    if (any(bare)) add(swap(bare, arg => arg), 'name');
+    const glued = (arg, line) => { const t = texts(parts(arg, '+')); return !!t && t.join('') === line && !t.some(x => / $/.test(x)) && !t.some(x => /^ /.test(x)); };
+    if (any(glued)) add(swap(glued, arg => texts(parts(arg, '+')).join(' ')), 'space');
+    // texts joined with + are better asked as "is there a space?" than as a sum to copy
+    const sumOnly = (arg, line) => sum(arg) && !glued(arg, line);
+    if (any(sumOnly)) add(swap(sumOnly, arg => arg), 'sum');
+    const spaced = (arg, line) => { const t = texts(parts(arg, ',')); return !!t && t.join(' ') === line; };
+    if (any(spaced)) add(swap(spaced, arg => texts(parts(arg, ',')).join('')), 'comma');
+    const divided = (arg, line) => /[^/]\/[^/]/.test(outside(arg)) && /^-?\d+\.0$/.test(line);
+    if (any(divided)) add(swap(divided, (arg, line) => line.slice(0, -2)), 'decimal');
   }
+  const truth = lines.findIndex(x => x === 'True' || x === 'False');
+  if (truth >= 0) add(lines.map((x, i) => i === truth ? (x === 'True' ? 'False' : 'True') : x).join('\n'), 'bool');
   const number = see.match(/-?\d+(?![\d\s\S]*\d)/);
-  if (number) add(see.slice(0, number.index) + (Number(number[0]) + 1) + see.slice(number.index + number[0].length));
-  others.forEach(add);
+  if (number) add(see.slice(0, number.index) + (Number(number[0]) + 1) + see.slice(number.index + number[0].length), 'number');
+  others.forEach(other => add(other, 'other'));
   if (wrong.length < 2) return null;
   const options = [see, wrong[0], wrong[1]];
+  const why = ['', kinds[0], kinds[1]];
   // the same order on every build: a shuffle that depends only on the program
   let seed = 0;
   for (const ch of code) seed = (seed * 31 + ch.charCodeAt(0)) >>> 0;
   const order = [0, 1, 2].sort((a, b) => ((seed >> (a * 3)) & 7) - ((seed >> (b * 3)) & 7) || a - b);
-  return {options: order.map(i => options[i]), right: order.indexOf(0)};
+  // why: the mistake behind each wrong answer, so the page can say what it gets wrong
+  return {options: order.map(i => options[i]), right: order.indexOf(0), why: order.map(i => why[i])};
 }
 function addChoices(steps) {
   const short = s => s && s.split('\n').length <= 3 && s.length <= 80 && !s.includes('...') && !s.includes('⚠');

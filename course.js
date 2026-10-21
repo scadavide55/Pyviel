@@ -21988,6 +21988,1679 @@ window.PyvielCourse = {
      }
     }
    ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "A tour of the standard library",
+    "it": "Un giro nella libreria standard",
+    "fr": "Un tour de la bibliothèque standard"
+   },
+   "subtitle": {
+    "en": "collections, itertools, functools and more",
+    "it": "collections, itertools, functools e altro",
+    "fr": "collections, itertools, functools et plus"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "from collections import Counter\ncounts = Counter(\"mississippi\")\nprint(counts)\nprint(counts[\"s\"])\nprint(counts.most_common(2))",
+      "it": "from collections import Counter\ncounts = Counter(\"mississippi\")\nprint(counts)\nprint(counts[\"s\"])\nprint(counts.most_common(2))",
+      "fr": "from collections import Counter\ncounts = Counter(\"mississippi\")\nprint(counts)\nprint(counts[\"s\"])\nprint(counts.most_common(2))"
+     },
+     "title": {
+      "en": "Counting made easy: Counter",
+      "it": "Contare è facile: Counter",
+      "fr": "Compter facilement : Counter"
+     },
+     "text": {
+      "en": "Counter counts how many times each item appears, in one line. It is a kind of dictionary: counts[\"s\"] gives how many s there are. most_common(2) gives the two most frequent items, with their counts.\n\nRemember the word-counting loop from the dictionary lesson? Counter replaces it.",
+      "it": "Counter conta quante volte compare ogni elemento, in una riga. È una specie di dizionario: counts[\"s\"] dà quante s ci sono. most_common(2) dà i due elementi più frequenti, con i loro conteggi.\n\nRicordi il ciclo per contare le parole della lezione sui dizionari? Counter lo sostituisce.",
+      "fr": "Counter compte combien de fois chaque élément apparaît, en une ligne. C'est une sorte de dictionnaire : counts[\"s\"] donne combien de s il y a. most_common(2) donne les deux éléments les plus fréquents, avec leurs comptes.\n\nTu te souviens de la boucle pour compter les mots dans la leçon sur les dictionnaires ? Counter la remplace."
+     },
+     "see": {
+      "en": "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+      "it": "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]",
+      "fr": "Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})\n4\n[('i', 4), ('s', 4)]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "collections.Counter",
+       "w": "Counter( )",
+       "d": {
+        "en": "Counter counts how many times each item appears, in one line. It is a kind of dictionary: counts[\"s\"] gives how many s.",
+        "it": "Counter conta quante volte compare ogni elemento, in una riga. È una specie di dizionario: counts[\"s\"] dà quante s ci sono.",
+        "fr": "Counter compte combien de fois chaque élément apparaît, en une ligne. C'est une sorte de dictionnaire : counts[\"s\"] donne combien de s il y a."
+       },
+       "s": {
+        "en": "Counter(\"mississippi\")",
+        "it": "Counter(\"mississippi\")",
+        "fr": "Counter(\"mississippi\")"
+       }
+      },
+      {
+       "k": ".most_common",
+       "w": ".most_common( )",
+       "d": {
+        "en": "most_common(n) gives the n most frequent items, each with its count, the biggest first.",
+        "it": "most_common(n) dà gli n elementi più frequenti, ognuno con il suo conteggio, il più grande per primo.",
+        "fr": "most_common(n) donne les n éléments les plus fréquents, chacun avec son compte, le plus grand d'abord."
+       },
+       "s": {
+        "en": "counts.most_common(2)",
+        "it": "counts.most_common(2)",
+        "fr": "counts.most_common(2)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Count the letters of \"banana\" with Counter and show how many a there are (3).",
+       "it": "Conta le lettere di \"banana\" con Counter e mostra quante a ci sono (3).",
+       "fr": "Compte les lettres de \"banana\" avec Counter et affiche combien de a il y a (3)."
+      },
+      "hint": {
+       "en": "Counter(\"banana\")[\"a\"]",
+       "it": "Counter(\"banana\")[\"a\"]",
+       "fr": "Counter(\"banana\")[\"a\"]"
+      },
+      "sol": {
+       "en": "from collections import Counter\nprint(Counter(\"banana\")[\"a\"])",
+       "it": "from collections import Counter\nprint(Counter(\"banana\")[\"a\"])",
+       "fr": "from collections import Counter\nprint(Counter(\"banana\")[\"a\"])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "Counter"
+       },
+       "it": {
+        "out": "3",
+        "c": "Counter"
+       },
+       "fr": {
+        "out": "3",
+        "c": "Counter"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "3"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from collections import defaultdict\ngroups = defaultdict(list)\nfor word in [\"ant\", \"bee\", \"ape\", \"bat\"]:\n    groups[word[0]].append(word)\nprint(groups[\"a\"])\nprint(groups[\"b\"])\nprint(len(groups))",
+      "it": "from collections import defaultdict\ngroups = defaultdict(list)\nfor word in [\"ant\", \"bee\", \"ape\", \"bat\"]:\n    groups[word[0]].append(word)\nprint(groups[\"a\"])\nprint(groups[\"b\"])\nprint(len(groups))",
+      "fr": "from collections import defaultdict\ngroups = defaultdict(list)\nfor word in [\"ant\", \"bee\", \"ape\", \"bat\"]:\n    groups[word[0]].append(word)\nprint(groups[\"a\"])\nprint(groups[\"b\"])\nprint(len(groups))"
+     },
+     "title": {
+      "en": "A dictionary that starts empty by itself",
+      "it": "Un dizionario che parte vuoto da solo",
+      "fr": "Un dictionnaire qui démarre vide tout seul"
+     },
+     "text": {
+      "en": "With a normal dictionary, a missing key is an error, so you have to check first. defaultdict(list) makes a missing key start with an empty list by itself: groups[word[0]].append(word) just works.\n\nHere it groups the words by their first letter, with no checks at all.",
+      "it": "Con un dizionario normale, una chiave mancante è un errore, quindi devi controllare prima. defaultdict(list) fa partire una chiave mancante con una lista vuota da solo: groups[word[0]].append(word) funziona e basta.\n\nQui raggruppa le parole per la loro prima lettera, senza nessun controllo.",
+      "fr": "Avec un dictionnaire normal, une clé manquante est une erreur, donc tu dois vérifier d'abord. defaultdict(list) fait démarrer une clé manquante avec une liste vide tout seul : groups[word[0]].append(word) marche tout simplement.\n\nIci il regroupe les mots par leur première lettre, sans aucune vérification."
+     },
+     "see": {
+      "en": "['ant', 'ape']\n['bee', 'bat']\n2",
+      "it": "['ant', 'ape']\n['bee', 'bat']\n2",
+      "fr": "['ant', 'ape']\n['bee', 'bat']\n2"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "collections.defaultdict",
+       "w": "defaultdict( )",
+       "d": {
+        "en": "defaultdict is a dictionary that makes a missing key start with an empty value by itself, so you need no check. defaultdict(list) starts each new key with an empty list.",
+        "it": "defaultdict è un dizionario che fa partire una chiave mancante con un valore vuoto da solo, così non serve nessun controllo. defaultdict(list) fa partire ogni chiave nuova con una lista vuota.",
+        "fr": "defaultdict est un dictionnaire qui fait démarrer une clé manquante avec une valeur vide tout seul, donc tu n'as besoin d'aucune vérification. defaultdict(list) fait démarrer chaque nouvelle clé avec une liste vide."
+       },
+       "s": {
+        "en": "groups = defaultdict(list)",
+        "it": "groups = defaultdict(list)",
+        "fr": "groups = defaultdict(list)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Group the numbers 1 to 6 by whether they are even or odd: the key is n % 2. Show the list of the key 0 ([2, 4, 6]).",
+       "it": "Raggruppa i numeri da 1 a 6 in pari o dispari: la chiave è n % 2. Mostra la lista della chiave 0 ([2, 4, 6]).",
+       "fr": "Regroupe les nombres de 1 à 6 en pairs ou impairs : la clé est n % 2. Affiche la liste de la clé 0 ([2, 4, 6])."
+      },
+      "hint": {
+       "en": "groups[n % 2].append(n) in a loop.",
+       "it": "groups[n % 2].append(n) in un ciclo.",
+       "fr": "groups[n % 2].append(n) dans une boucle."
+      },
+      "sol": {
+       "en": "from collections import defaultdict\ngroups = defaultdict(list)\nfor n in range(1, 7):\n    groups[n % 2].append(n)\nprint(groups[0])",
+       "it": "from collections import defaultdict\ngroups = defaultdict(list)\nfor n in range(1, 7):\n    groups[n % 2].append(n)\nprint(groups[0])",
+       "fr": "from collections import defaultdict\ngroups = defaultdict(list)\nfor n in range(1, 7):\n    groups[n % 2].append(n)\nprint(groups[0])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[2, 4, 6]",
+        "c": "defaultdict"
+       },
+       "it": {
+        "out": "[2, 4, 6]",
+        "c": "defaultdict"
+       },
+       "fr": {
+        "out": "[2, 4, 6]",
+        "c": "defaultdict"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[2, 4, 6]",
+       "it": "[2, 4, 6]",
+       "fr": "[2, 4, 6]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from collections import deque\nqueue = deque([1, 2, 3])\nqueue.append(4)\nprint(queue.popleft())\nprint(list(queue))",
+      "it": "from collections import deque\nqueue = deque([1, 2, 3])\nqueue.append(4)\nprint(queue.popleft())\nprint(list(queue))",
+      "fr": "from collections import deque\nqueue = deque([1, 2, 3])\nqueue.append(4)\nprint(queue.popleft())\nprint(list(queue))"
+     },
+     "title": {
+      "en": "A queue that is fast at both ends",
+      "it": "Una coda veloce a tutte e due le estremità",
+      "fr": "Une file rapide aux deux bouts"
+     },
+     "text": {
+      "en": "A deque is a row that is fast at both ends: you add at the end with append and take from the front with popleft. It is perfect for a queue, where the first to come is the first to leave.\n\nA normal list is slow at the front, because everything has to move over. A deque is not.",
+      "it": "Una deque è una fila veloce a tutte e due le estremità: aggiungi in fondo con append e prendi davanti con popleft. È perfetta per una coda, dove il primo ad arrivare è il primo ad andarsene.\n\nUna lista normale è lenta davanti, perché tutto deve spostarsi. Una deque no.",
+      "fr": "Une deque est une rangée rapide aux deux bouts : tu ajoutes à la fin avec append et tu prends devant avec popleft. C'est parfait pour une file d'attente, où le premier arrivé est le premier parti.\n\nUne liste normale est lente devant, parce que tout doit se décaler. Une deque non."
+     },
+     "see": {
+      "en": "1\n[2, 3, 4]",
+      "it": "1\n[2, 3, 4]",
+      "fr": "1\n[2, 3, 4]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "collections.deque",
+       "w": "deque( )",
+       "d": {
+        "en": "A deque is a row that is fast at both ends: perfect for a queue, where things come in at one end and leave at the other.",
+        "it": "Una deque è una fila veloce a tutte e due le estremità: perfetta per una coda, dove le cose entrano da una parte ed escono dall'altra.",
+        "fr": "Une deque est une rangée rapide aux deux bouts : parfaite pour une file d'attente, où les choses entrent d'un côté et sortent de l'autre."
+       },
+       "s": {
+        "en": "queue = deque([1, 2, 3])",
+        "it": "queue = deque([1, 2, 3])",
+        "fr": "queue = deque([1, 2, 3])"
+       }
+      },
+      {
+       "k": ".popleft",
+       "w": ".popleft( )",
+       "d": {
+        "en": "popleft takes out the item at the front of a deque, and gives it back.",
+        "it": "popleft toglie l'elemento davanti a una deque e lo restituisce.",
+        "fr": "popleft enlève l'élément de devant d'une deque et le rend."
+       },
+       "s": {
+        "en": "queue.popleft()",
+        "it": "queue.popleft()",
+        "fr": "queue.popleft()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a deque with 10, 20, 30, take out the first with popleft, and show what is left as a list ([20, 30]).",
+       "it": "Fai una deque con 10, 20, 30, togli il primo con popleft e mostra quello che resta come lista ([20, 30]).",
+       "fr": "Fais une deque avec 10, 20, 30, enlève le premier avec popleft et affiche ce qui reste sous forme de liste ([20, 30])."
+      },
+      "hint": {
+       "en": "queue.popleft() and then print(list(queue)).",
+       "it": "queue.popleft() e poi print(list(queue)).",
+       "fr": "queue.popleft() puis print(list(queue))."
+      },
+      "sol": {
+       "en": "from collections import deque\nqueue = deque([10, 20, 30])\nqueue.popleft()\nprint(list(queue))",
+       "it": "from collections import deque\nqueue = deque([10, 20, 30])\nqueue.popleft()\nprint(list(queue))",
+       "fr": "from collections import deque\nqueue = deque([10, 20, 30])\nqueue.popleft()\nprint(list(queue))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[20, 30]",
+        "c": "popleft"
+       },
+       "it": {
+        "out": "[20, 30]",
+        "c": "popleft"
+       },
+       "fr": {
+        "out": "[20, 30]",
+        "c": "popleft"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[20, 30]",
+       "it": "[20, 30]",
+       "fr": "[20, 30]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from collections import namedtuple\nPoint = namedtuple(\"Point\", [\"x\", \"y\"])\np = Point(3, 4)\nprint(p)\nprint(p.x + p.y)\nprint(p[0])",
+      "it": "from collections import namedtuple\nPoint = namedtuple(\"Point\", [\"x\", \"y\"])\np = Point(3, 4)\nprint(p)\nprint(p.x + p.y)\nprint(p[0])",
+      "fr": "from collections import namedtuple\nPoint = namedtuple(\"Point\", [\"x\", \"y\"])\np = Point(3, 4)\nprint(p)\nprint(p.x + p.y)\nprint(p[0])"
+     },
+     "title": {
+      "en": "A tuple whose parts have names",
+      "it": "Una tupla le cui parti hanno un nome",
+      "fr": "Un tuple dont les parties ont un nom"
+     },
+     "text": {
+      "en": "namedtuple makes a tuple whose parts have names: Point = namedtuple(\"Point\", [\"x\", \"y\"]). Then p.x and p.y read the parts by name, and p[0] still works by place.\n\nIt is a light way to keep a small group of values together, without writing a whole class.",
+      "it": "namedtuple fa una tupla le cui parti hanno un nome: Point = namedtuple(\"Point\", [\"x\", \"y\"]). Poi p.x e p.y leggono le parti per nome, e p[0] funziona ancora per posto.\n\nÈ un modo leggero di tenere insieme un piccolo gruppo di valori, senza scrivere una classe intera.",
+      "fr": "namedtuple fait un tuple dont les parties ont un nom : Point = namedtuple(\"Point\", [\"x\", \"y\"]). Ensuite p.x et p.y lisent les parties par leur nom, et p[0] marche toujours par place.\n\nC'est une façon légère de garder ensemble un petit groupe de valeurs, sans écrire toute une classe."
+     },
+     "see": {
+      "en": "Point(x=3, y=4)\n7\n3",
+      "it": "Point(x=3, y=4)\n7\n3",
+      "fr": "Point(x=3, y=4)\n7\n3"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "collections.namedtuple",
+       "w": "namedtuple( )",
+       "d": {
+        "en": "namedtuple makes a tuple whose parts have names: Point = namedtuple(\"Point\", [\"x\", \"y\"]) lets you write p.x and p.y.",
+        "it": "namedtuple fa una tupla le cui parti hanno un nome: Point = namedtuple(\"Point\", [\"x\", \"y\"]) ti lascia scrivere p.x e p.y.",
+        "fr": "namedtuple fait un tuple dont les parties ont un nom : Point = namedtuple(\"Point\", [\"x\", \"y\"]) te laisse écrire p.x et p.y."
+       },
+       "s": {
+        "en": "Point = namedtuple(\"Point\", [\"x\", \"y\"])",
+        "it": "Point = namedtuple(\"Point\", [\"x\", \"y\"])",
+        "fr": "Point = namedtuple(\"Point\", [\"x\", \"y\"])"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a namedtuple called Pet with the parts name and age. Build Pet(\"Rex\", 3) and show its age (3).",
+       "it": "Fai una namedtuple che si chiama Pet con le parti name e age. Costruisci Pet(\"Rex\", 3) e mostra la sua age (3).",
+       "fr": "Fais un namedtuple qui s'appelle Pet avec les parties name et age. Construis Pet(\"Rex\", 3) et affiche son age (3)."
+      },
+      "hint": {
+       "en": "Pet = namedtuple(\"Pet\", [\"name\", \"age\"])",
+       "it": "Pet = namedtuple(\"Pet\", [\"name\", \"age\"])",
+       "fr": "Pet = namedtuple(\"Pet\", [\"name\", \"age\"])"
+      },
+      "sol": {
+       "en": "from collections import namedtuple\nPet = namedtuple(\"Pet\", [\"name\", \"age\"])\nprint(Pet(\"Rex\", 3).age)",
+       "it": "from collections import namedtuple\nPet = namedtuple(\"Pet\", [\"name\", \"age\"])\nprint(Pet(\"Rex\", 3).age)",
+       "fr": "from collections import namedtuple\nPet = namedtuple(\"Pet\", [\"name\", \"age\"])\nprint(Pet(\"Rex\", 3).age)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "namedtuple"
+       },
+       "it": {
+        "out": "3",
+        "c": "namedtuple"
+       },
+       "fr": {
+        "out": "3",
+        "c": "namedtuple"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "3"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from itertools import permutations, combinations, product\nprint(list(permutations(\"abc\", 2)))\nprint(list(combinations([1, 2, 3, 4], 2)))\nprint(list(product(\"ab\", [1, 2])))",
+      "it": "from itertools import permutations, combinations, product\nprint(list(permutations(\"abc\", 2)))\nprint(list(combinations([1, 2, 3, 4], 2)))\nprint(list(product(\"ab\", [1, 2])))",
+      "fr": "from itertools import permutations, combinations, product\nprint(list(permutations(\"abc\", 2)))\nprint(list(combinations([1, 2, 3, 4], 2)))\nprint(list(product(\"ab\", [1, 2])))"
+     },
+     "title": {
+      "en": "Combinations: itertools (1)",
+      "it": "Combinazioni: itertools (1)",
+      "fr": "Combinaisons : itertools (1)"
+     },
+     "text": {
+      "en": "itertools has tools to build combinations. permutations gives every order of the items, taking a given number of them. combinations chooses some, where the order does not matter. product gives every pairing of the items of several rows.\n\nThey give a lazy result, so you turn it into a list with list(...) to see it.",
+      "it": "itertools ha strumenti per costruire combinazioni. permutations dà ogni ordine degli elementi, prendendone un numero dato. combinations ne sceglie alcuni, dove l'ordine non conta. product dà ogni abbinamento tra gli elementi di più file.\n\nDanno un risultato \"pigro\", quindi lo trasformi in lista con list(...) per vederlo.",
+      "fr": "itertools a des outils pour construire des combinaisons. permutations donne chaque ordre des éléments, en en prenant un nombre donné. combinations en choisit quelques-uns, où l'ordre ne compte pas. product donne chaque association entre les éléments de plusieurs rangées.\n\nIls donnent un résultat \"paresseux\", donc tu le transformes en liste avec list(...) pour le voir."
+     },
+     "see": {
+      "en": "[('a', 'b'), ('a', 'c'), ('b', 'a'), ('b', 'c'), ('c', 'a'), ('c', 'b')]\n[(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]",
+      "it": "[('a', 'b'), ('a', 'c'), ('b', 'a'), ('b', 'c'), ('c', 'a'), ('c', 'b')]\n[(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]",
+      "fr": "[('a', 'b'), ('a', 'c'), ('b', 'a'), ('b', 'c'), ('c', 'a'), ('c', 'b')]\n[(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]\n[('a', 1), ('a', 2), ('b', 1), ('b', 2)]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "itertools.permutations",
+       "w": "permutations( )",
+       "d": {
+        "en": "permutations gives every order of the items, taking a given number of them: permutations(\"abc\", 2) gives ab, ac, ba, bc, ca, cb.",
+        "it": "permutations dà ogni ordine degli elementi, prendendone un numero dato: permutations(\"abc\", 2) dà ab, ac, ba, bc, ca, cb.",
+        "fr": "permutations donne chaque ordre des éléments, en en prenant un nombre donné : permutations(\"abc\", 2) donne ab, ac, ba, bc, ca, cb."
+       },
+       "s": {
+        "en": "permutations(\"abc\", 2)",
+        "it": "permutations(\"abc\", 2)",
+        "fr": "permutations(\"abc\", 2)"
+       }
+      },
+      {
+       "k": "itertools.combinations",
+       "w": "combinations( )",
+       "d": {
+        "en": "combinations chooses some of the items, where the order does not matter: combinations([1, 2, 3, 4], 2) gives six pairs.",
+        "it": "combinations sceglie alcuni degli elementi, dove l'ordine non conta: combinations([1, 2, 3, 4], 2) dà sei coppie.",
+        "fr": "combinations choisit quelques-uns des éléments, où l'ordre ne compte pas : combinations([1, 2, 3, 4], 2) donne six paires."
+       },
+       "s": {
+        "en": "combinations([1, 2, 3, 4], 2)",
+        "it": "combinations([1, 2, 3, 4], 2)",
+        "fr": "combinations([1, 2, 3, 4], 2)"
+       }
+      },
+      {
+       "k": "itertools.product",
+       "w": "product( )",
+       "d": {
+        "en": "product gives every pairing of the items of several rows: product(\"ab\", [1, 2]) gives a1, a2, b1, b2.",
+        "it": "product dà ogni abbinamento tra gli elementi di più file: product(\"ab\", [1, 2]) dà a1, a2, b1, b2.",
+        "fr": "product donne chaque association entre les éléments de plusieurs rangées : product(\"ab\", [1, 2]) donne a1, a2, b1, b2."
+       },
+       "s": {
+        "en": "product(\"ab\", [1, 2])",
+        "it": "product(\"ab\", [1, 2])",
+        "fr": "product(\"ab\", [1, 2])"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show how many ways there are to choose 2 items out of 5, using combinations (10).",
+       "it": "Mostra in quanti modi si possono scegliere 2 elementi su 5, usando combinations (10).",
+       "fr": "Affiche de combien de façons on peut choisir 2 éléments parmi 5, en utilisant combinations (10)."
+      },
+      "hint": {
+       "en": "len(list(combinations(range(5), 2)))",
+       "it": "len(list(combinations(range(5), 2)))",
+       "fr": "len(list(combinations(range(5), 2)))"
+      },
+      "sol": {
+       "en": "from itertools import combinations\nprint(len(list(combinations(range(5), 2))))",
+       "it": "from itertools import combinations\nprint(len(list(combinations(range(5), 2))))",
+       "fr": "from itertools import combinations\nprint(len(list(combinations(range(5), 2))))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "10",
+        "c": "combinations"
+       },
+       "it": {
+        "out": "10",
+        "c": "combinations"
+       },
+       "fr": {
+        "out": "10",
+        "c": "combinations"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "10",
+       "it": "10",
+       "fr": "10"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from itertools import chain, islice, count\nprint(list(chain([1, 2], [3], \"xy\")))\nprint(list(islice(count(10), 4)))",
+      "it": "from itertools import chain, islice, count\nprint(list(chain([1, 2], [3], \"xy\")))\nprint(list(islice(count(10), 4)))",
+      "fr": "from itertools import chain, islice, count\nprint(list(chain([1, 2], [3], \"xy\")))\nprint(list(islice(count(10), 4)))"
+     },
+     "title": {
+      "en": "Combinations: itertools (2)",
+      "it": "Combinazioni: itertools (2)",
+      "fr": "Combinaisons : itertools (2)"
+     },
+     "text": {
+      "en": "chain glues several rows into one long row, without making a new list. count counts forever: 10, 11, 12... and never ends, so you cut a piece of it with islice.\n\nislice(count(10), 4) takes the first four numbers of that endless count.",
+      "it": "chain incolla più file in una fila lunga, senza fare una lista nuova. count conta per sempre: 10, 11, 12... e non finisce mai, quindi ne tagli un pezzo con islice.\n\nislice(count(10), 4) prende i primi quattro numeri di quel conteggio infinito.",
+      "fr": "chain colle plusieurs rangées en une longue rangée, sans faire de nouvelle liste. count compte pour toujours : 10, 11, 12... sans jamais finir, donc tu en coupes un morceau avec islice.\n\nislice(count(10), 4) prend les quatre premiers nombres de ce compte infini."
+     },
+     "see": {
+      "en": "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]",
+      "it": "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]",
+      "fr": "[1, 2, 3, 'x', 'y']\n[10, 11, 12, 13]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "itertools.chain",
+       "w": "chain( )",
+       "d": {
+        "en": "chain glues several rows into one long row, without making a new list.",
+        "it": "chain incolla più file in una fila lunga, senza fare una lista nuova.",
+        "fr": "chain colle plusieurs rangées en une longue rangée, sans faire de nouvelle liste."
+       },
+       "s": {
+        "en": "chain([1, 2], [3])",
+        "it": "chain([1, 2], [3])",
+        "fr": "chain([1, 2], [3])"
+       }
+      },
+      {
+       "k": "itertools.islice",
+       "w": "islice( )",
+       "d": {
+        "en": "islice cuts a piece out of something endless or very long: islice(source, 4) takes the first four items.",
+        "it": "islice taglia un pezzo da qualcosa di infinito o molto lungo: islice(source, 4) prende i primi quattro elementi.",
+        "fr": "islice découpe un morceau dans quelque chose d'infini ou de très long : islice(source, 4) prend les quatre premiers éléments."
+       },
+       "s": {
+        "en": "islice(count(10), 4)",
+        "it": "islice(count(10), 4)",
+        "fr": "islice(count(10), 4)"
+       }
+      },
+      {
+       "k": "itertools.count",
+       "w": "count( )",
+       "d": {
+        "en": "count counts forever: count(10) gives 10, 11, 12... never ending. Cut it with islice.",
+        "it": "count conta per sempre: count(10) dà 10, 11, 12... senza finire. Tagliala con islice.",
+        "fr": "count compte pour toujours : count(10) donne 10, 11, 12... sans jamais finir. Coupe-la avec islice."
+       },
+       "s": {
+        "en": "count(10)",
+        "it": "count(10)",
+        "fr": "count(10)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the first 5 numbers counted from 100 (100 to 104), with count and islice.",
+       "it": "Mostra i primi 5 numeri contati da 100 (da 100 a 104), con count e islice.",
+       "fr": "Affiche les 5 premiers nombres comptés à partir de 100 (de 100 à 104), avec count et islice."
+      },
+      "hint": {
+       "en": "list(islice(count(100), 5))",
+       "it": "list(islice(count(100), 5))",
+       "fr": "list(islice(count(100), 5))"
+      },
+      "sol": {
+       "en": "from itertools import islice, count\nprint(list(islice(count(100), 5)))",
+       "it": "from itertools import islice, count\nprint(list(islice(count(100), 5)))",
+       "fr": "from itertools import islice, count\nprint(list(islice(count(100), 5)))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[100, 101, 102, 103, 104]",
+        "c": "islice"
+       },
+       "it": {
+        "out": "[100, 101, 102, 103, 104]",
+        "c": "islice"
+       },
+       "fr": {
+        "out": "[100, 101, 102, 103, 104]",
+        "c": "islice"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[100, 101, 102, 103, 104]",
+       "it": "[100, 101, 102, 103, 104]",
+       "fr": "[100, 101, 102, 103, 104]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from functools import reduce, partial\nprint(reduce(lambda a, b: a * b, [1, 2, 3, 4]))\npower_of_two = partial(pow, 2)\nprint(power_of_two(10))",
+      "it": "from functools import reduce, partial\nprint(reduce(lambda a, b: a * b, [1, 2, 3, 4]))\npower_of_two = partial(pow, 2)\nprint(power_of_two(10))",
+      "fr": "from functools import reduce, partial\nprint(reduce(lambda a, b: a * b, [1, 2, 3, 4]))\npower_of_two = partial(pow, 2)\nprint(power_of_two(10))"
+     },
+     "title": {
+      "en": "Clever tools: functools",
+      "it": "Attrezzi furbi: functools",
+      "fr": "Des outils astucieux : functools"
+     },
+     "text": {
+      "en": "reduce folds a list into one value, using a function that takes two things: here it multiplies 1 x 2 x 3 x 4.\n\npartial makes a new function from an old one, with some values already filled in: partial(pow, 2) is a function that raises 2 to any power you give it.",
+      "it": "reduce piega una lista in un solo valore, usando una funzione che prende due cose: qui moltiplica 1 x 2 x 3 x 4.\n\npartial fa una funzione nuova da una vecchia, con alcuni valori già riempiti: partial(pow, 2) è una funzione che eleva 2 a qualsiasi potenza le dai.",
+      "fr": "reduce replie une liste en une seule valeur, avec une fonction qui prend deux choses : ici il multiplie 1 x 2 x 3 x 4.\n\npartial fait une nouvelle fonction à partir d'une ancienne, avec certaines valeurs déjà remplies : partial(pow, 2) est une fonction qui élève 2 à n'importe quelle puissance que tu lui donnes."
+     },
+     "see": {
+      "en": "24\n1024",
+      "it": "24\n1024",
+      "fr": "24\n1024"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "functools.reduce",
+       "w": "reduce( )",
+       "d": {
+        "en": "reduce folds a list into one value with a function that takes two things: reduce(multiply, [1, 2, 3, 4]) multiplies them all.",
+        "it": "reduce piega una lista in un solo valore con una funzione che prende due cose: reduce(multiply, [1, 2, 3, 4]) li moltiplica tutti.",
+        "fr": "reduce replie une liste en une seule valeur avec une fonction qui prend deux choses : reduce(multiply, [1, 2, 3, 4]) les multiplie tous."
+       },
+       "s": {
+        "en": "reduce(lambda a, b: a * b, [1, 2, 3])",
+        "it": "reduce(lambda a, b: a * b, [1, 2, 3])",
+        "fr": "reduce(lambda a, b: a * b, [1, 2, 3])"
+       }
+      },
+      {
+       "k": "functools.partial",
+       "w": "partial( )",
+       "d": {
+        "en": "partial makes a new function from an old one, with some of the values already filled in: partial(pow, 2) is a function that raises 2 to a power.",
+        "it": "partial fa una funzione nuova da una vecchia, con alcuni valori già riempiti: partial(pow, 2) è una funzione che eleva 2 a una potenza.",
+        "fr": "partial fait une nouvelle fonction à partir d'une ancienne, avec certaines valeurs déjà remplies : partial(pow, 2) est une fonction qui élève 2 à une puissance."
+       },
+       "s": {
+        "en": "partial(pow, 2)",
+        "it": "partial(pow, 2)",
+        "fr": "partial(pow, 2)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use reduce to add up [1, 2, 3, 4, 5] (15).",
+       "it": "Usa reduce per sommare [1, 2, 3, 4, 5] (15).",
+       "fr": "Utilise reduce pour additionner [1, 2, 3, 4, 5] (15)."
+      },
+      "hint": {
+       "en": "reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])",
+       "it": "reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])",
+       "fr": "reduce(lambda a, b: a + b, [1, 2, 3, 4, 5])"
+      },
+      "sol": {
+       "en": "from functools import reduce\nprint(reduce(lambda a, b: a + b, [1, 2, 3, 4, 5]))",
+       "it": "from functools import reduce\nprint(reduce(lambda a, b: a + b, [1, 2, 3, 4, 5]))",
+       "fr": "from functools import reduce\nprint(reduce(lambda a, b: a + b, [1, 2, 3, 4, 5]))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "15",
+        "c": "reduce"
+       },
+       "it": {
+        "out": "15",
+        "c": "reduce"
+       },
+       "fr": {
+        "out": "15",
+        "c": "reduce"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "15",
+       "it": "15",
+       "fr": "15"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import string\nprint(string.ascii_lowercase)\nprint(string.digits)\nprint(string.ascii_lowercase[:5])",
+      "it": "import string\nprint(string.ascii_lowercase)\nprint(string.digits)\nprint(string.ascii_lowercase[:5])",
+      "fr": "import string\nprint(string.ascii_lowercase)\nprint(string.digits)\nprint(string.ascii_lowercase[:5])"
+     },
+     "title": {
+      "en": "Text helpers: string",
+      "it": "Aiuti per il testo: string",
+      "fr": "Aides pour le texte : string"
+     },
+     "text": {
+      "en": "The string tool box has ready-made lists of letters and digits. string.ascii_lowercase is the text \"abcdefghijklmnopqrstuvwxyz\", and string.digits is \"0123456789\". They have no brackets: they are values, not tools.\n\nYou can slice them like any text. They are handy for secret codes and for making random passwords.",
+      "it": "La cassetta string ha liste già pronte di lettere e cifre. string.ascii_lowercase è il testo \"abcdefghijklmnopqrstuvwxyz\" e string.digits è \"0123456789\". Non hanno parentesi: sono valori, non strumenti.\n\nLe puoi tagliare come qualsiasi testo. Sono comode per i codici segreti e per fare password a caso.",
+      "fr": "La boîte string a des listes toutes prêtes de lettres et de chiffres. string.ascii_lowercase est le texte \"abcdefghijklmnopqrstuvwxyz\", et string.digits est \"0123456789\". Elles n'ont pas de parenthèses : ce sont des valeurs, pas des outils.\n\nTu peux les découper comme n'importe quel texte. Elles sont pratiques pour les codes secrets et pour faire des mots de passe au hasard."
+     },
+     "see": {
+      "en": "abcdefghijklmnopqrstuvwxyz\n0123456789\nabcde",
+      "it": "abcdefghijklmnopqrstuvwxyz\n0123456789\nabcde",
+      "fr": "abcdefghijklmnopqrstuvwxyz\n0123456789\nabcde"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "module:string",
+       "w": "string",
+       "d": {
+        "en": "string is a tool box with ready-made lists of letters and digits: string.ascii_lowercase is the alphabet, string.digits is 0123456789.",
+        "it": "string è una cassetta di attrezzi con liste già pronte di lettere e cifre: string.ascii_lowercase è l'alfabeto, string.digits è 0123456789.",
+        "fr": "string est une boîte à outils avec des listes toutes prêtes de lettres et de chiffres : string.ascii_lowercase est l'alphabet, string.digits est 0123456789."
+       },
+       "s": {
+        "en": "import string",
+        "it": "import string",
+        "fr": "import string"
+       }
+      },
+      {
+       "k": "string.ascii_lowercase",
+       "w": "string.ascii_lowercase",
+       "d": {
+        "en": "string.ascii_lowercase is the text \"abcdefghijklmnopqrstuvwxyz\". It has no brackets, because it is a value.",
+        "it": "string.ascii_lowercase è il testo \"abcdefghijklmnopqrstuvwxyz\". Non ha parentesi, perché è un valore.",
+        "fr": "string.ascii_lowercase est le texte \"abcdefghijklmnopqrstuvwxyz\". Il n'a pas de parenthèses, parce que c'est une valeur."
+       },
+       "s": {
+        "en": "string.ascii_lowercase",
+        "it": "string.ascii_lowercase",
+        "fr": "string.ascii_lowercase"
+       }
+      },
+      {
+       "k": "string.digits",
+       "w": "string.digits",
+       "d": {
+        "en": "string.digits is the text \"0123456789\".",
+        "it": "string.digits è il testo \"0123456789\".",
+        "fr": "string.digits est le texte \"0123456789\"."
+       },
+       "s": {
+        "en": "string.digits",
+        "it": "string.digits",
+        "fr": "string.digits"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the last 3 letters of the alphabet, with string.ascii_lowercase (xyz).",
+       "it": "Mostra le ultime 3 lettere dell'alfabeto, con string.ascii_lowercase (xyz).",
+       "fr": "Affiche les 3 dernières lettres de l'alphabet, avec string.ascii_lowercase (xyz)."
+      },
+      "hint": {
+       "en": "string.ascii_lowercase[-3:]",
+       "it": "string.ascii_lowercase[-3:]",
+       "fr": "string.ascii_lowercase[-3:]"
+      },
+      "sol": {
+       "en": "import string\nprint(string.ascii_lowercase[-3:])",
+       "it": "import string\nprint(string.ascii_lowercase[-3:])",
+       "fr": "import string\nprint(string.ascii_lowercase[-3:])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "xyz",
+        "c": "ascii_lowercase"
+       },
+       "it": {
+        "out": "xyz",
+        "c": "ascii_lowercase"
+       },
+       "fr": {
+        "out": "xyz",
+        "c": "ascii_lowercase"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "xyz",
+       "it": "xyz",
+       "fr": "xyz"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from textwrap import fill\nfrom pprint import pprint\nlong_text = \"Python is a language that is easy to read and fun to write.\"\nprint(fill(long_text, width=24))\ndata = {\"name\": \"Ada\", \"scores\": [12, 7, 15], \"address\": {\"city\": \"Rome\"}}\npprint(data, width=30)",
+      "it": "from textwrap import fill\nfrom pprint import pprint\nlong_text = \"Python è un linguaggio facile da leggere e divertente da scrivere.\"\nprint(fill(long_text, width=24))\ndata = {\"name\": \"Ada\", \"scores\": [12, 7, 15], \"address\": {\"city\": \"Roma\"}}\npprint(data, width=30)",
+      "fr": "from textwrap import fill\nfrom pprint import pprint\nlong_text = \"Python est un langage facile à lire et amusant à écrire.\"\nprint(fill(long_text, width=24))\ndata = {\"name\": \"Ada\", \"scores\": [12, 7, 15], \"address\": {\"city\": \"Paris\"}}\npprint(data, width=30)"
+     },
+     "title": {
+      "en": "Wrap text and print big data",
+      "it": "Vai a capo e stampa dati grandi",
+      "fr": "Renvoie à la ligne et affiche de grandes données"
+     },
+     "text": {
+      "en": "fill breaks a long text into lines of a given width, so it fits a column. pprint shows big data over many lines, so it is easy to read: each part of a dictionary or a list gets its own line when it is too long.\n\nThis was only a tour: the standard library has tools for almost everything. When you need something, ask yourself \"does Python already have it?\"",
+      "it": "fill spezza un testo lungo in righe di una larghezza data, così sta in una colonna. pprint mostra dati grandi su più righe, così sono facili da leggere: ogni parte di un dizionario o di una lista ha la sua riga quando è troppo lunga.\n\nEra solo un giro: la libreria standard ha strumenti per quasi tutto. Quando ti serve qualcosa, chiediti \"Python ce l'ha già?\"",
+      "fr": "fill coupe un long texte en lignes d'une largeur donnée, pour qu'il tienne dans une colonne. pprint affiche de grandes données sur plusieurs lignes, pour qu'elles soient faciles à lire : chaque partie d'un dictionnaire ou d'une liste a sa propre ligne quand elle est trop longue.\n\nCe n'était qu'un tour : la bibliothèque standard a des outils pour presque tout. Quand tu as besoin de quelque chose, demande-toi \"Python l'a-t-il déjà ?\""
+     },
+     "see": {
+      "en": "Python is a language\nthat is easy to read and\nfun to write.\n{'address': {'city': 'Rome'},\n 'name': 'Ada',\n 'scores': [12, 7, 15]}",
+      "it": "Python è un linguaggio\nfacile da leggere e\ndivertente da scrivere.\n{'address': {'city': 'Roma'},\n 'name': 'Ada',\n 'scores': [12, 7, 15]}",
+      "fr": "Python est un langage\nfacile à lire et amusant\nà écrire.\n{'address': {'city': 'Paris'},\n 'name': 'Ada',\n 'scores': [12, 7, 15]}"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "textwrap.fill",
+       "w": "fill( )",
+       "d": {
+        "en": "fill breaks a long text into lines of a given width: fill(text, width=24).",
+        "it": "fill spezza un testo lungo in righe di una larghezza data: fill(text, width=24).",
+        "fr": "fill coupe un long texte en lignes d'une largeur donnée : fill(text, width=24)."
+       },
+       "s": {
+        "en": "fill(text, width=24)",
+        "it": "fill(text, width=24)",
+        "fr": "fill(text, width=24)"
+       }
+      },
+      {
+       "k": "pprint.pprint",
+       "w": "pprint( )",
+       "d": {
+        "en": "pprint shows big data over many lines, so it is easy to read. width= says how wide a line may be.",
+        "it": "pprint mostra dati grandi su più righe, così sono facili da leggere. width= dice quanto può essere larga una riga.",
+        "fr": "pprint affiche de grandes données sur plusieurs lignes, pour qu'elles soient faciles à lire. width= dit quelle largeur une ligne peut avoir."
+       },
+       "s": {
+        "en": "pprint(data, width=30)",
+        "it": "pprint(data, width=30)",
+        "fr": "pprint(data, width=30)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Break the text \"one two three four five six\" into lines of at most 10 characters, with fill, and show it.",
+       "it": "Spezza il testo \"one two three four five six\" in righe di al massimo 10 caratteri, con fill, e mostralo.",
+       "fr": "Coupe le texte \"one two three four five six\" en lignes d'au plus 10 caractères, avec fill, et affiche-le."
+      },
+      "hint": {
+       "en": "print(fill(\"one two three four five six\", width=10))",
+       "it": "print(fill(\"one two three four five six\", width=10))",
+       "fr": "print(fill(\"one two three four five six\", width=10))"
+      },
+      "sol": {
+       "en": "from textwrap import fill\nprint(fill(\"one two three four five six\", width=10))",
+       "it": "from textwrap import fill\nprint(fill(\"one two three four five six\", width=10))",
+       "fr": "from textwrap import fill\nprint(fill(\"one two three four five six\", width=10))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "one two\nthree four\nfive six",
+        "c": "fill"
+       },
+       "it": {
+        "out": "one two\nthree four\nfive six",
+        "c": "fill"
+       },
+       "fr": {
+        "out": "one two\nthree four\nfive six",
+        "c": "fill"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "one two\nthree four\nfive six",
+       "it": "one two\nthree four\nfive six",
+       "fr": "one two\nthree four\nfive six"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Is it right? Testing and debugging",
+    "it": "È giusto? Test e ricerca degli errori",
+    "fr": "Est-ce juste ? Tests et débogage"
+   },
+   "subtitle": {
+    "en": "Catch mistakes before they catch you",
+    "it": "Prendi gli errori prima che prendano te",
+    "fr": "Attrape les erreurs avant qu'elles ne t'attrapent"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def double(n):\n    return n * 2\n\nassert double(4) == 8\nassert double(0) == 0\nassert double(-3) == -6\nprint(\"All the checks passed\")\nassert double(5) == 11, \"double(5) should be 10\"",
+      "it": "def double(n):\n    return n * 2\n\nassert double(4) == 8\nassert double(0) == 0\nassert double(-3) == -6\nprint(\"Tutti i controlli sono passati\")\nassert double(5) == 11, \"double(5) dovrebbe essere 10\"",
+      "fr": "def double(n):\n    return n * 2\n\nassert double(4) == 8\nassert double(0) == 0\nassert double(-3) == -6\nprint(\"Toutes les vérifications ont réussi\")\nassert double(5) == 11, \"double(5) devrait valoir 10\""
+     },
+     "title": {
+      "en": "assert: a promise that must be true",
+      "it": "assert: una promessa che deve essere vera",
+      "fr": "assert : une promesse qui doit être vraie"
+     },
+     "text": {
+      "en": "assert checks that something is True. If it is, nothing happens. If it is not, Python stops with an AssertionError, and shows your message if you wrote one after a comma. It is the simplest test: \"I promise that double(4) is 8\".\n\nWrite a few asserts next to your function, with small cases whose answer you know. The last one here is a wrong promise on purpose, so you see the error.",
+      "it": "assert controlla che qualcosa sia True. Se lo è, non succede niente. Se non lo è, Python si ferma con un AssertionError e mostra il tuo messaggio se ne hai scritto uno dopo una virgola. È il test più semplice: \"prometto che double(4) fa 8\".\n\nScrivi qualche assert vicino alla tua funzione, con casi piccoli di cui conosci la risposta. L'ultimo qui è una promessa sbagliata apposta, così vedi l'errore.",
+      "fr": "assert vérifie que quelque chose est True. Si c'est le cas, il ne se passe rien. Sinon, Python s'arrête avec une AssertionError, et montre ton message si tu en as écrit un après une virgule. C'est le test le plus simple : \"je promets que double(4) vaut 8\".\n\nÉcris quelques assert à côté de ta fonction, avec de petits cas dont tu connais la réponse. Le dernier ici est une promesse fausse exprès, pour que tu voies l'erreur."
+     },
+     "see": {
+      "en": "All the checks passed\n⚠ Line 8: An assert failed: something that should be true is not.",
+      "it": "Tutti i controlli sono passati\n⚠ Riga 8: Un assert è fallito: qualcosa che doveva essere vero non lo è.",
+      "fr": "Toutes les vérifications ont réussi\n⚠ Ligne 8: Un assert a échoué : quelque chose qui devait être vrai ne l'est pas."
+     },
+     "slip": null,
+     "error": "AssertionError",
+     "news": [
+      {
+       "k": "assert",
+       "w": "assert",
+       "d": {
+        "en": "assert checks that something is True. If it is, nothing happens. If it is not, Python stops with an AssertionError, and with your message if you wrote one after a comma. It is the simplest test: \"I promise that this is true\".",
+        "it": "assert controlla che qualcosa sia True. Se lo è, non succede niente. Se non lo è, Python si ferma con un AssertionError, e con il tuo messaggio se ne hai scritto uno dopo una virgola. È il test più semplice: \"prometto che questo è vero\".",
+        "fr": "assert vérifie que quelque chose est True. Si c'est le cas, il ne se passe rien. Sinon, Python s'arrête avec une AssertionError, et avec ton message si tu en as écrit un après une virgule. C'est le test le plus simple : \"je promets que ceci est vrai\"."
+       },
+       "s": {
+        "en": "assert double(4) == 8",
+        "it": "assert double(4) == 8",
+        "fr": "assert double(4) == 8"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Fix the last promise, so it is true, and the program ends without an error.",
+       "it": "Correggi l'ultima promessa, così è vera, e il programma finisce senza errori.",
+       "fr": "Corrige la dernière promesse, pour qu'elle soit vraie, et que le programme finisse sans erreur."
+      },
+      "hint": {
+       "en": "double(5) is 10, not 11.",
+       "it": "double(5) fa 10, non 11.",
+       "fr": "double(5) vaut 10, pas 11."
+      },
+      "sol": {
+       "en": "def double(n):\n    return n * 2\n\nassert double(5) == 10, \"wrong\"\nprint(\"ok\")",
+       "it": "def double(n):\n    return n * 2\n\nassert double(5) == 10, \"wrong\"\nprint(\"ok\")",
+       "fr": "def double(n):\n    return n * 2\n\nassert double(5) == 10, \"wrong\"\nprint(\"ok\")"
+      },
+      "start": {
+       "en": "def double(n):\n    return n * 2\n\nassert double(5) == 11, \"wrong\"\nprint(\"ok\")",
+       "it": "def double(n):\n    return n * 2\n\nassert double(5) == 11, \"wrong\"\nprint(\"ok\")",
+       "fr": "def double(n):\n    return n * 2\n\nassert double(5) == 11, \"wrong\"\nprint(\"ok\")"
+      },
+      "spec": {
+       "en": {
+        "out": "ok"
+       },
+       "it": {
+        "out": "ok"
+       },
+       "fr": {
+        "out": "ok"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "ok",
+       "it": "ok",
+       "fr": "ok"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)",
+      "it": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)",
+      "fr": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)"
+     },
+     "title": {
+      "en": "A real test tool: unittest",
+      "it": "Un vero strumento di test: unittest",
+      "fr": "Un vrai outil de test : unittest"
+     },
+     "text": {
+      "en": "unittest is Python's own testing tool. A test class inherits from unittest.TestCase, and every test is a method whose name starts with test. Inside, assertTrue, assertFalse and assertEqual check things.\n\nThe last two lines find the tests of the class and run them, and print a report: a dot for each test that passed, and an F for each that failed. For now, copy those two lines as they are. If a test fails, the report says which one and why.",
+      "it": "unittest è lo strumento di test di Python. Una classe di test eredita da unittest.TestCase, e ogni test è un metodo il cui nome inizia con test. Dentro, assertTrue, assertFalse e assertEqual controllano le cose.\n\nLe ultime due righe trovano i test della classe e li eseguono, e stampano un resoconto: un punto per ogni test passato e una F per ognuno fallito. Per ora copia quelle due righe così come sono. Se un test fallisce, il resoconto dice quale e perché.",
+      "fr": "unittest est l'outil de test de Python. Une classe de test hérite de unittest.TestCase, et chaque test est une méthode dont le nom commence par test. Dedans, assertTrue, assertFalse et assertEqual vérifient des choses.\n\nLes deux dernières lignes trouvent les tests de la classe et les lancent, et affichent un rapport : un point pour chaque test réussi et un F pour chaque test échoué. Pour l'instant, copie ces deux lignes telles quelles. Si un test échoue, le rapport dit lequel et pourquoi."
+     },
+     "see": {
+      "en": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK",
+      "it": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK",
+      "fr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "module:unittest",
+       "w": "unittest",
+       "d": {
+        "en": "unittest is Python's own testing tool. A test class inherits from unittest.TestCase, and each test is a method whose name starts with test.",
+        "it": "unittest è lo strumento di test di Python. Una classe di test eredita da unittest.TestCase, e ogni test è un metodo il cui nome inizia con test.",
+        "fr": "unittest est l'outil de test de Python. Une classe de test hérite de unittest.TestCase, et chaque test est une méthode dont le nom commence par test."
+       },
+       "s": {
+        "en": "import unittest",
+        "it": "import unittest",
+        "fr": "import unittest"
+       }
+      },
+      {
+       "k": "unittest.TestCase",
+       "w": "unittest.TestCase",
+       "d": {
+        "en": "unittest.TestCase is the parent class of your tests. It gives you the checks: assertEqual (are they equal?), assertTrue and assertFalse.",
+        "it": "unittest.TestCase è la classe genitore dei tuoi test. Ti dà i controlli: assertEqual (sono uguali?), assertTrue e assertFalse.",
+        "fr": "unittest.TestCase est la classe parente de tes tests. Elle te donne les vérifications : assertEqual (sont-ils égaux ?), assertTrue et assertFalse."
+       },
+       "s": {
+        "en": "class TestAdd(unittest.TestCase):",
+        "it": "class TestAdd(unittest.TestCase):",
+        "fr": "class TestAdd(unittest.TestCase):"
+       }
+      },
+      {
+       "k": ".assertEqual",
+       "w": ".assertEqual( )",
+       "d": {
+        "en": "assertEqual checks that two things are equal. If not, the test fails and says what was different.",
+        "it": "assertEqual controlla che due cose siano uguali. Se no, il test fallisce e dice cosa era diverso.",
+        "fr": "assertEqual vérifie que deux choses sont égales. Sinon, le test échoue et dit ce qui était différent."
+       },
+       "s": {
+        "en": "self.assertEqual(add(2, 3), 5)",
+        "it": "self.assertEqual(add(2, 3), 5)",
+        "fr": "self.assertEqual(add(2, 3), 5)"
+       }
+      },
+      {
+       "k": ".assertTrue",
+       "w": ".assertTrue( )",
+       "d": {
+        "en": "assertTrue checks that something is True, and assertFalse checks that it is False.",
+        "it": "assertTrue controlla che qualcosa sia True e assertFalse controlla che sia False.",
+        "fr": "assertTrue vérifie que quelque chose est True et assertFalse vérifie que c'est False."
+       },
+       "s": {
+        "en": "self.assertTrue(is_even(4))",
+        "it": "self.assertTrue(is_even(4))",
+        "fr": "self.assertTrue(is_even(4))"
+       }
+      },
+      {
+       "k": ".assertFalse",
+       "w": ".assertFalse( )",
+       "d": {
+        "en": "assertFalse checks that something is False.",
+        "it": "assertFalse controlla che qualcosa sia False.",
+        "fr": "assertFalse vérifie que quelque chose est False."
+       },
+       "s": {
+        "en": "self.assertFalse(is_even(7))",
+        "it": "self.assertFalse(is_even(7))",
+        "fr": "self.assertFalse(is_even(7))"
+       }
+      },
+      {
+       "k": "unittest-run",
+       "w": "loader  runner",
+       "d": {
+        "en": "These lines find all the tests of a class and run them, then print a short report: a dot for each test that passed, and an F for each one that failed. For now, copy them as they are.",
+        "it": "Queste righe trovano tutti i test di una classe e li eseguono, poi stampano un breve resoconto: un punto per ogni test passato e una F per ognuno fallito. Per ora copiale così come sono.",
+        "fr": "Ces lignes trouvent tous les tests d'une classe et les lancent, puis affichent un court rapport : un point pour chaque test réussi et un F pour chaque test échoué. Pour l'instant, copie-les telles quelles."
+       },
+       "s": {
+        "en": "suite = unittest.TestLoader().loadTestsFromTestCase(TestAdd)\nunittest.TextTestRunner(verbosity=0).run(suite)",
+        "it": "suite = unittest.TestLoader().loadTestsFromTestCase(TestAdd)\nunittest.TextTestRunner(verbosity=0).run(suite)",
+        "fr": "suite = unittest.TestLoader().loadTestsFromTestCase(TestAdd)\nunittest.TextTestRunner(verbosity=0).run(suite)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Add a test called test_ten to the class that checks is_even(10) is True. The report must say it ran 4 tests.",
+       "it": "Aggiungi alla classe un test che si chiama test_ten che controlla che is_even(10) sia True. Il resoconto deve dire che ha eseguito 4 test.",
+       "fr": "Ajoute à la classe un test qui s'appelle test_ten qui vérifie que is_even(10) est True. Le rapport doit dire qu'il a lancé 4 tests."
+      },
+      "hint": {
+       "en": "def test_ten(self): and self.assertTrue(is_even(10)).",
+       "it": "def test_ten(self): e self.assertTrue(is_even(10)).",
+       "fr": "def test_ten(self): et self.assertTrue(is_even(10))."
+      },
+      "sol": {
+       "en": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\n    def test_ten(self):\n        self.assertTrue(is_even(10))\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)",
+       "it": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\n    def test_ten(self):\n        self.assertTrue(is_even(10))\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)",
+       "fr": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\n    def test_ten(self):\n        self.assertTrue(is_even(10))\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)"
+      },
+      "start": {
+       "en": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)",
+       "it": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)",
+       "fr": "import unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass TestEven(unittest.TestCase):\n    def test_even(self):\n        self.assertTrue(is_even(4))\n\n    def test_odd(self):\n        self.assertFalse(is_even(7))\n\n    def test_zero(self):\n        self.assertEqual(is_even(0), True)\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(TestEven)\nunittest.TextTestRunner(verbosity=0).run(suite)"
+      },
+      "spec": {
+       "en": {
+        "m": "Ran 4 tests",
+        "c": "test_ten"
+       },
+       "it": {
+        "m": "Ran 4 tests",
+        "c": "test_ten"
+       },
+       "fr": {
+        "m": "Ran 4 tests",
+        "c": "test_ten"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def average(numbers):\n    total = 0\n    for n in numbers:\n        total += n\n        print(\"DEBUG: n =\", n, \"total =\", total)\n    return total / len(numbers)\n\nprint(average([4, 6, 8]))",
+      "it": "def average(numbers):\n    total = 0\n    for n in numbers:\n        total += n\n        print(\"DEBUG: n =\", n, \"total =\", total)\n    return total / len(numbers)\n\nprint(average([4, 6, 8]))",
+      "fr": "def average(numbers):\n    total = 0\n    for n in numbers:\n        total += n\n        print(\"DEBUG: n =\", n, \"total =\", total)\n    return total / len(numbers)\n\nprint(average([4, 6, 8]))"
+     },
+     "title": {
+      "en": "Look inside: print debugging",
+      "it": "Guarda dentro: print per cercare gli errori",
+      "fr": "Regarde dedans : débogage avec print"
+     },
+     "text": {
+      "en": "When a program gives a wrong answer and no error, add print lines that show what the boxes really hold at each step. Often you see the mistake right away.\n\nGive those prints a clear label, like DEBUG, so you can find them and remove them when you are done.",
+      "it": "Quando un programma dà una risposta sbagliata e nessun errore, aggiungi righe print che mostrano cosa contengono davvero le scatole a ogni passo. Spesso vedi subito lo sbaglio.\n\nDai a quei print un'etichetta chiara, come DEBUG, così li trovi e li togli quando hai finito.",
+      "fr": "Quand un programme donne une mauvaise réponse et aucune erreur, ajoute des lignes print qui montrent ce que contiennent vraiment les boîtes à chaque étape. Souvent tu vois l'erreur tout de suite.\n\nDonne à ces print une étiquette claire, comme DEBUG, pour pouvoir les retrouver et les enlever quand tu as fini."
+     },
+     "see": {
+      "en": "DEBUG: n = 4 total = 4\nDEBUG: n = 6 total = 10\nDEBUG: n = 8 total = 18\n6.0",
+      "it": "DEBUG: n = 4 total = 4\nDEBUG: n = 6 total = 10\nDEBUG: n = 8 total = 18\n6.0",
+      "fr": "DEBUG: n = 4 total = 4\nDEBUG: n = 6 total = 10\nDEBUG: n = 8 total = 18\n6.0"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The function sum_to is meant to add 1 to n but has a mistake: sum_to(3) shows 3 instead of 6. Fix the loop (range(1, n + 1)) so it shows 6.",
+       "it": "La funzione sum_to deve sommare da 1 a n ma ha uno sbaglio: sum_to(3) mostra 3 invece di 6. Correggi il ciclo (range(1, n + 1)) così mostra 6.",
+       "fr": "La fonction sum_to doit additionner de 1 à n mais a une erreur : sum_to(3) affiche 3 au lieu de 6. Corrige la boucle (range(1, n + 1)) pour qu'elle affiche 6."
+      },
+      "hint": {
+       "en": "range(1, n) stops one number too early.",
+       "it": "range(1, n) si ferma un numero troppo presto.",
+       "fr": "range(1, n) s'arrête un nombre trop tôt."
+      },
+      "sol": {
+       "en": "def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total\n\nprint(sum_to(3))",
+       "it": "def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total\n\nprint(sum_to(3))",
+       "fr": "def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total\n\nprint(sum_to(3))"
+      },
+      "start": {
+       "en": "def sum_to(n):\n    total = 0\n    for i in range(1, n):\n        total += i\n    return total\n\nprint(sum_to(3))",
+       "it": "def sum_to(n):\n    total = 0\n    for i in range(1, n):\n        total += i\n    return total\n\nprint(sum_to(3))",
+       "fr": "def sum_to(n):\n    total = 0\n    for i in range(1, n):\n        total += i\n    return total\n\nprint(sum_to(3))"
+      },
+      "spec": {
+       "en": {
+        "out": "6"
+       },
+       "it": {
+        "out": "6"
+       },
+       "fr": {
+        "out": "6"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "6",
+       "it": "6",
+       "fr": "6"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import traceback\n\ndef divide(a, b):\n    return a / b\n\ntry:\n    divide(1, 0)\nexcept ZeroDivisionError:\n    text = traceback.format_exc()\n    print(text.splitlines()[0])\n    print(text.splitlines()[-1])\n    print(len(text.splitlines()), \"lines in the full error\")",
+      "it": "import traceback\n\ndef divide(a, b):\n    return a / b\n\ntry:\n    divide(1, 0)\nexcept ZeroDivisionError:\n    text = traceback.format_exc()\n    print(text.splitlines()[0])\n    print(text.splitlines()[-1])\n    print(len(text.splitlines()), \"lines in the full error\")",
+      "fr": "import traceback\n\ndef divide(a, b):\n    return a / b\n\ntry:\n    divide(1, 0)\nexcept ZeroDivisionError:\n    text = traceback.format_exc()\n    print(text.splitlines()[0])\n    print(text.splitlines()[-1])\n    print(len(text.splitlines()), \"lines in the full error\")"
+     },
+     "title": {
+      "en": "Read the full error with code",
+      "it": "Leggi l'errore completo con il codice",
+      "fr": "Lis l'erreur complète avec du code"
+     },
+     "text": {
+      "en": "The traceback tool box lets a program get the full error as text: the same text that the View full error button shows. format_exc gives it as one text, and splitlines cuts it into lines.\n\nThe first line says \"Traceback\", the last line says what happened. Real programs use this to write a report of what went wrong, for example into a file.",
+      "it": "La cassetta traceback lascia a un programma ottenere l'errore completo come testo: lo stesso testo che mostra il pulsante View full error. format_exc lo dà come un unico testo, e splitlines lo taglia in righe.\n\nLa prima riga dice \"Traceback\", l'ultima riga dice cos'è successo. I programmi veri lo usano per scrivere un resoconto di cosa è andato storto, per esempio in un file.",
+      "fr": "La boîte traceback laisse un programme obtenir l'erreur complète comme texte : le même texte que montre le bouton View full error. format_exc le donne comme un seul texte, et splitlines le coupe en lignes.\n\nLa première ligne dit \"Traceback\", la dernière ligne dit ce qui s'est passé. Les vrais programmes l'utilisent pour écrire un rapport de ce qui a mal tourné, par exemple dans un fichier."
+     },
+     "see": {
+      "en": "Traceback (most recent call last):\nZeroDivisionError: division by zero\n8 lines in the full error",
+      "it": "Traceback (most recent call last):\nZeroDivisionError: division by zero\n8 lines in the full error",
+      "fr": "Traceback (most recent call last):\nZeroDivisionError: division by zero\n8 lines in the full error"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "module:traceback",
+       "w": "traceback",
+       "d": {
+        "en": "traceback is a tool box that lets a program get the full error as text: the same text that View full error shows you.",
+        "it": "traceback è una cassetta di attrezzi che lascia a un programma ottenere l'errore completo come testo: lo stesso testo che ti mostra View full error.",
+        "fr": "traceback est une boîte à outils qui laisse un programme obtenir l'erreur complète comme texte : le même texte que te montre View full error."
+       },
+       "s": {
+        "en": "import traceback",
+        "it": "import traceback",
+        "fr": "import traceback"
+       }
+      },
+      {
+       "k": "traceback.format_exc",
+       "w": "traceback.format_exc( )",
+       "d": {
+        "en": "traceback.format_exc gives the full text of the error that was just caught, as one text.",
+        "it": "traceback.format_exc dà il testo completo dell'errore appena preso, come un unico testo.",
+        "fr": "traceback.format_exc donne le texte complet de l'erreur qui vient d'être attrapée, comme un seul texte."
+       },
+       "s": {
+        "en": "traceback.format_exc()",
+        "it": "traceback.format_exc()",
+        "fr": "traceback.format_exc()"
+       }
+      },
+      {
+       "k": ".splitlines",
+       "w": ".splitlines( )",
+       "d": {
+        "en": "splitlines cuts a text into a list of its lines.",
+        "it": "splitlines taglia un testo in una lista delle sue righe.",
+        "fr": "splitlines coupe un texte en une liste de ses lignes."
+       },
+       "s": {
+        "en": "text.splitlines()",
+        "it": "text.splitlines()",
+        "fr": "text.splitlines()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Catch the error of int(\"x\") and show the last line of its full error (ValueError: invalid literal for int() with base 10: 'x').",
+       "it": "Prendi l'errore di int(\"x\") e mostra l'ultima riga del suo errore completo.",
+       "fr": "Attrape l'erreur de int(\"x\") et affiche la dernière ligne de son erreur complète."
+      },
+      "hint": {
+       "en": "except ValueError: and traceback.format_exc().splitlines()[-1].",
+       "it": "except ValueError: e traceback.format_exc().splitlines()[-1].",
+       "fr": "except ValueError: et traceback.format_exc().splitlines()[-1]."
+      },
+      "sol": {
+       "en": "import traceback\n\ntry:\n    int(\"x\")\nexcept ValueError:\n    print(traceback.format_exc().splitlines()[-1])",
+       "it": "import traceback\n\ntry:\n    int(\"x\")\nexcept ValueError:\n    print(traceback.format_exc().splitlines()[-1])",
+       "fr": "import traceback\n\ntry:\n    int(\"x\")\nexcept ValueError:\n    print(traceback.format_exc().splitlines()[-1])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": "ValueError",
+        "c": "format_exc"
+       },
+       "it": {
+        "m": "ValueError",
+        "c": "format_exc"
+       },
+       "fr": {
+        "m": "ValueError",
+        "c": "format_exc"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Programs you can be proud of",
+    "it": "Programmi di cui andare fieri",
+    "fr": "Des programmes dont tu peux être fier"
+   },
+   "subtitle": {
+    "en": "Structure, style and good habits",
+    "it": "Struttura, stile e buone abitudini",
+    "fr": "Structure, style et bonnes habitudes"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\nif __name__ == \"__main__\":\n    main()",
+      "it": "def main():\n    name = input(\"Nome: \")\n    print(greeting(name))\n\ndef greeting(name):\n    return f\"Ciao, {name}!\"\n\nif __name__ == \"__main__\":\n    main()",
+      "fr": "def main():\n    name = input(\"Nom : \")\n    print(greeting(name))\n\ndef greeting(name):\n    return f\"Bonjour, {name} !\"\n\nif __name__ == \"__main__\":\n    main()"
+     },
+     "title": {
+      "en": "A main() and a start line",
+      "it": "Un main() e una riga di partenza",
+      "fr": "Un main() et une ligne de départ"
+     },
+     "text": {
+      "en": "A tidy program puts its work in functions, and has one main() that runs them. The line if __name__ == \"__main__\": means \"run main only if this file is the program itself, not if another program imported it\".\n\nYou will see this shape in almost every Python program. It lets a file be both a program and a toolbox of functions that others can import safely.",
+      "it": "Un programma ordinato mette il suo lavoro in funzioni e ha un solo main() che le esegue. La riga if __name__ == \"__main__\": vuol dire \"esegui main solo se questo file è il programma stesso, non se lo ha importato un altro programma\".\n\nVedrai questa forma in quasi ogni programma Python. Permette a un file di essere insieme un programma e una cassetta di funzioni che altri possono importare senza rischi.",
+      "fr": "Un programme bien rangé met son travail dans des fonctions, et a un seul main() qui les lance. La ligne if __name__ == \"__main__\": veut dire \"lance main seulement si ce fichier est le programme lui-même, pas si un autre programme l'a importé\".\n\nTu verras cette forme dans presque tous les programmes Python. Elle permet à un fichier d'être à la fois un programme et une boîte à outils de fonctions que d'autres peuvent importer sans risque."
+     },
+     "see": {
+      "en": "Name: Ada\nHello, Ada!",
+      "it": "Nome: Ada\nCiao, Ada!",
+      "fr": "Nom : Ada\nBonjour, Ada !"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "main-guard",
+       "w": "if __name__ == \"__main__\":",
+       "d": {
+        "en": "The line if __name__ == \"__main__\": means \"run main only if this file is the program itself, not if another program imported it\". Python gives each file a name while it runs; the one that you start gets \"__main__\".",
+        "it": "La riga if __name__ == \"__main__\": vuol dire \"esegui main solo se questo file è il programma stesso, non se lo ha importato un altro programma\". Python dà un nome a ogni file mentre gira; quello che fai partire riceve \"__main__\".",
+        "fr": "La ligne if __name__ == \"__main__\": veut dire \"lance main seulement si ce fichier est le programme lui-même, pas si un autre programme l'a importé\". Python donne un nom à chaque fichier pendant qu'il tourne ; celui que tu démarres reçoit \"__main__\"."
+       },
+       "s": {
+        "en": "if __name__ == \"__main__\":\n    main()",
+        "it": "if __name__ == \"__main__\":\n    main()",
+        "fr": "if __name__ == \"__main__\":\n    main()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Add a second function bye(name) that returns \"Bye, \" + name + \"!\" and make main show it after the greeting. With the name Ada it must show two lines.",
+       "it": "Aggiungi una seconda funzione bye(name) che restituisce \"Bye, \" + name + \"!\" e fai in modo che main la mostri dopo il saluto. Con il nome Ada deve mostrare due righe.",
+       "fr": "Ajoute une deuxième fonction bye(name) qui rend \"Bye, \" + name + \"!\" et fais en sorte que main l'affiche après le salut. Avec le nom Ada il doit afficher deux lignes."
+      },
+      "hint": {
+       "en": "def bye(name): and print(bye(name)) in main.",
+       "it": "def bye(name): e print(bye(name)) in main.",
+       "fr": "def bye(name): et print(bye(name)) dans main."
+      },
+      "sol": {
+       "en": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n    print(bye(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\ndef bye(name):\n    return \"Bye, \" + name + \"!\"\n\nif __name__ == \"__main__\":\n    main()",
+       "it": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n    print(bye(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\ndef bye(name):\n    return \"Bye, \" + name + \"!\"\n\nif __name__ == \"__main__\":\n    main()",
+       "fr": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n    print(bye(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\ndef bye(name):\n    return \"Bye, \" + name + \"!\"\n\nif __name__ == \"__main__\":\n    main()"
+      },
+      "start": {
+       "en": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\nif __name__ == \"__main__\":\n    main()",
+       "it": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\nif __name__ == \"__main__\":\n    main()",
+       "fr": "def main():\n    name = input(\"Name: \")\n    print(greeting(name))\n\ndef greeting(name):\n    return f\"Hello, {name}!\"\n\nif __name__ == \"__main__\":\n    main()"
+      },
+      "spec": {
+       "en": {
+        "m": "Hello, Ada!\\nBye, Ada!",
+        "c": "def bye"
+       },
+       "it": {
+        "m": "Hello, Ada!\\nBye, Ada!",
+        "c": "def bye"
+       },
+       "fr": {
+        "m": "Hello, Ada!\\nBye, Ada!",
+        "c": "def bye"
+       }
+      },
+      "answers": {
+       "en": [
+        "Ada"
+       ],
+       "it": [
+        "Ada"
+       ],
+       "fr": [
+        "Ada"
+       ]
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def area_of_rectangle(width, height):\n    \"\"\"Return the area of a rectangle, in square units.\"\"\"\n    return width * height\n\n\nMAX_PLAYERS = 4\nplayer_names = [\"Ada\", \"Max\"]\ntotal_score = 0\n\nfor player_name in player_names:\n    total_score += len(player_name)\n\nprint(area_of_rectangle(3, 4), MAX_PLAYERS, total_score)",
+      "it": "def area_of_rectangle(width, height):\n    \"\"\"Return the area of a rectangle, in square units.\"\"\"\n    return width * height\n\n\nMAX_PLAYERS = 4\nplayer_names = [\"Ada\", \"Max\"]\ntotal_score = 0\n\nfor player_name in player_names:\n    total_score += len(player_name)\n\nprint(area_of_rectangle(3, 4), MAX_PLAYERS, total_score)",
+      "fr": "def area_of_rectangle(width, height):\n    \"\"\"Return the area of a rectangle, in square units.\"\"\"\n    return width * height\n\n\nMAX_PLAYERS = 4\nplayer_names = [\"Ada\", \"Max\"]\ntotal_score = 0\n\nfor player_name in player_names:\n    total_score += len(player_name)\n\nprint(area_of_rectangle(3, 4), MAX_PLAYERS, total_score)"
+     },
+     "title": {
+      "en": "Names and style",
+      "it": "Nomi e stile",
+      "fr": "Noms et style"
+     },
+     "text": {
+      "en": "The community agreed on a style, called PEP 8. Names of variables and functions are in small letters with underscores (player_name, area_of_rectangle). Names of constants, values that never change, are in capitals (MAX_PLAYERS).\n\nFour spaces for each push-in, two empty lines between functions, and a description under each def. Code that follows the style is code that others, and you in a month, can read.",
+      "it": "La comunità si è messa d'accordo su uno stile, chiamato PEP 8. I nomi di variabili e funzioni sono in minuscolo con i trattini bassi (player_name, area_of_rectangle). I nomi delle costanti, valori che non cambiano mai, sono in maiuscolo (MAX_PLAYERS).\n\nQuattro spazi per ogni rientro, due righe vuote tra le funzioni e una descrizione sotto ogni def. Il codice che segue lo stile è codice che gli altri, e tu fra un mese, riescono a leggere.",
+      "fr": "La communauté s'est mise d'accord sur un style, appelé PEP 8. Les noms de variables et de fonctions sont en minuscules avec des tirets bas (player_name, area_of_rectangle). Les noms de constantes, des valeurs qui ne changent jamais, sont en majuscules (MAX_PLAYERS).\n\nQuatre espaces pour chaque décalage, deux lignes vides entre les fonctions, et une description sous chaque def. Un code qui suit le style est un code que les autres, et toi dans un mois, peuvent lire."
+     },
+     "see": {
+      "en": "12 4 6",
+      "it": "12 4 6",
+      "fr": "12 4 6"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a constant called MAX_SCORE with the value 100, written the right way, and show it.",
+       "it": "Fai una costante che si chiama MAX_SCORE con il valore 100, scritta nel modo giusto, e mostrala.",
+       "fr": "Fais une constante qui s'appelle MAX_SCORE avec la valeur 100, écrite de la bonne façon, et affiche-la."
+      },
+      "hint": {
+       "en": "MAX_SCORE = 100 and print(MAX_SCORE).",
+       "it": "MAX_SCORE = 100 e print(MAX_SCORE).",
+       "fr": "MAX_SCORE = 100 puis print(MAX_SCORE)."
+      },
+      "sol": {
+       "en": "MAX_SCORE = 100\nprint(MAX_SCORE)",
+       "it": "MAX_SCORE = 100\nprint(MAX_SCORE)",
+       "fr": "MAX_SCORE = 100\nprint(MAX_SCORE)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "100",
+        "c": "MAX_SCORE"
+       },
+       "it": {
+        "out": "100",
+        "c": "MAX_SCORE"
+       },
+       "fr": {
+        "out": "100",
+        "c": "MAX_SCORE"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "100",
+       "it": "100",
+       "fr": "100"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def ask_number(question, low, high):\n    \"\"\"Ask until the person types a whole number from low to high.\"\"\"\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"It must be between {low} and {high}.\")\n\nage = ask_number(\"Age (1-120): \", 1, 120)\nprint(\"Age saved:\", age)",
+      "it": "def ask_number(question, low, high):\n    \"\"\"Chiede finché la persona scrive un numero intero da low a high.\"\"\"\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Scrivi un numero intero.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Deve essere tra {low} e {high}.\")\n\nage = ask_number(\"Età (1-120): \", 1, 120)\nprint(\"Età salvata:\", age)",
+      "fr": "def ask_number(question, low, high):\n    \"\"\"Demande jusqu'à ce que la personne tape un nombre entier de low à high.\"\"\"\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Tape un nombre entier.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Il doit être entre {low} et {high}.\")\n\nage = ask_number(\"Âge (1-120) : \", 1, 120)\nprint(\"Âge enregistré :\", age)"
+     },
+     "title": {
+      "en": "Trust nothing that a person types",
+      "it": "Non fidarti di niente di quello che scrive una persona",
+      "fr": "Ne fais confiance à rien de ce qu'une personne tape"
+     },
+     "text": {
+      "en": "People type surprises: letters instead of numbers, empty lines, huge values. A good program checks everything that comes in. lstrip(\"-\") cuts a minus sign off the start, so that \"-5\" still counts as a number here, and isdigit checks the rest.\n\nA small helper function that keeps asking until the answer is valid can be used again and again. Writing it once saves you from the same mistakes everywhere.",
+      "it": "Le persone scrivono sorprese: lettere al posto di numeri, righe vuote, valori enormi. Un buon programma controlla tutto quello che arriva. lstrip(\"-\") toglie un segno meno dall'inizio, così \"-5\" conta ancora come numero qui, e isdigit controlla il resto.\n\nUna piccola funzione che continua a chiedere finché la risposta è valida si può usare ancora e ancora. Scriverla una volta ti salva dagli stessi sbagli ovunque.",
+      "fr": "Les gens tapent des surprises : des lettres au lieu de nombres, des lignes vides, des valeurs énormes. Un bon programme vérifie tout ce qui arrive. lstrip(\"-\") coupe un signe moins au début, donc \"-5\" compte encore comme un nombre ici, et isdigit vérifie le reste.\n\nUne petite fonction qui continue à demander jusqu'à ce que la réponse soit valide peut servir encore et encore. L'écrire une fois te protège des mêmes erreurs partout."
+     },
+     "see": {
+      "en": "Age (1-120): abc\nPlease type a whole number.\nAge (1-120): 500\nIt must be between 1 and 120.\nAge (1-120): 30\nAge saved: 30",
+      "it": "Età (1-120): abc\nScrivi un numero intero.\nEtà (1-120): 500\nDeve essere tra 1 e 120.\nEtà (1-120): 30\nEtà salvata: 30",
+      "fr": "Âge (1-120) : abc\nTape un nombre entier.\nÂge (1-120) : 500\nIl doit être entre 1 et 120.\nÂge (1-120) : 30\nÂge enregistré : 30"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".lstrip",
+       "w": ".lstrip( )",
+       "d": {
+        "en": "lstrip cuts off from the start of a text the characters you name: \"-5\".lstrip(\"-\") is \"5\". (rstrip does it at the end.)",
+        "it": "lstrip taglia dall'inizio di un testo i caratteri che nomini: \"-5\".lstrip(\"-\") è \"5\". (rstrip lo fa alla fine.)",
+        "fr": "lstrip coupe au début d'un texte les caractères que tu nommes : \"-5\".lstrip(\"-\") donne \"5\". (rstrip le fait à la fin.)"
+       },
+       "s": {
+        "en": "\"-5\".lstrip(\"-\")",
+        "it": "\"-5\".lstrip(\"-\")",
+        "fr": "\"-5\".lstrip(\"-\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use ask_number to ask for a number from 1 to 10, with the answers 0, x and 7. It must end showing: 7",
+       "it": "Usa ask_number per chiedere un numero da 1 a 10, con le risposte 0, x e 7. Deve finire mostrando: 7",
+       "fr": "Utilise ask_number pour demander un nombre de 1 à 10, avec les réponses 0, x et 7. Il doit finir en affichant : 7"
+      },
+      "hint": {
+       "en": "print(ask_number(\"Number: \", 1, 10))",
+       "it": "print(ask_number(\"Numero: \", 1, 10))",
+       "fr": "print(ask_number(\"Nombre : \", 1, 10))"
+      },
+      "sol": {
+       "en": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(\"Out of range.\")\n\nprint(ask_number(\"Number: \", 1, 10))",
+       "it": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(\"Out of range.\")\n\nprint(ask_number(\"Number: \", 1, 10))",
+       "fr": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(\"Out of range.\")\n\nprint(ask_number(\"Number: \", 1, 10))"
+      },
+      "start": {
+       "en": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(\"Out of range.\")",
+       "it": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(\"Out of range.\")",
+       "fr": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().lstrip(\"-\").isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(\"Out of range.\")"
+      },
+      "spec": {
+       "en": {
+        "m": "7$",
+        "c": "ask_number\\("
+       },
+       "it": {
+        "m": "7$",
+        "c": "ask_number\\("
+       },
+       "fr": {
+        "m": "7$",
+        "c": "ask_number\\("
+       }
+      },
+      "answers": {
+       "en": [
+        "0",
+        "x",
+        "7"
+       ],
+       "it": [
+        "0",
+        "x",
+        "7"
+       ],
+       "fr": [
+        "0",
+        "x",
+        "7"
+       ]
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def find_longest(words: list[str]) -> str | None:\n    \"\"\"Return the longest word, or None for an empty list.\"\"\"\n    if not words:\n        return None\n    return max(words, key=len)\n\nprint(find_longest([\"pear\", \"banana\", \"fig\"]))\nprint(find_longest([]))\nage: int = 12\nnames: list[str] = [\"Ada\", \"Max\"]\nprint(age, names)",
+      "it": "def find_longest(words: list[str]) -> str | None:\n    \"\"\"Return the longest word, or None for an empty list.\"\"\"\n    if not words:\n        return None\n    return max(words, key=len)\n\nprint(find_longest([\"pear\", \"banana\", \"fig\"]))\nprint(find_longest([]))\nage: int = 12\nnames: list[str] = [\"Ada\", \"Max\"]\nprint(age, names)",
+      "fr": "def find_longest(words: list[str]) -> str | None:\n    \"\"\"Return the longest word, or None for an empty list.\"\"\"\n    if not words:\n        return None\n    return max(words, key=len)\n\nprint(find_longest([\"pear\", \"banana\", \"fig\"]))\nprint(find_longest([]))\nage: int = 12\nnames: list[str] = [\"Ada\", \"Max\"]\nprint(age, names)"
+     },
+     "title": {
+      "en": "Type hints",
+      "it": "I suggerimenti di tipo",
+      "fr": "Les indications de type"
+     },
+     "text": {
+      "en": "You can write down what kind each parameter and each answer should be: words: list[str] says \"a list of texts\", and -> str | None says \"gives back a text, or None\". A name can have its kind too: age: int = 12.\n\nPython does not check them while running, but they tell the reader, and your editor, what is expected. They make a program easier to understand.",
+      "it": "Puoi scrivere di che tipo devono essere ogni parametro e ogni risposta: words: list[str] dice \"una lista di testi\", e -> str | None dice \"restituisce un testo, oppure None\". Anche un nome può avere il suo tipo: age: int = 12.\n\nPython non li controlla mentre gira, ma dicono a chi legge, e al tuo editor, cosa ci si aspetta. Rendono un programma più facile da capire.",
+      "fr": "Tu peux écrire de quelle sorte doit être chaque paramètre et chaque réponse : words: list[str] dit \"une liste de textes\", et -> str | None dit \"rend un texte, ou None\". Un nom peut aussi avoir sa sorte : age: int = 12.\n\nPython ne les vérifie pas pendant qu'il tourne, mais ils disent à celui qui lit, et à ton éditeur, ce qui est attendu. Ils rendent un programme plus facile à comprendre."
+     },
+     "see": {
+      "en": "banana\nNone\n12 ['Ada', 'Max']",
+      "it": "banana\nNone\n12 ['Ada', 'Max']",
+      "fr": "banana\nNone\n12 ['Ada', 'Max']"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a function shout(text: str) -> str that returns the text in capitals. Show shout(\"hi\") (HI).",
+       "it": "Scrivi una funzione shout(text: str) -> str che restituisce il testo in maiuscolo. Mostra shout(\"hi\") (HI).",
+       "fr": "Écris une fonction shout(text: str) -> str qui rend le texte en majuscules. Affiche shout(\"hi\") (HI)."
+      },
+      "hint": {
+       "en": "def shout(text: str) -> str: and return text.upper().",
+       "it": "def shout(text: str) -> str: e return text.upper().",
+       "fr": "def shout(text: str) -> str: et return text.upper()."
+      },
+      "sol": {
+       "en": "def shout(text: str) -> str:\n    return text.upper()\n\nprint(shout(\"hi\"))",
+       "it": "def shout(text: str) -> str:\n    return text.upper()\n\nprint(shout(\"hi\"))",
+       "fr": "def shout(text: str) -> str:\n    return text.upper()\n\nprint(shout(\"hi\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "HI",
+        "c": "-> str"
+       },
+       "it": {
+        "out": "HI",
+        "c": "-> str"
+       },
+       "fr": {
+        "out": "HI",
+        "c": "-> str"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "HI",
+       "it": "HI",
+       "fr": "HI"
+      }
+     }
+    }
+   ]
   }
  ]
 };

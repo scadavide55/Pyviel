@@ -39,14 +39,15 @@ async function main() {
         }
         // a step that breaks on purpose may use a word that does not exist (a typo): only known things count
         if (step.e) keys = keys.filter(k => glossary[k] || seen.has(k));
-        const explained = new Set([].concat(...(step.n || []).map(item => typeof item === 'string' ? [item] : [].concat(item.k))));
+        const explained = new Set([].concat(...(step.n || []).map(item => { const key = typeof item === 'string' ? item : item.k; return [key].concat((glossary[key] && glossary[key].covers) || []); })));
         const fresh = keys.filter(k => !seen.has(k));
         brought += fresh.length;
         if (listing) console.log(where + ': ' + (fresh.length ? fresh.join(' ') : '-'));
         const missing = fresh.filter(k => !explained.has(k));
         if (missing.length) bad.push(where + ' brings ' + missing.join(', ') + ' without explaining ' + (missing.length > 1 ? 'them' : 'it') + ' in n');
         if (fresh.length > MAX_NEW && !step.many) bad.push(where + ' brings ' + fresh.length + ' new things (' + fresh.join(', ') + '): split the step, at most ' + MAX_NEW);
-        for (const k of explained) {
+        const declared = [].concat(...(step.n || []).map(item => [typeof item === 'string' ? item : item.k]));
+        for (const k of declared) {
           if (!glossary[k]) bad.push(where + ' explains "' + k + '", which has no entry in content/glossary.js');
         }
         keys.forEach(k => seen.add(k));

@@ -433,7 +433,13 @@
     if (!taskLoaded[key] && !solved[key]) {
       taskLoaded[key] = true;
       putStart();
-      box.appendChild(element('p', 'task-ready', task.start ? (UI.taskStartIn || 'The starting code is in the editor. Change it there.') : (UI.taskEmpty || 'The editor is empty: write your program there.')));
+      var ready = element('p', 'task-ready', task.start ? (UI.taskStartIn || 'The starting code is in the editor. Change it there.') : (UI.taskEmpty || 'The editor is empty: write your program there.'));
+      // On a small screen the lessons cover the editor: one tap goes there.
+      var goWrite = element('button', 'btn go-editor', (UI.goEditor || 'Go to the editor') + ' →');
+      goWrite.type = 'button';
+      goWrite.addEventListener('click', function () { setOpen(false); code.focus(); });
+      ready.appendChild(goWrite);
+      box.appendChild(ready);
     }
     button(taskLoaded[key] ? (UI.restartTask || 'Start over') : (UI.startTask || 'Start here'), 'start-task', function () {
       taskLoaded[key] = true;

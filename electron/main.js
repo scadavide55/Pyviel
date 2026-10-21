@@ -2,8 +2,9 @@
    Python's input() and Stop need a cross-origin isolated page, which a plain file:// page cannot be,
    so the files are served by a small local scheme (pyviel://app/) that adds the two headers.
    No network: every file is local, and every http(s) request is cancelled. */
-const { app, BrowserWindow, Menu, shell, session, protocol, net, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu, shell, session, protocol, net, ipcMain, screen } = require('electron');
 const pythonHost = require('./python-host');
+const fs = require('fs');
 const path = require('path');
 const { pathToFileURL } = require('url');
 
@@ -52,10 +53,37 @@ function buildMenu() {
   ]);
 }
 
+// The window opens where it was last closed, as long as that place is still on a screen.
+function windowFile() { return path.join(app.getPath('userData'), 'window.json'); }
+function savedBounds() {
+  try {
+    const b = JSON.parse(fs.readFileSync(windowFile(), 'utf8'));
+    if (![b.x, b.y, b.width, b.height].every(Number.isFinite)) return null;
+    const area = screen.getDisplayMatching(b).workArea;
+    const visible = b.x < area.x + area.width - 100 && b.x + b.width > area.x + 100 && b.y >= area.y - 10 && b.y < area.y + area.height - 100;
+    return visible ? b : null;
+  } catch (e) { return null; }
+}
+function keepBounds(win) {
+  let timer = null;
+  const save = function () {
+    if (win.isDestroyed() || win.isMinimized() || win.isFullScreen()) return;
+    const b = win.getNormalBounds();
+    try { fs.writeFileSync(windowFile(), JSON.stringify({ x: b.x, y: b.y, width: b.width, height: b.height, maximized: win.isMaximized() })); } catch (e) {}
+  };
+  const later = function () { clearTimeout(timer); timer = setTimeout(save, 400); };
+  win.on('resize', later);
+  win.on('move', later);
+  win.on('close', save);
+}
+
 function createWindow() {
+  const last = savedBounds();
   const win = new BrowserWindow({
-    width: 1280,
-    height: 840,
+    width: last ? last.width : 1280,
+    height: last ? last.height : 840,
+    x: last ? last.x : undefined,
+    y: last ? last.y : undefined,
     minWidth: 860,
     minHeight: 560,
     backgroundColor: BG,
@@ -70,7 +98,8 @@ function createWindow() {
       additionalArguments: ['--pyviel-version=' + app.getVersion()]
     }
   });
-  win.once('ready-to-show', function () { win.show(); });
+  win.once('ready-to-show', function () { if (last && last.maximized) win.maximize(); win.show(); });
+  keepBounds(win);
   // Links never leave the app: an outside address opens in the browser instead.
   win.webContents.setWindowOpenHandler(function (details) {
     if (/^https?:/i.test(details.url)) shell.openExternal(details.url);

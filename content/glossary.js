@@ -7,5 +7,6 @@ module.exports = Object.assign({},
   require('./glossary-choices.js'),
   require('./glossary-data.js'),
   require('./glossary-functions.js'),
-  require('./glossary-stdlib.js')
+  require('./glossary-stdlib.js'),
+  require('./glossary-regex.js')
 );

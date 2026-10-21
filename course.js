@@ -15711,6 +15711,511 @@ window.PyvielCourse = {
      }
     }
    ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Find patterns in text",
+    "it": "Trova schemi nel testo",
+    "fr": "Trouve des motifs dans le texte"
+   },
+   "subtitle": {
+    "en": "Regular expressions",
+    "it": "Le espressioni regolari",
+    "fr": "Les expressions régulières"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "import re\ntext = \"My phone is 555-1234 and my friend's is 555-9876.\"\nprint(re.search(r\"\\d{3}-\\d{4}\", text))\nprint(re.search(r\"xyz\", text))",
+      "it": "import re\ntext = \"Il mio telefono è 555-1234 e quello del mio amico è 555-9876.\"\nprint(re.search(r\"\\d{3}-\\d{4}\", text))\nprint(re.search(r\"xyz\", text))",
+      "fr": "import re\ntext = \"Mon téléphone est le 555-1234 et celui de mon ami est le 555-9876.\"\nprint(re.search(r\"\\d{3}-\\d{4}\", text))\nprint(re.search(r\"xyz\", text))"
+     },
+     "title": {
+      "en": "Look for a pattern",
+      "it": "Cerca uno schema",
+      "fr": "Cherche un motif"
+     },
+     "text": {
+      "en": "Sometimes you do not know the exact text to look for, only its shape: \"three digits, a dash, four digits\". A regular expression, or regex, describes such a shape. \\d means \"a digit\" and {3} means \"three of them\".\n\nre.search looks for the shape in a text and gives the first match, or None when there is none. The pattern is written as an r text (a raw text), because patterns are full of backslashes.",
+      "it": "A volte non conosci il testo esatto da cercare, solo la sua forma: \"tre cifre, un trattino, quattro cifre\". Un'espressione regolare, o regex, descrive una forma così. \\d vuol dire \"una cifra\" e {3} vuol dire \"tre di loro\".\n\nre.search cerca la forma in un testo e dà la prima corrispondenza, o None quando non ce n'è. Lo schema si scrive come testo r (un testo grezzo), perché gli schemi sono pieni di barre rovesciate.",
+      "fr": "Parfois tu ne connais pas le texte exact à chercher, seulement sa forme : \"trois chiffres, un tiret, quatre chiffres\". Une expression régulière, ou regex, décrit une telle forme. \\d veut dire \"un chiffre\" et {3} veut dire \"trois d'entre eux\".\n\nre.search cherche la forme dans un texte et donne la première correspondance, ou None quand il n'y en a pas. Le motif s'écrit comme un texte r (un texte brut), parce que les motifs sont pleins de barres obliques inversées."
+     },
+     "see": {
+      "en": "<re.Match object; span=(12, 20), match='555-1234'>\nNone",
+      "it": "<re.Match object; span=(18, 26), match='555-1234'>\nNone",
+      "fr": "<re.Match object; span=(21, 29), match='555-1234'>\nNone"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "module:re",
+       "w": "re",
+       "d": {
+        "en": "re is the tool box for regular expressions: finding, picking out and replacing patterns in a text.",
+        "it": "re è la cassetta di attrezzi per le espressioni regolari: trovare, estrarre e sostituire schemi in un testo.",
+        "fr": "re est la boîte à outils pour les expressions régulières : trouver, extraire et remplacer des motifs dans un texte."
+       },
+       "s": {
+        "en": "import re",
+        "it": "import re",
+        "fr": "import re"
+       }
+      },
+      {
+       "k": "re.search",
+       "w": "re.search( )",
+       "d": {
+        "en": "re.search looks for the pattern in a text and gives the first match, or None if there is none.",
+        "it": "re.search cerca lo schema in un testo e dà la prima corrispondenza, o None se non ce n'è.",
+        "fr": "re.search cherche le motif dans un texte et donne la première correspondance, ou None s'il n'y en a pas."
+       },
+       "s": {
+        "en": "re.search(r\"\\d+\", text)",
+        "it": "re.search(r\"\\d+\", text)",
+        "fr": "re.search(r\"\\d+\", text)"
+       }
+      },
+      {
+       "k": "raw-string",
+       "w": "r\" \"",
+       "d": {
+        "en": "An r before the opening quote makes a raw text: backslashes are kept as they are. Patterns are full of backslashes, so they are always written like this.",
+        "it": "Una r prima della virgoletta di apertura fa un testo grezzo: le barre rovesciate restano come sono. I pattern sono pieni di barre rovesciate, quindi si scrivono sempre così.",
+        "fr": "Un r avant le guillemet d'ouverture fait un texte brut : les barres obliques inversées restent telles quelles. Les motifs sont pleins de barres inversées, donc on les écrit toujours ainsi."
+       },
+       "s": {
+        "en": "r\"\\d+\"",
+        "it": "r\"\\d+\"",
+        "fr": "r\"\\d+\""
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Look for three digits in a row in the text \"room 204 and 305\", and show the match.",
+       "it": "Cerca tre cifre di fila nel testo \"room 204 and 305\" e mostra la corrispondenza.",
+       "fr": "Cherche trois chiffres de suite dans le texte \"room 204 and 305\" et affiche la correspondance."
+      },
+      "hint": {
+       "en": "re.search(r\"\\d{3}\", text)",
+       "it": "re.search(r\"\\d{3}\", text)",
+       "fr": "re.search(r\"\\d{3}\", text)"
+      },
+      "sol": {
+       "en": "import re\ntext = \"room 204 and 305\"\nprint(re.search(r\"\\d{3}\", text))",
+       "it": "import re\ntext = \"room 204 and 305\"\nprint(re.search(r\"\\d{3}\", text))",
+       "fr": "import re\ntext = \"room 204 and 305\"\nprint(re.search(r\"\\d{3}\", text))"
+      },
+      "start": {
+       "en": "import re\ntext = \"room 204 and 305\"",
+       "it": "import re\ntext = \"room 204 and 305\"",
+       "fr": "import re\ntext = \"room 204 and 305\""
+      },
+      "spec": {
+       "en": {
+        "m": "match='204'",
+        "c": "re\\.search"
+       },
+       "it": {
+        "m": "match='204'",
+        "c": "re\\.search"
+       },
+       "fr": {
+        "m": "match='204'",
+        "c": "re\\.search"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import re\ntext = \"My phone is 555-1234 and my friend's is 555-9876.\"\nfound = re.search(r\"\\d{3}-\\d{4}\", text)\nprint(found.group())\nprint(re.findall(r\"\\d{3}-\\d{4}\", text))",
+      "it": "import re\ntext = \"Il mio telefono è 555-1234 e quello del mio amico è 555-9876.\"\nfound = re.search(r\"\\d{3}-\\d{4}\", text)\nprint(found.group())\nprint(re.findall(r\"\\d{3}-\\d{4}\", text))",
+      "fr": "import re\ntext = \"Mon téléphone est le 555-1234 et celui de mon ami est le 555-9876.\"\nfound = re.search(r\"\\d{3}-\\d{4}\", text)\nprint(found.group())\nprint(re.findall(r\"\\d{3}-\\d{4}\", text))"
+     },
+     "title": {
+      "en": "The text that was found",
+      "it": "Il testo trovato",
+      "fr": "Le texte trouvé"
+     },
+     "text": {
+      "en": "A match is not the text itself: it also knows where it was found. group() gives the text that was found.\n\nre.findall does not stop at the first one: it gives a list with every match in the text.",
+      "it": "Una corrispondenza non è il testo stesso: sa anche dove è stata trovata. group() dà il testo che è stato trovato.\n\nre.findall non si ferma alla prima: dà una lista con ogni corrispondenza nel testo.",
+      "fr": "Une correspondance n'est pas le texte lui-même : elle sait aussi où elle a été trouvée. group() donne le texte qui a été trouvé.\n\nre.findall ne s'arrête pas à la première : il donne une liste avec chaque correspondance du texte."
+     },
+     "see": {
+      "en": "555-1234\n['555-1234', '555-9876']",
+      "it": "555-1234\n['555-1234', '555-9876']",
+      "fr": "555-1234\n['555-1234', '555-9876']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "re.findall",
+       "w": "re.findall( )",
+       "d": {
+        "en": "re.findall gives a list of all the matches.",
+        "it": "re.findall dà una lista di tutte le corrispondenze.",
+        "fr": "re.findall donne une liste de toutes les correspondances."
+       },
+       "s": {
+        "en": "re.findall(r\"\\d+\", text)",
+        "it": "re.findall(r\"\\d+\", text)",
+        "fr": "re.findall(r\"\\d+\", text)"
+       }
+      },
+      {
+       "k": ".group",
+       "w": ".group( )",
+       "d": {
+        "en": "group gives the text that a match found. group() is the whole match; with round brackets in the pattern, group(1) is the first caught part, group(2) the second.",
+        "it": "group dà il testo che una corrispondenza ha trovato. group() è tutta la corrispondenza; con le parentesi tonde nel pattern, group(1) è la prima parte catturata, group(2) la seconda.",
+        "fr": "group donne le texte qu'une correspondance a trouvé. group() est toute la correspondance ; avec des parenthèses rondes dans le motif, group(1) est la première partie attrapée, group(2) la deuxième."
+       },
+       "s": {
+        "en": "match.group()",
+        "it": "match.group()",
+        "fr": "match.group()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the list of all the numbers (digits in a row, with \\d+) in the text \"a1 b22 c333\".",
+       "it": "Mostra la lista di tutti i numeri (cifre di fila, con \\d+) nel testo \"a1 b22 c333\".",
+       "fr": "Affiche la liste de tous les nombres (chiffres de suite, avec \\d+) dans le texte \"a1 b22 c333\"."
+      },
+      "hint": {
+       "en": "re.findall(r\"\\d+\", text)",
+       "it": "re.findall(r\"\\d+\", text)",
+       "fr": "re.findall(r\"\\d+\", text)"
+      },
+      "sol": {
+       "en": "import re\ntext = \"a1 b22 c333\"\nprint(re.findall(r\"\\d+\", text))",
+       "it": "import re\ntext = \"a1 b22 c333\"\nprint(re.findall(r\"\\d+\", text))",
+       "fr": "import re\ntext = \"a1 b22 c333\"\nprint(re.findall(r\"\\d+\", text))"
+      },
+      "start": {
+       "en": "import re\ntext = \"a1 b22 c333\"",
+       "it": "import re\ntext = \"a1 b22 c333\"",
+       "fr": "import re\ntext = \"a1 b22 c333\""
+      },
+      "spec": {
+       "en": {
+        "out": "['1', '22', '333']",
+        "c": "findall"
+       },
+       "it": {
+        "out": "['1', '22', '333']",
+        "c": "findall"
+       },
+       "fr": {
+        "out": "['1', '22', '333']",
+        "c": "findall"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['1', '22', '333']",
+       "it": "['1', '22', '333']",
+       "fr": "['1', '22', '333']"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import re\nprint(re.findall(r\"\\w+\", \"Hello, big world!\"))\nprint(re.findall(r\"[aeiou]\", \"education\"))\nprint(re.findall(r\"cat|dog\", \"a cat and a dog\"))\nprint(re.findall(r\"colou?r\", \"color colour\"))\nprint(bool(re.match(r\"^[A-Z][a-z]+$\", \"Python\")))",
+      "it": "import re\nprint(re.findall(r\"\\w+\", \"Hello, big world!\"))\nprint(re.findall(r\"[aeiou]\", \"education\"))\nprint(re.findall(r\"cat|dog\", \"a cat and a dog\"))\nprint(re.findall(r\"colou?r\", \"color colour\"))\nprint(bool(re.match(r\"^[A-Z][a-z]+$\", \"Python\")))",
+      "fr": "import re\nprint(re.findall(r\"\\w+\", \"Hello, big world!\"))\nprint(re.findall(r\"[aeiou]\", \"education\"))\nprint(re.findall(r\"cat|dog\", \"a cat and a dog\"))\nprint(re.findall(r\"colou?r\", \"color colour\"))\nprint(bool(re.match(r\"^[A-Z][a-z]+$\", \"Python\")))"
+     },
+     "title": {
+      "en": "The building blocks",
+      "it": "I mattoncini",
+      "fr": "Les briques"
+     },
+     "text": {
+      "en": "A few signs go a long way. \\w is a letter or digit, [aeiou] is any one letter from the list, | means \"or\", ? makes the thing before it optional, + means \"one or more\" and * means \"zero or more\". ^ and $ are the start and the end of the whole text.\n\nre.match checks the pattern at the very start of the text. With ^ and $ it checks that the whole text has the shape: here, a capital letter followed by small letters.",
+      "it": "Pochi segni bastano per molto. \\w è una lettera o una cifra, [aeiou] è una qualsiasi lettera della lista, | vuol dire \"oppure\", ? rende facoltativa la cosa prima, + vuol dire \"una o più\" e * vuol dire \"zero o più\". ^ e $ sono l'inizio e la fine di tutto il testo.\n\nre.match controlla lo schema proprio all'inizio del testo. Con ^ e $ controlla che tutto il testo abbia la forma: qui, una lettera maiuscola seguita da lettere minuscole.",
+      "fr": "Quelques signes suffisent à faire beaucoup. \\w est une lettre ou un chiffre, [aeiou] est n'importe quelle lettre de la liste, | veut dire \"ou\", ? rend facultative la chose d'avant, + veut dire \"un ou plus\" et * veut dire \"zéro ou plus\". ^ et $ sont le début et la fin de tout le texte.\n\nre.match vérifie le motif tout au début du texte. Avec ^ et $ il vérifie que tout le texte a la forme : ici, une majuscule suivie de minuscules."
+     },
+     "see": {
+      "en": "['Hello', 'big', 'world']\n['e', 'u', 'a', 'i', 'o']\n['cat', 'dog']\n['color', 'colour']\nTrue",
+      "it": "['Hello', 'big', 'world']\n['e', 'u', 'a', 'i', 'o']\n['cat', 'dog']\n['color', 'colour']\nTrue",
+      "fr": "['Hello', 'big', 'world']\n['e', 'u', 'a', 'i', 'o']\n['cat', 'dog']\n['color', 'colour']\nTrue"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "regex-blocks",
+       "w": "\\w  [ ]  |  ?  +  *",
+       "d": {
+        "en": "A few signs go a long way. \\w is a letter or digit, [aeiou] is any one letter from the list, | means \"or\", ? makes the thing before it optional, + means \"one or more\", * means \"zero or more\", \\b is the edge of a word, ^ and $ are the start and the end of the text.",
+        "it": "Pochi segni bastano per molto. \\w è una lettera o una cifra, [aeiou] è una qualsiasi lettera della lista, | vuol dire \"oppure\", ? rende facoltativa la cosa prima, + vuol dire \"una o più\", * vuol dire \"zero o più\", \\b è il bordo di una parola, ^ e $ sono l'inizio e la fine del testo.",
+        "fr": "Quelques signes suffisent à faire beaucoup. \\w est une lettre ou un chiffre, [aeiou] est n'importe quelle lettre de la liste, | veut dire \"ou\", ? rend facultative la chose d'avant, + veut dire \"un ou plus\", * veut dire \"zéro ou plus\", \\b est le bord d'un mot, ^ et $ sont le début et la fin du texte."
+       },
+       "s": {
+        "en": "r\"colou?r\"",
+        "it": "r\"colou?r\"",
+        "fr": "r\"colou?r\""
+       }
+      },
+      {
+       "k": "re.match",
+       "w": "re.match( )",
+       "d": {
+        "en": "re.match checks the pattern at the very start of the text. With ^ and $ in the pattern, it checks that the whole text fits.",
+        "it": "re.match controlla lo schema proprio all'inizio del testo. Con ^ e $ nello schema controlla che tutto il testo vada bene.",
+        "fr": "re.match vérifie le motif tout au début du texte. Avec ^ et $ dans le motif, il vérifie que tout le texte convient."
+       },
+       "s": {
+        "en": "re.match(r\"^[A-Z]\", \"Python\")",
+        "it": "re.match(r\"^[A-Z]\", \"Python\")",
+        "fr": "re.match(r\"^[A-Z]\", \"Python\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the list of the words made of letters or digits (\\w+) in \"one, two; three\".",
+       "it": "Mostra la lista delle parole fatte di lettere o cifre (\\w+) in \"one, two; three\".",
+       "fr": "Affiche la liste des mots faits de lettres ou de chiffres (\\w+) dans \"one, two; three\"."
+      },
+      "hint": {
+       "en": "re.findall(r\"\\w+\", ...)",
+       "it": "re.findall(r\"\\w+\", ...)",
+       "fr": "re.findall(r\"\\w+\", ...)"
+      },
+      "sol": {
+       "en": "import re\nprint(re.findall(r\"\\w+\", \"one, two; three\"))",
+       "it": "import re\nprint(re.findall(r\"\\w+\", \"one, two; three\"))",
+       "fr": "import re\nprint(re.findall(r\"\\w+\", \"one, two; three\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "['one', 'two', 'three']",
+        "c": "\\\\w\\+"
+       },
+       "it": {
+        "out": "['one', 'two', 'three']",
+        "c": "\\\\w\\+"
+       },
+       "fr": {
+        "out": "['one', 'two', 'three']",
+        "c": "\\\\w\\+"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['one', 'two', 'three']",
+       "it": "['one', 'two', 'three']",
+       "fr": "['one', 'two', 'three']"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import re\ntext = \"Name: Ada, Age: 12; Name: Max, Age: 9\"\nprint(re.findall(r\"Name: (\\w+), Age: (\\d+)\", text))\nprint(re.sub(r\"\\d+\", \"#\", text))\nprint(re.split(r\"[,;] \", text))",
+      "it": "import re\ntext = \"Nome: Ada, Età: 12; Nome: Max, Età: 9\"\nprint(re.findall(r\"Nome: (\\w+), Età: (\\d+)\", text))\nprint(re.sub(r\"\\d+\", \"#\", text))\nprint(re.split(r\"[,;] \", text))",
+      "fr": "import re\ntext = \"Nom : Ada, Âge : 12 ; Nom : Max, Âge : 9\"\nprint(re.findall(r\"Nom : (\\w+), Âge : (\\d+)\", text))\nprint(re.sub(r\"\\d+\", \"#\", text))\nprint(re.split(r\"[,;] \", text))"
+     },
+     "title": {
+      "en": "Pick parts out, replace, split",
+      "it": "Estrai parti, sostituisci, dividi",
+      "fr": "Extrais des parties, remplace, coupe"
+     },
+     "text": {
+      "en": "Round brackets in a pattern catch a part of the match. With them, findall gives a tuple for every match, with the caught parts: the name and the age.\n\nre.sub replaces every match with something else. re.split cuts the text at every match and gives a list of the pieces.",
+      "it": "Le parentesi tonde in uno schema catturano una parte della corrispondenza. Con loro, findall dà una tupla per ogni corrispondenza, con le parti catturate: il nome e l'età.\n\nre.sub sostituisce ogni corrispondenza con qualcos'altro. re.split taglia il testo a ogni corrispondenza e dà una lista dei pezzi.",
+      "fr": "Des parenthèses rondes dans un motif attrapent une partie de la correspondance. Avec elles, findall donne un tuple pour chaque correspondance, avec les parties attrapées : le nom et l'âge.\n\nre.sub remplace chaque correspondance par autre chose. re.split coupe le texte à chaque correspondance et donne une liste des morceaux."
+     },
+     "see": {
+      "en": "[('Ada', '12'), ('Max', '9')]\nName: Ada, Age: #; Name: Max, Age: #\n['Name: Ada', 'Age: 12', 'Name: Max', 'Age: 9']",
+      "it": "[('Ada', '12'), ('Max', '9')]\nNome: Ada, Età: #; Nome: Max, Età: #\n['Nome: Ada', 'Età: 12', 'Nome: Max', 'Età: 9']",
+      "fr": "[('Ada', '12'), ('Max', '9')]\nNom : Ada, Âge : # ; Nom : Max, Âge : #\n['Nom : Ada', 'Âge : 12 ', 'Nom : Max', 'Âge : 9']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "re.sub",
+       "w": "re.sub( )",
+       "d": {
+        "en": "re.sub replaces every match with something else: the pattern, the new text, and the text to work on.",
+        "it": "re.sub sostituisce ogni corrispondenza con qualcos'altro: lo schema, il testo nuovo e il testo su cui lavorare.",
+        "fr": "re.sub remplace chaque correspondance par autre chose : le motif, le nouveau texte et le texte sur lequel travailler."
+       },
+       "s": {
+        "en": "re.sub(r\"\\d+\", \"#\", text)",
+        "it": "re.sub(r\"\\d+\", \"#\", text)",
+        "fr": "re.sub(r\"\\d+\", \"#\", text)"
+       }
+      },
+      {
+       "k": "re.split",
+       "w": "re.split( )",
+       "d": {
+        "en": "re.split cuts a text at every match, and gives a list of the pieces.",
+        "it": "re.split taglia un testo a ogni corrispondenza e dà una lista dei pezzi.",
+        "fr": "re.split coupe un texte à chaque correspondance et donne une liste des morceaux."
+       },
+       "s": {
+        "en": "re.split(r\"[,;] \", text)",
+        "it": "re.split(r\"[,;] \", text)",
+        "fr": "re.split(r\"[,;] \", text)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Replace every digit in the text \"a1b2c3\" with a star (*), using re.sub with \\d. Show the result.",
+       "it": "Sostituisci ogni cifra nel testo \"a1b2c3\" con una stella (*), usando re.sub con \\d. Mostra il risultato.",
+       "fr": "Remplace chaque chiffre dans le texte \"a1b2c3\" par une étoile (*), en utilisant re.sub avec \\d. Affiche le résultat."
+      },
+      "hint": {
+       "en": "re.sub(r\"\\d\", \"*\", \"a1b2c3\")",
+       "it": "re.sub(r\"\\d\", \"*\", \"a1b2c3\")",
+       "fr": "re.sub(r\"\\d\", \"*\", \"a1b2c3\")"
+      },
+      "sol": {
+       "en": "import re\nprint(re.sub(r\"\\d\", \"*\", \"a1b2c3\"))",
+       "it": "import re\nprint(re.sub(r\"\\d\", \"*\", \"a1b2c3\"))",
+       "fr": "import re\nprint(re.sub(r\"\\d\", \"*\", \"a1b2c3\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "a*b*c*",
+        "c": "re\\.sub"
+       },
+       "it": {
+        "out": "a*b*c*",
+        "c": "re\\.sub"
+       },
+       "fr": {
+        "out": "a*b*c*",
+        "c": "re\\.sub"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "a*b*c*",
+       "it": "a*b*c*",
+       "fr": "a*b*c*"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import re\n\ndef valid_email(text):\n    return bool(re.fullmatch(r\"[\\w.]+@[\\w]+\\.[a-z]{2,}\", text))\n\nfor address in [\"ada@example.com\", \"ada@\", \"max.smith@site.org\", \"no spaces@x.com\"]:\n    print(address, \"->\", valid_email(address))",
+      "it": "import re\n\ndef valid_email(text):\n    return bool(re.fullmatch(r\"[\\w.]+@[\\w]+\\.[a-z]{2,}\", text))\n\nfor address in [\"ada@example.com\", \"ada@\", \"max.smith@site.org\", \"no spaces@x.com\"]:\n    print(address, \"->\", valid_email(address))",
+      "fr": "import re\n\ndef valid_email(text):\n    return bool(re.fullmatch(r\"[\\w.]+@[\\w]+\\.[a-z]{2,}\", text))\n\nfor address in [\"ada@example.com\", \"ada@\", \"max.smith@site.org\", \"no spaces@x.com\"]:\n    print(address, \"->\", valid_email(address))"
+     },
+     "title": {
+      "en": "A real check: an email address",
+      "it": "Un controllo vero: un indirizzo email",
+      "fr": "Une vraie vérification : une adresse e-mail"
+     },
+     "text": {
+      "en": "Regexes shine when you check what people type. fullmatch asks that the whole text fits the pattern. This one accepts letters, digits and dots, an @, a name, a dot, and at least two letters at the end.\n\nIt is a simple pattern: real email rules are much longer. But it already refuses the wrong ones.",
+      "it": "Le regex brillano quando controlli quello che scrivono le persone. fullmatch chiede che tutto il testo vada bene con lo schema. Questo accetta lettere, cifre e punti, una @, un nome, un punto e almeno due lettere in fondo.\n\nÈ uno schema semplice: le regole vere delle email sono molto più lunghe. Ma rifiuta già quelli sbagliati.",
+      "fr": "Les regex brillent quand tu vérifies ce que les gens tapent. fullmatch demande que tout le texte convienne au motif. Celui-ci accepte des lettres, des chiffres et des points, un @, un nom, un point, et au moins deux lettres à la fin.\n\nC'est un motif simple : les vraies règles des e-mails sont bien plus longues. Mais il refuse déjà les mauvaises."
+     },
+     "see": {
+      "en": "ada@example.com -> True\nada@ -> False\nmax.smith@site.org -> True\nno spaces@x.com -> False",
+      "it": "ada@example.com -> True\nada@ -> False\nmax.smith@site.org -> True\nno spaces@x.com -> False",
+      "fr": "ada@example.com -> True\nada@ -> False\nmax.smith@site.org -> True\nno spaces@x.com -> False"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "re.fullmatch",
+       "w": "re.fullmatch( )",
+       "d": {
+        "en": "re.fullmatch asks that the whole text fits the pattern, not just a part of it.",
+        "it": "re.fullmatch chiede che tutto il testo vada bene con lo schema, non solo una parte.",
+        "fr": "re.fullmatch demande que tout le texte convienne au motif, pas seulement une partie."
+       },
+       "s": {
+        "en": "re.fullmatch(r\"\\d+\", \"123\")",
+        "it": "re.fullmatch(r\"\\d+\", \"123\")",
+        "fr": "re.fullmatch(r\"\\d+\", \"123\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use re.fullmatch with \\d+ to check that \"2024\" is only digits, and show True or False.",
+       "it": "Usa re.fullmatch con \\d+ per controllare che \"2024\" sia fatto solo di cifre e mostra True o False.",
+       "fr": "Utilise re.fullmatch avec \\d+ pour vérifier que \"2024\" n'est fait que de chiffres et affiche True ou False."
+      },
+      "hint": {
+       "en": "print(bool(re.fullmatch(r\"\\d+\", \"2024\")))",
+       "it": "print(bool(re.fullmatch(r\"\\d+\", \"2024\")))",
+       "fr": "print(bool(re.fullmatch(r\"\\d+\", \"2024\")))"
+      },
+      "sol": {
+       "en": "import re\nprint(bool(re.fullmatch(r\"\\d+\", \"2024\")))",
+       "it": "import re\nprint(bool(re.fullmatch(r\"\\d+\", \"2024\")))",
+       "fr": "import re\nprint(bool(re.fullmatch(r\"\\d+\", \"2024\")))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "fullmatch"
+       },
+       "it": {
+        "out": "True",
+        "c": "fullmatch"
+       },
+       "fr": {
+        "out": "True",
+        "c": "fullmatch"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    }
+   ]
   }
  ]
 };

@@ -38,6 +38,8 @@ def concepts(source):
                 prefix = text[: len(text) - len(text.lstrip("rRbBfFuU"))].lower()
                 body = text[len(prefix):]
                 add("string")
+                if "r" in prefix:
+                    add("raw-string")
                 if body[:3] in ('"""', "'''"):
                     add("triple-quote")
                 if "f" in prefix:

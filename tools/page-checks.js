@@ -192,6 +192,14 @@
   document.querySelector('.check-task').click();
   for (let i = 0; i < 100 && !/something else/.test((document.querySelector('.exercise-result.no') || {}).textContent || ''); i++) await new Promise(r => setTimeout(r, 100));
   check('after more wrong checks, a way forward that is not the answer', !!document.querySelector('.stuck .stuck-buttons button'));
+  // a loop that never ends: the check can be stopped, and the next check works
+  code.value = 'n = 1\nwhile n < 5:\n    print(n)'; code.dispatchEvent(new Event('input', {bubbles: true}));
+  document.querySelector('.check-task').click();
+  await new Promise(r => setTimeout(r, 600));
+  check('while a check runs it has its own Stop, and Check waits', !!document.querySelector('.stop-check') && document.querySelector('.check-task').disabled);
+  document.querySelector('.stop-check').click();
+  for (let i = 0; i < 100 && !/stopped the check/.test((document.querySelector('.exercise-result') || {}).textContent || ''); i++) await new Promise(r => setTimeout(r, 100));
+  check('Stop ends a check that never finishes', /stopped the check/.test(document.querySelector('.exercise-result').textContent) && !document.querySelector('.check-task').disabled, document.querySelector('.exercise-result').textContent);
   document.querySelector('.start-task').click();
   check('Start over puts the starting code back', code.value === task.start);
   document.querySelector('.hint-task').click();

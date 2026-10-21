@@ -427,6 +427,8 @@
   if (!solved || typeof solved !== 'object') solved = {};
   var revealed = {};
   var taskLoaded = {};
+  var CHECK_LIMIT_MS = 8000;        // the longest task solution runs well under a second
+  var CHECK_MAX_OUTPUT = 200000;     // characters
   var misses = {};       // step -> wrong checks in this visit: after two, the page offers a way forward
   var guessed = {};      // step -> the answer picked in "Think first": true, or the mistake behind it ('quotes'...) or false
   var reviewed = {};     // lesson -> the answer picked in "Remember?"
@@ -575,13 +577,36 @@
       help.appendChild(row);
       result.appendChild(help);
     }
-    window.Pyviel.runAsync(source, {input: function () { return answers.length ? answers.shift() : null; }}).then(function (run) {
+    // A loop that never ends must not leave the check waiting for ever: a time limit, a limit on what
+    // it prints, and a Stop button of its own (the Stop of the editor belongs to Run).
+    var halt = typeof AbortController === 'function' ? new AbortController() : null;
+    var halted = '', printed = 0;
+    var checkButton = stepBox.querySelector('.check-task');
+    if (checkButton) checkButton.disabled = true;
+    var stopCheck = element('button', 'btn stop-check', UI.stopCheck || 'Stop');
+    stopCheck.type = 'button';
+    stopCheck.addEventListener('click', function () { halted = 'user'; if (halt) halt.abort(); });
+    if (halt) result.appendChild(stopCheck);
+    var timer = setTimeout(function () { if (!halted) { halted = 'time'; if (halt) halt.abort(); } }, CHECK_LIMIT_MS);
+    window.Pyviel.runAsync(source, {
+      signal: halt && halt.signal,
+      input: function () { return answers.length ? answers.shift() : null; },
+      onOutput: function (text) { printed += String(text).length; if (printed > CHECK_MAX_OUTPUT && !halted) { halted = 'flood'; if (halt) halt.abort(); } }
+    }).then(function (run) {
+      clearTimeout(timer);
+      if (checkButton) checkButton.disabled = false;
       result.className = 'exercise-result';
       result.innerHTML = '';
       function say2(cls, title, text) {
         result.className += ' ' + cls;
         result.appendChild(element('b', null, title));
         if (text) result.appendChild(document.createTextNode(text));
+      }
+      if (halted) {
+        say2('no', UI.notYet || 'Not yet.', ' ' + (halted === 'user' ? (UI.checkStopped || 'You stopped the check.') : halted === 'flood' ? (UI.checkFlood || 'Your program shows far too much: maybe a loop never ends.') : (UI.checkTooLong || 'Your program was still running after a few seconds: maybe a loop never ends.')));
+        if (halted !== 'user') result.appendChild(element('div', 'diff-line', UI.checkLoopHint || 'Look at each while: something inside it must change, so that its question becomes False one day.'));
+        if (halted !== 'user') stuck();
+        return;
       }
       if (run.problems.length) {
         var problem = run.problems[0];
@@ -635,6 +660,8 @@
       }
       if (!almost) stuck();
     }, function () {
+      clearTimeout(timer);
+      if (checkButton) checkButton.disabled = false;
       result.className = 'exercise-result no';
       result.textContent = UI.checkFailed || 'Something went wrong while checking. Try again.';
     });

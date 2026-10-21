@@ -216,6 +216,10 @@
   check('a lesson starts with a question on the lesson before', !!review && review.querySelectorAll('.choice').length === 3);
   review.querySelectorAll('.choice')[course[0].steps.filter(s => s.choices).pop().choices.right].click();
   check('and a right answer is told', !!document.querySelector('.review .guess-said.yes'));
+  check('lesson 2 has no older lesson to ask about', document.querySelectorAll('.review').length === 1);
+  document.querySelector('.back-link').click();
+  document.querySelectorAll('.tutorial-lesson')[5].click();
+  check('from lesson 6, a second question comes from four lessons back', document.querySelectorAll('.review').length === 2 && /lesson 2:/.test(document.querySelectorAll('.review')[1].textContent), document.querySelectorAll('.review').length);
   document.querySelector('.back-link').click();
   document.querySelectorAll('.tutorial-lesson')[0].click();
   for (let i = 0; i < 4; i++) { phaseTab(2).click(); document.querySelector('.nav-row .next-step').click(); }

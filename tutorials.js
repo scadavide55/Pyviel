@@ -431,19 +431,20 @@
   var guessed = {};      // step -> the answer picked in "Think first": true, or the mistake behind it ('quotes'...) or false
   var reviewed = {};     // lesson -> the answer picked in "Remember?"
 
-  function reviewBox(step, lessonIndex) {
+  // `from` is the lesson the question comes from; `key` keeps the answer for this visit.
+  function reviewBox(step, key, from) {
     var box = element('div', 'review');
     box.appendChild(element('b', null, UI.remember || 'Remember?'));
-    box.appendChild(element('span', null, ' ' + (UI.rememberText || 'From the lesson before: what does this program show?')));
+    box.appendChild(element('span', null, ' ' + (from === position.lesson - 1 ? (UI.rememberText || 'From the lesson before: what does this program show?') : fill(UI.rememberOlder || 'From lesson {n}: what does this program show?', {n: from + 1}))));
     box.appendChild(element('pre', 'review-code', step.code));
-    var picked = reviewed[lessonIndex];
+    var picked = reviewed[key];
     var list = element('div', 'choice-list');
     step.choices.options.forEach(function (option, i) {
       var b = element('button', 'choice' + (picked !== undefined && i === step.choices.right ? ' right' : '') + (picked === i && i !== step.choices.right ? ' wrong' : ''));
       b.type = 'button';
       b.disabled = picked !== undefined;
       b.appendChild(element('pre', null, option));
-      b.addEventListener('click', function () { reviewed[lessonIndex] = i; drawStep(); });
+      b.addEventListener('click', function () { reviewed[key] = i; drawStep(); });
       list.appendChild(b);
     });
     box.appendChild(list);
@@ -725,7 +726,11 @@
       // A lesson starts with one question on the lesson before: remembering is part of learning.
       if (position.step === 0 && position.lesson > 0) {
         var before = TUTORIALS[position.lesson - 1].steps.filter(function (s) { return s.choices; }).pop();
-        if (before) stepBox.appendChild(reviewBox(before, position.lesson));
+        if (before) stepBox.appendChild(reviewBox(before, position.lesson, position.lesson - 1));
+        // and one from further back: what comes back after a while is what stays
+        var older = position.lesson - 4;
+        var asks = older >= 0 ? TUTORIALS[older].steps.filter(function (s) { return s.choices; }) : [];
+        if (asks.length) stepBox.appendChild(reviewBox(asks[position.lesson % asks.length], position.lesson + ':older', older));
       }
       // 1. Learn: the idea, the new words, the program line by line
       String(step.text).split('\n\n').forEach(function (paragraph) {

@@ -251,6 +251,23 @@
   }
   check('every step program that needs no typing behaves in the page (' + ran + ' run)', wrong.length === 0, wrong.slice(0, 6).join(' | '));
 
+  // every task: its solution passes, with its typed answers, through the page's own Python and check
+  // (the build proves the same in Node; this proves the page agrees)
+  const lang = document.documentElement.lang || 'en';
+  let solvedHere = 0;
+  const unsolved = [];
+  for (const [li, lesson] of course.entries()) {
+    for (const [si, step] of lesson.steps.entries()) {
+      const task = step.task, solution = withSolutions.PyvielCourse.lessons[li].steps[si].ex.sol[lang];
+      const answers = (task.answers || []).slice();
+      const got = await window.Pyviel.runAsync(solution, {input: () => (answers.length ? answers.shift() : null)});
+      const verdict = window.PyvielCheck.check(task.spec, got.text, solution, got.used);
+      if (verdict.ok && !got.problems.length) solvedHere++;
+      else unsolved.push((li + 1) + '.' + (si + 1) + ' ' + (got.problems.length ? got.problems[0].message : verdict.why));
+    }
+  }
+  check('every task can be solved in the page (' + solvedHere + ' solutions checked)', unsolved.length === 0, unsolved.slice(0, 6).join(' | '));
+
   const nameBox = $('file-name').getBoundingClientRect(), tools = document.querySelector('.file-tools').getBoundingClientRect();
   check('the file name does not run over the buttons next to it', nameBox.right <= tools.left + 1 || nameBox.top !== tools.top, nameBox.right + ' vs ' + tools.left);
 

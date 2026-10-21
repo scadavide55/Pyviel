@@ -196,10 +196,10 @@
   code.value = 'n = 1\nwhile n < 5:\n    print(n)'; code.dispatchEvent(new Event('input', {bubbles: true}));
   document.querySelector('.check-task').click();
   await new Promise(r => setTimeout(r, 600));
-  check('while a check runs it has its own Stop, and Check waits', !!document.querySelector('.stop-check') && document.querySelector('.check-task').disabled);
+  check('while a check runs it has its own Stop, and Check and Run wait', !!document.querySelector('.stop-check') && document.querySelector('.check-task').disabled && document.body.dataset.checking === '1');
   document.querySelector('.stop-check').click();
   for (let i = 0; i < 100 && !/stopped the check/.test((document.querySelector('.exercise-result') || {}).textContent || ''); i++) await new Promise(r => setTimeout(r, 100));
-  check('Stop ends a check that never finishes', /stopped the check/.test(document.querySelector('.exercise-result').textContent) && !document.querySelector('.check-task').disabled, document.querySelector('.exercise-result').textContent);
+  check('Stop ends a check that never finishes', /stopped the check/.test(document.querySelector('.exercise-result').textContent) && !document.querySelector('.check-task').disabled && !document.body.dataset.checking, document.querySelector('.exercise-result').textContent);
   document.querySelector('.start-task').click();
   check('Start over puts the starting code back', code.value === task.start);
   document.querySelector('.hint-task').click();

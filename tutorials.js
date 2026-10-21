@@ -583,6 +583,7 @@
     var halted = '', printed = 0;
     var checkButton = stepBox.querySelector('.check-task');
     if (checkButton) checkButton.disabled = true;
+    document.body.dataset.checking = '1';
     var stopCheck = element('button', 'btn stop-check', UI.stopCheck || 'Stop');
     stopCheck.type = 'button';
     stopCheck.addEventListener('click', function () { halted = 'user'; if (halt) halt.abort(); });
@@ -595,6 +596,7 @@
     }).then(function (run) {
       clearTimeout(timer);
       if (checkButton) checkButton.disabled = false;
+      delete document.body.dataset.checking;
       result.className = 'exercise-result';
       result.innerHTML = '';
       function say2(cls, title, text) {
@@ -662,6 +664,7 @@
     }, function () {
       clearTimeout(timer);
       if (checkButton) checkButton.disabled = false;
+      delete document.body.dataset.checking;
       result.className = 'exercise-result no';
       result.textContent = UI.checkFailed || 'Something went wrong while checking. Try again.';
     });

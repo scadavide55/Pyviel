@@ -5,14 +5,14 @@ module.exports = {
     d: ['print is a helper that Python already knows (programmers call it a function). It shows something on the screen. Write its name, then round brackets, and put what you want to show inside them.',
       'print è un aiutante che Python conosce già (i programmatori lo chiamano funzione). Mostra qualcosa sullo schermo. Scrivi il suo nome, poi le parentesi tonde, e dentro metti quello che vuoi mostrare.',
       'print est un assistant que Python connaît déjà (les programmeurs l\'appellent une fonction). Il affiche quelque chose à l\'écran. Écris son nom, puis des parenthèses rondes, et mets dedans ce que tu veux afficher.'],
-    s: 'print("Hello!")'
+    s: ['print("Hello!")', 'print("Ciao!")', 'print("Bonjour!")']
   },
   'string': {
     w: '" "',
     d: ['Text goes between quotes. The quotes are not shown: they only tell Python where the text starts and where it ends. A piece of text is called a string.',
       'Il testo va tra virgolette. Le virgolette non si vedono: dicono solo a Python dove il testo inizia e dove finisce. Un pezzo di testo si chiama stringa.',
       'Le texte va entre guillemets. Les guillemets ne s\'affichent pas : ils disent seulement à Python où le texte commence et où il finit. Un morceau de texte s\'appelle une chaîne.'],
-    s: '"Hello!"'
+    s: ['"Hello!"', '"Ciao!"', '"Bonjour!"']
   },
   'number': {
     w: '7',
@@ -33,7 +33,7 @@ module.exports = {
     d: ['A line that starts with # is a note for people. Python skips it. A note can also go at the end of a line.',
       'Una riga che inizia con # è una nota per le persone. Python la salta. Una nota può stare anche alla fine di una riga.',
       'Une ligne qui commence par # est une note pour les humains. Python la saute. Une note peut aussi se mettre à la fin d\'une ligne.'],
-    s: '# this is a note'
+    s: ['# this is a note', '# questa è una nota', '# ceci est une note']
   },
   '=': {
     w: '=',
@@ -47,7 +47,7 @@ module.exports = {
     d: ['Between the brackets you can put many things, with a comma between them. print shows them in one line, with a space between each.',
       'Tra le parentesi puoi mettere molte cose, con una virgola tra l\'una e l\'altra. print le mostra in una riga, con uno spazio in mezzo.',
       'Entre les parenthèses tu peux mettre plusieurs choses, avec une virgule entre elles. print les affiche sur une ligne, avec une espace entre chaque.'],
-    s: 'print("I am", 12)'
+    s: ['print("I am", 12)', 'print("Ho", 12)', 'print("J\'ai", 12)']
   },
   'arg:sep': {
     w: 'sep=',
@@ -61,7 +61,7 @@ module.exports = {
     d: ['end says what goes after everything that print shows. Normally it is a new line; you can choose another text, even an empty one.',
       'end dice cosa mettere dopo tutto quello che print mostra. Di solito è una riga nuova; puoi scegliere un altro testo, anche vuoto.',
       'end dit ce qu\'il faut mettre après tout ce que print affiche. D\'habitude c\'est un retour à la ligne ; tu peux choisir un autre texte, même vide.'],
-    s: 'print("Loading", end="...")'
+    s: ['print("Loading", end="...")', 'print("Caricamento", end="...")', 'print("Chargement", end="...")']
   },
   '+text': {
     w: '+ for text',
@@ -89,14 +89,14 @@ module.exports = {
     d: ['A backslash \\ inside a text starts a special code. \\n means "start a new line", \\t means "a wide space (a tab)", and \\" puts a quote in the text without ending it.',
       'Una barra rovesciata \\ dentro un testo inizia un codice speciale. \\n vuol dire "vai a capo", \\t vuol dire "uno spazio largo (una tabulazione)" e \\" mette una virgoletta nel testo senza chiuderlo.',
       'Une barre oblique inversée \\ dans un texte commence un code spécial. \\n veut dire "va à la ligne", \\t veut dire "une grande espace (une tabulation)" et \\" met un guillemet dans le texte sans le fermer.'],
-    s: 'print("one\\ntwo")'
+    s: ['print("one\\ntwo")', 'print("uno\\ndue")', 'print("un\\ndeux")']
   },
   'triple-quote': {
     w: '""" """',
     d: ['Three quotes in a row start a text that can go over many lines, and three quotes again end it. Every new line you type inside is kept.',
       'Tre virgolette di fila iniziano un testo che può andare su molte righe, e altre tre lo chiudono. Ogni riga nuova che scrivi dentro viene tenuta.',
       'Trois guillemets de suite commencent un texte qui peut s\'étendre sur plusieurs lignes, et trois autres le terminent. Chaque nouvelle ligne que tu écris dedans est gardée.'],
-    s: 'poem = """one\ntwo"""'
+    s: ['poem = """one\ntwo"""', 'poem = """uno\ndue"""', 'poem = """un\ndeux"""']
   },
   'index': {
     w: 'text[ ]',

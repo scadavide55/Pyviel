@@ -1,6 +1,7 @@
 // Stage 1 · The first programs. See tools/build-course.js for the format.
 // Rules of this course: one new idea per step; everything new is listed in n and explained in the glossary;
-// every step ends with a small task that is checked.
+// every step ends with a small task that is checked; the words inside the quotes of every example are
+// translated: c, ex.start, ex.sol and the checks are [en, it, fr] when they contain words.
 const c = String.raw;
 const G1 = ['Stage 1 · The very first steps', 'Fase 1 · I primissimi passi', 'Étape 1 · Les tout premiers pas'];
 
@@ -11,7 +12,7 @@ module.exports = [
     subtitle: ['Your very first program', 'Il tuo primissimo programma', 'Ton tout premier programme'],
     steps: [
       {
-        c: c`print("Hello!")`,
+        c: [c`print("Hello!")`, c`print("Ciao!")`, c`print("Bonjour!")`],
         n: ['print', 'string'],
         t: ['Make the computer talk', 'Fai parlare il computer', 'Fais parler l\'ordinateur'],
         x: [`A program is a list of instructions. The computer reads them from the top to the bottom, one by one.
@@ -19,21 +20,27 @@ module.exports = [
 This program has one instruction. It makes the computer say "Hello!". Press Try it to see it work.`,
           `Un programma è una lista di istruzioni. Il computer le legge dall'alto verso il basso, una alla volta.
 
-Questo programma ha una sola istruzione. Fa dire al computer "Hello!". Premi Provalo per vederla in azione.`,
+Questo programma ha una sola istruzione. Fa dire al computer "Ciao!". Premi Provalo per vederla in azione.`,
           `Un programme est une liste d'instructions. L'ordinateur les lit de haut en bas, une par une.
 
-Ce programme n'a qu'une instruction. Elle fait dire "Hello!" à l'ordinateur. Appuie sur Essaie pour la voir marcher.`],
+Ce programme n'a qu'une instruction. Elle fait dire "Bonjour!" à l'ordinateur. Appuie sur Essaie pour la voir marcher.`],
         ex: {
-          t: ['Change the words between the quotes, so that the computer says: Good morning', 'Cambia le parole tra le virgolette, così il computer dice: Good morning', 'Change les mots entre les guillemets, pour que l\'ordinateur dise : Good morning'],
+          t: ['Change the words between the quotes, so that the computer says: Good morning', 'Cambia le parole tra le virgolette, così il computer dice: Buongiorno', 'Change les mots entre les guillemets, pour que l\'ordinateur dise : Bonne journée'],
           h: ['Change only the words inside the quotes. Keep the round brackets and both quotes.', 'Cambia solo le parole dentro le virgolette. Tieni le parentesi tonde e tutte e due le virgolette.', 'Change seulement les mots à l\'intérieur des guillemets. Garde les parenthèses rondes et les deux guillemets.'],
-          start: 'print("Hello!")', sol: 'print("Good morning")', out: 'Good morning'
+          start: [c`print("Hello!")`, c`print("Ciao!")`, c`print("Bonjour!")`],
+          sol: [c`print("Good morning")`, c`print("Buongiorno")`, c`print("Bonne journée")`],
+          out: ['Good morning', 'Buongiorno', 'Bonne journée']
         },
         w: ['Spell print with small letters, and keep the brackets and the quotes. If you write prnt, Pyviel tells you which line is wrong.', 'Scrivi print con le lettere piccole e tieni le parentesi e le virgolette. Se scrivi prnt, Pyviel ti dice quale riga è sbagliata.', 'Écris print en petites lettres et garde les parenthèses et les guillemets. Si tu écris prnt, Pyviel te dit quelle ligne est fausse.']
       },
       {
-        c: c`print("Hello!")
+        c: [c`print("Hello!")
 print("My name is Pyviel.")
-print("Nice to meet you.")`,
+print("Nice to meet you.")`, c`print("Ciao!")
+print("Mi chiamo Pyviel.")
+print("Piacere di conoscerti.")`, c`print("Bonjour!")
+print("Je m'appelle Pyviel.")
+print("Ravi de te rencontrer.")`],
         t: ['Say more than one thing', 'Di\' più di una cosa', 'Dis plus d\'une chose'],
         x: [`Each print line says one line on the screen. The computer does them in order, like you read a book.
 
@@ -47,16 +54,35 @@ Pour dire trois choses, écris trois lignes print.`],
         ex: {
           t: ['Add one more line, at the end, that says your own name.', 'Aggiungi una riga in più, alla fine, che dica il tuo nome.', 'Ajoute une ligne de plus, à la fin, qui dit ton prénom.'],
           h: ['Copy a print line and change the words. Every print goes on its own line.', 'Copia una riga print e cambia le parole. Ogni print va su una riga a parte.', 'Copie une ligne print et change les mots. Chaque print va sur sa propre ligne.'],
-          start: 'print("Hello!")\nprint("My name is Pyviel.")\nprint("Nice to meet you.")',
-          sol: 'print("Hello!")\nprint("My name is Pyviel.")\nprint("Nice to meet you.")\nprint("I am Ada.")',
+          start: [c`print("Hello!")
+print("My name is Pyviel.")
+print("Nice to meet you.")`, c`print("Ciao!")
+print("Mi chiamo Pyviel.")
+print("Piacere di conoscerti.")`, c`print("Bonjour!")
+print("Je m'appelle Pyviel.")
+print("Ravi de te rencontrer.")`],
+          sol: [c`print("Hello!")
+print("My name is Pyviel.")
+print("Nice to meet you.")
+print("I am Ada.")`, c`print("Ciao!")
+print("Mi chiamo Pyviel.")
+print("Piacere di conoscerti.")
+print("Sono Ada.")`, c`print("Bonjour!")
+print("Je m'appelle Pyviel.")
+print("Ravi de te rencontrer.")
+print("Je suis Ada.")`],
           m: '^(?:.*\\n){3}.+$'
         },
         w: ['Every opening bracket and every opening quote needs its closing one.', 'Ogni parentesi aperta e ogni virgoletta aperta ha bisogno della sua chiusura.', 'Chaque parenthèse ouverte et chaque guillemet ouvert a besoin de sa fermeture.']
       },
       {
-        c: c`print("The answer is")
+        c: [c`print("The answer is")
 print(7)
-print(2 + 3)`,
+print(2 + 3)`, c`print("La risposta è")
+print(7)
+print(2 + 3)`, c`print("La réponse est")
+print(7)
+print(2 + 3)`],
         n: ['number', '+'],
         t: ['Numbers need no quotes', 'I numeri non vogliono virgolette', 'Les nombres n\'ont pas besoin de guillemets'],
         x: [`Words are text, and text lives between quotes. A number is written plain, with no quotes at all.
@@ -76,8 +102,10 @@ Python peut même faire le calcul pour toi : print(2 + 3) affiche 5, pas "2 + 3"
         w: ['"2 + 3" with quotes is only text, and Python shows it exactly as it is.', '"2 + 3" con le virgolette è solo testo, e Python lo mostra esattamente così.', '"2 + 3" avec des guillemets n\'est que du texte, et Python l\'affiche tel quel.']
       },
       {
-        c: c`# This line is only a note
-print("The note above is invisible.")  # a note can go here too`,
+        c: [c`# This line is only a note
+print("The note above is invisible.")  # a note can go here too`, c`# Questa riga è solo una nota
+print("La nota qui sopra è invisibile.")  # una nota può stare anche qui`, c`# Cette ligne est seulement une note
+print("La note au-dessus est invisible.")  # une note peut aussi aller ici`],
         n: ['comment'],
         t: ['Notes for people', 'Note per le persone', 'Des notes pour les humains'],
         x: [`Sometimes you want to write something for people, not for the computer. A line that starts with # is a note, and Python skips it.
@@ -90,15 +118,24 @@ Le note ti aiutano a ricordare, più tardi, perché hai scritto una riga.`,
 
 Les notes t'aident à te rappeler, plus tard, pourquoi tu as écrit une ligne.`],
         ex: {
-          t: ['Write your own note, starting with #, above the print line. The program must still say Hi.', 'Scrivi una tua nota, che inizia con #, sopra la riga print. Il programma deve dire ancora Hi.', 'Écris ta propre note, qui commence par #, au-dessus de la ligne print. Le programme doit toujours dire Hi.'],
+          t: ['Write your own note, starting with #, above the print line. The program must still say Hi.', 'Scrivi una tua nota, che inizia con #, sopra la riga print. Il programma deve dire ancora Salve.', 'Écris ta propre note, qui commence par #, au-dessus de la ligne print. Le programme doit toujours dire Salut.'],
           h: ['A # and then any words, on a line of its own, before the print.', 'Un # e poi parole a piacere, su una riga a parte, prima di print.', 'Un # puis des mots au choix, sur une ligne à part, avant print.'],
-          start: 'print("Hi")', sol: '# I say hi\nprint("Hi")', out: 'Hi', c: '#'
+          start: [c`print("Hi")`, c`print("Salve")`, c`print("Salut")`],
+          sol: [c`# I say hi
+print("Hi")`, c`# Dico salve
+print("Salve")`, c`# Je dis salut
+print("Salut")`],
+          out: ['Hi', 'Salve', 'Salut'], c: '#'
         }
       },
       {
-        c: c`print("Before")
+        c: [c`print("Before")
 prnt("Hello")
-print("After")`,
+print("After")`, c`print("Prima")
+prnt("Ciao")
+print("Dopo")`, c`print("Avant")
+prnt("Bonjour")
+print("Après")`],
         e: 'NameError',
         t: ['When something breaks', 'Quando qualcosa si rompe', 'Quand quelque chose casse'],
         x: [`Everybody makes mistakes, all the time. Here prnt is a typo: Python does not know that word.
@@ -113,7 +150,21 @@ Pyviel te dit en une phrase ce qui s'est passé et à quelle ligne, et souvent c
         ex: {
           t: ['Fix the typo, then run the program again. All three lines must appear.', 'Correggi l\'errore di battitura e riesegui il programma. Devono comparire tutte e tre le righe.', 'Corrige la faute de frappe, puis relance le programme. Les trois lignes doivent apparaître.'],
           h: ['The word on line 2 should be print.', 'La parola alla riga 2 deve essere print.', 'Le mot de la ligne 2 doit être print.'],
-          start: 'print("Before")\nprnt("Hello")\nprint("After")', sol: 'print("Before")\nprint("Hello")\nprint("After")', exact: true
+          start: [c`print("Before")
+prnt("Hello")
+print("After")`, c`print("Prima")
+prnt("Ciao")
+print("Dopo")`, c`print("Avant")
+prnt("Bonjour")
+print("Après")`],
+          sol: [c`print("Before")
+print("Hello")
+print("After")`, c`print("Prima")
+print("Ciao")
+print("Dopo")`, c`print("Avant")
+print("Bonjour")
+print("Après")`],
+          exact: true
         },
         w: ['Python stops at the first mistake. The lines after it do not run until you fix it.', 'Python si ferma al primo errore. Le righe dopo non girano finché non lo correggi.', 'Python s\'arrête à la première erreur. Les lignes d\'après ne tournent pas tant que tu ne l\'as pas corrigée.']
       }
@@ -139,9 +190,11 @@ name = "Ada" mette il testo Ada in una scatola che si chiama name. Dopo, ogni vo
 
 name = "Ada" met le texte Ada dans une boîte qui s'appelle name. Ensuite, chaque fois que tu écris name, Python ouvre la boîte et utilise ce qu'il y a dedans.`],
         ex: {
-          t: ['Put the word Moon in the box, so the program shows Moon two times.', 'Metti la parola Moon nella scatola, così il programma mostra Moon due volte.', 'Mets le mot Moon dans la boîte, pour que le programme affiche Moon deux fois.'],
+          t: ['Put the word Moon in the box, so the program shows Moon two times.', 'Metti la parola Luna nella scatola, così il programma mostra Luna due volte.', 'Mets le mot Lune dans la boîte, pour que le programme affiche Lune deux fois.'],
           h: ['Change only the word between the quotes on the first line.', 'Cambia solo la parola tra le virgolette sulla prima riga.', 'Change seulement le mot entre les guillemets sur la première ligne.'],
-          start: 'name = "Ada"\nprint(name)\nprint(name)', sol: 'name = "Moon"\nprint(name)\nprint(name)', out: 'Moon\nMoon'
+          start: 'name = "Ada"\nprint(name)\nprint(name)',
+          sol: ['name = "Moon"\nprint(name)\nprint(name)', 'name = "Luna"\nprint(name)\nprint(name)', 'name = "Lune"\nprint(name)\nprint(name)'],
+          exact: true, c: ['Moon', 'Luna', 'Lune']
         },
         w: ['The = sign here does not ask a question. It means "put this value in this name".', 'Il segno = qui non fa una domanda. Vuol dire "metti questo valore in questo nome".', 'Le signe = ici ne pose pas de question. Il veut dire "mets cette valeur dans ce nom".']
       },
@@ -186,17 +239,24 @@ Le maiuscole contano: Age e age sono due scatole diverse. Chi programma in Pytho
 
 Les majuscules comptent : Age et age sont deux boîtes différentes. Les programmeurs Python écrivent les noms en minuscules, avec des tirets bas : player_name. Choisis des noms qui disent ce qu'il y a dedans.`],
         ex: {
-          t: ['Make a box called favourite_colour that holds the text blue, and show it.', 'Fai una scatola che si chiama favourite_colour con dentro il testo blue e mostrala.', 'Fais une boîte qui s\'appelle favourite_colour et qui contient le texte blue, et affiche-la.'],
-          h: ['favourite_colour = "blue", and then print(favourite_colour).', 'favourite_colour = "blue", e poi print(favourite_colour).', 'favourite_colour = "blue", puis print(favourite_colour).'],
-          sol: 'favourite_colour = "blue"\nprint(favourite_colour)', out: 'blue', c: 'favourite_colour'
+          t: ['Make a box called favourite_colour that holds the text blue, and show it.', 'Fai una scatola che si chiama favourite_colour con dentro il testo blu e mostrala.', 'Fais une boîte qui s\'appelle favourite_colour et qui contient le texte bleu, et affiche-la.'],
+          h: ['favourite_colour = "blue", and then print(favourite_colour).', 'favourite_colour = "blu", e poi print(favourite_colour).', 'favourite_colour = "bleu", puis print(favourite_colour).'],
+          sol: ['favourite_colour = "blue"\nprint(favourite_colour)', 'favourite_colour = "blu"\nprint(favourite_colour)', 'favourite_colour = "bleu"\nprint(favourite_colour)'],
+          out: ['blue', 'blu', 'bleu'], c: 'favourite_colour'
         },
         w: ['Words that Python already uses, like print, are better not used as names.', 'Le parole che Python usa già, come print, è meglio non usarle come nomi.', 'Les mots que Python utilise déjà, comme print, il vaut mieux ne pas les utiliser comme noms.']
       },
       {
-        c: c`name = "Ada"
+        c: [c`name = "Ada"
 age = 12
 print(name, "is", age, "years old")
-print("Hello", name)`,
+print("Hello", name)`, c`name = "Ada"
+age = 12
+print(name, "ha", age, "anni")
+print("Ciao", name)`, c`name = "Ada"
+age = 12
+print(name, "a", age, "ans")
+print("Bonjour", name)`],
         n: ['many-args'],
         t: ['Show several things at once', 'Mostra più cose insieme', 'Affiche plusieurs choses à la fois'],
         x: [`print can show many things in one line. Put commas between them, and Python adds a space between each.
@@ -209,15 +269,21 @@ Puoi mescolare testo, scatole e numeri nella stessa riga.`,
 
 Tu peux mélanger du texte, des boîtes et des nombres dans la même ligne.`],
         ex: {
-          t: ['Use print with commas to show this line: Ada is 12 years old. Use the boxes name and age.', 'Usa print con le virgole per mostrare questa riga: Ada is 12 years old. Usa le scatole name e age.', 'Utilise print avec des virgules pour afficher cette ligne : Ada is 12 years old. Utilise les boîtes name et age.'],
-          h: ['print(name, "is", age, ...) and the last piece is the text "years old".', 'print(name, "is", age, ...) e l\'ultimo pezzo è il testo "years old".', 'print(name, "is", age, ...) et le dernier morceau est le texte "years old".'],
-          start: 'name = "Ada"\nage = 12', sol: 'name = "Ada"\nage = 12\nprint(name, "is", age, "years old")', out: 'Ada is 12 years old'
+          t: ['Use print with commas to show this line: Ada is 12 years old. Use the boxes name and age.', 'Usa print con le virgole per mostrare questa riga: Ada ha 12 anni. Usa le scatole name e age.', 'Utilise print avec des virgules pour afficher cette ligne : Ada a 12 ans. Utilise les boîtes name et age.'],
+          h: ['print(name, "is", age, ...) and the last piece is the text "years old".', 'print(name, "ha", age, ...) e l\'ultimo pezzo è il testo "anni".', 'print(name, "a", age, ...) et le dernier morceau est le texte "ans".'],
+          start: 'name = "Ada"\nage = 12',
+          sol: ['name = "Ada"\nage = 12\nprint(name, "is", age, "years old")', 'name = "Ada"\nage = 12\nprint(name, "ha", age, "anni")', 'name = "Ada"\nage = 12\nprint(name, "a", age, "ans")'],
+          out: ['Ada is 12 years old', 'Ada ha 12 anni', 'Ada a 12 ans']
         }
       },
       {
-        c: c`print("a", "b", "c", sep="-")
+        c: [c`print("a", "b", "c", sep="-")
 print("Loading", end="...")
-print("done")`,
+print("done")`, c`print("a", "b", "c", sep="-")
+print("Caricamento", end="...")
+print("fatto")`, c`print("a", "b", "c", sep="-")
+print("Chargement", end="...")
+print("terminé")`],
         n: ['arg:sep', 'arg:end'],
         t: ['Choose what goes between', 'Scegli cosa mettere in mezzo', 'Choisis ce qu\'on met entre'],
         x: [`Normally print puts a space between the things and a new line at the end. You can change both.
@@ -230,9 +296,10 @@ sep= dice cosa mettere tra le cose. end= dice cosa mettere alla fine.`,
 
 sep= dit ce qu'on met entre les choses. end= dit ce qu'on met à la fin.`],
         ex: {
-          t: ['Show red, green and blue in one line, with a + sign between them: red+green+blue', 'Mostra red, green e blue in una riga, con un segno + in mezzo: red+green+blue', 'Affiche red, green et blue sur une ligne, avec un signe + entre eux : red+green+blue'],
+          t: ['Show red, green and blue in one line, with a + sign between them: red+green+blue', 'Mostra rosso, verde e blu in una riga, con un segno + in mezzo: rosso+verde+blu', 'Affiche rouge, vert et bleu sur une ligne, avec un signe + entre eux : rouge+vert+bleu'],
           h: ['Give print the three words with commas, then sep="+" at the end.', 'Dai a print le tre parole con le virgole, poi sep="+" alla fine.', 'Donne à print les trois mots avec des virgules, puis sep="+" à la fin.'],
-          sol: 'print("red", "green", "blue", sep="+")', out: 'red+green+blue'
+          sol: ['print("red", "green", "blue", sep="+")', 'print("rosso", "verde", "blu", sep="+")', 'print("rouge", "vert", "bleu", sep="+")'],
+          out: ['red+green+blue', 'rosso+verde+blu', 'rouge+vert+bleu']
         },
         w: ['sep and end go after the things to show, and the text after the = needs quotes.', 'sep e end vanno dopo le cose da mostrare, e il testo dopo il = vuole le virgolette.', 'sep et end vont après les choses à afficher, et le texte après le = veut des guillemets.']
       }
@@ -243,8 +310,10 @@ sep= dit ce qu'on met entre les choses. end= dit ce qu'on met à la fin.`],
     subtitle: ['Words between quotes', 'Parole tra virgolette', 'Des mots entre guillemets'],
     steps: [
       {
-        c: c`print("Double quotes")
-print('Single quotes')`,
+        c: [c`print("Double quotes")
+print('Single quotes')`, c`print("Virgolette doppie")
+print('Virgolette singole')`, c`print("Guillemets doubles")
+print('Guillemets simples')`],
         t: ['Two kinds of quotes', 'Due tipi di virgolette', 'Deux sortes de guillemets'],
         x: [`Text can be written with double quotes " or with single quotes '. Both mean exactly the same.
 
@@ -256,36 +325,46 @@ L'unica regola: la virgoletta che chiude deve essere dello stesso tipo di quella
 
 La seule règle : le guillemet qui ferme doit être du même genre que celui qui ouvre.`],
         ex: {
-          t: ['Show the word hello, written with single quotes.', 'Mostra la parola hello, scritta con le virgolette singole.', 'Affiche le mot hello, écrit avec des guillemets simples.'],
-          h: ['print(\'hello\') : a single quote before and after the word.', 'print(\'hello\') : una virgoletta singola prima e dopo la parola.', 'print(\'hello\') : un guillemet simple avant et après le mot.'],
-          sol: "print('hello')", out: 'hello', c: "print\\('hello'\\)"
+          t: ['Show the word hello, written with single quotes.', 'Mostra la parola ciao, scritta con le virgolette singole.', 'Affiche le mot salut, écrit avec des guillemets simples.'],
+          h: ['print(\'hello\') : a single quote before and after the word.', 'print(\'ciao\') : una virgoletta singola prima e dopo la parola.', 'print(\'salut\') : un guillemet simple avant et après le mot.'],
+          sol: ["print('hello')", "print('ciao')", "print('salut')"],
+          out: ['hello', 'ciao', 'salut'], c: ["print\\('hello'\\)", "print\\('ciao'\\)", "print\\('salut'\\)"]
         },
-        w: ['"hello\' mixes two kinds and Python cannot read it.', '"hello\' mescola due tipi e Python non riesce a leggerlo.', '"hello\' mélange deux sortes et Python ne peut pas le lire.']
+        w: ['"hello\' mixes two kinds and Python cannot read it.', '"ciao\' mescola due tipi e Python non riesce a leggerlo.', '"salut\' mélange deux sortes et Python ne peut pas le lire.']
       },
       {
-        c: c`print("It's a nice day")
-print('She said "hello" to me')`,
+        c: [c`print("It's a nice day")
+print('She said "hello" to me')`, c`print("L'albero è alto")
+print('Ha detto "ciao" a tutti')`, c`print("C'est une belle journée")
+print('Il a dit "salut" à tout le monde')`],
         t: ['A quote inside a text', 'Una virgoletta dentro un testo', 'Un guillemet dans un texte'],
         x: [`What if the text itself has a quote inside? Use the other kind around it.
 
 "It's a nice day" has a single quote inside, so the quotes around it are double.`,
           `E se il testo ha dentro una virgoletta? Usa l'altro tipo per racchiuderlo.
 
-"It's a nice day" ha dentro una virgoletta singola, quindi quelle intorno sono doppie.`,
+"L'albero è alto" ha dentro una virgoletta singola (l'apostrofo), quindi quelle intorno sono doppie.`,
           `Et si le texte a lui-même un guillemet dedans ? Utilise l'autre sorte tout autour.
 
-"It's a nice day" a un guillemet simple dedans, donc ceux autour sont doubles.`],
+"C'est une belle journée" a un guillemet simple dedans (l'apostrophe), donc ceux autour sont doubles.`],
         ex: {
-          t: ['Show this text, with its double quotes: He said "wow"', 'Mostra questo testo, con le sue virgolette doppie: He said "wow"', 'Affiche ce texte, avec ses guillemets doubles : He said "wow"'],
+          t: ['Show this text, with its double quotes: He said "wow"', 'Mostra questo testo, con le sue virgolette doppie: Ha detto "wow"', 'Affiche ce texte, avec ses guillemets doubles : Il a dit "wow"'],
           h: ['Put single quotes around the whole text, and double quotes inside it.', 'Metti le virgolette singole attorno a tutto il testo e quelle doppie dentro.', 'Mets des guillemets simples autour de tout le texte, et des doubles à l\'intérieur.'],
-          sol: 'print(\'He said "wow"\')', out: 'He said "wow"'
+          sol: ['print(\'He said "wow"\')', 'print(\'Ha detto "wow"\')', 'print(\'Il a dit "wow"\')'],
+          out: ['He said "wow"', 'Ha detto "wow"', 'Il a dit "wow"']
         }
       },
       {
-        c: c`first = "Py"
+        c: [c`first = "Py"
 second = "viel"
 print(first + second)
-print("Hello, " + "Ada")`,
+print("Hello, " + "Ada")`, c`first = "Py"
+second = "viel"
+print(first + second)
+print("Ciao, " + "Ada")`, c`first = "Py"
+second = "viel"
+print(first + second)
+print("Bonjour, " + "Ada")`],
         n: ['+text'],
         t: ['Join texts', 'Unisci i testi', 'Colle des textes'],
         x: [`The plus sign + also works on text: it glues two texts together, with nothing in the middle.
@@ -293,10 +372,10 @@ print("Hello, " + "Ada")`,
 It does not add a space for you. If you want one, put it inside the text, like "Hello, ".`,
           `Il segno più + funziona anche con il testo: incolla due testi insieme, senza niente in mezzo.
 
-Non aggiunge uno spazio al posto tuo. Se ne vuoi uno, mettilo dentro il testo, come in "Hello, ".`,
+Non aggiunge uno spazio al posto tuo. Se ne vuoi uno, mettilo dentro il testo, come in "Ciao, ".`,
           `Le signe plus + marche aussi avec le texte : il colle deux textes ensemble, sans rien au milieu.
 
-Il n'ajoute pas d'espace à ta place. Si tu en veux une, mets-la dans le texte, comme dans "Hello, ".`],
+Il n'ajoute pas d'espace à ta place. Si tu en veux une, mets-la dans le texte, comme dans "Bonjour, ".`],
         ex: {
           t: ['Join the texts "Py" and "thon" so the program shows Python.', 'Unisci i testi "Py" e "thon" così il programma mostra Python.', 'Colle les textes "Py" et "thon" pour que le programme affiche Python.'],
           h: ['Inside the brackets of print, write the first text, a + sign, and the second text.', 'Dentro le parentesi di print scrivi il primo testo, un segno + e il secondo testo.', 'Dans les parenthèses de print, écris le premier texte, un signe + et le deuxième texte.'],
@@ -326,10 +405,16 @@ C'est pratique pour dessiner des lignes : "-" * 20 donne vingt tirets.`],
         }
       },
       {
-        c: c`word = "Python"
+        c: [c`word = "Python"
 print(len(word))
 print(len("Hi there"))
-print(len(""))`,
+print(len(""))`, c`word = "Python"
+print(len(word))
+print(len("Ciao a tutti"))
+print(len(""))`, c`word = "Python"
+print(len(word))
+print(len("Salut tout le monde"))
+print(len(""))`],
         n: ['len'],
         t: ['Count the letters', 'Conta le lettere', 'Compte les lettres'],
         x: [`len counts how many letters a text has. Spaces count too. An empty text "" has 0.
@@ -342,9 +427,9 @@ Metti tra le parentesi il testo, o una scatola che lo contiene.`,
 
 Mets entre les parenthèses le texte, ou une boîte qui le contient.`],
         ex: {
-          t: ['Show how many letters the word banana has.', 'Mostra quante lettere ha la parola banana.', 'Affiche combien de lettres a le mot banana.'],
-          h: ['print(len("banana"))', 'print(len("banana"))', 'print(len("banana"))'],
-          sol: 'print(len("banana"))', out: '6', c: 'len'
+          t: ['Show how many letters the word banana has.', 'Mostra quante lettere ha la parola banana.', 'Affiche combien de lettres a le mot banane.'],
+          h: ['print(len("banana"))', 'print(len("banana"))', 'print(len("banane"))'],
+          sol: ['print(len("banana"))', 'print(len("banana"))', 'print(len("banane"))'], out: '6', c: 'len'
         }
       }
     ]
@@ -354,8 +439,10 @@ Mets entre les parenthèses le texte, ou une boîte qui le contient.`],
     subtitle: ['Many lines, letters and pieces', 'Molte righe, lettere e pezzi', 'Plusieurs lignes, des lettres et des morceaux'],
     steps: [
       {
-        c: c`print("Line one\nLine two")
-print("Name:\tAda")`,
+        c: [c`print("Line one\nLine two")
+print("Name:\tAda")`, c`print("Riga uno\nRiga due")
+print("Nome:\tAda")`, c`print("Ligne un\nLigne deux")
+print("Nom :\tAda")`],
         n: ['escape'],
         t: ['New lines and tabs', 'Righe nuove e tabulazioni', 'Retours à la ligne et tabulations'],
         x: [`Some things cannot be typed inside a text, like "start a new line". For these, Python has special codes that start with a backslash \\.
@@ -368,15 +455,18 @@ print("Name:\tAda")`,
 
 \\n veut dire "nouvelle ligne" et \\t veut dire "une grande espace". Ils marchent dans n'importe quel texte.`],
         ex: {
-          t: ['With only one print, show Hello and World on two lines.', 'Con un solo print, mostra Hello e World su due righe.', 'Avec un seul print, affiche Hello et World sur deux lignes.'],
+          t: ['With only one print, show Hello and World on two lines.', 'Con un solo print, mostra Ciao e Mondo su due righe.', 'Avec un seul print, affiche Bonjour et Monde sur deux lignes.'],
           h: ['Put \\n between the two words, inside the same quotes.', 'Metti \\n tra le due parole, dentro le stesse virgolette.', 'Mets \\n entre les deux mots, dans les mêmes guillemets.'],
-          sol: 'print("Hello\\nWorld")', out: 'Hello\nWorld', c: '\\\\n'
+          sol: ['print("Hello\\nWorld")', 'print("Ciao\\nMondo")', 'print("Bonjour\\nMonde")'],
+          out: ['Hello\nWorld', 'Ciao\nMondo', 'Bonjour\nMonde'], c: '\\\\n'
         },
         w: ['The backslash leans to the left: \\ . A slash / does nothing special.', 'La barra rovesciata pende a sinistra: \\ . Una barra / non fa niente di speciale.', 'La barre oblique inversée penche à gauche : \\ . Une barre / ne fait rien de spécial.']
       },
       {
-        c: c`print("She said \"hi\"")
-print("A backslash: \\")`,
+        c: [c`print("She said \"hi\"")
+print("A backslash: \\")`, c`print("Ha detto \"ciao\"")
+print("Una barra rovesciata: \\")`, c`print("Il a dit \"salut\"")
+print("Une barre oblique inversée : \\")`],
         t: ['A quote and a backslash inside a text', 'Una virgoletta e una barra dentro un testo', 'Un guillemet et une barre dans un texte'],
         x: [`The backslash can also protect a quote: \\" puts a quote in the text without ending the text.
 
@@ -388,17 +478,26 @@ E per mostrare una vera barra rovesciata ne scrivi due: \\\\.`,
 
 Et pour afficher une vraie barre oblique inversée, écris-en deux : \\\\.`],
         ex: {
-          t: ['Show: She said "ok" . Use double quotes around the text, and \\" for the quotes inside.', 'Mostra: She said "ok" . Usa le virgolette doppie attorno al testo e \\" per quelle dentro.', 'Affiche : She said "ok" . Utilise des guillemets doubles autour du texte, et \\" pour ceux de l\'intérieur.'],
+          t: ['Show: She said "ok" . Use double quotes around the text, and \\" for the quotes inside.', 'Mostra: Ha detto "ok" . Usa le virgolette doppie attorno al testo e \\" per quelle dentro.', 'Affiche : Il a dit "ok" . Utilise des guillemets doubles autour du texte, et \\" pour ceux de l\'intérieur.'],
           h: ['Write a backslash just before each quote that is inside the text.', 'Scrivi una barra rovesciata subito prima di ogni virgoletta che sta dentro il testo.', 'Écris une barre oblique inversée juste avant chaque guillemet qui est dans le texte.'],
-          sol: 'print("She said \\"ok\\"")', out: 'She said "ok"', c: '\\\\"'
+          sol: ['print("She said \\"ok\\"")', 'print("Ha detto \\"ok\\"")', 'print("Il a dit \\"ok\\"")'],
+          out: ['She said "ok"', 'Ha detto "ok"', 'Il a dit "ok"'], c: '\\\\"'
         }
       },
       {
-        c: c`poem = """Roses are red,
+        c: [c`poem = """Roses are red,
 Violets are blue,
 Python is fun,
 And so are you."""
-print(poem)`,
+print(poem)`, c`poem = """Le rose sono rosse,
+Le viole sono blu,
+Python è bello,
+E anche tu."""
+print(poem)`, c`poem = """Les roses sont rouges,
+Les violettes sont bleues,
+Python est génial,
+Et toi aussi."""
+print(poem)`],
         n: ['triple-quote'],
         t: ['A long text on many lines', 'Un testo lungo su più righe', 'Un long texte sur plusieurs lignes'],
         x: [`Three quotes in a row start a text that can go over many lines. Three quotes again end it.
@@ -413,7 +512,8 @@ Chaque nouvelle ligne que tu écris dedans est gardée dans le texte.`],
         ex: {
           t: ['Write a poem of your own, with three lines, between triple quotes, and show it.', 'Scrivi una poesia tua, di tre righe, tra tre virgolette, e mostrala.', 'Écris un poème à toi, de trois lignes, entre trois guillemets, et affiche-le.'],
           h: ['poem = """ then your three lines, then """ and print(poem).', 'poem = """ poi le tue tre righe, poi """ e print(poem).', 'poem = """ puis tes trois lignes, puis """ et print(poem).'],
-          sol: 'poem = """Roses are red,\nViolets are blue,\nI like Python"""\nprint(poem)', m: '^.+\\n.+\\n.+$', c: '"""'
+          sol: ['poem = """Roses are red,\nViolets are blue,\nI like Python"""\nprint(poem)', 'poem = """Le rose sono rosse,\nLe viole sono blu,\nMi piace Python"""\nprint(poem)', 'poem = """Les roses sont rouges,\nLes violettes sont bleues,\nJ\'aime Python"""\nprint(poem)'],
+          m: '^.+\\n.+\\n.+$', c: '"""'
         }
       },
       {
@@ -449,9 +549,11 @@ print(word[-2])`,
           `Come prendi l'ultima lettera se non sai quanto è lungo il testo? Conta dalla fine, con un meno: word[-1] è l'ultima lettera e word[-2] quella prima.`,
           `Comment prendre la dernière lettre si tu ne sais pas quelle est la longueur du texte ? Compte depuis la fin, avec un moins : word[-1] est la dernière lettre et word[-2] celle d'avant.`],
         ex: {
-          t: ['Show the last letter of the word "banana", using a minus place.', 'Mostra l\'ultima lettera della parola "banana", usando un posto con il meno.', 'Affiche la dernière lettre du mot "banana", en utilisant une place avec un moins.'],
+          t: ['Show the last letter of the word "banana", using a minus place.', 'Mostra l\'ultima lettera della parola "banana", usando un posto con il meno.', 'Affiche la dernière lettre du mot "banane", en utilisant une place avec un moins.'],
           h: ['word[-1]', 'word[-1]', 'word[-1]'],
-          start: 'word = "banana"', sol: 'word = "banana"\nprint(word[-1])', out: 'a', c: '\\[-1\\]'
+          start: ['word = "banana"', 'word = "banana"', 'word = "banane"'],
+          sol: ['word = "banana"\nprint(word[-1])', 'word = "banana"\nprint(word[-1])', 'word = "banane"\nprint(word[-1])'],
+          out: ['a', 'a', 'e'], c: '\\[-1\\]'
         }
       },
       {

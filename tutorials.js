@@ -23,9 +23,9 @@
       })(),
       steps: lesson.steps.map(function (step) {
         return {
-          title: say(step.title), text: say(step.text), code: step.code, see: say(step.see), turn: say(step.turn), slip: say(step.slip), error: step.error,
-          news: (step.news || []).map(function (n) { return {key: n.k, word: n.w, text: say(n.d), shape: n.s}; }),
-          task: step.ex ? {text: say(step.ex.task), hint: say(step.ex.hint), solution: step.ex.sol, start: step.ex.start, spec: step.ex.spec, answers: step.ex.answers, expected: step.ex.expected} : null
+          title: say(step.title), text: say(step.text), code: say(step.code), see: say(step.see), turn: say(step.turn), slip: say(step.slip), error: step.error,
+          news: (step.news || []).map(function (n) { return {key: n.k, word: n.w, text: say(n.d), shape: n.s ? say(n.s) : ''}; }),
+          task: step.ex ? {text: say(step.ex.task), hint: say(step.ex.hint), solution: say(step.ex.sol), start: say(step.ex.start), spec: step.ex.spec[LANG] || step.ex.spec.en, answers: (step.ex.answers || {})[LANG] || [], expected: step.ex.expected ? say(step.ex.expected) : ''} : null
         };
       })
     };

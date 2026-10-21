@@ -10,6 +10,9 @@ const root = path.resolve(__dirname, '..');
 const MAX_NEW = 3;
 const listing = process.argv.includes('--list');
 
+// [en, it, fr] -> the three; a single string -> the same three times
+function L3(value) { return Array.isArray(value) ? value : [value, value, value]; }
+
 async function main() {
   const {loadPyodide} = await import(path.join(root, 'pyodide', 'pyodide.mjs'));
   const py = await loadPyodide({indexURL: path.join(root, 'pyodide') + '/'});
@@ -26,7 +29,14 @@ async function main() {
       lesson.steps.forEach((step, index) => {
         steps++;
         const where = 'lesson ' + number + ' step ' + (index + 1) + ' "' + step.t[0] + '"';
-        let keys = find(step.c).toJs();
+        // the code of every language has the same shape: only the words inside the quotes are translated
+        const versions = L3(step.c);
+        let keys = find(versions[0]).toJs();
+        for (let li = 1; li < 3; li++) {
+          const other = find(versions[li]).toJs();
+          if (JSON.stringify(other) !== JSON.stringify(keys)) bad.push(where + ': the ' + ['it', 'fr'][li - 1] + ' code is not built like the English one (' + other.join(' ') + ' against ' + keys.join(' ') + ')');
+          if (versions[li].split('\n').length !== versions[0].split('\n').length) bad.push(where + ': the ' + ['it', 'fr'][li - 1] + ' code has another number of lines');
+        }
         // a step that breaks on purpose may use a word that does not exist (a typo): only known things count
         if (step.e) keys = keys.filter(k => glossary[k] || seen.has(k));
         const explained = new Set([].concat(...(step.n || []).map(item => typeof item === 'string' ? [item] : [].concat(item.k))));
@@ -42,7 +52,7 @@ async function main() {
         keys.forEach(k => seen.add(k));
         // the practice task may only use what has been taught, this step included
         if (step.ex) {
-          for (const [name, source] of [['solution', step.ex.sol], ['start', step.ex.start]]) {
+          for (const [name, source] of [['solution', step.ex.sol && L3(step.ex.sol)[0]], ['start', step.ex.start && L3(step.ex.start)[0]]]) {
             if (!source) continue;
             const used = find(source).toJs().filter(k => !seen.has(k) && !(step.e && !glossary[k]));
             if (used.length) bad.push(where + ': the ' + name + ' of the task uses ' + used.join(', ') + ', which is not taught yet');

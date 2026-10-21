@@ -138,14 +138,14 @@ module.exports = {
     d: ['input shows a question and waits for the person to type an answer and press Enter. The answer comes back as text, so you keep it in a box.',
       'input mostra una domanda e aspetta che la persona scriva una risposta e prema Invio. La risposta torna come testo, quindi la tieni in una scatola.',
       'input affiche une question et attend que la personne tape une réponse et appuie sur Entrée. La réponse revient sous forme de texte, donc tu la gardes dans une boîte.'],
-    s: 'name = input("Your name? ")'
+    s: ['name = input("Your name? ")', 'name = input("Come ti chiami? ")', 'name = input("Comment t\'appelles-tu ? ")']
   },
   'f-string': {
     w: 'f" "  { }',
     d: ['Put an f just before the opening quote and you make an f-string. Anything inside curly brackets { } is replaced by its value. It is the easy way to build a message.',
       'Metti una f subito prima della virgoletta di apertura e ottieni una f-string. Tutto quello che sta tra parentesi graffe { } viene sostituito dal suo valore. È il modo facile di costruire un messaggio.',
       'Mets un f juste avant le guillemet d\'ouverture et tu obtiens une f-string. Tout ce qui est entre accolades { } est remplacé par sa valeur. C\'est la façon facile de construire un message.'],
-    s: 'f"{name} is {age}"'
+    s: ['f"{name} is {age}"', 'f"{name} ha {age} anni"', 'f"{name} a {age} ans"']
   },
   'format-spec': {
     w: '{x:.2f}',

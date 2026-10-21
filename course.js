@@ -20,7 +20,11 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "print(\"Hello!\")",
+     "code": {
+      "en": "print(\"Hello!\")",
+      "it": "print(\"Ciao!\")",
+      "fr": "print(\"Bonjour!\")"
+     },
      "title": {
       "en": "Make the computer talk",
       "it": "Fai parlare il computer",
@@ -28,13 +32,13 @@ window.PyvielCourse = {
      },
      "text": {
       "en": "A program is a list of instructions. The computer reads them from the top to the bottom, one by one.\n\nThis program has one instruction. It makes the computer say \"Hello!\". Press Try it to see it work.",
-      "it": "Un programma è una lista di istruzioni. Il computer le legge dall'alto verso il basso, una alla volta.\n\nQuesto programma ha una sola istruzione. Fa dire al computer \"Hello!\". Premi Provalo per vederla in azione.",
-      "fr": "Un programme est une liste d'instructions. L'ordinateur les lit de haut en bas, une par une.\n\nCe programme n'a qu'une instruction. Elle fait dire \"Hello!\" à l'ordinateur. Appuie sur Essaie pour la voir marcher."
+      "it": "Un programma è una lista di istruzioni. Il computer le legge dall'alto verso il basso, una alla volta.\n\nQuesto programma ha una sola istruzione. Fa dire al computer \"Ciao!\". Premi Provalo per vederla in azione.",
+      "fr": "Un programme est une liste d'instructions. L'ordinateur les lit de haut en bas, une par une.\n\nCe programme n'a qu'une instruction. Elle fait dire \"Bonjour!\" à l'ordinateur. Appuie sur Essaie pour la voir marcher."
      },
      "see": {
       "en": "Hello!",
-      "it": "Hello!",
-      "fr": "Hello!"
+      "it": "Ciao!",
+      "fr": "Bonjour!"
      },
      "slip": {
       "en": "Spell print with small letters, and keep the brackets and the quotes. If you write prnt, Pyviel tells you which line is wrong.",
@@ -45,48 +49,82 @@ window.PyvielCourse = {
       {
        "k": "print",
        "w": "print( )",
-       "word": null,
        "d": {
         "en": "print is a helper that Python already knows (programmers call it a function). It shows something on the screen. Write its name, then round brackets, and put what you want to show inside them.",
         "it": "print è un aiutante che Python conosce già (i programmatori lo chiamano funzione). Mostra qualcosa sullo schermo. Scrivi il suo nome, poi le parentesi tonde, e dentro metti quello che vuoi mostrare.",
         "fr": "print est un assistant que Python connaît déjà (les programmeurs l'appellent une fonction). Il affiche quelque chose à l'écran. Écris son nom, puis des parenthèses rondes, et mets dedans ce que tu veux afficher."
        },
-       "s": "print(\"Hello!\")"
+       "s": {
+        "en": "print(\"Hello!\")",
+        "it": "print(\"Ciao!\")",
+        "fr": "print(\"Bonjour!\")"
+       }
       },
       {
        "k": "string",
        "w": "\" \"",
-       "word": null,
        "d": {
         "en": "Text goes between quotes. The quotes are not shown: they only tell Python where the text starts and where it ends. A piece of text is called a string.",
         "it": "Il testo va tra virgolette. Le virgolette non si vedono: dicono solo a Python dove il testo inizia e dove finisce. Un pezzo di testo si chiama stringa.",
         "fr": "Le texte va entre guillemets. Les guillemets ne s'affichent pas : ils disent seulement à Python où le texte commence et où il finit. Un morceau de texte s'appelle une chaîne."
        },
-       "s": "\"Hello!\""
+       "s": {
+        "en": "\"Hello!\"",
+        "it": "\"Ciao!\"",
+        "fr": "\"Bonjour!\""
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Change the words between the quotes, so that the computer says: Good morning",
-       "it": "Cambia le parole tra le virgolette, così il computer dice: Good morning",
-       "fr": "Change les mots entre les guillemets, pour que l'ordinateur dise : Good morning"
+       "it": "Cambia le parole tra le virgolette, così il computer dice: Buongiorno",
+       "fr": "Change les mots entre les guillemets, pour que l'ordinateur dise : Bonne journée"
       },
       "hint": {
        "en": "Change only the words inside the quotes. Keep the round brackets and both quotes.",
        "it": "Cambia solo le parole dentro le virgolette. Tieni le parentesi tonde e tutte e due le virgolette.",
        "fr": "Change seulement les mots à l'intérieur des guillemets. Garde les parenthèses rondes et les deux guillemets."
       },
-      "sol": "print(\"Good morning\")",
-      "start": "print(\"Hello!\")",
-      "spec": {
-       "out": "Good morning"
+      "sol": {
+       "en": "print(\"Good morning\")",
+       "it": "print(\"Buongiorno\")",
+       "fr": "print(\"Bonne journée\")"
       },
-      "answers": [],
-      "expected": "Good morning"
+      "start": {
+       "en": "print(\"Hello!\")",
+       "it": "print(\"Ciao!\")",
+       "fr": "print(\"Bonjour!\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Good morning"
+       },
+       "it": {
+        "out": "Buongiorno"
+       },
+       "fr": {
+        "out": "Bonne journée"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Good morning",
+       "it": "Buongiorno",
+       "fr": "Bonne journée"
+      }
      }
     },
     {
-     "code": "print(\"Hello!\")\nprint(\"My name is Pyviel.\")\nprint(\"Nice to meet you.\")",
+     "code": {
+      "en": "print(\"Hello!\")\nprint(\"My name is Pyviel.\")\nprint(\"Nice to meet you.\")",
+      "it": "print(\"Ciao!\")\nprint(\"Mi chiamo Pyviel.\")\nprint(\"Piacere di conoscerti.\")",
+      "fr": "print(\"Bonjour!\")\nprint(\"Je m'appelle Pyviel.\")\nprint(\"Ravi de te rencontrer.\")"
+     },
      "title": {
       "en": "Say more than one thing",
       "it": "Di' più di una cosa",
@@ -99,8 +137,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "Hello!\nMy name is Pyviel.\nNice to meet you.",
-      "it": "Hello!\nMy name is Pyviel.\nNice to meet you.",
-      "fr": "Hello!\nMy name is Pyviel.\nNice to meet you."
+      "it": "Ciao!\nMi chiamo Pyviel.\nPiacere di conoscerti.",
+      "fr": "Bonjour!\nJe m'appelle Pyviel.\nRavi de te rencontrer."
      },
      "slip": {
       "en": "Every opening bracket and every opening quote needs its closing one.",
@@ -118,16 +156,40 @@ window.PyvielCourse = {
        "it": "Copia una riga print e cambia le parole. Ogni print va su una riga a parte.",
        "fr": "Copie une ligne print et change les mots. Chaque print va sur sa propre ligne."
       },
-      "sol": "print(\"Hello!\")\nprint(\"My name is Pyviel.\")\nprint(\"Nice to meet you.\")\nprint(\"I am Ada.\")",
-      "start": "print(\"Hello!\")\nprint(\"My name is Pyviel.\")\nprint(\"Nice to meet you.\")",
-      "spec": {
-       "m": "^(?:.*\\n){3}.+$"
+      "sol": {
+       "en": "print(\"Hello!\")\nprint(\"My name is Pyviel.\")\nprint(\"Nice to meet you.\")\nprint(\"I am Ada.\")",
+       "it": "print(\"Ciao!\")\nprint(\"Mi chiamo Pyviel.\")\nprint(\"Piacere di conoscerti.\")\nprint(\"Sono Ada.\")",
+       "fr": "print(\"Bonjour!\")\nprint(\"Je m'appelle Pyviel.\")\nprint(\"Ravi de te rencontrer.\")\nprint(\"Je suis Ada.\")"
       },
-      "answers": []
+      "start": {
+       "en": "print(\"Hello!\")\nprint(\"My name is Pyviel.\")\nprint(\"Nice to meet you.\")",
+       "it": "print(\"Ciao!\")\nprint(\"Mi chiamo Pyviel.\")\nprint(\"Piacere di conoscerti.\")",
+       "fr": "print(\"Bonjour!\")\nprint(\"Je m'appelle Pyviel.\")\nprint(\"Ravi de te rencontrer.\")"
+      },
+      "spec": {
+       "en": {
+        "m": "^(?:.*\\n){3}.+$"
+       },
+       "it": {
+        "m": "^(?:.*\\n){3}.+$"
+       },
+       "fr": {
+        "m": "^(?:.*\\n){3}.+$"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
      }
     },
     {
-     "code": "print(\"The answer is\")\nprint(7)\nprint(2 + 3)",
+     "code": {
+      "en": "print(\"The answer is\")\nprint(7)\nprint(2 + 3)",
+      "it": "print(\"La risposta è\")\nprint(7)\nprint(2 + 3)",
+      "fr": "print(\"La réponse est\")\nprint(7)\nprint(2 + 3)"
+     },
      "title": {
       "en": "Numbers need no quotes",
       "it": "I numeri non vogliono virgolette",
@@ -140,8 +202,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "The answer is\n7\n5",
-      "it": "The answer is\n7\n5",
-      "fr": "The answer is\n7\n5"
+      "it": "La risposta è\n7\n5",
+      "fr": "La réponse est\n7\n5"
      },
      "slip": {
       "en": "\"2 + 3\" with quotes is only text, and Python shows it exactly as it is.",
@@ -152,24 +214,30 @@ window.PyvielCourse = {
       {
        "k": "number",
        "w": "7",
-       "word": null,
        "d": {
         "en": "A number is written plain, with no quotes. Python can do sums with numbers, and it shows them as they are.",
         "it": "Un numero si scrive semplice, senza virgolette. Python può fare i conti con i numeri e li mostra così come sono.",
         "fr": "Un nombre s'écrit simplement, sans guillemets. Python peut faire des calculs avec les nombres et les affiche tels quels."
        },
-       "s": "print(7)"
+       "s": {
+        "en": "print(7)",
+        "it": "print(7)",
+        "fr": "print(7)"
+       }
       },
       {
        "k": "+",
        "w": "+",
-       "word": null,
        "d": {
         "en": "Between two numbers, + adds them. Python does the sum and shows the result.",
         "it": "Tra due numeri, + li somma. Python fa il conto e mostra il risultato.",
         "fr": "Entre deux nombres, + les additionne. Python fait le calcul et affiche le résultat."
        },
-       "s": "print(2 + 3)"
+       "s": {
+        "en": "print(2 + 3)",
+        "it": "print(2 + 3)",
+        "fr": "print(2 + 3)"
+       }
       }
      ],
      "ex": {
@@ -183,17 +251,45 @@ window.PyvielCourse = {
        "it": "Scrivi print, le parentesi e il conto dentro. Niente virgolette.",
        "fr": "Écris print, les parenthèses et le calcul dedans. Pas de guillemets."
       },
-      "sol": "print(20 + 22)",
-      "start": "",
-      "spec": {
-       "out": "42"
+      "sol": {
+       "en": "print(20 + 22)",
+       "it": "print(20 + 22)",
+       "fr": "print(20 + 22)"
       },
-      "answers": [],
-      "expected": "42"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "42"
+       },
+       "it": {
+        "out": "42"
+       },
+       "fr": {
+        "out": "42"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "42",
+       "it": "42",
+       "fr": "42"
+      }
      }
     },
     {
-     "code": "# This line is only a note\nprint(\"The note above is invisible.\")  # a note can go here too",
+     "code": {
+      "en": "# This line is only a note\nprint(\"The note above is invisible.\")  # a note can go here too",
+      "it": "# Questa riga è solo una nota\nprint(\"La nota qui sopra è invisibile.\")  # una nota può stare anche qui",
+      "fr": "# Cette ligne est seulement une note\nprint(\"La note au-dessus est invisible.\")  # une note peut aussi aller ici"
+     },
      "title": {
       "en": "Notes for people",
       "it": "Note per le persone",
@@ -206,46 +302,79 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "The note above is invisible.",
-      "it": "The note above is invisible.",
-      "fr": "The note above is invisible."
+      "it": "La nota qui sopra è invisibile.",
+      "fr": "La note au-dessus est invisible."
      },
      "slip": null,
      "news": [
       {
        "k": "comment",
        "w": "#",
-       "word": null,
        "d": {
         "en": "A line that starts with # is a note for people. Python skips it. A note can also go at the end of a line.",
         "it": "Una riga che inizia con # è una nota per le persone. Python la salta. Una nota può stare anche alla fine di una riga.",
         "fr": "Une ligne qui commence par # est une note pour les humains. Python la saute. Une note peut aussi se mettre à la fin d'une ligne."
        },
-       "s": "# this is a note"
+       "s": {
+        "en": "# this is a note",
+        "it": "# questa è una nota",
+        "fr": "# ceci est une note"
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Write your own note, starting with #, above the print line. The program must still say Hi.",
-       "it": "Scrivi una tua nota, che inizia con #, sopra la riga print. Il programma deve dire ancora Hi.",
-       "fr": "Écris ta propre note, qui commence par #, au-dessus de la ligne print. Le programme doit toujours dire Hi."
+       "it": "Scrivi una tua nota, che inizia con #, sopra la riga print. Il programma deve dire ancora Salve.",
+       "fr": "Écris ta propre note, qui commence par #, au-dessus de la ligne print. Le programme doit toujours dire Salut."
       },
       "hint": {
        "en": "A # and then any words, on a line of its own, before the print.",
        "it": "Un # e poi parole a piacere, su una riga a parte, prima di print.",
        "fr": "Un # puis des mots au choix, sur une ligne à part, avant print."
       },
-      "sol": "# I say hi\nprint(\"Hi\")",
-      "start": "print(\"Hi\")",
-      "spec": {
-       "out": "Hi",
-       "c": "#"
+      "sol": {
+       "en": "# I say hi\nprint(\"Hi\")",
+       "it": "# Dico salve\nprint(\"Salve\")",
+       "fr": "# Je dis salut\nprint(\"Salut\")"
       },
-      "answers": [],
-      "expected": "Hi"
+      "start": {
+       "en": "print(\"Hi\")",
+       "it": "print(\"Salve\")",
+       "fr": "print(\"Salut\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Hi",
+        "c": "#"
+       },
+       "it": {
+        "out": "Salve",
+        "c": "#"
+       },
+       "fr": {
+        "out": "Salut",
+        "c": "#"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Hi",
+       "it": "Salve",
+       "fr": "Salut"
+      }
      }
     },
     {
-     "code": "print(\"Before\")\nprnt(\"Hello\")\nprint(\"After\")",
+     "code": {
+      "en": "print(\"Before\")\nprnt(\"Hello\")\nprint(\"After\")",
+      "it": "print(\"Prima\")\nprnt(\"Ciao\")\nprint(\"Dopo\")",
+      "fr": "print(\"Avant\")\nprnt(\"Bonjour\")\nprint(\"Après\")"
+     },
      "title": {
       "en": "When something breaks",
       "it": "Quando qualcosa si rompe",
@@ -258,8 +387,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "Before\n⚠ Line 2: prnt does not exist yet.",
-      "it": "Before\n⚠ Riga 2: prnt non esiste ancora.",
-      "fr": "Before\n⚠ Ligne 2: prnt n'existe pas encore."
+      "it": "Prima\n⚠ Riga 2: prnt non esiste ancora.",
+      "fr": "Avant\n⚠ Ligne 2: prnt n'existe pas encore."
      },
      "slip": {
       "en": "Python stops at the first mistake. The lines after it do not run until you fix it.",
@@ -278,13 +407,37 @@ window.PyvielCourse = {
        "it": "La parola alla riga 2 deve essere print.",
        "fr": "Le mot de la ligne 2 doit être print."
       },
-      "sol": "print(\"Before\")\nprint(\"Hello\")\nprint(\"After\")",
-      "start": "print(\"Before\")\nprnt(\"Hello\")\nprint(\"After\")",
-      "spec": {
-       "out": "Before\nHello\nAfter\n"
+      "sol": {
+       "en": "print(\"Before\")\nprint(\"Hello\")\nprint(\"After\")",
+       "it": "print(\"Prima\")\nprint(\"Ciao\")\nprint(\"Dopo\")",
+       "fr": "print(\"Avant\")\nprint(\"Bonjour\")\nprint(\"Après\")"
       },
-      "answers": [],
-      "expected": "Before\nHello\nAfter"
+      "start": {
+       "en": "print(\"Before\")\nprnt(\"Hello\")\nprint(\"After\")",
+       "it": "print(\"Prima\")\nprnt(\"Ciao\")\nprint(\"Dopo\")",
+       "fr": "print(\"Avant\")\nprnt(\"Bonjour\")\nprint(\"Après\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Before\nHello\nAfter\n"
+       },
+       "it": {
+        "out": "Prima\nCiao\nDopo\n"
+       },
+       "fr": {
+        "out": "Avant\nBonjour\nAprès\n"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Before\nHello\nAfter",
+       "it": "Prima\nCiao\nDopo",
+       "fr": "Avant\nBonjour\nAprès"
+      }
      }
     }
    ]
@@ -303,7 +456,11 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "name = \"Ada\"\nprint(name)\nprint(name)",
+     "code": {
+      "en": "name = \"Ada\"\nprint(name)\nprint(name)",
+      "it": "name = \"Ada\"\nprint(name)\nprint(name)",
+      "fr": "name = \"Ada\"\nprint(name)\nprint(name)"
+     },
      "title": {
       "en": "A box with a name",
       "it": "Una scatola con un nome",
@@ -328,37 +485,71 @@ window.PyvielCourse = {
       {
        "k": "=",
        "w": "=",
-       "word": null,
        "d": {
         "en": "= puts a value into a box that has a name. The name goes on the left and the value on the right. A name that holds a value is called a variable.",
         "it": "= mette un valore in una scatola che ha un nome. Il nome va a sinistra e il valore a destra. Un nome che contiene un valore si chiama variabile.",
         "fr": "= met une valeur dans une boîte qui a un nom. Le nom va à gauche et la valeur à droite. Un nom qui contient une valeur s'appelle une variable."
        },
-       "s": "name = \"Ada\""
+       "s": {
+        "en": "name = \"Ada\"",
+        "it": "name = \"Ada\"",
+        "fr": "name = \"Ada\""
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Put the word Moon in the box, so the program shows Moon two times.",
-       "it": "Metti la parola Moon nella scatola, così il programma mostra Moon due volte.",
-       "fr": "Mets le mot Moon dans la boîte, pour que le programme affiche Moon deux fois."
+       "it": "Metti la parola Luna nella scatola, così il programma mostra Luna due volte.",
+       "fr": "Mets le mot Lune dans la boîte, pour que le programme affiche Lune deux fois."
       },
       "hint": {
        "en": "Change only the word between the quotes on the first line.",
        "it": "Cambia solo la parola tra le virgolette sulla prima riga.",
        "fr": "Change seulement le mot entre les guillemets sur la première ligne."
       },
-      "sol": "name = \"Moon\"\nprint(name)\nprint(name)",
-      "start": "name = \"Ada\"\nprint(name)\nprint(name)",
-      "spec": {
-       "out": "Moon\nMoon"
+      "sol": {
+       "en": "name = \"Moon\"\nprint(name)\nprint(name)",
+       "it": "name = \"Luna\"\nprint(name)\nprint(name)",
+       "fr": "name = \"Lune\"\nprint(name)\nprint(name)"
       },
-      "answers": [],
-      "expected": "Moon\nMoon"
+      "start": {
+       "en": "name = \"Ada\"\nprint(name)\nprint(name)",
+       "it": "name = \"Ada\"\nprint(name)\nprint(name)",
+       "fr": "name = \"Ada\"\nprint(name)\nprint(name)"
+      },
+      "spec": {
+       "en": {
+        "out": "Moon\nMoon\n",
+        "c": "Moon"
+       },
+       "it": {
+        "out": "Luna\nLuna\n",
+        "c": "Luna"
+       },
+       "fr": {
+        "out": "Lune\nLune\n",
+        "c": "Lune"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Moon\nMoon",
+       "it": "Luna\nLuna",
+       "fr": "Lune\nLune"
+      }
      }
     },
     {
-     "code": "age = 7\nprint(age)\nage = 8\nprint(age)\nage = age + 1\nprint(age)",
+     "code": {
+      "en": "age = 7\nprint(age)\nage = 8\nprint(age)\nage = age + 1\nprint(age)",
+      "it": "age = 7\nprint(age)\nage = 8\nprint(age)\nage = age + 1\nprint(age)",
+      "fr": "age = 7\nprint(age)\nage = 8\nprint(age)\nage = age + 1\nprint(age)"
+     },
      "title": {
       "en": "Change what is inside",
       "it": "Cambia quello che c'è dentro",
@@ -386,17 +577,45 @@ window.PyvielCourse = {
        "it": "Metti la riga age = age + 5 tra le altre due righe.",
        "fr": "Mets la ligne age = age + 5 entre les deux autres lignes."
       },
-      "sol": "age = 10\nage = age + 5\nprint(age)",
-      "start": "age = 10\nprint(age)",
-      "spec": {
-       "out": "15"
+      "sol": {
+       "en": "age = 10\nage = age + 5\nprint(age)",
+       "it": "age = 10\nage = age + 5\nprint(age)",
+       "fr": "age = 10\nage = age + 5\nprint(age)"
       },
-      "answers": [],
-      "expected": "15"
+      "start": {
+       "en": "age = 10\nprint(age)",
+       "it": "age = 10\nprint(age)",
+       "fr": "age = 10\nprint(age)"
+      },
+      "spec": {
+       "en": {
+        "out": "15"
+       },
+       "it": {
+        "out": "15"
+       },
+       "fr": {
+        "out": "15"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "15",
+       "it": "15",
+       "fr": "15"
+      }
      }
     },
     {
-     "code": "my_age = 12\nplayer_name = \"Ada\"\nscore2 = 100\nprint(player_name)\nprint(my_age)\nprint(score2)",
+     "code": {
+      "en": "my_age = 12\nplayer_name = \"Ada\"\nscore2 = 100\nprint(player_name)\nprint(my_age)\nprint(score2)",
+      "it": "my_age = 12\nplayer_name = \"Ada\"\nscore2 = 100\nprint(player_name)\nprint(my_age)\nprint(score2)",
+      "fr": "my_age = 12\nplayer_name = \"Ada\"\nscore2 = 100\nprint(player_name)\nprint(my_age)\nprint(score2)"
+     },
      "title": {
       "en": "Good names",
       "it": "Nomi buoni",
@@ -420,26 +639,56 @@ window.PyvielCourse = {
      "ex": {
       "task": {
        "en": "Make a box called favourite_colour that holds the text blue, and show it.",
-       "it": "Fai una scatola che si chiama favourite_colour con dentro il testo blue e mostrala.",
-       "fr": "Fais une boîte qui s'appelle favourite_colour et qui contient le texte blue, et affiche-la."
+       "it": "Fai una scatola che si chiama favourite_colour con dentro il testo blu e mostrala.",
+       "fr": "Fais une boîte qui s'appelle favourite_colour et qui contient le texte bleu, et affiche-la."
       },
       "hint": {
        "en": "favourite_colour = \"blue\", and then print(favourite_colour).",
-       "it": "favourite_colour = \"blue\", e poi print(favourite_colour).",
-       "fr": "favourite_colour = \"blue\", puis print(favourite_colour)."
+       "it": "favourite_colour = \"blu\", e poi print(favourite_colour).",
+       "fr": "favourite_colour = \"bleu\", puis print(favourite_colour)."
       },
-      "sol": "favourite_colour = \"blue\"\nprint(favourite_colour)",
-      "start": "",
+      "sol": {
+       "en": "favourite_colour = \"blue\"\nprint(favourite_colour)",
+       "it": "favourite_colour = \"blu\"\nprint(favourite_colour)",
+       "fr": "favourite_colour = \"bleu\"\nprint(favourite_colour)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
       "spec": {
-       "out": "blue",
-       "c": "favourite_colour"
+       "en": {
+        "out": "blue",
+        "c": "favourite_colour"
+       },
+       "it": {
+        "out": "blu",
+        "c": "favourite_colour"
+       },
+       "fr": {
+        "out": "bleu",
+        "c": "favourite_colour"
+       }
       },
-      "answers": [],
-      "expected": "blue"
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "blue",
+       "it": "blu",
+       "fr": "bleu"
+      }
      }
     },
     {
-     "code": "name = \"Ada\"\nage = 12\nprint(name, \"is\", age, \"years old\")\nprint(\"Hello\", name)",
+     "code": {
+      "en": "name = \"Ada\"\nage = 12\nprint(name, \"is\", age, \"years old\")\nprint(\"Hello\", name)",
+      "it": "name = \"Ada\"\nage = 12\nprint(name, \"ha\", age, \"anni\")\nprint(\"Ciao\", name)",
+      "fr": "name = \"Ada\"\nage = 12\nprint(name, \"a\", age, \"ans\")\nprint(\"Bonjour\", name)"
+     },
      "title": {
       "en": "Show several things at once",
       "it": "Mostra più cose insieme",
@@ -452,45 +701,76 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "Ada is 12 years old\nHello Ada",
-      "it": "Ada is 12 years old\nHello Ada",
-      "fr": "Ada is 12 years old\nHello Ada"
+      "it": "Ada ha 12 anni\nCiao Ada",
+      "fr": "Ada a 12 ans\nBonjour Ada"
      },
      "slip": null,
      "news": [
       {
        "k": "many-args",
        "w": "a, b",
-       "word": null,
        "d": {
         "en": "Between the brackets you can put many things, with a comma between them. print shows them in one line, with a space between each.",
         "it": "Tra le parentesi puoi mettere molte cose, con una virgola tra l'una e l'altra. print le mostra in una riga, con uno spazio in mezzo.",
         "fr": "Entre les parenthèses tu peux mettre plusieurs choses, avec une virgule entre elles. print les affiche sur une ligne, avec une espace entre chaque."
        },
-       "s": "print(\"I am\", 12)"
+       "s": {
+        "en": "print(\"I am\", 12)",
+        "it": "print(\"Ho\", 12)",
+        "fr": "print(\"J'ai\", 12)"
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Use print with commas to show this line: Ada is 12 years old. Use the boxes name and age.",
-       "it": "Usa print con le virgole per mostrare questa riga: Ada is 12 years old. Usa le scatole name e age.",
-       "fr": "Utilise print avec des virgules pour afficher cette ligne : Ada is 12 years old. Utilise les boîtes name et age."
+       "it": "Usa print con le virgole per mostrare questa riga: Ada ha 12 anni. Usa le scatole name e age.",
+       "fr": "Utilise print avec des virgules pour afficher cette ligne : Ada a 12 ans. Utilise les boîtes name et age."
       },
       "hint": {
        "en": "print(name, \"is\", age, ...) and the last piece is the text \"years old\".",
-       "it": "print(name, \"is\", age, ...) e l'ultimo pezzo è il testo \"years old\".",
-       "fr": "print(name, \"is\", age, ...) et le dernier morceau est le texte \"years old\"."
+       "it": "print(name, \"ha\", age, ...) e l'ultimo pezzo è il testo \"anni\".",
+       "fr": "print(name, \"a\", age, ...) et le dernier morceau est le texte \"ans\"."
       },
-      "sol": "name = \"Ada\"\nage = 12\nprint(name, \"is\", age, \"years old\")",
-      "start": "name = \"Ada\"\nage = 12",
+      "sol": {
+       "en": "name = \"Ada\"\nage = 12\nprint(name, \"is\", age, \"years old\")",
+       "it": "name = \"Ada\"\nage = 12\nprint(name, \"ha\", age, \"anni\")",
+       "fr": "name = \"Ada\"\nage = 12\nprint(name, \"a\", age, \"ans\")"
+      },
+      "start": {
+       "en": "name = \"Ada\"\nage = 12",
+       "it": "name = \"Ada\"\nage = 12",
+       "fr": "name = \"Ada\"\nage = 12"
+      },
       "spec": {
-       "out": "Ada is 12 years old"
+       "en": {
+        "out": "Ada is 12 years old"
+       },
+       "it": {
+        "out": "Ada ha 12 anni"
+       },
+       "fr": {
+        "out": "Ada a 12 ans"
+       }
       },
-      "answers": [],
-      "expected": "Ada is 12 years old"
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Ada is 12 years old",
+       "it": "Ada ha 12 anni",
+       "fr": "Ada a 12 ans"
+      }
      }
     },
     {
-     "code": "print(\"a\", \"b\", \"c\", sep=\"-\")\nprint(\"Loading\", end=\"...\")\nprint(\"done\")",
+     "code": {
+      "en": "print(\"a\", \"b\", \"c\", sep=\"-\")\nprint(\"Loading\", end=\"...\")\nprint(\"done\")",
+      "it": "print(\"a\", \"b\", \"c\", sep=\"-\")\nprint(\"Caricamento\", end=\"...\")\nprint(\"fatto\")",
+      "fr": "print(\"a\", \"b\", \"c\", sep=\"-\")\nprint(\"Chargement\", end=\"...\")\nprint(\"terminé\")"
+     },
      "title": {
       "en": "Choose what goes between",
       "it": "Scegli cosa mettere in mezzo",
@@ -503,8 +783,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "a-b-c\nLoading...done",
-      "it": "a-b-c\nLoading...done",
-      "fr": "a-b-c\nLoading...done"
+      "it": "a-b-c\nCaricamento...fatto",
+      "fr": "a-b-c\nChargement...terminé"
      },
      "slip": {
       "en": "sep and end go after the things to show, and the text after the = needs quotes.",
@@ -515,44 +795,74 @@ window.PyvielCourse = {
       {
        "k": "arg:sep",
        "w": "sep=",
-       "word": null,
        "d": {
         "en": "sep says what goes between the things that print shows. Normally it is a space; you can choose another text.",
         "it": "sep dice cosa mettere tra le cose che print mostra. Di solito è uno spazio; puoi scegliere un altro testo.",
         "fr": "sep dit ce qu'il faut mettre entre les choses que print affiche. D'habitude c'est une espace ; tu peux choisir un autre texte."
        },
-       "s": "print(\"a\", \"b\", sep=\"-\")"
+       "s": {
+        "en": "print(\"a\", \"b\", sep=\"-\")",
+        "it": "print(\"a\", \"b\", sep=\"-\")",
+        "fr": "print(\"a\", \"b\", sep=\"-\")"
+       }
       },
       {
        "k": "arg:end",
        "w": "end=",
-       "word": null,
        "d": {
         "en": "end says what goes after everything that print shows. Normally it is a new line; you can choose another text, even an empty one.",
         "it": "end dice cosa mettere dopo tutto quello che print mostra. Di solito è una riga nuova; puoi scegliere un altro testo, anche vuoto.",
         "fr": "end dit ce qu'il faut mettre après tout ce que print affiche. D'habitude c'est un retour à la ligne ; tu peux choisir un autre texte, même vide."
        },
-       "s": "print(\"Loading\", end=\"...\")"
+       "s": {
+        "en": "print(\"Loading\", end=\"...\")",
+        "it": "print(\"Caricamento\", end=\"...\")",
+        "fr": "print(\"Chargement\", end=\"...\")"
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Show red, green and blue in one line, with a + sign between them: red+green+blue",
-       "it": "Mostra red, green e blue in una riga, con un segno + in mezzo: red+green+blue",
-       "fr": "Affiche red, green et blue sur une ligne, avec un signe + entre eux : red+green+blue"
+       "it": "Mostra rosso, verde e blu in una riga, con un segno + in mezzo: rosso+verde+blu",
+       "fr": "Affiche rouge, vert et bleu sur une ligne, avec un signe + entre eux : rouge+vert+bleu"
       },
       "hint": {
        "en": "Give print the three words with commas, then sep=\"+\" at the end.",
        "it": "Dai a print le tre parole con le virgole, poi sep=\"+\" alla fine.",
        "fr": "Donne à print les trois mots avec des virgules, puis sep=\"+\" à la fin."
       },
-      "sol": "print(\"red\", \"green\", \"blue\", sep=\"+\")",
-      "start": "",
-      "spec": {
-       "out": "red+green+blue"
+      "sol": {
+       "en": "print(\"red\", \"green\", \"blue\", sep=\"+\")",
+       "it": "print(\"rosso\", \"verde\", \"blu\", sep=\"+\")",
+       "fr": "print(\"rouge\", \"vert\", \"bleu\", sep=\"+\")"
       },
-      "answers": [],
-      "expected": "red+green+blue"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "red+green+blue"
+       },
+       "it": {
+        "out": "rosso+verde+blu"
+       },
+       "fr": {
+        "out": "rouge+vert+bleu"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "red+green+blue",
+       "it": "rosso+verde+blu",
+       "fr": "rouge+vert+bleu"
+      }
      }
     }
    ]
@@ -571,7 +881,11 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "print(\"Double quotes\")\nprint('Single quotes')",
+     "code": {
+      "en": "print(\"Double quotes\")\nprint('Single quotes')",
+      "it": "print(\"Virgolette doppie\")\nprint('Virgolette singole')",
+      "fr": "print(\"Guillemets doubles\")\nprint('Guillemets simples')"
+     },
      "title": {
       "en": "Two kinds of quotes",
       "it": "Due tipi di virgolette",
@@ -584,37 +898,67 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "Double quotes\nSingle quotes",
-      "it": "Double quotes\nSingle quotes",
-      "fr": "Double quotes\nSingle quotes"
+      "it": "Virgolette doppie\nVirgolette singole",
+      "fr": "Guillemets doubles\nGuillemets simples"
      },
      "slip": {
       "en": "\"hello' mixes two kinds and Python cannot read it.",
-      "it": "\"hello' mescola due tipi e Python non riesce a leggerlo.",
-      "fr": "\"hello' mélange deux sortes et Python ne peut pas le lire."
+      "it": "\"ciao' mescola due tipi e Python non riesce a leggerlo.",
+      "fr": "\"salut' mélange deux sortes et Python ne peut pas le lire."
      },
      "ex": {
       "task": {
        "en": "Show the word hello, written with single quotes.",
-       "it": "Mostra la parola hello, scritta con le virgolette singole.",
-       "fr": "Affiche le mot hello, écrit avec des guillemets simples."
+       "it": "Mostra la parola ciao, scritta con le virgolette singole.",
+       "fr": "Affiche le mot salut, écrit avec des guillemets simples."
       },
       "hint": {
        "en": "print('hello') : a single quote before and after the word.",
-       "it": "print('hello') : una virgoletta singola prima e dopo la parola.",
-       "fr": "print('hello') : un guillemet simple avant et après le mot."
+       "it": "print('ciao') : una virgoletta singola prima e dopo la parola.",
+       "fr": "print('salut') : un guillemet simple avant et après le mot."
       },
-      "sol": "print('hello')",
-      "start": "",
+      "sol": {
+       "en": "print('hello')",
+       "it": "print('ciao')",
+       "fr": "print('salut')"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
       "spec": {
-       "out": "hello",
-       "c": "print\\('hello'\\)"
+       "en": {
+        "out": "hello",
+        "c": "print\\('hello'\\)"
+       },
+       "it": {
+        "out": "ciao",
+        "c": "print\\('ciao'\\)"
+       },
+       "fr": {
+        "out": "salut",
+        "c": "print\\('salut'\\)"
+       }
       },
-      "answers": [],
-      "expected": "hello"
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "hello",
+       "it": "ciao",
+       "fr": "salut"
+      }
      }
     },
     {
-     "code": "print(\"It's a nice day\")\nprint('She said \"hello\" to me')",
+     "code": {
+      "en": "print(\"It's a nice day\")\nprint('She said \"hello\" to me')",
+      "it": "print(\"L'albero è alto\")\nprint('Ha detto \"ciao\" a tutti')",
+      "fr": "print(\"C'est une belle journée\")\nprint('Il a dit \"salut\" à tout le monde')"
+     },
      "title": {
       "en": "A quote inside a text",
       "it": "Una virgoletta dentro un testo",
@@ -622,37 +966,65 @@ window.PyvielCourse = {
      },
      "text": {
       "en": "What if the text itself has a quote inside? Use the other kind around it.\n\n\"It's a nice day\" has a single quote inside, so the quotes around it are double.",
-      "it": "E se il testo ha dentro una virgoletta? Usa l'altro tipo per racchiuderlo.\n\n\"It's a nice day\" ha dentro una virgoletta singola, quindi quelle intorno sono doppie.",
-      "fr": "Et si le texte a lui-même un guillemet dedans ? Utilise l'autre sorte tout autour.\n\n\"It's a nice day\" a un guillemet simple dedans, donc ceux autour sont doubles."
+      "it": "E se il testo ha dentro una virgoletta? Usa l'altro tipo per racchiuderlo.\n\n\"L'albero è alto\" ha dentro una virgoletta singola (l'apostrofo), quindi quelle intorno sono doppie.",
+      "fr": "Et si le texte a lui-même un guillemet dedans ? Utilise l'autre sorte tout autour.\n\n\"C'est une belle journée\" a un guillemet simple dedans (l'apostrophe), donc ceux autour sont doubles."
      },
      "see": {
       "en": "It's a nice day\nShe said \"hello\" to me",
-      "it": "It's a nice day\nShe said \"hello\" to me",
-      "fr": "It's a nice day\nShe said \"hello\" to me"
+      "it": "L'albero è alto\nHa detto \"ciao\" a tutti",
+      "fr": "C'est une belle journée\nIl a dit \"salut\" à tout le monde"
      },
      "slip": null,
      "ex": {
       "task": {
        "en": "Show this text, with its double quotes: He said \"wow\"",
-       "it": "Mostra questo testo, con le sue virgolette doppie: He said \"wow\"",
-       "fr": "Affiche ce texte, avec ses guillemets doubles : He said \"wow\""
+       "it": "Mostra questo testo, con le sue virgolette doppie: Ha detto \"wow\"",
+       "fr": "Affiche ce texte, avec ses guillemets doubles : Il a dit \"wow\""
       },
       "hint": {
        "en": "Put single quotes around the whole text, and double quotes inside it.",
        "it": "Metti le virgolette singole attorno a tutto il testo e quelle doppie dentro.",
        "fr": "Mets des guillemets simples autour de tout le texte, et des doubles à l'intérieur."
       },
-      "sol": "print('He said \"wow\"')",
-      "start": "",
-      "spec": {
-       "out": "He said \"wow\""
+      "sol": {
+       "en": "print('He said \"wow\"')",
+       "it": "print('Ha detto \"wow\"')",
+       "fr": "print('Il a dit \"wow\"')"
       },
-      "answers": [],
-      "expected": "He said \"wow\""
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "He said \"wow\""
+       },
+       "it": {
+        "out": "Ha detto \"wow\""
+       },
+       "fr": {
+        "out": "Il a dit \"wow\""
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "He said \"wow\"",
+       "it": "Ha detto \"wow\"",
+       "fr": "Il a dit \"wow\""
+      }
      }
     },
     {
-     "code": "first = \"Py\"\nsecond = \"viel\"\nprint(first + second)\nprint(\"Hello, \" + \"Ada\")",
+     "code": {
+      "en": "first = \"Py\"\nsecond = \"viel\"\nprint(first + second)\nprint(\"Hello, \" + \"Ada\")",
+      "it": "first = \"Py\"\nsecond = \"viel\"\nprint(first + second)\nprint(\"Ciao, \" + \"Ada\")",
+      "fr": "first = \"Py\"\nsecond = \"viel\"\nprint(first + second)\nprint(\"Bonjour, \" + \"Ada\")"
+     },
      "title": {
       "en": "Join texts",
       "it": "Unisci i testi",
@@ -660,13 +1032,13 @@ window.PyvielCourse = {
      },
      "text": {
       "en": "The plus sign + also works on text: it glues two texts together, with nothing in the middle.\n\nIt does not add a space for you. If you want one, put it inside the text, like \"Hello, \".",
-      "it": "Il segno più + funziona anche con il testo: incolla due testi insieme, senza niente in mezzo.\n\nNon aggiunge uno spazio al posto tuo. Se ne vuoi uno, mettilo dentro il testo, come in \"Hello, \".",
-      "fr": "Le signe plus + marche aussi avec le texte : il colle deux textes ensemble, sans rien au milieu.\n\nIl n'ajoute pas d'espace à ta place. Si tu en veux une, mets-la dans le texte, comme dans \"Hello, \"."
+      "it": "Il segno più + funziona anche con il testo: incolla due testi insieme, senza niente in mezzo.\n\nNon aggiunge uno spazio al posto tuo. Se ne vuoi uno, mettilo dentro il testo, come in \"Ciao, \".",
+      "fr": "Le signe plus + marche aussi avec le texte : il colle deux textes ensemble, sans rien au milieu.\n\nIl n'ajoute pas d'espace à ta place. Si tu en veux une, mets-la dans le texte, comme dans \"Bonjour, \"."
      },
      "see": {
       "en": "Pyviel\nHello, Ada",
-      "it": "Pyviel\nHello, Ada",
-      "fr": "Pyviel\nHello, Ada"
+      "it": "Pyviel\nCiao, Ada",
+      "fr": "Pyviel\nBonjour, Ada"
      },
      "slip": {
       "en": "Joining a text and a number with + is a mistake. You will learn the reason, and the fix, soon.",
@@ -677,13 +1049,16 @@ window.PyvielCourse = {
       {
        "k": "+text",
        "w": "+ for text",
-       "word": null,
        "d": {
         "en": "Between two texts, + glues them together, with nothing in the middle. It does not add a space for you.",
         "it": "Tra due testi, + li incolla insieme, senza niente in mezzo. Non aggiunge uno spazio al posto tuo.",
         "fr": "Entre deux textes, + les colle ensemble, sans rien au milieu. Il n'ajoute pas d'espace à ta place."
        },
-       "s": "\"Py\" + \"viel\""
+       "s": {
+        "en": "\"Py\" + \"viel\"",
+        "it": "\"Py\" + \"viel\"",
+        "fr": "\"Py\" + \"viel\""
+       }
       }
      ],
      "ex": {
@@ -697,18 +1072,48 @@ window.PyvielCourse = {
        "it": "Dentro le parentesi di print scrivi il primo testo, un segno + e il secondo testo.",
        "fr": "Dans les parenthèses de print, écris le premier texte, un signe + et le deuxième texte."
       },
-      "sol": "print(\"Py\" + \"thon\")",
-      "start": "",
-      "spec": {
-       "out": "Python",
-       "c": "\\+"
+      "sol": {
+       "en": "print(\"Py\" + \"thon\")",
+       "it": "print(\"Py\" + \"thon\")",
+       "fr": "print(\"Py\" + \"thon\")"
       },
-      "answers": [],
-      "expected": "Python"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Python",
+        "c": "\\+"
+       },
+       "it": {
+        "out": "Python",
+        "c": "\\+"
+       },
+       "fr": {
+        "out": "Python",
+        "c": "\\+"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Python",
+       "it": "Python",
+       "fr": "Python"
+      }
      }
     },
     {
-     "code": "print(\"Ha\" * 3)\nprint(\"-\" * 20)\nprint(\"ab\" * 2 + \"c\")",
+     "code": {
+      "en": "print(\"Ha\" * 3)\nprint(\"-\" * 20)\nprint(\"ab\" * 2 + \"c\")",
+      "it": "print(\"Ha\" * 3)\nprint(\"-\" * 20)\nprint(\"ab\" * 2 + \"c\")",
+      "fr": "print(\"Ha\" * 3)\nprint(\"-\" * 20)\nprint(\"ab\" * 2 + \"c\")"
+     },
      "title": {
       "en": "Repeat a text",
       "it": "Ripeti un testo",
@@ -729,13 +1134,16 @@ window.PyvielCourse = {
       {
        "k": "*",
        "w": "*",
-       "word": null,
        "d": {
         "en": "With a text and a number, * repeats the text that many times. (With two numbers, * multiplies them.)",
         "it": "Con un testo e un numero, * ripete il testo quel numero di volte. (Con due numeri, * li moltiplica.)",
         "fr": "Avec un texte et un nombre, * répète le texte autant de fois. (Avec deux nombres, * les multiplie.)"
        },
-       "s": "\"Ha\" * 3"
+       "s": {
+        "en": "\"Ha\" * 3",
+        "it": "\"Ha\" * 3",
+        "fr": "\"Ha\" * 3"
+       }
       }
      ],
      "ex": {
@@ -749,18 +1157,48 @@ window.PyvielCourse = {
        "it": "Il testo è \"*\" e il numero è 10.",
        "fr": "Le texte est \"*\" et le nombre est 10."
       },
-      "sol": "print(\"*\" * 10)",
-      "start": "",
-      "spec": {
-       "out": "**********",
-       "c": "\\*"
+      "sol": {
+       "en": "print(\"*\" * 10)",
+       "it": "print(\"*\" * 10)",
+       "fr": "print(\"*\" * 10)"
       },
-      "answers": [],
-      "expected": "**********"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "**********",
+        "c": "\\*"
+       },
+       "it": {
+        "out": "**********",
+        "c": "\\*"
+       },
+       "fr": {
+        "out": "**********",
+        "c": "\\*"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "**********",
+       "it": "**********",
+       "fr": "**********"
+      }
      }
     },
     {
-     "code": "word = \"Python\"\nprint(len(word))\nprint(len(\"Hi there\"))\nprint(len(\"\"))",
+     "code": {
+      "en": "word = \"Python\"\nprint(len(word))\nprint(len(\"Hi there\"))\nprint(len(\"\"))",
+      "it": "word = \"Python\"\nprint(len(word))\nprint(len(\"Ciao a tutti\"))\nprint(len(\"\"))",
+      "fr": "word = \"Python\"\nprint(len(word))\nprint(len(\"Salut tout le monde\"))\nprint(len(\"\"))"
+     },
      "title": {
       "en": "Count the letters",
       "it": "Conta le lettere",
@@ -773,42 +1211,71 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "6\n8\n0",
-      "it": "6\n8\n0",
-      "fr": "6\n8\n0"
+      "it": "6\n12\n0",
+      "fr": "6\n19\n0"
      },
      "slip": null,
      "news": [
       {
        "k": "len",
        "w": "len( )",
-       "word": null,
        "d": {
         "en": "len counts how many letters a text has, spaces included. Put the text inside the brackets. It gives the answer back, so you can show it with print.",
         "it": "len conta quante lettere ha un testo, spazi compresi. Metti il testo tra le parentesi. Restituisce la risposta, così puoi mostrarla con print.",
         "fr": "len compte combien de lettres a un texte, espaces compris. Mets le texte entre les parenthèses. Il rend la réponse, donc tu peux l'afficher avec print."
        },
-       "s": "len(\"Python\")"
+       "s": {
+        "en": "len(\"Python\")",
+        "it": "len(\"Python\")",
+        "fr": "len(\"Python\")"
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Show how many letters the word banana has.",
        "it": "Mostra quante lettere ha la parola banana.",
-       "fr": "Affiche combien de lettres a le mot banana."
+       "fr": "Affiche combien de lettres a le mot banane."
       },
       "hint": {
        "en": "print(len(\"banana\"))",
        "it": "print(len(\"banana\"))",
-       "fr": "print(len(\"banana\"))"
+       "fr": "print(len(\"banane\"))"
       },
-      "sol": "print(len(\"banana\"))",
-      "start": "",
+      "sol": {
+       "en": "print(len(\"banana\"))",
+       "it": "print(len(\"banana\"))",
+       "fr": "print(len(\"banane\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
       "spec": {
-       "out": "6",
-       "c": "len"
+       "en": {
+        "out": "6",
+        "c": "len"
+       },
+       "it": {
+        "out": "6",
+        "c": "len"
+       },
+       "fr": {
+        "out": "6",
+        "c": "len"
+       }
       },
-      "answers": [],
-      "expected": "6"
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "6",
+       "it": "6",
+       "fr": "6"
+      }
      }
     }
    ]
@@ -827,7 +1294,11 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "print(\"Line one\\nLine two\")\nprint(\"Name:\\tAda\")",
+     "code": {
+      "en": "print(\"Line one\\nLine two\")\nprint(\"Name:\\tAda\")",
+      "it": "print(\"Riga uno\\nRiga due\")\nprint(\"Nome:\\tAda\")",
+      "fr": "print(\"Ligne un\\nLigne deux\")\nprint(\"Nom :\\tAda\")"
+     },
      "title": {
       "en": "New lines and tabs",
       "it": "Righe nuove e tabulazioni",
@@ -840,8 +1311,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "Line one\nLine two\nName:\tAda",
-      "it": "Line one\nLine two\nName:\tAda",
-      "fr": "Line one\nLine two\nName:\tAda"
+      "it": "Riga uno\nRiga due\nNome:\tAda",
+      "fr": "Ligne un\nLigne deux\nNom :\tAda"
      },
      "slip": {
       "en": "The backslash leans to the left: \\ . A slash / does nothing special.",
@@ -852,38 +1323,71 @@ window.PyvielCourse = {
       {
        "k": "escape",
        "w": "\\n  \\t  \\\"",
-       "word": null,
        "d": {
         "en": "A backslash \\ inside a text starts a special code. \\n means \"start a new line\", \\t means \"a wide space (a tab)\", and \\\" puts a quote in the text without ending it.",
         "it": "Una barra rovesciata \\ dentro un testo inizia un codice speciale. \\n vuol dire \"vai a capo\", \\t vuol dire \"uno spazio largo (una tabulazione)\" e \\\" mette una virgoletta nel testo senza chiuderlo.",
         "fr": "Une barre oblique inversée \\ dans un texte commence un code spécial. \\n veut dire \"va à la ligne\", \\t veut dire \"une grande espace (une tabulation)\" et \\\" met un guillemet dans le texte sans le fermer."
        },
-       "s": "print(\"one\\ntwo\")"
+       "s": {
+        "en": "print(\"one\\ntwo\")",
+        "it": "print(\"uno\\ndue\")",
+        "fr": "print(\"un\\ndeux\")"
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "With only one print, show Hello and World on two lines.",
-       "it": "Con un solo print, mostra Hello e World su due righe.",
-       "fr": "Avec un seul print, affiche Hello et World sur deux lignes."
+       "it": "Con un solo print, mostra Ciao e Mondo su due righe.",
+       "fr": "Avec un seul print, affiche Bonjour et Monde sur deux lignes."
       },
       "hint": {
        "en": "Put \\n between the two words, inside the same quotes.",
        "it": "Metti \\n tra le due parole, dentro le stesse virgolette.",
        "fr": "Mets \\n entre les deux mots, dans les mêmes guillemets."
       },
-      "sol": "print(\"Hello\\nWorld\")",
-      "start": "",
-      "spec": {
-       "out": "Hello\nWorld",
-       "c": "\\\\n"
+      "sol": {
+       "en": "print(\"Hello\\nWorld\")",
+       "it": "print(\"Ciao\\nMondo\")",
+       "fr": "print(\"Bonjour\\nMonde\")"
       },
-      "answers": [],
-      "expected": "Hello\nWorld"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Hello\nWorld",
+        "c": "\\\\n"
+       },
+       "it": {
+        "out": "Ciao\nMondo",
+        "c": "\\\\n"
+       },
+       "fr": {
+        "out": "Bonjour\nMonde",
+        "c": "\\\\n"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Hello\nWorld",
+       "it": "Ciao\nMondo",
+       "fr": "Bonjour\nMonde"
+      }
      }
     },
     {
-     "code": "print(\"She said \\\"hi\\\"\")\nprint(\"A backslash: \\\\\")",
+     "code": {
+      "en": "print(\"She said \\\"hi\\\"\")\nprint(\"A backslash: \\\\\")",
+      "it": "print(\"Ha detto \\\"ciao\\\"\")\nprint(\"Una barra rovesciata: \\\\\")",
+      "fr": "print(\"Il a dit \\\"salut\\\"\")\nprint(\"Une barre oblique inversée : \\\\\")"
+     },
      "title": {
       "en": "A quote and a backslash inside a text",
       "it": "Una virgoletta e una barra dentro un testo",
@@ -896,33 +1400,63 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "She said \"hi\"\nA backslash: \\",
-      "it": "She said \"hi\"\nA backslash: \\",
-      "fr": "She said \"hi\"\nA backslash: \\"
+      "it": "Ha detto \"ciao\"\nUna barra rovesciata: \\",
+      "fr": "Il a dit \"salut\"\nUne barre oblique inversée : \\"
      },
      "slip": null,
      "ex": {
       "task": {
        "en": "Show: She said \"ok\" . Use double quotes around the text, and \\\" for the quotes inside.",
-       "it": "Mostra: She said \"ok\" . Usa le virgolette doppie attorno al testo e \\\" per quelle dentro.",
-       "fr": "Affiche : She said \"ok\" . Utilise des guillemets doubles autour du texte, et \\\" pour ceux de l'intérieur."
+       "it": "Mostra: Ha detto \"ok\" . Usa le virgolette doppie attorno al testo e \\\" per quelle dentro.",
+       "fr": "Affiche : Il a dit \"ok\" . Utilise des guillemets doubles autour du texte, et \\\" pour ceux de l'intérieur."
       },
       "hint": {
        "en": "Write a backslash just before each quote that is inside the text.",
        "it": "Scrivi una barra rovesciata subito prima di ogni virgoletta che sta dentro il testo.",
        "fr": "Écris une barre oblique inversée juste avant chaque guillemet qui est dans le texte."
       },
-      "sol": "print(\"She said \\\"ok\\\"\")",
-      "start": "",
-      "spec": {
-       "out": "She said \"ok\"",
-       "c": "\\\\\""
+      "sol": {
+       "en": "print(\"She said \\\"ok\\\"\")",
+       "it": "print(\"Ha detto \\\"ok\\\"\")",
+       "fr": "print(\"Il a dit \\\"ok\\\"\")"
       },
-      "answers": [],
-      "expected": "She said \"ok\""
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "She said \"ok\"",
+        "c": "\\\\\""
+       },
+       "it": {
+        "out": "Ha detto \"ok\"",
+        "c": "\\\\\""
+       },
+       "fr": {
+        "out": "Il a dit \"ok\"",
+        "c": "\\\\\""
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "She said \"ok\"",
+       "it": "Ha detto \"ok\"",
+       "fr": "Il a dit \"ok\""
+      }
      }
     },
     {
-     "code": "poem = \"\"\"Roses are red,\nViolets are blue,\nPython is fun,\nAnd so are you.\"\"\"\nprint(poem)",
+     "code": {
+      "en": "poem = \"\"\"Roses are red,\nViolets are blue,\nPython is fun,\nAnd so are you.\"\"\"\nprint(poem)",
+      "it": "poem = \"\"\"Le rose sono rosse,\nLe viole sono blu,\nPython è bello,\nE anche tu.\"\"\"\nprint(poem)",
+      "fr": "poem = \"\"\"Les roses sont rouges,\nLes violettes sont bleues,\nPython est génial,\nEt toi aussi.\"\"\"\nprint(poem)"
+     },
      "title": {
       "en": "A long text on many lines",
       "it": "Un testo lungo su più righe",
@@ -935,21 +1469,24 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "Roses are red,\nViolets are blue,\nPython is fun,\nAnd so are you.",
-      "it": "Roses are red,\nViolets are blue,\nPython is fun,\nAnd so are you.",
-      "fr": "Roses are red,\nViolets are blue,\nPython is fun,\nAnd so are you."
+      "it": "Le rose sono rosse,\nLe viole sono blu,\nPython è bello,\nE anche tu.",
+      "fr": "Les roses sont rouges,\nLes violettes sont bleues,\nPython est génial,\nEt toi aussi."
      },
      "slip": null,
      "news": [
       {
        "k": "triple-quote",
        "w": "\"\"\" \"\"\"",
-       "word": null,
        "d": {
         "en": "Three quotes in a row start a text that can go over many lines, and three quotes again end it. Every new line you type inside is kept.",
         "it": "Tre virgolette di fila iniziano un testo che può andare su molte righe, e altre tre lo chiudono. Ogni riga nuova che scrivi dentro viene tenuta.",
         "fr": "Trois guillemets de suite commencent un texte qui peut s'étendre sur plusieurs lignes, et trois autres le terminent. Chaque nouvelle ligne que tu écris dedans est gardée."
        },
-       "s": "poem = \"\"\"one\ntwo\"\"\""
+       "s": {
+        "en": "poem = \"\"\"one\ntwo\"\"\"",
+        "it": "poem = \"\"\"uno\ndue\"\"\"",
+        "fr": "poem = \"\"\"un\ndeux\"\"\""
+       }
       }
      ],
      "ex": {
@@ -963,17 +1500,43 @@ window.PyvielCourse = {
        "it": "poem = \"\"\" poi le tue tre righe, poi \"\"\" e print(poem).",
        "fr": "poem = \"\"\" puis tes trois lignes, puis \"\"\" et print(poem)."
       },
-      "sol": "poem = \"\"\"Roses are red,\nViolets are blue,\nI like Python\"\"\"\nprint(poem)",
-      "start": "",
-      "spec": {
-       "m": "^.+\\n.+\\n.+$",
-       "c": "\"\"\""
+      "sol": {
+       "en": "poem = \"\"\"Roses are red,\nViolets are blue,\nI like Python\"\"\"\nprint(poem)",
+       "it": "poem = \"\"\"Le rose sono rosse,\nLe viole sono blu,\nMi piace Python\"\"\"\nprint(poem)",
+       "fr": "poem = \"\"\"Les roses sont rouges,\nLes violettes sont bleues,\nJ'aime Python\"\"\"\nprint(poem)"
       },
-      "answers": []
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": "^.+\\n.+\\n.+$",
+        "c": "\"\"\""
+       },
+       "it": {
+        "m": "^.+\\n.+\\n.+$",
+        "c": "\"\"\""
+       },
+       "fr": {
+        "m": "^.+\\n.+\\n.+$",
+        "c": "\"\"\""
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
      }
     },
     {
-     "code": "word = \"Python\"\nprint(word[0])\nprint(word[2])\nprint(word[5])",
+     "code": {
+      "en": "word = \"Python\"\nprint(word[0])\nprint(word[2])\nprint(word[5])",
+      "it": "word = \"Python\"\nprint(word[0])\nprint(word[2])\nprint(word[5])",
+      "fr": "word = \"Python\"\nprint(word[0])\nprint(word[2])\nprint(word[5])"
+     },
      "title": {
       "en": "The letter at a place",
       "it": "La lettera a un posto",
@@ -998,13 +1561,16 @@ window.PyvielCourse = {
       {
        "k": "index",
        "w": "text[ ]",
-       "word": null,
        "d": {
         "en": "Square brackets after a text pick one letter. The place is a number, and the count starts at 0: the first letter is at place 0, the second at place 1.",
         "it": "Le parentesi quadre dopo un testo scelgono una lettera. Il posto è un numero e si conta da 0: la prima lettera è al posto 0, la seconda al posto 1.",
         "fr": "Les crochets après un texte choisissent une lettre. La place est un nombre et on compte à partir de 0 : la première lettre est à la place 0, la deuxième à la place 1."
        },
-       "s": "word[0]"
+       "s": {
+        "en": "word[0]",
+        "it": "word[0]",
+        "fr": "word[0]"
+       }
       }
      ],
      "ex": {
@@ -1018,18 +1584,48 @@ window.PyvielCourse = {
        "it": "P y t h o n sono i posti 0, 1, 2, 3, 4 e 5.",
        "fr": "P y t h o n sont les places 0, 1, 2, 3, 4 et 5."
       },
-      "sol": "word = \"Python\"\nprint(word[5])",
-      "start": "word = \"Python\"",
-      "spec": {
-       "out": "n",
-       "c": "\\[5\\]"
+      "sol": {
+       "en": "word = \"Python\"\nprint(word[5])",
+       "it": "word = \"Python\"\nprint(word[5])",
+       "fr": "word = \"Python\"\nprint(word[5])"
       },
-      "answers": [],
-      "expected": "n"
+      "start": {
+       "en": "word = \"Python\"",
+       "it": "word = \"Python\"",
+       "fr": "word = \"Python\""
+      },
+      "spec": {
+       "en": {
+        "out": "n",
+        "c": "\\[5\\]"
+       },
+       "it": {
+        "out": "n",
+        "c": "\\[5\\]"
+       },
+       "fr": {
+        "out": "n",
+        "c": "\\[5\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "n",
+       "it": "n",
+       "fr": "n"
+      }
      }
     },
     {
-     "code": "word = \"Python\"\nprint(word[-1])\nprint(word[-2])",
+     "code": {
+      "en": "word = \"Python\"\nprint(word[-1])\nprint(word[-2])",
+      "it": "word = \"Python\"\nprint(word[-1])\nprint(word[-2])",
+      "fr": "word = \"Python\"\nprint(word[-1])\nprint(word[-2])"
+     },
      "title": {
       "en": "Count from the end",
       "it": "Conta dalla fine",
@@ -1050,38 +1646,71 @@ window.PyvielCourse = {
       {
        "k": "negative-index",
        "w": "text[-1]",
-       "word": null,
        "d": {
         "en": "A minus number counts from the end: place -1 is the last letter, -2 the one before it.",
         "it": "Un numero con il meno conta dalla fine: il posto -1 è l'ultima lettera, -2 quella prima.",
         "fr": "Un nombre avec un moins compte depuis la fin : la place -1 est la dernière lettre, -2 celle d'avant."
        },
-       "s": "word[-1]"
+       "s": {
+        "en": "word[-1]",
+        "it": "word[-1]",
+        "fr": "word[-1]"
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Show the last letter of the word \"banana\", using a minus place.",
        "it": "Mostra l'ultima lettera della parola \"banana\", usando un posto con il meno.",
-       "fr": "Affiche la dernière lettre du mot \"banana\", en utilisant une place avec un moins."
+       "fr": "Affiche la dernière lettre du mot \"banane\", en utilisant une place avec un moins."
       },
       "hint": {
        "en": "word[-1]",
        "it": "word[-1]",
        "fr": "word[-1]"
       },
-      "sol": "word = \"banana\"\nprint(word[-1])",
-      "start": "word = \"banana\"",
-      "spec": {
-       "out": "a",
-       "c": "\\[-1\\]"
+      "sol": {
+       "en": "word = \"banana\"\nprint(word[-1])",
+       "it": "word = \"banana\"\nprint(word[-1])",
+       "fr": "word = \"banane\"\nprint(word[-1])"
       },
-      "answers": [],
-      "expected": "a"
+      "start": {
+       "en": "word = \"banana\"",
+       "it": "word = \"banana\"",
+       "fr": "word = \"banane\""
+      },
+      "spec": {
+       "en": {
+        "out": "a",
+        "c": "\\[-1\\]"
+       },
+       "it": {
+        "out": "a",
+        "c": "\\[-1\\]"
+       },
+       "fr": {
+        "out": "e",
+        "c": "\\[-1\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "a",
+       "it": "a",
+       "fr": "e"
+      }
      }
     },
     {
-     "code": "word = \"Python\"\nprint(word[0:2])\nprint(word[2:5])\nprint(word[:3])\nprint(word[3:])",
+     "code": {
+      "en": "word = \"Python\"\nprint(word[0:2])\nprint(word[2:5])\nprint(word[:3])\nprint(word[3:])",
+      "it": "word = \"Python\"\nprint(word[0:2])\nprint(word[2:5])\nprint(word[:3])\nprint(word[3:])",
+      "fr": "word = \"Python\"\nprint(word[0:2])\nprint(word[2:5])\nprint(word[:3])\nprint(word[3:])"
+     },
      "title": {
       "en": "A piece of a text",
       "it": "Un pezzo di testo",
@@ -1106,13 +1735,16 @@ window.PyvielCourse = {
       {
        "k": "slice",
        "w": "text[a:b]",
-       "word": null,
        "d": {
         "en": "A colon between two places takes a piece: from the first place up to, but not including, the second. Leave one out to go to the start or to the end.",
         "it": "I due punti tra due posti prendono un pezzo: dal primo posto fino al secondo, escluso. Se ne lasci uno fuori vai fino all'inizio o alla fine.",
         "fr": "Deux points entre deux places prennent un morceau : de la première place jusqu'à la seconde, non incluse. Si tu en laisses une de côté, tu vas jusqu'au début ou jusqu'à la fin."
        },
-       "s": "word[0:2]"
+       "s": {
+        "en": "word[0:2]",
+        "it": "word[0:2]",
+        "fr": "word[0:2]"
+       }
       }
      ],
      "ex": {
@@ -1126,14 +1758,40 @@ window.PyvielCourse = {
        "it": "t è al posto 2 e la o dopo la h è al posto 4: usa [2:5].",
        "fr": "t est à la place 2 et le o après le h est à la place 4 : utilise [2:5]."
       },
-      "sol": "word = \"Python\"\nprint(word[2:5])",
-      "start": "word = \"Python\"",
-      "spec": {
-       "out": "tho",
-       "c": "\\[\\s*2\\s*:\\s*5\\s*\\]"
+      "sol": {
+       "en": "word = \"Python\"\nprint(word[2:5])",
+       "it": "word = \"Python\"\nprint(word[2:5])",
+       "fr": "word = \"Python\"\nprint(word[2:5])"
       },
-      "answers": [],
-      "expected": "tho"
+      "start": {
+       "en": "word = \"Python\"",
+       "it": "word = \"Python\"",
+       "fr": "word = \"Python\""
+      },
+      "spec": {
+       "en": {
+        "out": "tho",
+        "c": "\\[\\s*2\\s*:\\s*5\\s*\\]"
+       },
+       "it": {
+        "out": "tho",
+        "c": "\\[\\s*2\\s*:\\s*5\\s*\\]"
+       },
+       "fr": {
+        "out": "tho",
+        "c": "\\[\\s*2\\s*:\\s*5\\s*\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "tho",
+       "it": "tho",
+       "fr": "tho"
+      }
      }
     }
    ]
@@ -1152,7 +1810,11 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "print(7 + 3)\nprint(7 - 3)\nprint(7 * 3)",
+     "code": {
+      "en": "print(7 + 3)\nprint(7 - 3)\nprint(7 * 3)",
+      "it": "print(7 + 3)\nprint(7 - 3)\nprint(7 * 3)",
+      "fr": "print(7 + 3)\nprint(7 - 3)\nprint(7 * 3)"
+     },
      "title": {
       "en": "Add, take away, multiply",
       "it": "Somma, togli, moltiplica",
@@ -1173,24 +1835,30 @@ window.PyvielCourse = {
       {
        "k": "-",
        "w": "-",
-       "word": null,
        "d": {
         "en": "Between two numbers, - takes the second away from the first.",
         "it": "Tra due numeri, - toglie il secondo dal primo.",
         "fr": "Entre deux nombres, - enlève le deuxième du premier."
        },
-       "s": "print(7 - 3)"
+       "s": {
+        "en": "print(7 - 3)",
+        "it": "print(7 - 3)",
+        "fr": "print(7 - 3)"
+       }
       },
       {
        "k": "multiply",
        "w": "* for numbers",
-       "word": null,
        "d": {
         "en": "Between two numbers, * multiplies them. Python uses a star because the sign × is not on the keyboard.",
         "it": "Tra due numeri, * li moltiplica. Python usa la stella perché il segno × non è sulla tastiera.",
         "fr": "Entre deux nombres, * les multiplie. Python utilise une étoile parce que le signe × n'est pas sur le clavier."
        },
-       "s": "print(7 * 3)"
+       "s": {
+        "en": "print(7 * 3)",
+        "it": "print(7 * 3)",
+        "fr": "print(7 * 3)"
+       }
       }
      ],
      "ex": {
@@ -1204,18 +1872,48 @@ window.PyvielCourse = {
        "it": "Moltiplica 24 per 60 dentro print.",
        "fr": "Multiplie 24 par 60 dans print."
       },
-      "sol": "print(24 * 60)",
-      "start": "",
-      "spec": {
-       "out": "1440",
-       "c": "\\*"
+      "sol": {
+       "en": "print(24 * 60)",
+       "it": "print(24 * 60)",
+       "fr": "print(24 * 60)"
       },
-      "answers": [],
-      "expected": "1440"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "1440",
+        "c": "\\*"
+       },
+       "it": {
+        "out": "1440",
+        "c": "\\*"
+       },
+       "fr": {
+        "out": "1440",
+        "c": "\\*"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1440",
+       "it": "1440",
+       "fr": "1440"
+      }
      }
     },
     {
-     "code": "print(7 / 2)\nprint(6 / 2)\nprint(1 / 4)",
+     "code": {
+      "en": "print(7 / 2)\nprint(6 / 2)\nprint(1 / 4)",
+      "it": "print(7 / 2)\nprint(6 / 2)\nprint(1 / 4)",
+      "fr": "print(7 / 2)\nprint(6 / 2)\nprint(1 / 4)"
+     },
      "title": {
       "en": "Divide",
       "it": "Dividi",
@@ -1236,13 +1934,16 @@ window.PyvielCourse = {
       {
        "k": "/",
        "w": "/",
-       "word": null,
        "d": {
         "en": "Between two numbers, / divides the first by the second. The answer always has a point, even when it comes out round: 6 / 2 is 3.0.",
         "it": "Tra due numeri, / divide il primo per il secondo. La risposta ha sempre il punto, anche quando viene tonda: 6 / 2 è 3.0.",
         "fr": "Entre deux nombres, / divise le premier par le deuxième. La réponse a toujours un point, même quand elle tombe rond : 6 / 2 donne 3.0."
        },
-       "s": "print(7 / 2)"
+       "s": {
+        "en": "print(7 / 2)",
+        "it": "print(7 / 2)",
+        "fr": "print(7 / 2)"
+       }
       }
      ],
      "ex": {
@@ -1256,17 +1957,45 @@ window.PyvielCourse = {
        "it": "12 diviso 3, dentro print.",
        "fr": "12 divisé par 3, dans print."
       },
-      "sol": "print(12 / 3)",
-      "start": "",
-      "spec": {
-       "out": "4.0"
+      "sol": {
+       "en": "print(12 / 3)",
+       "it": "print(12 / 3)",
+       "fr": "print(12 / 3)"
       },
-      "answers": [],
-      "expected": "4.0"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "4.0"
+       },
+       "it": {
+        "out": "4.0"
+       },
+       "fr": {
+        "out": "4.0"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "4.0",
+       "it": "4.0",
+       "fr": "4.0"
+      }
      }
     },
     {
-     "code": "print(7 // 2)\nprint(7 % 2)\nprint(20 // 6)\nprint(20 % 6)",
+     "code": {
+      "en": "print(7 // 2)\nprint(7 % 2)\nprint(20 // 6)\nprint(20 % 6)",
+      "it": "print(7 // 2)\nprint(7 % 2)\nprint(20 // 6)\nprint(20 % 6)",
+      "fr": "print(7 // 2)\nprint(7 % 2)\nprint(20 // 6)\nprint(20 % 6)"
+     },
      "title": {
       "en": "Whole division and what is left",
       "it": "Divisione intera e resto",
@@ -1291,24 +2020,30 @@ window.PyvielCourse = {
       {
        "k": "//",
        "w": "//",
-       "word": null,
        "d": {
         "en": "// divides and keeps only the whole part of the answer: 7 // 2 is 3.",
         "it": "// divide e tiene solo la parte intera della risposta: 7 // 2 è 3.",
         "fr": "// divise et ne garde que la partie entière de la réponse : 7 // 2 donne 3."
        },
-       "s": "print(7 // 2)"
+       "s": {
+        "en": "print(7 // 2)",
+        "it": "print(7 // 2)",
+        "fr": "print(7 // 2)"
+       }
       },
       {
        "k": "%",
        "w": "%",
-       "word": null,
        "d": {
         "en": "% gives what is left over after a division: 7 % 2 is 1, because 2 fits three times in 7 and 1 is left. Programmers call it the rest, or the remainder.",
         "it": "% dà quello che avanza dopo una divisione: 7 % 2 è 1, perché il 2 sta tre volte nel 7 e ne avanza 1. I programmatori lo chiamano resto.",
         "fr": "% donne ce qui reste après une division : 7 % 2 donne 1, parce que 2 entre trois fois dans 7 et il reste 1. Les programmeurs l'appellent le reste."
        },
-       "s": "print(7 % 2)"
+       "s": {
+        "en": "print(7 % 2)",
+        "it": "print(7 % 2)",
+        "fr": "print(7 % 2)"
+       }
       }
      ],
      "ex": {
@@ -1322,17 +2057,45 @@ window.PyvielCourse = {
        "it": "100 // 7 per le settimane e 100 % 7 per i giorni.",
        "fr": "100 // 7 pour les semaines et 100 % 7 pour les jours."
       },
-      "sol": "print(100 // 7)\nprint(100 % 7)",
-      "start": "",
-      "spec": {
-       "out": "14\n2"
+      "sol": {
+       "en": "print(100 // 7)\nprint(100 % 7)",
+       "it": "print(100 // 7)\nprint(100 % 7)",
+       "fr": "print(100 // 7)\nprint(100 % 7)"
       },
-      "answers": [],
-      "expected": "14\n2"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "14\n2"
+       },
+       "it": {
+        "out": "14\n2"
+       },
+       "fr": {
+        "out": "14\n2"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "14\n2",
+       "it": "14\n2",
+       "fr": "14\n2"
+      }
      }
     },
     {
-     "code": "print(2 ** 3)\nprint(2 ** 10)\nprint(10 ** 6)",
+     "code": {
+      "en": "print(2 ** 3)\nprint(2 ** 10)\nprint(10 ** 6)",
+      "it": "print(2 ** 3)\nprint(2 ** 10)\nprint(10 ** 6)",
+      "fr": "print(2 ** 3)\nprint(2 ** 10)\nprint(10 ** 6)"
+     },
      "title": {
       "en": "The power",
       "it": "La potenza",
@@ -1353,13 +2116,16 @@ window.PyvielCourse = {
       {
        "k": "**",
        "w": "**",
-       "word": null,
        "d": {
         "en": "** is the power: 2 ** 3 means 2 times itself 3 times, so 2 * 2 * 2 = 8.",
         "it": "** è la potenza: 2 ** 3 vuol dire 2 per se stesso 3 volte, cioè 2 * 2 * 2 = 8.",
         "fr": "** est la puissance : 2 ** 3 veut dire 2 fois lui-même 3 fois, donc 2 * 2 * 2 = 8."
        },
-       "s": "print(2 ** 3)"
+       "s": {
+        "en": "print(2 ** 3)",
+        "it": "print(2 ** 3)",
+        "fr": "print(2 ** 3)"
+       }
       }
      ],
      "ex": {
@@ -1373,18 +2139,48 @@ window.PyvielCourse = {
        "it": "3 ** 4",
        "fr": "3 ** 4"
       },
-      "sol": "print(3 ** 4)",
-      "start": "",
-      "spec": {
-       "out": "81",
-       "c": "\\*\\*"
+      "sol": {
+       "en": "print(3 ** 4)",
+       "it": "print(3 ** 4)",
+       "fr": "print(3 ** 4)"
       },
-      "answers": [],
-      "expected": "81"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "81",
+        "c": "\\*\\*"
+       },
+       "it": {
+        "out": "81",
+        "c": "\\*\\*"
+       },
+       "fr": {
+        "out": "81",
+        "c": "\\*\\*"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "81",
+       "it": "81",
+       "fr": "81"
+      }
      }
     },
     {
-     "code": "print(2 + 3 * 4)\nprint((2 + 3) * 4)\nprint(10 - 2 - 3)",
+     "code": {
+      "en": "print(2 + 3 * 4)\nprint((2 + 3) * 4)\nprint(10 - 2 - 3)",
+      "it": "print(2 + 3 * 4)\nprint((2 + 3) * 4)\nprint(10 - 2 - 3)",
+      "fr": "print(2 + 3 * 4)\nprint((2 + 3) * 4)\nprint(10 - 2 - 3)"
+     },
      "title": {
       "en": "Which sum goes first?",
       "it": "Quale conto va per primo?",
@@ -1405,13 +2201,16 @@ window.PyvielCourse = {
       {
        "k": "order",
        "w": "( )",
-       "word": null,
        "d": {
         "en": "Python does the sums in the order you learned in maths: power first, then * and /, then + and -. Round brackets go before everything. When in doubt, add brackets: they are free.",
         "it": "Python fa i conti nell'ordine che hai imparato in matematica: prima la potenza, poi * e /, poi + e -. Le parentesi tonde vanno prima di tutto. Nel dubbio, aggiungi parentesi: sono gratis.",
         "fr": "Python fait les calculs dans l'ordre appris en maths : d'abord la puissance, puis * et /, puis + et -. Les parenthèses rondes passent avant tout. Dans le doute, ajoute des parenthèses : elles sont gratuites."
        },
-       "s": "print((2 + 3) * 4)"
+       "s": {
+        "en": "print((2 + 3) * 4)",
+        "it": "print((2 + 3) * 4)",
+        "fr": "print((2 + 3) * 4)"
+       }
       }
      ],
      "ex": {
@@ -1425,17 +2224,45 @@ window.PyvielCourse = {
        "it": "Il conto 1 + 2 va fatto per primo.",
        "fr": "Le calcul 1 + 2 doit être fait en premier."
       },
-      "sol": "print((1 + 2) * 3)",
-      "start": "print(1 + 2 * 3)",
-      "spec": {
-       "out": "9"
+      "sol": {
+       "en": "print((1 + 2) * 3)",
+       "it": "print((1 + 2) * 3)",
+       "fr": "print((1 + 2) * 3)"
       },
-      "answers": [],
-      "expected": "9"
+      "start": {
+       "en": "print(1 + 2 * 3)",
+       "it": "print(1 + 2 * 3)",
+       "fr": "print(1 + 2 * 3)"
+      },
+      "spec": {
+       "en": {
+        "out": "9"
+       },
+       "it": {
+        "out": "9"
+       },
+       "fr": {
+        "out": "9"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "9",
+       "it": "9",
+       "fr": "9"
+      }
      }
     },
     {
-     "code": "print(3.14159)\nprint(2.5 + 1.25)\nprint(0.1 + 0.2)",
+     "code": {
+      "en": "print(3.14159)\nprint(2.5 + 1.25)\nprint(0.1 + 0.2)",
+      "it": "print(3.14159)\nprint(2.5 + 1.25)\nprint(0.1 + 0.2)",
+      "fr": "print(3.14159)\nprint(2.5 + 1.25)\nprint(0.1 + 0.2)"
+     },
      "title": {
       "en": "Numbers with a point",
       "it": "Numeri con il punto",
@@ -1456,13 +2283,16 @@ window.PyvielCourse = {
       {
        "k": "decimal",
        "w": "3.5",
-       "word": null,
        "d": {
         "en": "A number with a point is called a float. Python writes the point, not a comma. Computers keep these numbers with a tiny error: 0.1 + 0.2 shows 0.30000000000000004. It is normal, it happens in every language.",
         "it": "Un numero con il punto si chiama float. Python scrive il punto, non la virgola. I computer tengono questi numeri con un piccolissimo errore: 0.1 + 0.2 mostra 0.30000000000000004. È normale, succede in ogni linguaggio.",
         "fr": "Un nombre avec un point s'appelle un float. Python écrit le point, pas la virgule. Les ordinateurs gardent ces nombres avec une toute petite erreur : 0.1 + 0.2 affiche 0.30000000000000004. C'est normal, ça arrive dans tous les langages."
        },
-       "s": "print(3.5)"
+       "s": {
+        "en": "print(3.5)",
+        "it": "print(3.5)",
+        "fr": "print(3.5)"
+       }
       }
      ],
      "ex": {
@@ -1476,17 +2306,45 @@ window.PyvielCourse = {
        "it": "print(1.5 + 2.25)",
        "fr": "print(1.5 + 2.25)"
       },
-      "sol": "print(1.5 + 2.25)",
-      "start": "",
-      "spec": {
-       "out": "3.75"
+      "sol": {
+       "en": "print(1.5 + 2.25)",
+       "it": "print(1.5 + 2.25)",
+       "fr": "print(1.5 + 2.25)"
       },
-      "answers": [],
-      "expected": "3.75"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3.75"
+       },
+       "it": {
+        "out": "3.75"
+       },
+       "fr": {
+        "out": "3.75"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3.75",
+       "it": "3.75",
+       "fr": "3.75"
+      }
      }
     },
     {
-     "code": "print(round(3.14159, 2))\nprint(round(3.14159))\nprint(round(2.5))",
+     "code": {
+      "en": "print(round(3.14159, 2))\nprint(round(3.14159))\nprint(round(2.5))",
+      "it": "print(round(3.14159, 2))\nprint(round(3.14159))\nprint(round(2.5))",
+      "fr": "print(round(3.14159, 2))\nprint(round(3.14159))\nprint(round(2.5))"
+     },
      "title": {
       "en": "Cut the decimals",
       "it": "Taglia i decimali",
@@ -1511,13 +2369,16 @@ window.PyvielCourse = {
       {
        "k": "round",
        "w": "round( )",
-       "word": null,
        "d": {
         "en": "round gives a number cut to the number of decimals you ask: round(3.14159, 2) is 3.14. With no second number it gives a whole number.",
         "it": "round dà un numero tagliato al numero di decimali che chiedi: round(3.14159, 2) è 3.14. Senza il secondo numero dà un numero intero.",
         "fr": "round donne un nombre coupé au nombre de décimales demandé : round(3.14159, 2) donne 3.14. Sans le deuxième nombre, il donne un nombre entier."
        },
-       "s": "round(3.14159, 2)"
+       "s": {
+        "en": "round(3.14159, 2)",
+        "it": "round(3.14159, 2)",
+        "fr": "round(3.14159, 2)"
+       }
       }
      ],
      "ex": {
@@ -1531,18 +2392,48 @@ window.PyvielCourse = {
        "it": "round(9.87654, 1) dentro print.",
        "fr": "round(9.87654, 1) dans print."
       },
-      "sol": "print(round(9.87654, 1))",
-      "start": "",
-      "spec": {
-       "out": "9.9",
-       "c": "round"
+      "sol": {
+       "en": "print(round(9.87654, 1))",
+       "it": "print(round(9.87654, 1))",
+       "fr": "print(round(9.87654, 1))"
       },
-      "answers": [],
-      "expected": "9.9"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "9.9",
+        "c": "round"
+       },
+       "it": {
+        "out": "9.9",
+        "c": "round"
+       },
+       "fr": {
+        "out": "9.9",
+        "c": "round"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "9.9",
+       "it": "9.9",
+       "fr": "9.9"
+      }
      }
     },
     {
-     "code": "print(abs(-5))\nprint(min(4, 9, 2))\nprint(max(4, 9, 2))",
+     "code": {
+      "en": "print(abs(-5))\nprint(min(4, 9, 2))\nprint(max(4, 9, 2))",
+      "it": "print(abs(-5))\nprint(min(4, 9, 2))\nprint(max(4, 9, 2))",
+      "fr": "print(abs(-5))\nprint(min(4, 9, 2))\nprint(max(4, 9, 2))"
+     },
      "title": {
       "en": "Smallest, biggest, no minus",
       "it": "Il più piccolo, il più grande, senza meno",
@@ -1563,35 +2454,44 @@ window.PyvielCourse = {
       {
        "k": "abs",
        "w": "abs( )",
-       "word": null,
        "d": {
         "en": "abs gives a number without its minus sign: abs(-5) is 5.",
         "it": "abs dà un numero senza il segno meno: abs(-5) è 5.",
         "fr": "abs donne un nombre sans son signe moins : abs(-5) donne 5."
        },
-       "s": "abs(-5)"
+       "s": {
+        "en": "abs(-5)",
+        "it": "abs(-5)",
+        "fr": "abs(-5)"
+       }
       },
       {
        "k": "min",
        "w": "min( )",
-       "word": null,
        "d": {
         "en": "min gives the smallest of the numbers you give it: min(4, 9, 2) is 2.",
         "it": "min dà il più piccolo dei numeri che gli dai: min(4, 9, 2) è 2.",
         "fr": "min donne le plus petit des nombres que tu lui donnes : min(4, 9, 2) donne 2."
        },
-       "s": "min(4, 9, 2)"
+       "s": {
+        "en": "min(4, 9, 2)",
+        "it": "min(4, 9, 2)",
+        "fr": "min(4, 9, 2)"
+       }
       },
       {
        "k": "max",
        "w": "max( )",
-       "word": null,
        "d": {
         "en": "max gives the biggest of the numbers you give it: max(4, 9, 2) is 9.",
         "it": "max dà il più grande dei numeri che gli dai: max(4, 9, 2) è 9.",
         "fr": "max donne le plus grand des nombres que tu lui donnes : max(4, 9, 2) donne 9."
        },
-       "s": "max(4, 9, 2)"
+       "s": {
+        "en": "max(4, 9, 2)",
+        "it": "max(4, 9, 2)",
+        "fr": "max(4, 9, 2)"
+       }
       }
      ],
      "ex": {
@@ -1605,18 +2505,48 @@ window.PyvielCourse = {
        "it": "max(12, 7, 30) dentro print.",
        "fr": "max(12, 7, 30) dans print."
       },
-      "sol": "print(max(12, 7, 30))",
-      "start": "",
-      "spec": {
-       "out": "30",
-       "c": "max"
+      "sol": {
+       "en": "print(max(12, 7, 30))",
+       "it": "print(max(12, 7, 30))",
+       "fr": "print(max(12, 7, 30))"
       },
-      "answers": [],
-      "expected": "30"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "30",
+        "c": "max"
+       },
+       "it": {
+        "out": "30",
+        "c": "max"
+       },
+       "fr": {
+        "out": "30",
+        "c": "max"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "30",
+       "it": "30",
+       "fr": "30"
+      }
      }
     },
     {
-     "code": "total = 0\ntotal += 5\nprint(total)\ntotal *= 2\nprint(total)",
+     "code": {
+      "en": "total = 0\ntotal += 5\nprint(total)\ntotal *= 2\nprint(total)",
+      "it": "total = 0\ntotal += 5\nprint(total)\ntotal *= 2\nprint(total)",
+      "fr": "total = 0\ntotal += 5\nprint(total)\ntotal *= 2\nprint(total)"
+     },
      "title": {
       "en": "A shorter way to change a box",
       "it": "Un modo più corto per cambiare una scatola",
@@ -1637,24 +2567,30 @@ window.PyvielCourse = {
       {
        "k": "+=",
        "w": "+=",
-       "word": null,
        "d": {
         "en": "total += 5 is a shortcut for total = total + 5: it adds 5 to what is in the box. There is also -=, *= and /= for the other sums.",
         "it": "total += 5 è una scorciatoia per total = total + 5: aggiunge 5 a quello che c'è nella scatola. Esistono anche -=, *= e /= per gli altri conti.",
         "fr": "total += 5 est un raccourci pour total = total + 5 : il ajoute 5 à ce qu'il y a dans la boîte. Il existe aussi -=, *= et /= pour les autres calculs."
        },
-       "s": "total += 5"
+       "s": {
+        "en": "total += 5",
+        "it": "total += 5",
+        "fr": "total += 5"
+       }
       },
       {
        "k": "*=",
        "w": "*=",
-       "word": null,
        "d": {
         "en": "total *= 2 is a shortcut for total = total * 2: it multiplies what is in the box by 2.",
         "it": "total *= 2 è una scorciatoia per total = total * 2: moltiplica per 2 quello che c'è nella scatola.",
         "fr": "total *= 2 est un raccourci pour total = total * 2 : il multiplie par 2 ce qu'il y a dans la boîte."
        },
-       "s": "total *= 2"
+       "s": {
+        "en": "total *= 2",
+        "it": "total *= 2",
+        "fr": "total *= 2"
+       }
       }
      ],
      "ex": {
@@ -1668,14 +2604,40 @@ window.PyvielCourse = {
        "it": "total += 30 su una riga a parte, poi print(total).",
        "fr": "total += 30 sur une ligne à part, puis print(total)."
       },
-      "sol": "total = 100\ntotal += 30\nprint(total)",
-      "start": "total = 100",
-      "spec": {
-       "out": "130",
-       "c": "\\+="
+      "sol": {
+       "en": "total = 100\ntotal += 30\nprint(total)",
+       "it": "total = 100\ntotal += 30\nprint(total)",
+       "fr": "total = 100\ntotal += 30\nprint(total)"
       },
-      "answers": [],
-      "expected": "130"
+      "start": {
+       "en": "total = 100",
+       "it": "total = 100",
+       "fr": "total = 100"
+      },
+      "spec": {
+       "en": {
+        "out": "130",
+        "c": "\\+="
+       },
+       "it": {
+        "out": "130",
+        "c": "\\+="
+       },
+       "fr": {
+        "out": "130",
+        "c": "\\+="
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "130",
+       "it": "130",
+       "fr": "130"
+      }
      }
     }
    ]
@@ -1694,7 +2656,11 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "print(type(\"hello\"))\nprint(type(7))\nprint(type(7.5))\nprint(type(True))",
+     "code": {
+      "en": "print(type(\"hello\"))\nprint(type(7))\nprint(type(7.5))\nprint(type(True))",
+      "it": "print(type(\"ciao\"))\nprint(type(7))\nprint(type(7.5))\nprint(type(True))",
+      "fr": "print(type(\"salut\"))\nprint(type(7))\nprint(type(7.5))\nprint(type(True))"
+     },
      "title": {
       "en": "Every value has a kind",
       "it": "Ogni valore ha un tipo",
@@ -1715,24 +2681,30 @@ window.PyvielCourse = {
       {
        "k": "type",
        "w": "type( )",
-       "word": null,
        "d": {
         "en": "type tells you what kind a value is. str is a text, int is a whole number, float is a number with a point.",
         "it": "type ti dice di che tipo è un valore. str è un testo, int è un numero intero, float è un numero con il punto.",
         "fr": "type te dit de quelle sorte est une valeur. str est un texte, int est un nombre entier, float est un nombre avec un point."
        },
-       "s": "type(7)"
+       "s": {
+        "en": "type(7)",
+        "it": "type(7)",
+        "fr": "type(7)"
+       }
       },
       {
-       "k": "bool",
+       "k": "true-false",
        "w": "True  False",
-       "word": null,
        "d": {
         "en": "True and False are the two answers to a yes-or-no question. They are written with a capital letter and no quotes. Their kind is called bool.",
         "it": "True e False sono le due risposte a una domanda sì-o-no. Si scrivono con la lettera maiuscola e senza virgolette. Il loro tipo si chiama bool.",
         "fr": "True et False sont les deux réponses à une question oui-ou-non. On les écrit avec une majuscule et sans guillemets. Leur sorte s'appelle bool."
        },
-       "s": "print(True)"
+       "s": {
+        "en": "print(True)",
+        "it": "print(True)",
+        "fr": "print(True)"
+       }
       }
      ],
      "ex": {
@@ -1746,18 +2718,48 @@ window.PyvielCourse = {
        "it": "print(type(3.0))",
        "fr": "print(type(3.0))"
       },
-      "sol": "print(type(3.0))",
-      "start": "",
-      "spec": {
-       "out": "<class 'float'>",
-       "c": "type"
+      "sol": {
+       "en": "print(type(3.0))",
+       "it": "print(type(3.0))",
+       "fr": "print(type(3.0))"
       },
-      "answers": [],
-      "expected": "<class 'float'>"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "<class 'float'>",
+        "c": "type"
+       },
+       "it": {
+        "out": "<class 'float'>",
+        "c": "type"
+       },
+       "fr": {
+        "out": "<class 'float'>",
+        "c": "type"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "<class 'float'>",
+       "it": "<class 'float'>",
+       "fr": "<class 'float'>"
+      }
      }
     },
     {
-     "code": "print(\"5\" + \"5\")\nprint(5 + 5)\nprint(\"5\" * 3)",
+     "code": {
+      "en": "print(\"5\" + \"5\")\nprint(5 + 5)\nprint(\"5\" * 3)",
+      "it": "print(\"5\" + \"5\")\nprint(5 + 5)\nprint(\"5\" * 3)",
+      "fr": "print(\"5\" + \"5\")\nprint(5 + 5)\nprint(\"5\" * 3)"
+     },
      "title": {
       "en": "\"5\" is not 5",
       "it": "\"5\" non è 5",
@@ -1785,18 +2787,48 @@ window.PyvielCourse = {
        "it": "Metti tutti e due i numeri tra virgolette, così sono testi.",
        "fr": "Mets les deux nombres entre guillemets, pour que ce soient des textes."
       },
-      "sol": "print(\"12\" + \"34\")",
-      "start": "",
-      "spec": {
-       "out": "1234",
-       "c": "\"12\""
+      "sol": {
+       "en": "print(\"12\" + \"34\")",
+       "it": "print(\"12\" + \"34\")",
+       "fr": "print(\"12\" + \"34\")"
       },
-      "answers": [],
-      "expected": "1234"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "1234",
+        "c": "\"12\""
+       },
+       "it": {
+        "out": "1234",
+        "c": "\"12\""
+       },
+       "fr": {
+        "out": "1234",
+        "c": "\"12\""
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1234",
+       "it": "1234",
+       "fr": "1234"
+      }
      }
     },
     {
-     "code": "print(int(\"42\") + 1)\nprint(float(\"2.5\") * 2)\nprint(int(9.99))",
+     "code": {
+      "en": "print(int(\"42\") + 1)\nprint(float(\"2.5\") * 2)\nprint(int(9.99))",
+      "it": "print(int(\"42\") + 1)\nprint(float(\"2.5\") * 2)\nprint(int(9.99))",
+      "fr": "print(int(\"42\") + 1)\nprint(float(\"2.5\") * 2)\nprint(int(9.99))"
+     },
      "title": {
       "en": "Turn a text into a number",
       "it": "Trasforma un testo in numero",
@@ -1817,24 +2849,30 @@ window.PyvielCourse = {
       {
        "k": "int",
        "w": "int( )",
-       "word": null,
        "d": {
         "en": "int turns something into a whole number: int(\"42\") is the number 42. If you give it a number with a point, it cuts the point and what comes after.",
         "it": "int trasforma qualcosa in un numero intero: int(\"42\") è il numero 42. Se gli dai un numero con il punto, taglia il punto e quello che viene dopo.",
         "fr": "int transforme quelque chose en nombre entier : int(\"42\") donne le nombre 42. Si tu lui donnes un nombre avec un point, il coupe le point et ce qui suit."
        },
-       "s": "int(\"42\")"
+       "s": {
+        "en": "int(\"42\")",
+        "it": "int(\"42\")",
+        "fr": "int(\"42\")"
+       }
       },
       {
        "k": "float",
        "w": "float( )",
-       "word": null,
        "d": {
         "en": "float turns something into a number with a point: float(\"2.5\") is the number 2.5.",
         "it": "float trasforma qualcosa in un numero con il punto: float(\"2.5\") è il numero 2.5.",
         "fr": "float transforme quelque chose en nombre avec un point : float(\"2.5\") donne le nombre 2.5."
        },
-       "s": "float(\"2.5\")"
+       "s": {
+        "en": "float(\"2.5\")",
+        "it": "float(\"2.5\")",
+        "fr": "float(\"2.5\")"
+       }
       }
      ],
      "ex": {
@@ -1848,18 +2886,48 @@ window.PyvielCourse = {
        "it": "int(\"15\") * 2 dentro print.",
        "fr": "int(\"15\") * 2 dans print."
       },
-      "sol": "print(int(\"15\") * 2)",
-      "start": "",
-      "spec": {
-       "out": "30",
-       "c": "int"
+      "sol": {
+       "en": "print(int(\"15\") * 2)",
+       "it": "print(int(\"15\") * 2)",
+       "fr": "print(int(\"15\") * 2)"
       },
-      "answers": [],
-      "expected": "30"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "30",
+        "c": "int"
+       },
+       "it": {
+        "out": "30",
+        "c": "int"
+       },
+       "fr": {
+        "out": "30",
+        "c": "int"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "30",
+       "it": "30",
+       "fr": "30"
+      }
      }
     },
     {
-     "code": "print(str(7) + \" days\")\nprint(\"I have \" + str(3) + \" cats\")",
+     "code": {
+      "en": "print(str(7) + \" days\")\nprint(\"I have \" + str(3) + \" cats\")",
+      "it": "print(str(7) + \" giorni\")\nprint(\"Ho \" + str(3) + \" gatti\")",
+      "fr": "print(str(7) + \" jours\")\nprint(\"J'ai \" + str(3) + \" chats\")"
+     },
      "title": {
       "en": "Turn a number into a text",
       "it": "Trasforma un numero in testo",
@@ -1872,46 +2940,79 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "7 days\nI have 3 cats",
-      "it": "7 days\nI have 3 cats",
-      "fr": "7 days\nI have 3 cats"
+      "it": "7 giorni\nHo 3 gatti",
+      "fr": "7 jours\nJ'ai 3 chats"
      },
      "slip": null,
      "news": [
       {
        "k": "str",
        "w": "str( )",
-       "word": null,
        "d": {
         "en": "str turns something into text: str(7) is the text \"7\". You need it to glue a number to a text with +.",
         "it": "str trasforma qualcosa in testo: str(7) è il testo \"7\". Ti serve per incollare un numero a un testo con +.",
         "fr": "str transforme quelque chose en texte : str(7) donne le texte \"7\". Il t'en faut pour coller un nombre à un texte avec +."
        },
-       "s": "str(7)"
+       "s": {
+        "en": "str(7)",
+        "it": "str(7)",
+        "fr": "str(7)"
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Show: 5 apples. Make the number 5 into a text with str and glue \" apples\" to it.",
-       "it": "Mostra: 5 apples. Trasforma il numero 5 in testo con str e incolla \" apples\".",
-       "fr": "Affiche : 5 apples. Transforme le nombre 5 en texte avec str et colle \" apples\"."
+       "it": "Mostra: 5 mele. Trasforma il numero 5 in testo con str e incolla \" mele\".",
+       "fr": "Affiche : 5 pommes. Transforme le nombre 5 en texte avec str et colle \" pommes\"."
       },
       "hint": {
        "en": "str(5) + \" apples\" inside print.",
-       "it": "str(5) + \" apples\" dentro print.",
-       "fr": "str(5) + \" apples\" dans print."
+       "it": "str(5) + \" mele\" dentro print.",
+       "fr": "str(5) + \" pommes\" dans print."
       },
-      "sol": "print(str(5) + \" apples\")",
-      "start": "",
+      "sol": {
+       "en": "print(str(5) + \" apples\")",
+       "it": "print(str(5) + \" mele\")",
+       "fr": "print(str(5) + \" pommes\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
       "spec": {
-       "out": "5 apples",
-       "c": "str"
+       "en": {
+        "out": "5 apples",
+        "c": "str"
+       },
+       "it": {
+        "out": "5 mele",
+        "c": "str"
+       },
+       "fr": {
+        "out": "5 pommes",
+        "c": "str"
+       }
       },
-      "answers": [],
-      "expected": "5 apples"
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "5 apples",
+       "it": "5 mele",
+       "fr": "5 pommes"
+      }
      }
     },
     {
-     "code": "print(\"I am \" + 12)",
+     "code": {
+      "en": "print(\"I am \" + 12)",
+      "it": "print(\"Ho \" + 12)",
+      "fr": "print(\"J'ai \" + 12)"
+     },
      "title": {
       "en": "The most common mistake",
       "it": "L'errore più comune",
@@ -1932,21 +3033,45 @@ window.PyvielCourse = {
      "ex": {
       "task": {
        "en": "Fix it with str, so the program shows: I am 12",
-       "it": "Correggilo con str, così il programma mostra: I am 12",
-       "fr": "Corrige-le avec str, pour que le programme affiche : I am 12"
+       "it": "Correggilo con str, così il programma mostra: Ho 12",
+       "fr": "Corrige-le avec str, pour que le programme affiche : J'ai 12"
       },
       "hint": {
        "en": "Put str( ) around the number 12.",
        "it": "Metti str( ) intorno al numero 12.",
        "fr": "Mets str( ) autour du nombre 12."
       },
-      "sol": "print(\"I am \" + str(12))",
-      "start": "print(\"I am \" + 12)",
-      "spec": {
-       "out": "I am 12"
+      "sol": {
+       "en": "print(\"I am \" + str(12))",
+       "it": "print(\"Ho \" + str(12))",
+       "fr": "print(\"J'ai \" + str(12))"
       },
-      "answers": [],
-      "expected": "I am 12"
+      "start": {
+       "en": "print(\"I am \" + 12)",
+       "it": "print(\"Ho \" + 12)",
+       "fr": "print(\"J'ai \" + 12)"
+      },
+      "spec": {
+       "en": {
+        "out": "I am 12"
+       },
+       "it": {
+        "out": "Ho 12"
+       },
+       "fr": {
+        "out": "J'ai 12"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "I am 12",
+       "it": "Ho 12",
+       "fr": "J'ai 12"
+      }
      }
     }
    ]
@@ -1965,7 +3090,11 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "name = input(\"What is your name? \")\nprint(\"Hello\", name)",
+     "code": {
+      "en": "name = input(\"What is your name? \")\nprint(\"Hello\", name)",
+      "it": "name = input(\"Come ti chiami? \")\nprint(\"Ciao\", name)",
+      "fr": "name = input(\"Comment t'appelles-tu ? \")\nprint(\"Bonjour\", name)"
+     },
      "title": {
       "en": "Ask and listen",
       "it": "Chiedi e ascolta",
@@ -1978,8 +3107,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "What is your name? Ada\nHello Ada",
-      "it": "What is your name? Ada\nHello Ada",
-      "fr": "What is your name? Ada\nHello Ada"
+      "it": "Come ti chiami? Ada\nCiao Ada",
+      "fr": "Comment t'appelles-tu ? Ada\nBonjour Ada"
      },
      "slip": {
       "en": "Put a space at the end of the question, so the answer does not touch it.",
@@ -1990,39 +3119,72 @@ window.PyvielCourse = {
       {
        "k": "input",
        "w": "input( )",
-       "word": null,
        "d": {
         "en": "input shows a question and waits for the person to type an answer and press Enter. The answer comes back as text, so you keep it in a box.",
         "it": "input mostra una domanda e aspetta che la persona scriva una risposta e prema Invio. La risposta torna come testo, quindi la tieni in una scatola.",
         "fr": "input affiche une question et attend que la personne tape une réponse et appuie sur Entrée. La réponse revient sous forme de texte, donc tu la gardes dans une boîte."
        },
-       "s": "name = input(\"Your name? \")"
+       "s": {
+        "en": "name = input(\"Your name? \")",
+        "it": "name = input(\"Come ti chiami? \")",
+        "fr": "name = input(\"Comment t'appelles-tu ? \")"
+       }
       }
      ],
      "ex": {
       "task": {
        "en": "Ask the question: Favourite colour?  Then show: You like and the answer.",
-       "it": "Fai la domanda: Favourite colour?  Poi mostra: You like e la risposta.",
-       "fr": "Pose la question : Favourite colour?  Puis affiche : You like et la réponse."
+       "it": "Fai la domanda: Colore preferito?  Poi mostra: Ti piace e la risposta.",
+       "fr": "Pose la question : Couleur préférée ?  Puis affiche : Tu aimes et la réponse."
       },
       "hint": {
        "en": "colour = input(\"Favourite colour? \") and then print(\"You like\", colour).",
-       "it": "colour = input(\"Favourite colour? \") e poi print(\"You like\", colour).",
-       "fr": "colour = input(\"Favourite colour? \") puis print(\"You like\", colour)."
+       "it": "colour = input(\"Colore preferito? \") e poi print(\"Ti piace\", colour).",
+       "fr": "colour = input(\"Couleur préférée ? \") puis print(\"Tu aimes\", colour)."
       },
-      "sol": "colour = input(\"Favourite colour? \")\nprint(\"You like\", colour)",
-      "start": "",
+      "sol": {
+       "en": "colour = input(\"Favourite colour? \")\nprint(\"You like\", colour)",
+       "it": "colour = input(\"Colore preferito? \")\nprint(\"Ti piace\", colour)",
+       "fr": "colour = input(\"Couleur préférée ? \")\nprint(\"Tu aimes\", colour)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
       "spec": {
-       "m": "You like blue$",
-       "c": "input"
+       "en": {
+        "m": "You like blue$",
+        "c": "input"
+       },
+       "it": {
+        "m": "Ti piace blu$",
+        "c": "input"
+       },
+       "fr": {
+        "m": "Tu aimes bleu$",
+        "c": "input"
+       }
       },
-      "answers": [
-       "blue"
-      ]
+      "answers": {
+       "en": [
+        "blue"
+       ],
+       "it": [
+        "blu"
+       ],
+       "fr": [
+        "bleu"
+       ]
+      }
      }
     },
     {
-     "code": "age = input(\"How old are you? \")\nprint(age + 1)",
+     "code": {
+      "en": "age = input(\"How old are you? \")\nprint(age + 1)",
+      "it": "age = input(\"Quanti anni hai? \")\nprint(age + 1)",
+      "fr": "age = input(\"Quel âge as-tu ? \")\nprint(age + 1)"
+     },
      "title": {
       "en": "An answer is always text",
       "it": "Una risposta è sempre testo",
@@ -2035,8 +3197,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "How old are you? 10\n⚠ Line 2: A text and a number cannot be joined with +.",
-      "it": "How old are you? 10\n⚠ Riga 2: Un testo e un numero non si possono unire con +.",
-      "fr": "How old are you? 10\n⚠ Ligne 2: Un texte et un nombre ne peuvent pas être joints avec +."
+      "it": "Quanti anni hai? 10\n⚠ Riga 2: Un testo e un numero non si possono unire con +.",
+      "fr": "Quel âge as-tu ? 10\n⚠ Ligne 2: Un texte et un nombre ne peuvent pas être joints avec +."
      },
      "slip": null,
      "error": "TypeError",
@@ -2048,22 +3210,52 @@ window.PyvielCourse = {
       },
       "hint": {
        "en": "age = int(input(\"How old are you? \"))",
-       "it": "age = int(input(\"How old are you? \"))",
-       "fr": "age = int(input(\"How old are you? \"))"
+       "it": "age = int(input(\"Quanti anni hai? \"))",
+       "fr": "age = int(input(\"Quel âge as-tu ? \"))"
       },
-      "sol": "age = int(input(\"How old are you? \"))\nprint(age + 1)",
-      "start": "age = input(\"How old are you? \")\nprint(age + 1)",
+      "sol": {
+       "en": "age = int(input(\"How old are you? \"))\nprint(age + 1)",
+       "it": "age = int(input(\"Quanti anni hai? \"))\nprint(age + 1)",
+       "fr": "age = int(input(\"Quel âge as-tu ? \"))\nprint(age + 1)"
+      },
+      "start": {
+       "en": "age = input(\"How old are you? \")\nprint(age + 1)",
+       "it": "age = input(\"Quanti anni hai? \")\nprint(age + 1)",
+       "fr": "age = input(\"Quel âge as-tu ? \")\nprint(age + 1)"
+      },
       "spec": {
-       "m": "11$",
-       "c": "int"
+       "en": {
+        "m": "11$",
+        "c": "int"
+       },
+       "it": {
+        "m": "11$",
+        "c": "int"
+       },
+       "fr": {
+        "m": "11$",
+        "c": "int"
+       }
       },
-      "answers": [
-       "10"
-      ]
+      "answers": {
+       "en": [
+        "10"
+       ],
+       "it": [
+        "10"
+       ],
+       "fr": [
+        "10"
+       ]
+      }
      }
     },
     {
-     "code": "age = int(input(\"How old are you? \"))\nprint(\"Next year you will be\", age + 1)",
+     "code": {
+      "en": "age = int(input(\"How old are you? \"))\nprint(\"Next year you will be\", age + 1)",
+      "it": "age = int(input(\"Quanti anni hai? \"))\nprint(\"L'anno prossimo avrai\", age + 1)",
+      "fr": "age = int(input(\"Quel âge as-tu ? \"))\nprint(\"L'année prochaine tu auras\", age + 1)"
+     },
      "title": {
       "en": "Turn the answer into a number",
       "it": "Trasforma la risposta in numero",
@@ -2076,8 +3268,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "How old are you? 10\nNext year you will be 11",
-      "it": "How old are you? 10\nNext year you will be 11",
-      "fr": "How old are you? 10\nNext year you will be 11"
+      "it": "Quanti anni hai? 10\nL'anno prossimo avrai 11",
+      "fr": "Quel âge as-tu ? 10\nL'année prochaine tu auras 11"
      },
      "slip": {
       "en": "If the person types letters, int(...) stops with an error. Later you will learn to handle that.",
@@ -2092,22 +3284,52 @@ window.PyvielCourse = {
       },
       "hint": {
        "en": "number = int(input(\"Number? \")), then print(number * 2).",
-       "it": "number = int(input(\"Number? \")), poi print(number * 2).",
-       "fr": "number = int(input(\"Number? \")), puis print(number * 2)."
+       "it": "number = int(input(\"Numero? \")), poi print(number * 2).",
+       "fr": "number = int(input(\"Nombre ? \")), puis print(number * 2)."
       },
-      "sol": "number = int(input(\"Number? \"))\nprint(number * 2)",
-      "start": "",
+      "sol": {
+       "en": "number = int(input(\"Number? \"))\nprint(number * 2)",
+       "it": "number = int(input(\"Numero? \"))\nprint(number * 2)",
+       "fr": "number = int(input(\"Nombre ? \"))\nprint(number * 2)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
       "spec": {
-       "m": "42$",
-       "c": "int"
+       "en": {
+        "m": "42$",
+        "c": "int"
+       },
+       "it": {
+        "m": "42$",
+        "c": "int"
+       },
+       "fr": {
+        "m": "42$",
+        "c": "int"
+       }
       },
-      "answers": [
-       "21"
-      ]
+      "answers": {
+       "en": [
+        "21"
+       ],
+       "it": [
+        "21"
+       ],
+       "fr": [
+        "21"
+       ]
+      }
      }
     },
     {
-     "code": "first = int(input(\"First number: \"))\nsecond = int(input(\"Second number: \"))\ntotal = first + second\nprint(\"The sum is\", total)",
+     "code": {
+      "en": "first = int(input(\"First number: \"))\nsecond = int(input(\"Second number: \"))\ntotal = first + second\nprint(\"The sum is\", total)",
+      "it": "first = int(input(\"Primo numero: \"))\nsecond = int(input(\"Secondo numero: \"))\ntotal = first + second\nprint(\"La somma è\", total)",
+      "fr": "first = int(input(\"Premier nombre : \"))\nsecond = int(input(\"Deuxième nombre : \"))\ntotal = first + second\nprint(\"La somme est\", total)"
+     },
      "title": {
       "en": "A small calculator",
       "it": "Una piccola calcolatrice",
@@ -2120,8 +3342,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "First number: 4\nSecond number: 9\nThe sum is 13",
-      "it": "First number: 4\nSecond number: 9\nThe sum is 13",
-      "fr": "First number: 4\nSecond number: 9\nThe sum is 13"
+      "it": "Primo numero: 4\nSecondo numero: 9\nLa somma è 13",
+      "fr": "Premier nombre : 4\nDeuxième nombre : 9\nLa somme est 13"
      },
      "slip": null,
      "ex": {
@@ -2135,15 +3357,41 @@ window.PyvielCourse = {
        "it": "Sostituisci il + con un *.",
        "fr": "Remplace le + par un *."
       },
-      "sol": "first = int(input(\"First number: \"))\nsecond = int(input(\"Second number: \"))\ntotal = first * second\nprint(\"The sum is\", total)",
-      "start": "first = int(input(\"First number: \"))\nsecond = int(input(\"Second number: \"))\ntotal = first + second\nprint(\"The sum is\", total)",
-      "spec": {
-       "m": "42$"
+      "sol": {
+       "en": "first = int(input(\"First number: \"))\nsecond = int(input(\"Second number: \"))\ntotal = first * second\nprint(\"The sum is\", total)",
+       "it": "first = int(input(\"Primo numero: \"))\nsecond = int(input(\"Secondo numero: \"))\ntotal = first * second\nprint(\"La somma è\", total)",
+       "fr": "first = int(input(\"Premier nombre : \"))\nsecond = int(input(\"Deuxième nombre : \"))\ntotal = first * second\nprint(\"La somme est\", total)"
       },
-      "answers": [
-       "6",
-       "7"
-      ]
+      "start": {
+       "en": "first = int(input(\"First number: \"))\nsecond = int(input(\"Second number: \"))\ntotal = first + second\nprint(\"The sum is\", total)",
+       "it": "first = int(input(\"Primo numero: \"))\nsecond = int(input(\"Secondo numero: \"))\ntotal = first + second\nprint(\"La somma è\", total)",
+       "fr": "first = int(input(\"Premier nombre : \"))\nsecond = int(input(\"Deuxième nombre : \"))\ntotal = first + second\nprint(\"La somme est\", total)"
+      },
+      "spec": {
+       "en": {
+        "m": "42$"
+       },
+       "it": {
+        "m": "42$"
+       },
+       "fr": {
+        "m": "42$"
+       }
+      },
+      "answers": {
+       "en": [
+        "6",
+        "7"
+       ],
+       "it": [
+        "6",
+        "7"
+       ],
+       "fr": [
+        "6",
+        "7"
+       ]
+      }
      }
     }
    ]
@@ -2162,7 +3410,11 @@ window.PyvielCourse = {
    },
    "steps": [
     {
-     "code": "name = \"Ada\"\nage = 12\nprint(f\"{name} is {age} years old\")",
+     "code": {
+      "en": "name = \"Ada\"\nage = 12\nprint(f\"{name} is {age} years old\")",
+      "it": "name = \"Ada\"\nage = 12\nprint(f\"{name} ha {age} anni\")",
+      "fr": "name = \"Ada\"\nage = 12\nprint(f\"{name} a {age} ans\")"
+     },
      "title": {
       "en": "A text with holes",
       "it": "Un testo con dei buchi",
@@ -2175,8 +3427,8 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "Ada is 12 years old",
-      "it": "Ada is 12 years old",
-      "fr": "Ada is 12 years old"
+      "it": "Ada ha 12 anni",
+      "fr": "Ada a 12 ans"
      },
      "slip": {
       "en": "Do not forget the f before the quote, or the curly brackets are shown as they are.",
@@ -2187,37 +3439,68 @@ window.PyvielCourse = {
       {
        "k": "f-string",
        "w": "f\" \"  { }",
-       "word": null,
        "d": {
         "en": "Put an f just before the opening quote and you make an f-string. Anything inside curly brackets { } is replaced by its value. It is the easy way to build a message.",
         "it": "Metti una f subito prima della virgoletta di apertura e ottieni una f-string. Tutto quello che sta tra parentesi graffe { } viene sostituito dal suo valore. È il modo facile di costruire un messaggio.",
         "fr": "Mets un f juste avant le guillemet d'ouverture et tu obtiens une f-string. Tout ce qui est entre accolades { } est remplacé par sa valeur. C'est la façon facile de construire un message."
        },
-       "s": "f\"{name} is {age}\""
+       "s": {
+        "en": "f\"{name} is {age}\"",
+        "it": "f\"{name} ha {age} anni\"",
+        "fr": "f\"{name} a {age} ans\""
+       }
       }
      ],
      "ex": {
       "task": {
-       "en": "Use an f-string to show: Ada is 12 years old   with the boxes name and age, but with the age 13.",
-       "it": "Usa una f-string per mostrare: Ada is 13 years old   con le scatole name e age, ma con età 13.",
-       "fr": "Utilise une f-string pour afficher : Ada is 13 years old   avec les boîtes name et age, mais avec l'âge 13."
+       "en": "Make the program show: Ada is 13 years old   Change the age in the box, and keep the f-string.",
+       "it": "Fai mostrare al programma: Ada ha 13 anni   Cambia l'età nella scatola e tieni la f-string.",
+       "fr": "Fais afficher au programme : Ada a 13 ans   Change l'âge dans la boîte et garde la f-string."
       },
       "hint": {
        "en": "Change the 12 to 13 in the box, and keep the f-string.",
        "it": "Cambia il 12 in 13 nella scatola e tieni la f-string.",
        "fr": "Change le 12 en 13 dans la boîte et garde la f-string."
       },
-      "sol": "name = \"Ada\"\nage = 13\nprint(f\"{name} is {age} years old\")",
-      "start": "name = \"Ada\"\nage = 12\nprint(f\"{name} is {age} years old\")",
-      "spec": {
-       "out": "Ada is 13 years old"
+      "sol": {
+       "en": "name = \"Ada\"\nage = 13\nprint(f\"{name} is {age} years old\")",
+       "it": "name = \"Ada\"\nage = 13\nprint(f\"{name} ha {age} anni\")",
+       "fr": "name = \"Ada\"\nage = 13\nprint(f\"{name} a {age} ans\")"
       },
-      "answers": [],
-      "expected": "Ada is 13 years old"
+      "start": {
+       "en": "name = \"Ada\"\nage = 12\nprint(f\"{name} is {age} years old\")",
+       "it": "name = \"Ada\"\nage = 12\nprint(f\"{name} ha {age} anni\")",
+       "fr": "name = \"Ada\"\nage = 12\nprint(f\"{name} a {age} ans\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Ada is 13 years old"
+       },
+       "it": {
+        "out": "Ada ha 13 anni"
+       },
+       "fr": {
+        "out": "Ada a 13 ans"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Ada is 13 years old",
+       "it": "Ada ha 13 anni",
+       "fr": "Ada a 13 ans"
+      }
      }
     },
     {
-     "code": "price = 4\ncount = 3\nprint(f\"{count} x {price} = {count * price}\")\nprint(f\"Half of {price} is {price / 2}\")",
+     "code": {
+      "en": "price = 4\ncount = 3\nprint(f\"{count} x {price} = {count * price}\")\nprint(f\"Half of {price} is {price / 2}\")",
+      "it": "price = 4\ncount = 3\nprint(f\"{count} x {price} = {count * price}\")\nprint(f\"La metà di {price} è {price / 2}\")",
+      "fr": "price = 4\ncount = 3\nprint(f\"{count} x {price} = {count * price}\")\nprint(f\"La moitié de {price} est {price / 2}\")"
+     },
      "title": {
       "en": "A sum inside the holes",
       "it": "Un conto dentro i buchi",
@@ -2230,33 +3513,63 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "3 x 4 = 12\nHalf of 4 is 2.0",
-      "it": "3 x 4 = 12\nHalf of 4 is 2.0",
-      "fr": "3 x 4 = 12\nHalf of 4 is 2.0"
+      "it": "3 x 4 = 12\nLa metà di 4 è 2.0",
+      "fr": "3 x 4 = 12\nLa moitié de 4 est 2.0"
      },
      "slip": null,
      "ex": {
       "task": {
        "en": "A room is 6 long and 4 wide. Show: The area is 24   but let Python do the sum inside the curly brackets.",
-       "it": "Una stanza è lunga 6 e larga 4. Mostra: The area is 24   ma lascia che sia Python a fare il conto dentro le parentesi graffe.",
-       "fr": "Une pièce fait 6 de long et 4 de large. Affiche : The area is 24   mais laisse Python faire le calcul dans les accolades."
+       "it": "Una stanza è lunga 6 e larga 4. Mostra: L'area è 24   ma lascia che sia Python a fare il conto dentro le parentesi graffe.",
+       "fr": "Une pièce fait 6 de long et 4 de large. Affiche : L'aire est 24   mais laisse Python faire le calcul dans les accolades."
       },
       "hint": {
        "en": "print(f\"The area is {6 * 4}\")",
-       "it": "print(f\"The area is {6 * 4}\")",
-       "fr": "print(f\"The area is {6 * 4}\")"
+       "it": "print(f\"L'area è {6 * 4}\")",
+       "fr": "print(f\"L'aire est {6 * 4}\")"
       },
-      "sol": "print(f\"The area is {6 * 4}\")",
-      "start": "",
+      "sol": {
+       "en": "print(f\"The area is {6 * 4}\")",
+       "it": "print(f\"L'area è {6 * 4}\")",
+       "fr": "print(f\"L'aire est {6 * 4}\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
       "spec": {
-       "out": "The area is 24",
-       "c": "\\{.*\\*.*\\}"
+       "en": {
+        "out": "The area is 24",
+        "c": "\\{.*\\*.*\\}"
+       },
+       "it": {
+        "out": "L'area è 24",
+        "c": "\\{.*\\*.*\\}"
+       },
+       "fr": {
+        "out": "L'aire est 24",
+        "c": "\\{.*\\*.*\\}"
+       }
       },
-      "answers": [],
-      "expected": "The area is 24"
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "The area is 24",
+       "it": "L'area è 24",
+       "fr": "L'aire est 24"
+      }
      }
     },
     {
-     "code": "pi = 3.14159265\nprint(f\"{pi:.2f}\")\nprint(f\"{pi:.4f}\")\nprint(f\"Price: {2.5:.2f}\")",
+     "code": {
+      "en": "pi = 3.14159265\nprint(f\"{pi:.2f}\")\nprint(f\"{pi:.4f}\")\nprint(f\"Price: {2.5:.2f}\")",
+      "it": "pi = 3.14159265\nprint(f\"{pi:.2f}\")\nprint(f\"{pi:.4f}\")\nprint(f\"Prezzo: {2.5:.2f}\")",
+      "fr": "pi = 3.14159265\nprint(f\"{pi:.2f}\")\nprint(f\"{pi:.4f}\")\nprint(f\"Prix : {2.5:.2f}\")"
+     },
      "title": {
       "en": "Choose the decimals",
       "it": "Scegli i decimali",
@@ -2269,21 +3582,24 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "3.14\n3.1416\nPrice: 2.50",
-      "it": "3.14\n3.1416\nPrice: 2.50",
-      "fr": "3.14\n3.1416\nPrice: 2.50"
+      "it": "3.14\n3.1416\nPrezzo: 2.50",
+      "fr": "3.14\n3.1416\nPrix : 2.50"
      },
      "slip": null,
      "news": [
       {
        "k": "format-spec",
        "w": "{x:.2f}",
-       "word": null,
        "d": {
         "en": "After the value you can add a colon and a format. :.2f means \"show 2 digits after the point\". It is how you make prices and measures look clean.",
         "it": "Dopo il valore puoi aggiungere i due punti e un formato. :.2f vuol dire \"mostra 2 cifre dopo il punto\". È il modo per far venire bene prezzi e misure.",
         "fr": "Après la valeur tu peux ajouter deux points et un format. :.2f veut dire \"affiche 2 chiffres après le point\". C'est ainsi que prix et mesures sont bien présentés."
        },
-       "s": "f\"{2.5:.2f}\""
+       "s": {
+        "en": "f\"{2.5:.2f}\"",
+        "it": "f\"{2.5:.2f}\"",
+        "fr": "f\"{2.5:.2f}\""
+       }
       }
      ],
      "ex": {
@@ -2297,18 +3613,48 @@ window.PyvielCourse = {
        "it": "print(f\"{7:.2f}\")",
        "fr": "print(f\"{7:.2f}\")"
       },
-      "sol": "print(f\"{7:.2f}\")",
-      "start": "",
-      "spec": {
-       "out": "7.00",
-       "c": ":\\.2f"
+      "sol": {
+       "en": "print(f\"{7:.2f}\")",
+       "it": "print(f\"{7:.2f}\")",
+       "fr": "print(f\"{7:.2f}\")"
       },
-      "answers": [],
-      "expected": "7.00"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "7.00",
+        "c": ":\\.2f"
+       },
+       "it": {
+        "out": "7.00",
+        "c": ":\\.2f"
+       },
+       "fr": {
+        "out": "7.00",
+        "c": ":\\.2f"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "7.00",
+       "it": "7.00",
+       "fr": "7.00"
+      }
      }
     },
     {
-     "code": "big = 1234567\nprint(f\"{big:,}\")\nprint(f\"{7:03d}\")\nprint(f\"{'left':<8}|{'right':>8}|\")",
+     "code": {
+      "en": "big = 1234567\nprint(f\"{big:,}\")\nprint(f\"{7:03d}\")\nprint(f\"{'left':<8}|{'right':>8}|\")",
+      "it": "big = 1234567\nprint(f\"{big:,}\")\nprint(f\"{7:03d}\")\nprint(f\"{'sinistra':<8}|{'destra':>8}|\")",
+      "fr": "big = 1234567\nprint(f\"{big:,}\")\nprint(f\"{7:03d}\")\nprint(f\"{'gauche':<8}|{'droite':>8}|\")"
+     },
      "title": {
       "en": "Big numbers and neat columns",
       "it": "Numeri grandi e colonne ordinate",
@@ -2321,21 +3667,24 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "1,234,567\n007\nleft    |   right|",
-      "it": "1,234,567\n007\nleft    |   right|",
-      "fr": "1,234,567\n007\nleft    |   right|"
+      "it": "1,234,567\n007\nsinistra|  destra|",
+      "fr": "1,234,567\n007\ngauche  |  droite|"
      },
      "slip": null,
      "news": [
       {
        "k": "format-more",
        "w": ":,  :>8  :03d",
-       "word": null,
        "d": {
         "en": ":, puts commas in big numbers. :>8 pushes the value to the right inside 8 places and :<8 to the left. :03d fills with zeros up to 3 digits.",
         "it": ":, mette le virgole nei numeri grandi. :>8 spinge il valore a destra dentro 8 posti e :<8 a sinistra. :03d riempie di zeri fino a 3 cifre.",
         "fr": ":, met des virgules dans les grands nombres. :>8 pousse la valeur à droite dans 8 places et :<8 à gauche. :03d remplit de zéros jusqu'à 3 chiffres."
        },
-       "s": "f\"{1234567:,}\""
+       "s": {
+        "en": "f\"{1234567:,}\"",
+        "it": "f\"{1234567:,}\"",
+        "fr": "f\"{1234567:,}\""
+       }
       }
      ],
      "ex": {
@@ -2349,18 +3698,48 @@ window.PyvielCourse = {
        "it": "print(f\"{1234567:,}\")",
        "fr": "print(f\"{1234567:,}\")"
       },
-      "sol": "print(f\"{1234567:,}\")",
-      "start": "",
-      "spec": {
-       "out": "1,234,567",
-       "c": ":,"
+      "sol": {
+       "en": "print(f\"{1234567:,}\")",
+       "it": "print(f\"{1234567:,}\")",
+       "fr": "print(f\"{1234567:,}\")"
       },
-      "answers": [],
-      "expected": "1,234,567"
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "1,234,567",
+        "c": ":,"
+       },
+       "it": {
+        "out": "1,234,567",
+        "c": ":,"
+       },
+       "fr": {
+        "out": "1,234,567",
+        "c": ":,"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1,234,567",
+       "it": "1,234,567",
+       "fr": "1,234,567"
+      }
      }
     },
     {
-     "code": "name = input(\"Your name? \")\ncity = input(\"Your city? \")\nprint(f\"Hi {name}! {city} is a nice place.\")",
+     "code": {
+      "en": "name = input(\"Your name? \")\ncity = input(\"Your city? \")\nprint(f\"Hi {name}! {city} is a nice place.\")",
+      "it": "name = input(\"Come ti chiami? \")\ncity = input(\"In che città abiti? \")\nprint(f\"Ciao {name}! {city} è un bel posto.\")",
+      "fr": "name = input(\"Comment t'appelles-tu ? \")\ncity = input(\"Dans quelle ville habites-tu ? \")\nprint(f\"Salut {name} ! {city} est un bel endroit.\")"
+     },
      "title": {
       "en": "Questions and messages together",
       "it": "Domande e messaggi insieme",
@@ -2373,30 +3752,1903 @@ window.PyvielCourse = {
      },
      "see": {
       "en": "Your name? Ada\nYour city? Rome\nHi Ada! Rome is a nice place.",
-      "it": "Your name? Ada\nYour city? Rome\nHi Ada! Rome is a nice place.",
-      "fr": "Your name? Ada\nYour city? Rome\nHi Ada! Rome is a nice place."
+      "it": "Come ti chiami? Ada\nIn che città abiti? Rome\nCiao Ada! Rome è un bel posto.",
+      "fr": "Comment t'appelles-tu ? Ada\nDans quelle ville habites-tu ? Rome\nSalut Ada ! Rome est un bel endroit."
      },
      "slip": null,
      "ex": {
       "task": {
        "en": "Ask for a favourite animal and then say: I like <the animal> too! (use an f-string).",
-       "it": "Chiedi un animale preferito e poi di': I like <l'animale> too! (usa una f-string).",
-       "fr": "Demande un animal préféré puis dis : I like <l'animal> too! (utilise une f-string)."
+       "it": "Chiedi un animale preferito e poi di': Piace anche a me: <l'animale>! (usa una f-string).",
+       "fr": "Demande un animal préféré puis dis : Moi aussi j'aime : <l'animal> ! (utilise une f-string)."
       },
       "hint": {
        "en": "animal = input(\"Favourite animal? \") and print(f\"I like {animal} too!\")",
-       "it": "animal = input(\"Favourite animal? \") e print(f\"I like {animal} too!\")",
-       "fr": "animal = input(\"Favourite animal? \") et print(f\"I like {animal} too!\")"
+       "it": "animal = input(\"Animale preferito? \") e print(f\"Piace anche a me: {animal}!\")",
+       "fr": "animal = input(\"Animal préféré ? \") et print(f\"Moi aussi j'aime : {animal} !\")"
       },
-      "sol": "animal = input(\"Favourite animal? \")\nprint(f\"I like {animal} too!\")",
-      "start": "",
+      "sol": {
+       "en": "animal = input(\"Favourite animal? \")\nprint(f\"I like {animal} too!\")",
+       "it": "animal = input(\"Animale preferito? \")\nprint(f\"Piace anche a me: {animal}!\")",
+       "fr": "animal = input(\"Animal préféré ? \")\nprint(f\"Moi aussi j'aime : {animal} !\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
       "spec": {
-       "m": "I like cat too!$",
-       "c": "f\""
+       "en": {
+        "m": "I like cat too!$",
+        "c": "f\""
+       },
+       "it": {
+        "m": "Piace anche a me: gatto!$",
+        "c": "f\""
+       },
+       "fr": {
+        "m": "Moi aussi j'aime : chat !$",
+        "c": "f\""
+       }
       },
-      "answers": [
-       "cat"
-      ]
+      "answers": {
+       "en": [
+        "cat"
+       ],
+       "it": [
+        "gatto"
+       ],
+       "fr": [
+        "chat"
+       ]
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "True and false",
+    "it": "Vero e falso",
+    "fr": "Vrai et faux"
+   },
+   "subtitle": {
+    "en": "Comparing things",
+    "it": "Confrontare le cose",
+    "fr": "Comparer des choses"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "print(5 > 3)\nprint(5 < 3)\nprint(10 > 20)",
+      "it": "print(5 > 3)\nprint(5 < 3)\nprint(10 > 20)",
+      "fr": "print(5 > 3)\nprint(5 < 3)\nprint(10 > 20)"
+     },
+     "title": {
+      "en": "Yes or no",
+      "it": "Sì o no",
+      "fr": "Oui ou non"
+     },
+     "text": {
+      "en": "A program often needs to ask a question. A comparison is a question, and the answer is always True or False.\n\n5 > 3 asks \"is 5 bigger than 3?\" and the answer is True. 5 < 3 asks \"is 5 smaller than 3?\" and the answer is False. Note the capital letter: True, not true.",
+      "it": "Un programma ha spesso bisogno di fare una domanda. Un confronto è una domanda, e la risposta è sempre True o False.\n\n5 > 3 chiede \"5 è più grande di 3?\" e la risposta è True. 5 < 3 chiede \"5 è più piccolo di 3?\" e la risposta è False. Nota la lettera maiuscola: True, non true.",
+      "fr": "Un programme a souvent besoin de poser une question. Une comparaison est une question, et la réponse est toujours True ou False.\n\n5 > 3 demande \"5 est-il plus grand que 3 ?\" et la réponse est True. 5 < 3 demande \"5 est-il plus petit que 3 ?\" et la réponse est False. Remarque la majuscule : True, pas true."
+     },
+     "see": {
+      "en": "True\nFalse\nFalse",
+      "it": "True\nFalse\nFalse",
+      "fr": "True\nFalse\nFalse"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ">",
+       "w": ">  <",
+       "d": {
+        "en": "> asks \"is the left one bigger?\" and < asks \"is the left one smaller?\". The answer is True or False.",
+        "it": "> chiede \"il primo è più grande?\" e < chiede \"il primo è più piccolo?\". La risposta è True o False.",
+        "fr": "> demande \"celui de gauche est-il plus grand ?\" et < demande \"est-il plus petit ?\". La réponse est True ou False."
+       },
+       "s": {
+        "en": "print(5 > 3)",
+        "it": "print(5 > 3)",
+        "fr": "print(5 > 3)"
+       }
+      },
+      {
+       "k": "<",
+       "w": "<",
+       "d": {
+        "en": "< asks \"is the left one smaller?\". The answer is True or False.",
+        "it": "< chiede \"il primo è più piccolo?\". La risposta è True o False.",
+        "fr": "< demande \"celui de gauche est-il plus petit ?\". La réponse est True ou False."
+       },
+       "s": {
+        "en": "print(2 < 9)",
+        "it": "print(2 < 9)",
+        "fr": "print(2 < 9)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Ask if 10 is bigger than 20, and show the answer.",
+       "it": "Chiedi se 10 è più grande di 20 e mostra la risposta.",
+       "fr": "Demande si 10 est plus grand que 20 et affiche la réponse."
+      },
+      "hint": {
+       "en": "print(10 > 20)",
+       "it": "print(10 > 20)",
+       "fr": "print(10 > 20)"
+      },
+      "sol": {
+       "en": "print(10 > 20)",
+       "it": "print(10 > 20)",
+       "fr": "print(10 > 20)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "False"
+       },
+       "it": {
+        "out": "False"
+       },
+       "fr": {
+        "out": "False"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "False",
+       "it": "False",
+       "fr": "False"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "age = 12\nprint(age == 12)\nprint(age != 12)\nprint(age == 13)",
+      "it": "age = 12\nprint(age == 12)\nprint(age != 12)\nprint(age == 13)",
+      "fr": "age = 12\nprint(age == 12)\nprint(age != 12)\nprint(age == 13)"
+     },
+     "title": {
+      "en": "Equal, or not equal",
+      "it": "Uguale, o diverso",
+      "fr": "Égal, ou différent"
+     },
+     "text": {
+      "en": "To ask \"are these two equal?\" you write two equal signs: ==. To ask \"are they different?\" you write !=.\n\nCareful: one equal sign = puts a value in a box. Two equal signs == ask a question. They are very different.",
+      "it": "Per chiedere \"questi due sono uguali?\" scrivi due segni uguale: ==. Per chiedere \"sono diversi?\" scrivi !=.\n\nAttenzione: un segno uguale = mette un valore in una scatola. Due segni uguale == fanno una domanda. Sono molto diversi.",
+      "fr": "Pour demander \"ces deux-là sont-ils égaux ?\" tu écris deux signes égal : ==. Pour demander \"sont-ils différents ?\" tu écris !=.\n\nAttention : un seul signe égal = met une valeur dans une boîte. Deux signes égal == posent une question. Ils sont très différents."
+     },
+     "see": {
+      "en": "True\nFalse\nFalse",
+      "it": "True\nFalse\nFalse",
+      "fr": "True\nFalse\nFalse"
+     },
+     "slip": {
+      "en": "Writing age = 12 where you wanted age == 12 is the most common slip. Pyviel will tell you.",
+      "it": "Scrivere age = 12 dove volevi age == 12 è la distrazione più comune. Pyviel te lo dice.",
+      "fr": "Écrire age = 12 là où tu voulais age == 12 est la distraction la plus courante. Pyviel te le dit."
+     },
+     "news": [
+      {
+       "k": "==",
+       "w": "==",
+       "d": {
+        "en": "== asks \"are these two equal?\". Two equal signs ask a question; one equal sign puts a value in a box. They are very different.",
+        "it": "== chiede \"questi due sono uguali?\". Due segni uguale fanno una domanda; un segno uguale mette un valore in una scatola. Sono molto diversi.",
+        "fr": "== demande \"ces deux-là sont-ils égaux ?\". Deux signes égal posent une question ; un signe égal met une valeur dans une boîte. Ils sont très différents."
+       },
+       "s": {
+        "en": "print(age == 12)",
+        "it": "print(age == 12)",
+        "fr": "print(age == 12)"
+       }
+      },
+      {
+       "k": "!=",
+       "w": "!=",
+       "d": {
+        "en": "!= asks \"are these two different?\". It is True when they are not equal.",
+        "it": "!= chiede \"questi due sono diversi?\". È True quando non sono uguali.",
+        "fr": "!= demande \"ces deux-là sont-ils différents ?\". C'est True quand ils ne sont pas égaux."
+       },
+       "s": {
+        "en": "print(age != 12)",
+        "it": "print(age != 12)",
+        "fr": "print(age != 12)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Ask if 3 + 4 is equal to 7, and show the answer.",
+       "it": "Chiedi se 3 + 4 è uguale a 7 e mostra la risposta.",
+       "fr": "Demande si 3 + 4 est égal à 7 et affiche la réponse."
+      },
+      "hint": {
+       "en": "print(3 + 4 == 7)",
+       "it": "print(3 + 4 == 7)",
+       "fr": "print(3 + 4 == 7)"
+      },
+      "sol": {
+       "en": "print(3 + 4 == 7)",
+       "it": "print(3 + 4 == 7)",
+       "fr": "print(3 + 4 == 7)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "=="
+       },
+       "it": {
+        "out": "True",
+        "c": "=="
+       },
+       "fr": {
+        "out": "True",
+        "c": "=="
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "age = 12\nprint(age >= 10)\nprint(age <= 10)\nprint(age >= 12)",
+      "it": "age = 12\nprint(age >= 10)\nprint(age <= 10)\nprint(age >= 12)",
+      "fr": "age = 12\nprint(age >= 10)\nprint(age <= 10)\nprint(age >= 12)"
+     },
+     "title": {
+      "en": "Bigger or equal",
+      "it": "Più grande o uguale",
+      "fr": "Plus grand ou égal"
+     },
+     "text": {
+      "en": ">= means \"bigger than, or equal to\". <= means \"smaller than, or equal to\".\n\nThe equal sign always comes second: >=, not =>. 12 >= 12 is True, because 12 is equal to 12.",
+      "it": ">= vuol dire \"più grande di, o uguale a\". <= vuol dire \"più piccolo di, o uguale a\".\n\nIl segno uguale viene sempre per secondo: >=, non =>. 12 >= 12 è True, perché 12 è uguale a 12.",
+      "fr": ">= veut dire \"plus grand que, ou égal à\". <= veut dire \"plus petit que, ou égal à\".\n\nLe signe égal vient toujours en second : >=, pas =>. 12 >= 12 est True, parce que 12 est égal à 12."
+     },
+     "see": {
+      "en": "True\nFalse\nTrue",
+      "it": "True\nFalse\nTrue",
+      "fr": "True\nFalse\nTrue"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ">=",
+       "w": ">=  <=",
+       "d": {
+        "en": ">= asks \"bigger or equal?\" and <= asks \"smaller or equal?\". The equal sign always comes second.",
+        "it": ">= chiede \"più grande o uguale?\" e <= chiede \"più piccolo o uguale?\". Il segno uguale viene sempre per secondo.",
+        "fr": ">= demande \"plus grand ou égal ?\" et <= demande \"plus petit ou égal ?\". Le signe égal vient toujours en second."
+       },
+       "s": {
+        "en": "print(age >= 10)",
+        "it": "print(age >= 10)",
+        "fr": "print(age >= 10)"
+       }
+      },
+      {
+       "k": "<=",
+       "w": "<=",
+       "d": {
+        "en": "<= asks \"smaller or equal?\".",
+        "it": "<= chiede \"più piccolo o uguale?\".",
+        "fr": "<= demande \"plus petit ou égal ?\"."
+       },
+       "s": {
+        "en": "print(age <= 10)",
+        "it": "print(age <= 10)",
+        "fr": "print(age <= 10)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Ask if 18 is at least 18 (bigger or equal), and show the answer.",
+       "it": "Chiedi se 18 è almeno 18 (più grande o uguale) e mostra la risposta.",
+       "fr": "Demande si 18 est au moins 18 (plus grand ou égal) et affiche la réponse."
+      },
+      "hint": {
+       "en": "print(18 >= 18)",
+       "it": "print(18 >= 18)",
+       "fr": "print(18 >= 18)"
+      },
+      "sol": {
+       "en": "print(18 >= 18)",
+       "it": "print(18 >= 18)",
+       "fr": "print(18 >= 18)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": ">="
+       },
+       "it": {
+        "out": "True",
+        "c": ">="
+       },
+       "fr": {
+        "out": "True",
+        "c": ">="
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(\"cat\" == \"cat\")\nprint(\"cat\" == \"Cat\")\nprint(\"apple\" < \"banana\")",
+      "it": "print(\"gatto\" == \"gatto\")\nprint(\"gatto\" == \"Gatto\")\nprint(\"mela\" < \"pera\")",
+      "fr": "print(\"chat\" == \"chat\")\nprint(\"chat\" == \"Chat\")\nprint(\"abricot\" < \"banane\")"
+     },
+     "title": {
+      "en": "Comparing text",
+      "it": "Confrontare il testo",
+      "fr": "Comparer du texte"
+     },
+     "text": {
+      "en": "Texts can be compared too. == is True only if they are exactly the same, capital letters included.\n\n< and > follow the order of the alphabet: \"apple\" comes before \"banana\", so \"apple\" < \"banana\" is True.",
+      "it": "Anche i testi si possono confrontare. == è True solo se sono esattamente uguali, maiuscole comprese.\n\n< e > seguono l'ordine dell'alfabeto: \"mela\" viene prima di \"pera\", quindi \"mela\" < \"pera\" è True.",
+      "fr": "Les textes aussi peuvent être comparés. == est True seulement s'ils sont exactement pareils, majuscules comprises.\n\n< et > suivent l'ordre de l'alphabet : \"abricot\" vient avant \"banane\", donc \"abricot\" < \"banane\" est True."
+     },
+     "see": {
+      "en": "True\nFalse\nTrue",
+      "it": "True\nFalse\nTrue",
+      "fr": "True\nFalse\nTrue"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Ask if \"apple\" is equal to \"Apple\", and show the answer.",
+       "it": "Chiedi se \"mela\" è uguale a \"Mela\" e mostra la risposta.",
+       "fr": "Demande si \"pomme\" est égal à \"Pomme\" et affiche la réponse."
+      },
+      "hint": {
+       "en": "print(\"apple\" == \"Apple\")",
+       "it": "print(\"mela\" == \"Mela\")",
+       "fr": "print(\"pomme\" == \"Pomme\")"
+      },
+      "sol": {
+       "en": "print(\"apple\" == \"Apple\")",
+       "it": "print(\"mela\" == \"Mela\")",
+       "fr": "print(\"pomme\" == \"Pomme\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "False",
+        "c": "=="
+       },
+       "it": {
+        "out": "False",
+        "c": "=="
+       },
+       "fr": {
+        "out": "False",
+        "c": "=="
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "False",
+       "it": "False",
+       "fr": "False"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(\"a\" in \"banana\")\nprint(\"z\" in \"banana\")\nprint(\"nan\" in \"banana\")",
+      "it": "print(\"a\" in \"banana\")\nprint(\"z\" in \"banana\")\nprint(\"nan\" in \"banana\")",
+      "fr": "print(\"a\" in \"banane\")\nprint(\"z\" in \"banane\")\nprint(\"nan\" in \"banane\")"
+     },
+     "title": {
+      "en": "Is it inside?",
+      "it": "Sta dentro?",
+      "fr": "Est-ce dedans ?"
+     },
+     "text": {
+      "en": "The word in asks \"is this one inside that one?\". For a text, it asks whether some letters are part of it.\n\n\"a\" in \"banana\" is True. \"z\" in \"banana\" is False. It can look for a longer piece too.",
+      "it": "La parola in chiede \"questo sta dentro quello?\". Per un testo, chiede se alcune lettere ne fanno parte.\n\n\"a\" in \"banana\" è True. \"z\" in \"banana\" è False. Può cercare anche un pezzo più lungo.",
+      "fr": "Le mot in demande \"celui-ci est-il dans celui-là ?\". Pour un texte, il demande si des lettres en font partie.\n\n\"a\" in \"banane\" est True. \"z\" in \"banane\" est False. Il peut chercher aussi un morceau plus long."
+     },
+     "see": {
+      "en": "True\nFalse\nTrue",
+      "it": "True\nFalse\nTrue",
+      "fr": "True\nFalse\nTrue"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "in",
+       "w": "in",
+       "d": {
+        "en": "in asks \"is this one inside that one?\". For a text it asks if some letters are part of it. The answer is True or False.",
+        "it": "in chiede \"questo sta dentro quello?\". Per un testo chiede se alcune lettere ne fanno parte. La risposta è True o False.",
+        "fr": "in demande \"celui-ci est-il dans celui-là ?\". Pour un texte, il demande si des lettres en font partie. La réponse est True ou False."
+       },
+       "s": {
+        "en": "print(\"a\" in \"banana\")",
+        "it": "print(\"a\" in \"banana\")",
+        "fr": "print(\"a\" in \"banane\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Ask if \"py\" is inside \"python\", and show the answer.",
+       "it": "Chiedi se \"py\" sta dentro \"python\" e mostra la risposta.",
+       "fr": "Demande si \"py\" est dans \"python\" et affiche la réponse."
+      },
+      "hint": {
+       "en": "print(\"py\" in \"python\")",
+       "it": "print(\"py\" in \"python\")",
+       "fr": "print(\"py\" in \"python\")"
+      },
+      "sol": {
+       "en": "print(\"py\" in \"python\")",
+       "it": "print(\"py\" in \"python\")",
+       "fr": "print(\"py\" in \"python\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": " in "
+       },
+       "it": {
+        "out": "True",
+        "c": " in "
+       },
+       "fr": {
+        "out": "True",
+        "c": " in "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "age = 12\nprint(age > 10 and age < 15)\nprint(age < 10 or age == 12)\nprint(not age == 12)",
+      "it": "age = 12\nprint(age > 10 and age < 15)\nprint(age < 10 or age == 12)\nprint(not age == 12)",
+      "fr": "age = 12\nprint(age > 10 and age < 15)\nprint(age < 10 or age == 12)\nprint(not age == 12)"
+     },
+     "title": {
+      "en": "and, or, not",
+      "it": "and, or, not: unire le domande",
+      "fr": "and, or, not : relier des questions"
+     },
+     "text": {
+      "en": "You can join questions. and needs both questions to be True. or needs at least one of them to be True. not turns True into False.\n\nThe first line asks \"is age bigger than 10 and smaller than 15?\". Both are true, so the answer is True.",
+      "it": "Puoi unire le domande. and vuole che tutte e due le domande siano True. or vuole che almeno una sia True. not trasforma True in False.\n\nLa prima riga chiede \"age è più grande di 10 e più piccolo di 15?\". Sono vere tutte e due, quindi la risposta è True.",
+      "fr": "Tu peux relier des questions. and veut que les deux questions soient True. or veut qu'au moins une soit True. not transforme True en False.\n\nLa première ligne demande \"age est-il plus grand que 10 et plus petit que 15 ?\". Les deux sont vraies, donc la réponse est True."
+     },
+     "see": {
+      "en": "True\nTrue\nFalse",
+      "it": "True\nTrue\nFalse",
+      "fr": "True\nTrue\nFalse"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "and",
+       "w": "and",
+       "d": {
+        "en": "and joins two questions: the answer is True only when both are True.",
+        "it": "and unisce due domande: la risposta è True solo quando tutte e due sono True.",
+        "fr": "and relie deux questions : la réponse est True seulement quand les deux sont True."
+       },
+       "s": {
+        "en": "age > 10 and age < 15",
+        "it": "age > 10 and age < 15",
+        "fr": "age > 10 and age < 15"
+       }
+      },
+      {
+       "k": "or",
+       "w": "or",
+       "d": {
+        "en": "or joins two questions: the answer is True when at least one is True.",
+        "it": "or unisce due domande: la risposta è True quando almeno una è True.",
+        "fr": "or relie deux questions : la réponse est True quand au moins une est True."
+       },
+       "s": {
+        "en": "age < 10 or age == 12",
+        "it": "age < 10 or age == 12",
+        "fr": "age < 10 or age == 12"
+       }
+      },
+      {
+       "k": "not",
+       "w": "not",
+       "d": {
+        "en": "not turns True into False, and False into True.",
+        "it": "not trasforma True in False e False in True.",
+        "fr": "not transforme True en False et False en True."
+       },
+       "s": {
+        "en": "not age == 12",
+        "it": "not age == 12",
+        "fr": "not age == 12"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "The number is 150. Ask if it is smaller than 0 or bigger than 100, and show the answer.",
+       "it": "Il numero è 150. Chiedi se è più piccolo di 0 o più grande di 100 e mostra la risposta.",
+       "fr": "Le nombre est 150. Demande s'il est plus petit que 0 ou plus grand que 100 et affiche la réponse."
+      },
+      "hint": {
+       "en": "print(number < 0 or number > 100)",
+       "it": "print(number < 0 or number > 100)",
+       "fr": "print(number < 0 or number > 100)"
+      },
+      "sol": {
+       "en": "number = 150\nprint(number < 0 or number > 100)",
+       "it": "number = 150\nprint(number < 0 or number > 100)",
+       "fr": "number = 150\nprint(number < 0 or number > 100)"
+      },
+      "start": {
+       "en": "number = 150",
+       "it": "number = 150",
+       "fr": "number = 150"
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": " or "
+       },
+       "it": {
+        "out": "True",
+        "c": " or "
+       },
+       "fr": {
+        "out": "True",
+        "c": " or "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "age = 12\nprint(10 < age < 15)\nprint(10 < age < 11)",
+      "it": "age = 12\nprint(10 < age < 15)\nprint(10 < age < 11)",
+      "fr": "age = 12\nprint(10 < age < 15)\nprint(10 < age < 11)"
+     },
+     "title": {
+      "en": "Between two numbers",
+      "it": "Tra due numeri",
+      "fr": "Entre deux nombres"
+     },
+     "text": {
+      "en": "Python lets you chain comparisons like in maths: 10 < age < 15 asks \"is age between 10 and 15?\".\n\nIt is the same as age > 10 and age < 15, but shorter and easy to read.",
+      "it": "Python ti lascia concatenare i confronti come in matematica: 10 < age < 15 chiede \"age è tra 10 e 15?\".\n\nÈ come age > 10 and age < 15, ma più corto e facile da leggere.",
+      "fr": "Python te laisse enchaîner les comparaisons comme en maths : 10 < age < 15 demande \"age est-il entre 10 et 15 ?\".\n\nC'est pareil que age > 10 and age < 15, mais plus court et facile à lire."
+     },
+     "see": {
+      "en": "True\nFalse",
+      "it": "True\nFalse",
+      "fr": "True\nFalse"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Ask if 5 is between 1 and 10, with one chained comparison, and show the answer.",
+       "it": "Chiedi se 5 è tra 1 e 10, con un solo confronto concatenato, e mostra la risposta.",
+       "fr": "Demande si 5 est entre 1 et 10, avec une seule comparaison enchaînée, et affiche la réponse."
+      },
+      "hint": {
+       "en": "print(1 < 5 < 10)",
+       "it": "print(1 < 5 < 10)",
+       "fr": "print(1 < 5 < 10)"
+      },
+      "sol": {
+       "en": "print(1 < 5 < 10)",
+       "it": "print(1 < 5 < 10)",
+       "fr": "print(1 < 5 < 10)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "<.*<"
+       },
+       "it": {
+        "out": "True",
+        "c": "<.*<"
+       },
+       "fr": {
+        "out": "True",
+        "c": "<.*<"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(bool(0), bool(1))\nprint(bool(\"\"), bool(\"hi\"))\nname = \"\"\nprint(not name)",
+      "it": "print(bool(0), bool(1))\nprint(bool(\"\"), bool(\"ciao\"))\nname = \"\"\nprint(not name)",
+      "fr": "print(bool(0), bool(1))\nprint(bool(\"\"), bool(\"salut\"))\nname = \"\"\nprint(not name)"
+     },
+     "title": {
+      "en": "What counts as false",
+      "it": "Cosa conta come falso",
+      "fr": "Ce qui compte pour faux"
+     },
+     "text": {
+      "en": "In a question, Python also treats some values as False: the number 0 and an empty text \"\". Almost everything else counts as True.\n\nbool(...) shows how Python sees a value. It is a handy way to ask \"is there anything in it?\".",
+      "it": "In una domanda, Python tratta come False anche alcuni valori: il numero 0 e un testo vuoto \"\". Quasi tutto il resto conta come True.\n\nbool(...) mostra come Python vede un valore. È un modo comodo per chiedere \"c'è qualcosa dentro?\".",
+      "fr": "Dans une question, Python traite aussi certaines valeurs comme False : le nombre 0 et un texte vide \"\". Presque tout le reste compte pour True.\n\nbool(...) montre comment Python voit une valeur. C'est une façon pratique de demander \"y a-t-il quelque chose dedans ?\"."
+     },
+     "see": {
+      "en": "False True\nFalse True\nTrue",
+      "it": "False True\nFalse True\nTrue",
+      "fr": "False True\nFalse True\nTrue"
+     },
+     "slip": {
+      "en": "bool(\"False\") is True: any text that is not empty is True, whatever it says.",
+      "it": "bool(\"Falso\") è True: qualsiasi testo non vuoto è True, qualunque cosa dica.",
+      "fr": "bool(\"Faux\") est True : tout texte non vide est True, quoi qu'il dise."
+     },
+     "news": [
+      {
+       "k": "bool",
+       "w": "bool( )",
+       "d": {
+        "en": "bool shows how Python sees a value as a yes or a no. 0, an empty text and a few other \"empty\" things are False. Almost everything else is True.",
+        "it": "bool mostra come Python vede un valore, come un sì o un no. 0, un testo vuoto e poche altre cose \"vuote\" sono False. Quasi tutto il resto è True.",
+        "fr": "bool montre comment Python voit une valeur, comme un oui ou un non. 0, un texte vide et quelques autres choses \"vides\" sont False. Presque tout le reste est True."
+       },
+       "s": {
+        "en": "bool(\"\")",
+        "it": "bool(\"\")",
+        "fr": "bool(\"\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Predict first: what does bool(\"False\") show? Then run it and check.",
+       "it": "Prima prevedi: cosa mostra bool(\"Falso\")? Poi eseguilo e controlla.",
+       "fr": "Prévois d'abord : que montre bool(\"Faux\") ? Puis lance-le et vérifie."
+      },
+      "hint": {
+       "en": "The text \"False\" is not empty, so it counts as...",
+       "it": "Il testo \"Falso\" non è vuoto, quindi conta come...",
+       "fr": "Le texte \"Faux\" n'est pas vide, donc il compte comme..."
+      },
+      "sol": {
+       "en": "print(bool(\"False\"))",
+       "it": "print(bool(\"Falso\"))",
+       "fr": "print(bool(\"Faux\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "bool"
+       },
+       "it": {
+        "out": "True",
+        "c": "bool"
+       },
+       "fr": {
+        "out": "True",
+        "c": "bool"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "result = None\nprint(result)\nprint(type(result))\nprint(None == 0)",
+      "it": "result = None\nprint(result)\nprint(type(result))\nprint(None == 0)",
+      "fr": "result = None\nprint(result)\nprint(type(result))\nprint(None == 0)"
+     },
+     "title": {
+      "en": "Nothing: None",
+      "it": "Niente: None",
+      "fr": "Rien : None"
+     },
+     "text": {
+      "en": "None is a special value that means \"nothing here\". It is not 0 and it is not an empty text: it is the lack of a value.\n\nPython uses it when something has no answer.",
+      "it": "None è un valore speciale che vuol dire \"qui non c'è niente\". Non è 0 e non è un testo vuoto: è l'assenza di un valore.\n\nPython lo usa quando qualcosa non ha una risposta.",
+      "fr": "None est une valeur spéciale qui veut dire \"rien ici\". Ce n'est pas 0 et ce n'est pas un texte vide : c'est l'absence de valeur.\n\nPython l'utilise quand quelque chose n'a pas de réponse."
+     },
+     "see": {
+      "en": "None\n<class 'NoneType'>\nFalse",
+      "it": "None\n<class 'NoneType'>\nFalse",
+      "fr": "None\n<class 'NoneType'>\nFalse"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "None",
+       "w": "None",
+       "d": {
+        "en": "None is a special value that means \"nothing here\". It is not 0 and it is not an empty text: it is the lack of a value.",
+        "it": "None è un valore speciale che vuol dire \"qui non c'è niente\". Non è 0 e non è un testo vuoto: è l'assenza di un valore.",
+        "fr": "None est une valeur spéciale qui veut dire \"rien ici\". Ce n'est pas 0 et ce n'est pas un texte vide : c'est l'absence de valeur."
+       },
+       "s": {
+        "en": "result = None",
+        "it": "result = None",
+        "fr": "result = None"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Put None in a box called answer and show the box.",
+       "it": "Metti None in una scatola che si chiama answer e mostra la scatola.",
+       "fr": "Mets None dans une boîte qui s'appelle answer et affiche la boîte."
+      },
+      "hint": {
+       "en": "answer = None and then print(answer).",
+       "it": "answer = None e poi print(answer).",
+       "fr": "answer = None puis print(answer)."
+      },
+      "sol": {
+       "en": "answer = None\nprint(answer)",
+       "it": "answer = None\nprint(answer)",
+       "fr": "answer = None\nprint(answer)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "None",
+        "c": "None"
+       },
+       "it": {
+        "out": "None",
+        "c": "None"
+       },
+       "fr": {
+        "out": "None",
+        "c": "None"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "None",
+       "it": "None",
+       "fr": "None"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Make choices",
+    "it": "Fai scelte",
+    "fr": "Fais des choix"
+   },
+   "subtitle": {
+    "en": "if, else and elif",
+    "it": "if, else ed elif",
+    "fr": "if, else et elif"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "age = 12\nif age >= 10:\n    print(\"You can come in\")\nprint(\"The end\")",
+      "it": "age = 12\nif age >= 10:\n    print(\"Puoi entrare\")\nprint(\"Fine\")",
+      "fr": "age = 12\nif age >= 10:\n    print(\"Tu peux entrer\")\nprint(\"Fin\")"
+     },
+     "title": {
+      "en": "If this, then that",
+      "it": "Se questo, allora quello",
+      "fr": "Si ceci, alors cela"
+     },
+     "text": {
+      "en": "Now the program can choose. if is followed by a question and a colon. The lines pushed in under it (4 spaces) run only when the answer is True.\n\nHere the age is 12, so the pushed-in line runs. The last line is not pushed in, so it always runs.",
+      "it": "Ora il programma può scegliere. if è seguito da una domanda e dai due punti. Le righe rientrate sotto (di 4 spazi) girano solo quando la risposta è True.\n\nQui l'età è 12, quindi la riga rientrata gira. L'ultima riga non è rientrata, quindi gira sempre.",
+      "fr": "Maintenant le programme peut choisir. if est suivi d'une question et de deux points. Les lignes décalées dessous (de 4 espaces) ne tournent que quand la réponse est True.\n\nIci l'âge est 12, donc la ligne décalée tourne. La dernière ligne n'est pas décalée, donc elle tourne toujours."
+     },
+     "see": {
+      "en": "You can come in\nThe end",
+      "it": "Puoi entrare\nFine",
+      "fr": "Tu peux entrer\nFin"
+     },
+     "slip": {
+      "en": "Do not forget the colon at the end of the if line, and the 4 spaces before the lines inside.",
+      "it": "Non dimenticare i due punti alla fine della riga if e i 4 spazi prima delle righe dentro.",
+      "fr": "N'oublie pas les deux points à la fin de la ligne if et les 4 espaces avant les lignes dedans."
+     },
+     "news": [
+      {
+       "k": "if",
+       "w": "if",
+       "d": {
+        "en": "if lets the program choose. Write if, a question, and a colon. The lines pushed in under it (with 4 spaces) run only when the answer is True.",
+        "it": "if fa scegliere il programma. Scrivi if, una domanda e i due punti. Le righe rientrate sotto (di 4 spazi) girano solo quando la risposta è True.",
+        "fr": "if fait choisir le programme. Écris if, une question et deux points. Les lignes décalées dessous (de 4 espaces) ne tournent que quand la réponse est True."
+       },
+       "s": {
+        "en": "if age >= 10:\n    print(\"Come in\")",
+        "it": "if age >= 10:\n    print(\"Entra\")",
+        "fr": "if age >= 10:\n    print(\"Entre\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make the program say Welcome only if number is 18 or more. The number is 20, so Welcome must appear.",
+       "it": "Fai dire al programma Benvenuto solo se number è 18 o più. Il numero è 20, quindi Benvenuto deve comparire.",
+       "fr": "Fais dire Bienvenue au programme seulement si number vaut 18 ou plus. Le nombre est 20, donc Bienvenue doit apparaître."
+      },
+      "hint": {
+       "en": "if number >= 18: and then, pushed in with 4 spaces, the print line.",
+       "it": "if number >= 18: e poi, rientrata di 4 spazi, la riga print.",
+       "fr": "if number >= 18: puis, décalée de 4 espaces, la ligne print."
+      },
+      "sol": {
+       "en": "number = 20\nif number >= 18:\n    print(\"Welcome\")",
+       "it": "number = 20\nif number >= 18:\n    print(\"Benvenuto\")",
+       "fr": "number = 20\nif number >= 18:\n    print(\"Bienvenue\")"
+      },
+      "start": {
+       "en": "number = 20\nprint(\"Welcome\")",
+       "it": "number = 20\nprint(\"Benvenuto\")",
+       "fr": "number = 20\nprint(\"Bienvenue\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Welcome",
+        "c": "if "
+       },
+       "it": {
+        "out": "Benvenuto",
+        "c": "if "
+       },
+       "fr": {
+        "out": "Bienvenue",
+        "c": "if "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Welcome",
+       "it": "Benvenuto",
+       "fr": "Bienvenue"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "age = 8\nif age >= 10:\n    print(\"You can come in\")\nelse:\n    print(\"Too young, sorry\")",
+      "it": "age = 8\nif age >= 10:\n    print(\"Puoi entrare\")\nelse:\n    print(\"Troppo piccolo, scusa\")",
+      "fr": "age = 8\nif age >= 10:\n    print(\"Tu peux entrer\")\nelse:\n    print(\"Trop jeune, désolé\")"
+     },
+     "title": {
+      "en": "Otherwise: else",
+      "it": "Altrimenti: else",
+      "fr": "Sinon : else"
+     },
+     "text": {
+      "en": "else means \"otherwise\". Its lines run when the question of the if was not True.\n\nSo exactly one of the two groups of lines runs: never both, never none.",
+      "it": "else vuol dire \"altrimenti\". Le sue righe girano quando la domanda dell'if non era True.\n\nQuindi gira esattamente uno dei due gruppi di righe: mai tutti e due, mai nessuno.",
+      "fr": "else veut dire \"sinon\". Ses lignes tournent quand la question du if n'était pas True.\n\nDonc exactement un des deux groupes de lignes tourne : jamais les deux, jamais aucun."
+     },
+     "see": {
+      "en": "Too young, sorry",
+      "it": "Troppo piccolo, scusa",
+      "fr": "Trop jeune, désolé"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "else",
+       "w": "else",
+       "d": {
+        "en": "else is for \"otherwise\": its lines run when the if before it was not True.",
+        "it": "else vuol dire \"altrimenti\": le sue righe girano quando l'if prima non era True.",
+        "fr": "else veut dire \"sinon\" : ses lignes tournent quand le if d'avant n'était pas True."
+       },
+       "s": {
+        "en": "else:\n    print(\"Too young\")",
+        "it": "else:\n    print(\"Troppo piccolo\")",
+        "fr": "else:\n    print(\"Trop jeune\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "The number is 12. Show Adult if it is 18 or more, and Child if not.",
+       "it": "Il numero è 12. Mostra Adulto se è 18 o più, e Bambino se no.",
+       "fr": "Le nombre est 12. Affiche Adulte s'il vaut 18 ou plus, et Enfant sinon."
+      },
+      "hint": {
+       "en": "if number >= 18: print(\"Adult\") and else: print(\"Child\").",
+       "it": "if number >= 18: print(\"Adulto\") ed else: print(\"Bambino\").",
+       "fr": "if number >= 18: print(\"Adulte\") et else: print(\"Enfant\")."
+      },
+      "sol": {
+       "en": "number = 12\nif number >= 18:\n    print(\"Adult\")\nelse:\n    print(\"Child\")",
+       "it": "number = 12\nif number >= 18:\n    print(\"Adulto\")\nelse:\n    print(\"Bambino\")",
+       "fr": "number = 12\nif number >= 18:\n    print(\"Adulte\")\nelse:\n    print(\"Enfant\")"
+      },
+      "start": {
+       "en": "number = 12",
+       "it": "number = 12",
+       "fr": "number = 12"
+      },
+      "spec": {
+       "en": {
+        "out": "Child",
+        "c": "else"
+       },
+       "it": {
+        "out": "Bambino",
+        "c": "else"
+       },
+       "fr": {
+        "out": "Enfant",
+        "c": "else"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Child",
+       "it": "Bambino",
+       "fr": "Enfant"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "score = 75\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelse:\n    print(\"C\")",
+      "it": "score = 75\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelse:\n    print(\"C\")",
+      "fr": "score = 75\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelse:\n    print(\"C\")"
+     },
+     "title": {
+      "en": "Many roads: elif",
+      "it": "Molte strade: elif",
+      "fr": "Plusieurs routes : elif"
+     },
+     "text": {
+      "en": "When there are more than two roads, use elif, which means \"else, if\". Python asks the questions in order and takes the first road whose question is True.\n\nOnly one road is taken. Here 75 is not 90 or more, but it is 70 or more, so the answer is B.",
+      "it": "Quando le strade sono più di due, usa elif, che vuol dire \"altrimenti, se\". Python fa le domande in ordine e prende la prima strada la cui domanda è True.\n\nSi prende una sola strada. Qui 75 non è 90 o più, ma è 70 o più, quindi la risposta è B.",
+      "fr": "Quand il y a plus de deux routes, utilise elif, qui veut dire \"sinon, si\". Python pose les questions dans l'ordre et prend la première route dont la question est True.\n\nOn ne prend qu'une seule route. Ici 75 n'est pas 90 ou plus, mais est 70 ou plus, donc la réponse est B."
+     },
+     "see": {
+      "en": "B",
+      "it": "B",
+      "fr": "B"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "elif",
+       "w": "elif",
+       "d": {
+        "en": "elif is \"else if\": one more question to ask when the ones before it were not True. You can have as many as you like.",
+        "it": "elif è \"else if\", cioè \"altrimenti se\": un'altra domanda da fare quando quelle prima non erano True. Ne puoi avere quante vuoi.",
+        "fr": "elif veut dire \"sinon si\" : une autre question à poser quand les précédentes n'étaient pas True. Tu peux en avoir autant que tu veux."
+       },
+       "s": {
+        "en": "elif score >= 70:\n    print(\"B\")",
+        "it": "elif score >= 70:\n    print(\"B\")",
+        "fr": "elif score >= 70:\n    print(\"B\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "The score is 55. Show A for 90 or more, B for 70 or more, C for 50 or more, and F otherwise.",
+       "it": "Il punteggio è 55. Mostra A per 90 o più, B per 70 o più, C per 50 o più, e F altrimenti.",
+       "fr": "Le score est 55. Affiche A pour 90 ou plus, B pour 70 ou plus, C pour 50 ou plus, et F sinon."
+      },
+      "hint": {
+       "en": "Use if, then two elif lines, then else.",
+       "it": "Usa if, poi due righe elif, poi else.",
+       "fr": "Utilise if, puis deux lignes elif, puis else."
+      },
+      "sol": {
+       "en": "score = 55\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelif score >= 50:\n    print(\"C\")\nelse:\n    print(\"F\")",
+       "it": "score = 55\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelif score >= 50:\n    print(\"C\")\nelse:\n    print(\"F\")",
+       "fr": "score = 55\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelif score >= 50:\n    print(\"C\")\nelse:\n    print(\"F\")"
+      },
+      "start": {
+       "en": "score = 55",
+       "it": "score = 55",
+       "fr": "score = 55"
+      },
+      "spec": {
+       "en": {
+        "out": "C",
+        "c": "elif"
+       },
+       "it": {
+        "out": "C",
+        "c": "elif"
+       },
+       "fr": {
+        "out": "C",
+        "c": "elif"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "C",
+       "it": "C",
+       "fr": "C"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "age = 15\nhas_ticket = True\nif age >= 12 and has_ticket:\n    print(\"Welcome to the show\")\nif age < 5 or age > 65:\n    print(\"Free entry\")",
+      "it": "age = 15\nhas_ticket = True\nif age >= 12 and has_ticket:\n    print(\"Benvenuto allo spettacolo\")\nif age < 5 or age > 65:\n    print(\"Ingresso gratuito\")",
+      "fr": "age = 15\nhas_ticket = True\nif age >= 12 and has_ticket:\n    print(\"Bienvenue au spectacle\")\nif age < 5 or age > 65:\n    print(\"Entrée gratuite\")"
+     },
+     "title": {
+      "en": "Combine questions",
+      "it": "Combina le domande",
+      "fr": "Combine des questions"
+     },
+     "text": {
+      "en": "Remember and and or? They fit well inside an if. The lines run only when the whole question is True.\n\nHere the first if needs the age and the ticket. The second needs a very young or a very old visitor. Here it is False, so nothing shows.",
+      "it": "Ricordi and e or? Stanno bene dentro un if. Le righe girano solo quando tutta la domanda è True.\n\nQui il primo if vuole sia l'età sia il biglietto. Il secondo vuole un visitatore molto piccolo o molto anziano. Qui è False, quindi non si vede niente.",
+      "fr": "Tu te souviens de and et or ? Ils vont bien dans un if. Les lignes ne tournent que quand toute la question est True.\n\nIci le premier if veut l'âge et le billet. Le deuxième veut un visiteur très jeune ou très âgé. Ici c'est False, donc rien ne s'affiche."
+     },
+     "see": {
+      "en": "Welcome to the show",
+      "it": "Benvenuto allo spettacolo",
+      "fr": "Bienvenue au spectacle"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The number is 15. Show Ok only if it is bigger than 10 and smaller than 20.",
+       "it": "Il numero è 15. Mostra Ok solo se è più grande di 10 e più piccolo di 20.",
+       "fr": "Le nombre est 15. Affiche Ok seulement s'il est plus grand que 10 et plus petit que 20."
+      },
+      "hint": {
+       "en": "Write if, then the two questions joined with and, then a colon.",
+       "it": "Scrivi if, poi le due domande unite da and, poi i due punti.",
+       "fr": "Écris if, puis les deux questions reliées par and, puis deux points."
+      },
+      "sol": {
+       "en": "number = 15\nif number > 10 and number < 20:\n    print(\"Ok\")",
+       "it": "number = 15\nif number > 10 and number < 20:\n    print(\"Ok\")",
+       "fr": "number = 15\nif number > 10 and number < 20:\n    print(\"Ok\")"
+      },
+      "start": {
+       "en": "number = 15",
+       "it": "number = 15",
+       "fr": "number = 15"
+      },
+      "spec": {
+       "en": {
+        "out": "Ok",
+        "c": " and "
+       },
+       "it": {
+        "out": "Ok",
+        "c": " and "
+       },
+       "fr": {
+        "out": "Ok",
+        "c": " and "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Ok",
+       "it": "Ok",
+       "fr": "Ok"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "age = 20\nhas_ticket = False\nif age >= 12:\n    if has_ticket:\n        print(\"Come in\")\n    else:\n        print(\"Buy a ticket first\")\nelse:\n    print(\"Too young\")",
+      "it": "age = 20\nhas_ticket = False\nif age >= 12:\n    if has_ticket:\n        print(\"Entra\")\n    else:\n        print(\"Prima compra il biglietto\")\nelse:\n    print(\"Troppo piccolo\")",
+      "fr": "age = 20\nhas_ticket = False\nif age >= 12:\n    if has_ticket:\n        print(\"Entre\")\n    else:\n        print(\"Achète d'abord un billet\")\nelse:\n    print(\"Trop jeune\")"
+     },
+     "title": {
+      "en": "A choice inside a choice",
+      "it": "Una scelta dentro una scelta",
+      "fr": "Un choix dans un choix"
+     },
+     "text": {
+      "en": "A line pushed in under an if can be another if. Each level of pushing in belongs to the line above it.\n\nRead it from the top: first the age is checked, and only for people who are old enough, the ticket is checked next.",
+      "it": "Una riga rientrata sotto un if può essere un altro if. Ogni livello di rientro appartiene alla riga sopra.\n\nLeggilo dall'alto: prima si controlla l'età, e solo per chi è abbastanza grande si controlla poi il biglietto.",
+      "fr": "Une ligne décalée sous un if peut être un autre if. Chaque niveau de décalage appartient à la ligne du dessus.\n\nLis-le depuis le haut : on vérifie d'abord l'âge, et seulement pour les personnes assez grandes on vérifie ensuite le billet."
+     },
+     "see": {
+      "en": "Buy a ticket first",
+      "it": "Prima compra il biglietto",
+      "fr": "Achète d'abord un billet"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The number is 8. If it is bigger than 0, then show Even for a number that leaves 0 when divided by 2 (use %), and Odd otherwise. If it is not bigger than 0, show Not positive.",
+       "it": "Il numero è 8. Se è più grande di 0, mostra Pari se la divisione per 2 non avanza niente (usa %), e Dispari altrimenti. Se non è più grande di 0, mostra Non positivo.",
+       "fr": "Le nombre est 8. S'il est plus grand que 0, affiche Pair si le reste de la division par 2 est 0 (utilise %), et Impair sinon. S'il n'est pas plus grand que 0, affiche Pas positif."
+      },
+      "hint": {
+       "en": "An if number > 0: with, inside it, an if number % 2 == 0: and else.",
+       "it": "Un if number > 0: con, dentro, un if number % 2 == 0: e un else.",
+       "fr": "Un if number > 0: avec, dedans, un if number % 2 == 0: et un else."
+      },
+      "sol": {
+       "en": "number = 8\nif number > 0:\n    if number % 2 == 0:\n        print(\"Even\")\n    else:\n        print(\"Odd\")\nelse:\n    print(\"Not positive\")",
+       "it": "number = 8\nif number > 0:\n    if number % 2 == 0:\n        print(\"Pari\")\n    else:\n        print(\"Dispari\")\nelse:\n    print(\"Non positivo\")",
+       "fr": "number = 8\nif number > 0:\n    if number % 2 == 0:\n        print(\"Pair\")\n    else:\n        print(\"Impair\")\nelse:\n    print(\"Pas positif\")"
+      },
+      "start": {
+       "en": "number = 8",
+       "it": "number = 8",
+       "fr": "number = 8"
+      },
+      "spec": {
+       "en": {
+        "out": "Even",
+        "c": "if[\\s\\S]*if"
+       },
+       "it": {
+        "out": "Pari",
+        "c": "if[\\s\\S]*if"
+       },
+       "fr": {
+        "out": "Pair",
+        "c": "if[\\s\\S]*if"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Even",
+       "it": "Pari",
+       "fr": "Pair"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "age = 20\nstatus = \"adult\" if age >= 18 else \"child\"\nprint(status)",
+      "it": "age = 20\nstatus = \"adulto\" if age >= 18 else \"bambino\"\nprint(status)",
+      "fr": "age = 20\nstatus = \"adulte\" if age >= 18 else \"enfant\"\nprint(status)"
+     },
+     "title": {
+      "en": "A choice in one line",
+      "it": "Una scelta in una riga",
+      "fr": "Un choix sur une ligne"
+     },
+     "text": {
+      "en": "For a simple choice of a value, you can write it all in one line: the value for True, then if, the question, else, and the value for False.\n\nIt reads almost like English: \"adult if age is 18 or more, else child\".",
+      "it": "Per una scelta semplice di un valore puoi scrivere tutto in una riga: il valore per True, poi if, la domanda, else e il valore per False.\n\nSi legge quasi come in inglese: \"adulto se age è 18 o più, altrimenti bambino\".",
+      "fr": "Pour un choix simple d'une valeur, tu peux tout écrire sur une ligne : la valeur pour True, puis if, la question, else et la valeur pour False.\n\nÇa se lit presque comme en anglais : \"adulte si age vaut 18 ou plus, sinon enfant\"."
+     },
+     "see": {
+      "en": "adult",
+      "it": "adulto",
+      "fr": "adulte"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "one-line-if",
+       "w": "a if q else b",
+       "d": {
+        "en": "A choice in one line: write the value for True, then if, the question, else, and the value for False.",
+        "it": "Una scelta in una riga: scrivi il valore per True, poi if, la domanda, else e il valore per False.",
+        "fr": "Un choix sur une ligne : écris la valeur pour True, puis if, la question, else et la valeur pour False."
+       },
+       "s": {
+        "en": "status = \"adult\" if age >= 18 else \"child\"",
+        "it": "status = \"adulto\" if age >= 18 else \"bambino\"",
+        "fr": "status = \"adulte\" if age >= 18 else \"enfant\""
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "The number is 7. In one line, make a box kind that holds even or odd, and show it. Use %.",
+       "it": "Il numero è 7. In una riga, fai una scatola kind che contenga pari o dispari, e mostrala. Usa %.",
+       "fr": "Le nombre est 7. En une ligne, fais une boîte kind qui contient pair ou impair, et affiche-la. Utilise %."
+      },
+      "hint": {
+       "en": "kind = \"even\" if number % 2 == 0 else \"odd\"",
+       "it": "kind = \"pari\" if number % 2 == 0 else \"dispari\"",
+       "fr": "kind = \"pair\" if number % 2 == 0 else \"impair\""
+      },
+      "sol": {
+       "en": "number = 7\nkind = \"even\" if number % 2 == 0 else \"odd\"\nprint(kind)",
+       "it": "number = 7\nkind = \"pari\" if number % 2 == 0 else \"dispari\"\nprint(kind)",
+       "fr": "number = 7\nkind = \"pair\" if number % 2 == 0 else \"impair\"\nprint(kind)"
+      },
+      "start": {
+       "en": "number = 7",
+       "it": "number = 7",
+       "fr": "number = 7"
+      },
+      "spec": {
+       "en": {
+        "out": "odd",
+        "c": " if .* else "
+       },
+       "it": {
+        "out": "dispari",
+        "c": " if .* else "
+       },
+       "fr": {
+        "out": "impair",
+        "c": " if .* else "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "odd",
+       "it": "dispari",
+       "fr": "impair"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Again and again",
+    "it": "Ancora e ancora",
+    "fr": "Encore et encore"
+   },
+   "subtitle": {
+    "en": "Repeating with for",
+    "it": "Ripetere con for",
+    "fr": "Répéter avec for"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "for i in range(3):\n    print(\"Hello\")",
+      "it": "for i in range(3):\n    print(\"Ciao\")",
+      "fr": "for i in range(3):\n    print(\"Bonjour\")"
+     },
+     "title": {
+      "en": "Repeat a few times",
+      "it": "Ripeti alcune volte",
+      "fr": "Répète quelques fois"
+     },
+     "text": {
+      "en": "A loop repeats lines. for i in range(3): runs the lines pushed in under it 3 times.\n\nrange(3) makes the numbers 0, 1 and 2, and the name i holds the current number on each turn. Here we do not use i, we only repeat.",
+      "it": "Un ciclo ripete delle righe. for i in range(3): fa girare 3 volte le righe rientrate sotto.\n\nrange(3) fa i numeri 0, 1 e 2, e il nome i contiene il numero del momento a ogni giro. Qui non usiamo i, ripetiamo e basta.",
+      "fr": "Une boucle répète des lignes. for i in range(3): fait tourner 3 fois les lignes décalées dessous.\n\nrange(3) fait les nombres 0, 1 et 2, et le nom i contient le nombre du moment à chaque tour. Ici on n'utilise pas i, on répète seulement."
+     },
+     "see": {
+      "en": "Hello\nHello\nHello",
+      "it": "Ciao\nCiao\nCiao",
+      "fr": "Bonjour\nBonjour\nBonjour"
+     },
+     "slip": {
+      "en": "Do not forget the colon after range(...), and push the lines in with 4 spaces.",
+      "it": "Non dimenticare i due punti dopo range(...) e rientra le righe di 4 spazi.",
+      "fr": "N'oublie pas les deux points après range(...) et décale les lignes de 4 espaces."
+     },
+     "news": [
+      {
+       "k": "for",
+       "w": "for",
+       "d": {
+        "en": "for repeats lines. Write for, a name, in, what to go through, and a colon. The lines pushed in run once for each item, and the name holds the current item.",
+        "it": "for ripete delle righe. Scrivi for, un nome, in, cosa scorrere e i due punti. Le righe rientrate girano una volta per ogni elemento, e il nome contiene l'elemento di quel momento.",
+        "fr": "for répète des lignes. Écris for, un nom, in, ce qu'il faut parcourir et deux points. Les lignes décalées tournent une fois pour chaque élément, et le nom contient l'élément du moment."
+       },
+       "s": {
+        "en": "for i in range(3):\n    print(i)",
+        "it": "for i in range(3):\n    print(i)",
+        "fr": "for i in range(3):\n    print(i)"
+       }
+      },
+      {
+       "k": "range",
+       "w": "range( )",
+       "d": {
+        "en": "range(3) makes the numbers 0, 1 and 2: it counts from 0 and stops before the number you give. With two numbers, range(1, 4) goes from 1 to 3. A third number is the step.",
+        "it": "range(3) fa i numeri 0, 1 e 2: conta da 0 e si ferma prima del numero che gli dai. Con due numeri, range(1, 4) va da 1 a 3. Un terzo numero è il passo.",
+        "fr": "range(3) fait les nombres 0, 1 et 2 : il compte à partir de 0 et s'arrête avant le nombre donné. Avec deux nombres, range(1, 4) va de 1 à 3. Un troisième nombre est le pas."
+       },
+       "s": {
+        "en": "range(1, 4)",
+        "it": "range(1, 4)",
+        "fr": "range(1, 4)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make the program say Hello 4 times.",
+       "it": "Fai dire al programma Ciao 4 volte.",
+       "fr": "Fais dire Bonjour 4 fois au programme."
+      },
+      "hint": {
+       "en": "Change the 3 into a 4.",
+       "it": "Cambia il 3 in 4.",
+       "fr": "Change le 3 en 4."
+      },
+      "sol": {
+       "en": "for i in range(4):\n    print(\"Hello\")",
+       "it": "for i in range(4):\n    print(\"Ciao\")",
+       "fr": "for i in range(4):\n    print(\"Bonjour\")"
+      },
+      "start": {
+       "en": "for i in range(3):\n    print(\"Hello\")",
+       "it": "for i in range(3):\n    print(\"Ciao\")",
+       "fr": "for i in range(3):\n    print(\"Bonjour\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Hello\nHello\nHello\nHello\n",
+        "c": "for "
+       },
+       "it": {
+        "out": "Ciao\nCiao\nCiao\nCiao\n",
+        "c": "for "
+       },
+       "fr": {
+        "out": "Bonjour\nBonjour\nBonjour\nBonjour\n",
+        "c": "for "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Hello\nHello\nHello\nHello",
+       "it": "Ciao\nCiao\nCiao\nCiao",
+       "fr": "Bonjour\nBonjour\nBonjour\nBonjour"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "for i in range(5):\n    print(i)",
+      "it": "for i in range(5):\n    print(i)",
+      "fr": "for i in range(5):\n    print(i)"
+     },
+     "title": {
+      "en": "What i holds",
+      "it": "Cosa contiene i",
+      "fr": "Ce que contient i"
+     },
+     "text": {
+      "en": "On every turn, i holds the next number, starting from 0. So range(5) gives 0, 1, 2, 3 and 4. It stops before 5.\n\nYou can use i inside the loop like any other box.",
+      "it": "A ogni giro, i contiene il numero successivo, partendo da 0. Quindi range(5) dà 0, 1, 2, 3 e 4. Si ferma prima del 5.\n\nPuoi usare i dentro il ciclo come qualsiasi altra scatola.",
+      "fr": "À chaque tour, i contient le nombre suivant, en partant de 0. Donc range(5) donne 0, 1, 2, 3 et 4. Il s'arrête avant 5.\n\nTu peux utiliser i dans la boucle comme n'importe quelle autre boîte."
+     },
+     "see": {
+      "en": "0\n1\n2\n3\n4",
+      "it": "0\n1\n2\n3\n4",
+      "fr": "0\n1\n2\n3\n4"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show the numbers 0 to 6, one on each line.",
+       "it": "Mostra i numeri da 0 a 6, uno per riga.",
+       "fr": "Affiche les nombres de 0 à 6, un par ligne."
+      },
+      "hint": {
+       "en": "range(7) stops before 7.",
+       "it": "range(7) si ferma prima del 7.",
+       "fr": "range(7) s'arrête avant 7."
+      },
+      "sol": {
+       "en": "for i in range(7):\n    print(i)",
+       "it": "for i in range(7):\n    print(i)",
+       "fr": "for i in range(7):\n    print(i)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "0\n1\n2\n3\n4\n5\n6",
+        "c": "for "
+       },
+       "it": {
+        "out": "0\n1\n2\n3\n4\n5\n6",
+        "c": "for "
+       },
+       "fr": {
+        "out": "0\n1\n2\n3\n4\n5\n6",
+        "c": "for "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "0\n1\n2\n3\n4\n5\n6",
+       "it": "0\n1\n2\n3\n4\n5\n6",
+       "fr": "0\n1\n2\n3\n4\n5\n6"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "for i in range(1, 6):\n    print(i)\nprint(\"---\")\nfor i in range(0, 10, 2):\n    print(i)",
+      "it": "for i in range(1, 6):\n    print(i)\nprint(\"---\")\nfor i in range(0, 10, 2):\n    print(i)",
+      "fr": "for i in range(1, 6):\n    print(i)\nprint(\"---\")\nfor i in range(0, 10, 2):\n    print(i)"
+     },
+     "title": {
+      "en": "Start, stop and step",
+      "it": "Inizio, fine e passo",
+      "fr": "Début, fin et pas"
+     },
+     "text": {
+      "en": "range can take two numbers: range(1, 6) starts at 1 and stops before 6. So it gives 1, 2, 3, 4 and 5.\n\nWith a third number you choose the step: range(0, 10, 2) goes 0, 2, 4, 6, 8.",
+      "it": "range può prendere due numeri: range(1, 6) parte da 1 e si ferma prima del 6. Quindi dà 1, 2, 3, 4 e 5.\n\nCon un terzo numero scegli il passo: range(0, 10, 2) va 0, 2, 4, 6, 8.",
+      "fr": "range peut prendre deux nombres : range(1, 6) commence à 1 et s'arrête avant 6. Donc il donne 1, 2, 3, 4 et 5.\n\nAvec un troisième nombre tu choisis le pas : range(0, 10, 2) va 0, 2, 4, 6, 8."
+     },
+     "see": {
+      "en": "1\n2\n3\n4\n5\n---\n0\n2\n4\n6\n8",
+      "it": "1\n2\n3\n4\n5\n---\n0\n2\n4\n6\n8",
+      "fr": "1\n2\n3\n4\n5\n---\n0\n2\n4\n6\n8"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show 10, 20 and 30, one on each line, with a range that has a step.",
+       "it": "Mostra 10, 20 e 30, uno per riga, con un range che ha un passo.",
+       "fr": "Affiche 10, 20 et 30, un par ligne, avec un range qui a un pas."
+      },
+      "hint": {
+       "en": "range(10, 40, 10)",
+       "it": "range(10, 40, 10)",
+       "fr": "range(10, 40, 10)"
+      },
+      "sol": {
+       "en": "for i in range(10, 40, 10):\n    print(i)",
+       "it": "for i in range(10, 40, 10):\n    print(i)",
+       "fr": "for i in range(10, 40, 10):\n    print(i)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "10\n20\n30",
+        "c": "range\\(.*,.*,.*\\)"
+       },
+       "it": {
+        "out": "10\n20\n30",
+        "c": "range\\(.*,.*,.*\\)"
+       },
+       "fr": {
+        "out": "10\n20\n30",
+        "c": "range\\(.*,.*,.*\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "10\n20\n30",
+       "it": "10\n20\n30",
+       "fr": "10\n20\n30"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "for i in range(1, 6):\n    print(i, \"x 3 =\", i * 3)",
+      "it": "for i in range(1, 6):\n    print(i, \"x 3 =\", i * 3)",
+      "fr": "for i in range(1, 6):\n    print(i, \"x 3 =\", i * 3)"
+     },
+     "title": {
+      "en": "Count with a loop",
+      "it": "Conta con un ciclo",
+      "fr": "Compte avec une boucle"
+     },
+     "text": {
+      "en": "Because i changes on every turn, you can use it in a sum. This loop writes the table of 3.\n\nYou wrote five lines of work, and the loop did it with two.",
+      "it": "Siccome i cambia a ogni giro, puoi usarla in un conto. Questo ciclo scrive la tabellina del 3.\n\nTu hai scritto due righe e il ciclo ha fatto il lavoro di cinque.",
+      "fr": "Comme i change à chaque tour, tu peux l'utiliser dans un calcul. Cette boucle écrit la table de 3.\n\nTu as écrit deux lignes et la boucle a fait le travail de cinq."
+     },
+     "see": {
+      "en": "1 x 3 = 3\n2 x 3 = 6\n3 x 3 = 9\n4 x 3 = 12\n5 x 3 = 15",
+      "it": "1 x 3 = 3\n2 x 3 = 6\n3 x 3 = 9\n4 x 3 = 12\n5 x 3 = 15",
+      "fr": "1 x 3 = 3\n2 x 3 = 6\n3 x 3 = 9\n4 x 3 = 12\n5 x 3 = 15"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Change the loop to write the table of 2, for the numbers 1 to 5.",
+       "it": "Cambia il ciclo per scrivere la tabellina del 2, per i numeri da 1 a 5.",
+       "fr": "Change la boucle pour écrire la table de 2, pour les nombres de 1 à 5."
+      },
+      "hint": {
+       "en": "Change both 3s: the one in the text and the one in the sum.",
+       "it": "Cambia tutti e due i 3: quello nel testo e quello nel conto.",
+       "fr": "Change les deux 3 : celui du texte et celui du calcul."
+      },
+      "sol": {
+       "en": "for i in range(1, 6):\n    print(i, \"x 2 =\", i * 2)",
+       "it": "for i in range(1, 6):\n    print(i, \"x 2 =\", i * 2)",
+       "fr": "for i in range(1, 6):\n    print(i, \"x 2 =\", i * 2)"
+      },
+      "start": {
+       "en": "for i in range(1, 6):\n    print(i, \"x 3 =\", i * 3)",
+       "it": "for i in range(1, 6):\n    print(i, \"x 3 =\", i * 3)",
+       "fr": "for i in range(1, 6):\n    print(i, \"x 3 =\", i * 3)"
+      },
+      "spec": {
+       "en": {
+        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10"
+       },
+       "it": {
+        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10"
+       },
+       "fr": {
+        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10",
+       "it": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10",
+       "fr": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)",
+      "it": "total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)",
+      "fr": "total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)"
+     },
+     "title": {
+      "en": "Add things up",
+      "it": "Somma le cose",
+      "fr": "Additionne des choses"
+     },
+     "text": {
+      "en": "A very common job: a box starts at 0, and the loop adds something to it on every turn. When the loop ends, the box holds the total.\n\nHere: 1 + 2 + 3 + 4 + 5 = 15. Notice that print is not pushed in: it runs once, after the loop.",
+      "it": "Un lavoro molto comune: una scatola parte da 0 e il ciclo ci aggiunge qualcosa a ogni giro. Quando il ciclo finisce, la scatola contiene il totale.\n\nQui: 1 + 2 + 3 + 4 + 5 = 15. Nota che print non è rientrata: gira una volta sola, dopo il ciclo.",
+      "fr": "Un travail très courant : une boîte commence à 0, et la boucle y ajoute quelque chose à chaque tour. Quand la boucle finit, la boîte contient le total.\n\nIci : 1 + 2 + 3 + 4 + 5 = 15. Remarque que print n'est pas décalée : elle tourne une seule fois, après la boucle."
+     },
+     "see": {
+      "en": "15",
+      "it": "15",
+      "fr": "15"
+     },
+     "slip": {
+      "en": "If you push print in, it shows the total on every turn instead of once.",
+      "it": "Se rientri print, mostra il totale a ogni giro invece di una volta sola.",
+      "fr": "Si tu décales print, il affiche le total à chaque tour au lieu d'une seule fois."
+     },
+     "ex": {
+      "task": {
+       "en": "Change the program to add the numbers from 1 to 10. It must show 55.",
+       "it": "Cambia il programma per sommare i numeri da 1 a 10. Deve mostrare 55.",
+       "fr": "Change le programme pour additionner les nombres de 1 à 10. Il doit afficher 55."
+      },
+      "hint": {
+       "en": "range(1, 11) stops before 11.",
+       "it": "range(1, 11) si ferma prima di 11.",
+       "fr": "range(1, 11) s'arrête avant 11."
+      },
+      "sol": {
+       "en": "total = 0\nfor i in range(1, 11):\n    total += i\nprint(total)",
+       "it": "total = 0\nfor i in range(1, 11):\n    total += i\nprint(total)",
+       "fr": "total = 0\nfor i in range(1, 11):\n    total += i\nprint(total)"
+      },
+      "start": {
+       "en": "total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)",
+       "it": "total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)",
+       "fr": "total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)"
+      },
+      "spec": {
+       "en": {
+        "out": "55"
+       },
+       "it": {
+        "out": "55"
+       },
+       "fr": {
+        "out": "55"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "55",
+       "it": "55",
+       "fr": "55"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "for letter in \"Python\":\n    print(letter)",
+      "it": "for letter in \"Python\":\n    print(letter)",
+      "fr": "for letter in \"Python\":\n    print(letter)"
+     },
+     "title": {
+      "en": "Walk through the letters",
+      "it": "Scorri le lettere",
+      "fr": "Parcours les lettres"
+     },
+     "text": {
+      "en": "for can walk through more than numbers. After in you can put a text, and the name holds one letter on each turn.\n\nLater you will use the same idea for lists and other things.",
+      "it": "for può scorrere più dei soli numeri. Dopo in puoi mettere un testo, e il nome contiene una lettera a ogni giro.\n\nPiù avanti userai la stessa idea per le liste e altre cose.",
+      "fr": "for peut parcourir plus que des nombres. Après in tu peux mettre un texte, et le nom contient une lettre à chaque tour.\n\nPlus tard tu utiliseras la même idée pour les listes et d'autres choses."
+     },
+     "see": {
+      "en": "P\ny\nt\nh\no\nn",
+      "it": "P\ny\nt\nh\no\nn",
+      "fr": "P\ny\nt\nh\no\nn"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show each letter of the word cat on its own line.",
+       "it": "Mostra ogni lettera della parola gatto su una riga a parte.",
+       "fr": "Affiche chaque lettre du mot chat sur sa propre ligne."
+      },
+      "hint": {
+       "en": "for letter in \"cat\":",
+       "it": "for letter in \"gatto\":",
+       "fr": "for letter in \"chat\":"
+      },
+      "sol": {
+       "en": "for letter in \"cat\":\n    print(letter)",
+       "it": "for letter in \"gatto\":\n    print(letter)",
+       "fr": "for letter in \"chat\":\n    print(letter)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "c\na\nt\n",
+        "c": "for "
+       },
+       "it": {
+        "out": "g\na\nt\nt\no\n",
+        "c": "for "
+       },
+       "fr": {
+        "out": "c\nh\na\nt\n",
+        "c": "for "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "c\na\nt",
+       "it": "g\na\nt\nt\no",
+       "fr": "c\nh\na\nt"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "for row in range(3):\n    for column in range(4):\n        print(\"*\", end=\"\")\n    print()",
+      "it": "for row in range(3):\n    for column in range(4):\n        print(\"*\", end=\"\")\n    print()",
+      "fr": "for row in range(3):\n    for column in range(4):\n        print(\"*\", end=\"\")\n    print()"
+     },
+     "title": {
+      "en": "A loop inside a loop",
+      "it": "Un ciclo dentro un ciclo",
+      "fr": "Une boucle dans une boucle"
+     },
+     "text": {
+      "en": "A loop can have another loop inside. The inside loop runs completely for every turn of the outside loop.\n\nHere, for each of the 3 rows, the inside loop writes 4 stars without changing line, and then print() with nothing inside ends the line.",
+      "it": "Un ciclo può averne un altro dentro. Il ciclo interno gira per intero a ogni giro di quello esterno.\n\nQui, per ognuna delle 3 righe, il ciclo interno scrive 4 stelle senza andare a capo, e poi print() con niente dentro finisce la riga.",
+      "fr": "Une boucle peut en avoir une autre dedans. La boucle intérieure tourne en entier à chaque tour de la boucle extérieure.\n\nIci, pour chacune des 3 lignes, la boucle intérieure écrit 4 étoiles sans changer de ligne, puis print() avec rien dedans termine la ligne."
+     },
+     "see": {
+      "en": "****\n****\n****",
+      "it": "****\n****\n****",
+      "fr": "****\n****\n****"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Change the program to draw 2 rows of 5 stars.",
+       "it": "Cambia il programma per disegnare 2 righe di 5 stelle.",
+       "fr": "Change le programme pour dessiner 2 lignes de 5 étoiles."
+      },
+      "hint": {
+       "en": "Change range(3) to range(2) and range(4) to range(5).",
+       "it": "Cambia range(3) in range(2) e range(4) in range(5).",
+       "fr": "Change range(3) en range(2) et range(4) en range(5)."
+      },
+      "sol": {
+       "en": "for row in range(2):\n    for column in range(5):\n        print(\"*\", end=\"\")\n    print()",
+       "it": "for row in range(2):\n    for column in range(5):\n        print(\"*\", end=\"\")\n    print()",
+       "fr": "for row in range(2):\n    for column in range(5):\n        print(\"*\", end=\"\")\n    print()"
+      },
+      "start": {
+       "en": "for row in range(3):\n    for column in range(4):\n        print(\"*\", end=\"\")\n    print()",
+       "it": "for row in range(3):\n    for column in range(4):\n        print(\"*\", end=\"\")\n    print()",
+       "fr": "for row in range(3):\n    for column in range(4):\n        print(\"*\", end=\"\")\n    print()"
+      },
+      "spec": {
+       "en": {
+        "out": "*****\n*****"
+       },
+       "it": {
+        "out": "*****\n*****"
+       },
+       "fr": {
+        "out": "*****\n*****"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "*****\n*****",
+       "it": "*****\n*****",
+       "fr": "*****\n*****"
+      }
      }
     }
    ]

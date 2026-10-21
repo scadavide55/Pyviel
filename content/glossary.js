@@ -3,5 +3,6 @@
 // {w: the word as the student reads it, d: [en, it, fr] what it is, s: a tiny example (optional)}
 module.exports = Object.assign({},
   require('./glossary-start.js'),
-  require('./glossary-numbers.js')
+  require('./glossary-numbers.js'),
+  require('./glossary-choices.js')
 );

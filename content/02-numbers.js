@@ -207,10 +207,16 @@ print(total)`,
     subtitle: ['Text, whole numbers, decimals and more', 'Testo, numeri interi, decimali e altro', 'Texte, nombres entiers, décimaux et plus'],
     steps: [
       {
-        c: c`print(type("hello"))
+        c: [c`print(type("hello"))
 print(type(7))
 print(type(7.5))
-print(type(True))`,
+print(type(True))`, c`print(type("ciao"))
+print(type(7))
+print(type(7.5))
+print(type(True))`, c`print(type("salut"))
+print(type(7))
+print(type(7.5))
+print(type(True))`],
         n: ['type', 'true-false'],
         t: ['Every value has a kind', 'Ogni valore ha un tipo', 'Chaque valeur a une sorte'],
         x: [`Every value in Python is of some kind. type(...) tells you which: str is a text, int is a whole number, float is a number with a point, and bool is True or False.
@@ -270,8 +276,10 @@ int("42") transforme le texte 42 en nombre 42, donc tu peux faire des calculs av
         }
       },
       {
-        c: c`print(str(7) + " days")
-print("I have " + str(3) + " cats")`,
+        c: [c`print(str(7) + " days")
+print("I have " + str(3) + " cats")`, c`print(str(7) + " giorni")
+print("Ho " + str(3) + " gatti")`, c`print(str(7) + " jours")
+print("J'ai " + str(3) + " chats")`],
         n: ['str'],
         t: ['Turn a number into a text', 'Trasforma un numero in testo', 'Transforme un nombre en texte'],
         x: [`str(...) does the opposite: it makes a text from anything. str(7) is the text "7".
@@ -284,13 +292,13 @@ Ti serve quando vuoi incollare un numero a un testo con +, perché + incolla sol
 
 Il t'en faut quand tu veux coller un nombre à un texte avec +, parce que + ne colle que des textes avec des textes.`],
         ex: {
-          t: ['Show: 5 apples. Make the number 5 into a text with str and glue " apples" to it.', 'Mostra: 5 apples. Trasforma il numero 5 in testo con str e incolla " apples".', 'Affiche : 5 apples. Transforme le nombre 5 en texte avec str et colle " apples".'],
-          h: ['str(5) + " apples" inside print.', 'str(5) + " apples" dentro print.', 'str(5) + " apples" dans print.'],
-          sol: 'print(str(5) + " apples")', out: '5 apples', c: 'str'
+          t: ['Show: 5 apples. Make the number 5 into a text with str and glue " apples" to it.', 'Mostra: 5 mele. Trasforma il numero 5 in testo con str e incolla " mele".', 'Affiche : 5 pommes. Transforme le nombre 5 en texte avec str et colle " pommes".'],
+          h: ['str(5) + " apples" inside print.', 'str(5) + " mele" dentro print.', 'str(5) + " pommes" dans print.'],
+          sol: ['print(str(5) + " apples")', 'print(str(5) + " mele")', 'print(str(5) + " pommes")'], out: ['5 apples', '5 mele', '5 pommes'], c: 'str'
         }
       },
       {
-        c: c`print("I am " + 12)`,
+        c: [c`print("I am " + 12)`, c`print("Ho " + 12)`, c`print("J'ai " + 12)`],
         e: 'TypeError',
         t: ['The most common mistake', 'L\'errore più comune', 'L\'erreur la plus courante'],
         x: [`What happens if you glue a text and a number with +? Python stops, because it does not guess what you mean.
@@ -303,9 +311,11 @@ Leggi cosa dice Pyviel: nomina i due tipi che non vanno d'accordo. Premi View fu
 
 Lis ce que dit Pyviel : il nomme les deux sortes qui ne vont pas ensemble. Appuie sur View full error pour voir les vrais mots de Python. Apprendre à les lire est un superpouvoir.`],
         ex: {
-          t: ['Fix it with str, so the program shows: I am 12', 'Correggilo con str, così il programma mostra: I am 12', 'Corrige-le avec str, pour que le programme affiche : I am 12'],
+          t: ['Fix it with str, so the program shows: I am 12', 'Correggilo con str, così il programma mostra: Ho 12', 'Corrige-le avec str, pour que le programme affiche : J\'ai 12'],
           h: ['Put str( ) around the number 12.', 'Metti str( ) intorno al numero 12.', 'Mets str( ) autour du nombre 12.'],
-          start: 'print("I am " + 12)', sol: 'print("I am " + str(12))', out: 'I am 12'
+          start: ['print("I am " + 12)', 'print("Ho " + 12)', 'print("J\'ai " + 12)'],
+          sol: ['print("I am " + str(12))', 'print("Ho " + str(12))', 'print("J\'ai " + str(12))'],
+          out: ['I am 12', 'Ho 12', "J'ai 12"]
         }
       }
     ]
@@ -315,8 +325,10 @@ Lis ce que dit Pyviel : il nomme les deux sortes qui ne vont pas ensemble. Appui
     subtitle: ['Talk with the person using your program', 'Parla con chi usa il tuo programma', 'Parle avec la personne qui utilise ton programme'],
     steps: [
       {
-        c: c`name = input("What is your name? ")
-print("Hello", name)`,
+        c: [c`name = input("What is your name? ")
+print("Hello", name)`, c`name = input("Come ti chiami? ")
+print("Ciao", name)`, c`name = input("Comment t'appelles-tu ? ")
+print("Bonjour", name)`],
         i: ['Ada'],
         n: ['input'],
         t: ['Ask and listen', 'Chiedi e ascolta', 'Demande et écoute'],
@@ -330,15 +342,18 @@ Quando premi Esegui, compare una casella dove puoi scrivere.`,
 
 Quand tu appuies sur Lancer, une case apparaît où tu peux taper.`],
         ex: {
-          t: ['Ask the question: Favourite colour?  Then show: You like and the answer.', 'Fai la domanda: Favourite colour?  Poi mostra: You like e la risposta.', 'Pose la question : Favourite colour?  Puis affiche : You like et la réponse.'],
-          h: ['colour = input("Favourite colour? ") and then print("You like", colour).', 'colour = input("Favourite colour? ") e poi print("You like", colour).', 'colour = input("Favourite colour? ") puis print("You like", colour).'],
-          sol: 'colour = input("Favourite colour? ")\nprint("You like", colour)', i: ['blue'], m: 'You like blue$', c: 'input'
+          t: ['Ask the question: Favourite colour?  Then show: You like and the answer.', 'Fai la domanda: Colore preferito?  Poi mostra: Ti piace e la risposta.', 'Pose la question : Couleur préférée ?  Puis affiche : Tu aimes et la réponse.'],
+          h: ['colour = input("Favourite colour? ") and then print("You like", colour).', 'colour = input("Colore preferito? ") e poi print("Ti piace", colour).', 'colour = input("Couleur préférée ? ") puis print("Tu aimes", colour).'],
+          sol: ['colour = input("Favourite colour? ")\nprint("You like", colour)', 'colour = input("Colore preferito? ")\nprint("Ti piace", colour)', 'colour = input("Couleur préférée ? ")\nprint("Tu aimes", colour)'],
+          i: {en: ['blue'], it: ['blu'], fr: ['bleu']}, m: ['You like blue$', 'Ti piace blu$', 'Tu aimes bleu$'], c: 'input'
         },
         w: ['Put a space at the end of the question, so the answer does not touch it.', 'Metti uno spazio alla fine della domanda, così la risposta non la tocca.', 'Mets une espace à la fin de la question, pour que la réponse ne la touche pas.']
       },
       {
-        c: c`age = input("How old are you? ")
-print(age + 1)`,
+        c: [c`age = input("How old are you? ")
+print(age + 1)`, c`age = input("Quanti anni hai? ")
+print(age + 1)`, c`age = input("Quel âge as-tu ? ")
+print(age + 1)`],
         i: ['10'], e: 'TypeError',
         t: ['An answer is always text', 'Una risposta è sempre testo', 'Une réponse est toujours du texte'],
         x: [`Even when the person types 10, input gives back the text "10", not the number 10. So age + 1 tries to add a number to a text, and Python stops.
@@ -352,13 +367,17 @@ This is the most common mistake of beginners. Read the explanation, then fix it 
 C'est l'erreur la plus courante des débutants. Lis l'explication, puis corrige-la à l'étape suivante.`],
         ex: {
           t: ['Fix it: turn the answer into a number with int, so that typing 10 shows 11.', 'Correggilo: trasforma la risposta in numero con int, così scrivendo 10 si vede 11.', 'Corrige-le : transforme la réponse en nombre avec int, pour que taper 10 affiche 11.'],
-          h: ['age = int(input("How old are you? "))', 'age = int(input("How old are you? "))', 'age = int(input("How old are you? "))'],
-          start: 'age = input("How old are you? ")\nprint(age + 1)', sol: 'age = int(input("How old are you? "))\nprint(age + 1)', i: ['10'], m: '11$', c: 'int'
+          h: ['age = int(input("How old are you? "))', 'age = int(input("Quanti anni hai? "))', 'age = int(input("Quel âge as-tu ? "))'],
+          start: ['age = input("How old are you? ")\nprint(age + 1)', 'age = input("Quanti anni hai? ")\nprint(age + 1)', 'age = input("Quel âge as-tu ? ")\nprint(age + 1)'],
+          sol: ['age = int(input("How old are you? "))\nprint(age + 1)', 'age = int(input("Quanti anni hai? "))\nprint(age + 1)', 'age = int(input("Quel âge as-tu ? "))\nprint(age + 1)'],
+          i: ['10'], m: '11$', c: 'int'
         }
       },
       {
-        c: c`age = int(input("How old are you? "))
-print("Next year you will be", age + 1)`,
+        c: [c`age = int(input("How old are you? "))
+print("Next year you will be", age + 1)`, c`age = int(input("Quanti anni hai? "))
+print("L'anno prossimo avrai", age + 1)`, c`age = int(input("Quel âge as-tu ? "))
+print("L'année prochaine tu auras", age + 1)`],
         i: ['10'],
         t: ['Turn the answer into a number', 'Trasforma la risposta in numero', 'Transforme la réponse en nombre'],
         x: [`Wrap the input in int(...) to get a whole number, or in float(...) for a number with a point. Now you can do sums with the answer.
@@ -372,16 +391,22 @@ Leggilo dall'interno verso l'esterno: input chiede, int trasforma la risposta in
 Lis-le de l'intérieur vers l'extérieur : input demande, int transforme la réponse en nombre et age la garde.`],
         ex: {
           t: ['Ask for a number, and show its double.', 'Chiedi un numero e mostra il suo doppio.', 'Demande un nombre et affiche son double.'],
-          h: ['number = int(input("Number? ")), then print(number * 2).', 'number = int(input("Number? ")), poi print(number * 2).', 'number = int(input("Number? ")), puis print(number * 2).'],
-          sol: 'number = int(input("Number? "))\nprint(number * 2)', i: ['21'], m: '42$', c: 'int'
+          h: ['number = int(input("Number? ")), then print(number * 2).', 'number = int(input("Numero? ")), poi print(number * 2).', 'number = int(input("Nombre ? ")), puis print(number * 2).'],
+          sol: ['number = int(input("Number? "))\nprint(number * 2)', 'number = int(input("Numero? "))\nprint(number * 2)', 'number = int(input("Nombre ? "))\nprint(number * 2)'], i: ['21'], m: '42$', c: 'int'
         },
         w: ['If the person types letters, int(...) stops with an error. Later you will learn to handle that.', 'Se la persona scrive lettere, int(...) si ferma con un errore. Più avanti imparerai a gestirlo.', 'Si la personne tape des lettres, int(...) s\'arrête avec une erreur. Plus tard tu apprendras à gérer ça.']
       },
       {
-        c: c`first = int(input("First number: "))
+        c: [c`first = int(input("First number: "))
 second = int(input("Second number: "))
 total = first + second
-print("The sum is", total)`,
+print("The sum is", total)`, c`first = int(input("Primo numero: "))
+second = int(input("Secondo numero: "))
+total = first + second
+print("La somma è", total)`, c`first = int(input("Premier nombre : "))
+second = int(input("Deuxième nombre : "))
+total = first + second
+print("La somme est", total)`],
         i: ['4', '9'],
         t: ['A small calculator', 'Una piccola calcolatrice', 'Une petite calculatrice'],
         x: [`You can ask as many questions as you like. Each one waits for its answer, in order.
@@ -396,8 +421,8 @@ Ce programme demande deux nombres, les additionne et affiche la somme. C'est le 
         ex: {
           t: ['Change the program so that it multiplies the two numbers instead of adding them.', 'Cambia il programma così che moltiplichi i due numeri invece di sommarli.', 'Change le programme pour qu\'il multiplie les deux nombres au lieu de les additionner.'],
           h: ['Replace the + with a *.', 'Sostituisci il + con un *.', 'Remplace le + par un *.'],
-          start: 'first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first + second\nprint("The sum is", total)',
-          sol: 'first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first * second\nprint("The sum is", total)', i: ['6', '7'], m: '42$'
+          start: ['first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first + second\nprint("The sum is", total)', 'first = int(input("Primo numero: "))\nsecond = int(input("Secondo numero: "))\ntotal = first + second\nprint("La somma è", total)', 'first = int(input("Premier nombre : "))\nsecond = int(input("Deuxième nombre : "))\ntotal = first + second\nprint("La somme est", total)'],
+          sol: ['first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first * second\nprint("The sum is", total)', 'first = int(input("Primo numero: "))\nsecond = int(input("Secondo numero: "))\ntotal = first * second\nprint("La somma è", total)', 'first = int(input("Premier nombre : "))\nsecond = int(input("Deuxième nombre : "))\ntotal = first * second\nprint("La somme est", total)'], i: ['6', '7'], m: '42$'
         }
       }
     ]
@@ -407,9 +432,13 @@ Ce programme demande deux nombres, les additionne et affiche la somme. C'est le 
     subtitle: ['f-strings: texts with values inside', 'f-string: testi con valori dentro', 'Les f-strings : des textes avec des valeurs dedans'],
     steps: [
       {
-        c: c`name = "Ada"
+        c: [c`name = "Ada"
 age = 12
-print(f"{name} is {age} years old")`,
+print(f"{name} is {age} years old")`, c`name = "Ada"
+age = 12
+print(f"{name} ha {age} anni")`, c`name = "Ada"
+age = 12
+print(f"{name} a {age} ans")`],
         n: ['f-string'],
         t: ['A text with holes', 'Un testo con dei buchi', 'Un texte avec des trous'],
         x: [`Gluing texts and numbers with + and str gets tiring. There is an easier way: put an f just before the opening quote.
@@ -422,17 +451,25 @@ Dentro quel testo, tutto quello che sta tra parentesi graffe { } viene sostituit
 
 Dans ce texte, tout ce qui est entre accolades { } est remplacé par sa valeur. Ça marche avec n'importe quelle sorte de valeur, sans str.`],
         ex: {
-          t: ['Use an f-string to show: Ada is 12 years old   with the boxes name and age, but with the age 13.', 'Usa una f-string per mostrare: Ada is 13 years old   con le scatole name e age, ma con età 13.', 'Utilise une f-string pour afficher : Ada is 13 years old   avec les boîtes name et age, mais avec l\'âge 13.'],
+          t: ['Make the program show: Ada is 13 years old   Change the age in the box, and keep the f-string.', 'Fai mostrare al programma: Ada ha 13 anni   Cambia l\'età nella scatola e tieni la f-string.', 'Fais afficher au programme : Ada a 13 ans   Change l\'âge dans la boîte et garde la f-string.'],
           h: ['Change the 12 to 13 in the box, and keep the f-string.', 'Cambia il 12 in 13 nella scatola e tieni la f-string.', 'Change le 12 en 13 dans la boîte et garde la f-string.'],
-          start: 'name = "Ada"\nage = 12\nprint(f"{name} is {age} years old")', sol: 'name = "Ada"\nage = 13\nprint(f"{name} is {age} years old")', out: 'Ada is 13 years old'
+          start: ['name = "Ada"\nage = 12\nprint(f"{name} is {age} years old")', 'name = "Ada"\nage = 12\nprint(f"{name} ha {age} anni")', 'name = "Ada"\nage = 12\nprint(f"{name} a {age} ans")'],
+          sol: ['name = "Ada"\nage = 13\nprint(f"{name} is {age} years old")', 'name = "Ada"\nage = 13\nprint(f"{name} ha {age} anni")', 'name = "Ada"\nage = 13\nprint(f"{name} a {age} ans")'],
+          out: ['Ada is 13 years old', 'Ada ha 13 anni', 'Ada a 13 ans']
         },
         w: ['Do not forget the f before the quote, or the curly brackets are shown as they are.', 'Non dimenticare la f prima della virgoletta, o le parentesi graffe vengono mostrate così come sono.', 'N\'oublie pas le f avant le guillemet, ou les accolades sont affichées telles quelles.']
       },
       {
-        c: c`price = 4
+        c: [c`price = 4
 count = 3
 print(f"{count} x {price} = {count * price}")
-print(f"Half of {price} is {price / 2}")`,
+print(f"Half of {price} is {price / 2}")`, c`price = 4
+count = 3
+print(f"{count} x {price} = {count * price}")
+print(f"La metà di {price} è {price / 2}")`, c`price = 4
+count = 3
+print(f"{count} x {price} = {count * price}")
+print(f"La moitié de {price} est {price / 2}")`],
         t: ['A sum inside the holes', 'Un conto dentro i buchi', 'Un calcul dans les trous'],
         x: [`Between the curly brackets you can put any piece of Python that gives a value: a sum, a box, a call.
 
@@ -444,16 +481,22 @@ Python lo calcola e mette il risultato nel testo.`,
 
 Python le calcule et met le résultat dans le texte.`],
         ex: {
-          t: ['A room is 6 long and 4 wide. Show: The area is 24   but let Python do the sum inside the curly brackets.', 'Una stanza è lunga 6 e larga 4. Mostra: The area is 24   ma lascia che sia Python a fare il conto dentro le parentesi graffe.', 'Une pièce fait 6 de long et 4 de large. Affiche : The area is 24   mais laisse Python faire le calcul dans les accolades.'],
-          h: ['print(f"The area is {6 * 4}")', 'print(f"The area is {6 * 4}")', 'print(f"The area is {6 * 4}")'],
-          sol: 'print(f"The area is {6 * 4}")', out: 'The area is 24', c: '\\{.*\\*.*\\}'
+          t: ['A room is 6 long and 4 wide. Show: The area is 24   but let Python do the sum inside the curly brackets.', 'Una stanza è lunga 6 e larga 4. Mostra: L\'area è 24   ma lascia che sia Python a fare il conto dentro le parentesi graffe.', 'Une pièce fait 6 de long et 4 de large. Affiche : L\'aire est 24   mais laisse Python faire le calcul dans les accolades.'],
+          h: ['print(f"The area is {6 * 4}")', 'print(f"L\'area è {6 * 4}")', 'print(f"L\'aire est {6 * 4}")'],
+          sol: ['print(f"The area is {6 * 4}")', 'print(f"L\'area è {6 * 4}")', 'print(f"L\'aire est {6 * 4}")'], out: ['The area is 24', "L'area è 24", "L'aire est 24"], c: '\\{.*\\*.*\\}'
         }
       },
       {
-        c: c`pi = 3.14159265
+        c: [c`pi = 3.14159265
 print(f"{pi:.2f}")
 print(f"{pi:.4f}")
-print(f"Price: {2.5:.2f}")`,
+print(f"Price: {2.5:.2f}")`, c`pi = 3.14159265
+print(f"{pi:.2f}")
+print(f"{pi:.4f}")
+print(f"Prezzo: {2.5:.2f}")`, c`pi = 3.14159265
+print(f"{pi:.2f}")
+print(f"{pi:.4f}")
+print(f"Prix : {2.5:.2f}")`],
         n: ['format-spec'],
         t: ['Choose the decimals', 'Scegli i decimali', 'Choisis les décimales'],
         x: [`After the value you can add a colon and a format. :.2f means "show 2 digits after the point".
@@ -472,10 +515,16 @@ C'est parfait pour les prix : 2.5 devient 2.50. Le nombre est coupé aux chiffre
         }
       },
       {
-        c: c`big = 1234567
+        c: [c`big = 1234567
 print(f"{big:,}")
 print(f"{7:03d}")
-print(f"{'left':<8}|{'right':>8}|")`,
+print(f"{'left':<8}|{'right':>8}|")`, c`big = 1234567
+print(f"{big:,}")
+print(f"{7:03d}")
+print(f"{'sinistra':<8}|{'destra':>8}|")`, c`big = 1234567
+print(f"{big:,}")
+print(f"{7:03d}")
+print(f"{'gauche':<8}|{'droite':>8}|")`],
         n: ['format-more'],
         t: ['Big numbers and neat columns', 'Numeri grandi e colonne ordinate', 'Grands nombres et colonnes nettes'],
         x: [`There are a few more formats. :, puts commas in big numbers. :03d fills with zeros up to 3 digits.
@@ -494,9 +543,13 @@ print(f"{'left':<8}|{'right':>8}|")`,
         }
       },
       {
-        c: c`name = input("Your name? ")
+        c: [c`name = input("Your name? ")
 city = input("Your city? ")
-print(f"Hi {name}! {city} is a nice place.")`,
+print(f"Hi {name}! {city} is a nice place.")`, c`name = input("Come ti chiami? ")
+city = input("In che città abiti? ")
+print(f"Ciao {name}! {city} è un bel posto.")`, c`name = input("Comment t'appelles-tu ? ")
+city = input("Dans quelle ville habites-tu ? ")
+print(f"Salut {name} ! {city} est un bel endroit.")`],
         i: ['Ada', 'Rome'],
         t: ['Questions and messages together', 'Domande e messaggi insieme', 'Questions et messages ensemble'],
         x: [`Now put it all together: ask with input, keep the answers in boxes, and build the answer with an f-string.
@@ -509,9 +562,10 @@ This is the heart of most small programs: ask, think, answer.`,
 
 C'est le cœur de presque tous les petits programmes : demande, réfléchis, réponds.`],
         ex: {
-          t: ['Ask for a favourite animal and then say: I like <the animal> too! (use an f-string).', 'Chiedi un animale preferito e poi di\': I like <l\'animale> too! (usa una f-string).', 'Demande un animal préféré puis dis : I like <l\'animal> too! (utilise une f-string).'],
-          h: ['animal = input("Favourite animal? ") and print(f"I like {animal} too!")', 'animal = input("Favourite animal? ") e print(f"I like {animal} too!")', 'animal = input("Favourite animal? ") et print(f"I like {animal} too!")'],
-          sol: 'animal = input("Favourite animal? ")\nprint(f"I like {animal} too!")', i: ['cat'], m: 'I like cat too!$', c: 'f"'
+          t: ['Ask for a favourite animal and then say: I like <the animal> too! (use an f-string).', 'Chiedi un animale preferito e poi di\': Piace anche a me: <l\'animale>! (usa una f-string).', 'Demande un animal préféré puis dis : Moi aussi j\'aime : <l\'animal> ! (utilise une f-string).'],
+          h: ['animal = input("Favourite animal? ") and print(f"I like {animal} too!")', 'animal = input("Animale preferito? ") e print(f"Piace anche a me: {animal}!")', 'animal = input("Animal préféré ? ") et print(f"Moi aussi j\'aime : {animal} !")'],
+          sol: ['animal = input("Favourite animal? ")\nprint(f"I like {animal} too!")', 'animal = input("Animale preferito? ")\nprint(f"Piace anche a me: {animal}!")', 'animal = input("Animal préféré ? ")\nprint(f"Moi aussi j\'aime : {animal} !")'],
+          i: {en: ['cat'], it: ['gatto'], fr: ['chat']}, m: ['I like cat too!$', 'Piace anche a me: gatto!$', "Moi aussi j'aime : chat !$"], c: 'f"'
         }
       }
     ]

@@ -99,6 +99,8 @@
     ['Language', 'Lingua', 'Langue'], ['Pyviel program', 'Programma Pyviel', 'Programme Pyviel'], ['Results', 'Risultati', 'Résultats'],
     ['Ln', 'Riga', 'Ligne'], ['Col', 'Col', 'Col'],
     ['Example', 'Esempio', 'Exemple'], ['Your code', 'Il tuo codice', 'Ton code'],
+    ['Pick a program: it opens in the editor and runs. Then change it and press Run again.', 'Scegli un programma: si apre nell\'editor e parte. Poi cambialo e premi di nuovo Esegui.', 'Choisis un programme : il s\'ouvre dans l\'éditeur et se lance. Puis change-le et appuie de nouveau sur Lancer.'],
+    ['Search the examples', 'Cerca negli esempi', 'Chercher dans les exemples'], ['No example has that word.', 'Nessun esempio ha questa parola.', 'Aucun exemple n\'a ce mot.'],
     ['Your program', 'Il tuo programma', 'Ton programme'],
     ['Smaller text', 'Testo più piccolo', 'Texte plus petit'], ['Bigger text', 'Testo più grande', 'Texte plus grand'],
     ['Find · Cmd/Ctrl+F', 'Cerca · Cmd/Ctrl+F', 'Chercher · Cmd/Ctrl+F'], ['Find in code', 'Cerca nel codice', 'Chercher dans le code'],

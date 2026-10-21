@@ -10,7 +10,7 @@
 <meta property="og:title" content="Pyviel: learn real Python, one small step at a time">
 <meta property="og:description" content="53 lessons from print to async, every line explained, errors in plain words. Free and offline, in English, Italian and French.">
 <link rel="icon" href="build/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="editor.css?v=28">
+<link rel="stylesheet" href="editor.css?v=29">
 <script>try { var t = localStorage.getItem('pyviel.theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <script>
   // Where the desktop installers live: in the GitHub release, not in the repository (each is over 100 MB).
@@ -100,21 +100,15 @@
     </div>
 
     <div class="learn-body" id="examples-view" role="tabpanel" aria-labelledby="tab-examples" hidden>
-      <p class="learn-intro">Pick a small program. It opens in the editor, and you press Run.</p>
-      <div class="example-list" id="example-list">
-        <button data-example="hello"><b>Hello</b><span>Say hello</span></button>
-        <button data-example="questions"><b>A question</b><span>Ask a name</span></button>
-        <button data-example="age"><b>Under or over</b><span>Are you 18 yet?</span></button>
-        <button data-example="loop"><b>Times table</b><span>Counting with a loop</span></button>
-        <button data-example="lists"><b>A list of pets</b><span>Many things in one</span></button>
-        <button data-example="functions"><b>Your own functions</b><span>def and return</span></button>
-        <button data-example="errors"><b>Mistakes</b><span>See what a mistake looks like</span></button>
-      </div>
+      <p class="learn-intro">Pick a program: it opens in the editor and runs. Then change it and press Run again.</p>
+      <input type="search" id="example-search" class="example-search" placeholder="Search the examples" aria-label="Search the examples" autocomplete="off" spellcheck="false">
+      <div class="example-list" id="example-list"></div>
+      <p class="example-none" id="example-none" hidden>No example has that word.</p>
     </div>
   </aside>
 
   <div class="workspace">
-    <div class="mobile-examples"><label for="examples">Example</label><select id="examples" title="Examples"><option value="">Your code</option><option value="hello">Hello</option><option value="questions">A question</option><option value="age">Under or over</option><option value="loop">Times table</option><option value="lists">A list of pets</option><option value="functions">Your own functions</option><option value="errors">Mistakes</option></select></div>
+    <div class="mobile-examples"><label for="examples">Example</label><select id="examples" title="Examples"><option value="">Your code</option></select></div>
 
     <main class="workbench">
       <section class="editor" aria-label="Your program">
@@ -212,7 +206,8 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
 
 <div class="toast" id="toast" role="status" hidden><span id="toast-text"></span><button id="toast-action" hidden></button></div>
 
-<script src="i18n.js?v=1.1.0-2"></script>
+<script src="i18n.js?v=1.1.0-3"></script>
+<script src="examples.js?v=1.1.0-1"></script>
 <script src="pyviel-errors.js?v=1.1.0-2"></script>
 <script src="pyviel.js?v=1.1.0-2"></script>
 <script>
@@ -246,18 +241,62 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
   var examples = document.getElementById('examples');
   var STORE = 'pyviel.source';
 
-  var SAMPLES = {
-    hello: 'print("Hello!")\nprint("My first Python program")\n',
-    questions: 'name = input("What is your name? ")\nprint("Hello", name)\n',
-    age: 'age = int(input("How old are you? "))\nif age < 18:\n    print("Under 18")\nelif age == 18:\n    print("Exactly 18")\nelse:\n    print("Over 18")\n',
-    loop: 'for i in range(1, 6):\n    print(i, "x 7 =", i * 7)\n',
-    lists: 'pets = ["cat", "dog", "fox"]\nfor pet in pets:\n    print(pet.upper())\nprint("How many:", len(pets))\n',
-    functions: 'def greet(name):\n    return "Hello " + name + "!"\n\nprint(greet("Ada"))\nprint(greet("Luca"))\n',
-    errors: 'print("Before")\nprint(pirnt)\nprint("After")\n'
-  };
-
-  // Examples follow the language of the site: only the text in quotes is translated.
-  if (window.PyvielI18n) Object.keys(SAMPLES).forEach(function (key) { SAMPLES[key] = PyvielI18n.code(SAMPLES[key]); });
+  // The examples come from examples.js, already in the language of the page.
+  var SAMPLES = {};
+  (function () {
+    var data = window.PyvielExamples;
+    // Lower case and no accents, so "numero" finds "Numéro" and "eleve" finds "élève".
+    function plain(text) { return String(text).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+    var list = document.getElementById('example-list');
+    data.list.forEach(function (e) { SAMPLES[e.id] = e.code; });
+    data.groups.forEach(function (group) {
+      var items = data.list.filter(function (e) { return e.group === group.id; });
+      if (!items.length) return;
+      var box = document.createElement('section');
+      box.className = 'example-group';
+      var head = document.createElement('h3');
+      head.textContent = group.title;
+      box.appendChild(head);
+      var options = document.createElement('optgroup');
+      options.label = group.title;
+      items.forEach(function (e) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.example = e.id;
+        button.dataset.search = plain(e.title + ' ' + e.about + ' ' + e.file + ' ' + group.title);
+        var title = document.createElement('b');
+        title.textContent = e.title;
+        var about = document.createElement('span');
+        about.textContent = e.about;
+        button.appendChild(title);
+        button.appendChild(about);
+        box.appendChild(button);
+        var option = document.createElement('option');
+        option.value = e.id;
+        option.textContent = e.title;
+        options.appendChild(option);
+      });
+      list.appendChild(box);
+      examples.appendChild(options);
+    });
+    // Search: every word typed must appear in the title, the description, the file name or the group.
+    var search = document.getElementById('example-search');
+    search.addEventListener('input', function () {
+      // A long word also matches its other endings: "gioco" finds "giochi", "game" finds "games".
+      var words = plain(search.value).split(/\s+/).filter(Boolean).map(function (w) { return w.length > 4 ? w.slice(0, -1) : w; });
+      var shown = 0;
+      list.querySelectorAll('.example-group').forEach(function (box) {
+        var any = false;
+        box.querySelectorAll('[data-example]').forEach(function (button) {
+          var ok = words.every(function (w) { return button.dataset.search.indexOf(w) >= 0; });
+          button.hidden = !ok;
+          if (ok) { any = true; shown++; }
+        });
+        box.hidden = !any;
+      });
+      document.getElementById('example-none').hidden = shown > 0;
+    });
+  })();
 
   function lineCount(text) {
     return text.split('\n').length;
@@ -620,10 +659,14 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
   });
 })();
 </script>
-<script src="editor-ui.js?v=1.1.0-3"></script>
+<script src="editor-ui.js?v=1.1.0-4"></script>
 <script src="lessons.js?v=1.1.0-7"></script>
-<script src="course.js?v=1.1.0-4"></script>
+<script>
+  // Only the course in the language of the page is loaded (course.js holds all three, for the tools).
+  // Written in place, so it still runs before tutorials.js.
+  document.write('<script src="course-' + ((window.PyvielI18n && PyvielI18n.lang) || 'en') + '.js?v=1.1.0-5"><\/script>');
+</script>
 <script src="pyviel-check.js?v=1.1.0-1"></script>
-<script src="tutorials.js?v=1.1.0-7"></script>
+<script src="tutorials.js?v=1.1.0-8"></script>
 </body>
 </html>

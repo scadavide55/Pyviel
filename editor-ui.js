@@ -8,7 +8,8 @@
   var keywords = new Set('and as assert async await break class continue def del elif else except finally for from global if import in is lambda nonlocal not or pass raise return try while with yield match case'.split(' '));
   var values = new Set(['True', 'False', 'None']);
   var builtins = new Set('print input len range int float str bool list dict set tuple abs min max sum round sorted reversed enumerate zip map filter open type isinstance any all'.split(' '));
-  var names = {hello: 'hello.py', questions: 'questions.py', age: 'age.py', loop: 'times_table.py', lists: 'pets.py', functions: 'functions.py', errors: 'mistakes.py'};
+  var names = {};
+  ((window.PyvielExamples || {}).list || []).forEach(function (e) { names[e.id] = e.file; });
 
   function escapeHTML(text) {
     return text.replace(/[&<>"']/g, function (c) { return {'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]; });
@@ -280,10 +281,12 @@
       button.setAttribute('aria-current', String(button.dataset.example === selected));
     });
   }
+  // A card opens its example and runs it at once: the result is the reason to open it.
   document.querySelectorAll('[data-example]').forEach(function (button) {
     button.addEventListener('click', function () {
       $('examples').value = button.dataset.example;
       $('examples').dispatchEvent(new Event('change', {bubbles: true}));
+      if (document.body.dataset.runState === 'idle') $('run').click();
     });
   });
   $('examples').addEventListener('change', function () {

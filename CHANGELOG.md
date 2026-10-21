@@ -12,7 +12,16 @@ The lessons are easier to follow and give much more practice.
 - **Notes that say what really happens**: "Checks if score >= 90", "with i being 0, 1, 2", "Adds 3 to what is in total", "Asks "Name?" and keeps the answer, as text, in name".
 - Four tasks that were already solved before the student started (in the projects and the terminal appendix) are now real changes to make.
 
+Examples:
+
+- **37 example programs instead of 7**, in eight groups: first steps, games (guess the number, rock paper scissors, dice, a quiz, coin flips), numbers and maths (FizzBuzz, primes, Fibonacci, averages, temperatures, savings), text (palindromes, word counts, a secret code, vowels, initials), drawing with text (a pyramid, a Christmas tree, a chessboard, a bar chart), lists and data (a shopping bill, a class report, a to-do list), your own objects (a bank account, a virtual pet, shapes) and small tools (passwords, days to your birthday, a countdown, a unit converter). Every one is translated, and the build runs each one in the three languages.
+- **A click opens the example and runs it**, so the result is there at once.
+- **Search the examples**: accents and word endings do not matter ("gioco" finds "Giochi").
+
 Site and editor:
+
+- **The page loads about a third as much**: only the course in its own language (450 KB instead of 1.45 MB, before compression).
+- **The panel comes back as you left it**: closed, on the examples, or on the step you were reading.
 
 - **Python starts even where the page cannot be isolated** (service workers blocked, some private windows): programs run, Stop restarts Python, and `input()` says in a sentence why it cannot wait there. Before, the page waited for ever on "Loading Python".
 - **Undo works on the editor's own edits**: Enter, Tab, Backspace over an indent, commenting, the symbol buttons, and opening an example can all be taken back with Cmd/Ctrl+Z. Enter after `return`, `break`, `continue`, `pass` or `raise` steps back out of the block.

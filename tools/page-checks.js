@@ -121,6 +121,22 @@
   await run('print("a")\nif True\n    print("b")');
   check('a syntax error runs nothing and says where', $('out').textContent === '' && /Line 2/.test(document.querySelector('.problem-item').innerText) && /colon/.test(document.querySelector('.problem-item').innerText), document.querySelector('.problem-item').innerText + '|' + $('out').textContent);
 
+  // examples: many, grouped, searchable, and a click opens and runs one
+  check('the page loads only the course of its language', [...document.scripts].some(s => /course-en\.js/.test(s.src)) && ![...document.scripts].some(s => /\/course\.js/.test(s.src)));
+  const cards = document.querySelectorAll('#example-list [data-example]');
+  check('there are 30 examples or more, in groups', cards.length >= 30 && document.querySelectorAll('.example-group').length >= 6, cards.length);
+  check('and the phone menu lists them all', $('examples').querySelectorAll('option[value]:not([value=""])').length === cards.length);
+  const search = $('example-search');
+  search.value = 'GAMES'; search.dispatchEvent(new Event('input'));
+  const found = [...cards].filter(b => !b.hidden).map(b => b.dataset.example);
+  check('searching finds the examples of a group', found.length >= 3 && found.includes('guess'), found.join(','));
+  search.value = 'nothing like this'; search.dispatchEvent(new Event('input'));
+  check('and says so when nothing matches', !$('example-none').hidden && [...cards].every(b => b.hidden));
+  search.value = ''; search.dispatchEvent(new Event('input'));
+  document.querySelector('[data-example="pyramid"]').click();
+  await until(() => !idle(), 1500); await until(idle, 10000);
+  check('a click opens the example and runs it', $('file-name').value === 'pyramid.py' && /\*{11}/.test($('out').textContent), $('file-name').value + ' | ' + $('out').textContent.slice(0, 80));
+
   // lessons
   if ($('tutorial').hidden) $('tutorials-toggle').click();
   check('the lessons panel opens', !$('tutorial').hidden);

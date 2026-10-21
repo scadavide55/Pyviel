@@ -184,8 +184,10 @@
   var stepBox = $('tutorial-step');
   var toggle = $('tutorials-toggle');
   var code = $('code');
-  var STORE = 'pyviel.tutorial.position', BACKUP = 'pyviel.tutorial.backup', DONE = 'pyviel.tutorial.done', VISITED = 'pyviel.visited';
+  var STORE = 'pyviel.tutorial.position', BACKUP = 'pyviel.tutorial.backup', DONE = 'pyviel.tutorial.done', VISITED = 'pyviel.visited', PANEL = 'pyviel.panel';
   var position = {lesson: 0, step: 0}, showingStep = false, done = [];
+  var lastPanel = null;   // how the panel was left, read before anything draws (drawing saves it again)
+  try { lastPanel = localStorage.getItem(PANEL); } catch (e) {}
 
   function read(key, fallback) {
     try { var value = JSON.parse(localStorage.getItem(key) || 'null'); return value === null ? fallback : value; } catch (e) { return fallback; }
@@ -262,6 +264,12 @@
     toggle.setAttribute('aria-expanded', String(open));
     if (!open) silence();
     showStartHere();
+    remember();
+  }
+  // The panel comes back as it was left: open or closed, which tab, and the step being read.
+  function remember() {
+    var state = panel.hidden ? 'closed' : ($('lessons-view').hidden ? 'examples' : (showingStep ? 'step' : 'lessons'));
+    try { localStorage.setItem(PANEL, state); } catch (e) {}
   }
   // In the empty output, a newcomer sees where to begin: the lessons are otherwise one small icon.
   function showStartHere() {
@@ -288,6 +296,7 @@
     $('tab-examples').setAttribute('aria-selected', String(!lessons));
     $('lessons-view').hidden = !lessons;
     $('examples-view').hidden = lessons;
+    remember();
   }
   toggle.addEventListener('click', function () { setOpen(panel.hidden); });
   $('tutorial-close').addEventListener('click', function () { setOpen(false); });
@@ -304,6 +313,7 @@
     stepBox.hidden = !showingStep;
     lessonsBox.hidden = showingStep;
     if (showingStep) drawStep();
+    remember();
   }
 
   function fill(text, values) {
@@ -747,6 +757,11 @@
   // A first visit opens the lessons on a big screen. After that the panel stays closed until asked for.
   var first = true;
   try { first = localStorage.getItem(VISITED) === null; localStorage.setItem(VISITED, '1'); } catch (e) {}
-  if (first && window.innerWidth > 900) setOpen(true);
+  var last = lastPanel;
+  if (window.innerWidth > 900) {
+    if (last === 'examples') { showTab('examples'); setOpen(true); }
+    else if (last === 'step') { setOpen(true); goTo(position); }
+    else if (last === 'lessons' || (first && last === null)) setOpen(true);
+  }
   showStartHere();
 })();

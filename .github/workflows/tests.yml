@@ -19,7 +19,7 @@ jobs:
       - name: Build the course and run the checks
         run: |
           node tools/build-course.js
-          git diff --exit-code course.js
+          git diff --exit-code course.js course-en.js course-it.js course-fr.js
           node tools/check-notes.js
           node tools/check-language.js
           node tools/check-translations.js

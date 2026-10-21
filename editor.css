@@ -152,7 +152,7 @@ code { font: .92em ui-monospace, "SF Mono", Menlo, monospace; background: var(--
 .restore-code:hover { color: var(--ink); }
 
 .example-list { display: grid; gap: 8px; }
-.example-list button { text-align: left; padding: 10px 13px; border: 2px solid var(--line); border-radius: 12px; background: var(--bg); display: flex; flex-direction: column; line-height: 1.3; }
+.example-list button { text-align: left; padding: 7px 12px; border: 2px solid var(--line); border-radius: 12px; background: var(--bg); display: flex; flex-direction: column; line-height: 1.3; }
 .example-list button:hover { border-color: var(--edge); }
 .example-list button[aria-current="true"] { border-color: var(--accent); background: var(--accent-soft); }
 .example-list span { color: var(--muted); font-size: 13px; }
@@ -454,3 +454,8 @@ dialog::backdrop { background: #2b242088; }
 }
 .task-ready .go-editor { display: none; margin-top: 8px; }
 @media (max-width: 900px) { .task-ready .go-editor { display: inline-flex; } }
+.example-search { width: 100%; margin: 0 0 12px; padding: 8px 11px; border: 2px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); font: inherit; }
+.example-search:focus { border-color: var(--accent); outline: none; }
+.example-group { display: grid; gap: 8px; margin-bottom: 14px; }
+.example-group h3 { margin: 4px 0 0; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.example-none { color: var(--muted); }

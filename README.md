@@ -6,7 +6,7 @@ Learn Python the way Kaviel teaches code: small steps, every line explained, and
 
 Pyviel runs **real Python 3.14**, and nothing leaves your computer. It comes in two forms: the **website**, a demo that needs nothing installed, and the **desktop app**, the complete version. The table below says what differs.
 
-> Status: **1.0 beta.** The whole course is written: **58 lessons and 321 steps**, in English, Italian and French, from `print` to classes, generators, decorators and async, with five complete programs and a cheat sheet. Every program of every step is run on real Python by the build, so what a step says you will see is what you see. It has not been tried with real beginners yet: if you do, please tell us where they got stuck.
+> Status: **beta.** The whole course is written: **58 lessons and 321 steps**, in English, Italian and French, from `print` to classes, generators, decorators and async, with five complete programs and a cheat sheet. Every program of every step is run on real Python by the build, so what a step says you will see is what you see. It has not been tried with real beginners yet: if you do, please tell us where they got stuck.
 
 ## What is different from running Python yourself
 

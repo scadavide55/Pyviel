@@ -205,6 +205,25 @@ print(total)`,
         }
       },
       {
+        c: c`print(7 x 3)`,
+        e: 'SyntaxError',
+        t: ['Find the mistake: the times sign', 'Trova l\'errore: il segno per', 'Trouve l\'erreur : le signe fois'],
+        x: [`At school you write 7 x 3. Python does not know that x: for Python, x is just a letter, a name.
+
+Press Try it: the program stops before it starts, on line 1.`,
+          `A scuola scrivi 7 x 3. Python non conosce quella x: per Python, x è solo una lettera, un nome.
+
+Premi Provalo: il programma si ferma prima di partire, alla riga 1.`,
+          `À l'école tu écris 7 x 3. Python ne connaît pas ce x : pour Python, x est juste une lettre, un nom.
+
+Appuie sur Essaie : le programme s'arrête avant de démarrer, à la ligne 1.`],
+        ex: {
+          t: ['Fix it, so that it shows 21.', 'Correggilo, così mostra 21.', 'Corrige-le, pour qu\'il affiche 21.'],
+          h: ['Python multiplies with the star.', 'Python moltiplica con l\'asterisco.', 'Python multiplie avec l\'étoile.'],
+          start: 'print(7 x 3)', sol: 'print(7 * 3)', out: '21', uses: ['*']
+        }
+      },
+      {
         c: c`total = 0
 total += 7 * 3
 total += 2 ** 3
@@ -349,6 +368,26 @@ Lis ce que dit Pyviel : il nomme les deux sortes qui ne vont pas ensemble. Appui
         }
       },
       {
+        c: c`age = "12"
+print(age + 1)`,
+        e: 'TypeError',
+        t: ['Find the mistake: text plus a number', 'Trova l\'errore: testo più un numero', 'Trouve l\'erreur : du texte plus un nombre'],
+        x: [`age holds "12" with quotes: it is text, not a number. Python cannot add the number 1 to a text, and stops.
+
+Press Try it and read the sentence: it tells you which two kinds do not go together.`,
+          `age contiene "12" con le virgolette: è testo, non un numero. Python non può aggiungere il numero 1 a un testo, e si ferma.
+
+Premi Provalo e leggi la frase: ti dice quali due tipi non vanno insieme.`,
+          `age contient "12" avec des guillemets : c'est du texte, pas un nombre. Python ne peut pas ajouter le nombre 1 à un texte, et s'arrête.
+
+Appuie sur Essaie et lis la phrase : elle te dit quels deux genres ne vont pas ensemble.`],
+        ex: {
+          t: ['Keep the first line as it is, and fix the second, so that it shows 13.', 'Lascia la prima riga così com\'è e correggi la seconda, così mostra 13.', 'Garde la première ligne telle quelle et corrige la seconde, pour qu\'elle affiche 13.'],
+          h: ['Turn the text into a number before adding 1.', 'Trasforma il testo in un numero prima di aggiungere 1.', 'Transforme le texte en nombre avant d\'ajouter 1.'],
+          start: 'age = "12"\nprint(age + 1)', sol: 'age = "12"\nprint(int(age) + 1)', out: '13', uses: ['int'], c: 'age = "12"'
+        }
+      },
+      {
         c: c`price = "5"
 quantity = 3
 total = int(price) * quantity
@@ -480,6 +519,30 @@ Ce programme demande deux nombres, les additionne et affiche la somme. C'est le 
           h: ['Replace the + with a *.', 'Sostituisci il + con un *.', 'Remplace le + par un *.'],
           start: ['first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first + second\nprint("The sum is", total)', 'first = int(input("Primo numero: "))\nsecond = int(input("Secondo numero: "))\ntotal = first + second\nprint("La somma è", total)', 'first = int(input("Premier nombre : "))\nsecond = int(input("Deuxième nombre : "))\ntotal = first + second\nprint("La somme est", total)'],
           sol: ['first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first * second\nprint("The sum is", total)', 'first = int(input("Primo numero: "))\nsecond = int(input("Secondo numero: "))\ntotal = first * second\nprint("La somma è", total)', 'first = int(input("Premier nombre : "))\nsecond = int(input("Deuxième nombre : "))\ntotal = first * second\nprint("La somme est", total)'], i: ['6', '7'], m: '42$'
+        }
+      },
+      {
+        c: [c`number = input("Number? ")
+print(number * 2)`, c`number = input("Numero? ")
+print(number * 2)`, c`number = input("Nombre ? ")
+print(number * 2)`],
+        i: ['4'],
+        t: ['Find the mistake: 4 times 2 is 44?', 'Trova l\'errore: 4 per 2 fa 44?', 'Trouve l\'erreur : 4 fois 2 font 44 ?'],
+        x: [`Not every mistake stops the program. This one runs, but the answer is wrong: typing 4 shows 44.
+
+The answer of input is always text, and a text times 2 is the text written twice. Python did exactly what the program says.`,
+          `Non tutti gli errori fermano il programma. Questo gira, ma la risposta è sbagliata: scrivendo 4 mostra 44.
+
+La risposta di input è sempre testo, e un testo per 2 è il testo scritto due volte. Python ha fatto esattamente quello che dice il programma.`,
+          `Toutes les erreurs n'arrêtent pas le programme. Celui-ci tourne, mais la réponse est fausse : en tapant 4 il affiche 44.
+
+La réponse de input est toujours du texte, et un texte fois 2, c'est le texte écrit deux fois. Python a fait exactement ce que dit le programme.`],
+        ex: {
+          t: ['Fix it: with the answer 4, the last line must be 8.', 'Correggilo: con la risposta 4, l\'ultima riga deve essere 8.', 'Corrige-le : avec la réponse 4, la dernière ligne doit être 8.'],
+          h: ['The answer must become a number before it is multiplied.', 'La risposta deve diventare un numero prima di essere moltiplicata.', 'La réponse doit devenir un nombre avant d\'être multipliée.'],
+          start: ['number = input("Number? ")\nprint(number * 2)', 'number = input("Numero? ")\nprint(number * 2)', 'number = input("Nombre ? ")\nprint(number * 2)'],
+          sol: ['number = int(input("Number? "))\nprint(number * 2)', 'number = int(input("Numero? "))\nprint(number * 2)', 'number = int(input("Nombre ? "))\nprint(number * 2)'],
+          i: ['4'], m: '\\n8$', uses: ['int']
         }
       },
       {

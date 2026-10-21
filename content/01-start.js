@@ -513,6 +513,27 @@ Mets entre les parenthèses le texte, ou une boîte qui le contient.`],
         }
       },
       {
+        c: [c`print("Good morning')`, c`print("Buongiorno')`, c`print("Bonjour')`],
+        e: 'SyntaxError',
+        t: ['Find the mistake: quotes that do not match', 'Trova l\'errore: virgolette che non vanno d\'accordo', 'Trouve l\'erreur : des guillemets qui ne vont pas ensemble'],
+        x: [`This program does not even start. Python reads the text from the first quote and looks for the same kind of quote to close it, but the closing one is different.
+
+Press Try it and read the message: it says the text never ends.`,
+          `Questo programma non parte nemmeno. Python legge il testo dalla prima virgoletta e cerca una virgoletta dello stesso tipo per chiuderlo, ma quella che chiude è diversa.
+
+Premi Provalo e leggi il messaggio: dice che il testo non finisce mai.`,
+          `Ce programme ne démarre même pas. Python lit le texte depuis le premier guillemet et cherche le même genre de guillemet pour le fermer, mais celui qui ferme est différent.
+
+Appuie sur Essaie et lis le message : il dit que le texte ne se termine jamais.`],
+        ex: {
+          t: ['Fix the line so that the program shows Good morning.', 'Correggi la riga così il programma mostra Buongiorno.', 'Corrige la ligne pour que le programme affiche Bonjour.'],
+          h: ['Look at the two quotes around the text: they must be the same kind.', 'Guarda le due virgolette intorno al testo: devono essere dello stesso tipo.', 'Regarde les deux guillemets autour du texte : ils doivent être du même genre.'],
+          start: [c`print("Good morning')`, c`print("Buongiorno')`, c`print("Bonjour')`],
+          sol: [c`print("Good morning")`, c`print("Buongiorno")`, c`print("Bonjour")`],
+          out: ['Good morning', 'Buongiorno', 'Bonjour'], plain: true
+        }
+      },
+      {
         c: [c`greeting = "Hello" + " " + "world"
 print(greeting)
 print("-" * len(greeting))

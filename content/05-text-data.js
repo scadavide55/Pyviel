@@ -326,6 +326,27 @@ print(word, "a", vowels, "voyelles")`],
         }
       },
       {
+        c: c`word = "python"
+word[0] = "P"
+print(word)`,
+        e: 'TypeError',
+        t: ['Find the mistake: changing a letter', 'Trova l\'errore: cambiare una lettera', 'Trouve l\'erreur : changer une lettre'],
+        x: [`A text cannot be changed letter by letter: once it is made, it stays as it is. Python says a str does not support changing an item.
+
+You can still make a new text out of pieces of the old one, and keep it in the same box.`,
+          `Un testo non si può cambiare lettera per lettera: una volta fatto, resta com'è. Python dice che una str non permette di cambiare un elemento.
+
+Puoi però fare un testo nuovo con pezzi di quello vecchio, e tenerlo nella stessa scatola.`,
+          `Un texte ne peut pas être changé lettre par lettre : une fois fait, il reste tel quel. Python dit qu'une str ne permet pas de changer un élément.
+
+Tu peux quand même faire un nouveau texte avec des morceaux de l'ancien, et le garder dans la même boîte.`],
+        ex: {
+          t: ['Fix the second line, so that the program shows Python with a capital P.', 'Correggi la seconda riga, così il programma mostra Python con la P maiuscola.', 'Corrige la deuxième ligne, pour que le programme affiche Python avec un P majuscule.'],
+          h: ['Make a new text: "P" joined with a piece of word from place 1 to the end, and put it in word.', 'Fai un testo nuovo: "P" unito a un pezzo di word dal posto 1 alla fine, e mettilo in word.', 'Fais un nouveau texte : "P" joint à un morceau de word de la place 1 à la fin, et mets-le dans word.'],
+          start: 'word = "python"\nword[0] = "P"\nprint(word)', sol: 'word = "python"\nword = "P" + word[1:]\nprint(word)', out: 'Python', c: 'word = "python"'
+        }
+      },
+      {
         c: [c`text = "  Hello, World  "
 clean = text.strip().lower()
 print(clean.replace("world", "Python"))
@@ -893,6 +914,26 @@ C'est ainsi que sont faites les vraies données, par exemple celles que les site
           start: ['person = {"name": "Ada", "address": {"city": "Rome", "zip": "00100"}}', 'person = {"name": "Ada", "address": {"city": "Roma", "zip": "00100"}}', 'person = {"name": "Ada", "address": {"city": "Paris", "zip": "75001"}}'],
           sol: ['person = {"name": "Ada", "address": {"city": "Rome", "zip": "00100"}}\nprint(person["address"]["zip"])', 'person = {"name": "Ada", "address": {"city": "Roma", "zip": "00100"}}\nprint(person["address"]["zip"])', 'person = {"name": "Ada", "address": {"city": "Paris", "zip": "75001"}}\nprint(person["address"]["zip"])'],
           out: ['00100', '00100', '75001'], c: '\\["zip"\\]'
+        }
+      },
+      {
+        c: c`ages = {"Ada": 12, "Max": 9}
+print(ages["Bo"])`,
+        e: 'KeyError',
+        t: ['Find the mistake: a key that is not there', 'Trova l\'errore: una chiave che non c\'è', 'Trouve l\'erreur : une clé qui n\'est pas là'],
+        x: [`Asking a dictionary for a key it does not have stops the program with a KeyError. Here Bo is not in ages.
+
+You met two ways to be safe: ask first with in, or use get, which gives back a value you choose when the key is missing.`,
+          `Chiedere a un dizionario una chiave che non ha ferma il programma con un KeyError. Qui Bo non è in ages.
+
+Hai conosciuto due modi per stare tranquillo: chiedere prima con in, oppure usare get, che restituisce un valore scelto da te quando la chiave manca.`,
+          `Demander à un dictionnaire une clé qu'il n'a pas arrête le programme avec une KeyError. Ici Bo n'est pas dans ages.
+
+Tu as vu deux façons d'être tranquille : demander d'abord avec in, ou utiliser get, qui rend une valeur que tu choisis quand la clé manque.`],
+        ex: {
+          t: ['Fix the second line: show the age of Bo, or 0 when Bo is not there (here 0).', 'Correggi la seconda riga: mostra l\'età di Bo, o 0 quando Bo non c\'è (qui 0).', 'Corrige la deuxième ligne : affiche l\'âge de Bo, ou 0 quand Bo n\'est pas là (ici 0).'],
+          h: ['get takes the key and the value to give when the key is missing.', 'get prende la chiave e il valore da dare quando la chiave manca.', 'get prend la clé et la valeur à rendre quand la clé manque.'],
+          start: 'ages = {"Ada": 12, "Max": 9}\nprint(ages["Bo"])', sol: 'ages = {"Ada": 12, "Max": 9}\nprint(ages.get("Bo", 0))', out: '0', uses: ['.get']
         }
       },
       {

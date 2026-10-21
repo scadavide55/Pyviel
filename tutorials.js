@@ -158,6 +158,7 @@
     if ((m = t.match(/^(\w+)\(/))) return fill(e.callFn, {name: m[1]});
     if (/^[\w"'\d(\[{-]/.test(t) && /,$/.test(t)) return e.listItem;
     if (/^[\w.]+$/.test(t)) return e.showValue;
+    if (/^[\w.()\[\]"' ]+\s*[-+*\/%]\s*[\w.()\[\]"' +\-*\/%]+$/.test(t) && e.exprOnly) return e.exprOnly;
     return '';
   }
   // The notes of a whole program: a line inside a long text between triple quotes is part of that text.

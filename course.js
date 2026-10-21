@@ -1834,6 +1834,73 @@ window.PyvielCourse = {
     },
     {
      "code": {
+      "en": "print(\"Good morning')",
+      "it": "print(\"Buongiorno')",
+      "fr": "print(\"Bonjour')"
+     },
+     "title": {
+      "en": "Find the mistake: quotes that do not match",
+      "it": "Trova l'errore: virgolette che non vanno d'accordo",
+      "fr": "Trouve l'erreur : des guillemets qui ne vont pas ensemble"
+     },
+     "text": {
+      "en": "This program does not even start. Python reads the text from the first quote and looks for the same kind of quote to close it, but the closing one is different.\n\nPress Try it and read the message: it says the text never ends.",
+      "it": "Questo programma non parte nemmeno. Python legge il testo dalla prima virgoletta e cerca una virgoletta dello stesso tipo per chiuderlo, ma quella che chiude è diversa.\n\nPremi Provalo e leggi il messaggio: dice che il testo non finisce mai.",
+      "fr": "Ce programme ne démarre même pas. Python lit le texte depuis le premier guillemet et cherche le même genre de guillemet pour le fermer, mais celui qui ferme est différent.\n\nAppuie sur Essaie et lis le message : il dit que le texte ne se termine jamais."
+     },
+     "see": {
+      "en": "⚠ Line 1: A text starts here but its closing quote is missing.",
+      "it": "⚠ Riga 1: Qui comincia un testo ma manca la virgoletta che lo chiude.",
+      "fr": "⚠ Ligne 1: Un texte commence ici mais il manque le guillemet qui le ferme."
+     },
+     "slip": null,
+     "error": "SyntaxError",
+     "ex": {
+      "task": {
+       "en": "Fix the line so that the program shows Good morning.",
+       "it": "Correggi la riga così il programma mostra Buongiorno.",
+       "fr": "Corrige la ligne pour que le programme affiche Bonjour."
+      },
+      "hint": {
+       "en": "Look at the two quotes around the text: they must be the same kind.",
+       "it": "Guarda le due virgolette intorno al testo: devono essere dello stesso tipo.",
+       "fr": "Regarde les deux guillemets autour du texte : ils doivent être du même genre."
+      },
+      "sol": {
+       "en": "print(\"Good morning\")",
+       "it": "print(\"Buongiorno\")",
+       "fr": "print(\"Bonjour\")"
+      },
+      "start": {
+       "en": "print(\"Good morning')",
+       "it": "print(\"Buongiorno')",
+       "fr": "print(\"Bonjour')"
+      },
+      "spec": {
+       "en": {
+        "out": "Good morning"
+       },
+       "it": {
+        "out": "Buongiorno"
+       },
+       "fr": {
+        "out": "Bonjour"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Good morning",
+       "it": "Buongiorno",
+       "fr": "Bonjour"
+      }
+     }
+    },
+    {
+     "code": {
       "en": "greeting = \"Hello\" + \" \" + \"world\"\nprint(greeting)\nprint(\"-\" * len(greeting))\nprint(\"It's\", len(greeting), \"letters long\")",
       "it": "greeting = \"Ciao\" + \" \" + \"mondo\"\nprint(greeting)\nprint(\"-\" * len(greeting))\nprint(\"Sono\", len(greeting), \"caratteri\")",
       "fr": "greeting = \"Bonjour\" + \" \" + \"le monde\"\nprint(greeting)\nprint(\"-\" * len(greeting))\nprint(\"C'est long de\", len(greeting), \"caractères\")"
@@ -3714,6 +3781,82 @@ window.PyvielCourse = {
     },
     {
      "code": {
+      "en": "print(7 x 3)",
+      "it": "print(7 x 3)",
+      "fr": "print(7 x 3)"
+     },
+     "title": {
+      "en": "Find the mistake: the times sign",
+      "it": "Trova l'errore: il segno per",
+      "fr": "Trouve l'erreur : le signe fois"
+     },
+     "text": {
+      "en": "At school you write 7 x 3. Python does not know that x: for Python, x is just a letter, a name.\n\nPress Try it: the program stops before it starts, on line 1.",
+      "it": "A scuola scrivi 7 x 3. Python non conosce quella x: per Python, x è solo una lettera, un nome.\n\nPremi Provalo: il programma si ferma prima di partire, alla riga 1.",
+      "fr": "À l'école tu écris 7 x 3. Python ne connaît pas ce x : pour Python, x est juste une lettre, un nom.\n\nAppuie sur Essaie : le programme s'arrête avant de démarrer, à la ligne 1."
+     },
+     "see": {
+      "en": "⚠ Line 1: Two things are next to each other with no comma between them.",
+      "it": "⚠ Riga 1: Due cose sono vicine senza una virgola in mezzo.",
+      "fr": "⚠ Ligne 1: Deux choses sont côte à côte sans virgule entre elles."
+     },
+     "slip": null,
+     "error": "SyntaxError",
+     "ex": {
+      "task": {
+       "en": "Fix it, so that it shows 21.",
+       "it": "Correggilo, così mostra 21.",
+       "fr": "Corrige-le, pour qu'il affiche 21."
+      },
+      "hint": {
+       "en": "Python multiplies with the star.",
+       "it": "Python moltiplica con l'asterisco.",
+       "fr": "Python multiplie avec l'étoile."
+      },
+      "sol": {
+       "en": "print(7 * 3)",
+       "it": "print(7 * 3)",
+       "fr": "print(7 * 3)"
+      },
+      "start": {
+       "en": "print(7 x 3)",
+       "it": "print(7 x 3)",
+       "fr": "print(7 x 3)"
+      },
+      "spec": {
+       "en": {
+        "out": "21",
+        "uses": [
+         "*"
+        ]
+       },
+       "it": {
+        "out": "21",
+        "uses": [
+         "*"
+        ]
+       },
+       "fr": {
+        "out": "21",
+        "uses": [
+         "*"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "21",
+       "it": "21",
+       "fr": "21"
+      }
+     }
+    },
+    {
+     "code": {
       "en": "total = 0\ntotal += 7 * 3\ntotal += 2 ** 3\nprint(total)\nprint(total // 10, total % 10)",
       "it": "total = 0\ntotal += 7 * 3\ntotal += 2 ** 3\nprint(total)\nprint(total // 10, total % 10)",
       "fr": "total = 0\ntotal += 7 * 3\ntotal += 2 ** 3\nprint(total)\nprint(total // 10, total % 10)"
@@ -4345,6 +4488,85 @@ window.PyvielCourse = {
     },
     {
      "code": {
+      "en": "age = \"12\"\nprint(age + 1)",
+      "it": "age = \"12\"\nprint(age + 1)",
+      "fr": "age = \"12\"\nprint(age + 1)"
+     },
+     "title": {
+      "en": "Find the mistake: text plus a number",
+      "it": "Trova l'errore: testo più un numero",
+      "fr": "Trouve l'erreur : du texte plus un nombre"
+     },
+     "text": {
+      "en": "age holds \"12\" with quotes: it is text, not a number. Python cannot add the number 1 to a text, and stops.\n\nPress Try it and read the sentence: it tells you which two kinds do not go together.",
+      "it": "age contiene \"12\" con le virgolette: è testo, non un numero. Python non può aggiungere il numero 1 a un testo, e si ferma.\n\nPremi Provalo e leggi la frase: ti dice quali due tipi non vanno insieme.",
+      "fr": "age contient \"12\" avec des guillemets : c'est du texte, pas un nombre. Python ne peut pas ajouter le nombre 1 à un texte, et s'arrête.\n\nAppuie sur Essaie et lis la phrase : elle te dit quels deux genres ne vont pas ensemble."
+     },
+     "see": {
+      "en": "⚠ Line 2: A text and a number cannot be joined with +.",
+      "it": "⚠ Riga 2: Un testo e un numero non si possono unire con +.",
+      "fr": "⚠ Ligne 2: Un texte et un nombre ne peuvent pas être joints avec +."
+     },
+     "slip": null,
+     "error": "TypeError",
+     "ex": {
+      "task": {
+       "en": "Keep the first line as it is, and fix the second, so that it shows 13.",
+       "it": "Lascia la prima riga così com'è e correggi la seconda, così mostra 13.",
+       "fr": "Garde la première ligne telle quelle et corrige la seconde, pour qu'elle affiche 13."
+      },
+      "hint": {
+       "en": "Turn the text into a number before adding 1.",
+       "it": "Trasforma il testo in un numero prima di aggiungere 1.",
+       "fr": "Transforme le texte en nombre avant d'ajouter 1."
+      },
+      "sol": {
+       "en": "age = \"12\"\nprint(int(age) + 1)",
+       "it": "age = \"12\"\nprint(int(age) + 1)",
+       "fr": "age = \"12\"\nprint(int(age) + 1)"
+      },
+      "start": {
+       "en": "age = \"12\"\nprint(age + 1)",
+       "it": "age = \"12\"\nprint(age + 1)",
+       "fr": "age = \"12\"\nprint(age + 1)"
+      },
+      "spec": {
+       "en": {
+        "out": "13",
+        "c": "age = \"12\"",
+        "uses": [
+         "int"
+        ]
+       },
+       "it": {
+        "out": "13",
+        "c": "age = \"12\"",
+        "uses": [
+         "int"
+        ]
+       },
+       "fr": {
+        "out": "13",
+        "c": "age = \"12\"",
+        "uses": [
+         "int"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "13",
+       "it": "13",
+       "fr": "13"
+      }
+     }
+    },
+    {
+     "code": {
       "en": "price = \"5\"\nquantity = 3\ntotal = int(price) * quantity\nprint(\"Total: \" + str(total))\nprint(type(price), type(total))",
       "it": "price = \"5\"\nquantity = 3\ntotal = int(price) * quantity\nprint(\"Total: \" + str(total))\nprint(type(price), type(total))",
       "fr": "price = \"5\"\nquantity = 3\ntotal = int(price) * quantity\nprint(\"Total: \" + str(total))\nprint(type(price), type(total))"
@@ -4793,6 +5015,82 @@ window.PyvielCourse = {
        "fr": [
         "6",
         "7"
+       ]
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "number = input(\"Number? \")\nprint(number * 2)",
+      "it": "number = input(\"Numero? \")\nprint(number * 2)",
+      "fr": "number = input(\"Nombre ? \")\nprint(number * 2)"
+     },
+     "title": {
+      "en": "Find the mistake: 4 times 2 is 44?",
+      "it": "Trova l'errore: 4 per 2 fa 44?",
+      "fr": "Trouve l'erreur : 4 fois 2 font 44 ?"
+     },
+     "text": {
+      "en": "Not every mistake stops the program. This one runs, but the answer is wrong: typing 4 shows 44.\n\nThe answer of input is always text, and a text times 2 is the text written twice. Python did exactly what the program says.",
+      "it": "Non tutti gli errori fermano il programma. Questo gira, ma la risposta è sbagliata: scrivendo 4 mostra 44.\n\nLa risposta di input è sempre testo, e un testo per 2 è il testo scritto due volte. Python ha fatto esattamente quello che dice il programma.",
+      "fr": "Toutes les erreurs n'arrêtent pas le programme. Celui-ci tourne, mais la réponse est fausse : en tapant 4 il affiche 44.\n\nLa réponse de input est toujours du texte, et un texte fois 2, c'est le texte écrit deux fois. Python a fait exactement ce que dit le programme."
+     },
+     "see": {
+      "en": "Number? 4\n44",
+      "it": "Numero? 4\n44",
+      "fr": "Nombre ? 4\n44"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Fix it: with the answer 4, the last line must be 8.",
+       "it": "Correggilo: con la risposta 4, l'ultima riga deve essere 8.",
+       "fr": "Corrige-le : avec la réponse 4, la dernière ligne doit être 8."
+      },
+      "hint": {
+       "en": "The answer must become a number before it is multiplied.",
+       "it": "La risposta deve diventare un numero prima di essere moltiplicata.",
+       "fr": "La réponse doit devenir un nombre avant d'être multipliée."
+      },
+      "sol": {
+       "en": "number = int(input(\"Number? \"))\nprint(number * 2)",
+       "it": "number = int(input(\"Numero? \"))\nprint(number * 2)",
+       "fr": "number = int(input(\"Nombre ? \"))\nprint(number * 2)"
+      },
+      "start": {
+       "en": "number = input(\"Number? \")\nprint(number * 2)",
+       "it": "number = input(\"Numero? \")\nprint(number * 2)",
+       "fr": "number = input(\"Nombre ? \")\nprint(number * 2)"
+      },
+      "spec": {
+       "en": {
+        "m": "\\n8$",
+        "uses": [
+         "int"
+        ]
+       },
+       "it": {
+        "m": "\\n8$",
+        "uses": [
+         "int"
+        ]
+       },
+       "fr": {
+        "m": "\\n8$",
+        "uses": [
+         "int"
+        ]
+       }
+      },
+      "answers": {
+       "en": [
+        "4"
+       ],
+       "it": [
+        "4"
+       ],
+       "fr": [
+        "4"
        ]
       }
      }
@@ -7291,6 +7589,85 @@ window.PyvielCourse = {
     },
     {
      "code": {
+      "en": "x = 5\nif x = 5:\n    print(\"five\")",
+      "it": "x = 5\nif x = 5:\n    print(\"cinque\")",
+      "fr": "x = 5\nif x = 5:\n    print(\"cinq\")"
+     },
+     "title": {
+      "en": "Find the mistake: one equal sign or two?",
+      "it": "Trova l'errore: un uguale o due?",
+      "fr": "Trouve l'erreur : un signe égal ou deux ?"
+     },
+     "text": {
+      "en": "One = puts a value in a box. Two == ask \"is it equal?\". An if needs a question, so one = there is a mistake.\n\nPress Try it: Python even guesses what you meant.",
+      "it": "Un = mette un valore in una scatola. Due == chiedono \"è uguale?\". Un if ha bisogno di una domanda, quindi lì un solo = è un errore.\n\nPremi Provalo: Python indovina perfino cosa volevi dire.",
+      "fr": "Un = met une valeur dans une boîte. Deux == demandent \"est-ce égal ?\". Un if a besoin d'une question, donc un seul = y est une erreur.\n\nAppuie sur Essaie : Python devine même ce que tu voulais dire."
+     },
+     "see": {
+      "en": "⚠ Line 2: A single = stores a value. To compare, use ==.",
+      "it": "⚠ Riga 2: Un solo = mette un valore in una variabile. Per confrontare si usa ==.",
+      "fr": "⚠ Ligne 2: Un seul = range une valeur. Pour comparer, on utilise ==."
+     },
+     "slip": null,
+     "error": "SyntaxError",
+     "ex": {
+      "task": {
+       "en": "Fix the if, so that the program shows five.",
+       "it": "Correggi l'if, così il programma mostra cinque.",
+       "fr": "Corrige le if, pour que le programme affiche cinq."
+      },
+      "hint": {
+       "en": "The question \"is it equal?\" is written with two equal signs.",
+       "it": "La domanda \"è uguale?\" si scrive con due segni uguale.",
+       "fr": "La question \"est-ce égal ?\" s'écrit avec deux signes égal."
+      },
+      "sol": {
+       "en": "x = 5\nif x == 5:\n    print(\"five\")",
+       "it": "x = 5\nif x == 5:\n    print(\"cinque\")",
+       "fr": "x = 5\nif x == 5:\n    print(\"cinq\")"
+      },
+      "start": {
+       "en": "x = 5\nif x = 5:\n    print(\"five\")",
+       "it": "x = 5\nif x = 5:\n    print(\"cinque\")",
+       "fr": "x = 5\nif x = 5:\n    print(\"cinq\")"
+      },
+      "spec": {
+       "en": {
+        "out": "five",
+        "uses": [
+         "if",
+         "=="
+        ]
+       },
+       "it": {
+        "out": "cinque",
+        "uses": [
+         "if",
+         "=="
+        ]
+       },
+       "fr": {
+        "out": "cinq",
+        "uses": [
+         "if",
+         "=="
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "five",
+       "it": "cinque",
+       "fr": "cinq"
+      }
+     }
+    },
+    {
+     "code": {
       "en": "score = 72\nif score >= 90:\n    print(\"Great\")\nelif score >= 60:\n    print(\"Pass\")\nelse:\n    print(\"Try again\")",
       "it": "score = 72\nif score >= 90:\n    print(\"Ottimo\")\nelif score >= 60:\n    print(\"Promosso\")\nelse:\n    print(\"Riprova\")",
       "fr": "score = 72\nif score >= 90:\n    print(\"Excellent\")\nelif score >= 60:\n    print(\"Réussi\")\nelse:\n    print(\"Réessaie\")"
@@ -8018,6 +8395,82 @@ window.PyvielCourse = {
     },
     {
      "code": {
+      "en": "for i in range(5)\n    print(i)",
+      "it": "for i in range(5)\n    print(i)",
+      "fr": "for i in range(5)\n    print(i)"
+     },
+     "title": {
+      "en": "Find the mistake: the missing colon",
+      "it": "Trova l'errore: i due punti che mancano",
+      "fr": "Trouve l'erreur : les deux-points qui manquent"
+     },
+     "text": {
+      "en": "Every line that opens a block (for, while, if, def) ends with a colon. Without it, Python does not know that the lines below belong to it.\n\nPress Try it: the message points at the line, and says what it expected.",
+      "it": "Ogni riga che apre un blocco (for, while, if, def) finisce con i due punti. Senza, Python non sa che le righe sotto le appartengono.\n\nPremi Provalo: il messaggio indica la riga e dice cosa si aspettava.",
+      "fr": "Chaque ligne qui ouvre un bloc (for, while, if, def) se termine par deux-points. Sans eux, Python ne sait pas que les lignes dessous lui appartiennent.\n\nAppuie sur Essaie : le message montre la ligne et dit ce qu'il attendait."
+     },
+     "see": {
+      "en": "⚠ Line 1: A colon : is missing at the end of this line.",
+      "it": "⚠ Riga 1: Manca i due punti : alla fine di questa riga.",
+      "fr": "⚠ Ligne 1: Il manque les deux-points : à la fin de cette ligne."
+     },
+     "slip": null,
+     "error": "SyntaxError",
+     "ex": {
+      "task": {
+       "en": "Fix it, so that it shows the numbers 0 to 4.",
+       "it": "Correggilo, così mostra i numeri da 0 a 4.",
+       "fr": "Corrige-le, pour qu'il affiche les nombres de 0 à 4."
+      },
+      "hint": {
+       "en": "Add one character at the end of the first line.",
+       "it": "Aggiungi un carattere alla fine della prima riga.",
+       "fr": "Ajoute un caractère à la fin de la première ligne."
+      },
+      "sol": {
+       "en": "for i in range(5):\n    print(i)",
+       "it": "for i in range(5):\n    print(i)",
+       "fr": "for i in range(5):\n    print(i)"
+      },
+      "start": {
+       "en": "for i in range(5)\n    print(i)",
+       "it": "for i in range(5)\n    print(i)",
+       "fr": "for i in range(5)\n    print(i)"
+      },
+      "spec": {
+       "en": {
+        "out": "0\n1\n2\n3\n4",
+        "uses": [
+         "for"
+        ]
+       },
+       "it": {
+        "out": "0\n1\n2\n3\n4",
+        "uses": [
+         "for"
+        ]
+       },
+       "fr": {
+        "out": "0\n1\n2\n3\n4",
+        "uses": [
+         "for"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "0\n1\n2\n3\n4",
+       "it": "0\n1\n2\n3\n4",
+       "fr": "0\n1\n2\n3\n4"
+      }
+     }
+    },
+    {
+     "code": {
       "en": "total = 0\nfor n in range(1, 11):\n    total += n\nprint(\"The sum of 1 to 10 is\", total)",
       "it": "total = 0\nfor n in range(1, 11):\n    total += n\nprint(\"La somma da 1 a 10 è\", total)",
       "fr": "total = 0\nfor n in range(1, 11):\n    total += n\nprint(\"La somme de 1 à 10 est\", total)"
@@ -8585,6 +9038,82 @@ window.PyvielCourse = {
        "en": "Reached 1 after 8 steps",
        "it": "Arrivato a 1 dopo 8 passi",
        "fr": "Arrivé à 1 après 8 étapes"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "n = 1\nwhile n < 4:\nprint(n)\n    n += 1",
+      "it": "n = 1\nwhile n < 4:\nprint(n)\n    n += 1",
+      "fr": "n = 1\nwhile n < 4:\nprint(n)\n    n += 1"
+     },
+     "title": {
+      "en": "Find the mistake: a line not pushed in",
+      "it": "Trova l'errore: una riga non rientrata",
+      "fr": "Trouve l'erreur : une ligne pas décalée"
+     },
+     "text": {
+      "en": "The lines that repeat must be pushed in under the while, all by the same amount. Here print is not pushed in, so the while has nothing inside it.\n\nPress Try it and look at which line the message names.",
+      "it": "Le righe che si ripetono devono essere rientrate sotto il while, tutte della stessa misura. Qui print non è rientrato, quindi il while non ha niente dentro.\n\nPremi Provalo e guarda quale riga nomina il messaggio.",
+      "fr": "Les lignes qui se répètent doivent être décalées sous le while, toutes de la même quantité. Ici print n'est pas décalé, donc le while n'a rien dedans.\n\nAppuie sur Essaie et regarde quelle ligne le message nomme."
+     },
+     "see": {
+      "en": "⚠ Line 3: An indented line is expected here.",
+      "it": "⚠ Riga 3: Qui ci vuole una riga rientrata.",
+      "fr": "⚠ Ligne 3: Une ligne décalée est attendue ici."
+     },
+     "slip": null,
+     "error": "IndentationError",
+     "ex": {
+      "task": {
+       "en": "Fix it, so that it shows 1, 2 and 3 on three lines.",
+       "it": "Correggilo, così mostra 1, 2 e 3 su tre righe.",
+       "fr": "Corrige-le, pour qu'il affiche 1, 2 et 3 sur trois lignes."
+      },
+      "hint": {
+       "en": "Push the print line in by 4 spaces, like the line under it.",
+       "it": "Rientra la riga print di 4 spazi, come la riga sotto.",
+       "fr": "Décale la ligne print de 4 espaces, comme la ligne dessous."
+      },
+      "sol": {
+       "en": "n = 1\nwhile n < 4:\n    print(n)\n    n += 1",
+       "it": "n = 1\nwhile n < 4:\n    print(n)\n    n += 1",
+       "fr": "n = 1\nwhile n < 4:\n    print(n)\n    n += 1"
+      },
+      "start": {
+       "en": "n = 1\nwhile n < 4:\nprint(n)\n    n += 1",
+       "it": "n = 1\nwhile n < 4:\nprint(n)\n    n += 1",
+       "fr": "n = 1\nwhile n < 4:\nprint(n)\n    n += 1"
+      },
+      "spec": {
+       "en": {
+        "out": "1\n2\n3",
+        "uses": [
+         "while"
+        ]
+       },
+       "it": {
+        "out": "1\n2\n3",
+        "uses": [
+         "while"
+        ]
+       },
+       "fr": {
+        "out": "1\n2\n3",
+        "uses": [
+         "while"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1\n2\n3",
+       "it": "1\n2\n3",
+       "fr": "1\n2\n3"
       }
      }
     },
@@ -9508,6 +10037,98 @@ window.PyvielCourse = {
         "['Ada', 'Max', 'Ada', 'Zoe']\n1\n3"
        ],
        "right": 1
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "pets = [\"cat\", \"dog\"]\npets.add(\"fox\")\nprint(pets)",
+      "it": "pets = [\"gatto\", \"cane\"]\npets.add(\"volpe\")\nprint(pets)",
+      "fr": "pets = [\"chat\", \"chien\"]\npets.add(\"renard\")\nprint(pets)"
+     },
+     "title": {
+      "en": "Find the mistake: the wrong word for \"add\"",
+      "it": "Trova l'errore: la parola sbagliata per \"aggiungere\"",
+      "fr": "Trouve l'erreur : le mauvais mot pour \"ajouter\""
+     },
+     "text": {
+      "en": "A list has its own words, its methods. add is not one of them, so Python stops and says the list has no add.\n\nPress Try it, then remember which method puts an item at the end of a list.",
+      "it": "Una lista ha le sue parole, i suoi metodi. add non è uno di questi, quindi Python si ferma e dice che la lista non ha add.\n\nPremi Provalo, poi ricorda quale metodo mette un elemento alla fine di una lista.",
+      "fr": "Une liste a ses propres mots, ses méthodes. add n'en fait pas partie, donc Python s'arrête et dit que la liste n'a pas de add.\n\nAppuie sur Essaie, puis souviens-toi de la méthode qui met un élément à la fin d'une liste."
+     },
+     "see": {
+      "en": "⚠ Line 2: A list has no add.",
+      "it": "⚠ Riga 2: Un list non ha add.",
+      "fr": "⚠ Ligne 2: Un list n'a pas de add."
+     },
+     "slip": null,
+     "error": "AttributeError",
+     "news": [
+      {
+       "k": ".add",
+       "w": ".add( )",
+       "d": {
+        "en": "add puts a thing in a set. If it is already there, nothing changes.",
+        "it": "add mette una cosa in un insieme. Se c'è già, non cambia niente.",
+        "fr": "add met une chose dans un ensemble. Si elle y est déjà, rien ne change."
+       },
+       "s": {
+        "en": "tags.add(\"fun\")",
+        "it": "tags.add(\"fun\")",
+        "fr": "tags.add(\"fun\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Fix the second line, so that the list ends with the third animal.",
+       "it": "Correggi la seconda riga, così la lista finisce con il terzo animale.",
+       "fr": "Corrige la deuxième ligne, pour que la liste finisse par le troisième animal."
+      },
+      "hint": {
+       "en": "The method of lists that adds at the end starts with app...",
+       "it": "Il metodo delle liste che aggiunge alla fine inizia con app...",
+       "fr": "La méthode des listes qui ajoute à la fin commence par app..."
+      },
+      "sol": {
+       "en": "pets = [\"cat\", \"dog\"]\npets.append(\"fox\")\nprint(pets)",
+       "it": "pets = [\"gatto\", \"cane\"]\npets.append(\"volpe\")\nprint(pets)",
+       "fr": "pets = [\"chat\", \"chien\"]\npets.append(\"renard\")\nprint(pets)"
+      },
+      "start": {
+       "en": "pets = [\"cat\", \"dog\"]\npets.add(\"fox\")\nprint(pets)",
+       "it": "pets = [\"gatto\", \"cane\"]\npets.add(\"volpe\")\nprint(pets)",
+       "fr": "pets = [\"chat\", \"chien\"]\npets.add(\"renard\")\nprint(pets)"
+      },
+      "spec": {
+       "en": {
+        "out": "['cat', 'dog', 'fox']",
+        "uses": [
+         ".append"
+        ]
+       },
+       "it": {
+        "out": "['gatto', 'cane', 'volpe']",
+        "uses": [
+         ".append"
+        ]
+       },
+       "fr": {
+        "out": "['chat', 'chien', 'renard']",
+        "uses": [
+         ".append"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['cat', 'dog', 'fox']",
+       "it": "['gatto', 'cane', 'volpe']",
+       "fr": "['chat', 'chien', 'renard']"
       }
      }
     },
@@ -11451,6 +12072,76 @@ window.PyvielCourse = {
         "PYTHON\npython\nPython"
        ],
        "right": 0
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "word = \"python\"\nword[0] = \"P\"\nprint(word)",
+      "it": "word = \"python\"\nword[0] = \"P\"\nprint(word)",
+      "fr": "word = \"python\"\nword[0] = \"P\"\nprint(word)"
+     },
+     "title": {
+      "en": "Find the mistake: changing a letter",
+      "it": "Trova l'errore: cambiare una lettera",
+      "fr": "Trouve l'erreur : changer une lettre"
+     },
+     "text": {
+      "en": "A text cannot be changed letter by letter: once it is made, it stays as it is. Python says a str does not support changing an item.\n\nYou can still make a new text out of pieces of the old one, and keep it in the same box.",
+      "it": "Un testo non si può cambiare lettera per lettera: una volta fatto, resta com'è. Python dice che una str non permette di cambiare un elemento.\n\nPuoi però fare un testo nuovo con pezzi di quello vecchio, e tenerlo nella stessa scatola.",
+      "fr": "Un texte ne peut pas être changé lettre par lettre : une fois fait, il reste tel quel. Python dit qu'une str ne permet pas de changer un élément.\n\nTu peux quand même faire un nouveau texte avec des morceaux de l'ancien, et le garder dans la même boîte."
+     },
+     "see": {
+      "en": "⚠ Line 2: A str cannot be changed in place.",
+      "it": "⚠ Riga 2: Un str non si può cambiare sul posto.",
+      "fr": "⚠ Ligne 2: Un str ne peut pas être modifié sur place."
+     },
+     "slip": null,
+     "error": "TypeError",
+     "ex": {
+      "task": {
+       "en": "Fix the second line, so that the program shows Python with a capital P.",
+       "it": "Correggi la seconda riga, così il programma mostra Python con la P maiuscola.",
+       "fr": "Corrige la deuxième ligne, pour que le programme affiche Python avec un P majuscule."
+      },
+      "hint": {
+       "en": "Make a new text: \"P\" joined with a piece of word from place 1 to the end, and put it in word.",
+       "it": "Fai un testo nuovo: \"P\" unito a un pezzo di word dal posto 1 alla fine, e mettilo in word.",
+       "fr": "Fais un nouveau texte : \"P\" joint à un morceau de word de la place 1 à la fin, et mets-le dans word."
+      },
+      "sol": {
+       "en": "word = \"python\"\nword = \"P\" + word[1:]\nprint(word)",
+       "it": "word = \"python\"\nword = \"P\" + word[1:]\nprint(word)",
+       "fr": "word = \"python\"\nword = \"P\" + word[1:]\nprint(word)"
+      },
+      "start": {
+       "en": "word = \"python\"\nword[0] = \"P\"\nprint(word)",
+       "it": "word = \"python\"\nword[0] = \"P\"\nprint(word)",
+       "fr": "word = \"python\"\nword[0] = \"P\"\nprint(word)"
+      },
+      "spec": {
+       "en": {
+        "out": "Python",
+        "c": "word = \"python\""
+       },
+       "it": {
+        "out": "Python",
+        "c": "word = \"python\""
+       },
+       "fr": {
+        "out": "Python",
+        "c": "word = \"python\""
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Python",
+       "it": "Python",
+       "fr": "Python"
       }
      }
     },
@@ -13481,6 +14172,82 @@ window.PyvielCourse = {
     },
     {
      "code": {
+      "en": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages[\"Bo\"])",
+      "it": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages[\"Bo\"])",
+      "fr": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages[\"Bo\"])"
+     },
+     "title": {
+      "en": "Find the mistake: a key that is not there",
+      "it": "Trova l'errore: una chiave che non c'è",
+      "fr": "Trouve l'erreur : une clé qui n'est pas là"
+     },
+     "text": {
+      "en": "Asking a dictionary for a key it does not have stops the program with a KeyError. Here Bo is not in ages.\n\nYou met two ways to be safe: ask first with in, or use get, which gives back a value you choose when the key is missing.",
+      "it": "Chiedere a un dizionario una chiave che non ha ferma il programma con un KeyError. Qui Bo non è in ages.\n\nHai conosciuto due modi per stare tranquillo: chiedere prima con in, oppure usare get, che restituisce un valore scelto da te quando la chiave manca.",
+      "fr": "Demander à un dictionnaire une clé qu'il n'a pas arrête le programme avec une KeyError. Ici Bo n'est pas dans ages.\n\nTu as vu deux façons d'être tranquille : demander d'abord avec in, ou utiliser get, qui rend une valeur que tu choisis quand la clé manque."
+     },
+     "see": {
+      "en": "⚠ Line 2: The key 'Bo' is not in the dictionary.",
+      "it": "⚠ Riga 2: La chiave 'Bo' non è nel dizionario.",
+      "fr": "⚠ Ligne 2: La clé 'Bo' n'est pas dans le dictionnaire."
+     },
+     "slip": null,
+     "error": "KeyError",
+     "ex": {
+      "task": {
+       "en": "Fix the second line: show the age of Bo, or 0 when Bo is not there (here 0).",
+       "it": "Correggi la seconda riga: mostra l'età di Bo, o 0 quando Bo non c'è (qui 0).",
+       "fr": "Corrige la deuxième ligne : affiche l'âge de Bo, ou 0 quand Bo n'est pas là (ici 0)."
+      },
+      "hint": {
+       "en": "get takes the key and the value to give when the key is missing.",
+       "it": "get prende la chiave e il valore da dare quando la chiave manca.",
+       "fr": "get prend la clé et la valeur à rendre quand la clé manque."
+      },
+      "sol": {
+       "en": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages.get(\"Bo\", 0))",
+       "it": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages.get(\"Bo\", 0))",
+       "fr": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages.get(\"Bo\", 0))"
+      },
+      "start": {
+       "en": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages[\"Bo\"])",
+       "it": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages[\"Bo\"])",
+       "fr": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages[\"Bo\"])"
+      },
+      "spec": {
+       "en": {
+        "out": "0",
+        "uses": [
+         ".get"
+        ]
+       },
+       "it": {
+        "out": "0",
+        "uses": [
+         ".get"
+        ]
+       },
+       "fr": {
+        "out": "0",
+        "uses": [
+         ".get"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "0",
+       "it": "0",
+       "fr": "0"
+      }
+     }
+    },
+    {
+     "code": {
       "en": "stock = {\"apples\": 5, \"pears\": 2}\nstock[\"pears\"] += 3\nstock[\"figs\"] = 1\nfor fruit, count in stock.items():\n    print(fruit, count)",
       "it": "stock = {\"mele\": 5, \"pere\": 2}\nstock[\"pere\"] += 3\nstock[\"fichi\"] = 1\nfor fruit, count in stock.items():\n    print(fruit, count)",
       "fr": "stock = {\"pommes\": 5, \"poires\": 2}\nstock[\"poires\"] += 3\nstock[\"figues\"] = 1\nfor fruit, count in stock.items():\n    print(fruit, count)"
@@ -14758,6 +15525,107 @@ window.PyvielCourse = {
         "Bonjour Ada\nBonjour Max\n7",
         "Ada : moyenne 8.0\nMax : moyenne 7.8",
         "Ada : moyenne 8.0\nMax : moyenne 7.9"
+       ],
+       "right": 1
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def double(n):\n    n * 2\n\nprint(double(4))",
+      "it": "def double(n):\n    n * 2\n\nprint(double(4))",
+      "fr": "def double(n):\n    n * 2\n\nprint(double(4))"
+     },
+     "title": {
+      "en": "Find the mistake: a function that gives back None",
+      "it": "Trova l'errore: una funzione che restituisce None",
+      "fr": "Trouve l'erreur : une fonction qui rend None"
+     },
+     "text": {
+      "en": "This program runs, but it shows None instead of 8. The function works out n * 2 and then throws the answer away: without return, a function gives back None.\n\nA mistake that does not stop the program is found by comparing what you see with what you expected.",
+      "it": "Questo programma gira, ma mostra None invece di 8. La funzione calcola n * 2 e poi butta via la risposta: senza return, una funzione restituisce None.\n\nUn errore che non ferma il programma si trova confrontando quello che vedi con quello che ti aspettavi.",
+      "fr": "Ce programme tourne, mais il affiche None au lieu de 8. La fonction calcule n * 2 puis jette la réponse : sans return, une fonction rend None.\n\nUne erreur qui n'arrête pas le programme se trouve en comparant ce que tu vois avec ce que tu attendais."
+     },
+     "see": {
+      "en": "None",
+      "it": "None",
+      "fr": "None"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Fix the function, so that the program shows 8.",
+       "it": "Correggi la funzione, così il programma mostra 8.",
+       "fr": "Corrige la fonction, pour que le programme affiche 8."
+      },
+      "hint": {
+       "en": "One word at the start of the line inside the function sends the answer back.",
+       "it": "Una parola all'inizio della riga dentro la funzione rimanda indietro la risposta.",
+       "fr": "Un mot au début de la ligne dans la fonction renvoie la réponse."
+      },
+      "sol": {
+       "en": "def double(n):\n    return n * 2\n\nprint(double(4))",
+       "it": "def double(n):\n    return n * 2\n\nprint(double(4))",
+       "fr": "def double(n):\n    return n * 2\n\nprint(double(4))"
+      },
+      "start": {
+       "en": "def double(n):\n    n * 2\n\nprint(double(4))",
+       "it": "def double(n):\n    n * 2\n\nprint(double(4))",
+       "fr": "def double(n):\n    n * 2\n\nprint(double(4))"
+      },
+      "spec": {
+       "en": {
+        "out": "8",
+        "uses": [
+         "return"
+        ]
+       },
+       "it": {
+        "out": "8",
+        "uses": [
+         "return"
+        ]
+       },
+       "fr": {
+        "out": "8",
+        "uses": [
+         "return"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "8",
+       "it": "8",
+       "fr": "8"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "25\n25\n16",
+        "None",
+        "Hello Ada\nHello Max\n7"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "25\n25\n16",
+        "None",
+        "Ciao Ada\nCiao Max\n7"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "25\n25\n16",
+        "None",
+        "Bonjour Ada\nBonjour Max\n7"
        ],
        "right": 1
       }

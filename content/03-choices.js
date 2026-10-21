@@ -435,6 +435,33 @@ Si legge quasi come in inglese: "adulto se age è 18 o più, altrimenti bambino"
         }
       },
       {
+        c: [c`x = 5
+if x = 5:
+    print("five")`, c`x = 5
+if x = 5:
+    print("cinque")`, c`x = 5
+if x = 5:
+    print("cinq")`],
+        e: 'SyntaxError',
+        t: ['Find the mistake: one equal sign or two?', 'Trova l\'errore: un uguale o due?', 'Trouve l\'erreur : un signe égal ou deux ?'],
+        x: [`One = puts a value in a box. Two == ask "is it equal?". An if needs a question, so one = there is a mistake.
+
+Press Try it: Python even guesses what you meant.`,
+          `Un = mette un valore in una scatola. Due == chiedono "è uguale?". Un if ha bisogno di una domanda, quindi lì un solo = è un errore.
+
+Premi Provalo: Python indovina perfino cosa volevi dire.`,
+          `Un = met une valeur dans une boîte. Deux == demandent "est-ce égal ?". Un if a besoin d'une question, donc un seul = y est une erreur.
+
+Appuie sur Essaie : Python devine même ce que tu voulais dire.`],
+        ex: {
+          t: ['Fix the if, so that the program shows five.', 'Correggi l\'if, così il programma mostra cinque.', 'Corrige le if, pour que le programme affiche cinq.'],
+          h: ['The question "is it equal?" is written with two equal signs.', 'La domanda "è uguale?" si scrive con due segni uguale.', 'La question "est-ce égal ?" s\'écrit avec deux signes égal.'],
+          start: ['x = 5\nif x = 5:\n    print("five")', 'x = 5\nif x = 5:\n    print("cinque")', 'x = 5\nif x = 5:\n    print("cinq")'],
+          sol: ['x = 5\nif x == 5:\n    print("five")', 'x = 5\nif x == 5:\n    print("cinque")', 'x = 5\nif x == 5:\n    print("cinq")'],
+          out: ['five', 'cinque', 'cinq'], uses: ['if', '==']
+        }
+      },
+      {
         c: [c`score = 72
 if score >= 90:
     print("Great")
@@ -625,6 +652,26 @@ Ici, pour chacune des 3 lignes, la boucle intérieure écrit 4 étoiles sans cha
           t: ['Change the program to draw 2 rows of 5 stars.', 'Cambia il programma per disegnare 2 righe di 5 stelle.', 'Change le programme pour dessiner 2 lignes de 5 étoiles.'],
           h: ['Change range(3) to range(2) and range(4) to range(5).', 'Cambia range(3) in range(2) e range(4) in range(5).', 'Change range(3) en range(2) et range(4) en range(5).'],
           start: 'for row in range(3):\n    for column in range(4):\n        print("*", end="")\n    print()', sol: 'for row in range(2):\n    for column in range(5):\n        print("*", end="")\n    print()', out: '*****\n*****'
+        }
+      },
+      {
+        c: c`for i in range(5)
+    print(i)`,
+        e: 'SyntaxError',
+        t: ['Find the mistake: the missing colon', 'Trova l\'errore: i due punti che mancano', 'Trouve l\'erreur : les deux-points qui manquent'],
+        x: [`Every line that opens a block (for, while, if, def) ends with a colon. Without it, Python does not know that the lines below belong to it.
+
+Press Try it: the message points at the line, and says what it expected.`,
+          `Ogni riga che apre un blocco (for, while, if, def) finisce con i due punti. Senza, Python non sa che le righe sotto le appartengono.
+
+Premi Provalo: il messaggio indica la riga e dice cosa si aspettava.`,
+          `Chaque ligne qui ouvre un bloc (for, while, if, def) se termine par deux-points. Sans eux, Python ne sait pas que les lignes dessous lui appartiennent.
+
+Appuie sur Essaie : le message montre la ligne et dit ce qu'il attendait.`],
+        ex: {
+          t: ['Fix it, so that it shows the numbers 0 to 4.', 'Correggilo, così mostra i numeri da 0 a 4.', 'Corrige-le, pour qu\'il affiche les nombres de 0 à 4.'],
+          h: ['Add one character at the end of the first line.', 'Aggiungi un carattere alla fine della prima riga.', 'Ajoute un caractère à la fin de la première ligne.'],
+          start: 'for i in range(5)\n    print(i)', sol: 'for i in range(5):\n    print(i)', out: '0\n1\n2\n3\n4', uses: ['for']
         }
       },
       {

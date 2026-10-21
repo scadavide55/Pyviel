@@ -320,6 +320,28 @@ print("Arrivé à 1 après", steps, "étapes")`],
         }
       },
       {
+        c: c`n = 1
+while n < 4:
+print(n)
+    n += 1`,
+        e: 'IndentationError',
+        t: ['Find the mistake: a line not pushed in', 'Trova l\'errore: una riga non rientrata', 'Trouve l\'erreur : une ligne pas décalée'],
+        x: [`The lines that repeat must be pushed in under the while, all by the same amount. Here print is not pushed in, so the while has nothing inside it.
+
+Press Try it and look at which line the message names.`,
+          `Le righe che si ripetono devono essere rientrate sotto il while, tutte della stessa misura. Qui print non è rientrato, quindi il while non ha niente dentro.
+
+Premi Provalo e guarda quale riga nomina il messaggio.`,
+          `Les lignes qui se répètent doivent être décalées sous le while, toutes de la même quantité. Ici print n'est pas décalé, donc le while n'a rien dedans.
+
+Appuie sur Essaie et regarde quelle ligne le message nomme.`],
+        ex: {
+          t: ['Fix it, so that it shows 1, 2 and 3 on three lines.', 'Correggilo, così mostra 1, 2 e 3 su tre righe.', 'Corrige-le, pour qu\'il affiche 1, 2 et 3 sur trois lignes.'],
+          h: ['Push the print line in by 4 spaces, like the line under it.', 'Rientra la riga print di 4 spazi, come la riga sotto.', 'Décale la ligne print de 4 espaces, comme la ligne dessous.'],
+          start: 'n = 1\nwhile n < 4:\nprint(n)\n    n += 1', sol: 'n = 1\nwhile n < 4:\n    print(n)\n    n += 1', out: '1\n2\n3', uses: ['while']
+        }
+      },
+      {
         c: [c`n = 3
 while n > 0:
     print(n)
@@ -572,6 +594,34 @@ Avec les autres que tu connais, c'est presque tout ce qu'il te faut pour travail
           t: ['Show how many times the name Ada is in the list.', 'Mostra quante volte il nome Ada è nella lista.', 'Affiche combien de fois le nom Ada est dans la liste.'],
           h: ['names.count("Ada") inside print.', 'names.count("Ada") dentro print.', 'names.count("Ada") dans print.'],
           start: 'names = ["Zoe", "Ada", "Max", "Ada"]', sol: 'names = ["Zoe", "Ada", "Max", "Ada"]\nprint(names.count("Ada"))', out: '2', c: 'count'
+        }
+      },
+      {
+        c: [c`pets = ["cat", "dog"]
+pets.add("fox")
+print(pets)`, c`pets = ["gatto", "cane"]
+pets.add("volpe")
+print(pets)`, c`pets = ["chat", "chien"]
+pets.add("renard")
+print(pets)`],
+        e: 'AttributeError',
+        n: ['.add'],
+        t: ['Find the mistake: the wrong word for "add"', 'Trova l\'errore: la parola sbagliata per "aggiungere"', 'Trouve l\'erreur : le mauvais mot pour "ajouter"'],
+        x: [`A list has its own words, its methods. add is not one of them, so Python stops and says the list has no add.
+
+Press Try it, then remember which method puts an item at the end of a list.`,
+          `Una lista ha le sue parole, i suoi metodi. add non è uno di questi, quindi Python si ferma e dice che la lista non ha add.
+
+Premi Provalo, poi ricorda quale metodo mette un elemento alla fine di una lista.`,
+          `Une liste a ses propres mots, ses méthodes. add n'en fait pas partie, donc Python s'arrête et dit que la liste n'a pas de add.
+
+Appuie sur Essaie, puis souviens-toi de la méthode qui met un élément à la fin d'une liste.`],
+        ex: {
+          t: ['Fix the second line, so that the list ends with the third animal.', 'Correggi la seconda riga, così la lista finisce con il terzo animale.', 'Corrige la deuxième ligne, pour que la liste finisse par le troisième animal.'],
+          h: ['The method of lists that adds at the end starts with app...', 'Il metodo delle liste che aggiunge alla fine inizia con app...', 'La méthode des listes qui ajoute à la fin commence par app...'],
+          start: ['pets = ["cat", "dog"]\npets.add("fox")\nprint(pets)', 'pets = ["gatto", "cane"]\npets.add("volpe")\nprint(pets)', 'pets = ["chat", "chien"]\npets.add("renard")\nprint(pets)'],
+          sol: ['pets = ["cat", "dog"]\npets.append("fox")\nprint(pets)', 'pets = ["gatto", "cane"]\npets.append("volpe")\nprint(pets)', 'pets = ["chat", "chien"]\npets.append("renard")\nprint(pets)'],
+          out: ['[\'cat\', \'dog\', \'fox\']', '[\'gatto\', \'cane\', \'volpe\']', '[\'chat\', \'chien\', \'renard\']'], uses: ['.append']
         }
       },
       {

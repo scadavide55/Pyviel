@@ -245,6 +245,27 @@ Si tu te surprends à copier les mêmes lignes deux fois, c'est un signe : mets-
         }
       },
       {
+        c: c`def double(n):
+    n * 2
+
+print(double(4))`,
+        t: ['Find the mistake: a function that gives back None', 'Trova l\'errore: una funzione che restituisce None', 'Trouve l\'erreur : une fonction qui rend None'],
+        x: [`This program runs, but it shows None instead of 8. The function works out n * 2 and then throws the answer away: without return, a function gives back None.
+
+A mistake that does not stop the program is found by comparing what you see with what you expected.`,
+          `Questo programma gira, ma mostra None invece di 8. La funzione calcola n * 2 e poi butta via la risposta: senza return, una funzione restituisce None.
+
+Un errore che non ferma il programma si trova confrontando quello che vedi con quello che ti aspettavi.`,
+          `Ce programme tourne, mais il affiche None au lieu de 8. La fonction calcule n * 2 puis jette la réponse : sans return, une fonction rend None.
+
+Une erreur qui n'arrête pas le programme se trouve en comparant ce que tu vois avec ce que tu attendais.`],
+        ex: {
+          t: ['Fix the function, so that the program shows 8.', 'Correggi la funzione, così il programma mostra 8.', 'Corrige la fonction, pour que le programme affiche 8.'],
+          h: ['One word at the start of the line inside the function sends the answer back.', 'Una parola all\'inizio della riga dentro la funzione rimanda indietro la risposta.', 'Un mot au début de la ligne dans la fonction renvoie la réponse.'],
+          start: 'def double(n):\n    n * 2\n\nprint(double(4))', sol: 'def double(n):\n    return n * 2\n\nprint(double(4))', out: '8', uses: ['return']
+        }
+      },
+      {
         c: [c`def greet(name):
     return "Hello, " + name + "!"
 

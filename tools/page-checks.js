@@ -229,6 +229,10 @@
   document.querySelectorAll('.tutorial-lesson')[5].click();
   check('from lesson 6, a second question comes from four lessons back', document.querySelectorAll('.review').length === 2 && /lesson 2:/.test(document.querySelectorAll('.review')[1].textContent), document.querySelectorAll('.review').length);
   document.querySelector('.back-link').click();
+  document.querySelectorAll('.tutorial-lesson')[6].click();
+  phaseTab(2).click();
+  check('a task that asks questions says what the check will type', /blue/.test((document.querySelector('.task-answers') || {}).textContent || ''), (document.querySelector('.task-answers') || {}).textContent);
+  document.querySelector('.back-link').click();
   document.querySelectorAll('.tutorial-lesson')[0].click();
   for (let i = 0; i < 4; i++) { phaseTab(2).click(); document.querySelector('.nav-row .next-step').click(); }
   check('a new step opens on its first phase', phaseTab(0).classList.contains('current') && /step 5 of/.test(document.querySelector('.step-count') ? document.querySelector('.step-count').textContent : ''), document.querySelector('.step-count') && document.querySelector('.step-count').textContent);

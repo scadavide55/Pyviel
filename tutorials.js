@@ -493,6 +493,12 @@
       box.appendChild(element('div', 'expected-title', UI.shouldShow || 'Your program should show:'));
       box.appendChild(element('pre', 'screen small', task.expected));
     }
+    // a program that asks questions: say what the check will type, so nothing about the check is hidden
+    if (task.answers && task.answers.length) {
+      var typed = element('p', 'task-answers', (UI.checkTypes || 'When you press Check, these answers are typed for your program, one per question:') + ' ');
+      task.answers.forEach(function (answer, i) { if (i) typed.appendChild(document.createTextNode(', ')); typed.appendChild(element('code', null, answer)); });
+      box.appendChild(typed);
+    }
     var result = element('div', 'exercise-result');
     result.setAttribute('aria-live', 'polite');
     var extra = element('div', 'exercise-extra');

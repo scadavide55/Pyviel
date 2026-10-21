@@ -438,6 +438,7 @@ dialog::backdrop { background: #2b242088; }
 .near-miss { margin: 6px 0 2px; padding: 6px 10px; border-radius: 8px; background: var(--card); border: 1px dashed var(--warn); }
 body[data-checking] #run, body[data-checking] #check-float { opacity: .45; pointer-events: none; }
 .exercise-result .stop-check { height: 30px; margin-left: 10px; padding: 0 10px; font-size: 14px; }
+.task-answers { margin: 8px 0 0; font-size: 14px; color: var(--muted); }
 .stuck { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--edge); }
 .stuck-buttons { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
 .nav-row .btn.primary { box-shadow: 0 3px 0 var(--edge); }

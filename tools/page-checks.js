@@ -181,6 +181,12 @@
   for (let i = 0; i < 100 && !document.querySelector('.exercise-result.no, .exercise-result.yes'); i++) await new Promise(r => setTimeout(r, 100));
   check('a wrong answer is explained and shows what the program printed', !!document.querySelector('.exercise-result.no') && /not the answer/.test(document.querySelector('.exercise-result').textContent), document.querySelector('.exercise-result') && document.querySelector('.exercise-result').textContent);
   check('and points at the first line that differs', !!document.querySelector('.diff-line'));
+  check('one wrong check is not called stuck yet', !document.querySelector('.stuck'));
+  code.value = 'print("good morning")'; code.dispatchEvent(new Event('input', {bubbles: true}));
+  document.querySelector('.check-task').click();
+  for (let i = 0; i < 100 && !document.querySelector('.exercise-result.no .diff-line'); i++) await new Promise(r => setTimeout(r, 100));
+  check('an answer that is almost right says what small thing differs (capital letters)', /capital/.test((document.querySelector('.near-miss') || {}).textContent || ''), (document.querySelector('.exercise-result') || {}).textContent);
+  check('after two wrong checks, a way forward that is not the answer', !!document.querySelector('.stuck .stuck-buttons button'));
   document.querySelector('.start-task').click();
   check('Start over puts the starting code back', code.value === task.start);
   document.querySelector('.hint-task').click();

@@ -427,6 +427,7 @@
   if (!solved || typeof solved !== 'object') solved = {};
   var revealed = {};
   var taskLoaded = {};
+  var misses = {};       // step -> wrong checks in this visit: after two, the page offers a way forward
   var guessed = {};      // step -> true/false: the answer picked in "Think first"
   var reviewed = {};     // lesson -> the answer picked in "Remember?"
 
@@ -550,6 +551,28 @@
     result.className += ' working';
     result.textContent = UI.checking || 'Checking…';
     var answers = (task.answers || []).slice();
+    // After two wrong checks in a row, a way forward that is not the answer: the hint, the example, the notes.
+    function stuck() {
+      misses[key] = (misses[key] || 0) + 1;
+      if (misses[key] < 2) return;
+      var help = element('div', 'stuck');
+      help.appendChild(element('b', null, UI.stuckTitle || 'Stuck?'));
+      help.appendChild(document.createTextNode(' ' + (misses[key] >= 4 ? (UI.stuckMore || 'Go back to Learn and read the note beside each line of the program: the idea you need is there.') : (UI.stuckText || 'Read the hint, then look again at the program in Try it: it uses the same idea.'))));
+      var row = element('div', 'stuck-buttons');
+      var hintButton = stepBox.querySelector('.hint-task');
+      if (hintButton && !stepBox.querySelector('.hint-box')) {
+        var h = element('button', 'btn', UI.hint || 'Hint');
+        h.type = 'button';
+        h.addEventListener('click', function () { hintButton.click(); h.remove(); });
+        row.appendChild(h);
+      }
+      var back = element('button', 'btn', misses[key] >= 4 ? (UI.phaseLearn || 'Learn') : (UI.phaseTry || 'Try it'));
+      back.type = 'button';
+      back.addEventListener('click', function () { phases[position.lesson + ':' + position.step] = misses[key] >= 4 ? 0 : 1; drawStep(); });
+      row.appendChild(back);
+      help.appendChild(row);
+      result.appendChild(help);
+    }
     window.Pyviel.runAsync(source, {input: function () { return answers.length ? answers.shift() : null; }}).then(function (run) {
       result.className = 'exercise-result';
       result.innerHTML = '';
@@ -561,11 +584,14 @@
       if (run.problems.length) {
         var problem = run.problems[0];
         say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkError || 'Your program stopped with a problem') + ' (' + (UI.line || 'line') + ' ' + problem.line + '): ' + problem.message);
+        if (problem.hint) result.appendChild(element('div', 'diff-line', problem.hint));
+        stuck();
         return;
       }
       if (run.stopped) { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkMoreAnswers || 'Your program asked more questions than this task expects.')); return; }
       var verdict = window.PyvielCheck.check(task.spec, run.text, source, run.used);
       if (verdict.ok) {
+        misses[key] = 0;
         solved[key] = 1;
         write(SOLVED, solved);
         document.body.dataset.task = '';
@@ -577,13 +603,14 @@
         var tab3 = stepBox.querySelectorAll('.phase-number')[2]; if (tab3) tab3.textContent = '✓';
         return;
       }
-      if (verdict.why === 'empty') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkEmpty || 'Your program showed nothing. Use print to show something.')); return; }
+      if (verdict.why === 'empty') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkEmpty || 'Your program showed nothing. Use print to show something.')); stuck(); return; }
       if (verdict.why === 'uses') {
         var names = verdict.missing.map(function (key) { return (UI.uses && UI.uses[key]) || key; });
         say2('no', UI.notYet || 'Not yet.', ' ' + fill(UI.checkUses || 'It shows the right thing, but this task asks you to use {what}. Read the task again.', {what: names.join(UI.andWord || ' and ')}));
+        stuck();
         return;
       }
-      if (verdict.why === 'code') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkCode || 'It shows the right thing, but the task asks you to write it in a special way. Read the task again.')); return; }
+      if (verdict.why === 'code') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkCode || 'It shows the right thing, but the task asks you to write it in a special way. Read the task again.')); stuck(); return; }
       say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkWrong || 'Your program shows something different.'));
       if (task.spec.out !== undefined) {
         var mine = window.PyvielCheck.tidy(run.text).split('\n'), want = window.PyvielCheck.tidy(task.spec.out).split('\n');
@@ -593,6 +620,9 @@
           : at >= want.length ? fill(UI.diffExtra || 'Your program shows more lines than needed, from line {n}.', {n: at + 1})
           : fill(UI.diffLine || 'The first difference is on line {n}.', {n: at + 1}) + ' ' + fill(UI.diffWhat || 'It shows "{a}" but should show "{b}".', {a: mine[at], b: want[at]});
         result.appendChild(element('div', 'diff-line', why));
+        // almost right: say which small thing is wrong, it is the mistake beginners do not see
+        var close = window.PyvielCheck.near && window.PyvielCheck.near(run.text, task.spec.out);
+        if (close && UI.near && UI.near[close.why]) result.appendChild(element('div', 'near-miss', UI.near[close.why]));
       }
       result.appendChild(element('div', 'expected-title', UI.yourShows || 'Your program showed:'));
       result.appendChild(element('pre', 'screen small', shortText(window.PyvielCheck.tidy(run.text), 8)));
@@ -600,6 +630,7 @@
         result.appendChild(element('div', 'expected-title', UI.shouldShow || 'Your program should show:'));
         result.appendChild(element('pre', 'screen small', task.expected));
       }
+      stuck();
     }, function () {
       result.className = 'exercise-result no';
       result.textContent = UI.checkFailed || 'Something went wrong while checking. Try again.';

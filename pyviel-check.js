@@ -33,5 +33,33 @@
     return {ok: true};
   }
 
-  return {check: check, tidy: tidy};
+  // A wrong answer that is almost right, and why: the mistakes beginners make most.
+  // `got` and `want` are whole outputs (tidied). -> null, or {why, line} where line counts from 1.
+  //   case    only capital and small letters differ        spaces  only the spaces differ
+  //   punct   only a . , ! ? : ; differs                     quotes  quotes shown around the text
+  //   decimal the same number, as 4.0 instead of 4 (or back) order   the right lines, in another order
+  //   blank   only empty lines differ                     details a mix of the first three
+  function near(got, want) {
+    var a = tidy(got).split('\n'), b = tidy(want).split('\n');
+    if (a.filter(function (x) { return x.trim(); }).join('\n') === b.filter(function (x) { return x.trim(); }).join('\n')) return {why: 'blank', line: 0};
+    if (a.length === b.length && a.length > 1 && a.slice().sort().join('\n') === b.slice().sort().join('\n')) return {why: 'order', line: 0};
+    var at = 0;
+    while (at < a.length && at < b.length && a[at] === b[at]) at++;
+    if (at >= a.length || at >= b.length) return null;
+    var x = a[at], y = b[at], line = at + 1;
+    var squash = function (s) { return s.replace(/\s+/g, ''); };
+    var bare = function (s) { return s.replace(/[.,!?:;]/g, '').replace(/\s+/g, ' ').trim(); };
+    if (x.toLowerCase() === y.toLowerCase()) return {why: 'case', line: line};
+    if (squash(x) === squash(y)) return {why: 'spaces', line: line};
+    if (/^(["']).*\1$/.test(x) && x.slice(1, -1) === y) return {why: 'quotes', line: line};
+    if (bare(x) === bare(y) && bare(x)) return {why: 'punct', line: line};
+    var numbers = function (s) { return s.match(/-?\d+(\.\d+)?/g) || []; };
+    var nx = numbers(x), ny = numbers(y);
+    if (nx.length && nx.length === ny.length && x.replace(/-?\d+(\.\d+)?/g, '#') === y.replace(/-?\d+(\.\d+)?/g, '#') &&
+        nx.every(function (n, i) { return Number(n) === Number(ny[i]); })) return {why: 'decimal', line: line};
+    if (x.toLowerCase().replace(/[.,!?:;\s]/g, '') === y.toLowerCase().replace(/[.,!?:;\s]/g, '')) return {why: 'details', line: line};
+    return null;
+  }
+
+  return {check: check, tidy: tidy, near: near};
 });

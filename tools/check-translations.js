@@ -14,3 +14,13 @@ const quoted = text => "'" + text.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + 
 const missing = [...wanted].filter(text => /[A-Za-z]{3}/.test(text) && !keep.has(text) && !/^(Cmd|Esc|Tab|Shift)/.test(text) && !/^\W+$/.test(text) && !/^&\w+;$/.test(text) && !dictionary.includes(quoted(text)));
 console.log(missing.length ? missing.length + ' label(s) without a translation:\n - ' + missing.join('\n - ') : 'every label of the page is translated');
 process.exitCode = missing.length ? 1 : 0;
+
+// What a task asks to use ("uses") is named to the student in a sentence: every key needs a name in each language.
+const course = {};
+new Function('window', fs.readFileSync(path.join(root, 'course.js'), 'utf8') + fs.readFileSync(path.join(root, 'lessons.js'), 'utf8'))(course);
+const keys = new Set();
+for (const lesson of course.PyvielCourse.lessons) for (const step of lesson.steps) if (step.ex && step.ex.spec.en.uses) step.ex.spec.en.uses.forEach(k => keys.add(k));
+const unnamed = [];
+for (const lang of ['en', 'it', 'fr']) for (const key of keys) if (!(course.PyvielLessons[lang].ui.uses || {})[key]) unnamed.push(lang + ': ' + key);
+console.log(unnamed.length ? unnamed.length + ' task word(s) without a name in lessons.js (ui.uses):\n - ' + unnamed.join('\n - ') : 'every word a task asks for has a name in the three languages');
+if (unnamed.length) process.exitCode = 1;

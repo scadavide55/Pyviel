@@ -17411,6 +17411,1134 @@ window.PyvielCourse = {
      }
     }
    ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Make objects behave like Python things",
+    "it": "Fai comportare gli oggetti come cose di Python",
+    "fr": "Fais se comporter les objets comme des choses de Python"
+   },
+   "subtitle": {
+    "en": "Special methods",
+    "it": "I metodi speciali",
+    "fr": "Les méthodes spéciales"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\np = Point(3, 4)\nprint(p)\nprint([p, Point(0, 0)])",
+      "it": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\np = Point(3, 4)\nprint(p)\nprint([p, Point(0, 0)])",
+      "fr": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\np = Point(3, 4)\nprint(p)\nprint([p, Point(0, 0)])"
+     },
+     "title": {
+      "en": "Show an object nicely",
+      "it": "Mostra bene un oggetto",
+      "fr": "Affiche bien un objet"
+     },
+     "text": {
+      "en": "Printing a plain object shows something like <Point object at ...>, which says nothing. Python lets you decide: methods with two underscores on both sides are special, and Python calls them by itself at the right moment.\n\n__str__ decides what print shows. __repr__ decides what is shown inside lists, and when programmers look closely at an object.",
+      "it": "Stampare un oggetto semplice mostra qualcosa come <Point object at ...>, che non dice niente. Python ti lascia decidere: i metodi con due trattini bassi da tutte e due le parti sono speciali, e Python li chiama da solo al momento giusto.\n\n__str__ decide cosa mostra print. __repr__ decide cosa si vede dentro le liste, e quando chi programma guarda da vicino un oggetto.",
+      "fr": "Afficher un objet simple montre quelque chose comme <Point object at ...>, ce qui ne dit rien. Python te laisse décider : les méthodes avec deux tirets bas de chaque côté sont spéciales, et Python les appelle tout seul au bon moment.\n\n__str__ décide ce qu'affiche print. __repr__ décide ce qui s'affiche dans les listes, et quand les programmeurs regardent de près un objet."
+     },
+     "see": {
+      "en": "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+      "it": "(3, 4)\n[Point(3, 4), Point(0, 0)]",
+      "fr": "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "special-methods",
+       "w": "__str__  __add__ ...",
+       "d": {
+        "en": "Methods with two underscores on both sides are special: Python calls them by itself at the right moment. __str__ decides what print shows, __repr__ what is shown inside lists, __add__ what + does, __eq__ what == does, and so on.",
+        "it": "I metodi con due trattini bassi da tutte e due le parti sono speciali: Python li chiama da solo al momento giusto. __str__ decide cosa mostra print, __repr__ cosa si vede dentro le liste, __add__ cosa fa +, __eq__ cosa fa ==, e così via.",
+        "fr": "Les méthodes avec deux tirets bas de chaque côté sont spéciales : Python les appelle tout seul au bon moment. __str__ décide ce qu'affiche print, __repr__ ce qui s'affiche dans les listes, __add__ ce que fait +, __eq__ ce que fait ==, et ainsi de suite."
+       },
+       "s": {
+        "en": "def __str__(self):",
+        "it": "def __str__(self):",
+        "fr": "def __str__(self):"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Give the class Pet a __str__ that returns the name. Show Pet(\"Rex\").",
+       "it": "Dai alla classe Pet un __str__ che restituisce il nome. Mostra Pet(\"Rex\").",
+       "fr": "Donne à la classe Pet un __str__ qui rend le nom. Affiche Pet(\"Rex\")."
+      },
+      "hint": {
+       "en": "def __str__(self): return self.name",
+       "it": "def __str__(self): return self.name",
+       "fr": "def __str__(self): return self.name"
+      },
+      "sol": {
+       "en": "class Pet:\n    def __init__(self, name):\n        self.name = name\n\n    def __str__(self):\n        return self.name\n\nprint(Pet(\"Rex\"))",
+       "it": "class Pet:\n    def __init__(self, name):\n        self.name = name\n\n    def __str__(self):\n        return self.name\n\nprint(Pet(\"Rex\"))",
+       "fr": "class Pet:\n    def __init__(self, name):\n        self.name = name\n\n    def __str__(self):\n        return self.name\n\nprint(Pet(\"Rex\"))"
+      },
+      "start": {
+       "en": "class Pet:\n    def __init__(self, name):\n        self.name = name",
+       "it": "class Pet:\n    def __init__(self, name):\n        self.name = name",
+       "fr": "class Pet:\n    def __init__(self, name):\n        self.name = name"
+      },
+      "spec": {
+       "en": {
+        "out": "Rex",
+        "c": "__str__"
+       },
+       "it": {
+        "out": "Rex",
+        "c": "__str__"
+       },
+       "fr": {
+        "out": "Rex",
+        "c": "__str__"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Rex",
+       "it": "Rex",
+       "fr": "Rex"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __add__(self, other):\n        return Point(self.x + other.x, self.y + other.y)\n\n    def __eq__(self, other):\n        return self.x == other.x and self.y == other.y\n\n    def __mul__(self, number):\n        return Point(self.x * number, self.y * number)\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\na = Point(1, 2)\nb = Point(3, 4)\nprint(a + b)\nprint(a * 3)\nprint(a == Point(1, 2), a == b)",
+      "it": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __add__(self, other):\n        return Point(self.x + other.x, self.y + other.y)\n\n    def __eq__(self, other):\n        return self.x == other.x and self.y == other.y\n\n    def __mul__(self, number):\n        return Point(self.x * number, self.y * number)\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\na = Point(1, 2)\nb = Point(3, 4)\nprint(a + b)\nprint(a * 3)\nprint(a == Point(1, 2), a == b)",
+      "fr": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __add__(self, other):\n        return Point(self.x + other.x, self.y + other.y)\n\n    def __eq__(self, other):\n        return self.x == other.x and self.y == other.y\n\n    def __mul__(self, number):\n        return Point(self.x * number, self.y * number)\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\na = Point(1, 2)\nb = Point(3, 4)\nprint(a + b)\nprint(a * 3)\nprint(a == Point(1, 2), a == b)"
+     },
+     "title": {
+      "en": "Use + and == with your objects",
+      "it": "Usa + e == con i tuoi oggetti",
+      "fr": "Utilise + et == avec tes objets"
+     },
+     "text": {
+      "en": "__add__ tells Python what + does for your objects, __mul__ does the same for *, and __eq__ for ==. Without __eq__, two points with the same numbers would count as different objects.\n\nPython turns a + b into a.__add__(b). It is the same machinery that makes + work for numbers and for texts.",
+      "it": "__add__ dice a Python cosa fa + per i tuoi oggetti, __mul__ fa lo stesso per *, e __eq__ per ==. Senza __eq__, due punti con gli stessi numeri conterebbero come oggetti diversi.\n\nPython trasforma a + b in a.__add__(b). È lo stesso meccanismo che fa funzionare + per i numeri e per i testi.",
+      "fr": "__add__ dit à Python ce que fait + pour tes objets, __mul__ fait pareil pour *, et __eq__ pour ==. Sans __eq__, deux points avec les mêmes nombres compteraient comme des objets différents.\n\nPython transforme a + b en a.__add__(b). C'est la même mécanique qui fait marcher + pour les nombres et pour les textes."
+     },
+     "see": {
+      "en": "Point(4, 6)\nPoint(3, 6)\nTrue False",
+      "it": "Point(4, 6)\nPoint(3, 6)\nTrue False",
+      "fr": "Point(4, 6)\nPoint(3, 6)\nTrue False"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Add a __sub__ method to the class Point, so that Point(5, 5) - Point(2, 1) gives Point(3, 4). Show it.",
+       "it": "Aggiungi un metodo __sub__ alla classe Point, così che Point(5, 5) - Point(2, 1) dia Point(3, 4). Mostralo.",
+       "fr": "Ajoute une méthode __sub__ à la classe Point, pour que Point(5, 5) - Point(2, 1) donne Point(3, 4). Affiche-le."
+      },
+      "hint": {
+       "en": "def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)",
+       "it": "def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)",
+       "fr": "def __sub__(self, other): return Point(self.x - other.x, self.y - other.y)"
+      },
+      "sol": {
+       "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __sub__(self, other):\n        return Point(self.x - other.x, self.y - other.y)\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\nprint(Point(5, 5) - Point(2, 1))",
+       "it": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __sub__(self, other):\n        return Point(self.x - other.x, self.y - other.y)\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\nprint(Point(5, 5) - Point(2, 1))",
+       "fr": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __sub__(self, other):\n        return Point(self.x - other.x, self.y - other.y)\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\nprint(Point(5, 5) - Point(2, 1))"
+      },
+      "start": {
+       "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"",
+       "it": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"",
+       "fr": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\""
+      },
+      "spec": {
+       "en": {
+        "out": "Point(3, 4)",
+        "c": "__sub__"
+       },
+       "it": {
+        "out": "Point(3, 4)",
+        "c": "__sub__"
+       },
+       "fr": {
+        "out": "Point(3, 4)",
+        "c": "__sub__"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Point(3, 4)",
+       "it": "Point(3, 4)",
+       "fr": "Point(3, 4)"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Playlist:\n    def __init__(self, songs):\n        self.songs = list(songs)\n\n    def __len__(self):\n        return len(self.songs)\n\n    def __getitem__(self, index):\n        return self.songs[index]\n\n    def __contains__(self, song):\n        return song in self.songs\n\n    def __iter__(self):\n        return iter(self.songs)\n\np = Playlist([\"Intro\", \"Song A\", \"Song B\"])\nprint(len(p), p[1], \"Song A\" in p)\nfor s in p:\n    print(\"-\", s)\nprint(sorted(p, reverse=True))",
+      "it": "class Playlist:\n    def __init__(self, songs):\n        self.songs = list(songs)\n\n    def __len__(self):\n        return len(self.songs)\n\n    def __getitem__(self, index):\n        return self.songs[index]\n\n    def __contains__(self, song):\n        return song in self.songs\n\n    def __iter__(self):\n        return iter(self.songs)\n\np = Playlist([\"Intro\", \"Canzone A\", \"Canzone B\"])\nprint(len(p), p[1], \"Canzone A\" in p)\nfor s in p:\n    print(\"-\", s)\nprint(sorted(p, reverse=True))",
+      "fr": "class Playlist:\n    def __init__(self, songs):\n        self.songs = list(songs)\n\n    def __len__(self):\n        return len(self.songs)\n\n    def __getitem__(self, index):\n        return self.songs[index]\n\n    def __contains__(self, song):\n        return song in self.songs\n\n    def __iter__(self):\n        return iter(self.songs)\n\np = Playlist([\"Intro\", \"Chanson A\", \"Chanson B\"])\nprint(len(p), p[1], \"Chanson A\" in p)\nfor s in p:\n    print(\"-\", s)\nprint(sorted(p, reverse=True))"
+     },
+     "title": {
+      "en": "Behave like a collection",
+      "it": "Comportati come una collezione",
+      "fr": "Se comporter comme une collection"
+     },
+     "text": {
+      "en": "With __len__, __getitem__, __contains__ and __iter__, your object works with len(...), square brackets, in and for loops, even with sorted(...): it feels like a built-in collection.\n\nYou do not need all of them: write the ones that make sense for your object.",
+      "it": "Con __len__, __getitem__, __contains__ e __iter__, il tuo oggetto funziona con len(...), le parentesi quadre, in e i cicli for, perfino con sorted(...): sembra una collezione di Python.\n\nNon te le servono tutte: scrivi quelle che hanno senso per il tuo oggetto.",
+      "fr": "Avec __len__, __getitem__, __contains__ et __iter__, ton objet marche avec len(...), les crochets, in et les boucles for, même avec sorted(...) : on dirait une collection de Python.\n\nTu n'as pas besoin de toutes : écris celles qui ont du sens pour ton objet."
+     },
+     "see": {
+      "en": "3 Song A True\n- Intro\n- Song A\n- Song B\n['Song B', 'Song A', 'Intro']",
+      "it": "3 Canzone A True\n- Intro\n- Canzone A\n- Canzone B\n['Intro', 'Canzone B', 'Canzone A']",
+      "fr": "3 Chanson A True\n- Intro\n- Chanson A\n- Chanson B\n['Intro', 'Chanson B', 'Chanson A']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "iter",
+       "w": "iter( )",
+       "d": {
+        "en": "iter gives a way to walk through something, one item at a time. It is what a for loop uses behind the scenes.",
+        "it": "iter dà un modo di scorrere qualcosa, un elemento alla volta. È quello che un ciclo for usa dietro le quinte.",
+        "fr": "iter donne une façon de parcourir quelque chose, un élément à la fois. C'est ce qu'une boucle for utilise en coulisses."
+       },
+       "s": {
+        "en": "iter(self.songs)",
+        "it": "iter(self.songs)",
+        "fr": "iter(self.songs)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a class Bag with a list inside and a __len__ that gives how many items it has. Show len(Bag([1, 2, 3])) (3).",
+       "it": "Crea una classe Bag con una lista dentro e un __len__ che dà quanti elementi ha. Mostra len(Bag([1, 2, 3])) (3).",
+       "fr": "Crée une classe Bag avec une liste dedans et un __len__ qui donne combien d'éléments elle a. Affiche len(Bag([1, 2, 3])) (3)."
+      },
+      "hint": {
+       "en": "def __len__(self): return len(self.items)",
+       "it": "def __len__(self): return len(self.items)",
+       "fr": "def __len__(self): return len(self.items)"
+      },
+      "sol": {
+       "en": "class Bag:\n    def __init__(self, items):\n        self.items = list(items)\n\n    def __len__(self):\n        return len(self.items)\n\nprint(len(Bag([1, 2, 3])))",
+       "it": "class Bag:\n    def __init__(self, items):\n        self.items = list(items)\n\n    def __len__(self):\n        return len(self.items)\n\nprint(len(Bag([1, 2, 3])))",
+       "fr": "class Bag:\n    def __init__(self, items):\n        self.items = list(items)\n\n    def __len__(self):\n        return len(self.items)\n\nprint(len(Bag([1, 2, 3])))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "__len__"
+       },
+       "it": {
+        "out": "3",
+        "c": "__len__"
+       },
+       "fr": {
+        "out": "3",
+        "c": "__len__"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "3"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Version:\n    def __init__(self, text):\n        self.parts = tuple([int(n) for n in text.split(\".\")])\n\n    def __lt__(self, other):\n        return self.parts < other.parts\n\n    def __repr__(self):\n        return \"Version(\" + \".\".join(map(str, self.parts)) + \")\"\n\nversions = [Version(\"1.10\"), Version(\"1.2\"), Version(\"2.0\")]\nprint(sorted(versions))\nprint(max(versions))\nprint(Version(\"1.2\") < Version(\"1.10\"))",
+      "it": "class Version:\n    def __init__(self, text):\n        self.parts = tuple([int(n) for n in text.split(\".\")])\n\n    def __lt__(self, other):\n        return self.parts < other.parts\n\n    def __repr__(self):\n        return \"Version(\" + \".\".join(map(str, self.parts)) + \")\"\n\nversions = [Version(\"1.10\"), Version(\"1.2\"), Version(\"2.0\")]\nprint(sorted(versions))\nprint(max(versions))\nprint(Version(\"1.2\") < Version(\"1.10\"))",
+      "fr": "class Version:\n    def __init__(self, text):\n        self.parts = tuple([int(n) for n in text.split(\".\")])\n\n    def __lt__(self, other):\n        return self.parts < other.parts\n\n    def __repr__(self):\n        return \"Version(\" + \".\".join(map(str, self.parts)) + \")\"\n\nversions = [Version(\"1.10\"), Version(\"1.2\"), Version(\"2.0\")]\nprint(sorted(versions))\nprint(max(versions))\nprint(Version(\"1.2\") < Version(\"1.10\"))"
+     },
+     "title": {
+      "en": "Compare and sort objects",
+      "it": "Confronta e ordina gli oggetti",
+      "fr": "Compare et trie des objets"
+     },
+     "text": {
+      "en": "__lt__ says what \"smaller than\" means for your objects. Once you have it, sorted and max work on them, and so does <.\n\nVersions are a good example: \"1.10\" comes after \"1.2\", even though as texts it would come before. Comparing the numbers in a tuple does it right.",
+      "it": "__lt__ dice cosa vuol dire \"più piccolo di\" per i tuoi oggetti. Una volta che ce l'hai, sorted e max funzionano su di loro, e anche <.\n\nLe versioni sono un buon esempio: \"1.10\" viene dopo \"1.2\", anche se come testi verrebbe prima. Confrontare i numeri in una tupla lo fa giusto.",
+      "fr": "__lt__ dit ce que veut dire \"plus petit que\" pour tes objets. Une fois que tu l'as, sorted et max marchent dessus, et < aussi.\n\nLes versions sont un bon exemple : \"1.10\" vient après \"1.2\", même si comme textes il viendrait avant. Comparer les nombres dans un tuple le fait bien."
+     },
+     "see": {
+      "en": "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue",
+      "it": "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue",
+      "fr": "[Version(1.2), Version(1.10), Version(2.0)]\nVersion(2.0)\nTrue"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a class Money with an amount, and a __lt__ that compares the amounts. Show the smallest of Money(5), Money(2), Money(9) with min, as its amount (2).",
+       "it": "Crea una classe Money con un amount e un __lt__ che confronta gli amount. Mostra il più piccolo tra Money(5), Money(2), Money(9) con min, come amount (2).",
+       "fr": "Crée une classe Money avec un amount et un __lt__ qui compare les amount. Affiche le plus petit de Money(5), Money(2), Money(9) avec min, comme amount (2)."
+      },
+      "hint": {
+       "en": "def __lt__(self, other): return self.amount < other.amount, then print(min(...).amount).",
+       "it": "def __lt__(self, other): return self.amount < other.amount, poi print(min(...).amount).",
+       "fr": "def __lt__(self, other): return self.amount < other.amount, puis print(min(...).amount)."
+      },
+      "sol": {
+       "en": "class Money:\n    def __init__(self, amount):\n        self.amount = amount\n\n    def __lt__(self, other):\n        return self.amount < other.amount\n\nprint(min(Money(5), Money(2), Money(9)).amount)",
+       "it": "class Money:\n    def __init__(self, amount):\n        self.amount = amount\n\n    def __lt__(self, other):\n        return self.amount < other.amount\n\nprint(min(Money(5), Money(2), Money(9)).amount)",
+       "fr": "class Money:\n    def __init__(self, amount):\n        self.amount = amount\n\n    def __lt__(self, other):\n        return self.amount < other.amount\n\nprint(min(Money(5), Money(2), Money(9)).amount)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "2",
+        "c": "__lt__"
+       },
+       "it": {
+        "out": "2",
+        "c": "__lt__"
+       },
+       "fr": {
+        "out": "2",
+        "c": "__lt__"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "2",
+       "it": "2",
+       "fr": "2"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Greeter:\n    def __init__(self, greeting):\n        self.greeting = greeting\n\n    def __call__(self, name):\n        return f\"{self.greeting}, {name}!\"\n\nhello = Greeter(\"Hello\")\nprint(hello(\"Ada\"))\nprint(callable(hello))\n\nclass Temperature:\n    def __init__(self, degrees):\n        self.degrees = degrees\n\n    def __bool__(self):\n        return self.degrees > 0\n\nprint(bool(Temperature(5)), bool(Temperature(-1)))",
+      "it": "class Greeter:\n    def __init__(self, greeting):\n        self.greeting = greeting\n\n    def __call__(self, name):\n        return f\"{self.greeting}, {name}!\"\n\nhello = Greeter(\"Ciao\")\nprint(hello(\"Ada\"))\nprint(callable(hello))\n\nclass Temperature:\n    def __init__(self, degrees):\n        self.degrees = degrees\n\n    def __bool__(self):\n        return self.degrees > 0\n\nprint(bool(Temperature(5)), bool(Temperature(-1)))",
+      "fr": "class Greeter:\n    def __init__(self, greeting):\n        self.greeting = greeting\n\n    def __call__(self, name):\n        return f\"{self.greeting}, {name} !\"\n\nhello = Greeter(\"Bonjour\")\nprint(hello(\"Ada\"))\nprint(callable(hello))\n\nclass Temperature:\n    def __init__(self, degrees):\n        self.degrees = degrees\n\n    def __bool__(self):\n        return self.degrees > 0\n\nprint(bool(Temperature(5)), bool(Temperature(-1)))"
+     },
+     "title": {
+      "en": "Even more special methods",
+      "it": "Ancora più metodi speciali",
+      "fr": "Encore plus de méthodes spéciales"
+     },
+     "text": {
+      "en": "__call__ lets an object be used like a function: hello(\"Ada\"). __bool__ says when the object counts as True or False, for example in an if.\n\nThere are dozens of special methods, and you can always look one up when you need it. They all follow the same idea: you teach your objects to behave like Python things.",
+      "it": "__call__ permette di usare un oggetto come una funzione: hello(\"Ada\"). __bool__ dice quando l'oggetto conta come True o False, per esempio in un if.\n\nCi sono decine di metodi speciali, e puoi sempre cercarne uno quando ti serve. Seguono tutti la stessa idea: insegni ai tuoi oggetti a comportarsi come le cose di Python.",
+      "fr": "__call__ permet d'utiliser un objet comme une fonction : hello(\"Ada\"). __bool__ dit quand l'objet compte comme True ou False, par exemple dans un if.\n\nIl y a des dizaines de méthodes spéciales, et tu peux toujours en chercher une quand tu en as besoin. Elles suivent toutes la même idée : tu apprends à tes objets à se comporter comme des choses de Python."
+     },
+     "see": {
+      "en": "Hello, Ada!\nTrue\nTrue False",
+      "it": "Ciao, Ada!\nTrue\nTrue False",
+      "fr": "Bonjour, Ada !\nTrue\nTrue False"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a class Adder whose objects can be called: Adder(10)(5) must give 15 (add the number given at the start).",
+       "it": "Crea una classe Adder i cui oggetti si possono chiamare: Adder(10)(5) deve dare 15 (somma il numero dato all'inizio).",
+       "fr": "Crée une classe Adder dont les objets peuvent être appelés : Adder(10)(5) doit donner 15 (ajoute le nombre donné au début)."
+      },
+      "hint": {
+       "en": "__init__(self, n) keeps n, and __call__(self, x) returns self.n + x.",
+       "it": "__init__(self, n) tiene n e __call__(self, x) restituisce self.n + x.",
+       "fr": "__init__(self, n) garde n et __call__(self, x) rend self.n + x."
+      },
+      "sol": {
+       "en": "class Adder:\n    def __init__(self, n):\n        self.n = n\n\n    def __call__(self, x):\n        return self.n + x\n\nprint(Adder(10)(5))",
+       "it": "class Adder:\n    def __init__(self, n):\n        self.n = n\n\n    def __call__(self, x):\n        return self.n + x\n\nprint(Adder(10)(5))",
+       "fr": "class Adder:\n    def __init__(self, n):\n        self.n = n\n\n    def __call__(self, x):\n        return self.n + x\n\nprint(Adder(10)(5))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "15",
+        "c": "__call__"
+       },
+       "it": {
+        "out": "15",
+        "c": "__call__"
+       },
+       "fr": {
+        "out": "15",
+        "c": "__call__"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "15",
+       "it": "15",
+       "fr": "15"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Guarding data",
+    "it": "Proteggere i dati",
+    "fr": "Protéger les données"
+   },
+   "subtitle": {
+    "en": "Properties, class methods and static methods",
+    "it": "Proprietà, metodi di classe e metodi statici",
+    "fr": "Propriétés, méthodes de classe et méthodes statiques"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "class Circle:\n    def __init__(self, radius):\n        self.radius = radius\n\n    @property\n    def diameter(self):\n        return self.radius * 2\n\n    @property\n    def area(self):\n        return round(3.14159 * self.radius ** 2, 2)\n\nc = Circle(5)\nprint(c.diameter, c.area)\nc.radius = 10\nprint(c.diameter, c.area)",
+      "it": "class Circle:\n    def __init__(self, radius):\n        self.radius = radius\n\n    @property\n    def diameter(self):\n        return self.radius * 2\n\n    @property\n    def area(self):\n        return round(3.14159 * self.radius ** 2, 2)\n\nc = Circle(5)\nprint(c.diameter, c.area)\nc.radius = 10\nprint(c.diameter, c.area)",
+      "fr": "class Circle:\n    def __init__(self, radius):\n        self.radius = radius\n\n    @property\n    def diameter(self):\n        return self.radius * 2\n\n    @property\n    def area(self):\n        return round(3.14159 * self.radius ** 2, 2)\n\nc = Circle(5)\nprint(c.diameter, c.area)\nc.radius = 10\nprint(c.diameter, c.area)"
+     },
+     "title": {
+      "en": "A value worked out when asked: @property",
+      "it": "Un valore calcolato quando lo chiedi: @property",
+      "fr": "Une valeur calculée quand on la demande : @property"
+     },
+     "text": {
+      "en": "A line that starts with @, right above a def, is called a decorator: it changes how that method works. You will learn to make your own later. @property turns a method into something that looks like a plain value: you write c.diameter, with no brackets, and Python runs the method.\n\nIt is perfect for values that depend on others: when the radius changes, the diameter and the area follow by themselves.",
+      "it": "Una riga che inizia con @, subito sopra a un def, si chiama decoratore: cambia come funziona quel metodo. Imparerai a fare i tuoi più avanti. @property trasforma un metodo in qualcosa che sembra un valore semplice: scrivi c.diameter, senza parentesi, e Python esegue il metodo.\n\nÈ perfetto per i valori che dipendono da altri: quando il raggio cambia, il diametro e l'area lo seguono da soli.",
+      "fr": "Une ligne qui commence par @, juste au-dessus d'un def, s'appelle un décorateur : elle change le fonctionnement de cette méthode. Tu apprendras à faire les tiens plus tard. @property transforme une méthode en quelque chose qui ressemble à une simple valeur : tu écris c.diameter, sans parenthèses, et Python lance la méthode.\n\nC'est parfait pour des valeurs qui dépendent d'autres : quand le rayon change, le diamètre et l'aire suivent tout seuls."
+     },
+     "see": {
+      "en": "10 78.54\n20 314.16",
+      "it": "10 78.54\n20 314.16",
+      "fr": "10 78.54\n20 314.16"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "decorator",
+       "w": "@name",
+       "d": {
+        "en": "A line that starts with @ and sits right above a def changes how that function (or method) works. You will learn to make your own in a later lesson; for now you only use the ones that Python gives you.",
+        "it": "Una riga che inizia con @ e sta subito sopra a un def cambia come funziona quella funzione (o metodo). Imparerai a fare i tuoi in una lezione più avanti; per ora usi solo quelli che ti dà Python.",
+        "fr": "Une ligne qui commence par @ et se trouve juste au-dessus d'un def change le fonctionnement de cette fonction (ou méthode). Tu apprendras à faire les tiens dans une leçon plus loin ; pour l'instant tu n'utilises que ceux que Python te donne."
+       },
+       "s": {
+        "en": "@property",
+        "it": "@property",
+        "fr": "@property"
+       }
+      },
+      {
+       "k": "property",
+       "w": "@property",
+       "d": {
+        "en": "@property turns a method into something that looks like a plain value: you write c.diameter, with no brackets, and Python runs the method. It is perfect for values that depend on others. A setter, written @name.setter, runs when someone gives the value, so it can check it first.",
+        "it": "@property trasforma un metodo in qualcosa che sembra un valore semplice: scrivi c.diameter, senza parentesi, e Python esegue il metodo. È perfetto per valori che dipendono da altri. Un setter, scritto @nome.setter, gira quando qualcuno dà il valore, così può controllarlo prima.",
+        "fr": "@property transforme une méthode en quelque chose qui ressemble à une simple valeur : tu écris c.diameter, sans parenthèses, et Python lance la méthode. C'est parfait pour des valeurs qui dépendent d'autres. Un setter, écrit @nom.setter, tourne quand quelqu'un donne la valeur, donc il peut la vérifier d'abord."
+       },
+       "s": {
+        "en": "@property\ndef diameter(self):",
+        "it": "@property\ndef diameter(self):",
+        "fr": "@property\ndef diameter(self):"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Add a property called double to the class Number that gives self.value * 2. Show Number(21).double (42, no brackets).",
+       "it": "Aggiungi una proprietà che si chiama double alla classe Number che dà self.value * 2. Mostra Number(21).double (42, senza parentesi).",
+       "fr": "Ajoute une propriété qui s'appelle double à la classe Number qui donne self.value * 2. Affiche Number(21).double (42, sans parenthèses)."
+      },
+      "hint": {
+       "en": "@property above def double(self):",
+       "it": "@property sopra def double(self):",
+       "fr": "@property au-dessus de def double(self):"
+      },
+      "sol": {
+       "en": "class Number:\n    def __init__(self, value):\n        self.value = value\n\n    @property\n    def double(self):\n        return self.value * 2\n\nprint(Number(21).double)",
+       "it": "class Number:\n    def __init__(self, value):\n        self.value = value\n\n    @property\n    def double(self):\n        return self.value * 2\n\nprint(Number(21).double)",
+       "fr": "class Number:\n    def __init__(self, value):\n        self.value = value\n\n    @property\n    def double(self):\n        return self.value * 2\n\nprint(Number(21).double)"
+      },
+      "start": {
+       "en": "class Number:\n    def __init__(self, value):\n        self.value = value",
+       "it": "class Number:\n    def __init__(self, value):\n        self.value = value",
+       "fr": "class Number:\n    def __init__(self, value):\n        self.value = value"
+      },
+      "spec": {
+       "en": {
+        "out": "42",
+        "c": "@property"
+       },
+       "it": {
+        "out": "42",
+        "c": "@property"
+       },
+       "fr": {
+        "out": "42",
+        "c": "@property"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "42",
+       "it": "42",
+       "fr": "42"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Person:\n    def __init__(self, age):\n        self.age = age\n\n    @property\n    def age(self):\n        return self._age\n\n    @age.setter\n    def age(self, value):\n        if value < 0:\n            raise ValueError(\"age cannot be negative\")\n        self._age = value\n\np = Person(12)\np.age = 13\nprint(p.age)\ntry:\n    p.age = -5\nexcept ValueError as error:\n    print(\"Refused:\", error)\nprint(p.age)",
+      "it": "class Person:\n    def __init__(self, age):\n        self.age = age\n\n    @property\n    def age(self):\n        return self._age\n\n    @age.setter\n    def age(self, value):\n        if value < 0:\n            raise ValueError(\"l'età non può essere negativa\")\n        self._age = value\n\np = Person(12)\np.age = 13\nprint(p.age)\ntry:\n    p.age = -5\nexcept ValueError as error:\n    print(\"Rifiutato:\", error)\nprint(p.age)",
+      "fr": "class Person:\n    def __init__(self, age):\n        self.age = age\n\n    @property\n    def age(self):\n        return self._age\n\n    @age.setter\n    def age(self, value):\n        if value < 0:\n            raise ValueError(\"l'âge ne peut pas être négatif\")\n        self._age = value\n\np = Person(12)\np.age = 13\nprint(p.age)\ntry:\n    p.age = -5\nexcept ValueError as error:\n    print(\"Refusé :\", error)\nprint(p.age)"
+     },
+     "title": {
+      "en": "A guard at the door: setters",
+      "it": "Una guardia alla porta: i setter",
+      "fr": "Un gardien à la porte : les setters"
+     },
+     "text": {
+      "en": "A property can also have a setter, written @age.setter, which runs when someone gives the property a value. It can check the value before keeping it.\n\nThe real value is kept under a name with an underscore, _age. By custom, that underscore means \"this is private, please use the property instead\".",
+      "it": "Una proprietà può avere anche un setter, scritto @age.setter, che gira quando qualcuno le dà un valore. Può controllare il valore prima di tenerlo.\n\nIl valore vero viene tenuto sotto un nome con il trattino basso, _age. Per convenzione, quel trattino basso vuol dire \"questo è privato, per favore usa la proprietà\".",
+      "fr": "Une propriété peut aussi avoir un setter, écrit @age.setter, qui tourne quand quelqu'un lui donne une valeur. Il peut vérifier la valeur avant de la garder.\n\nLa vraie valeur est gardée sous un nom avec un tiret bas, _age. Par convention, ce tiret bas veut dire \"ceci est privé, merci d'utiliser la propriété\"."
+     },
+     "see": {
+      "en": "13\nRefused: age cannot be negative\n13",
+      "it": "13\nRifiutato: l'età non può essere negativa\n13",
+      "fr": "13\nRefusé : l'âge ne peut pas être négatif\n13"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a class Score with a property points whose setter refuses a value above 100 (raise ValueError). Setting 50 must work: show the points (50).",
+       "it": "Crea una classe Score con una proprietà points il cui setter rifiuta un valore sopra 100 (alza ValueError). Impostare 50 deve funzionare: mostra i punti (50).",
+       "fr": "Crée une classe Score avec une propriété points dont le setter refuse une valeur au-dessus de 100 (lève ValueError). Mettre 50 doit marcher : affiche les points (50)."
+      },
+      "hint": {
+       "en": "@property def points, then @points.setter with if value > 100: raise ValueError.",
+       "it": "@property def points, poi @points.setter con if value > 100: raise ValueError.",
+       "fr": "@property def points, puis @points.setter avec if value > 100: raise ValueError."
+      },
+      "sol": {
+       "en": "class Score:\n    def __init__(self):\n        self._points = 0\n\n    @property\n    def points(self):\n        return self._points\n\n    @points.setter\n    def points(self, value):\n        if value > 100:\n            raise ValueError(\"too many\")\n        self._points = value\n\ns = Score()\ns.points = 50\nprint(s.points)",
+       "it": "class Score:\n    def __init__(self):\n        self._points = 0\n\n    @property\n    def points(self):\n        return self._points\n\n    @points.setter\n    def points(self, value):\n        if value > 100:\n            raise ValueError(\"too many\")\n        self._points = value\n\ns = Score()\ns.points = 50\nprint(s.points)",
+       "fr": "class Score:\n    def __init__(self):\n        self._points = 0\n\n    @property\n    def points(self):\n        return self._points\n\n    @points.setter\n    def points(self, value):\n        if value > 100:\n            raise ValueError(\"too many\")\n        self._points = value\n\ns = Score()\ns.points = 50\nprint(s.points)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "50",
+        "c": "setter"
+       },
+       "it": {
+        "out": "50",
+        "c": "setter"
+       },
+       "fr": {
+        "out": "50",
+        "c": "setter"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "50",
+       "it": "50",
+       "fr": "50"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Date:\n    def __init__(self, year, month, day):\n        self.year = year\n        self.month = month\n        self.day = day\n\n    @classmethod\n    def from_text(cls, text):\n        year, month, day = text.split(\"-\")\n        return cls(int(year), int(month), int(day))\n\n    @staticmethod\n    def is_leap(year):\n        return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)\n\nd = Date.from_text(\"2026-10-20\")\nprint(d.year, d.month, d.day)\nprint(Date.is_leap(2024), Date.is_leap(2100))",
+      "it": "class Date:\n    def __init__(self, year, month, day):\n        self.year = year\n        self.month = month\n        self.day = day\n\n    @classmethod\n    def from_text(cls, text):\n        year, month, day = text.split(\"-\")\n        return cls(int(year), int(month), int(day))\n\n    @staticmethod\n    def is_leap(year):\n        return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)\n\nd = Date.from_text(\"2026-10-20\")\nprint(d.year, d.month, d.day)\nprint(Date.is_leap(2024), Date.is_leap(2100))",
+      "fr": "class Date:\n    def __init__(self, year, month, day):\n        self.year = year\n        self.month = month\n        self.day = day\n\n    @classmethod\n    def from_text(cls, text):\n        year, month, day = text.split(\"-\")\n        return cls(int(year), int(month), int(day))\n\n    @staticmethod\n    def is_leap(year):\n        return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)\n\nd = Date.from_text(\"2026-10-20\")\nprint(d.year, d.month, d.day)\nprint(Date.is_leap(2024), Date.is_leap(2100))"
+     },
+     "title": {
+      "en": "Methods of the class itself",
+      "it": "Metodi della classe stessa",
+      "fr": "Méthodes de la classe elle-même"
+     },
+     "text": {
+      "en": "@classmethod gets the class (cls) instead of an object. It is a good second way to make objects: Date.from_text(\"2026-10-20\") builds a Date from a text.\n\n@staticmethod gets nothing special: it is just a function that lives inside the class because it belongs to the topic.",
+      "it": "@classmethod riceve la classe (cls) invece di un oggetto. È un buon secondo modo di creare oggetti: Date.from_text(\"2026-10-20\") costruisce una Date da un testo.\n\n@staticmethod non riceve niente di speciale: è solo una funzione che vive dentro la classe perché appartiene all'argomento.",
+      "fr": "@classmethod reçoit la classe (cls) au lieu d'un objet. C'est une bonne deuxième façon de créer des objets : Date.from_text(\"2026-10-20\") construit une Date à partir d'un texte.\n\n@staticmethod ne reçoit rien de spécial : c'est juste une fonction qui vit dans la classe parce qu'elle appartient au sujet."
+     },
+     "see": {
+      "en": "2026 10 20\nTrue False",
+      "it": "2026 10 20\nTrue False",
+      "fr": "2026 10 20\nTrue False"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "classmethod",
+       "w": "@classmethod",
+       "d": {
+        "en": "@classmethod gets the class itself (cls) instead of an object. It is a good second way to make objects: Date.from_text(\"2026-10-20\"). @staticmethod gets nothing special: it is just a function that lives inside the class.",
+        "it": "@classmethod riceve la classe stessa (cls) invece di un oggetto. È un buon secondo modo di creare oggetti: Date.from_text(\"2026-10-20\"). @staticmethod non riceve niente di speciale: è solo una funzione che vive dentro la classe.",
+        "fr": "@classmethod reçoit la classe elle-même (cls) au lieu d'un objet. C'est une bonne deuxième façon de créer des objets : Date.from_text(\"2026-10-20\"). @staticmethod ne reçoit rien de spécial : c'est juste une fonction qui vit dans la classe."
+       },
+       "s": {
+        "en": "@classmethod\ndef from_text(cls, text):",
+        "it": "@classmethod\ndef from_text(cls, text):",
+        "fr": "@classmethod\ndef from_text(cls, text):"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Add a class method from_pair to Point that builds a Point from a text like \"3,4\". Show the x of Point.from_pair(\"3,4\") (3).",
+       "it": "Aggiungi a Point un metodo di classe from_pair che costruisce un Point da un testo come \"3,4\". Mostra la x di Point.from_pair(\"3,4\") (3).",
+       "fr": "Ajoute à Point une méthode de classe from_pair qui construit un Point à partir d'un texte comme \"3,4\". Affiche le x de Point.from_pair(\"3,4\") (3)."
+      },
+      "hint": {
+       "en": "@classmethod, then x, y = text.split(\",\"), then return cls(int(x), int(y)).",
+       "it": "@classmethod, poi x, y = text.split(\",\"), poi return cls(int(x), int(y)).",
+       "fr": "@classmethod, puis x, y = text.split(\",\"), puis return cls(int(x), int(y))."
+      },
+      "sol": {
+       "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    @classmethod\n    def from_pair(cls, text):\n        x, y = text.split(\",\")\n        return cls(int(x), int(y))\n\nprint(Point.from_pair(\"3,4\").x)",
+       "it": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    @classmethod\n    def from_pair(cls, text):\n        x, y = text.split(\",\")\n        return cls(int(x), int(y))\n\nprint(Point.from_pair(\"3,4\").x)",
+       "fr": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    @classmethod\n    def from_pair(cls, text):\n        x, y = text.split(\",\")\n        return cls(int(x), int(y))\n\nprint(Point.from_pair(\"3,4\").x)"
+      },
+      "start": {
+       "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y",
+       "it": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y",
+       "fr": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y"
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "@classmethod"
+       },
+       "it": {
+        "out": "3",
+        "c": "@classmethod"
+       },
+       "fr": {
+        "out": "3",
+        "c": "@classmethod"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "3"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Safe:\n    def __init__(self):\n        self.public = \"anyone can see\"\n        self._careful = \"please do not touch\"\n        self.__secret = \"hidden\"\n\ns = Safe()\nprint(s.public)\nprint(s._careful)\nprint([n for n in dir(s) if \"secret\" in n])\ntry:\n    print(s.__secret)\nexcept AttributeError:\n    print(\"no direct access to __secret\")",
+      "it": "class Safe:\n    def __init__(self):\n        self.public = \"anyone can see\"\n        self._careful = \"please do not touch\"\n        self.__secret = \"hidden\"\n\ns = Safe()\nprint(s.public)\nprint(s._careful)\nprint([n for n in dir(s) if \"secret\" in n])\ntry:\n    print(s.__secret)\nexcept AttributeError:\n    print(\"no direct access to __secret\")",
+      "fr": "class Safe:\n    def __init__(self):\n        self.public = \"anyone can see\"\n        self._careful = \"please do not touch\"\n        self.__secret = \"hidden\"\n\ns = Safe()\nprint(s.public)\nprint(s._careful)\nprint([n for n in dir(s) if \"secret\" in n])\ntry:\n    print(s.__secret)\nexcept AttributeError:\n    print(\"no direct access to __secret\")"
+     },
+     "title": {
+      "en": "What \"private\" means in Python",
+      "it": "Cosa vuol dire \"privato\" in Python",
+      "fr": "Ce que veut dire \"privé\" en Python"
+     },
+     "text": {
+      "en": "Python trusts people. One underscore, like _careful, is a polite note: \"this is for the class itself, please do not touch\". Python does not stop you.\n\nTwo underscores, like __secret, make Python rename it to _Safe__secret, to avoid accidents. It is still not a real lock: it is just harder to touch by mistake.",
+      "it": "Python si fida delle persone. Un trattino basso, come in _careful, è una nota gentile: \"questo è per la classe stessa, per favore non toccare\". Python non ti ferma.\n\nDue trattini bassi, come in __secret, fanno sì che Python lo rinomini _Safe__secret, per evitare incidenti. Non è comunque un vero lucchetto: è solo più difficile toccarlo per sbaglio.",
+      "fr": "Python fait confiance aux gens. Un tiret bas, comme dans _careful, est une note polie : \"ceci est pour la classe elle-même, merci de ne pas toucher\". Python ne t'arrête pas.\n\nDeux tirets bas, comme dans __secret, font que Python le renomme _Safe__secret, pour éviter les accidents. Ce n'est quand même pas un vrai cadenas : c'est seulement plus difficile à toucher par erreur."
+     },
+     "see": {
+      "en": "anyone can see\nplease do not touch\n['_Safe__secret']\nno direct access to __secret",
+      "it": "anyone can see\nplease do not touch\n['_Safe__secret']\nno direct access to __secret",
+      "fr": "anyone can see\nplease do not touch\n['_Safe__secret']\nno direct access to __secret"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "private",
+       "w": "_name  __name",
+       "d": {
+        "en": "Python trusts people. One underscore, _careful, is a polite note: \"this is for the class itself, please do not touch\". Two underscores, __secret, make Python rename it to avoid accidents, but it is still not a real lock.",
+        "it": "Python si fida delle persone. Un trattino basso, _careful, è una nota gentile: \"questo è per la classe stessa, per favore non toccare\". Due trattini bassi, __secret, fanno sì che Python lo rinomini per evitare incidenti, ma non è comunque un vero lucchetto.",
+        "fr": "Python fait confiance aux gens. Un tiret bas, _careful, est une note polie : \"ceci est pour la classe elle-même, merci de ne pas toucher\". Deux tirets bas, __secret, font que Python le renomme pour éviter les accidents, mais ce n'est quand même pas un vrai cadenas."
+       },
+       "s": {
+        "en": "self._balance",
+        "it": "self._balance",
+        "fr": "self._balance"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a class Wallet that keeps its money in _money (one underscore), with a method show() that returns it. Show Wallet().show() when the money is 20.",
+       "it": "Crea una classe Wallet che tiene i suoi soldi in _money (un trattino basso), con un metodo show() che li restituisce. Mostra Wallet().show() quando i soldi sono 20.",
+       "fr": "Crée une classe Wallet qui garde son argent dans _money (un tiret bas), avec une méthode show() qui le rend. Affiche Wallet().show() quand l'argent vaut 20."
+      },
+      "hint": {
+       "en": "self._money = 20 in __init__, and return self._money in show.",
+       "it": "self._money = 20 in __init__ e return self._money in show.",
+       "fr": "self._money = 20 dans __init__ et return self._money dans show."
+      },
+      "sol": {
+       "en": "class Wallet:\n    def __init__(self):\n        self._money = 20\n\n    def show(self):\n        return self._money\n\nprint(Wallet().show())",
+       "it": "class Wallet:\n    def __init__(self):\n        self._money = 20\n\n    def show(self):\n        return self._money\n\nprint(Wallet().show())",
+       "fr": "class Wallet:\n    def __init__(self):\n        self._money = 20\n\n    def show(self):\n        return self._money\n\nprint(Wallet().show())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "20",
+        "c": "_money"
+       },
+       "it": {
+        "out": "20",
+        "c": "_money"
+       },
+       "fr": {
+        "out": "20",
+        "c": "_money"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "20",
+       "it": "20",
+       "fr": "20"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Less typing: dataclasses and enums",
+    "it": "Meno da scrivere: dataclass ed enum",
+    "fr": "Moins à taper : dataclasses et enums"
+   },
+   "subtitle": {
+    "en": "Classes for plain data, and a list of choices",
+    "it": "Classi per i dati semplici, e una lista di scelte",
+    "fr": "Des classes pour des données simples, et une liste de choix"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "from dataclasses import dataclass\n\n@dataclass\nclass Book:\n    title: str\n    pages: int\n    read: bool = False\n\nb = Book(\"Dune\", 600)\nprint(b)\nprint(b.title, b.pages, b.read)\nprint(b == Book(\"Dune\", 600))",
+      "it": "from dataclasses import dataclass\n\n@dataclass\nclass Book:\n    title: str\n    pages: int\n    read: bool = False\n\nb = Book(\"Dune\", 600)\nprint(b)\nprint(b.title, b.pages, b.read)\nprint(b == Book(\"Dune\", 600))",
+      "fr": "from dataclasses import dataclass\n\n@dataclass\nclass Book:\n    title: str\n    pages: int\n    read: bool = False\n\nb = Book(\"Dune\", 600)\nprint(b)\nprint(b.title, b.pages, b.read)\nprint(b == Book(\"Dune\", 600))"
+     },
+     "title": {
+      "en": "A class in four lines",
+      "it": "Una classe in quattro righe",
+      "fr": "Une classe en quatre lignes"
+     },
+     "text": {
+      "en": "A class that only keeps data needs a lot of boring code: __init__, __repr__, __eq__. The decorator @dataclass writes all of it for you, from a list of names with their kinds: title: str.\n\nA value after = is a default. The kinds, like str and int, are notes for the reader: Python does not check them while running.",
+      "it": "Una classe che tiene solo dati ha bisogno di molto codice noioso: __init__, __repr__, __eq__. Il decoratore @dataclass scrive tutto per te, da una lista di nomi con i loro tipi: title: str.\n\nUn valore dopo = è un valore predefinito. I tipi, come str e int, sono note per chi legge: Python non li controlla mentre gira.",
+      "fr": "Une classe qui ne garde que des données demande beaucoup de code ennuyeux : __init__, __repr__, __eq__. Le décorateur @dataclass écrit tout pour toi, à partir d'une liste de noms avec leur sorte : title: str.\n\nUne valeur après = est une valeur par défaut. Les sortes, comme str et int, sont des notes pour celui qui lit : Python ne les vérifie pas pendant qu'il tourne."
+     },
+     "see": {
+      "en": "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+      "it": "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+      "fr": "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "dataclasses.dataclass",
+       "w": "@dataclass",
+       "d": {
+        "en": "A class that only keeps data needs a lot of boring code. The decorator @dataclass writes it for you, from a list of names with their kinds: title: str. A value after = is a default.",
+        "it": "Una classe che tiene solo dati ha bisogno di molto codice noioso. Il decoratore @dataclass lo scrive per te, da una lista di nomi con i loro tipi: title: str. Un valore dopo = è un valore predefinito.",
+        "fr": "Une classe qui ne garde que des données demande beaucoup de code ennuyeux. Le décorateur @dataclass l'écrit pour toi, à partir d'une liste de noms avec leur sorte : title: str. Une valeur après = est une valeur par défaut."
+       },
+       "s": {
+        "en": "@dataclass\nclass Book:\n    title: str",
+        "it": "@dataclass\nclass Book:\n    title: str",
+        "fr": "@dataclass\nclass Book:\n    title: str"
+       }
+      },
+      {
+       "k": "annotation",
+       "w": "name: kind",
+       "d": {
+        "en": "name: str says what kind a name is meant to hold. Python does not check it while running, but it tells the reader (and the editor) what is expected.",
+        "it": "name: str dice di che tipo deve essere quello che il nome contiene. Python non lo controlla mentre gira, ma lo dice a chi legge (e all'editor).",
+        "fr": "name: str dit de quelle sorte doit être ce que le nom contient. Python ne le vérifie pas pendant qu'il tourne, mais ça le dit à celui qui lit (et à l'éditeur)."
+       },
+       "s": {
+        "en": "age: int = 12",
+        "it": "age: int = 12",
+        "fr": "age: int = 12"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a dataclass called Pet with the name (str) and the age (int). Show Pet(\"Rex\", 3).",
+       "it": "Crea una dataclass che si chiama Pet con il nome (str) e l'età (int). Mostra Pet(\"Rex\", 3).",
+       "fr": "Crée une dataclass qui s'appelle Pet avec le nom (str) et l'âge (int). Affiche Pet(\"Rex\", 3)."
+      },
+      "hint": {
+       "en": "@dataclass, class Pet:, name: str and age: int.",
+       "it": "@dataclass, class Pet:, name: str e age: int.",
+       "fr": "@dataclass, class Pet:, name: str et age: int."
+      },
+      "sol": {
+       "en": "from dataclasses import dataclass\n\n@dataclass\nclass Pet:\n    name: str\n    age: int\n\nprint(Pet(\"Rex\", 3))",
+       "it": "from dataclasses import dataclass\n\n@dataclass\nclass Pet:\n    name: str\n    age: int\n\nprint(Pet(\"Rex\", 3))",
+       "fr": "from dataclasses import dataclass\n\n@dataclass\nclass Pet:\n    name: str\n    age: int\n\nprint(Pet(\"Rex\", 3))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Pet(name='Rex', age=3)",
+        "c": "@dataclass"
+       },
+       "it": {
+        "out": "Pet(name='Rex', age=3)",
+        "c": "@dataclass"
+       },
+       "fr": {
+        "out": "Pet(name='Rex', age=3)",
+        "c": "@dataclass"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Pet(name='Rex', age=3)",
+       "it": "Pet(name='Rex', age=3)",
+       "fr": "Pet(name='Rex', age=3)"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from dataclasses import dataclass, field, replace\n\n@dataclass(order=True, frozen=True)\nclass Score:\n    points: int\n    player: str = \"?\"\n\na = Score(10, \"Ada\")\nb = Score(7, \"Max\")\nprint(a > b, sorted([a, b]))\nprint(replace(a, points=99))\ntry:\n    a.points = 0\nexcept Exception as error:\n    print(type(error).__name__)\n\n@dataclass\nclass Team:\n    members: list = field(default_factory=list)\n\nt = Team()\nt.members.append(\"Ada\")\nprint(t, Team())",
+      "it": "from dataclasses import dataclass, field, replace\n\n@dataclass(order=True, frozen=True)\nclass Score:\n    points: int\n    player: str = \"?\"\n\na = Score(10, \"Ada\")\nb = Score(7, \"Max\")\nprint(a > b, sorted([a, b]))\nprint(replace(a, points=99))\ntry:\n    a.points = 0\nexcept Exception as error:\n    print(type(error).__name__)\n\n@dataclass\nclass Team:\n    members: list = field(default_factory=list)\n\nt = Team()\nt.members.append(\"Ada\")\nprint(t, Team())",
+      "fr": "from dataclasses import dataclass, field, replace\n\n@dataclass(order=True, frozen=True)\nclass Score:\n    points: int\n    player: str = \"?\"\n\na = Score(10, \"Ada\")\nb = Score(7, \"Max\")\nprint(a > b, sorted([a, b]))\nprint(replace(a, points=99))\ntry:\n    a.points = 0\nexcept Exception as error:\n    print(type(error).__name__)\n\n@dataclass\nclass Team:\n    members: list = field(default_factory=list)\n\nt = Team()\nt.members.append(\"Ada\")\nprint(t, Team())"
+     },
+     "title": {
+      "en": "Order, freeze and defaults",
+      "it": "Ordina, congela e predefiniti",
+      "fr": "Ordre, gel et valeurs par défaut"
+     },
+     "text": {
+      "en": "@dataclass can take options. order=True makes the objects sortable, and frozen=True makes them impossible to change, like a tuple. replace(obj, name=value) builds a copy with one change.\n\nFor a default that is a list, write field(default_factory=list): every object gets its own new empty list, and they do not share one by mistake.",
+      "it": "@dataclass può prendere delle opzioni. order=True rende gli oggetti ordinabili, e frozen=True li rende impossibili da cambiare, come una tupla. replace(oggetto, nome=valore) costruisce una copia con una modifica.\n\nPer un valore predefinito che è una lista, scrivi field(default_factory=list): ogni oggetto riceve la sua lista vuota nuova, e non ne condividono una per sbaglio.",
+      "fr": "@dataclass peut prendre des options. order=True rend les objets triables, et frozen=True les rend impossibles à changer, comme un tuple. replace(objet, nom=valeur) construit une copie avec un changement.\n\nPour une valeur par défaut qui est une liste, écris field(default_factory=list) : chaque objet reçoit sa propre nouvelle liste vide, et ils n'en partagent pas une par erreur."
+     },
+     "see": {
+      "en": "True [Score(points=7, player='Max'), Score(points=10, player='Ada')]\nScore(points=99, player='Ada')\nFrozenInstanceError\nTeam(members=['Ada']) Team(members=[])",
+      "it": "True [Score(points=7, player='Max'), Score(points=10, player='Ada')]\nScore(points=99, player='Ada')\nFrozenInstanceError\nTeam(members=['Ada']) Team(members=[])",
+      "fr": "True [Score(points=7, player='Max'), Score(points=10, player='Ada')]\nScore(points=99, player='Ada')\nFrozenInstanceError\nTeam(members=['Ada']) Team(members=[])"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "dataclasses.field",
+       "w": "field( )",
+       "d": {
+        "en": "field gives more details about one name of a dataclass. field(default_factory=list) means \"start with a new empty list for each object\".",
+        "it": "field dà più dettagli su un nome di una dataclass. field(default_factory=list) vuol dire \"parti con una lista vuota nuova per ogni oggetto\".",
+        "fr": "field donne plus de détails sur un nom d'une dataclass. field(default_factory=list) veut dire \"commence avec une nouvelle liste vide pour chaque objet\"."
+       },
+       "s": {
+        "en": "field(default_factory=list)",
+        "it": "field(default_factory=list)",
+        "fr": "field(default_factory=list)"
+       }
+      },
+      {
+       "k": "dataclasses.replace",
+       "w": "replace( )",
+       "d": {
+        "en": "replace builds a copy of a dataclass object with one change: replace(obj, points=99).",
+        "it": "replace costruisce una copia di un oggetto dataclass con una modifica: replace(obj, points=99).",
+        "fr": "replace construit une copie d'un objet dataclass avec un changement : replace(obj, points=99)."
+       },
+       "s": {
+        "en": "replace(a, points=99)",
+        "it": "replace(a, points=99)",
+        "fr": "replace(a, points=99)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a frozen dataclass Point with x and y (ints). Show replace(Point(1, 2), y=9).",
+       "it": "Crea una dataclass congelata Point con x e y (interi). Mostra replace(Point(1, 2), y=9).",
+       "fr": "Crée une dataclass gelée Point avec x et y (entiers). Affiche replace(Point(1, 2), y=9)."
+      },
+      "hint": {
+       "en": "@dataclass(frozen=True), then print(replace(Point(1, 2), y=9)).",
+       "it": "@dataclass(frozen=True), poi print(replace(Point(1, 2), y=9)).",
+       "fr": "@dataclass(frozen=True), puis print(replace(Point(1, 2), y=9))."
+      },
+      "sol": {
+       "en": "from dataclasses import dataclass, replace\n\n@dataclass(frozen=True)\nclass Point:\n    x: int\n    y: int\n\nprint(replace(Point(1, 2), y=9))",
+       "it": "from dataclasses import dataclass, replace\n\n@dataclass(frozen=True)\nclass Point:\n    x: int\n    y: int\n\nprint(replace(Point(1, 2), y=9))",
+       "fr": "from dataclasses import dataclass, replace\n\n@dataclass(frozen=True)\nclass Point:\n    x: int\n    y: int\n\nprint(replace(Point(1, 2), y=9))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Point(x=1, y=9)",
+        "c": "frozen=True"
+       },
+       "it": {
+        "out": "Point(x=1, y=9)",
+        "c": "frozen=True"
+       },
+       "fr": {
+        "out": "Point(x=1, y=9)",
+        "c": "frozen=True"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Point(x=1, y=9)",
+       "it": "Point(x=1, y=9)",
+       "fr": "Point(x=1, y=9)"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from enum import Enum\n\nclass Colour(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3\n\nprint(Colour.RED)\nprint(Colour.RED.name, Colour.RED.value)\nprint(Colour(2))\nfor item in Colour:\n    print(item.name, item.value)",
+      "it": "from enum import Enum\n\nclass Colour(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3\n\nprint(Colour.RED)\nprint(Colour.RED.name, Colour.RED.value)\nprint(Colour(2))\nfor item in Colour:\n    print(item.name, item.value)",
+      "fr": "from enum import Enum\n\nclass Colour(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3\n\nprint(Colour.RED)\nprint(Colour.RED.name, Colour.RED.value)\nprint(Colour(2))\nfor item in Colour:\n    print(item.name, item.value)"
+     },
+     "title": {
+      "en": "A fixed list of choices: Enum",
+      "it": "Una lista fissa di scelte: Enum",
+      "fr": "Une liste fixe de choix : Enum"
+     },
+     "text": {
+      "en": "An Enum is a short list of named choices. Instead of numbers like 1, 2, 3, or texts like \"red\" that are easy to mistype, you use Colour.RED.\n\nEach choice has a name and a value, and you can walk through all of them with a for loop. Colour(2) finds the choice that has the value 2.",
+      "it": "Un Enum è una breve lista di scelte con un nome. Invece di numeri come 1, 2, 3, o di testi come \"red\" facili da sbagliare, usi Colour.RED.\n\nOgni scelta ha un nome e un valore, e le puoi scorrere tutte con un ciclo for. Colour(2) trova la scelta che ha il valore 2.",
+      "fr": "Un Enum est une courte liste de choix nommés. Au lieu de nombres comme 1, 2, 3, ou de textes comme \"red\" faciles à mal écrire, tu utilises Colour.RED.\n\nChaque choix a un nom et une valeur, et tu peux tous les parcourir avec une boucle for. Colour(2) trouve le choix qui a la valeur 2."
+     },
+     "see": {
+      "en": "Colour.RED\nRED 1\nColour.GREEN\nRED 1\nGREEN 2\nBLUE 3",
+      "it": "Colour.RED\nRED 1\nColour.GREEN\nRED 1\nGREEN 2\nBLUE 3",
+      "fr": "Colour.RED\nRED 1\nColour.GREEN\nRED 1\nGREEN 2\nBLUE 3"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "enum.Enum",
+       "w": "Enum",
+       "d": {
+        "en": "An Enum is a short list of named choices. Instead of numbers or texts that are easy to mistype, you use Colour.RED. Each one has a name and a value, and you can walk through them all with a for loop.",
+        "it": "Un Enum è una breve lista di scelte con un nome. Invece di numeri o testi facili da sbagliare, usi Colour.RED. Ognuna ha un nome e un valore, e le puoi scorrere tutte con un ciclo for.",
+        "fr": "Un Enum est une courte liste de choix nommés. Au lieu de nombres ou de textes faciles à mal écrire, tu utilises Colour.RED. Chacun a un nom et une valeur, et tu peux tous les parcourir avec une boucle for."
+       },
+       "s": {
+        "en": "class Colour(Enum):\n    RED = 1",
+        "it": "class Colour(Enum):\n    RED = 1",
+        "fr": "class Colour(Enum):\n    RED = 1"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make an Enum called Size with SMALL = 1 and LARGE = 2. Show the name of Size(2) (LARGE).",
+       "it": "Crea un Enum che si chiama Size con SMALL = 1 e LARGE = 2. Mostra il nome di Size(2) (LARGE).",
+       "fr": "Crée un Enum qui s'appelle Size avec SMALL = 1 et LARGE = 2. Affiche le nom de Size(2) (LARGE)."
+      },
+      "hint": {
+       "en": "class Size(Enum): and then print(Size(2).name).",
+       "it": "class Size(Enum): e poi print(Size(2).name).",
+       "fr": "class Size(Enum): puis print(Size(2).name)."
+      },
+      "sol": {
+       "en": "from enum import Enum\n\nclass Size(Enum):\n    SMALL = 1\n    LARGE = 2\n\nprint(Size(2).name)",
+       "it": "from enum import Enum\n\nclass Size(Enum):\n    SMALL = 1\n    LARGE = 2\n\nprint(Size(2).name)",
+       "fr": "from enum import Enum\n\nclass Size(Enum):\n    SMALL = 1\n    LARGE = 2\n\nprint(Size(2).name)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "LARGE",
+        "c": "Enum"
+       },
+       "it": {
+        "out": "LARGE",
+        "c": "Enum"
+       },
+       "fr": {
+        "out": "LARGE",
+        "c": "Enum"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "LARGE",
+       "it": "LARGE",
+       "fr": "LARGE"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n\nclass Task:\n    def __init__(self):\n        self.state = State.IDLE\n\n    def advance(self):\n        if self.state is State.IDLE:\n            self.state = State.RUNNING\n        elif self.state is State.RUNNING:\n            self.state = State.DONE\n\nt = Task()\nfor step in range(3):\n    print(t.state.name)\n    t.advance()\nprint(t.state)",
+      "it": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n\nclass Task:\n    def __init__(self):\n        self.state = State.IDLE\n\n    def advance(self):\n        if self.state is State.IDLE:\n            self.state = State.RUNNING\n        elif self.state is State.RUNNING:\n            self.state = State.DONE\n\nt = Task()\nfor step in range(3):\n    print(t.state.name)\n    t.advance()\nprint(t.state)",
+      "fr": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n\nclass Task:\n    def __init__(self):\n        self.state = State.IDLE\n\n    def advance(self):\n        if self.state is State.IDLE:\n            self.state = State.RUNNING\n        elif self.state is State.RUNNING:\n            self.state = State.DONE\n\nt = Task()\nfor step in range(3):\n    print(t.state.name)\n    t.advance()\nprint(t.state)"
+     },
+     "title": {
+      "en": "Enums in a program",
+      "it": "Gli enum in un programma",
+      "fr": "Les enums dans un programme"
+     },
+     "text": {
+      "en": "auto() gives each name a number by itself, so you do not have to count. An Enum is the right tool for a state: a task is idle, running or done, and nothing else.\n\nCompare enum choices with is, because each choice exists only once. A mistyped choice, like State.DOEN, stops with an error instead of silently doing the wrong thing.",
+      "it": "auto() dà a ogni nome un numero da solo, così non devi contare tu. Un Enum è lo strumento giusto per uno stato: un compito è fermo, in corso o finito, e nient'altro.\n\nConfronta le scelte di un enum con is, perché ogni scelta esiste una volta sola. Una scelta scritta male, come State.DOEN, si ferma con un errore invece di fare in silenzio la cosa sbagliata.",
+      "fr": "auto() donne à chaque nom un nombre tout seul, donc tu n'as pas à compter. Un Enum est le bon outil pour un état : une tâche est au repos, en cours ou finie, et rien d'autre.\n\nCompare les choix d'un enum avec is, parce que chaque choix n'existe qu'une fois. Un choix mal écrit, comme State.DOEN, s'arrête avec une erreur au lieu de faire silencieusement la mauvaise chose."
+     },
+     "see": {
+      "en": "IDLE\nRUNNING\nDONE\nState.DONE",
+      "it": "IDLE\nRUNNING\nDONE\nState.DONE",
+      "fr": "IDLE\nRUNNING\nDONE\nState.DONE"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "enum.auto",
+       "w": "auto( )",
+       "d": {
+        "en": "auto() gives each name of an Enum a number by itself, so you do not have to count.",
+        "it": "auto() dà a ogni nome di un Enum un numero da solo, così non devi contare tu.",
+        "fr": "auto() donne à chaque nom d'un Enum un nombre tout seul, donc tu n'as pas à compter."
+       },
+       "s": {
+        "en": "RED = auto()",
+        "it": "RED = auto()",
+        "fr": "RED = auto()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Add a fourth state, FAILED, to the enum, and show the name of State.FAILED (FAILED).",
+       "it": "Aggiungi un quarto stato, FAILED, all'enum e mostra il nome di State.FAILED (FAILED).",
+       "fr": "Ajoute un quatrième état, FAILED, à l'enum et affiche le nom de State.FAILED (FAILED)."
+      },
+      "hint": {
+       "en": "FAILED = auto() inside the class State.",
+       "it": "FAILED = auto() dentro la classe State.",
+       "fr": "FAILED = auto() dans la classe State."
+      },
+      "sol": {
+       "en": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n    FAILED = auto()\n\nprint(State.FAILED.name)",
+       "it": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n    FAILED = auto()\n\nprint(State.FAILED.name)",
+       "fr": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n    FAILED = auto()\n\nprint(State.FAILED.name)"
+      },
+      "start": {
+       "en": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()",
+       "it": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()",
+       "fr": "from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()"
+      },
+      "spec": {
+       "en": {
+        "out": "FAILED",
+        "c": "FAILED = auto"
+       },
+       "it": {
+        "out": "FAILED",
+        "c": "FAILED = auto"
+       },
+       "fr": {
+        "out": "FAILED",
+        "c": "FAILED = auto"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "FAILED",
+       "it": "FAILED",
+       "fr": "FAILED"
+      }
+     }
+    }
+   ]
   }
  ]
 };

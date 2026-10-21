@@ -98,6 +98,13 @@ module.exports = {
       'total *= 2 est un raccourci pour total = total * 2 : il multiplie par 2 ce qu\'il y a dans la boîte.'],
     s: 'total *= 2'
   },
+  '-=': {
+    w: '-=',
+    d: ['total -= 5 is a shortcut for total = total - 5: it takes 5 away from what is in the box.',
+      'total -= 5 è una scorciatoia per total = total - 5: toglie 5 da quello che c\'è nella scatola.',
+      'total -= 5 est un raccourci pour total = total - 5 : il enlève 5 de ce qu\'il y a dans la boîte.'],
+    s: 'total -= 5'
+  },
   'type': {
     w: 'type( )',
     d: ['type tells you what kind a value is. str is a text, int is a whole number, float is a number with a point.',

@@ -25143,6 +25143,1441 @@ window.PyvielCourse = {
      }
     }
    ]
+  },
+  {
+   "group": {
+    "en": "Appendix · Your cheat sheet",
+    "it": "Appendice · Il tuo foglio di riepilogo",
+    "fr": "Annexe · Ta fiche de révision"
+   },
+   "title": {
+    "en": "The Python cheat sheet",
+    "it": "Il foglio di riepilogo di Python",
+    "fr": "La fiche de révision de Python"
+   },
+   "subtitle": {
+    "en": "Everything in six small pages",
+    "it": "Tutto in sei piccole pagine",
+    "fr": "Tout en six petites pages"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "# values and names\nname, age, height = \"Ada\", 12, 1.5\nprint(type(name), type(age), type(height), type(True), type(None))\nprint(f\"{name} is {age}; next year {age + 1}\")\nprint(7 / 2, 7 // 2, 7 % 2, 2 ** 8, round(3.14159, 2))\nprint(int(\"5\") + 1, str(5) + \"1\", float(\"2.5\"), bool(\"\"))\ntext = \"  Hello, Python  \"\nprint(text.strip().lower().replace(\"python\", \"world\"))\nprint(text.split(\",\"), len(text), text[2:7], text[::-1][:5])",
+      "it": "# valori e nomi\nname, age, height = \"Ada\", 12, 1.5\nprint(type(name), type(age), type(height), type(True), type(None))\nprint(f\"{name} ha {age} anni; l'anno prossimo {age + 1}\")\nprint(7 / 2, 7 // 2, 7 % 2, 2 ** 8, round(3.14159, 2))\nprint(int(\"5\") + 1, str(5) + \"1\", float(\"2.5\"), bool(\"\"))\ntext = \"  Ciao, Python  \"\nprint(text.strip().lower().replace(\"python\", \"mondo\"))\nprint(text.split(\",\"), len(text), text[2:7], text[::-1][:5])",
+      "fr": "# valeurs et noms\nname, age, height = \"Ada\", 12, 1.5\nprint(type(name), type(age), type(height), type(True), type(None))\nprint(f\"{name} a {age} ans ; l'année prochaine {age + 1}\")\nprint(7 / 2, 7 // 2, 7 % 2, 2 ** 8, round(3.14159, 2))\nprint(int(\"5\") + 1, str(5) + \"1\", float(\"2.5\"), bool(\"\"))\ntext = \"  Bonjour, Python  \"\nprint(text.strip().lower().replace(\"python\", \"monde\"))\nprint(text.split(\",\"), len(text), text[2:7], text[::-1][:5])"
+     },
+     "title": {
+      "en": "Page 1: values, numbers and text",
+      "it": "Pagina 1: valori, numeri e testo",
+      "fr": "Page 1 : valeurs, nombres et texte"
+     },
+     "text": {
+      "en": "The first page of the sheet: names and the kinds of value (str, int, float, bool, None), the sums, the conversions, an f-string, and the text tools.\n\nRead each line and say out loud what you expect before you look at the result. If one surprises you, go back to that lesson.",
+      "it": "La prima pagina del foglio: i nomi e i tipi di valore (str, int, float, bool, None), i conti, le conversioni, una f-string e gli strumenti del testo.\n\nLeggi ogni riga e di' a voce alta cosa ti aspetti prima di guardare il risultato. Se una ti sorprende, torna a quella lezione.",
+      "fr": "La première page de la fiche : les noms et les sortes de valeur (str, int, float, bool, None), les calculs, les conversions, une f-string et les outils du texte.\n\nLis chaque ligne et dis à voix haute ce que tu attends avant de regarder le résultat. Si l'une te surprend, retourne à cette leçon."
+     },
+     "see": {
+      "en": "<class 'str'> <class 'int'> <class 'float'> <class 'bool'> <class 'NoneType'>\nAda is 12; next year 13\n3.5 3 1 256 3.14\n6 51 2.5 False\nhello, world\n['  Hello', ' Python  '] 17 Hello   noh",
+      "it": "<class 'str'> <class 'int'> <class 'float'> <class 'bool'> <class 'NoneType'>\nAda ha 12 anni; l'anno prossimo 13\n3.5 3 1 256 3.14\n6 51 2.5 False\nciao, mondo\n['  Ciao', ' Python  '] 16 Ciao,   noh",
+      "fr": "<class 'str'> <class 'int'> <class 'float'> <class 'bool'> <class 'NoneType'>\nAda a 12 ans ; l'année prochaine 13\n3.5 3 1 256 3.14\n6 51 2.5 False\nbonjour, monde\n['  Bonjour', ' Python  '] 19 Bonjo   noh"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Change the values of name and age and show a new sentence with them in an f-string.",
+       "it": "Cambia i valori di name e age e mostra una frase nuova con loro in una f-string.",
+       "fr": "Change les valeurs de name et age et affiche une nouvelle phrase avec eux dans une f-string."
+      },
+      "hint": {
+       "en": "name = \"Max\", age = 9, then print(f\"... {name} ... {age}\").",
+       "it": "name = \"Max\", age = 9, poi print(f\"... {name} ... {age}\").",
+       "fr": "name = \"Max\", age = 9, puis print(f\"... {name} ... {age}\")."
+      },
+      "sol": {
+       "en": "name, age = \"Max\", 9\nprint(f\"{name} is {age}\")",
+       "it": "name, age = \"Max\", 9\nprint(f\"{name} is {age}\")",
+       "fr": "name, age = \"Max\", 9\nprint(f\"{name} is {age}\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": "Max.*9",
+        "c": "f\""
+       },
+       "it": {
+        "m": "Max.*9",
+        "c": "f\""
+       },
+       "fr": {
+        "m": "Max.*9",
+        "c": "f\""
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "# choices and loops\nn = 7\nif n < 0:\n    print(\"negative\")\nelif n == 0:\n    print(\"zero\")\nelse:\n    print(\"positive\")\nprint(\"odd\" if n % 2 else \"even\")\n\nfor i in range(3):\n    print(\"for\", i)\ncount = 3\nwhile count > 0:\n    print(\"while\", count)\n    count -= 1\nfor i, letter in enumerate(\"ab\", start=1):\n    print(i, letter)\nfor i in range(10):\n    if i == 2:\n        continue\n    if i == 4:\n        break\n    print(\"i\", i)",
+      "it": "# scelte e cicli\nn = 7\nif n < 0:\n    print(\"negativo\")\nelif n == 0:\n    print(\"zero\")\nelse:\n    print(\"positivo\")\nprint(\"dispari\" if n % 2 else \"pari\")\n\nfor i in range(3):\n    print(\"for\", i)\ncount = 3\nwhile count > 0:\n    print(\"while\", count)\n    count -= 1\nfor i, letter in enumerate(\"ab\", start=1):\n    print(i, letter)\nfor i in range(10):\n    if i == 2:\n        continue\n    if i == 4:\n        break\n    print(\"i\", i)",
+      "fr": "# choix et boucles\nn = 7\nif n < 0:\n    print(\"négatif\")\nelif n == 0:\n    print(\"zéro\")\nelse:\n    print(\"positif\")\nprint(\"impair\" if n % 2 else \"pair\")\n\nfor i in range(3):\n    print(\"for\", i)\ncount = 3\nwhile count > 0:\n    print(\"while\", count)\n    count -= 1\nfor i, letter in enumerate(\"ab\", start=1):\n    print(i, letter)\nfor i in range(10):\n    if i == 2:\n        continue\n    if i == 4:\n        break\n    print(\"i\", i)"
+     },
+     "title": {
+      "en": "Page 2: choices and loops",
+      "it": "Pagina 2: scelte e cicli",
+      "fr": "Page 2 : choix et boucles"
+     },
+     "text": {
+      "en": "if, elif and else choose a road. for walks through things, while repeats while a question is true, enumerate adds a number to each item, break leaves the loop and continue skips to the next turn.\n\nChange n to a negative number and to 0 and see another road taken.",
+      "it": "if, elif ed else scelgono una strada. for scorre le cose, while ripete finché una domanda è vera, enumerate aggiunge un numero a ogni elemento, break esce dal ciclo e continue salta al giro successivo.\n\nCambia n in un numero negativo e in 0 e guarda un'altra strada.",
+      "fr": "if, elif et else choisissent une route. for parcourt des choses, while répète tant qu'une question est vraie, enumerate ajoute un numéro à chaque élément, break sort de la boucle et continue saute au tour suivant.\n\nChange n en un nombre négatif et en 0 et regarde une autre route."
+     },
+     "see": {
+      "en": "positive\nodd\nfor 0\nfor 1\nfor 2\nwhile 3\nwhile 2\nwhile 1\n1 a\n...\ni 1\ni 3",
+      "it": "positivo\ndispari\nfor 0\nfor 1\nfor 2\nwhile 3\nwhile 2\nwhile 1\n1 a\n...\ni 1\ni 3",
+      "fr": "positif\nimpair\nfor 0\nfor 1\nfor 2\nwhile 3\nwhile 2\nwhile 1\n1 a\n...\ni 1\ni 3"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show the word big when n is more than 100, and small otherwise, with a one-line if. n is 500.",
+       "it": "Mostra la parola big quando n è più di 100, e small altrimenti, con un if in una riga. n vale 500.",
+       "fr": "Affiche le mot big quand n vaut plus de 100, et small sinon, avec un if sur une ligne. n vaut 500."
+      },
+      "hint": {
+       "en": "print(\"big\" if n > 100 else \"small\")",
+       "it": "print(\"big\" if n > 100 else \"small\")",
+       "fr": "print(\"big\" if n > 100 else \"small\")"
+      },
+      "sol": {
+       "en": "n = 500\nprint(\"big\" if n > 100 else \"small\")",
+       "it": "n = 500\nprint(\"big\" if n > 100 else \"small\")",
+       "fr": "n = 500\nprint(\"big\" if n > 100 else \"small\")"
+      },
+      "start": {
+       "en": "n = 500",
+       "it": "n = 500",
+       "fr": "n = 500"
+      },
+      "spec": {
+       "en": {
+        "out": "big",
+        "c": " if .* else "
+       },
+       "it": {
+        "out": "big",
+        "c": " if .* else "
+       },
+       "fr": {
+        "out": "big",
+        "c": " if .* else "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "big",
+       "it": "big",
+       "fr": "big"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "# collections\nitems = [3, 1, 2]\nitems.append(4)\nitems.sort()\nprint(items, items[0], items[-1], items[1:3], len(items))\npoint = (1, 2)\nx, y = point\nprint(x, y)\nages = {\"Ada\": 12, \"Max\": 9}\nages[\"Zoe\"] = 15\nprint(ages[\"Ada\"], ages.get(\"Bob\", \"?\"), list(ages), \"Max\" in ages)\nfor name, age in ages.items():\n    print(name, age)\nunique = {1, 2, 2, 3}\nprint(unique, unique | {9}, unique & {2, 9})\nprint([n * n for n in items if n % 2 == 0], {n: n * 2 for n in (1, 2)})\nprint(sorted(ages, key=ages.get), max(items), sum(items))",
+      "it": "# collections\nitems = [3, 1, 2]\nitems.append(4)\nitems.sort()\nprint(items, items[0], items[-1], items[1:3], len(items))\npoint = (1, 2)\nx, y = point\nprint(x, y)\nages = {\"Ada\": 12, \"Max\": 9}\nages[\"Zoe\"] = 15\nprint(ages[\"Ada\"], ages.get(\"Bob\", \"?\"), list(ages), \"Max\" in ages)\nfor name, age in ages.items():\n    print(name, age)\nunique = {1, 2, 2, 3}\nprint(unique, unique | {9}, unique & {2, 9})\nprint([n * n for n in items if n % 2 == 0], {n: n * 2 for n in (1, 2)})\nprint(sorted(ages, key=ages.get), max(items), sum(items))",
+      "fr": "# collections\nitems = [3, 1, 2]\nitems.append(4)\nitems.sort()\nprint(items, items[0], items[-1], items[1:3], len(items))\npoint = (1, 2)\nx, y = point\nprint(x, y)\nages = {\"Ada\": 12, \"Max\": 9}\nages[\"Zoe\"] = 15\nprint(ages[\"Ada\"], ages.get(\"Bob\", \"?\"), list(ages), \"Max\" in ages)\nfor name, age in ages.items():\n    print(name, age)\nunique = {1, 2, 2, 3}\nprint(unique, unique | {9}, unique & {2, 9})\nprint([n * n for n in items if n % 2 == 0], {n: n * 2 for n in (1, 2)})\nprint(sorted(ages, key=ages.get), max(items), sum(items))"
+     },
+     "title": {
+      "en": "Page 3: lists, tuples, dictionaries and sets",
+      "it": "Pagina 3: liste, tuple, dizionari e insiemi",
+      "fr": "Page 3 : listes, tuples, dictionnaires et ensembles"
+     },
+     "text": {
+      "en": "Lists can change and keep an order. Tuples are fixed. Dictionaries look values up by a key. Sets keep each thing once. Comprehensions build any of them in one line.\n\nPick one collection and change it, then run again to see what moves.",
+      "it": "Le liste possono cambiare e tengono un ordine. Le tuple sono fisse. I dizionari cercano i valori da una chiave. Gli insiemi tengono ogni cosa una volta sola. Le comprensioni costruiscono ognuna di loro in una riga.\n\nScegli una collezione e cambiala, poi riesegui per vedere cosa si muove.",
+      "fr": "Les listes peuvent changer et gardent un ordre. Les tuples sont fixes. Les dictionnaires cherchent des valeurs par une clé. Les ensembles gardent chaque chose une seule fois. Les compréhensions construisent chacun d'eux en une ligne.\n\nChoisis une collection et change-la, puis relance pour voir ce qui bouge."
+     },
+     "see": {
+      "en": "[1, 2, 3, 4] 1 4 [2, 3] 4\n1 2\n12 ? ['Ada', 'Max', 'Zoe'] True\nAda 12\nMax 9\nZoe 15\n{1, 2, 3} {1, 2, 3, 9} {2}\n[4, 16] {1: 2, 2: 4}\n['Max', 'Ada', 'Zoe'] 4 10",
+      "it": "[1, 2, 3, 4] 1 4 [2, 3] 4\n1 2\n12 ? ['Ada', 'Max', 'Zoe'] True\nAda 12\nMax 9\nZoe 15\n{1, 2, 3} {1, 2, 3, 9} {2}\n[4, 16] {1: 2, 2: 4}\n['Max', 'Ada', 'Zoe'] 4 10",
+      "fr": "[1, 2, 3, 4] 1 4 [2, 3] 4\n1 2\n12 ? ['Ada', 'Max', 'Zoe'] True\nAda 12\nMax 9\nZoe 15\n{1, 2, 3} {1, 2, 3, 9} {2}\n[4, 16] {1: 2, 2: 4}\n['Max', 'Ada', 'Zoe'] 4 10"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a dictionary with two pets and their ages, and show the age of the first with its key.",
+       "it": "Fai un dizionario con due animali e le loro età e mostra l'età del primo con la sua chiave.",
+       "fr": "Fais un dictionnaire avec deux animaux et leurs âges et affiche l'âge du premier avec sa clé."
+      },
+      "hint": {
+       "en": "pets = {\"Rex\": 3, \"Tom\": 5} and print(pets[\"Rex\"]).",
+       "it": "pets = {\"Rex\": 3, \"Tom\": 5} e print(pets[\"Rex\"]).",
+       "fr": "pets = {\"Rex\": 3, \"Tom\": 5} puis print(pets[\"Rex\"])."
+      },
+      "sol": {
+       "en": "pets = {\"Rex\": 3, \"Tom\": 5}\nprint(pets[\"Rex\"])",
+       "it": "pets = {\"Rex\": 3, \"Tom\": 5}\nprint(pets[\"Rex\"])",
+       "fr": "pets = {\"Rex\": 3, \"Tom\": 5}\nprint(pets[\"Rex\"])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "\\{.*:.*\\}"
+       },
+       "it": {
+        "out": "3",
+        "c": "\\{.*:.*\\}"
+       },
+       "fr": {
+        "out": "3",
+        "c": "\\{.*:.*\\}"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "3"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "# functions\ndef area(width, height=1, *extra, **options):\n    \"\"\"Return the area.\"\"\"\n    return width * height\n\nprint(area(3), area(3, 4), area(height=2, width=5))\nsquare = lambda n: n * n\nprint(square(6), list(map(square, [1, 2, 3])))\n\ndef counter():\n    total = 0\n    def add(n):\n        nonlocal total\n        total += n\n        return total\n    return add\n\nc = counter()\nc(5)\nprint(c(10))\ndef fact(n):\n    return 1 if n <= 1 else n * fact(n - 1)\nprint(fact(6))",
+      "it": "# functions\ndef area(width, height=1, *extra, **options):\n    \"\"\"Return the area.\"\"\"\n    return width * height\n\nprint(area(3), area(3, 4), area(height=2, width=5))\nsquare = lambda n: n * n\nprint(square(6), list(map(square, [1, 2, 3])))\n\ndef counter():\n    total = 0\n    def add(n):\n        nonlocal total\n        total += n\n        return total\n    return add\n\nc = counter()\nc(5)\nprint(c(10))\ndef fact(n):\n    return 1 if n <= 1 else n * fact(n - 1)\nprint(fact(6))",
+      "fr": "# functions\ndef area(width, height=1, *extra, **options):\n    \"\"\"Return the area.\"\"\"\n    return width * height\n\nprint(area(3), area(3, 4), area(height=2, width=5))\nsquare = lambda n: n * n\nprint(square(6), list(map(square, [1, 2, 3])))\n\ndef counter():\n    total = 0\n    def add(n):\n        nonlocal total\n        total += n\n        return total\n    return add\n\nc = counter()\nc(5)\nprint(c(10))\ndef fact(n):\n    return 1 if n <= 1 else n * fact(n - 1)\nprint(fact(6))"
+     },
+     "title": {
+      "en": "Page 4: functions",
+      "it": "Pagina 4: funzioni",
+      "fr": "Page 4 : fonctions"
+     },
+     "text": {
+      "en": "def makes a function. A parameter can have a default, *extra collects more values, **options collects named ones. lambda is a tiny function, and a function can make another function (a closure). A function can also call itself (recursion).\n\nTry calling area with other numbers.",
+      "it": "def crea una funzione. Un parametro può avere un valore predefinito, *extra raccoglie altri valori, **options quelli con nome. lambda è una funzioncina e una funzione può crearne un'altra (una closure). Una funzione può anche chiamare se stessa (ricorsione).\n\nProva a chiamare area con altri numeri.",
+      "fr": "def fait une fonction. Un paramètre peut avoir une valeur par défaut, *extra rassemble d'autres valeurs, **options celles qui ont un nom. lambda est une minuscule fonction, et une fonction peut en faire une autre (une closure). Une fonction peut aussi s'appeler elle-même (récursion).\n\nEssaie d'appeler area avec d'autres nombres."
+     },
+     "see": {
+      "en": "3 12 10\n36 [1, 4, 9]\n15\n720",
+      "it": "3 12 10\n36 [1, 4, 9]\n15\n720",
+      "fr": "3 12 10\n36 [1, 4, 9]\n15\n720"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a function cube(n) that returns n * n * n and show cube(4) (64).",
+       "it": "Scrivi una funzione cube(n) che restituisce n * n * n e mostra cube(4) (64).",
+       "fr": "Écris une fonction cube(n) qui rend n * n * n et affiche cube(4) (64)."
+      },
+      "hint": {
+       "en": "def cube(n): return n * n * n",
+       "it": "def cube(n): return n * n * n",
+       "fr": "def cube(n): return n * n * n"
+      },
+      "sol": {
+       "en": "def cube(n):\n    return n * n * n\n\nprint(cube(4))",
+       "it": "def cube(n):\n    return n * n * n\n\nprint(cube(4))",
+       "fr": "def cube(n):\n    return n * n * n\n\nprint(cube(4))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "64",
+        "c": "def cube"
+       },
+       "it": {
+        "out": "64",
+        "c": "def cube"
+       },
+       "fr": {
+        "out": "64",
+        "c": "def cube"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "64",
+       "it": "64",
+       "fr": "64"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "# classes and errors\nfrom dataclasses import dataclass\n\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n    def speak(self):\n        return \"...\"\n    def __repr__(self):\n        return f\"{type(self).__name__}({self.name})\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\npets = [Animal(\"Thing\"), Dog(\"Rex\")]\nprint(pets, [p.speak() for p in pets], isinstance(pets[1], Animal))\n\n@dataclass\nclass Point:\n    x: int\n    y: int = 0\nprint(Point(3), Point(3) == Point(3, 0))\n\ndef safe_int(text):\n    try:\n        return int(text)\n    except ValueError:\n        return None\nprint(safe_int(\"12\"), safe_int(\"no\"))\ntry:\n    raise KeyError(\"missing\")\nexcept (KeyError, IndexError) as error:\n    print(\"caught\", type(error).__name__)",
+      "it": "# classes and errors\nfrom dataclasses import dataclass\n\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n    def speak(self):\n        return \"...\"\n    def __repr__(self):\n        return f\"{type(self).__name__}({self.name})\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\npets = [Animal(\"Thing\"), Dog(\"Rex\")]\nprint(pets, [p.speak() for p in pets], isinstance(pets[1], Animal))\n\n@dataclass\nclass Point:\n    x: int\n    y: int = 0\nprint(Point(3), Point(3) == Point(3, 0))\n\ndef safe_int(text):\n    try:\n        return int(text)\n    except ValueError:\n        return None\nprint(safe_int(\"12\"), safe_int(\"no\"))\ntry:\n    raise KeyError(\"missing\")\nexcept (KeyError, IndexError) as error:\n    print(\"caught\", type(error).__name__)",
+      "fr": "# classes and errors\nfrom dataclasses import dataclass\n\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n    def speak(self):\n        return \"...\"\n    def __repr__(self):\n        return f\"{type(self).__name__}({self.name})\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\npets = [Animal(\"Thing\"), Dog(\"Rex\")]\nprint(pets, [p.speak() for p in pets], isinstance(pets[1], Animal))\n\n@dataclass\nclass Point:\n    x: int\n    y: int = 0\nprint(Point(3), Point(3) == Point(3, 0))\n\ndef safe_int(text):\n    try:\n        return int(text)\n    except ValueError:\n        return None\nprint(safe_int(\"12\"), safe_int(\"no\"))\ntry:\n    raise KeyError(\"missing\")\nexcept (KeyError, IndexError) as error:\n    print(\"caught\", type(error).__name__)"
+     },
+     "title": {
+      "en": "Page 5: classes and errors",
+      "it": "Pagina 5: classi ed errori",
+      "fr": "Page 5 : classes et erreurs"
+     },
+     "text": {
+      "en": "A class is a blueprint with data (__init__) and actions (methods). A child class inherits and can override. A dataclass writes the boring parts. try and except catch errors, and raise makes one.\n\nAdd a new child class, for example Cat, and put one in the list.",
+      "it": "Una classe è un progetto con dati (__init__) e azioni (metodi). Una classe figlia eredita e può sovrascrivere. Una dataclass scrive le parti noiose. try ed except prendono gli errori e raise ne fa uno.\n\nAggiungi una nuova classe figlia, per esempio Cat, e mettine una nella lista.",
+      "fr": "Une classe est un plan avec des données (__init__) et des actions (méthodes). Une classe enfant hérite et peut redéfinir. Une dataclass écrit les parties ennuyeuses. try et except attrapent des erreurs, et raise en fait une.\n\nAjoute une nouvelle classe enfant, par exemple Cat, et mets-en une dans la liste."
+     },
+     "see": {
+      "en": "[Animal(Thing), Dog(Rex)] ['...', 'Woof'] True\nPoint(x=3, y=0) True\n12 None\ncaught KeyError",
+      "it": "[Animal(Thing), Dog(Rex)] ['...', 'Woof'] True\nPoint(x=3, y=0) True\n12 None\ncaught KeyError",
+      "fr": "[Animal(Thing), Dog(Rex)] ['...', 'Woof'] True\nPoint(x=3, y=0) True\n12 None\ncaught KeyError"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "KeyError",
+       "w": "KeyError",
+       "d": {
+        "en": "KeyError is the kind of error for a dictionary key that does not exist. You can raise one yourself: raise KeyError(\"missing\").",
+        "it": "KeyError è il tipo di errore per una chiave di dizionario che non esiste. Ne puoi alzare uno tu: raise KeyError(\"missing\").",
+        "fr": "KeyError est le genre d'erreur pour une clé de dictionnaire qui n'existe pas. Tu peux en lever une toi-même : raise KeyError(\"missing\")."
+       },
+       "s": {
+        "en": "raise KeyError(\"missing\")",
+        "it": "raise KeyError(\"missing\")",
+        "fr": "raise KeyError(\"missing\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Write a class Cat that is an Animal and whose speak returns Meow. Show Cat(\"Tom\").speak() (Meow).",
+       "it": "Scrivi una classe Cat che è un Animal e il cui speak restituisce Miao. Mostra Cat(\"Tom\").speak() (Miao).",
+       "fr": "Écris une classe Cat qui est un Animal et dont speak rend Miaou. Affiche Cat(\"Tom\").speak() (Miaou)."
+      },
+      "hint": {
+       "en": "class Cat(Animal): and def speak(self): return \"Meow\".",
+       "it": "class Cat(Animal): e def speak(self): return \"Miao\".",
+       "fr": "class Cat(Animal): et def speak(self): return \"Miaou\"."
+      },
+      "sol": {
+       "en": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow\"\n\nprint(Cat(\"Tom\").speak())",
+       "it": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Miao\"\n\nprint(Cat(\"Tom\").speak())",
+       "fr": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Miaou\"\n\nprint(Cat(\"Tom\").speak())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Meow",
+        "c": "class Cat\\(Animal\\)"
+       },
+       "it": {
+        "out": "Miao",
+        "c": "class Cat\\(Animal\\)"
+       },
+       "fr": {
+        "out": "Miaou",
+        "c": "class Cat\\(Animal\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Meow",
+       "it": "Miao",
+       "fr": "Miaou"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "# files, modules and tricks\nimport json, math, random, os\nfrom collections import Counter\n\nrandom.seed(1)\nprint(math.sqrt(49), random.choice(\"abc\"), Counter(\"hello\").most_common(1))\nwith open(\"demo_sheet.json\", \"w\") as f:\n    json.dump({\"scores\": [1, 2, 3]}, f)\nwith open(\"demo_sheet.json\") as f:\n    print(json.load(f)[\"scores\"], os.path.exists(\"demo_sheet.json\"))\n\ndef numbers():\n    n = 0\n    while True:\n        yield n\n        n += 1\ngen = numbers()\nprint([next(gen) for i in range(4)])\n\ndef twice(function):\n    def wrapper(*args):\n        return function(function(*args))\n    return wrapper\n@twice\ndef add3(n):\n    return n + 3\nprint(add3(10))\n\nfirst, *rest = [1, 2, 3, 4]\nprint(first, rest, {**{\"a\": 1}, \"b\": 2}, [*\"ab\", 9])\nmatch [1, 2]:\n    case [a, b]:\n        print(\"a pair:\", a, b)\nif (size := len(rest)) > 2:\n    print(\"size\", size)",
+      "it": "# files, modules and tricks\nimport json, math, random, os\nfrom collections import Counter\n\nrandom.seed(1)\nprint(math.sqrt(49), random.choice(\"abc\"), Counter(\"hello\").most_common(1))\nwith open(\"demo_sheet.json\", \"w\") as f:\n    json.dump({\"scores\": [1, 2, 3]}, f)\nwith open(\"demo_sheet.json\") as f:\n    print(json.load(f)[\"scores\"], os.path.exists(\"demo_sheet.json\"))\n\ndef numbers():\n    n = 0\n    while True:\n        yield n\n        n += 1\ngen = numbers()\nprint([next(gen) for i in range(4)])\n\ndef twice(function):\n    def wrapper(*args):\n        return function(function(*args))\n    return wrapper\n@twice\ndef add3(n):\n    return n + 3\nprint(add3(10))\n\nfirst, *rest = [1, 2, 3, 4]\nprint(first, rest, {**{\"a\": 1}, \"b\": 2}, [*\"ab\", 9])\nmatch [1, 2]:\n    case [a, b]:\n        print(\"a pair:\", a, b)\nif (size := len(rest)) > 2:\n    print(\"size\", size)",
+      "fr": "# files, modules and tricks\nimport json, math, random, os\nfrom collections import Counter\n\nrandom.seed(1)\nprint(math.sqrt(49), random.choice(\"abc\"), Counter(\"hello\").most_common(1))\nwith open(\"demo_sheet.json\", \"w\") as f:\n    json.dump({\"scores\": [1, 2, 3]}, f)\nwith open(\"demo_sheet.json\") as f:\n    print(json.load(f)[\"scores\"], os.path.exists(\"demo_sheet.json\"))\n\ndef numbers():\n    n = 0\n    while True:\n        yield n\n        n += 1\ngen = numbers()\nprint([next(gen) for i in range(4)])\n\ndef twice(function):\n    def wrapper(*args):\n        return function(function(*args))\n    return wrapper\n@twice\ndef add3(n):\n    return n + 3\nprint(add3(10))\n\nfirst, *rest = [1, 2, 3, 4]\nprint(first, rest, {**{\"a\": 1}, \"b\": 2}, [*\"ab\", 9])\nmatch [1, 2]:\n    case [a, b]:\n        print(\"a pair:\", a, b)\nif (size := len(rest)) > 2:\n    print(\"size\", size)"
+     },
+     "title": {
+      "en": "Page 6: files, modules and tricks",
+      "it": "Pagina 6: file, moduli e trucchi",
+      "fr": "Page 6 : fichiers, modules et astuces"
+     },
+     "text": {
+      "en": "import brings tool boxes (math, random, json, os, collections). with open reads and writes files. A function with yield is a generator. A decorator wraps a function. The star unpacks, match picks by shape, and := names a value inside an expression.\n\nThat is the whole language on one page. When you forget something, come back here, or to the lesson.",
+      "it": "import porta le cassette degli attrezzi (math, random, json, os, collections). with open legge e scrive i file. Una funzione con yield è un generatore. Un decoratore avvolge una funzione. La stella apre, match sceglie dalla forma e := dà un nome a un valore dentro un'espressione.\n\nQuesto è tutto il linguaggio in una pagina. Quando dimentichi qualcosa, torna qui, o alla lezione.",
+      "fr": "import apporte des boîtes à outils (math, random, json, os, collections). with open lit et écrit des fichiers. Une fonction avec yield est un générateur. Un décorateur enveloppe une fonction. L'étoile déballe, match choisit selon la forme, et := donne un nom à une valeur dans une expression.\n\nC'est tout le langage sur une page. Quand tu oublies quelque chose, reviens ici, ou à la leçon."
+     },
+     "see": {
+      "en": "7.0 a [('l', 2)]\n[1, 2, 3] True\n[0, 1, 2, 3]\n16\n1 [2, 3, 4] {'a': 1, 'b': 2} ['a', 'b', 9]\na pair: 1 2\nsize 3",
+      "it": "7.0 a [('l', 2)]\n[1, 2, 3] True\n[0, 1, 2, 3]\n16\n1 [2, 3, 4] {'a': 1, 'b': 2} ['a', 'b', 9]\na pair: 1 2\nsize 3",
+      "fr": "7.0 a [('l', 2)]\n[1, 2, 3] True\n[0, 1, 2, 3]\n16\n1 [2, 3, 4] {'a': 1, 'b': 2} ['a', 'b', 9]\na pair: 1 2\nsize 3"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Use random.choice with the seed 1 to pick a letter from \"xyz\" and show it (any letter is fine).",
+       "it": "Usa random.choice con il seme 1 per scegliere una lettera da \"xyz\" e mostrala (va bene qualsiasi lettera).",
+       "fr": "Utilise random.choice avec la graine 1 pour choisir une lettre dans \"xyz\" et affiche-la (n'importe quelle lettre convient)."
+      },
+      "hint": {
+       "en": "random.seed(1) and print(random.choice(\"xyz\"))",
+       "it": "random.seed(1) e print(random.choice(\"xyz\"))",
+       "fr": "random.seed(1) puis print(random.choice(\"xyz\"))"
+      },
+      "sol": {
+       "en": "import random\nrandom.seed(1)\nprint(random.choice(\"xyz\"))",
+       "it": "import random\nrandom.seed(1)\nprint(random.choice(\"xyz\"))",
+       "fr": "import random\nrandom.seed(1)\nprint(random.choice(\"xyz\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": "^[xyz]$",
+        "c": "random\\.choice"
+       },
+       "it": {
+        "m": "^[xyz]$",
+        "c": "random\\.choice"
+       },
+       "fr": {
+        "m": "^[xyz]$",
+        "c": "random\\.choice"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": {
+    "en": "Appendix · Python on your computer",
+    "it": "Appendice · Python sul tuo computer",
+    "fr": "Annexe · Python sur ton ordinateur"
+   },
+   "title": {
+    "en": "Python in a terminal",
+    "it": "Python in un terminale",
+    "fr": "Python dans un terminal"
+   },
+   "subtitle": {
+    "en": "The commands every Python user types",
+    "it": "I comandi che ogni utente di Python scrive",
+    "fr": "Les commandes que tout utilisateur de Python tape"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "import sys\nprint(\"Python\", sys.version_info.major)\nprint(\"This is Python\", sys.version_info.major, \"and it is running your lines.\")",
+      "it": "import sys\nprint(\"Python\", sys.version_info.major)\nprint(\"This is Python\", sys.version_info.major, \"and it is running your lines.\")",
+      "fr": "import sys\nprint(\"Python\", sys.version_info.major)\nprint(\"This is Python\", sys.version_info.major, \"and it is running your lines.\")"
+     },
+     "title": {
+      "en": "The terminal and python3 --version",
+      "it": "Il terminale e python3 --version",
+      "fr": "Le terminal et python3 --version"
+     },
+     "text": {
+      "en": "Until now you wrote programs here, in Pyviel. Real programmers also run Python from a terminal: a window where you type a command and press Enter.\n\nOpen one. On a Mac it is the app called Terminal. On Windows it is PowerShell or Terminal. On Linux it is Terminal or Konsole. Type this and press Enter:\n\npython3 --version\n\nThe computer answers with the version, something like Python 3.14.8. On Windows the command is py instead of python3. The program on this page asks Python the same question from the inside, with the tool box sys.",
+      "it": "Finora hai scritto i programmi qui, in Pyviel. Chi programma esegue Python anche da un terminale: una finestra dove scrivi un comando e premi Invio.\n\nAprine uno. Su Mac è l'app che si chiama Terminale. Su Windows è PowerShell o Terminale. Su Linux è Terminale o Konsole. Scrivi questo e premi Invio:\n\npython3 --version\n\nIl computer risponde con la versione, qualcosa come Python 3.14.8. Su Windows il comando è py invece di python3. Il programma di questa pagina fa a Python la stessa domanda da dentro, con la cassetta sys.",
+      "fr": "Jusqu'ici tu as écrit les programmes ici, dans Pyviel. Les programmeurs lancent aussi Python depuis un terminal : une fenêtre où tu tapes une commande et appuies sur Entrée.\n\nOuvre-en un. Sur Mac c'est l'application Terminal. Sur Windows c'est PowerShell ou Terminal. Sur Linux c'est Terminal ou Konsole. Tape ceci et appuie sur Entrée :\n\npython3 --version\n\nL'ordinateur répond avec la version, quelque chose comme Python 3.14.8. Sous Windows la commande est py au lieu de python3. Le programme de cette page pose la même question à Python, de l'intérieur, avec la boîte sys."
+     },
+     "see": {
+      "en": "Python 3\nThis is Python 3 and it is running your lines.",
+      "it": "Python 3\nThis is Python 3 and it is running your lines.",
+      "fr": "Python 3\nThis is Python 3 and it is running your lines."
+     },
+     "slip": {
+      "en": "If the terminal says \"command not found\", Python is not installed on your computer yet. Get it free from python.org. Pyviel has its own Python inside, but the terminal cannot see it.",
+      "it": "Se il terminale dice \"command not found\", Python non è ancora installato sul tuo computer. Scaricalo gratis da python.org. Pyviel ha un suo Python dentro, ma il terminale non lo vede.",
+      "fr": "Si le terminal dit \"command not found\", Python n'est pas encore installé sur ton ordinateur. Prends-le gratuitement sur python.org. Pyviel a son propre Python à l'intérieur, mais le terminal ne le voit pas."
+     },
+     "news": [
+      {
+       "k": "module:sys",
+       "w": "sys",
+       "d": {
+        "en": "sys is a tool box about Python itself and the way the program was started: its version, the words typed after the file name, how to stop.",
+        "it": "sys è una cassetta di attrezzi su Python stesso e sul modo in cui il programma è partito: la sua versione, le parole scritte dopo il nome del file, come fermarsi.",
+        "fr": "sys est une boîte à outils sur Python lui-même et sur la façon dont le programme a démarré : sa version, les mots tapés après le nom du fichier, comment s'arrêter."
+       },
+       "s": {
+        "en": "import sys",
+        "it": "import sys",
+        "fr": "import sys"
+       }
+      },
+      {
+       "k": "sys.version_info",
+       "w": "sys.version_info",
+       "d": {
+        "en": "sys.version_info tells the version of Python that is running the program. .major is the big number: 3.",
+        "it": "sys.version_info dice la versione di Python che sta eseguendo il programma. .major è il numero grande: 3.",
+        "fr": "sys.version_info dit la version de Python qui lance le programme. .major est le grand nombre : 3."
+       },
+       "s": {
+        "en": "sys.version_info.major",
+        "it": "sys.version_info.major",
+        "fr": "sys.version_info.major"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the big number of the Python version, with sys.version_info.major (3).",
+       "it": "Mostra il numero grande della versione di Python, con sys.version_info.major (3).",
+       "fr": "Affiche le grand nombre de la version de Python, avec sys.version_info.major (3)."
+      },
+      "hint": {
+       "en": "import sys, then print(sys.version_info.major).",
+       "it": "import sys, poi print(sys.version_info.major).",
+       "fr": "import sys, puis print(sys.version_info.major)."
+      },
+      "sol": {
+       "en": "import sys\nprint(sys.version_info.major)",
+       "it": "import sys\nprint(sys.version_info.major)",
+       "fr": "import sys\nprint(sys.version_info.major)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "version_info"
+       },
+       "it": {
+        "out": "3",
+        "c": "version_info"
+       },
+       "fr": {
+        "out": "3",
+        "c": "version_info"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "3"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "# hello.py\nname = \"Ada\"\nprint(\"Hello,\", name)\nprint(\"This program was run from a file.\")",
+      "it": "# hello.py\nname = \"Ada\"\nprint(\"Ciao,\", name)\nprint(\"Questo programma è stato eseguito da un file.\")",
+      "fr": "# hello.py\nname = \"Ada\"\nprint(\"Bonjour,\", name)\nprint(\"Ce programme a été lancé depuis un fichier.\")"
+     },
+     "title": {
+      "en": "Run a file: python3 hello.py",
+      "it": "Eseguire un file: python3 hello.py",
+      "fr": "Lancer un fichier : python3 hello.py"
+     },
+     "text": {
+      "en": "A program that you want to keep lives in a file whose name ends in .py. You run it by giving the file name to Python.\n\nStep by step in the terminal: 1) go to the folder that holds the file with cd (change directory): cd Documents/Pyviel. 2) look at what is there with ls on Mac and Linux, or dir on Windows. 3) run it: python3 hello.py\n\nIn the desktop app of Pyviel, the Command button does the first part for you: it saves your program in the Pyviel folder and shows the exact lines to type.",
+      "it": "Un programma che vuoi tenere vive in un file il cui nome finisce con .py. Lo esegui dando a Python il nome del file.\n\nPasso per passo nel terminale: 1) vai nella cartella che contiene il file con cd (change directory): cd Documents/Pyviel. 2) guarda cosa c'è con ls su Mac e Linux, o dir su Windows. 3) eseguilo: python3 hello.py\n\nNell'app per computer di Pyviel il pulsante Comando fa la prima parte per te: salva il programma nella cartella Pyviel e mostra le righe esatte da scrivere.",
+      "fr": "Un programme que tu veux garder vit dans un fichier dont le nom finit par .py. Tu le lances en donnant le nom du fichier à Python.\n\nPas à pas dans le terminal : 1) va dans le dossier qui contient le fichier avec cd (change directory) : cd Documents/Pyviel. 2) regarde ce qu'il y a avec ls sur Mac et Linux, ou dir sous Windows. 3) lance-le : python3 hello.py\n\nDans l'application de bureau de Pyviel, le bouton Commande fait la première partie pour toi : il enregistre ton programme dans le dossier Pyviel et montre les lignes exactes à taper."
+     },
+     "see": {
+      "en": "Hello, Ada\nThis program was run from a file.",
+      "it": "Ciao, Ada\nQuesto programma è stato eseguito da un file.",
+      "fr": "Bonjour, Ada\nCe programme a été lancé depuis un fichier."
+     },
+     "slip": {
+      "en": "Python must find the file. If it says \"No such file or directory\", you are in the wrong folder, or the name is spelled differently. Capital letters count.",
+      "it": "Python deve trovare il file. Se dice \"No such file or directory\", sei nella cartella sbagliata o il nome è scritto diversamente. Le maiuscole contano.",
+      "fr": "Python doit trouver le fichier. S'il dit \"No such file or directory\", tu es dans le mauvais dossier ou le nom est écrit autrement. Les majuscules comptent."
+     },
+     "ex": {
+      "task": {
+       "en": "Write a program that shows your own greeting, with a note at the top that says the file name: # hello.py",
+       "it": "Scrivi un programma che mostra un tuo saluto, con una nota in cima che dice il nome del file: # hello.py",
+       "fr": "Écris un programme qui affiche ta propre salutation, avec une note en haut qui dit le nom du fichier : # hello.py"
+      },
+      "hint": {
+       "en": "# hello.py on the first line, then a print.",
+       "it": "# hello.py sulla prima riga, poi un print.",
+       "fr": "# hello.py sur la première ligne, puis un print."
+      },
+      "sol": {
+       "en": "# hello.py\nprint(\"Hi!\")",
+       "it": "# hello.py\nprint(\"Hi!\")",
+       "fr": "# hello.py\nprint(\"Hi!\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": ".",
+        "c": "# hello\\.py"
+       },
+       "it": {
+        "m": ".",
+        "c": "# hello\\.py"
+       },
+       "fr": {
+        "m": ".",
+        "c": "# hello\\.py"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(2 + 2)\nprint(\"ab\" * 3)\nprint(len(\"terminal\"))",
+      "it": "print(2 + 2)\nprint(\"ab\" * 3)\nprint(len(\"terminal\"))",
+      "fr": "print(2 + 2)\nprint(\"ab\" * 3)\nprint(len(\"terminal\"))"
+     },
+     "title": {
+      "en": "One line and the playground: -c and >>>",
+      "it": "Una riga e il campo giochi: -c e >>>",
+      "fr": "Une ligne et le terrain de jeu : -c et >>>"
+     },
+     "text": {
+      "en": "Two more ways to use Python without a file. One line: python3 -c \"print(2 + 2)\". The letter c means command: Python runs the text in the quotes and stops.\n\nThe playground: just type python3 and press Enter. You see >>> and Python waits. Type 2 + 2 and press Enter: it answers 4 at once. To leave, type exit() or press Ctrl+D (Ctrl+Z then Enter on Windows). The program on this page has the same three lines that you would type there.",
+      "it": "Altri due modi di usare Python senza un file. Una riga: python3 -c \"print(2 + 2)\". La lettera c vuol dire command: Python esegue il testo tra le virgolette e si ferma.\n\nIl campo giochi: scrivi solo python3 e premi Invio. Vedi >>> e Python aspetta. Scrivi 2 + 2 e premi Invio: risponde 4 subito. Per uscire scrivi exit() o premi Ctrl+D (Ctrl+Z poi Invio su Windows). Il programma di questa pagina ha le stesse tre righe che scriveresti là.",
+      "fr": "Deux autres façons d'utiliser Python sans fichier. Une ligne : python3 -c \"print(2 + 2)\". La lettre c veut dire command : Python exécute le texte entre guillemets et s'arrête.\n\nLe terrain de jeu : tape juste python3 et appuie sur Entrée. Tu vois >>> et Python attend. Tape 2 + 2 et appuie sur Entrée : il répond 4 tout de suite. Pour sortir, tape exit() ou appuie sur Ctrl+D (Ctrl+Z puis Entrée sous Windows). Le programme de cette page a les mêmes trois lignes que tu taperais là-bas."
+     },
+     "see": {
+      "en": "4\nababab\n8",
+      "it": "4\nababab\n8",
+      "fr": "4\nababab\n8"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show 10 * 10 and the word abc repeated 2 times, on two lines.",
+       "it": "Mostra 10 * 10 e la parola abc ripetuta 2 volte, su due righe.",
+       "fr": "Affiche 10 * 10 et le mot abc répété 2 fois, sur deux lignes."
+      },
+      "hint": {
+       "en": "print(10 * 10) and print(\"abc\" * 2)",
+       "it": "print(10 * 10) e print(\"abc\" * 2)",
+       "fr": "print(10 * 10) et print(\"abc\" * 2)"
+      },
+      "sol": {
+       "en": "print(10 * 10)\nprint(\"abc\" * 2)",
+       "it": "print(10 * 10)\nprint(\"abc\" * 2)",
+       "fr": "print(10 * 10)\nprint(\"abc\" * 2)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "100\nabcabc"
+       },
+       "it": {
+        "out": "100\nabcabc"
+       },
+       "fr": {
+        "out": "100\nabcabc"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "100\nabcabc",
+       "it": "100\nabcabc",
+       "fr": "100\nabcabc"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Give your program information",
+    "it": "Dai informazioni al tuo programma",
+    "fr": "Donne des informations à ton programme"
+   },
+   "subtitle": {
+    "en": "Arguments, exit codes and the main guard",
+    "it": "Argomenti, codici di uscita e la guardia main",
+    "fr": "Arguments, codes de sortie et la garde main"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "import sys\n\nnames = sys.argv[1:]\nif names:\n    for name in names:\n        print(\"Hello,\", name)\nelse:\n    print(\"No names given. Run it like: python3 hello.py Ada Linus\")",
+      "it": "import sys\n\nnames = sys.argv[1:]\nif names:\n    for name in names:\n        print(\"Ciao,\", name)\nelse:\n    print(\"Nessun nome. Eseguilo così: python3 hello.py Ada Linus\")",
+      "fr": "import sys\n\nnames = sys.argv[1:]\nif names:\n    for name in names:\n        print(\"Bonjour,\", name)\nelse:\n    print(\"Aucun nom. Lance-le ainsi : python3 hello.py Ada Linus\")"
+     },
+     "title": {
+      "en": "Arguments: sys.argv",
+      "it": "Gli argomenti: sys.argv",
+      "fr": "Les arguments : sys.argv"
+     },
+     "text": {
+      "en": "After the file name you can write more words: python3 hello.py Ada Linus. Python collects them in a list called sys.argv.\n\nInside the program, sys.argv is [\"hello.py\", \"Ada\", \"Linus\"]. The first item is always the name of the file, so the real arguments start at place 1: sys.argv[1:]. Words with spaces need quotes: python3 hello.py \"Ada Lovelace\". Here nobody gave names, so the program explains how to run it.",
+      "it": "Dopo il nome del file puoi scrivere altre parole: python3 hello.py Ada Linus. Python le raccoglie in una lista che si chiama sys.argv.\n\nDentro il programma, sys.argv è [\"hello.py\", \"Ada\", \"Linus\"]. Il primo elemento è sempre il nome del file, quindi gli argomenti veri partono dal posto 1: sys.argv[1:]. Le parole con spazi vogliono le virgolette: python3 hello.py \"Ada Lovelace\". Qui nessuno ha dato dei nomi, quindi il programma spiega come eseguirlo.",
+      "fr": "Après le nom du fichier tu peux écrire d'autres mots : python3 hello.py Ada Linus. Python les range dans une liste appelée sys.argv.\n\nDans le programme, sys.argv vaut [\"hello.py\", \"Ada\", \"Linus\"]. Le premier élément est toujours le nom du fichier, donc les vrais arguments commencent à la place 1 : sys.argv[1:]. Les mots avec des espaces veulent des guillemets : python3 hello.py \"Ada Lovelace\". Ici personne n'a donné de noms, alors le programme explique comment le lancer."
+     },
+     "see": {
+      "en": "No names given. Run it like: python3 hello.py Ada Linus",
+      "it": "Nessun nome. Eseguilo così: python3 hello.py Ada Linus",
+      "fr": "Aucun nom. Lance-le ainsi : python3 hello.py Ada Linus"
+     },
+     "slip": {
+      "en": "Arguments always arrive as text. The word 5 is \"5\", not the number 5: use int() to turn it into a number.",
+      "it": "Gli argomenti arrivano sempre come testo. La parola 5 è \"5\", non il numero 5: usa int() per trasformarla in numero.",
+      "fr": "Les arguments arrivent toujours sous forme de texte. Le mot 5 est \"5\", pas le nombre 5 : utilise int() pour en faire un nombre."
+     },
+     "news": [
+      {
+       "k": "sys.argv",
+       "w": "sys.argv",
+       "d": {
+        "en": "sys.argv is the list of the words typed after the file name in the terminal. The first item is always the name of the file, so the real arguments start at place 1: sys.argv[1:]. They always arrive as text.",
+        "it": "sys.argv è la lista delle parole scritte dopo il nome del file nel terminale. Il primo elemento è sempre il nome del file, quindi gli argomenti veri partono dal posto 1: sys.argv[1:]. Arrivano sempre come testo.",
+        "fr": "sys.argv est la liste des mots tapés après le nom du fichier dans le terminal. Le premier élément est toujours le nom du fichier, donc les vrais arguments commencent à la place 1 : sys.argv[1:]. Ils arrivent toujours sous forme de texte."
+       },
+       "s": {
+        "en": "sys.argv[1:]",
+        "it": "sys.argv[1:]",
+        "fr": "sys.argv[1:]"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show how many words were typed after the file name: len(sys.argv[1:]) (0 here).",
+       "it": "Mostra quante parole sono state scritte dopo il nome del file: len(sys.argv[1:]) (qui 0).",
+       "fr": "Affiche combien de mots ont été tapés après le nom du fichier : len(sys.argv[1:]) (ici 0)."
+      },
+      "hint": {
+       "en": "print(len(sys.argv[1:]))",
+       "it": "print(len(sys.argv[1:]))",
+       "fr": "print(len(sys.argv[1:]))"
+      },
+      "sol": {
+       "en": "import sys\nprint(len(sys.argv[1:]))",
+       "it": "import sys\nprint(len(sys.argv[1:]))",
+       "fr": "import sys\nprint(len(sys.argv[1:]))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "0",
+        "c": "argv"
+       },
+       "it": {
+        "out": "0",
+        "c": "argv"
+       },
+       "fr": {
+        "out": "0",
+        "c": "argv"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "0",
+       "it": "0",
+       "fr": "0"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])",
+      "it": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Uso: python3 greet.py NOME\")\n    sys.exit(1)\nprint(\"Ciao,\", sys.argv[1])",
+      "fr": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage : python3 greet.py NOM\")\n    sys.exit(1)\nprint(\"Bonjour,\", sys.argv[1])"
+     },
+     "title": {
+      "en": "Saying how it went: exit codes",
+      "it": "Dire com'è andata: i codici di uscita",
+      "fr": "Dire comment ça s'est passé : les codes de sortie"
+     },
+     "text": {
+      "en": "When a program ends, it leaves a small number behind: the exit code. 0 means all went well. Any other number means something went wrong. sys.exit(1) stops the program right there and leaves the code 1. Python itself leaves 1 when a program stops with an error, and 0 when it ends normally.\n\nYou can look at the last code in the terminal: on Mac and Linux type echo $? and on Windows PowerShell type echo $LASTEXITCODE. Other programs use this number to know if yours worked. That is why a good program that is used wrongly prints a short usage line and exits with 1.",
+      "it": "Quando un programma finisce, lascia dietro un piccolo numero: il codice di uscita. 0 vuol dire che è andato tutto bene. Qualsiasi altro numero vuol dire che qualcosa è andato storto. sys.exit(1) ferma il programma lì e lascia il codice 1. Python stesso lascia 1 quando un programma si ferma con un errore, e 0 quando finisce normalmente.\n\nPuoi guardare l'ultimo codice nel terminale: su Mac e Linux scrivi echo $? e su Windows PowerShell scrivi echo $LASTEXITCODE. Altri programmi usano questo numero per sapere se il tuo ha funzionato. Per questo un buon programma usato male scrive una breve riga di uso ed esce con 1.",
+      "fr": "Quand un programme se termine, il laisse derrière lui un petit nombre : le code de sortie. 0 veut dire que tout s'est bien passé. Tout autre nombre veut dire que quelque chose a mal tourné. sys.exit(1) arrête le programme là et laisse le code 1. Python lui-même laisse 1 quand un programme s'arrête sur une erreur, et 0 quand il se termine normalement.\n\nTu peux voir le dernier code dans le terminal : sur Mac et Linux tape echo $? et sous Windows PowerShell tape echo $LASTEXITCODE. D'autres programmes utilisent ce nombre pour savoir si le tien a marché. C'est pourquoi un bon programme mal utilisé affiche une courte ligne d'usage et sort avec 1."
+     },
+     "see": {
+      "en": "Usage: python3 greet.py NAME",
+      "it": "Uso: python3 greet.py NOME",
+      "fr": "Usage : python3 greet.py NOM"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "sys.exit",
+       "w": "sys.exit( )",
+       "d": {
+        "en": "sys.exit stops the program right there and leaves a small number behind: the exit code. 0 means all went well, any other number means a problem.",
+        "it": "sys.exit ferma il programma lì e lascia dietro un piccolo numero: il codice di uscita. 0 vuol dire che è andato tutto bene, ogni altro numero vuol dire un problema.",
+        "fr": "sys.exit arrête le programme là et laisse derrière lui un petit nombre : le code de sortie. 0 veut dire que tout s'est bien passé, tout autre nombre veut dire un problème."
+       },
+       "s": {
+        "en": "sys.exit(1)",
+        "it": "sys.exit(1)",
+        "fr": "sys.exit(1)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make the program print its usage line and stop with the code 1 when no name is given. Keep it: with no name it must show the usage.",
+       "it": "Fai in modo che il programma scriva la riga di uso e si fermi con il codice 1 quando non è dato nessun nome. Tienilo: senza nome deve mostrare l'uso.",
+       "fr": "Fais en sorte que le programme affiche sa ligne d'usage et s'arrête avec le code 1 quand aucun nom n'est donné. Garde-le : sans nom il doit afficher l'usage."
+      },
+      "hint": {
+       "en": "It already does: just press Check.",
+       "it": "Lo fa già: premi solo Controlla.",
+       "fr": "Il le fait déjà : appuie simplement sur Vérifier."
+      },
+      "sol": {
+       "en": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])",
+       "it": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])",
+       "fr": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": "Usage",
+        "c": "sys\\.exit"
+       },
+       "it": {
+        "m": "Usage",
+        "c": "sys\\.exit"
+       },
+       "fr": {
+        "m": "Usage",
+        "c": "sys\\.exit"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def main():\n    print(\"The program starts here.\")\n\nif __name__ == \"__main__\":\n    main()",
+      "it": "def main():\n    print(\"Il programma parte da qui.\")\n\nif __name__ == \"__main__\":\n    main()",
+      "fr": "def main():\n    print(\"Le programme démarre ici.\")\n\nif __name__ == \"__main__\":\n    main()"
+     },
+     "title": {
+      "en": "The main guard again",
+      "it": "La guardia main, ancora",
+      "fr": "La garde main, encore"
+     },
+     "text": {
+      "en": "You met if __name__ == \"__main__\": in the lesson about good programs. In the terminal you see what it is for. When you run a file directly (python3 hello.py), its name is \"__main__\". When another file imports it (import hello), its name is \"hello\".\n\nSo the guard runs main only when the file is started on its own. One file can be both a program and a toolbox of functions that others can import safely.",
+      "it": "Hai conosciuto if __name__ == \"__main__\": nella lezione sui buoni programmi. Nel terminale vedi a cosa serve. Quando esegui un file direttamente (python3 hello.py), il suo nome è \"__main__\". Quando un altro file lo importa (import hello), il suo nome è \"hello\".\n\nQuindi la guardia esegue main solo quando il file parte da solo. Un file può essere insieme un programma e una cassetta di funzioni che altri importano senza rischi.",
+      "fr": "Tu as rencontré if __name__ == \"__main__\": dans la leçon sur les bons programmes. Dans le terminal tu vois à quoi ça sert. Quand tu lances un fichier directement (python3 hello.py), son nom est \"__main__\". Quand un autre fichier l'importe (import hello), son nom est \"hello\".\n\nDonc la garde ne lance main que quand le fichier démarre tout seul. Un fichier peut être à la fois un programme et une boîte à outils de fonctions que d'autres importent sans risque."
+     },
+     "see": {
+      "en": "The program starts here.",
+      "it": "Il programma parte da qui.",
+      "fr": "Le programme démarre ici."
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Add a second function called other that shows \"other\" and call it from main.",
+       "it": "Aggiungi una seconda funzione che si chiama other che mostra \"other\" e chiamala da main.",
+       "fr": "Ajoute une deuxième fonction qui s'appelle other qui affiche \"other\" et appelle-la depuis main."
+      },
+      "hint": {
+       "en": "def other(): print(\"other\"), and other() inside main.",
+       "it": "def other(): print(\"other\"), e other() dentro main.",
+       "fr": "def other(): print(\"other\"), et other() dans main."
+      },
+      "sol": {
+       "en": "def other():\n    print(\"other\")\n\ndef main():\n    print(\"start\")\n    other()\n\nif __name__ == \"__main__\":\n    main()",
+       "it": "def other():\n    print(\"other\")\n\ndef main():\n    print(\"start\")\n    other()\n\nif __name__ == \"__main__\":\n    main()",
+       "fr": "def other():\n    print(\"other\")\n\ndef main():\n    print(\"start\")\n    other()\n\nif __name__ == \"__main__\":\n    main()"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": "other",
+        "c": "def other"
+       },
+       "it": {
+        "m": "other",
+        "c": "def other"
+       },
+       "fr": {
+        "m": "other",
+        "c": "def other"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Greets people\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"friend\")\nparser.add_argument(\"--shout\", action=\"store_true\")\nargs = parser.parse_args()\n\nmessage = \"Hello, \" + args.name\nif args.shout:\n    message = message.upper() + \"!\"\nprint(message)",
+      "it": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Saluta le persone\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"amico\")\nparser.add_argument(\"--shout\", action=\"store_true\")\nargs = parser.parse_args()\n\nmessage = \"Ciao, \" + args.name\nif args.shout:\n    message = message.upper() + \"!\"\nprint(message)",
+      "fr": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Salue les gens\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"ami\")\nparser.add_argument(\"--shout\", action=\"store_true\")\nargs = parser.parse_args()\n\nmessage = \"Bonjour, \" + args.name\nif args.shout:\n    message = message.upper() + \"!\"\nprint(message)"
+     },
+     "title": {
+      "en": "argparse: arguments with names and help",
+      "it": "argparse: argomenti con nomi e aiuto",
+      "fr": "argparse : des arguments avec des noms et une aide"
+     },
+     "text": {
+      "en": "When a program has many options, reading sys.argv by hand gets messy. The module argparse does it for you, and gives a free help page. You describe the arguments you accept: add_argument(\"name\") is a word, and add_argument(\"--shout\", action=\"store_true\") is a switch that is either given or not.\n\nThen parse_args() reads the command line and fills an object: args.name and args.shout. In a terminal: python3 greet.py Ada --shout prints HELLO, ADA! and python3 greet.py --help prints a help page that argparse wrote by itself. A wrong option gets a clear error and exit code 2.",
+      "it": "Quando un programma ha molte opzioni, leggere sys.argv a mano diventa un pasticcio. Il modulo argparse lo fa per te e dà una pagina di aiuto gratis. Descrivi gli argomenti che accetti: add_argument(\"name\") è una parola, e add_argument(\"--shout\", action=\"store_true\") è un interruttore che c'è oppure no.\n\nPoi parse_args() legge la riga di comando e riempie un oggetto: args.name e args.shout. In un terminale: python3 greet.py Ada --shout scrive CIAO, ADA! e python3 greet.py --help scrive una pagina di aiuto che argparse ha scritto da solo. Un'opzione sbagliata riceve un errore chiaro e il codice di uscita 2.",
+      "fr": "Quand un programme a beaucoup d'options, lire sys.argv à la main devient confus. Le module argparse le fait pour toi, et donne une page d'aide gratuite. Tu décris les arguments acceptés : add_argument(\"name\") est un mot, et add_argument(\"--shout\", action=\"store_true\") est un interrupteur qui est donné ou non.\n\nPuis parse_args() lit la ligne de commande et remplit un objet : args.name et args.shout. Dans un terminal : python3 greet.py Ada --shout affiche BONJOUR, ADA ! et python3 greet.py --help affiche une page d'aide qu'argparse a écrite tout seul. Une mauvaise option reçoit une erreur claire et le code de sortie 2."
+     },
+     "see": {
+      "en": "Hello, friend",
+      "it": "Ciao, amico",
+      "fr": "Bonjour, ami"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "module:argparse",
+       "w": "argparse",
+       "d": {
+        "en": "argparse is a tool box that reads the command line for you, and gives a free help page.",
+        "it": "argparse è una cassetta di attrezzi che legge la riga di comando per te e dà gratis una pagina di aiuto.",
+        "fr": "argparse est une boîte à outils qui lit la ligne de commande pour toi, et donne une page d'aide gratuite."
+       },
+       "s": {
+        "en": "import argparse",
+        "it": "import argparse",
+        "fr": "import argparse"
+       }
+      },
+      {
+       "k": "argparse.ArgumentParser",
+       "w": "ArgumentParser( )",
+       "d": {
+        "en": "argparse.ArgumentParser makes the helper that reads the command line. description= is the sentence for the help page.",
+        "it": "argparse.ArgumentParser crea l'aiutante che legge la riga di comando. description= è la frase per la pagina di aiuto.",
+        "fr": "argparse.ArgumentParser crée l'assistant qui lit la ligne de commande. description= est la phrase pour la page d'aide."
+       },
+       "s": {
+        "en": "parser = argparse.ArgumentParser(description=\"...\")",
+        "it": "parser = argparse.ArgumentParser(description=\"...\")",
+        "fr": "parser = argparse.ArgumentParser(description=\"...\")"
+       }
+      },
+      {
+       "k": "arg:description",
+       "w": "description=",
+       "d": {
+        "en": "description= is the sentence that the help page shows at the top.",
+        "it": "description= è la frase che la pagina di aiuto mostra in cima.",
+        "fr": "description= est la phrase que la page d'aide montre en haut."
+       },
+       "s": {
+        "en": "ArgumentParser(description=\"Greets people\")",
+        "it": "ArgumentParser(description=\"Greets people\")",
+        "fr": "ArgumentParser(description=\"Greets people\")"
+       }
+      },
+      {
+       "k": ".add_argument",
+       "w": ".add_argument( )",
+       "d": {
+        "en": "add_argument tells the helper about one word or one switch that the program accepts. A name like \"name\" is a word; a name like \"--shout\" is a switch that is given or not.",
+        "it": "add_argument parla all'aiutante di una parola o di un interruttore che il programma accetta. Un nome come \"name\" è una parola; un nome come \"--shout\" è un interruttore che c'è oppure no.",
+        "fr": "add_argument parle à l'assistant d'un mot ou d'un interrupteur que le programme accepte. Un nom comme \"name\" est un mot ; un nom comme \"--shout\" est un interrupteur qui est donné ou non."
+       },
+       "s": {
+        "en": "parser.add_argument(\"--shout\", action=\"store_true\")",
+        "it": "parser.add_argument(\"--shout\", action=\"store_true\")",
+        "fr": "parser.add_argument(\"--shout\", action=\"store_true\")"
+       }
+      },
+      {
+       "k": "arg:nargs",
+       "w": "nargs=\"?\"",
+       "d": {
+        "en": "nargs=\"?\" says that the word is optional: it may be given once, or not at all.",
+        "it": "nargs=\"?\" dice che la parola è facoltativa: può essere data una volta, o per niente.",
+        "fr": "nargs=\"?\" dit que le mot est facultatif : il peut être donné une fois, ou pas du tout."
+       },
+       "s": {
+        "en": "add_argument(\"name\", nargs=\"?\")",
+        "it": "add_argument(\"name\", nargs=\"?\")",
+        "fr": "add_argument(\"name\", nargs=\"?\")"
+       }
+      },
+      {
+       "k": "arg:default",
+       "w": "default=",
+       "d": {
+        "en": "default= is the value to use when the word is not given.",
+        "it": "default= è il valore da usare quando la parola non viene data.",
+        "fr": "default= est la valeur à utiliser quand le mot n'est pas donné."
+       },
+       "s": {
+        "en": "add_argument(\"name\", default=\"friend\")",
+        "it": "add_argument(\"name\", default=\"friend\")",
+        "fr": "add_argument(\"name\", default=\"friend\")"
+       }
+      },
+      {
+       "k": "arg:action",
+       "w": "action=\"store_true\"",
+       "d": {
+        "en": "action=\"store_true\" makes a switch: it is True when the switch is typed, and False when it is not.",
+        "it": "action=\"store_true\" fa un interruttore: è True quando l'interruttore viene scritto, e False quando no.",
+        "fr": "action=\"store_true\" fait un interrupteur : c'est True quand l'interrupteur est tapé, et False sinon."
+       },
+       "s": {
+        "en": "add_argument(\"--shout\", action=\"store_true\")",
+        "it": "add_argument(\"--shout\", action=\"store_true\")",
+        "fr": "add_argument(\"--shout\", action=\"store_true\")"
+       }
+      },
+      {
+       "k": ".parse_args",
+       "w": ".parse_args( )",
+       "d": {
+        "en": "parse_args reads what was typed in the terminal and fills an object: args.name and args.shout. A wrong option gets a clear error and the exit code 2.",
+        "it": "parse_args legge quello che è stato scritto nel terminale e riempie un oggetto: args.name e args.shout. Un'opzione sbagliata riceve un errore chiaro e il codice di uscita 2.",
+        "fr": "parse_args lit ce qui a été tapé dans le terminal et remplit un objet : args.name et args.shout. Une mauvaise option reçoit une erreur claire et le code de sortie 2."
+       },
+       "s": {
+        "en": "args = parser.parse_args()",
+        "it": "args = parser.parse_args()",
+        "fr": "args = parser.parse_args()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Run it as it is: with no words typed, it must show a greeting to the default name.",
+       "it": "Eseguilo così com'è: senza parole scritte deve mostrare un saluto al nome predefinito.",
+       "fr": "Lance-le tel quel : sans mots tapés, il doit afficher une salutation au nom par défaut."
+      },
+      "hint": {
+       "en": "Just press Check my program.",
+       "it": "Premi solo Controlla il mio programma.",
+       "fr": "Appuie simplement sur Vérifier mon programme."
+      },
+      "sol": {
+       "en": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Greets people\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"friend\")\nargs = parser.parse_args()\nprint(\"Hello, \" + args.name)",
+       "it": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Saluta le persone\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"amico\")\nargs = parser.parse_args()\nprint(\"Ciao, \" + args.name)",
+       "fr": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Salue les gens\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"ami\")\nargs = parser.parse_args()\nprint(\"Bonjour, \" + args.name)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Hello, friend",
+        "c": "argparse"
+       },
+       "it": {
+        "out": "Ciao, amico",
+        "c": "argparse"
+       },
+       "fr": {
+        "out": "Bonjour, ami",
+        "c": "argparse"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Hello, friend",
+       "it": "Ciao, amico",
+       "fr": "Bonjour, ami"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Tools around Python",
+    "it": "Gli strumenti attorno a Python",
+    "fr": "Les outils autour de Python"
+   },
+   "subtitle": {
+    "en": "Modules, pip, virtual environments, tracebacks and scripts",
+    "it": "Moduli, pip, ambienti virtuali, traceback e script",
+    "fr": "Modules, pip, environnements virtuels, tracebacks et scripts"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "import json\n\ndata = {\"name\": \"Ada\", \"scores\": [3, 5, 8]}\ntext = json.dumps(data, indent=2)\nprint(text)",
+      "it": "import json\n\ndata = {\"name\": \"Ada\", \"scores\": [3, 5, 8]}\ntext = json.dumps(data, indent=2)\nprint(text)",
+      "fr": "import json\n\ndata = {\"name\": \"Ada\", \"scores\": [3, 5, 8]}\ntext = json.dumps(data, indent=2)\nprint(text)"
+     },
+     "title": {
+      "en": "Run a module: python3 -m",
+      "it": "Eseguire un modulo: python3 -m",
+      "fr": "Lancer un module : python3 -m"
+     },
+     "text": {
+      "en": "-m means module. Python can run a module from its big library as if it were a program. python3 -m json.tool data.json shows a JSON file nicely indented. The program on this page does the same job from the inside, with json.dumps.\n\nSome modules that are useful every day: python3 -m http.server shares the current folder at localhost:8000. python3 -m unittest runs your tests. python3 -m venv .venv makes a virtual environment. python3 -m pip install requests installs a package.",
+      "it": "-m vuol dire modulo. Python può eseguire un modulo della sua grande libreria come se fosse un programma. python3 -m json.tool data.json mostra un file JSON ben rientrato. Il programma di questa pagina fa lo stesso lavoro da dentro, con json.dumps.\n\nAlcuni moduli utili ogni giorno: python3 -m http.server condivide la cartella attuale su localhost:8000. python3 -m unittest esegue i tuoi test. python3 -m venv .venv crea un ambiente virtuale. python3 -m pip install requests installa un pacchetto.",
+      "fr": "-m veut dire module. Python peut lancer un module de sa grande bibliothèque comme si c'était un programme. python3 -m json.tool data.json affiche un fichier JSON bien indenté. Le programme de cette page fait le même travail de l'intérieur, avec json.dumps.\n\nQuelques modules utiles tous les jours : python3 -m http.server partage le dossier actuel sur localhost:8000. python3 -m unittest lance tes tests. python3 -m venv .venv crée un environnement virtuel. python3 -m pip install requests installe un paquet."
+     },
+     "see": {
+      "en": "{\n  \"name\": \"Ada\",\n  \"scores\": [\n    3,\n    5,\n    8\n  ]\n}",
+      "it": "{\n  \"name\": \"Ada\",\n  \"scores\": [\n    3,\n    5,\n    8\n  ]\n}",
+      "fr": "{\n  \"name\": \"Ada\",\n  \"scores\": [\n    3,\n    5,\n    8\n  ]\n}"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show the dictionary {\"a\": [1, 2]} as JSON text indented by 2 spaces.",
+       "it": "Mostra il dizionario {\"a\": [1, 2]} come testo JSON rientrato di 2 spazi.",
+       "fr": "Affiche le dictionnaire {\"a\": [1, 2]} comme texte JSON décalé de 2 espaces."
+      },
+      "hint": {
+       "en": "print(json.dumps({\"a\": [1, 2]}, indent=2))",
+       "it": "print(json.dumps({\"a\": [1, 2]}, indent=2))",
+       "fr": "print(json.dumps({\"a\": [1, 2]}, indent=2))"
+      },
+      "sol": {
+       "en": "import json\nprint(json.dumps({\"a\": [1, 2]}, indent=2))",
+       "it": "import json\nprint(json.dumps({\"a\": [1, 2]}, indent=2))",
+       "fr": "import json\nprint(json.dumps({\"a\": [1, 2]}, indent=2))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": "\"a\"",
+        "c": "indent=2"
+       },
+       "it": {
+        "m": "\"a\"",
+        "c": "indent=2"
+       },
+       "fr": {
+        "m": "\"a\"",
+        "c": "indent=2"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import sys\n\ninside = sys.prefix != sys.base_prefix\nprint(\"Inside a virtual environment:\", inside)",
+      "it": "import sys\n\ninside = sys.prefix != sys.base_prefix\nprint(\"Inside a virtual environment:\", inside)",
+      "fr": "import sys\n\ninside = sys.prefix != sys.base_prefix\nprint(\"Inside a virtual environment:\", inside)"
+     },
+     "title": {
+      "en": "pip and virtual environments",
+      "it": "pip e gli ambienti virtuali",
+      "fr": "pip et les environnements virtuels"
+     },
+     "text": {
+      "en": "Python has a huge shop of free packages that other people wrote, called PyPI. pip is the tool that downloads them: python3 -m pip install requests.\n\nIf every project installs into the same place, they start to fight over versions. The cure is a virtual environment: a private folder with its own Python and its own packages, one for each project. python3 -m venv .venv makes it, and source .venv/bin/activate (Mac and Linux) or .venv\\Scripts\\activate (Windows) turns it on. After activating, the terminal line starts with (.venv). Type deactivate to come back. The program checks whether you are inside one: here the answer is False.",
+      "it": "Python ha un enorme negozio di pacchetti gratuiti scritti da altri, chiamato PyPI. pip è lo strumento che li scarica: python3 -m pip install requests.\n\nSe ogni progetto installa nello stesso posto, iniziano a litigare per le versioni. La cura è un ambiente virtuale: una cartella privata con il suo Python e i suoi pacchetti, una per ogni progetto. python3 -m venv .venv lo crea, e source .venv/bin/activate (Mac e Linux) o .venv\\Scripts\\activate (Windows) lo accende. Dopo l'attivazione la riga del terminale inizia con (.venv). Scrivi deactivate per tornare indietro. Il programma controlla se sei dentro uno: qui la risposta è False.",
+      "fr": "Python a une énorme boutique de paquets gratuits écrits par d'autres, appelée PyPI. pip est l'outil qui les télécharge : python3 -m pip install requests.\n\nSi chaque projet installe au même endroit, les versions se disputent. Le remède est un environnement virtuel : un dossier privé avec son propre Python et ses propres paquets, un pour chaque projet. python3 -m venv .venv le crée, et source .venv/bin/activate (Mac et Linux) ou .venv\\Scripts\\activate (Windows) l'active. Après l'activation, la ligne du terminal commence par (.venv). Tape deactivate pour revenir. Le programme vérifie si tu es dans un environnement : ici la réponse est False."
+     },
+     "see": {
+      "en": "Inside a virtual environment: False",
+      "it": "Inside a virtual environment: False",
+      "fr": "Inside a virtual environment: False"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "sys.prefix",
+       "w": "sys.prefix",
+       "d": {
+        "en": "sys.prefix is the place of the Python that is running. Inside a virtual environment it is different from sys.base_prefix.",
+        "it": "sys.prefix è il posto del Python che sta girando. Dentro un ambiente virtuale è diverso da sys.base_prefix.",
+        "fr": "sys.prefix est l'endroit du Python qui tourne. Dans un environnement virtuel il est différent de sys.base_prefix."
+       },
+       "s": {
+        "en": "sys.prefix",
+        "it": "sys.prefix",
+        "fr": "sys.prefix"
+       }
+      },
+      {
+       "k": "sys.base_prefix",
+       "w": "sys.base_prefix",
+       "d": {
+        "en": "sys.base_prefix is the place of the main Python. Compare it with sys.prefix to know if you are inside a virtual environment.",
+        "it": "sys.base_prefix è il posto del Python principale. Confrontalo con sys.prefix per sapere se sei dentro un ambiente virtuale.",
+        "fr": "sys.base_prefix est l'endroit du Python principal. Compare-le avec sys.prefix pour savoir si tu es dans un environnement virtuel."
+       },
+       "s": {
+        "en": "sys.base_prefix",
+        "it": "sys.base_prefix",
+        "fr": "sys.base_prefix"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show whether sys.prefix is equal to sys.base_prefix (True here, because there is no virtual environment).",
+       "it": "Mostra se sys.prefix è uguale a sys.base_prefix (qui True, perché non c'è un ambiente virtuale).",
+       "fr": "Affiche si sys.prefix est égal à sys.base_prefix (ici True, parce qu'il n'y a pas d'environnement virtuel)."
+      },
+      "hint": {
+       "en": "print(sys.prefix == sys.base_prefix)",
+       "it": "print(sys.prefix == sys.base_prefix)",
+       "fr": "print(sys.prefix == sys.base_prefix)"
+      },
+      "sol": {
+       "en": "import sys\nprint(sys.prefix == sys.base_prefix)",
+       "it": "import sys\nprint(sys.prefix == sys.base_prefix)",
+       "fr": "import sys\nprint(sys.prefix == sys.base_prefix)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "base_prefix"
+       },
+       "it": {
+        "out": "True",
+        "c": "base_prefix"
+       },
+       "fr": {
+        "out": "True",
+        "c": "base_prefix"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def divide(a, b):\n    return a / b\n\nprint(divide(10, 2))\nprint(divide(1, 0))",
+      "it": "def divide(a, b):\n    return a / b\n\nprint(divide(10, 2))\nprint(divide(1, 0))",
+      "fr": "def divide(a, b):\n    return a / b\n\nprint(divide(10, 2))\nprint(divide(1, 0))"
+     },
+     "title": {
+      "en": "Reading a real traceback",
+      "it": "Leggere un traceback vero",
+      "fr": "Lire un vrai traceback"
+     },
+     "text": {
+      "en": "In a terminal, an error is not shown in friendly words. Python prints a traceback, and it is the same text that the View full error button shows in Pyviel.\n\nTraceback (most recent call last):\n  File \"divide.py\", line 5, in <module>\n    print(divide(1, 0))\n  File \"divide.py\", line 2, in divide\n    return a / b\nZeroDivisionError: division by zero\n\nRead it from the bottom up. The last line is the kind of error and what happened. Above it are the steps that led there: the file, the line number and the line itself. Here line 5 called divide, and line 2 inside divide broke.",
+      "it": "In un terminale un errore non è mostrato in parole amichevoli. Python scrive un traceback, ed è lo stesso testo che mostra il pulsante View full error in Pyviel.\n\nTraceback (most recent call last):\n  File \"divide.py\", line 5, in <module>\n    print(divide(1, 0))\n  File \"divide.py\", line 2, in divide\n    return a / b\nZeroDivisionError: division by zero\n\nLeggilo dal basso verso l'alto. L'ultima riga è il tipo di errore e cosa è successo. Sopra ci sono i passi che hanno portato fin lì: il file, il numero di riga e la riga stessa. Qui la riga 5 ha chiamato divide, e la riga 2 dentro divide si è rotta.",
+      "fr": "Dans un terminal, une erreur n'est pas montrée avec des mots amicaux. Python affiche un traceback, et c'est le même texte que montre le bouton View full error dans Pyviel.\n\nTraceback (most recent call last):\n  File \"divide.py\", line 5, in <module>\n    print(divide(1, 0))\n  File \"divide.py\", line 2, in divide\n    return a / b\nZeroDivisionError: division by zero\n\nLis-le de bas en haut. La dernière ligne est le genre d'erreur et ce qui s'est passé. Au-dessus il y a les étapes qui y ont mené : le fichier, le numéro de ligne et la ligne elle-même. Ici la ligne 5 a appelé divide, et la ligne 2 dans divide a cassé."
+     },
+     "see": {
+      "en": "5.0\n⚠ Line 2: A number was divided by zero.",
+      "it": "5.0\n⚠ Riga 2: Un numero è stato diviso per zero.",
+      "fr": "5.0\n⚠ Ligne 2: Un nombre a été divisé par zéro."
+     },
+     "slip": null,
+     "error": "ZeroDivisionError",
+     "ex": {
+      "task": {
+       "en": "Press Run, then View full error, and find the line number. Then fix the second call so it divides 8 by 2 and shows 4.0.",
+       "it": "Premi Esegui, poi View full error e trova il numero di riga. Poi correggi la seconda chiamata così divide 8 per 2 e mostra 4.0.",
+       "fr": "Appuie sur Lancer, puis View full error et trouve le numéro de ligne. Puis corrige le deuxième appel pour qu'il divise 8 par 2 et affiche 4.0."
+      },
+      "hint": {
+       "en": "divide(8, 2)",
+       "it": "divide(8, 2)",
+       "fr": "divide(8, 2)"
+      },
+      "sol": {
+       "en": "def divide(a, b):\n    return a / b\n\nprint(divide(8, 2))",
+       "it": "def divide(a, b):\n    return a / b\n\nprint(divide(8, 2))",
+       "fr": "def divide(a, b):\n    return a / b\n\nprint(divide(8, 2))"
+      },
+      "start": {
+       "en": "def divide(a, b):\n    return a / b\n\nprint(divide(1, 0))",
+       "it": "def divide(a, b):\n    return a / b\n\nprint(divide(1, 0))",
+       "fr": "def divide(a, b):\n    return a / b\n\nprint(divide(1, 0))"
+      },
+      "spec": {
+       "en": {
+        "out": "4.0"
+       },
+       "it": {
+        "out": "4.0"
+       },
+       "fr": {
+        "out": "4.0"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "4.0",
+       "it": "4.0",
+       "fr": "4.0"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "#!/usr/bin/env python3\n# A script you can run by its name alone.\nimport sys\n\nprint(\"Script\", \"ran\" if sys.version_info.major == 3 else \"not ran\")",
+      "it": "#!/usr/bin/env python3\n# A script you can run by its name alone.\nimport sys\n\nprint(\"Script\", \"ran\" if sys.version_info.major == 3 else \"not ran\")",
+      "fr": "#!/usr/bin/env python3\n# A script you can run by its name alone.\nimport sys\n\nprint(\"Script\", \"ran\" if sys.version_info.major == 3 else \"not ran\")"
+     },
+     "title": {
+      "en": "Scripts you run by name",
+      "it": "Script che esegui dal nome",
+      "fr": "Des scripts lancés par leur nom"
+     },
+     "text": {
+      "en": "On Mac and Linux a file can be a command of its own. Two small things make it so. First, the very first line, the shebang: #!/usr/bin/env python3. It tells the system which program must read the file.\n\nSecond, tell the system that the file may be run: chmod +x hello.py. Now you run it with ./hello.py, with no python3 before. On Windows the shebang does nothing and the way is py hello.py. The line is only a comment for Python, so it is safe everywhere.",
+      "it": "Su Mac e Linux un file può essere un comando a sé. Due piccole cose lo permettono. Primo, la primissima riga, lo shebang: #!/usr/bin/env python3. Dice al sistema quale programma deve leggere il file.\n\nSecondo, dì al sistema che il file può essere eseguito: chmod +x hello.py. Ora lo esegui con ./hello.py, senza python3 prima. Su Windows lo shebang non fa niente e la strada è py hello.py. Per Python la riga è solo un commento, quindi è sicura ovunque.",
+      "fr": "Sur Mac et Linux un fichier peut être une commande à part entière. Deux petites choses le permettent. D'abord, la toute première ligne, le shebang : #!/usr/bin/env python3. Elle dit au système quel programme doit lire le fichier.\n\nEnsuite, dis au système que le fichier peut être lancé : chmod +x hello.py. Maintenant tu le lances avec ./hello.py, sans python3 devant. Sous Windows le shebang ne fait rien et le chemin est py hello.py. Pour Python la ligne n'est qu'un commentaire, donc elle est sans danger partout."
+     },
+     "see": {
+      "en": "Script ran",
+      "it": "Script ran",
+      "fr": "Script ran"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a script with the shebang line first and then a print line.",
+       "it": "Scrivi uno script con la riga shebang per prima e poi una riga print.",
+       "fr": "Écris un script avec la ligne shebang en premier puis une ligne print."
+      },
+      "hint": {
+       "en": "#!/usr/bin/env python3 on the first line.",
+       "it": "#!/usr/bin/env python3 sulla prima riga.",
+       "fr": "#!/usr/bin/env python3 sur la première ligne."
+      },
+      "sol": {
+       "en": "#!/usr/bin/env python3\nprint(\"I run by my name\")",
+       "it": "#!/usr/bin/env python3\nprint(\"I run by my name\")",
+       "fr": "#!/usr/bin/env python3\nprint(\"I run by my name\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "m": ".",
+        "c": "^#!/usr/bin/env python3"
+       },
+       "it": {
+        "m": ".",
+        "c": "^#!/usr/bin/env python3"
+       },
+       "fr": {
+        "m": ".",
+        "c": "^#!/usr/bin/env python3"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    }
+   ]
   }
  ]
 };

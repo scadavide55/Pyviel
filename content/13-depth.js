@@ -742,6 +742,7 @@ I due lavorano insieme nello stesso momento, passandosi gli elementi. Questo sch
 
 Les deux travaillent ensemble en même temps, en se passant les éléments. Ce schéma est très utilisé : une partie prépare le travail, une autre le fait.`],
         ex: {
+          uses: ['import', 'await'],
           t: ['Change the producer to make 2 items instead of 3. The consumer must use only 2.', 'Cambia il produttore perché faccia 2 elementi invece di 3. Il consumatore deve usarne solo 2.', 'Change le producteur pour qu\'il fasse 2 éléments au lieu de 3. Le consommateur ne doit en utiliser que 2.'],
           h: ['range(2) in the producer.', 'range(2) nel produttore.', 'range(2) dans le producteur.'],
           start: [c`import asyncio

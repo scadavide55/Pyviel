@@ -3,3 +3,9 @@ dist/
 .DS_Store
 python/
 untitled.py
+
+# Python files people write in the project folder (the app and the lessons may save them here).
+# Pyviel's own Python files are not ignored.
+/*.py
+!/pyviel-host.py
+!/pyviel-runner.py

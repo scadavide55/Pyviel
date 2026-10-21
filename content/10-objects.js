@@ -507,6 +507,7 @@ Il seme fa venire il combattimento uguale ogni volta che lo esegui, così puoi l
 
 La graine fait que le combat est le même à chaque exécution, donc tu peux lire la sortie avec le code.`],
         ex: {
+          uses: ['class'],
           t: ['Make the Monster stronger: start it with 20 health instead of 12.', 'Rendi il Monster più forte: fallo partire con 20 punti vita invece di 12.', 'Rends le Monster plus fort : fais-le partir avec 20 points de vie au lieu de 12.'],
           h: ['Change the 12 in the line that builds the orc.', 'Cambia il 12 nella riga che costruisce l\'orco.', 'Change le 12 dans la ligne qui construit l\'orque.'],
           start: [c`import random

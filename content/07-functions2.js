@@ -40,6 +40,7 @@ countdown(3) mostra 3 e chiede a countdown(2) di fare il resto, e così via fino
 
 countdown(3) affiche 3 et demande à countdown(2) de faire le reste, et ainsi de suite jusqu'à 0, où elle arrête d'appeler. Ce cas d'arrêt s'appelle le cas de base, et chaque fonction récursive en a besoin.`],
         ex: {
+          uses: ['def'],
           t: ['Make the countdown start from 5 instead of 3.', 'Fai partire il conto alla rovescia da 5 invece di 3.', 'Fais partir le compte à rebours de 5 au lieu de 3.'],
           h: ['Change only the last line.', 'Cambia solo l\'ultima riga.', 'Change seulement la dernière ligne.'],
           start: [c`def countdown(n):
@@ -381,6 +382,7 @@ Per prima cosa lo scorriamo soltanto e controlliamo che i dati siano giusti.`,
 
 D'abord on le parcourt seulement et on vérifie que les données sont justes.`],
         ex: {
+          uses: ['dict', 'for'],
           t: ['Add a fourth question of your own to the dictionary: 2 + 2? with the answer 4. Show the whole list again.', 'Aggiungi al dizionario una quarta domanda tua: 2 + 2? con la risposta 4. Mostra di nuovo tutta la lista.', 'Ajoute au dictionnaire une quatrième question de ton choix : 2 + 2 ? avec la réponse 4. Affiche de nouveau toute la liste.'],
           h: ['Each question is a pair "question": "answer" followed by a comma. Add one more pair before the closing curly bracket.', 'Ogni domanda è una coppia "domanda": "risposta" seguita da una virgola. Aggiungi un\'altra coppia prima della graffa che chiude.', 'Chaque question est une paire "question": "réponse" suivie d\'une virgule. Ajoute une paire de plus avant l\'accolade fermante.'],
           start: [c`questions = {
@@ -514,6 +516,7 @@ Eseguilo e rispondi. Poi cambia le domande e rendilo tuo.`,
 
 Lance-le et réponds. Puis change les questions et fais-en le tien.`],
         ex: {
+          uses: ['for', 'input'],
           t: ['Change the game so that it gives 2 points for every right answer. With the answers Rome, 8 and cold it must end with 6 points.', 'Cambia il gioco così che dia 2 punti per ogni risposta giusta. Con le risposte Roma, 8 e freddo deve finire con 6 punti.', 'Change le jeu pour qu\'il donne 2 points pour chaque bonne réponse. Avec les réponses Rome, 8 et froid il doit finir avec 6 points.'],
           h: ['Find the line that adds a point when the answer is right, and change how much it adds.', 'Trova la riga che aggiunge un punto quando la risposta è giusta, e cambia quanto aggiunge.', 'Trouve la ligne qui ajoute un point quand la réponse est juste, et change combien elle ajoute.'],
           start: [c`questions = {"Capital of Italy?": "rome", "How many legs has a spider?": "8", "Opposite of hot?": "cold"}

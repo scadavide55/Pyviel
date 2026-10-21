@@ -121,6 +121,8 @@
     ['You changed the code. Press Run to check it again.', 'Hai cambiato il codice. Premi Esegui per controllare di nuovo.', 'Tu as changé le code. Appuie sur Lancer pour revérifier.'],
     ['You changed the code. The output is from the previous run.', 'Hai cambiato il codice. Il risultato è dell\'esecuzione precedente.', 'Tu as changé le code. Le résultat vient de l\'exécution précédente.'],
     ['Done', 'Fatto', 'Terminé'],
+    ['Output:', 'Risultato:', 'Résultat :'], ['(more in the Output panel)', '(il resto nel pannello Risultato)', '(la suite dans le panneau Résultat)'],
+    ['The program showed nothing.', 'Il programma non ha mostrato niente.', 'Le programme n\'a rien affiché.'],
     ['Example opened. Press Run to try it.', 'Esempio aperto. Premi Esegui per provarlo.', 'Exemple ouvert. Appuie sur Lancer pour l\'essayer.'],
     ['File opened. Press Run to try it.', 'File aperto. Premi Esegui per provarlo.', 'Fichier ouvert. Appuie sur Lancer pour l\'essayer.'],
     ['New empty program. Write something and press Run.', 'Nuovo programma vuoto. Scrivi qualcosa e premi Esegui.', 'Nouveau programme vide. Écris quelque chose et appuie sur Lancer.'],

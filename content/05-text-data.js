@@ -287,6 +287,7 @@ L'ultima riga mostra due metodi uno dopo l'altro: replace fa un testo nuovo, e u
 
 La dernière ligne montre deux méthodes l'une après l'autre : replace fait un nouveau texte, et upper travaille sur ce nouveau texte.`],
         ex: {
+          uses: ['for'],
           t: ['Change the word to count the vowels of a word of your choice: use the word "education".', 'Cambia la parola per contare le vocali di una parola a tua scelta: usa la parola "educazione".', 'Change le mot pour compter les voyelles du mot "education".'],
           h: ['Change only the first line.', 'Cambia solo la prima riga.', 'Change seulement la première ligne.'],
           start: [c`word = "banana"
@@ -642,6 +643,7 @@ Se ti serve cambiare le cose, usa una lista. Se ti serve una lista che si può c
 
 Si tu as besoin de changer des choses, utilise une liste. Si tu as besoin d'une liste qui a le droit de changer, tu peux en faire une à partir du tuple, à l'étape suivante.`],
         ex: {
+          uses: ['list'],
           t: ['Make it work: use a list in square brackets instead of a tuple, so the first item can be changed. Show the list.', 'Fallo funzionare: usa una lista tra parentesi quadre invece di una tupla, così il primo elemento si può cambiare. Mostra la lista.', 'Fais-le marcher : utilise une liste entre crochets au lieu d\'un tuple, pour que le premier élément puisse être changé. Affiche la liste.'],
           h: ['Only the brackets change: a list uses square brackets [ ], and a list can be changed.', 'Cambiano solo le parentesi: una lista usa le quadre [ ], e una lista si può cambiare.', 'Seules les parenthèses changent : une liste utilise des crochets [ ], et une liste peut être changée.'],
           start: 'point = (3, 4)\nprint(point)\npoint[0] = 9', sol: 'point = [3, 4]\npoint[0] = 9\nprint(point)', out: '[9, 4]'

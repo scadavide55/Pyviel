@@ -43,6 +43,7 @@ Python scrive i decimali con il punto, mai con la virgola.`,
 
 Python écrit les décimales avec un point, jamais avec une virgule.`],
         ex: {
+          uses: ['/'],
           t: ['Share 12 sweets between 3 friends. Show how many each friend gets.', 'Dividi 12 caramelle tra 3 amici. Mostra quante ne prende ogni amico.', 'Partage 12 bonbons entre 3 amis. Affiche combien chaque ami en reçoit.'],
           h: ['12 divided by 3, inside print.', '12 diviso 3, dentro print.', '12 divisé par 3, dans print.'],
           sol: 'print(12 / 3)', out: '4.0'
@@ -65,6 +66,7 @@ print(20 % 6)`,
 
 20 // 6 donne 3, parce que 6 entre 3 fois dans 20. Et 20 % 6 donne 2, parce que 18 sont utilisés et il en reste 2.`],
         ex: {
+          uses: ['//', '%'],
           t: ['A year has 100 days left. How many full weeks (7 days) is that, and how many days remain? Show the weeks on one line and the days on the next.', 'Restano 100 giorni. Quante settimane intere (di 7 giorni) sono, e quanti giorni avanzano? Mostra le settimane su una riga e i giorni sulla riga dopo.', 'Il reste 100 jours. Combien de semaines entières (de 7 jours) cela fait-il, et combien de jours restent ? Affiche les semaines sur une ligne et les jours sur la suivante.'],
           h: ['100 // 7 for the weeks and 100 % 7 for the days.', '100 // 7 per le settimane e 100 % 7 per i giorni.', '100 // 7 pour les semaines et 100 % 7 pour les jours.'],
           sol: 'print(100 // 7)\nprint(100 % 7)', out: '14\n2'
@@ -108,6 +110,7 @@ Quindi 2 + 3 * 4 fa 14, non 20. Le parentesi tonde vanno prima di tutto: (2 + 3)
 
 Donc 2 + 3 * 4 fait 14, pas 20. Les parenthèses rondes passent avant tout : (2 + 3) * 4 fait 20. Quand tu n'es pas sûr, ajoute des parenthèses.`],
         ex: {
+          uses: ['+', '*'],
           t: ['Put round brackets in 1 + 2 * 3 so that it shows 9.', 'Metti le parentesi tonde in 1 + 2 * 3 così che mostri 9.', 'Mets des parenthèses rondes dans 1 + 2 * 3 pour qu\'il affiche 9.'],
           h: ['The sum 1 + 2 has to be done first.', 'Il conto 1 + 2 va fatto per primo.', 'Le calcul 1 + 2 doit être fait en premier.'],
           start: 'print(1 + 2 * 3)', sol: 'print((1 + 2) * 3)', out: '9'
@@ -129,6 +132,7 @@ Guarda l'ultima riga: 0.1 + 0.2 mostra 0.30000000000000004. I computer tengono q
 
 Regarde la dernière ligne : 0.1 + 0.2 affiche 0.30000000000000004. Les ordinateurs gardent ces nombres avec une toute petite erreur. C'est normal, et ça arrive dans tous les langages.`],
         ex: {
+          uses: ['+'],
           t: ['Show the sum of 1.5 and 2.25.', 'Mostra la somma di 1.5 e 2.25.', 'Affiche la somme de 1.5 et 2.25.'],
           h: ['Decimal numbers use a dot, not a comma. Write the sum inside print, with no quotes.', 'I numeri decimali usano il punto, non la virgola. Scrivi la somma dentro print, senza virgolette.', 'Les nombres décimaux utilisent un point, pas une virgule. Écris la somme dans print, sans guillemets.'],
           sol: 'print(1.5 + 2.25)', out: '3.75'
@@ -294,6 +298,7 @@ int("42") trasforma il testo 42 nel numero 42, così puoi farci i conti. int(9.9
 
 int("42") transforme le texte 42 en nombre 42, donc tu peux faire des calculs avec. int(9.99) coupe les décimales : il n'arrondit pas.`],
         ex: {
+          uses: ['int', '*'],
           t: ['Turn the text "15" into a number, double it, and show it.', 'Trasforma il testo "15" in numero, raddoppialo e mostralo.', 'Transforme le texte "15" en nombre, double-le et affiche-le.'],
           h: ['int("15") * 2 inside print.', 'int("15") * 2 dentro print.', 'int("15") * 2 dans print.'],
           sol: 'print(int("15") * 2)', out: '30', c: 'int'
@@ -335,6 +340,7 @@ Leggi cosa dice Pyviel: nomina i due tipi che non vanno d'accordo. Premi View fu
 
 Lis ce que dit Pyviel : il nomme les deux sortes qui ne vont pas ensemble. Appuie sur View full error pour voir les vrais mots de Python. Apprendre à les lire est un superpouvoir.`],
         ex: {
+          uses: ['str', '+'],
           t: ['Fix it with str, so the program shows: I am 12', 'Correggilo con str, così il programma mostra: Ho 12', 'Corrige-le avec str, pour que le programme affiche : J\'ai 12'],
           h: ['Put str( ) around the number 12.', 'Metti str( ) intorno al numero 12.', 'Mets str( ) autour du nombre 12.'],
           start: ['print("I am " + 12)', 'print("Ho " + 12)', 'print("J\'ai " + 12)'],
@@ -414,6 +420,7 @@ This is the most common mistake of beginners. Read the explanation, then fix it 
 
 C'est l'erreur la plus courante des débutants. Lis l'explication, puis corrige-la à l'étape suivante.`],
         ex: {
+          uses: ['input', 'int'],
           t: ['Fix it: turn the answer into a number with int, so that typing 10 shows 11.', 'Correggilo: trasforma la risposta in numero con int, così scrivendo 10 si vede 11.', 'Corrige-le : transforme la réponse en nombre avec int, pour que taper 10 affiche 11.'],
           h: ['input always gives text. Wrap the whole input(...) inside int( ... ), so the box gets a number.', 'input dà sempre del testo. Metti tutto input(...) dentro int( ... ), così la scatola riceve un numero.', 'input donne toujours du texte. Mets tout le input(...) dans int( ... ), pour que la boîte reçoive un nombre.'],
           start: ['age = input("How old are you? ")\nprint(age + 1)', 'age = input("Quanti anni hai? ")\nprint(age + 1)', 'age = input("Quel âge as-tu ? ")\nprint(age + 1)'],
@@ -438,6 +445,7 @@ Leggilo dall'interno verso l'esterno: input chiede, int trasforma la risposta in
 
 Lis-le de l'intérieur vers l'extérieur : input demande, int transforme la réponse en nombre et age la garde.`],
         ex: {
+          uses: ['input', 'int', '*'],
           t: ['Ask for a number, and show its double.', 'Chiedi un numero e mostra il suo doppio.', 'Demande un nombre et affiche son double.'],
           h: ['Two steps: turn the answer into a number with int, then show that number times 2.', 'Due passi: trasforma la risposta in numero con int, poi mostra quel numero per 2.', 'Deux étapes : transforme la réponse en nombre avec int, puis affiche ce nombre fois 2.'],
           sol: ['number = int(input("Number? "))\nprint(number * 2)', 'number = int(input("Numero? "))\nprint(number * 2)', 'number = int(input("Nombre ? "))\nprint(number * 2)'], i: ['21'], m: '42$', c: 'int'
@@ -467,6 +475,7 @@ Questo programma chiede due numeri, li somma e mostra la somma. È il cuore di q
 
 Ce programme demande deux nombres, les additionne et affiche la somme. C'est le cœur de presque tous les petits programmes : demande, réfléchis, réponds.`],
         ex: {
+          uses: ['input', '*'],
           t: ['Change the program so that it multiplies the two numbers instead of adding them.', 'Cambia il programma così che moltiplichi i due numeri invece di sommarli.', 'Change le programme pour qu\'il multiplie les deux nombres au lieu de les additionner.'],
           h: ['Replace the + with a *.', 'Sostituisci il + con un *.', 'Remplace le + par un *.'],
           start: ['first = int(input("First number: "))\nsecond = int(input("Second number: "))\ntotal = first + second\nprint("The sum is", total)', 'first = int(input("Primo numero: "))\nsecond = int(input("Secondo numero: "))\ntotal = first + second\nprint("La somma è", total)', 'first = int(input("Premier nombre : "))\nsecond = int(input("Deuxième nombre : "))\ntotal = first + second\nprint("La somme est", total)'],
@@ -526,6 +535,7 @@ Dentro quel testo, tutto quello che sta tra parentesi graffe { } viene sostituit
 
 Dans ce texte, tout ce qui est entre accolades { } est remplacé par sa valeur. Ça marche avec n'importe quelle sorte de valeur, sans str.`],
         ex: {
+          uses: ['f-string'],
           t: ['Make the program show: Ada is 13 years old   Change the age in the box, and keep the f-string.', 'Fai mostrare al programma: Ada ha 13 anni   Cambia l\'età nella scatola e tieni la f-string.', 'Fais afficher au programme : Ada a 13 ans   Change l\'âge dans la boîte et garde la f-string.'],
           h: ['Change the 12 to 13 in the box, and keep the f-string.', 'Cambia il 12 in 13 nella scatola e tieni la f-string.', 'Change le 12 en 13 dans la boîte et garde la f-string.'],
           start: ['name = "Ada"\nage = 12\nprint(f"{name} is {age} years old")', 'name = "Ada"\nage = 12\nprint(f"{name} ha {age} anni")', 'name = "Ada"\nage = 12\nprint(f"{name} a {age} ans")'],

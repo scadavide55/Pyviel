@@ -4,6 +4,7 @@ This file is loaded by the worker (pyviel-worker.js) and by the Node tests.
 It never prints for the student: it returns plain data, and pyviel-errors.js
 turns that data into a short sentence in the language of the page.
 """
+import ast
 import builtins
 import linecache
 import sys
@@ -107,6 +108,56 @@ def _sync_asyncio_run():
     return run
 
 
+_OPS = {
+    ast.Add: "+", ast.Sub: "-", ast.Mult: "*", ast.Div: "/", ast.FloorDiv: "//", ast.Mod: "%", ast.Pow: "**",
+    ast.Eq: "==", ast.NotEq: "!=", ast.Lt: "<", ast.Gt: ">", ast.LtE: "<=", ast.GtE: ">=",
+    ast.In: "in", ast.NotIn: "not in", ast.And: "and", ast.Or: "or", ast.Not: "not",
+    ast.BitAnd: "&", ast.BitOr: "|", ast.BitXor: "^", ast.LShift: "<<", ast.RShift: ">>",
+}
+_STATEMENTS = {
+    ast.For: "for", ast.While: "while", ast.If: "if", ast.FunctionDef: "def", ast.ClassDef: "class",
+    ast.Return: "return", ast.Try: "try", ast.With: "with", ast.Import: "import", ast.ImportFrom: "import",
+    ast.Lambda: "lambda", ast.Yield: "yield", ast.Break: "break", ast.Continue: "continue", ast.Raise: "raise",
+    ast.ListComp: "comprehension", ast.DictComp: "comprehension", ast.SetComp: "comprehension",
+    ast.GeneratorExp: "comprehension", ast.JoinedStr: "f-string", ast.Subscript: "[]", ast.Slice: "slice",
+    ast.Dict: "dict", ast.List: "list", ast.Tuple: "tuple", ast.Set: "set", ast.IfExp: "if-else",
+    ast.Assert: "assert", ast.Global: "global", ast.Nonlocal: "nonlocal", ast.Await: "await",
+}
+
+
+def _used(tree):
+    """What a program really uses, read from its syntax tree: text in quotes and comments never count.
+
+    Keys like "for", "def", "+", "+=", "f-string", "range" (a call by name) and ".append" (a method call).
+    The practice tasks compare them with what a step teaches (see pyviel-check.js).
+    """
+    found = set()
+    for node in ast.walk(tree):
+        kind = _STATEMENTS.get(type(node))
+        if kind:
+            found.add(kind)
+        if isinstance(node, (ast.BinOp, ast.UnaryOp, ast.BoolOp)):
+            found.add(_OPS.get(type(node.op), ""))
+        elif isinstance(node, ast.Compare):
+            found.update(_OPS.get(type(op), "") for op in node.ops)
+        elif isinstance(node, ast.AugAssign):
+            found.add(_OPS.get(type(node.op), "") + "=")
+        elif isinstance(node, ast.Call):
+            if isinstance(node.func, ast.Name):
+                found.add(node.func.id)
+            elif isinstance(node.func, ast.Attribute):
+                found.add("." + node.func.attr)
+            if len(node.args) > 1:
+                found.add("many-args")  # print(name, "is", age): several things in one call
+            found.update("kw:" + k.arg for k in node.keywords if k.arg)  # sep=, end=, key=...
+        elif isinstance(node, (ast.Assign, ast.AnnAssign)):
+            found.add("=")  # a value put in a box
+        elif isinstance(node, ast.Constant) and node.value is None:
+            found.add("None")
+    found.discard("")
+    return sorted(found)
+
+
 class _Stop(BaseException):
     """Raised by the page when the student presses Stop while waiting for input."""
 
@@ -114,7 +165,8 @@ class _Stop(BaseException):
 def run(source, write, ask, cap=200000):
     """Run `source`. `write(text)` receives output, `ask(prompt)` returns an answer.
 
-    Returns {"ok": bool, "stopped": bool, "error": dict | None}.
+    Returns {"ok": bool, "stopped": bool, "error": dict | None, "used": [...]}:
+    `used` is what the program uses (see _used), empty when it cannot be read.
     """
     written = [0]
 
@@ -162,18 +214,21 @@ def run(source, write, ask, cap=200000):
         asyncio.run = _sync_asyncio_run()
     try:
         try:
-            code = compile(source, FILENAME, "exec")
+            # Read once: the tree says what the program uses, and is then compiled.
+            tree = ast.parse(source, FILENAME)
+            used = _used(tree)
+            code = compile(tree, FILENAME, "exec")
         except SyntaxError as exc:  # includes IndentationError and TabError
-            return {"ok": False, "stopped": False, "error": _describe(exc)}
+            return {"ok": False, "stopped": False, "error": _describe(exc), "used": []}
         try:
             exec(code, namespace)
         except (KeyboardInterrupt, _Stop):
-            return {"ok": True, "stopped": True, "error": None}
+            return {"ok": True, "stopped": True, "error": None, "used": used}
         except SystemExit:
-            return {"ok": True, "stopped": False, "error": None}
+            return {"ok": True, "stopped": False, "error": None, "used": used}
         except BaseException as exc:  # noqa: BLE001 - the student may raise anything
-            return {"ok": False, "stopped": False, "error": _describe(exc)}
-        return {"ok": True, "stopped": False, "error": None}
+            return {"ok": False, "stopped": False, "error": _describe(exc), "used": used}
+        return {"ok": True, "stopped": False, "error": None, "used": used}
     finally:
         sys.stdout, sys.stderr, builtins.input = old_out, old_err, old_input
         if old_asyncio_run is not None:

@@ -11,7 +11,9 @@
                               makes sure that everything is explained where it first appears)
       ex: {t: [task en, it, fr], h: [hint en, it, fr], sol: 'a solution', start: 'code to begin with' (optional),
            out: 'what it prints' | exact: true (what the solution prints) | m: 'regex on the output',
-           c: 'regex on the program text' (optional), i: [typed answers] (optional)}
+           c: 'regex on the program text' (optional), i: [typed answers] (optional),
+           uses: ['for', '+='] what the program must really use, read from its syntax tree (pyviel-runner.py _used),
+           plain: true when printing the expected text IS the answer (otherwise that shortcut must fail)}
                               a practice task; the build runs the solution, and the start, and checks both
       d: [your turn en, it, fr]   the old kind of practice sentence, still accepted
       s: what you will see, when it cannot be found by running (random output)   (optional)
@@ -211,12 +213,18 @@ async function main() {
                 else if (e.exact) sp.out = solved.printed;
                 if (m !== undefined) sp.m = m;
                 if (cc !== undefined) sp.c = cc;
+                if (e.uses) sp.uses = e.uses;
                 if (sp.out === undefined && sp.m === undefined && sp.c === undefined) bad(here, 'ex needs out, exact, m or c to check');
-                const verdict = Check.check(sp, solved.printed, sols[l]);
+                const verdict = Check.check(sp, solved.printed, sols[l], solved.result.used);
                 if (!verdict.ok) bad(here, l + ': the solution does not pass its own check (' + verdict.why + '): it printed ' + JSON.stringify(solved.printed));
+                // The shortcut: print the expected text as it is. It must not pass, unless that is the lesson.
+                const shortcut = 'print(' + JSON.stringify(Check.tidy(solved.printed)) + ')';
+                const cheat = await play(shortcut);
+                if (!e.plain && !cheat.result.error && Check.check(sp, cheat.printed, shortcut, cheat.result.used).ok) bad(here, l + ': printing the expected text passes: say in uses what the task teaches (or plain: true if the print is the answer)');
+                if (e.plain && l === 'en' && !Check.check(sp, cheat.printed, shortcut, cheat.result.used).ok) bad(here, 'plain: true, but printing the expected text does not pass: remove plain');
                 if (starts && starts[l].trim()) {
                   const began = await play(starts[l]);
-                  if (!began.result.error && Check.check(sp, began.printed, starts[l]).ok) bad(here, l + ': the start already passes the check: the task is done before the student does anything');
+                  if (!began.result.error && Check.check(sp, began.printed, starts[l], began.result.used).ok) bad(here, l + ': the start already passes the check: the task is done before the student does anything');
                 }
                 spec[l] = sp;
                 if (sp.out !== undefined) expected[l] = shorten(sp.out);

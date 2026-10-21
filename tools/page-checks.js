@@ -50,6 +50,12 @@
   check('a program runs and prints', $('out').textContent === 'Hello\n5\n', JSON.stringify($('out').textContent));
   check('no problems for a good program', /No problems/.test($('problems').innerText));
 
+  check('a screen reader hears what the program printed when it ends', await until(() => /Hello/.test($('run-announce').textContent), 2000), $('run-announce').textContent);
+  const usedRun = await Pyviel.runAsync('# for i in x\nprint("for")\nprint(20 + 22)');
+  check('the run says what the program really uses (not what is in quotes or comments)', usedRun.used.includes('+') && !usedRun.used.includes('for'), JSON.stringify(usedRun.used));
+  const shortcut = window.PyvielCheck.check({out: '42', uses: ['+']}, '42\n', 'print("42")', ['print']);
+  check('printing the answer is not enough when the task asks for an idea', !shortcut.ok && shortcut.why === 'uses' && shortcut.missing[0] === '+');
+
   // a program that breaks
   await run('print("Before")\nprint(pirnt)\nprint("After")');
   check('the output before the error stays', $('out').textContent === 'Before\n', $('out').textContent);
@@ -182,6 +188,9 @@
   for (let i = 0; i < 100 && !document.querySelector('.exercise-result.yes'); i++) await new Promise(r => setTimeout(r, 100));
   check('the right answer is recognised and remembered', !!document.querySelector('.exercise-result.yes') && !!document.querySelector('.solved-tag') && !!document.querySelector('.progress .solved'));
   check('and the next step is the button to press', !!document.querySelector('.nav-row .next-step.primary'));
+  document.querySelector('.back-link').click();
+  check('the list counts read and solved apart, and says what is left in a lesson', /read/.test(document.querySelector('.lesson-summary').textContent) && /1 of \d+ solved/.test(document.querySelector('.tutorial-lesson .lesson-count').textContent), document.querySelector('.lesson-summary').textContent + ' | ' + document.querySelector('.tutorial-lesson .lesson-count').textContent);
+  document.querySelectorAll('.tutorial-lesson')[0].click();
   // on to step 5: the next-step button lives in the last phase
   for (let i = 0; i < 4; i++) { phaseTab(2).click(); document.querySelector('.nav-row .next-step').click(); }
   check('a new step opens on its first phase', phaseTab(0).classList.contains('current') && /step 5 of/.test(document.querySelector('.step-count') ? document.querySelector('.step-count').textContent : ''), document.querySelector('.step-count') && document.querySelector('.step-count').textContent);

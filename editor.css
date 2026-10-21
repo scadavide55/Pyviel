@@ -343,7 +343,7 @@ dialog::backdrop { background: #2b242088; }
 /* The lesson list opens with where you are and what to do next. */
 .lesson-summary { margin-bottom: 12px; padding: 12px; border: 2px solid var(--line); border-radius: 12px; background: var(--bg); }
 .lesson-summary .summary-text { font-weight: 600; }
-.lesson-summary .meter { height: 8px; margin: 8px 0 10px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.lesson-summary .meter { position: relative; height: 8px; margin: 8px 0 10px; border-radius: 99px; background: var(--line); overflow: hidden; }
 .lesson-summary .meter i { display: block; height: 100%; background: var(--go); border-radius: 99px; transition: width .3s; }
 .lesson-summary .continue { width: 100%; height: auto; min-height: 38px; padding: 8px 14px; text-align: left; justify-content: flex-start; }
 .lesson-summary.finished { border-color: var(--go); }
@@ -462,3 +462,6 @@ dialog::backdrop { background: #2b242088; }
 .example-group button { position: relative; padding-right: 34px; }
 .example-group button::after { content: "▶"; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--muted); }
 .example-group button:hover::after { color: var(--go, #3f9b55); }
+.lesson-summary .meter i.read { position: absolute; left: 0; top: 0; background: var(--edge); }
+.lesson-summary .meter i.solved { position: relative; }
+.tutorial-lesson.read .lesson-number { box-shadow: inset 0 0 0 2px var(--go); }

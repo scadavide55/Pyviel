@@ -22,6 +22,7 @@ print(10 > 20)`,
 
 5 > 3 demande "5 est-il plus grand que 3 ?" et la réponse est True. 5 < 3 demande "5 est-il plus petit que 3 ?" et la réponse est False. Remarque la majuscule : True, pas true.`],
         ex: {
+          uses: ['>'],
           t: ['Ask if 10 is bigger than 20, and show the answer.', 'Chiedi se 10 è più grande di 20 e mostra la risposta.', 'Demande si 10 est plus grand que 20 et affiche la réponse.'],
           h: ['The sign > asks "is the left one bigger?". Put the whole question inside print.', 'Il segno > chiede "quello a sinistra è più grande?". Metti tutta la domanda dentro print.', 'Le signe > demande "celui de gauche est-il plus grand ?". Mets toute la question dans print.'],
           sol: 'print(10 > 20)', out: 'False'
@@ -209,6 +210,7 @@ Python lo usa quando qualcosa non ha una risposta.`,
 
 Python l'utilise quand quelque chose n'a pas de réponse.`],
         ex: {
+          uses: ['=', 'None'],
           t: ['Put None in a box called answer and show the box.', 'Metti None in una scatola che si chiama answer e mostra la scatola.', 'Mets None dans une boîte qui s\'appelle answer et affiche la boîte.'],
           h: ['None is written with a capital N and no quotes. Then show the box.', 'None si scrive con la N maiuscola e senza virgolette. Poi mostra la scatola.', 'None s\'écrit avec un N majuscule et sans guillemets. Puis affiche la boîte.'],
           sol: 'answer = None\nprint(answer)', out: 'None', c: 'None'
@@ -555,6 +557,7 @@ Tu hai scritto due righe e il ciclo ha fatto il lavoro di cinque.`,
 
 Tu as écrit deux lignes et la boucle a fait le travail de cinq.`],
         ex: {
+          uses: ['for'],
           t: ['Change the loop to write the table of 2, for the numbers 1 to 5.', 'Cambia il ciclo per scrivere la tabellina del 2, per i numeri da 1 a 5.', 'Change la boucle pour écrire la table de 2, pour les nombres de 1 à 5.'],
           h: ['Change both 3s: the one in the text and the one in the sum.', 'Cambia tutti e due i 3: quello nel testo e quello nel conto.', 'Change les deux 3 : celui du texte et celui du calcul.'],
           start: 'for i in range(1, 6):\n    print(i, "x 3 =", i * 3)', sol: 'for i in range(1, 6):\n    print(i, "x 2 =", i * 2)', out: '1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10'
@@ -576,6 +579,7 @@ Qui: 1 + 2 + 3 + 4 + 5 = 15. Nota che print non è rientrata: gira una volta sol
 
 Ici : 1 + 2 + 3 + 4 + 5 = 15. Remarque que print n'est pas décalée : elle tourne une seule fois, après la boucle.`],
         ex: {
+          uses: ['for'],
           t: ['Change the program to add the numbers from 1 to 10. It must show 55.', 'Cambia il programma per sommare i numeri da 1 a 10. Deve mostrare 55.', 'Change le programme pour additionner les nombres de 1 à 10. Il doit afficher 55.'],
           h: ['range(1, 11) stops before 11.', 'range(1, 11) si ferma prima di 11.', 'range(1, 11) s\'arrête avant 11.'],
           start: 'total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)', sol: 'total = 0\nfor i in range(1, 11):\n    total += i\nprint(total)', out: '55'
@@ -617,6 +621,7 @@ Qui, per ognuna delle 3 righe, il ciclo interno scrive 4 stelle senza andare a c
 
 Ici, pour chacune des 3 lignes, la boucle intérieure écrit 4 étoiles sans changer de ligne, puis print() avec rien dedans termine la ligne.`],
         ex: {
+          uses: ['for'],
           t: ['Change the program to draw 2 rows of 5 stars.', 'Cambia il programma per disegnare 2 righe di 5 stelle.', 'Change le programme pour dessiner 2 lignes de 5 étoiles.'],
           h: ['Change range(3) to range(2) and range(4) to range(5).', 'Cambia range(3) in range(2) e range(4) in range(5).', 'Change range(3) en range(2) et range(4) en range(5).'],
           start: 'for row in range(3):\n    for column in range(4):\n        print("*", end="")\n    print()', sol: 'for row in range(2):\n    for column in range(5):\n        print("*", end="")\n    print()', out: '*****\n*****'

@@ -308,6 +308,7 @@ I parametri con un valore predefinito vengono dopo quelli senza.`,
 
 Les paramètres avec une valeur par défaut viennent après ceux sans.`],
         ex: {
+          uses: ['def'],
           t: ['The call greet("Ada") stops with an error. Give the parameter greeting the default value "Hello" so the program shows: Hello Ada', 'La chiamata greet("Ada") si ferma con un errore. Dai al parametro greeting il valore predefinito "Ciao" così il programma mostra: Ciao Ada', 'L\'appel greet("Ada") s\'arrête sur une erreur. Donne au paramètre greeting la valeur par défaut "Bonjour" pour que le programme affiche : Bonjour Ada'],
           h: ['def greet(name, greeting="..."):', 'def greet(name, greeting="..."):', 'def greet(name, greeting="..."):'],
           start: 'def greet(name, greeting):\n    print(greeting, name)\n\ngreet("Ada")',
@@ -502,6 +503,7 @@ La funzione legge rate quando gira, non quando viene creata: dopo rate = 3 la ri
 
 La fonction lit rate quand elle tourne, pas quand elle est créée : après rate = 3, la réponse change. Lire est facile. Changer demande de l'attention, comme le montrent les étapes suivantes.`],
         ex: {
+          uses: ['def'],
           t: ['Change the rate to 5, so that double_price(10) shows 50.', 'Cambia rate in 5, così double_price(10) mostra 50.', 'Change rate en 5, pour que double_price(10) affiche 50.'],
           h: ['Change the first line.', 'Cambia la prima riga.', 'Change la première ligne.'],
           start: 'rate = 2\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))', sol: 'rate = 5\n\ndef double_price(price):\n    return price * rate\n\nprint(double_price(10))', out: '50'
@@ -590,6 +592,7 @@ Ogni chiamata a make_counter crea il suo contatore separato: per questo b parte 
 
 Chaque appel à make_counter crée son propre compteur séparé : c'est pourquoi b part de 1. On appelle ça une closure. C'est un peu avancé : ce n'est pas grave si tu dois le relire deux fois.`],
         ex: {
+          uses: ['def', 'nonlocal'],
           t: ['Change step so that it adds 2 each time. It must show: 2 4 6  and then  2', 'Cambia step così che aggiunga 2 ogni volta. Deve mostrare: 2 4 6  e poi  2', 'Change step pour qu\'elle ajoute 2 à chaque fois. Elle doit afficher : 2 4 6  puis  2'],
           h: ['Find the line inside step that adds to count, and change only the number it adds.', 'Trova la riga dentro step che aggiunge a count, e cambia solo il numero che aggiunge.', 'Trouve la ligne dans step qui ajoute à count, et change seulement le nombre ajouté.'],
           start: 'def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())',

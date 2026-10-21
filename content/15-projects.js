@@ -44,6 +44,7 @@ Eseguilo e prova qualche numero. Qui non c'è niente di nuovo: sono input, int e
 
 Lance-le et essaie quelques nombres. Rien de nouveau ici : ce sont input, int, et if, elif, else.`],
         ex: {
+          uses: ['input', 'if'],
           t: ['Change the secret number to 7 and answer 7: it must say you got it.', 'Cambia il numero segreto in 7 e rispondi 7: deve dire che hai indovinato.', 'Change le nombre secret en 7 et réponds 7 : il doit dire que tu as réussi.'],
           h: ['Change the first line, and type 7 when it asks.', 'Cambia la prima riga e scrivi 7 quando chiede.', 'Change la première ligne et tape 7 quand il demande.'],
           start: [c`secret = 42
@@ -512,6 +513,7 @@ L'hai costruito da una pagina vuota, un passo funzionante alla volta. È così c
 
 Tu l'as construit à partir d'une page vide, une étape qui marche à la fois. C'est ainsi que se fait chaque grand programme.`],
         ex: {
+          uses: ['dict', 'for'],
           t: ['Add a third level, "hard", with the top number 1000, to the dictionary LEVELS, and show the three levels.', 'Aggiungi un terzo livello, "hard", con il numero massimo 1000, al dizionario LEVELS e mostra i tre livelli.', 'Ajoute un troisième niveau, "hard", avec le nombre maximum 1000, au dictionnaire LEVELS et affiche les trois niveaux.'],
           h: ['Add one more pair to the dictionary LEVELS.', 'Aggiungi una coppia in più al dizionario LEVELS.', 'Ajoute une paire de plus au dictionnaire LEVELS.'],
           start: 'LEVELS = {"easy": 10, "medium": 100}\nfor level, top in LEVELS.items():\n    print(level, top)',
@@ -543,6 +545,7 @@ join con uno spazio in mezzo rende le lettere più facili da leggere: p _ _ _ o 
 
 join avec une espace au milieu rend les lettres plus faciles à lire : p _ _ _ o _.`],
         ex: {
+          uses: ['for'],
           t: ['Change the guessed letters to {"y", "t", "n"} and show the display (_ y t _ _ n).', 'Cambia le lettere indovinate in {"y", "t", "n"} e mostra il display (_ y t _ _ n).', 'Change les lettres devinées en {"y", "t", "n"} et affiche l\'affichage (_ y t _ _ n).'],
           h: ['Change the set in the second line.', 'Cambia l\'insieme nella seconda riga.', 'Change l\'ensemble dans la deuxième ligne.'],
           start: 'word = "python"\nguessed = {"p", "o"}\nshown = ""\nfor letter in word:\n    shown += letter if letter in guessed else "_"\nprint(" ".join(shown))', sol: 'word = "python"\nguessed = {"y", "t", "n"}\nshown = ""\nfor letter in word:\n    shown += letter if letter in guessed else "_"\nprint(" ".join(shown))', out: '_ y t _ _ n'
@@ -609,6 +612,7 @@ set(word) <= guessed chiede "tutte le lettere della parola sono state indovinate
 
 set(word) <= guessed demande "toutes les lettres du mot sont-elles devinées ?" : c'est la même comparaison que tu as utilisée pour les ensembles.`],
         ex: {
+          uses: ['for'],
           t: ['The player has only 1 life, so a wrong first guess loses the game. Give the player 2 lives, so that the guesses x, p, y, t, h, o, n win: it must show You win!', 'Il giocatore ha una sola vita, quindi un primo tentativo sbagliato fa perdere. Dai al giocatore 2 vite, così i tentativi x, p, y, t, h, o, n vincono: deve mostrare You win!', 'Le joueur n\'a qu\'une seule vie, donc un premier mauvais essai fait perdre. Donne 2 vies au joueur, pour que les essais x, p, y, t, h, o, n gagnent : il doit afficher You win!'],
           h: ['Change lives = 1 into lives = 2.', 'Cambia lives = 1 in lives = 2.', 'Change lives = 1 en lives = 2.'],
           start: 'word = "python"\nguessed = set()\nlives = 1\nfor guess in ["x", "p", "y", "t", "h", "o", "n"]:\n    if lives == 0 or set(word) <= guessed:\n        break\n    guessed.add(guess)\n    if guess not in word:\n        lives -= 1\nif set(word) <= guessed:\n    print("You win!")\nelse:\n    print("You lose.")', sol: 'word = "python"\nguessed = set()\nlives = 2\nfor guess in ["x", "p", "y", "t", "h", "o", "n"]:\n    if lives == 0 or set(word) <= guessed:\n        break\n    guessed.add(guess)\n    if guess not in word:\n        lives -= 1\nif set(word) <= guessed:\n    print("You win!")\nelse:\n    print("You lose.")', out: 'You win!'
@@ -751,6 +755,7 @@ Il ciclo li mostra con un numero, usando enumerate, e un segno: x quando è fatt
 
 La boucle les affiche avec un numéro, en utilisant enumerate, et une marque : x quand c'est fait, une espace sinon.`],
         ex: {
+          uses: ['for', 'list'],
           t: ['Add a third task, not done, with the title "Read a book", and show the list.', 'Aggiungi un terzo compito, non fatto, con il titolo "Read a book", e mostra la lista.', 'Ajoute une troisième tâche, pas faite, avec le titre "Read a book", et affiche la liste.'],
           h: ['One more dictionary in the list, with a comma.', 'Un altro dizionario nella lista, con una virgola.', 'Un autre dictionnaire dans la liste, avec une virgule.'],
           start: 'tasks = [\n    {"title": "Learn Python", "done": False},\n]\nfor number, task in enumerate(tasks, start=1):\n    mark = "x" if task["done"] else " "\n    print(f"{number}. [{mark}] {task[\'title\']}")', sol: 'tasks = [\n    {"title": "Learn Python", "done": False},\n    {"title": "Read a book", "done": False},\n]\nfor number, task in enumerate(tasks, start=1):\n    mark = "x" if task["done"] else " "\n    print(f"{number}. [{mark}] {task[\'title\']}")', out: '1. [ ] Learn Python\n2. [ ] Read a book'
@@ -1110,6 +1115,7 @@ Leggi il ciclo del menu piano piano: ogni scelta chiama una funzione. È la form
 
 Lis la boucle du menu lentement : chaque choix appelle une fonction. C'est la forme de presque tous les petits outils que tu écriras.`],
         ex: {
+          uses: ['while', 'input'],
           t: ['In this small menu, change the goodbye from Bye! to See you!, and answer 5 to quit.', 'In questo piccolo menu, cambia il saluto da Bye! a Ci vediamo!, e rispondi 5 per uscire.', 'Dans ce petit menu, change l\'au revoir de Bye! en À bientôt !, et réponds 5 pour quitter.'],
           h: ['Change only the text inside the print.', 'Cambia solo il testo dentro print.', 'Change seulement le texte dans print.'],
           start: 'while True:\n    choice = input("Choose: ")\n    if choice == "5":\n        print("Bye!")\n        break',
@@ -1238,6 +1244,7 @@ Qui i comandi vengono da una lista, così vedi ogni caso in una sola esecuzione.
 
 Ici les commandes viennent d'une liste, donc tu vois chaque cas en une seule exécution.`],
         ex: {
+          uses: ['for'],
           t: ['Change the list of commands to ["look", "dance"] and look at the two answers.', 'Cambia la lista dei comandi in ["look", "dance"] e guarda le due risposte.', 'Change la liste de commandes en ["look", "dance"] et regarde les deux réponses.'],
           h: ['Use the word "look" for looking, as in the English code.', 'Usa la parola "look" per guardare, come nel codice inglese.', 'Utilise le mot "look" pour regarder, comme dans le code anglais.'],
           start: 'here = "hall"\ntext = "A dusty hall."\nfor command in ["go north"]:\n    words = command.split()\n    if words[0] == "look":\n        print(text)\n    else:\n        print("I do not understand.")', sol: 'here = "hall"\ntext = "A dusty hall."\nfor command in ["look", "dance"]:\n    words = command.split()\n    if words[0] == "look":\n        print(text)\n    else:\n        print("I do not understand.")', out: 'A dusty hall.\nI do not understand.'

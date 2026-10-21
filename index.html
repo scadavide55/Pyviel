@@ -10,7 +10,7 @@
 <meta property="og:title" content="Pyviel: learn real Python, one small step at a time">
 <meta property="og:description" content="53 lessons from print to async, every line explained, errors in plain words. Free and offline, in English, Italian and French.">
 <link rel="icon" href="build/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="editor.css?v=30">
+<link rel="stylesheet" href="editor.css?v=31">
 <script>try { var t = localStorage.getItem('pyviel.theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <script>
   // Where the desktop installers live: in the GitHub release, not in the repository (each is over 100 MB).
@@ -149,6 +149,7 @@
           <div class="pane-head"><h2>Problems</h2><span class="count" id="count"></span><span class="spacer"></span><span class="diagnostic-dot" id="diagnostic-dot"></span></div>
           <div class="pane-body" id="problems"></div>
           <div class="summary" id="summary" role="status">Ready when you are.</div>
+          <div class="sr-only" id="run-announce" aria-live="polite" aria-atomic="true"></div>
         </div>
       </section>
     </main>
@@ -206,10 +207,10 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
 
 <div class="toast" id="toast" role="status" hidden><span id="toast-text"></span><button id="toast-action" hidden></button></div>
 
-<script src="i18n.js?v=1.1.0-4"></script>
-<script src="examples.js?v=1.1.0-1"></script>
-<script src="pyviel-errors.js?v=1.1.0-2"></script>
-<script src="pyviel.js?v=1.1.0-2"></script>
+<script src="i18n.js?v=1.2.1-1"></script>
+<script src="examples.js?v=1.2.1-1"></script>
+<script src="pyviel-errors.js?v=1.2.1-1"></script>
+<script src="pyviel.js?v=1.2.1-1"></script>
 <script>
 // The version next to the name is the one of the code that runs, so it cannot drift.
 (function () {
@@ -317,6 +318,22 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
     count.textContent = '';
     summary.textContent = 'You changed the code. The output is from the previous run.';
     summary.className = 'summary';
+  }
+
+  // A screen reader hears the result once, when the run ends: what was printed (the start of it,
+  // when it is long) and each problem, not every line while it arrives.
+  function announce(result) {
+    var box = document.getElementById('run-announce');
+    if (!box) return;
+    var t = (window.PyvielI18n && PyvielI18n.t) || function (x) { return x; };
+    var text = out.textContent.replace(/\s+$/, '');
+    var parts = [];
+    if (text) parts.push(t('Output:') + ' ' + (text.length > 600 ? text.slice(0, 600) + ' … ' + t('(more in the Output panel)') : text));
+    else parts.push(t('The program showed nothing.'));
+    var lineWord = PyvielErrors.words.line[lang()] || 'Line';
+    result.problems.forEach(function (p) { parts.push(lineWord + ' ' + p.line + ': ' + p.message + ' ' + (p.hint || '')); });
+    box.textContent = '';
+    setTimeout(function () { box.textContent = parts.join('\n'); }, 50);   // a change, so it is read again
   }
 
   // Every change made by the editor itself goes through the browser's own insert command, so Cmd/Ctrl+Z
@@ -577,6 +594,7 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
       : '';
     summary.textContent = result.summary;
     summary.className = 'summary' + (result.problems.length ? '' : ' ok');
+    announce(result);
     code.dispatchEvent(new CustomEvent('pyviel:ran'));
   }
 
@@ -659,14 +677,14 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
   });
 })();
 </script>
-<script src="editor-ui.js?v=1.1.0-4"></script>
-<script src="lessons.js?v=1.1.0-7"></script>
+<script src="editor-ui.js?v=1.2.1-1"></script>
+<script src="lessons.js?v=1.2.1-1"></script>
 <script>
   // Only the course in the language of the page is loaded (course.js holds all three, for the tools).
   // Written in place, so it still runs before tutorials.js.
-  document.write('<script src="course-' + ((window.PyvielI18n && PyvielI18n.lang) || 'en') + '.js?v=1.1.0-5"><\/script>');
+  document.write('<script src="course-' + ((window.PyvielI18n && PyvielI18n.lang) || 'en') + '.js?v=1.2.1-1"><\/script>');
 </script>
-<script src="pyviel-check.js?v=1.1.0-1"></script>
-<script src="tutorials.js?v=1.1.0-8"></script>
+<script src="pyviel-check.js?v=1.2.1-1"></script>
+<script src="tutorials.js?v=1.2.1-1"></script>
 </body>
 </html>

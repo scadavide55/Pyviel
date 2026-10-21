@@ -38,6 +38,7 @@ Quando non ce ne sono più, Python alza uno StopIteration, che il ciclo for pren
 
 Quand il n'y en a plus, Python lève une StopIteration, qu'une boucle for attrape pour toi. Avec une deuxième chose, next(items, "...") donne celle-ci au lieu de lever l'erreur. La dernière ligne montre l'erreur.`],
         ex: {
+          uses: ['next'],
           t: ['Fix the program so that it ends without an error: ask for the next item a fourth time with a second thing, "end", and show it.', 'Correggi il programma così che finisca senza errori: chiedi per la quarta volta l\'elemento successivo con un secondo valore, "fine", e mostralo.', 'Corrige le programme pour qu\'il finisse sans erreur : demande pour la quatrième fois l\'élément suivant avec une deuxième chose, "fin", et affiche-le.'],
           h: ['next can take a second thing: what to give back when nothing is left. Add it to the last next.', 'next può prendere una seconda cosa: cosa restituire quando non resta niente. Aggiungila all\'ultimo next.', 'next peut prendre une deuxième chose : ce qu\'il faut rendre quand il ne reste rien. Ajoute-la au dernier next.'],
           start: 'items = iter(["a", "b", "c"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items))',
@@ -336,6 +337,7 @@ Tre funzioni annidate fanno paura all'inizio. Leggile da fuori verso dentro: rep
 
 Trois fonctions imbriquées font peur au début. Lis-les de l'extérieur vers l'intérieur : repeat prend l'option, decorator prend la fonction, wrapper fait le travail.`],
         ex: {
+          uses: ['def'],
           t: ['Change the option so that hello is repeated 2 times.', 'Cambia l\'opzione così che hello venga ripetuta 2 volte.', 'Change l\'option pour que hello soit répétée 2 fois.'],
           h: ['Look at the line with @ above the function: the number in its brackets is how many times.', 'Guarda la riga con @ sopra la funzione: il numero tra le sue parentesi è quante volte.', 'Regarde la ligne avec @ au-dessus de la fonction : le nombre dans ses parenthèses, c\'est combien de fois.'],
           start: 'import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print("hello")\n\nhello()', sol: 'import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(2)\ndef hello():\n    print("hello")\n\nhello()', out: 'hello\nhello'

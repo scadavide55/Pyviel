@@ -32,6 +32,7 @@ Dentro, n += 1 cambia n. Senza, n non cambierebbe mai e il ciclo non finirebbe m
 
 Dedans, n += 1 change n. Sans ça, n ne changerait jamais et la boucle ne finirait jamais.`],
         ex: {
+          uses: ['while'],
           t: ['Change the program so that it counts up to 8 instead of 5.', 'Cambia il programma così che conti fino a 8 invece di 5.', 'Change le programme pour qu\'il compte jusqu\'à 8 au lieu de 5.'],
           h: ['Change the 5 in the question of the while.', 'Cambia il 5 nella domanda del while.', 'Change le 5 dans la question du while.'],
           start: [c`n = 1
@@ -262,6 +263,7 @@ Mette insieme tutto quello di questa lezione: while, if, else e un contatore.`,
 
 Il rassemble tout ce qu'il y a dans cette leçon : while, if, else et un compteur.`],
         ex: {
+          uses: ['while'],
           t: ['Start from 6 instead of 27, and see how many steps it needs.', 'Parti da 6 invece di 27 e guarda di quanti passi ha bisogno.', 'Pars de 6 au lieu de 27 et regarde de combien d\'étapes il a besoin.'],
           h: ['Change only the first line.', 'Cambia solo la prima riga.', 'Change seulement la première ligne.'],
           start: [c`n = 27
@@ -617,6 +619,7 @@ Pyviel dice quale riga e cosa manca. Il numero di riga è dove Python se n'è ac
 
 Pyviel dit quelle ligne et ce qui manque. Le numéro de ligne est celui où Python l'a remarqué, donc regarde aussi la ligne juste avant.`],
         ex: {
+          uses: ['if'],
           t: ['Fix the line so the program shows yes.', 'Correggi la riga così il programma mostra sì.', 'Corrige la ligne pour que le programme affiche oui.'],
           h: ['Something is missing at the end of the if line.', 'Manca qualcosa alla fine della riga if.', 'Il manque quelque chose à la fin de la ligne if.'],
           start: [c`if 5 > 3
@@ -645,6 +648,7 @@ Tutte le righe di uno stesso blocco devono iniziare esattamente nello stesso pun
 
 Toutes les lignes d'un même bloc doivent commencer exactement au même endroit.`],
         ex: {
+          uses: ['if'],
           t: ['Fix the line so the program shows yes.', 'Correggi la riga così il programma mostra sì.', 'Corrige la ligne pour que le programme affiche oui.'],
           h: ['Put four spaces before the print line.', 'Metti quattro spazi prima della riga print.', 'Mets quatre espaces avant la ligne print.'],
           start: [c`if 5 > 3:
@@ -674,6 +678,7 @@ Quando un nome non si trova, controlla come è scritto e che la scatola sia stat
 
 Quand un nom n'est pas trouvé, vérifie comment il est écrit, et que la boîte a été remplie avant de l'utiliser.`],
         ex: {
+          uses: ['='],
           t: ['Fix the typo so the program shows 10.', 'Correggi l\'errore di battitura così il programma mostra 10.', 'Corrige la faute de frappe pour que le programme affiche 10.'],
           h: ['The name in the print must be spelled like the box.', 'Il nome in print deve essere scritto come la scatola.', 'Le nom dans print doit être écrit comme la boîte.'],
           start: 'score = 10\nprint(scroe)', sol: 'score = 10\nprint(score)', out: '10'
@@ -695,6 +700,7 @@ Leggi la frase: nomina il problema. Poi premi View full error e trova la riga "F
 
 Lis la phrase : elle nomme le problème. Puis appuie sur View full error et trouve la ligne "File ..., line 3" : c'est le même numéro de ligne.`],
         ex: {
+          uses: ['[]'],
           t: ['Fix the program so it shows the last item, c.', 'Correggi il programma così mostra l\'ultimo elemento, c.', 'Corrige le programme pour qu\'il affiche le dernier élément, c.'],
           h: ['The last item of three is at place 2, or at place -1.', 'L\'ultimo di tre elementi è al posto 2, o al posto -1.', 'Le dernier de trois éléments est à la place 2, ou à la place -1.'],
           start: 'items = ["a", "b", "c"]\nprint(items[3])', sol: 'items = ["a", "b", "c"]\nprint(items[2])', out: 'c'
@@ -715,6 +721,7 @@ Errori come questo vengono spesso da una scatola che contiene 0 quando non te lo
 
 Les erreurs comme celle-ci viennent souvent d'une boîte qui contient 0 alors que tu ne t'y attendais pas. Affiche la boîte avec print pour le découvrir.`],
         ex: {
+          uses: ['/'],
           t: ['Fix the second line so it divides 10 by 5.', 'Correggi la seconda riga così divide 10 per 5.', 'Corrige la deuxième ligne pour qu\'elle divise 10 par 5.'],
           h: ['Change the 0 into a 5.', 'Cambia lo 0 in 5.', 'Change le 0 en 5.'],
           start: 'print(10 / 2)\nprint(10 / 0)', sol: 'print(10 / 2)\nprint(10 / 5)', out: '5.0\n2.0'
@@ -740,6 +747,7 @@ Nessuno scrive un programma senza errori. I programmatori sono solo veloci a tro
 
 Personne n'écrit un programme sans erreurs. Les programmeurs sont juste rapides pour les trouver.`],
         ex: {
+          uses: ['int'],
           t: ['The text "abc" is not a number. Change it to "42" and show the number at the end.', 'Il testo "abc" non è un numero. Cambialo in "42" e mostra il numero alla fine.', 'Le texte "abc" n\'est pas un nombre. Change-le en "42" et affiche le nombre à la fin.'],
           h: ['int("42") works. Then print(number) at the end.', 'int("42") funziona. Poi print(number) alla fine.', 'int("42") marche. Puis print(number) à la fin.'],
           start: [c`print("Start")

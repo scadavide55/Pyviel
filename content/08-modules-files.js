@@ -112,6 +112,7 @@ Python arriva con una libreria standard enorme, e in questa fase conoscerai le s
 
 Python vient avec une énorme bibliothèque standard, et tu en rencontreras les meilleures parties dans cette étape. Le site ne peut pas installer de paquets supplémentaires, et les modules qui ont besoin d'une fenêtre, comme turtle, ne marchent que dans l'application de bureau.`],
         ex: {
+          uses: ['import'],
           t: ['Fix it: bring in the real module math and show math.pi.', 'Correggilo: porta il vero modulo math e mostra math.pi.', 'Corrige-le : apporte le vrai module math et affiche math.pi.'],
           h: ['The first line brings in something that does not exist. Bring in math, then show its pi.', 'La prima riga porta dentro qualcosa che non esiste. Porta dentro math, poi mostra il suo pi.', 'La première ligne fait entrer quelque chose qui n\'existe pas. Fais entrer math, puis affiche son pi.'],
           start: 'import this_module_does_not_exist', sol: 'import math\nprint(math.pi)', out: '3.141592653589793'
@@ -284,6 +285,7 @@ Per giocare contro il computer, sostituisci la prima scelta con un input.`,
 
 Pour jouer contre l'ordinateur, remplace le premier choix par un input.`],
         ex: {
+          uses: ['for'],
           t: ['Change the game so that it plays 5 rounds instead of 3.', 'Cambia il gioco così che faccia 5 giri invece di 3.', 'Change le jeu pour qu\'il joue 5 tours au lieu de 3.'],
           h: ['range(1, 6) gives 5 rounds.', 'range(1, 6) dà 5 giri.', 'range(1, 6) donne 5 tours.'],
           start: [c`import random
@@ -747,6 +749,7 @@ Un ciclo con try dentro lascia che il programma gestisca ogni elemento da solo: 
 
 Une boucle avec try dedans laisse le programme traiter chaque élément seul : un mauvais élément n'arrête pas les autres.`],
         ex: {
+          uses: ['for', 'try'],
           t: ['Go through the list ["4", "z", "9"], and for each text show its double, or the word bad when it is not a number.', 'Scorri la lista ["4", "z", "9"] e per ogni testo mostra il suo doppio, o la parola male quando non è un numero.', 'Parcours la liste ["4", "z", "9"] et pour chaque texte affiche son double, ou le mot mauvais quand ce n\'est pas un nombre.'],
           h: ['for ... in ...: then try: print(int(text) * 2) and except ValueError: print("bad").', 'for ... in ...: poi try: print(int(text) * 2) ed except ValueError: print("male").', 'for ... in ...: puis try: print(int(text) * 2) et except ValueError: print("mauvais").'],
           sol: ['for text in ["4", "z", "9"]:\n    try:\n        print(int(text) * 2)\n    except ValueError:\n        print("bad")', 'for text in ["4", "z", "9"]:\n    try:\n        print(int(text) * 2)\n    except ValueError:\n        print("male")', 'for text in ["4", "z", "9"]:\n    try:\n        print(int(text) * 2)\n    except ValueError:\n        print("mauvais")'],
@@ -851,6 +854,7 @@ Chi chiama può prenderlo con try ed except, o no: l'ultima riga non lo prende, 
 
 Celui qui appelle peut l'attraper avec try et except, ou pas : la dernière ligne ne l'attrape pas, donc le programme s'arrête là, avec ton propre message dans l'explication.`],
         ex: {
+          uses: ['def'],
           t: ['Remove the last line, which stops the program, so that the program ends without an error.', 'Togli l\'ultima riga, che ferma il programma, così il programma finisce senza errori.', 'Enlève la dernière ligne, qui arrête le programme, pour que le programme finisse sans erreur.'],
           h: ['Delete the line set_age(-1).', 'Cancella la riga set_age(-1).', 'Supprime la ligne set_age(-1).'],
           start: 'def set_age(age):\n    if age < 0:\n        raise ValueError("negative")\n    return age\n\nprint(set_age(12))\nset_age(-1)', sol: 'def set_age(age):\n    if age < 0:\n        raise ValueError("negative")\n    return age\n\nprint(set_age(12))', out: '12'

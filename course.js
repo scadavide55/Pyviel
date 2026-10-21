@@ -263,13 +263,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "42"
+        "out": "42",
+        "uses": [
+         "+"
+        ]
        },
        "it": {
-        "out": "42"
+        "out": "42",
+        "uses": [
+         "+"
+        ]
        },
        "fr": {
-        "out": "42"
+        "out": "42",
+        "uses": [
+         "+"
+        ]
        }
       },
       "answers": {
@@ -585,15 +594,24 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "out": "Moon\nMoon\n",
-        "c": "Moon"
+        "c": "Moon",
+        "uses": [
+         "="
+        ]
        },
        "it": {
         "out": "Luna\nLuna\n",
-        "c": "Luna"
+        "c": "Luna",
+        "uses": [
+         "="
+        ]
        },
        "fr": {
         "out": "Lune\nLune\n",
-        "c": "Lune"
+        "c": "Lune",
+        "uses": [
+         "="
+        ]
        }
       },
       "answers": {
@@ -653,13 +671,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "15"
+        "out": "15",
+        "uses": [
+         "=",
+         "+"
+        ]
        },
        "it": {
-        "out": "15"
+        "out": "15",
+        "uses": [
+         "=",
+         "+"
+        ]
        },
        "fr": {
-        "out": "15"
+        "out": "15",
+        "uses": [
+         "=",
+         "+"
+        ]
        }
       },
       "answers": {
@@ -808,13 +838,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "Ada is 12 years old"
+        "out": "Ada is 12 years old",
+        "uses": [
+         "many-args"
+        ]
        },
        "it": {
-        "out": "Ada ha 12 anni"
+        "out": "Ada ha 12 anni",
+        "uses": [
+         "many-args"
+        ]
        },
        "fr": {
-        "out": "Ada a 12 ans"
+        "out": "Ada a 12 ans",
+        "uses": [
+         "many-args"
+        ]
        }
       },
       "answers": {
@@ -908,13 +947,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "red+green+blue"
+        "out": "red+green+blue",
+        "uses": [
+         "kw:sep"
+        ]
        },
        "it": {
-        "out": "rosso+verde+blu"
+        "out": "rosso+verde+blu",
+        "uses": [
+         "kw:sep"
+        ]
        },
        "fr": {
-        "out": "rouge+vert+bleu"
+        "out": "rouge+vert+bleu",
+        "uses": [
+         "kw:sep"
+        ]
        }
       },
       "answers": {
@@ -1303,15 +1351,24 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "out": "**********",
-        "c": "\\*"
+        "c": "\\*",
+        "uses": [
+         "*"
+        ]
        },
        "it": {
         "out": "**********",
-        "c": "\\*"
+        "c": "\\*",
+        "uses": [
+         "*"
+        ]
        },
        "fr": {
         "out": "**********",
-        "c": "\\*"
+        "c": "\\*",
+        "uses": [
+         "*"
+        ]
        }
       },
       "answers": {
@@ -2240,13 +2297,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "4.0"
+        "out": "4.0",
+        "uses": [
+         "/"
+        ]
        },
        "it": {
-        "out": "4.0"
+        "out": "4.0",
+        "uses": [
+         "/"
+        ]
        },
        "fr": {
-        "out": "4.0"
+        "out": "4.0",
+        "uses": [
+         "/"
+        ]
        }
       },
       "answers": {
@@ -2340,13 +2406,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "14\n2"
+        "out": "14\n2",
+        "uses": [
+         "//",
+         "%"
+        ]
        },
        "it": {
-        "out": "14\n2"
+        "out": "14\n2",
+        "uses": [
+         "//",
+         "%"
+        ]
        },
        "fr": {
-        "out": "14\n2"
+        "out": "14\n2",
+        "uses": [
+         "//",
+         "%"
+        ]
        }
       },
       "answers": {
@@ -2507,13 +2585,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "9"
+        "out": "9",
+        "uses": [
+         "+",
+         "*"
+        ]
        },
        "it": {
-        "out": "9"
+        "out": "9",
+        "uses": [
+         "+",
+         "*"
+        ]
        },
        "fr": {
-        "out": "9"
+        "out": "9",
+        "uses": [
+         "+",
+         "*"
+        ]
        }
       },
       "answers": {
@@ -2589,13 +2679,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "3.75"
+        "out": "3.75",
+        "uses": [
+         "+"
+        ]
        },
        "it": {
-        "out": "3.75"
+        "out": "3.75",
+        "uses": [
+         "+"
+        ]
        },
        "fr": {
-        "out": "3.75"
+        "out": "3.75",
+        "uses": [
+         "+"
+        ]
        }
       },
       "answers": {
@@ -3239,15 +3338,27 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "out": "30",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "int",
+         "*"
+        ]
        },
        "it": {
         "out": "30",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "int",
+         "*"
+        ]
        },
        "fr": {
         "out": "30",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "int",
+         "*"
+        ]
        }
       },
       "answers": {
@@ -3393,13 +3504,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "I am 12"
+        "out": "I am 12",
+        "uses": [
+         "str",
+         "+"
+        ]
        },
        "it": {
-        "out": "Ho 12"
+        "out": "Ho 12",
+        "uses": [
+         "str",
+         "+"
+        ]
        },
        "fr": {
-        "out": "J'ai 12"
+        "out": "J'ai 12",
+        "uses": [
+         "str",
+         "+"
+        ]
        }
       },
       "answers": {
@@ -3635,15 +3758,27 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "m": "11$",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "input",
+         "int"
+        ]
        },
        "it": {
         "m": "11$",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "input",
+         "int"
+        ]
        },
        "fr": {
         "m": "11$",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "input",
+         "int"
+        ]
        }
       },
       "answers": {
@@ -3709,15 +3844,30 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "m": "42$",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "input",
+         "int",
+         "*"
+        ]
        },
        "it": {
         "m": "42$",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "input",
+         "int",
+         "*"
+        ]
        },
        "fr": {
         "m": "42$",
-        "c": "int"
+        "c": "int",
+        "uses": [
+         "input",
+         "int",
+         "*"
+        ]
        }
       },
       "answers": {
@@ -3778,13 +3928,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "42$"
+        "m": "42$",
+        "uses": [
+         "input",
+         "*"
+        ]
        },
        "it": {
-        "m": "42$"
+        "m": "42$",
+        "uses": [
+         "input",
+         "*"
+        ]
        },
        "fr": {
-        "m": "42$"
+        "m": "42$",
+        "uses": [
+         "input",
+         "*"
+        ]
        }
       },
       "answers": {
@@ -3956,13 +4118,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "Ada is 13 years old"
+        "out": "Ada is 13 years old",
+        "uses": [
+         "f-string"
+        ]
        },
        "it": {
-        "out": "Ada ha 13 anni"
+        "out": "Ada ha 13 anni",
+        "uses": [
+         "f-string"
+        ]
        },
        "fr": {
-        "out": "Ada a 13 ans"
+        "out": "Ada a 13 ans",
+        "uses": [
+         "f-string"
+        ]
        }
       },
       "answers": {
@@ -4446,13 +4617,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "False"
+        "out": "False",
+        "uses": [
+         ">"
+        ]
        },
        "it": {
-        "out": "False"
+        "out": "False",
+        "uses": [
+         ">"
+        ]
        },
        "fr": {
-        "out": "False"
+        "out": "False",
+        "uses": [
+         ">"
+        ]
        }
       },
       "answers": {
@@ -5156,15 +5336,27 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "out": "None",
-        "c": "None"
+        "c": "None",
+        "uses": [
+         "=",
+         "None"
+        ]
        },
        "it": {
         "out": "None",
-        "c": "None"
+        "c": "None",
+        "uses": [
+         "=",
+         "None"
+        ]
        },
        "fr": {
         "out": "None",
-        "c": "None"
+        "c": "None",
+        "uses": [
+         "=",
+         "None"
+        ]
        }
       },
       "answers": {
@@ -6115,13 +6307,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10"
+        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10",
+        "uses": [
+         "for"
+        ]
        },
        "it": {
-        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10"
+        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10",
+        "uses": [
+         "for"
+        ]
        },
        "fr": {
-        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10"
+        "out": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10",
+        "uses": [
+         "for"
+        ]
        }
       },
       "answers": {
@@ -6185,13 +6386,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "55"
+        "out": "55",
+        "uses": [
+         "for"
+        ]
        },
        "it": {
-        "out": "55"
+        "out": "55",
+        "uses": [
+         "for"
+        ]
        },
        "fr": {
-        "out": "55"
+        "out": "55",
+        "uses": [
+         "for"
+        ]
        }
       },
       "answers": {
@@ -6320,13 +6530,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "*****\n*****"
+        "out": "*****\n*****",
+        "uses": [
+         "for"
+        ]
        },
        "it": {
-        "out": "*****\n*****"
+        "out": "*****\n*****",
+        "uses": [
+         "for"
+        ]
        },
        "fr": {
-        "out": "*****\n*****"
+        "out": "*****\n*****",
+        "uses": [
+         "for"
+        ]
        }
       },
       "answers": {
@@ -6490,13 +6709,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "n is 1\nn is 2\nn is 3\nn is 4\nn is 5\nn is 6\nn is 7\nn is 8\nDone\n"
+        "out": "n is 1\nn is 2\nn is 3\nn is 4\nn is 5\nn is 6\nn is 7\nn is 8\nDone\n",
+        "uses": [
+         "while"
+        ]
        },
        "it": {
-        "out": "n è 1\nn è 2\nn è 3\nn è 4\nn è 5\nn è 6\nn è 7\nn è 8\nFatto\n"
+        "out": "n è 1\nn è 2\nn è 3\nn è 4\nn è 5\nn è 6\nn è 7\nn è 8\nFatto\n",
+        "uses": [
+         "while"
+        ]
        },
        "fr": {
-        "out": "n est 1\nn est 2\nn est 3\nn est 4\nn est 5\nn est 6\nn est 7\nn est 8\nTerminé\n"
+        "out": "n est 1\nn est 2\nn est 3\nn est 4\nn est 5\nn est 6\nn est 7\nn est 8\nTerminé\n",
+        "uses": [
+         "while"
+        ]
        }
       },
       "answers": {
@@ -6848,13 +7076,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "Reached 1 after 8 steps\n"
+        "out": "Reached 1 after 8 steps\n",
+        "uses": [
+         "while"
+        ]
        },
        "it": {
-        "out": "Arrivato a 1 dopo 8 passi\n"
+        "out": "Arrivato a 1 dopo 8 passi\n",
+        "uses": [
+         "while"
+        ]
        },
        "fr": {
-        "out": "Arrivé à 1 après 8 étapes\n"
+        "out": "Arrivé à 1 après 8 étapes\n",
+        "uses": [
+         "while"
+        ]
        }
       },
       "answers": {
@@ -7766,13 +8003,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "yes"
+        "out": "yes",
+        "uses": [
+         "if"
+        ]
        },
        "it": {
-        "out": "sì"
+        "out": "sì",
+        "uses": [
+         "if"
+        ]
        },
        "fr": {
-        "out": "oui"
+        "out": "oui",
+        "uses": [
+         "if"
+        ]
        }
       },
       "answers": {
@@ -7837,13 +8083,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "yes"
+        "out": "yes",
+        "uses": [
+         "if"
+        ]
        },
        "it": {
-        "out": "sì"
+        "out": "sì",
+        "uses": [
+         "if"
+        ]
        },
        "fr": {
-        "out": "oui"
+        "out": "oui",
+        "uses": [
+         "if"
+        ]
        }
       },
       "answers": {
@@ -7904,13 +8159,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "10"
+        "out": "10",
+        "uses": [
+         "="
+        ]
        },
        "it": {
-        "out": "10"
+        "out": "10",
+        "uses": [
+         "="
+        ]
        },
        "fr": {
-        "out": "10"
+        "out": "10",
+        "uses": [
+         "="
+        ]
        }
       },
       "answers": {
@@ -7971,13 +8235,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "c"
+        "out": "c",
+        "uses": [
+         "[]"
+        ]
        },
        "it": {
-        "out": "c"
+        "out": "c",
+        "uses": [
+         "[]"
+        ]
        },
        "fr": {
-        "out": "c"
+        "out": "c",
+        "uses": [
+         "[]"
+        ]
        }
       },
       "answers": {
@@ -8038,13 +8311,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "5.0\n2.0"
+        "out": "5.0\n2.0",
+        "uses": [
+         "/"
+        ]
        },
        "it": {
-        "out": "5.0\n2.0"
+        "out": "5.0\n2.0",
+        "uses": [
+         "/"
+        ]
        },
        "fr": {
-        "out": "5.0\n2.0"
+        "out": "5.0\n2.0",
+        "uses": [
+         "/"
+        ]
        }
       },
       "answers": {
@@ -8105,13 +8387,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "Start\n42"
+        "out": "Start\n42",
+        "uses": [
+         "int"
+        ]
        },
        "it": {
-        "out": "Inizio\n42"
+        "out": "Inizio\n42",
+        "uses": [
+         "int"
+        ]
        },
        "fr": {
-        "out": "Début\n42"
+        "out": "Début\n42",
+        "uses": [
+         "int"
+        ]
        }
       },
       "answers": {
@@ -9235,13 +9526,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "education has 5 vowels\n"
+        "out": "education has 5 vowels\n",
+        "uses": [
+         "for"
+        ]
        },
        "it": {
-        "out": "educazione ha 6 vocali\n"
+        "out": "educazione ha 6 vocali\n",
+        "uses": [
+         "for"
+        ]
        },
        "fr": {
-        "out": "education a 5 voyelles\n"
+        "out": "education a 5 voyelles\n",
+        "uses": [
+         "for"
+        ]
        }
       },
       "answers": {
@@ -10275,13 +10575,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "[9, 4]"
+        "out": "[9, 4]",
+        "uses": [
+         "list"
+        ]
        },
        "it": {
-        "out": "[9, 4]"
+        "out": "[9, 4]",
+        "uses": [
+         "list"
+        ]
        },
        "fr": {
-        "out": "[9, 4]"
+        "out": "[9, 4]",
+        "uses": [
+         "list"
+        ]
        }
       },
       "answers": {
@@ -12181,13 +12490,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "Hello Ada"
+        "out": "Hello Ada",
+        "uses": [
+         "def"
+        ]
        },
        "it": {
-        "out": "Ciao Ada"
+        "out": "Ciao Ada",
+        "uses": [
+         "def"
+        ]
        },
        "fr": {
-        "out": "Bonjour Ada"
+        "out": "Bonjour Ada",
+        "uses": [
+         "def"
+        ]
        }
       },
       "answers": {
@@ -12686,13 +13004,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "50"
+        "out": "50",
+        "uses": [
+         "def"
+        ]
        },
        "it": {
-        "out": "50"
+        "out": "50",
+        "uses": [
+         "def"
+        ]
        },
        "fr": {
-        "out": "50"
+        "out": "50",
+        "uses": [
+         "def"
+        ]
        }
       },
       "answers": {
@@ -12923,13 +13250,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "2 4 6\n2"
+        "out": "2 4 6\n2",
+        "uses": [
+         "def",
+         "nonlocal"
+        ]
        },
        "it": {
-        "out": "2 4 6\n2"
+        "out": "2 4 6\n2",
+        "uses": [
+         "def",
+         "nonlocal"
+        ]
        },
        "fr": {
-        "out": "2 4 6\n2"
+        "out": "2 4 6\n2",
+        "uses": [
+         "def",
+         "nonlocal"
+        ]
        }
       },
       "answers": {
@@ -13004,13 +13343,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "5\n4\n3\n2\n1\nLiftoff!\n"
+        "out": "5\n4\n3\n2\n1\nLiftoff!\n",
+        "uses": [
+         "def"
+        ]
        },
        "it": {
-        "out": "5\n4\n3\n2\n1\nDecollo!\n"
+        "out": "5\n4\n3\n2\n1\nDecollo!\n",
+        "uses": [
+         "def"
+        ]
        },
        "fr": {
-        "out": "5\n4\n3\n2\n1\nDécollage !\n"
+        "out": "5\n4\n3\n2\n1\nDécollage !\n",
+        "uses": [
+         "def"
+        ]
        }
       },
       "answers": {
@@ -13853,13 +14201,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "(?:.*\\n){3}.*4$"
+        "m": "(?:.*\\n){3}.*4$",
+        "uses": [
+         "dict",
+         "for"
+        ]
        },
        "it": {
-        "m": "(?:.*\\n){3}.*4$"
+        "m": "(?:.*\\n){3}.*4$",
+        "uses": [
+         "dict",
+         "for"
+        ]
        },
        "fr": {
-        "m": "(?:.*\\n){3}.*4$"
+        "m": "(?:.*\\n){3}.*4$",
+        "uses": [
+         "dict",
+         "for"
+        ]
        }
       },
       "answers": {
@@ -13983,13 +14343,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "Score: 6$"
+        "m": "Score: 6$",
+        "uses": [
+         "for",
+         "input"
+        ]
        },
        "it": {
-        "m": "Punti: 6$"
+        "m": "Punti: 6$",
+        "uses": [
+         "for",
+         "input"
+        ]
        },
        "fr": {
-        "m": "Points : 6$"
+        "m": "Points : 6$",
+        "uses": [
+         "for",
+         "input"
+        ]
        }
       },
       "answers": {
@@ -14547,13 +14919,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "3.141592653589793"
+        "out": "3.141592653589793",
+        "uses": [
+         "import"
+        ]
        },
        "it": {
-        "out": "3.141592653589793"
+        "out": "3.141592653589793",
+        "uses": [
+         "import"
+        ]
        },
        "fr": {
-        "out": "3.141592653589793"
+        "out": "3.141592653589793",
+        "uses": [
+         "import"
+        ]
        }
       },
       "answers": {
@@ -15042,13 +15423,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "^(?:.*\\n){4}.+$"
+        "m": "^(?:.*\\n){4}.+$",
+        "uses": [
+         "for"
+        ]
        },
        "it": {
-        "m": "^(?:.*\\n){4}.+$"
+        "m": "^(?:.*\\n){4}.+$",
+        "uses": [
+         "for"
+        ]
        },
        "fr": {
-        "m": "^(?:.*\\n){4}.+$"
+        "m": "^(?:.*\\n){4}.+$",
+        "uses": [
+         "for"
+        ]
        }
       },
       "answers": {
@@ -16349,13 +16739,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "8\nbad\n18"
+        "out": "8\nbad\n18",
+        "uses": [
+         "for",
+         "try"
+        ]
        },
        "it": {
-        "out": "8\nmale\n18"
+        "out": "8\nmale\n18",
+        "uses": [
+         "for",
+         "try"
+        ]
        },
        "fr": {
-        "out": "8\nmauvais\n18"
+        "out": "8\nmauvais\n18",
+        "uses": [
+         "for",
+         "try"
+        ]
        }
       },
       "answers": {
@@ -16531,13 +16933,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "12"
+        "out": "12",
+        "uses": [
+         "def"
+        ]
        },
        "it": {
-        "out": "12"
+        "out": "12",
+        "uses": [
+         "def"
+        ]
        },
        "fr": {
-        "out": "12"
+        "out": "12",
+        "uses": [
+         "def"
+        ]
        }
       },
       "answers": {
@@ -18430,13 +18841,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "4 turns\n"
+        "out": "4 turns\n",
+        "uses": [
+         "class"
+        ]
        },
        "it": {
-        "out": "4 turni\n"
+        "out": "4 turni\n",
+        "uses": [
+         "class"
+        ]
        },
        "fr": {
-        "out": "4 tours\n"
+        "out": "4 tours\n",
+        "uses": [
+         "class"
+        ]
        }
       },
       "answers": {
@@ -19999,13 +20419,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "a\nb\nc\nend"
+        "out": "a\nb\nc\nend",
+        "uses": [
+         "next"
+        ]
        },
        "it": {
-        "out": "a\nb\nc\nfine"
+        "out": "a\nb\nc\nfine",
+        "uses": [
+         "next"
+        ]
        },
        "fr": {
-        "out": "a\nb\nc\nfin"
+        "out": "a\nb\nc\nfin",
+        "uses": [
+         "next"
+        ]
        }
       },
       "answers": {
@@ -20636,13 +21065,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "hello\nhello"
+        "out": "hello\nhello",
+        "uses": [
+         "def"
+        ]
        },
        "it": {
-        "out": "hello\nhello"
+        "out": "hello\nhello",
+        "uses": [
+         "def"
+        ]
        },
        "fr": {
-        "out": "hello\nhello"
+        "out": "hello\nhello",
+        "uses": [
+         "def"
+        ]
        }
       },
       "answers": {
@@ -23148,13 +23586,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "used 0\nused 1\n"
+        "out": "used 0\nused 1\n",
+        "uses": [
+         "import",
+         "await"
+        ]
        },
        "it": {
-        "out": "usato 0\nusato 1\n"
+        "out": "usato 0\nusato 1\n",
+        "uses": [
+         "import",
+         "await"
+        ]
        },
        "fr": {
-        "out": "utilisé 0\nutilisé 1\n"
+        "out": "utilisé 0\nutilisé 1\n",
+        "uses": [
+         "import",
+         "await"
+        ]
        }
       },
       "answers": {
@@ -24364,13 +24814,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "ok"
+        "out": "ok",
+        "uses": [
+         "assert"
+        ]
        },
        "it": {
-        "out": "ok"
+        "out": "ok",
+        "uses": [
+         "assert"
+        ]
        },
        "fr": {
-        "out": "ok"
+        "out": "ok",
+        "uses": [
+         "assert"
+        ]
        }
       },
       "answers": {
@@ -24580,13 +25039,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "6"
+        "out": "6",
+        "uses": [
+         "def",
+         "for"
+        ]
        },
        "it": {
-        "out": "6"
+        "out": "6",
+        "uses": [
+         "def",
+         "for"
+        ]
        },
        "fr": {
-        "out": "6"
+        "out": "6",
+        "uses": [
+         "def",
+         "for"
+        ]
        }
       },
       "answers": {
@@ -25104,13 +25575,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "You got it!$"
+        "m": "You got it!$",
+        "uses": [
+         "input",
+         "if"
+        ]
        },
        "it": {
-        "m": "Ce l'hai fatta!$"
+        "m": "Ce l'hai fatta!$",
+        "uses": [
+         "input",
+         "if"
+        ]
        },
        "fr": {
-        "m": "Tu as réussi !$"
+        "m": "Tu as réussi !$",
+        "uses": [
+         "input",
+         "if"
+        ]
        }
       },
       "answers": {
@@ -25327,15 +25810,27 @@ window.PyvielCourse = {
       "spec": {
        "en": {
         "out": "easy 10\nmedium 100\nhard 1000",
-        "c": "hard"
+        "c": "hard",
+        "uses": [
+         "dict",
+         "for"
+        ]
        },
        "it": {
         "out": "easy 10\nmedium 100\nhard 1000",
-        "c": "hard"
+        "c": "hard",
+        "uses": [
+         "dict",
+         "for"
+        ]
        },
        "fr": {
         "out": "easy 10\nmedium 100\nhard 1000",
-        "c": "hard"
+        "c": "hard",
+        "uses": [
+         "dict",
+         "for"
+        ]
        }
       },
       "answers": {
@@ -25410,13 +25905,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "_ y t _ _ n"
+        "out": "_ y t _ _ n",
+        "uses": [
+         "for"
+        ]
        },
        "it": {
-        "out": "_ y t _ _ n"
+        "out": "_ y t _ _ n",
+        "uses": [
+         "for"
+        ]
        },
        "fr": {
-        "out": "_ y t _ _ n"
+        "out": "_ y t _ _ n",
+        "uses": [
+         "for"
+        ]
        }
       },
       "answers": {
@@ -25545,13 +26049,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "You win!"
+        "out": "You win!",
+        "uses": [
+         "for"
+        ]
        },
        "it": {
-        "out": "You win!"
+        "out": "You win!",
+        "uses": [
+         "for"
+        ]
        },
        "fr": {
-        "out": "You win!"
+        "out": "You win!",
+        "uses": [
+         "for"
+        ]
        }
       },
       "answers": {
@@ -25695,13 +26208,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "1. [ ] Learn Python\n2. [ ] Read a book"
+        "out": "1. [ ] Learn Python\n2. [ ] Read a book",
+        "uses": [
+         "for",
+         "list"
+        ]
        },
        "it": {
-        "out": "1. [ ] Learn Python\n2. [ ] Read a book"
+        "out": "1. [ ] Learn Python\n2. [ ] Read a book",
+        "uses": [
+         "for",
+         "list"
+        ]
        },
        "fr": {
-        "out": "1. [ ] Learn Python\n2. [ ] Read a book"
+        "out": "1. [ ] Learn Python\n2. [ ] Read a book",
+        "uses": [
+         "for",
+         "list"
+        ]
        }
       },
       "answers": {
@@ -25915,13 +26440,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "m": "See you!$"
+        "m": "See you!$",
+        "uses": [
+         "while",
+         "input"
+        ]
        },
        "it": {
-        "m": "Ci vediamo!$"
+        "m": "Ci vediamo!$",
+        "uses": [
+         "while",
+         "input"
+        ]
        },
        "fr": {
-        "m": "À bientôt !$"
+        "m": "À bientôt !$",
+        "uses": [
+         "while",
+         "input"
+        ]
        }
       },
       "answers": {
@@ -26066,13 +26603,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "A dusty hall.\nI do not understand."
+        "out": "A dusty hall.\nI do not understand.",
+        "uses": [
+         "for"
+        ]
        },
        "it": {
-        "out": "A dusty hall.\nI do not understand."
+        "out": "A dusty hall.\nI do not understand.",
+        "uses": [
+         "for"
+        ]
        },
        "fr": {
-        "out": "A dusty hall.\nI do not understand."
+        "out": "A dusty hall.\nI do not understand.",
+        "uses": [
+         "for"
+        ]
        }
       },
       "answers": {
@@ -27196,13 +27742,22 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "100\nabcabc"
+        "out": "100\nabcabc",
+        "uses": [
+         "*"
+        ]
        },
        "it": {
-        "out": "100\nabcabc"
+        "out": "100\nabcabc",
+        "uses": [
+         "*"
+        ]
        },
        "fr": {
-        "out": "100\nabcabc"
+        "out": "100\nabcabc",
+        "uses": [
+         "*"
+        ]
        }
       },
       "answers": {
@@ -27872,13 +28427,25 @@ window.PyvielCourse = {
       },
       "spec": {
        "en": {
-        "out": "4.0"
+        "out": "4.0",
+        "uses": [
+         "def",
+         "/"
+        ]
        },
        "it": {
-        "out": "4.0"
+        "out": "4.0",
+        "uses": [
+         "def",
+         "/"
+        ]
        },
        "fr": {
-        "out": "4.0"
+        "out": "4.0",
+        "uses": [
+         "def",
+         "/"
+        ]
        }
       },
       "answers": {

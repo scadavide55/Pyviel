@@ -264,6 +264,7 @@ Scrivi qualche assert vicino alla tua funzione, con casi piccoli di cui conosci 
 
 Écris quelques assert à côté de ta fonction, avec de petits cas dont tu connais la réponse. Le dernier ici est une promesse fausse exprès, pour que tu voies l'erreur.`],
         ex: {
+          uses: ['assert'],
           t: ['Fix the last promise, so it is true, and the program ends without an error.', 'Correggi l\'ultima promessa, così è vera, e il programma finisce senza errori.', 'Corrige la dernière promesse, pour qu\'elle soit vraie, et que le programme finisse sans erreur.'],
           h: ['double(5) is 10, not 11.', 'double(5) fa 10, non 11.', 'double(5) vaut 10, pas 11.'],
           start: 'def double(n):\n    return n * 2\n\nassert double(5) == 11, "wrong"\nprint("ok")', sol: 'def double(n):\n    return n * 2\n\nassert double(5) == 10, "wrong"\nprint("ok")', out: 'ok'
@@ -328,6 +329,7 @@ Dai a quei print un'etichetta chiara, come DEBUG, così li trovi e li togli quan
 
 Donne à ces print une étiquette claire, comme DEBUG, pour pouvoir les retrouver et les enlever quand tu as fini.`],
         ex: {
+          uses: ['def', 'for'],
           t: ['The function sum_to is meant to add 1 to n but has a mistake: sum_to(3) shows 3 instead of 6. Fix the loop (range(1, n + 1)) so it shows 6.', 'La funzione sum_to deve sommare da 1 a n ma ha uno sbaglio: sum_to(3) mostra 3 invece di 6. Correggi il ciclo (range(1, n + 1)) così mostra 6.', 'La fonction sum_to doit additionner de 1 à n mais a une erreur : sum_to(3) affiche 3 au lieu de 6. Corrige la boucle (range(1, n + 1)) pour qu\'elle affiche 6.'],
           h: ['range(1, n) stops one number too early.', 'range(1, n) si ferma un numero troppo presto.', 'range(1, n) s\'arrête un nombre trop tôt.'],
           start: 'def sum_to(n):\n    total = 0\n    for i in range(1, n):\n        total += i\n    return total\n\nprint(sum_to(3))', sol: 'def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total\n\nprint(sum_to(3))', out: '6'

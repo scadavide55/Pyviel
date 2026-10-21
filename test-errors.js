@@ -210,6 +210,25 @@ check('every rule points at a text that exists', () => {
       py.globals.set('NO_INPUT', false);
     }
   });
+  check('the errors of the lessons on json, re and files get a sentence, in three languages', () => {
+    const cases = [
+      ['import json\njson.loads("{name: 1}")', 'json_bad', /line 1, column 2/],
+      ['import json\njson.loads("")', 'json_empty', /empty/],
+      ['import re\nre.search("(", "a")', 'regex_bad', /broken/],
+      ['import os\nos.makedirs("demo_folder", exist_ok=True)\nopen("demo_folder")', 'is_folder', /demo_folder/],
+      ['with open("demo_latin.txt", "wb") as f:\n    f.write(b"caf\\xe9")\nopen("demo_latin.txt", encoding="utf-8").read()', 'decode', /encoding/]
+    ];
+    for (const [source, id, look] of cases) {
+      const e = go(source).result.error;
+      assert.ok(e, source);
+      for (const lang of Errors.languages) {
+        const said = Errors.explain(e, lang);
+        assert.equal(said.id, id, source + ' (' + lang + ') -> ' + e.type + ': ' + e.message);
+        assert.ok(said.title.length > 15 && said.caption.length > 30 && !/\{\d\}/.test(said.title + said.caption));
+      }
+      assert.ok(look.test(Errors.explain(e, 'en').title + Errors.explain(e, 'en').caption), id + ': ' + Errors.explain(e, 'en').title);
+    }
+  });
   check('an unknown kind of error still gets a sentence', () => {
     const e = go('class MyTrouble(Exception):\n    pass\nraise MyTrouble("x")').result.error;
     assert.equal(Errors.explain(e, 'en').id, 'raised');

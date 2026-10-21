@@ -25,6 +25,7 @@ Questo programma ha una sola istruzione. Fa dire al computer "Ciao!". Premi Prov
 
 Ce programme n'a qu'une instruction. Elle fait dire "Bonjour!" à l'ordinateur. Appuie sur Essaie pour la voir marcher.`],
         ex: {
+          plain: true,
           t: ['Change the words between the quotes, so that the computer says: Good morning', 'Cambia le parole tra le virgolette, così il computer dice: Buongiorno', 'Change les mots entre les guillemets, pour que l\'ordinateur dise : Bonne journée'],
           h: ['Change only the words inside the quotes. Keep the round brackets and both quotes.', 'Cambia solo le parole dentro le virgolette. Tieni le parentesi tonde e tutte e due le virgolette.', 'Change seulement les mots à l\'intérieur des guillemets. Garde les parenthèses rondes et les deux guillemets.'],
           start: [c`print("Hello!")`, c`print("Ciao!")`, c`print("Bonjour!")`],
@@ -52,6 +53,7 @@ Per dire tre cose, scrivi tre righe print.`,
 
 Pour dire trois choses, écris trois lignes print.`],
         ex: {
+          plain: true,
           t: ['Add one more line, at the end, that says your own name.', 'Aggiungi una riga in più, alla fine, che dica il tuo nome.', 'Ajoute une ligne de plus, à la fin, qui dit ton prénom.'],
           h: ['Copy a print line and change the words. Every print goes on its own line.', 'Copia una riga print e cambia le parole. Ogni print va su una riga a parte.', 'Copie une ligne print et change les mots. Chaque print va sur sa propre ligne.'],
           start: [c`print("Hello!")
@@ -95,6 +97,7 @@ Python può anche fare il conto per te: print(2 + 3) mostra 5, non "2 + 3".`,
 
 Python peut même faire le calcul pour toi : print(2 + 3) affiche 5, pas "2 + 3".`],
         ex: {
+          uses: ['+'],
           t: ['Make the computer show the result of 20 + 22.', 'Fai mostrare al computer il risultato di 20 + 22.', 'Fais afficher à l\'ordinateur le résultat de 20 + 22.'],
           h: ['Write print, brackets, and the sum inside. No quotes.', 'Scrivi print, le parentesi e il conto dentro. Niente virgolette.', 'Écris print, les parenthèses et le calcul dedans. Pas de guillemets.'],
           sol: 'print(20 + 22)', out: '42'
@@ -148,6 +151,7 @@ Pyviel ti dice in una frase cos'è successo e in quale riga, e spesso come siste
 
 Pyviel te dit en une phrase ce qui s'est passé et à quelle ligne, et souvent comment le réparer. Le bouton View full error montre tout le message que Python a écrit.`],
         ex: {
+          plain: true,
           t: ['Fix the typo, then run the program again. All three lines must appear.', 'Correggi l\'errore di battitura e riesegui il programma. Devono comparire tutte e tre le righe.', 'Corrige la faute de frappe, puis relance le programme. Les trois lignes doivent apparaître.'],
           h: ['The word on line 2 should be print.', 'La parola alla riga 2 deve essere print.', 'Le mot de la ligne 2 doit être print.'],
           start: [c`print("Before")
@@ -228,6 +232,7 @@ name = "Ada" mette il testo Ada in una scatola che si chiama name. Dopo, ogni vo
 
 name = "Ada" met le texte Ada dans une boîte qui s'appelle name. Ensuite, chaque fois que tu écris name, Python ouvre la boîte et utilise ce qu'il y a dedans.`],
         ex: {
+          uses: ['='],
           t: ['Put the word Moon in the box, so the program shows Moon two times.', 'Metti la parola Luna nella scatola, così il programma mostra Luna due volte.', 'Mets le mot Lune dans la boîte, pour que le programme affiche Lune deux fois.'],
           h: ['Change only the word between the quotes on the first line.', 'Cambia solo la parola tra le virgolette sulla prima riga.', 'Change seulement le mot entre les guillemets sur la première ligne.'],
           start: 'name = "Ada"\nprint(name)\nprint(name)',
@@ -254,6 +259,7 @@ age = age + 1 sembra strano, ma funziona. Python prima calcola il lato destro (l
 
 age = age + 1 a l'air étrange, mais ça marche. Python calcule d'abord le côté droit (l'ancien age plus un), puis remet le résultat dans la boîte.`],
         ex: {
+          uses: ['=', '+'],
           t: ['The age starts at 10. Add 5 to it with age = age + 5, then show it. It must show 15.', 'L\'età parte da 10. Aggiungi 5 con age = age + 5 e poi mostrala. Deve mostrare 15.', 'L\'âge commence à 10. Ajoute-lui 5 avec age = age + 5, puis affiche-le. Il doit afficher 15.'],
           h: ['Put the line age = age + 5 between the two other lines.', 'Metti la riga age = age + 5 tra le altre due righe.', 'Mets la ligne age = age + 5 entre les deux autres lignes.'],
           start: 'age = 10\nprint(age)', sol: 'age = 10\nage = age + 5\nprint(age)', out: '15'
@@ -307,6 +313,7 @@ Puoi mescolare testo, scatole e numeri nella stessa riga.`,
 
 Tu peux mélanger du texte, des boîtes et des nombres dans la même ligne.`],
         ex: {
+          uses: ['many-args'],
           t: ['Use print with commas to show this line: Ada is 12 years old. Use the boxes name and age.', 'Usa print con le virgole per mostrare questa riga: Ada ha 12 anni. Usa le scatole name e age.', 'Utilise print avec des virgules pour afficher cette ligne : Ada a 12 ans. Utilise les boîtes name et age.'],
           h: ['print(name, "is", age, ...) and the last piece is the text "years old".', 'print(name, "ha", age, ...) e l\'ultimo pezzo è il testo "anni".', 'print(name, "a", age, ...) et le dernier morceau est le texte "ans".'],
           start: 'name = "Ada"\nage = 12',
@@ -334,6 +341,7 @@ sep= dice cosa mettere tra le cose. end= dice cosa mettere alla fine.`,
 
 sep= dit ce qu'on met entre les choses. end= dit ce qu'on met à la fin.`],
         ex: {
+          uses: ['kw:sep'],
           t: ['Show red, green and blue in one line, with a + sign between them: red+green+blue', 'Mostra rosso, verde e blu in una riga, con un segno + in mezzo: rosso+verde+blu', 'Affiche rouge, vert et bleu sur une ligne, avec un signe + entre eux : rouge+vert+bleu'],
           h: ['Give print the three words with commas, then sep="+" at the end.', 'Dai a print le tre parole con le virgole, poi sep="+" alla fine.', 'Donne à print les trois mots avec des virgules, puis sep="+" à la fin.'],
           sol: ['print("red", "green", "blue", sep="+")', 'print("rosso", "verde", "blu", sep="+")', 'print("rouge", "vert", "bleu", sep="+")'],
@@ -418,6 +426,7 @@ print('Il a dit "salut" à tout le monde')`],
 
 "C'est une belle journée" a un guillemet simple dedans (l'apostrophe), donc ceux autour sont doubles.`],
         ex: {
+          plain: true,
           t: ['Show this text, with its double quotes: He said "wow"', 'Mostra questo testo, con le sue virgolette doppie: Ha detto "wow"', 'Affiche ce texte, avec ses guillemets doubles : Il a dit "wow"'],
           h: ['Put single quotes around the whole text, and double quotes inside it.', 'Metti le virgolette singole attorno a tutto il testo e quelle doppie dentro.', 'Mets des guillemets simples autour de tout le texte, et des doubles à l\'intérieur.'],
           sol: ['print(\'He said "wow"\')', 'print(\'Ha detto "wow"\')', 'print(\'Il a dit "wow"\')'],
@@ -469,6 +478,7 @@ It is handy for drawing lines: "-" * 20 makes twenty dashes.`,
 
 C'est pratique pour dessiner des lignes : "-" * 20 donne vingt tirets.`],
         ex: {
+          uses: ['*'],
           t: ['Show a row of 10 stars: **********', 'Mostra una fila di 10 stelle: **********', 'Affiche une rangée de 10 étoiles : **********'],
           h: ['The text is "*" and the number is 10.', 'Il testo è "*" e il numero è 10.', 'Le texte est "*" et le nombre est 10.'],
           sol: 'print("*" * 10)', out: '**********', c: '\\*'
@@ -554,6 +564,7 @@ print("Nom :\tAda")`],
 
 \\n veut dire "nouvelle ligne" et \\t veut dire "une grande espace". Ils marchent dans n'importe quel texte.`],
         ex: {
+          plain: true,
           t: ['With only one print, show Hello and World on two lines.', 'Con un solo print, mostra Ciao e Mondo su due righe.', 'Avec un seul print, affiche Bonjour et Monde sur deux lignes.'],
           h: ['Put \\n between the two words, inside the same quotes.', 'Metti \\n tra le due parole, dentro le stesse virgolette.', 'Mets \\n entre les deux mots, dans les mêmes guillemets.'],
           sol: ['print("Hello\\nWorld")', 'print("Ciao\\nMondo")', 'print("Bonjour\\nMonde")'],
@@ -577,6 +588,7 @@ E per mostrare una vera barra rovesciata ne scrivi due: \\\\.`,
 
 Et pour afficher une vraie barre oblique inversée, écris-en deux : \\\\.`],
         ex: {
+          plain: true,
           t: ['Show: She said "ok" . Use double quotes around the text, and \\" for the quotes inside.', 'Mostra: Ha detto "ok" . Usa le virgolette doppie attorno al testo e \\" per quelle dentro.', 'Affiche : Il a dit "ok" . Utilise des guillemets doubles autour du texte, et \\" pour ceux de l\'intérieur.'],
           h: ['Write a backslash just before each quote that is inside the text.', 'Scrivi una barra rovesciata subito prima di ogni virgoletta che sta dentro il testo.', 'Écris une barre oblique inversée juste avant chaque guillemet qui est dans le texte.'],
           sol: ['print("She said \\"ok\\"")', 'print("Ha detto \\"ok\\"")', 'print("Il a dit \\"ok\\"")'],

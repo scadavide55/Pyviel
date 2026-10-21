@@ -302,6 +302,31 @@
       it: ['`{2}` non ha niente chiamato `{1}` da importare.', 'Controlla come è scritto il nome dopo import, e cosa offre davvero quel modulo.'],
       fr: ['`{2}` n\'a rien appelé `{1}` à importer.', 'Vérifie l\'orthographe du nom après import, et ce que ce module offre vraiment.']
     },
+    is_folder: {
+      en: ['{1} is a folder, not a file.', 'open() reads files. Write the name of a file inside that folder, for example open("{1}/notes.txt").'],
+      it: ['{1} è una cartella, non un file.', 'open() legge i file. Scrivi il nome di un file dentro quella cartella, per esempio open("{1}/notes.txt").'],
+      fr: ['{1} est un dossier, pas un fichier.', 'open() lit des fichiers. Écris le nom d\'un fichier dans ce dossier, par exemple open("{1}/notes.txt").']
+    },
+    json_empty: {
+      en: ['The JSON text is empty.', 'json.loads() and json.load() need a text that starts with a value: {...}, [...], a number or "a text". Check that the file or the text is not empty.'],
+      it: ['Il testo JSON è vuoto.', 'json.loads() e json.load() vogliono un testo che inizia con un valore: {...}, [...], un numero o "un testo". Controlla che il file o il testo non sia vuoto.'],
+      fr: ['Le texte JSON est vide.', 'json.loads() et json.load() veulent un texte qui commence par une valeur : {...}, [...], un nombre ou "un texte". Vérifie que le fichier ou le texte n\'est pas vide.']
+    },
+    json_bad: {
+      en: ['This text is not valid JSON (line {1}, column {2} of the text).', 'In JSON, keys and texts need double quotes, like {"name": "Ada"}, and there is no comma after the last item. Look at that place in the text.'],
+      it: ['Questo testo non è JSON valido (riga {1}, colonna {2} del testo).', 'In JSON chiavi e testi vogliono le virgolette doppie, come {"name": "Ada"}, e non c\'è una virgola dopo l\'ultimo elemento. Guarda in quel punto del testo.'],
+      fr: ['Ce texte n\'est pas du JSON valide (ligne {1}, colonne {2} du texte).', 'En JSON, les clés et les textes veulent des guillemets doubles, comme {"name": "Ada"}, et il n\'y a pas de virgule après le dernier élément. Regarde à cet endroit du texte.']
+    },
+    regex_bad: {
+      en: ['The pattern of this regular expression is broken.', 'Python says: {m}. Look for a bracket ( or [ that is opened and never closed. To look for the sign itself, put a backslash before it: \\( or \\[.'],
+      it: ['Lo schema di questa espressione regolare è rotto.', 'Python dice: {m}. Cerca una parentesi ( o [ aperta e mai chiusa. Per cercare il segno stesso, mettici davanti una barra rovesciata: \\( o \\[.'],
+      fr: ['Le motif de cette expression régulière est cassé.', 'Python dit : {m}. Cherche une parenthèse ( ou [ ouverte et jamais fermée. Pour chercher le signe lui-même, mets une barre oblique inverse devant : \\( ou \\[.']
+    },
+    decode: {
+      en: ['This file is not written in the encoding Python was told to use.', 'The file was saved with another encoding (often latin-1, or cp1252 on Windows). Try open(name, encoding="latin-1"), or save the file again as UTF-8.'],
+      it: ['Questo file non è scritto nella codifica che Python doveva usare.', 'Il file è stato salvato con un\'altra codifica (spesso latin-1, o cp1252 su Windows). Prova open(name, encoding="latin-1"), oppure salva di nuovo il file come UTF-8.'],
+      fr: ['Ce fichier n\'est pas écrit dans l\'encodage que Python devait utiliser.', 'Le fichier a été enregistré avec un autre encodage (souvent latin-1, ou cp1252 sous Windows). Essaie open(name, encoding="latin-1"), ou enregistre de nouveau le fichier en UTF-8.']
+    },
     file_missing: {
       en: ['The file {1} was not found.', 'Python looks for files in its own small workspace. In Pyviel, create the file first by writing to it with open(name, "w").'],
       it: ['Il file {1} non è stato trovato.', 'Python cerca i file nel suo piccolo spazio di lavoro. In Pyviel, crea prima il file scrivendoci con open(nome, "w").'],
@@ -431,6 +456,14 @@
     ['ModuleNotFoundError', /^No module named '(.+?)'/, 'module_missing'],
     ['ImportError', /^cannot import name '(.+?)' from '(.+?)'/, 'import_name'],
     ['FileNotFoundError', /: '(.+)'$/, 'file_missing'],
+    ['IsADirectoryError', /: '(.+)'$/, 'is_folder'],
+    ['IsADirectoryError', /^/, 'is_folder'],
+    ['JSONDecodeError', /^Expecting value: line 1 column 1 \(char 0\)/, 'json_empty'],
+    ['JSONDecodeError', /line (\d+) column (\d+)/, 'json_bad'],
+    ['JSONDecodeError', /^/, 'json_bad'],
+    ['PatternError', /^/, 'regex_bad'],
+    ['UnicodeDecodeError', /^'(.+?)' codec/, 'decode'],
+    ['UnicodeDecodeError', /^/, 'decode'],
     ['RecursionError', /^/, 'recursion'],
     ['EOFError', /^/, 'eof'],
     ['RuntimeError', /stack switch|WebAssembly stack switching/, 'old_browser'],

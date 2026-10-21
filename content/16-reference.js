@@ -407,6 +407,7 @@ Il campo giochi: scrivi solo python3 e premi Invio. Vedi >>> e Python aspetta. S
 
 Le terrain de jeu : tape juste python3 et appuie sur Entrée. Tu vois >>> et Python attend. Tape 2 + 2 et appuie sur Entrée : il répond 4 tout de suite. Pour sortir, tape exit() ou appuie sur Ctrl+D (Ctrl+Z puis Entrée sous Windows). Le programme de cette page a les mêmes trois lignes que tu taperais là-bas.`],
         ex: {
+          uses: ['*'],
           t: ['Show 10 * 10 and the word abc repeated 2 times, on two lines.', 'Mostra 10 * 10 e la parola abc ripetuta 2 volte, su due righe.', 'Affiche 10 * 10 et le mot abc répété 2 fois, sur deux lignes.'],
           h: ['Two print lines. * multiplies numbers, and it repeats a text too.', 'Due righe print. * moltiplica i numeri, e ripete anche un testo.', 'Deux lignes print. * multiplie les nombres, et répète aussi un texte.'],
           sol: 'print(10 * 10)\nprint("abc" * 2)', out: '100\nabcabc'
@@ -665,6 +666,7 @@ ZeroDivisionError: division by zero
 
 Lis-le de bas en haut. La dernière ligne est le genre d'erreur et ce qui s'est passé. Au-dessus il y a les étapes qui y ont mené : le fichier, le numéro de ligne et la ligne elle-même. Ici la ligne 5 a appelé divide, et la ligne 2 dans divide a cassé.`],
         ex: {
+          uses: ['def', '/'],
           t: ['Press Run, then View full error, and find the line number. Then fix the second call so it divides 8 by 2 and shows 4.0.', 'Premi Esegui, poi View full error e trova il numero di riga. Poi correggi la seconda chiamata così divide 8 per 2 e mostra 4.0.', 'Appuie sur Lancer, puis View full error et trouve le numéro de ligne. Puis corrige le deuxième appel pour qu\'il divise 8 par 2 et affiche 4.0.'],
           h: ['divide(8, 2)', 'divide(8, 2)', 'divide(8, 2)'],
           start: 'def divide(a, b):\n    return a / b\n\nprint(divide(1, 0))', sol: 'def divide(a, b):\n    return a / b\n\nprint(divide(8, 2))', out: '4.0'

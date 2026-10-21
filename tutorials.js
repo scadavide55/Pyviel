@@ -338,14 +338,19 @@
   function drawSummary() {
     var total = TUTORIALS.length;
     var box = element('div', 'lesson-summary');
-    box.appendChild(element('div', 'summary-text', fill(UI.lessonsDone || '{done} of {total} lessons done', {done: done.length, total: total})));
+    // Two kinds of progress: a lesson read to the end, and a lesson whose every task is solved.
+    var solvedLessons = TUTORIALS.filter(function (lesson, i) { return solvedIn(i) === lesson.steps.length; }).length;
+    box.appendChild(element('div', 'summary-text', fill(UI.lessonsReadSolved || '{read} of {total} lessons read · {solved} solved', {read: done.length, solved: solvedLessons, total: total})));
     var meter = element('div', 'meter');
     meter.setAttribute('aria-hidden', 'true');
-    var fillBar = element('i');
-    fillBar.style.width = Math.round(100 * done.length / total) + '%';
+    var readBar = element('i', 'read');
+    readBar.style.width = Math.round(100 * done.length / total) + '%';
+    var fillBar = element('i', 'solved');
+    fillBar.style.width = Math.round(100 * solvedLessons / total) + '%';
+    meter.appendChild(readBar);
     meter.appendChild(fillBar);
     box.appendChild(meter);
-    if (done.length >= total) {
+    if (solvedLessons >= total) {
       box.className += ' finished';
       box.appendChild(element('strong', 'finish-title', UI.allDoneTitle || 'You know the whole language!'));
       box.appendChild(element('p', null, UI.allDoneText || 'Now open the examples, change them, and make a program of your own.'));
@@ -374,15 +379,20 @@
         lastGroup = lesson.group;
         lessonsBox.appendChild(element('h3', 'lesson-group', lesson.group));
       }
-      var button = element('button', 'tutorial-lesson' + (done.indexOf(index) >= 0 ? ' done' : ''));
+      var tasksDone = solvedIn(index), all = lesson.steps.length;
+      var state = tasksDone === all ? ' done' : (done.indexOf(index) >= 0 ? ' read' : '');
+      var button = element('button', 'tutorial-lesson' + state);
       button.type = 'button';
       button.setAttribute('aria-current', String(index === position.lesson));
-      button.appendChild(element('span', 'lesson-number', done.indexOf(index) >= 0 ? '✓' : String(index + 1)));
+      button.appendChild(element('span', 'lesson-number', tasksDone === all ? '✓' : String(index + 1)));
       var text = element('span', 'lesson-text');
       text.appendChild(element('span', 'lesson-title', lesson.title));
       text.appendChild(element('small', null, lesson.subtitle));
       button.appendChild(text);
-      button.appendChild(element('span', 'lesson-count', lesson.steps.length + ' ' + (UI.steps || 'steps')));
+      // A lesson read but not all solved says how many tasks are still waiting.
+      button.appendChild(element('span', 'lesson-count', tasksDone && tasksDone < all
+        ? fill(UI.tasksSolved || '{n} of {total} solved', {n: tasksDone, total: all})
+        : all + ' ' + (UI.steps || 'steps')));
       button.addEventListener('click', function () {
         position = {lesson: index, step: 0};
         showingStep = true;
@@ -393,6 +403,12 @@
     });
   }
 
+  // How many tasks of a lesson are solved.
+  function solvedIn(lessonIndex) {
+    var n = 0;
+    for (var i = 0; i < TUTORIALS[lessonIndex].steps.length; i++) if (solved[lessonIndex + ':' + i]) n++;
+    return n;
+  }
   function markDone(lessonIndex) {
     if (done.indexOf(lessonIndex) < 0) { done.push(lessonIndex); write(DONE, done); }
     showStartHere();
@@ -513,7 +529,7 @@
         return;
       }
       if (run.stopped) { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkMoreAnswers || 'Your program asked more questions than this task expects.')); return; }
-      var verdict = window.PyvielCheck.check(task.spec, run.text, source);
+      var verdict = window.PyvielCheck.check(task.spec, run.text, source, run.used);
       if (verdict.ok) {
         solved[key] = 1;
         write(SOLVED, solved);
@@ -526,6 +542,11 @@
         return;
       }
       if (verdict.why === 'empty') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkEmpty || 'Your program showed nothing. Use print to show something.')); return; }
+      if (verdict.why === 'uses') {
+        var names = verdict.missing.map(function (key) { return (UI.uses && UI.uses[key]) || key; });
+        say2('no', UI.notYet || 'Not yet.', ' ' + fill(UI.checkUses || 'It shows the right thing, but this task asks you to use {what}. Read the task again.', {what: names.join(UI.andWord || ' and ')}));
+        return;
+      }
       if (verdict.why === 'code') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkCode || 'It shows the right thing, but the task asks you to write it in a special way. Read the task again.')); return; }
       say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkWrong || 'Your program shows something different.'));
       if (task.spec.out !== undefined) {

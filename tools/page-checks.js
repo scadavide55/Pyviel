@@ -115,6 +115,27 @@
   lessons[0].click();
   check('a lesson step shows its code line by line with notes', document.querySelectorAll('.tutorial-code .code-row .note').length >= 1);
   check('and what you will see', !!document.querySelector('.see-box'));
+  check('the step explains what is new, before the program', !!document.querySelector('.new-words .new-word-name') && document.querySelector('.new-words').compareDocumentPosition(document.querySelector('.tutorial-code')) & Node.DOCUMENT_POSITION_FOLLOWING);
+  check('the result stays hidden until the student has thought about it', !!document.querySelector('.predict') && !document.querySelector('.see-box .screen'));
+  document.querySelector('.reveal').click();
+  check('and Show what you will see reveals it', !!document.querySelector('.see-box .screen'));
+  // a practice task: wrong answer, hint, solution, right answer
+  const task = course[0].steps[0].task;
+  check('every step has a practice task with a hint and a solution', course.every(l => l.steps.every(s => s.task && s.task.hint && s.task.solution)));
+  document.querySelector('.start-task').click();
+  check('Start here puts the starting code in the editor', code.value === task.start);
+  code.value = 'print("not the answer")'; code.dispatchEvent(new Event('input', {bubbles: true}));
+  document.querySelector('.check-task').click();
+  for (let i = 0; i < 100 && !document.querySelector('.exercise-result.no, .exercise-result.yes'); i++) await new Promise(r => setTimeout(r, 100));
+  check('a wrong answer is explained and shows what the program printed', !!document.querySelector('.exercise-result.no') && /not the answer/.test(document.querySelector('.exercise-result').textContent), document.querySelector('.exercise-result') && document.querySelector('.exercise-result').textContent);
+  document.querySelector('.hint-task').click();
+  check('the hint opens', !!document.querySelector('.hint-box'));
+  document.querySelector('.solution-task').click();
+  check('the solution opens, and goes to the editor', !!document.querySelector('.solution-box pre') && document.querySelector('.solution-box .btn'));
+  document.querySelector('.solution-box .btn').click();
+  document.querySelector('.check-task').click();
+  for (let i = 0; i < 100 && !document.querySelector('.exercise-result.yes'); i++) await new Promise(r => setTimeout(r, 100));
+  check('the right answer is recognised and remembered', !!document.querySelector('.exercise-result.yes') && !!document.querySelector('.solved-tag') && !!document.querySelector('.progress .solved'));
   document.querySelector('.step-actions .put-code').click();
   check('Put it in the editor loads the step', /print\(/.test(code.value));
   document.querySelector('.step-actions .type-it').click();
@@ -124,7 +145,7 @@
   for (let i = 0; i < 4; i++) stepButtons()[1].click();
   document.querySelector('.step-actions .put-code').click();
   await run(code.value);
-  check('the lesson about a mistake shows the friendly error', !!document.querySelector('.full-toggle') && /pirnt/.test(document.querySelector('.problem-item').innerText), document.querySelector('.problem-item') && document.querySelector('.problem-item').innerText);
+  check('the lesson about a mistake shows the friendly error', !!document.querySelector('.full-toggle') && /prnt/.test(document.querySelector('.problem-item').innerText), document.querySelector('.problem-item') && document.querySelector('.problem-item').innerText);
   check('the step says what you will see, with the error sentence', course[0].steps[4].see.indexOf('⚠') >= 0, course[0].steps[4].see);
 
   // every program of every step runs here, in the real page (the ones that ask questions are checked by the build)
@@ -139,6 +160,9 @@
     }
   }
   check('every step program that needs no typing behaves in the page (' + ran + ' run)', wrong.length === 0, wrong.slice(0, 6).join(' | '));
+
+  const nameBox = $('file-name').getBoundingClientRect(), tools = document.querySelector('.file-tools').getBoundingClientRect();
+  check('the file name does not run over the buttons next to it', nameBox.right <= tools.left + 1 || nameBox.top !== tools.top, nameBox.right + ' vs ' + tools.left);
 
   // a very long line does not break the layout
   check('the page does not scroll sideways', document.documentElement.scrollWidth <= window.innerWidth + 1, document.documentElement.scrollWidth + ' vs ' + window.innerWidth);

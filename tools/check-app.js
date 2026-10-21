@@ -28,7 +28,7 @@ app.whenReady().then(async function () {
     });
   });
   session.defaultSession.webRequest.onBeforeRequest(function (details, callback) { callback({ cancel: /^https?:/i.test(details.url) }); });
-  const win = new BrowserWindow({ width: 1280, height: 900, show: false, webPreferences: { preload: path.join(root, 'electron', 'preload.js'), contextIsolation: true, sandbox: true, additionalArguments: ['--pyviel-version=1.0.0-beta'] } });
+  const win = new BrowserWindow({ width: 1280, height: 900, show: false, webPreferences: { preload: path.join(root, 'electron', 'preload.js'), contextIsolation: true, sandbox: true, additionalArguments: ['--pyviel-version=1.1.0-beta'] } });
   await win.loadURL('pyviel://app/index.html');
   await new Promise(function (r) { setTimeout(r, 1500); });
   const script = fs.readFileSync(path.join(__dirname, 'page-checks.js'), 'utf8');

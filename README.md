@@ -6,13 +6,13 @@ Learn Python the way Kaviel teaches code: small steps, every line explained, and
 
 Pyviel runs **real Python 3.14**, and nothing leaves your computer. It comes in two forms: the **website**, a demo that needs nothing installed, and the **desktop app**, the complete version. The table below says what differs.
 
-> Status: **1.0 beta.** The whole course is written: **57 lessons and 272 steps**, in English, Italian and French, from `print` to classes, generators, decorators and async, with five complete programs and a cheat sheet. Every program of every step is run on real Python by the build, so what a step says you will see is what you see. It has not been tried with real beginners yet: if you do, please tell us where they got stuck.
+> Status: **1.0 beta.** The whole course is written: **58 lessons and 301 steps**, in English, Italian and French, from `print` to classes, generators, decorators and async, with five complete programs and a cheat sheet. Every program of every step is run on real Python by the build, so what a step says you will see is what you see. It has not been tried with real beginners yet: if you do, please tell us where they got stuck.
 
 ## What is different from running Python yourself
 
 - **Errors are explained.** When Python stops with an error, Pyviel says in one short sentence what happened and on which line, in English, Italian or French, and adds a caption with what to try. Under it, **View full error** shows the complete message that Python wrote, so you also learn to read the real thing.
 - **It is honest Python.** The program stops at the first error, exactly like Python does. Pyviel does not hide that, it explains it.
-- **The lessons explain every line** of every program, with what you will see when it runs and a small job to try.
+- **Nothing new comes without an explanation.** Every step starts with a box that explains each new word, then shows the program with a note beside every line. You guess what it shows before you look, and a small task, checked for you, makes you write the next bit yourself.
 - **It works offline** and sends nothing anywhere.
 
 ## The desktop app
@@ -21,10 +21,10 @@ The installers are in the [latest release](https://github.com/scadavide55/Pyviel
 
 | System | File |
 |---|---|
-| macOS, Apple silicon (M1 and later) | `Pyviel-1.0.0-beta-arm64.dmg` |
-| macOS, Intel | `Pyviel-1.0.0-beta-x64.dmg` |
-| Windows 10 and 11 | `Pyviel-1.0.0-beta-setup.exe` |
-| Linux (64-bit) | `Pyviel-1.0.0-beta-linux-x64.tar.gz` |
+| macOS, Apple silicon (M1 and later) | `Pyviel-1.1.0-beta-arm64.dmg` |
+| macOS, Intel | `Pyviel-1.1.0-beta-x64.dmg` |
+| Windows 10 and 11 | `Pyviel-1.1.0-beta-setup.exe` |
+| Linux (64-bit) | `Pyviel-1.1.0-beta-linux-x64.tar.gz` |
 
 Mac note: Apple silicon is the one to use. The Intel file is for Intel Macs up to macOS 27; Apple is ending support for Intel apps with macOS 28.
 
@@ -32,7 +32,7 @@ Mac note: Apple silicon is the one to use. The Intel file is for Intel Macs up t
 
 | | Website (demo) | Desktop app |
 |---|---|---|
-| Course, lessons, errors in 3 languages | the same, all 57 lessons | the same, all 57 lessons |
+| Course, lessons, errors in 3 languages | the same, all 58 lessons | the same, all 58 lessons |
 | Where Python runs | inside the browser (Pyodide, Python 3.14.2) | a real **Python 3.14.8 packed in the app**, on your computer |
 | Speed | slower (WebAssembly) | normal Python speed |
 | `threading`, `subprocess`, `os.system` | not available | work |

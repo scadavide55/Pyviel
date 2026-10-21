@@ -60,3 +60,11 @@ All of these must be green before a commit. After editing `content/*.js` run `bu
 - Use a seed (`random.seed(n)`) in lessons so the output is the same; compute the answers for the demo inputs, never guess them.
 - A construct that is new to the line-by-line notes needs a rule in `explain()` in `tutorials.js` and a sentence in the three languages in `lessons.js`. `check-notes.js` finds the lines that have none.
 - Verified in Pyodide 314: no `threading`, no `turtle`/`tkinter`; `asyncio.run` works through `callPromising` in browsers that can switch stacks.
+
+## How the course is written (1.1)
+
+- Lessons live in `content/NN-*.js`; every new thing is explained once in `content/glossary-*.js` (key, three languages) and a step lists the keys it brings in `n`. `node tools/check-newwords.js` (part of `npm test`) reads every program with Python's parser (`tools/concepts.py`) and fails if a thing is used before it is explained, or if a step brings more than three new things (`many: true` allows an exception). `--list` shows what each step brings; use it while writing.
+- A step has `c` (code), `n`, `t`, `x`, `w`, and `ex`: the practice task (`t` task, `h` hint, `sol` solution, `start`, and the check: `out`, `exact`, `m` regex on the output, `c` regex on the program text, `i` typed answers). The build runs every solution and start in every language.
+- **Words inside examples are translated.** `c`, `ex.start`, `ex.sol` and the checks are `[en, it, fr]` when they contain words; the three versions must have the same shape (the checker compares them). Identifiers and names like Ada stay as they are.
+- Files that lessons write start with `demo_`.
+- `pyviel-check.js` is shared by the page and the build: what the build proves about a solution is what the page does with a student.

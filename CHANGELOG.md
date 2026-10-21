@@ -1,6 +1,20 @@
 # Changes
 
+## 1.1.0 beta — 22 October 2026
+
+The tutorials were rebuilt from the ground up, so that nothing new is ever thrown at the student without an explanation.
+
+- **Every new thing is explained before it is used.** Each step has a "New in this step" box that explains each new word, function, method or sign, with a tiny example. A new check (`tools/check-newwords.js`, which reads every program with Python's own parser) makes the build fail if a step uses something that was not explained where it first appears, or brings more than three new things at once.
+- **One idea per step, in a better order.** Names and boxes now come before text, text is split in two lessons, and the long steps were cut in small ones. The course has **58 lessons and 301 steps**.
+- **Think first.** The result of a program stays hidden behind a button, so the student makes a guess before looking.
+- **Practice with a check.** Every step ends with a small task. The student writes the answer in the editor, presses *Check my program*, and is told if it is right, or what the program showed instead. There is a hint, and a solution on request. The build runs every solution (in three languages) and proves it passes its own check, and that the starting code does not.
+- **The examples are translated too.** In Italian and French, the words inside the quotes of every example, and what the program shows, are in that language: `print("Ciao!")`, `print("Bonjour!")`.
+- **Where a lesson was confusing, it was rebuilt** (the lesson about text, for example).
+- A summary of the new words at the end of each lesson, and the lessons that make files now name them `demo_...`, so they never touch a file of the student.
+- Fixed: the file name could run over the buttons next to it on some window widths.
+
 ## 1.0.0 beta — 20 October 2026
+
 
 The first public version.
 

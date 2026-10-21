@@ -7,7 +7,7 @@ let listener = null;
 ipcRenderer.on('py:event', function (event, message) { if (listener) listener(message); });
 
 contextBridge.exposeInMainWorld('pyvielDesktop', {
-  version: found.split('=')[1] || '1.0.0-beta',
+  version: found.split('=')[1] || '1.1.0-beta',
   platform: process.platform,
   files: {
     saveInFolder: function (name, text) { return ipcRenderer.invoke('file:save-in-folder', String(name), String(text)); }

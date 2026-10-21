@@ -280,6 +280,22 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
     summary.className = 'summary';
   }
 
+  // Every change made by the editor itself goes through the browser's own insert command, so Cmd/Ctrl+Z
+  // can take it back; setRangeText would leave it out of the undo history. mode: 'end' or 'select'.
+  function edit(text, from, to, mode) {
+    var expected = code.value.slice(0, from) + text + code.value.slice(to);
+    if (document.activeElement !== code) code.focus();
+    code.setSelectionRange(from, to);
+    var done = false;
+    try { done = from === to && text === '' ? true : document.execCommand(text === '' ? 'delete' : 'insertText', false, text); } catch (e) {}
+    if (!done || code.value !== expected) {
+      code.value = expected;
+      code.setSelectionRange(from + text.length, from + text.length);
+    }
+    if (mode === 'select') code.setSelectionRange(from, from + text.length);
+  }
+  window.PyvielEdit = edit;
+
   // Cmd/Ctrl + / puts a # in front of the chosen lines, or takes it away when they all have one.
   function toggleComment() {
     var start = code.selectionStart, end = code.selectionEnd;
@@ -294,14 +310,14 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
       if (line.trim() === '') return line;
       return allCommented ? line.replace(/^(\s*)# ?/, '$1') : line.replace(/^(\s*)/, '$1# ');
     });
-    code.setRangeText(changed.join('\n'), first, lastEnd, 'select');
+    edit(changed.join('\n'), first, lastEnd, 'select');
     sourceChanged();
   }
 
   function indentSelection(unindent) {
     var start = code.selectionStart, end = code.selectionEnd;
     if (!unindent && start === end) {
-      code.setRangeText('    ', start, end, 'end');
+      edit('    ', start, end, 'end');
     } else {
       var first = code.value.lastIndexOf('\n', start - 1) + 1;
       if (start === 0) first = 0;
@@ -317,7 +333,7 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
         totalDelta += delta;
         return unindent ? line.slice(remove) : '    ' + line;
       });
-      code.setRangeText(lines.join('\n'), first, last, 'preserve');
+      edit(lines.join('\n'), first, last, 'end');
       code.setSelectionRange(Math.max(first, start + firstDelta), Math.max(first, end + totalDelta));
     }
     sourceChanged();
@@ -551,7 +567,7 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
     });
     if (normalized === text) return;
     ev.preventDefault();
-    code.setRangeText(normalized, code.selectionStart, code.selectionEnd, 'end');
+    edit(normalized, code.selectionStart, code.selectionEnd, 'end');
     sourceChanged();
   });
   code.addEventListener('keydown', function (ev) {
@@ -569,7 +585,7 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
       if (before.length > 0 && /^ +$/.test(before)) {
         ev.preventDefault();
         var remove = before.length % 4 || 4;
-        code.setRangeText('', at - remove, at, 'end');
+        edit('', at - remove, at, 'end');
         sourceChanged();
       }
     } else if (ev.key === 'Tab') {
@@ -582,7 +598,9 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
       var before = code.value.slice(first, start);
       var indent = (before.match(/^ */) || [''])[0];
       if (/:\s*(#.*)?$/.test(before)) indent += '    ';
-      code.setRangeText('\n' + indent, start, code.selectionEnd, 'end');
+      // After return, break, continue, pass or raise the block is over: the next line steps back.
+      else if (/^\s*(return|break|continue|pass|raise)\b/.test(before) && indent.length >= 4) indent = indent.slice(4);
+      edit('\n' + indent, start, code.selectionEnd, 'end');
       sourceChanged();
     }
   });
@@ -591,7 +609,7 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
   examples.addEventListener('change', function () {
     var key = examples.value;
     if (!Object.prototype.hasOwnProperty.call(SAMPLES, key)) return;
-    code.value = SAMPLES[key];
+    edit(SAMPLES[key], 0, code.value.length, 'end');   // Cmd/Ctrl+Z brings back the code that was there
     sourceChanged();
     examples.value = key;
     out.textContent = '';
@@ -602,7 +620,7 @@ print(len(pets))</pre><p>The first item is number 0. <code>append</code> adds on
   });
 })();
 </script>
-<script src="editor-ui.js?v=1.1.0-2"></script>
+<script src="editor-ui.js?v=1.1.0-3"></script>
 <script src="lessons.js?v=1.1.0-7"></script>
 <script src="course.js?v=1.1.0-4"></script>
 <script src="pyviel-check.js?v=1.1.0-1"></script>

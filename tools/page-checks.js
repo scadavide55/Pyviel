@@ -25,6 +25,23 @@
   check('the version sits beside the name and is the one of the code', $('brand-version').textContent === 'v' + Pyviel.VERSION.replace(/-alpha$|-beta$/, ''), $('brand-version').textContent);
   check('the website says Web beside the name, the app does not', window.pyvielDesktop ? getComputedStyle($('brand-web')).display === 'none' : getComputedStyle($('brand-web')).display !== 'none');
   check('the editor starts with a Python program', /print\(/.test(code.value));
+
+  // the editor's own edits: Enter indents after a colon, steps back after return, and Cmd/Ctrl+Z can undo them
+  const key = (k, extra) => code.dispatchEvent(new KeyboardEvent('keydown', Object.assign({key: k, bubbles: true, cancelable: true}, extra || {})));
+  const kept = code.value;
+  code.focus(); code.value = 'def f(n):'; code.dispatchEvent(new Event('input', {bubbles: true}));
+  code.setSelectionRange(code.value.length, code.value.length); key('Enter');
+  check('Enter after a colon pushes the next line in', code.value === 'def f(n):\n    ', JSON.stringify(code.value));
+  document.execCommand('insertText', false, 'return n'); key('Enter');
+  check('Enter after return steps back out of the block', code.value === 'def f(n):\n    return n\n', JSON.stringify(code.value));
+  document.execCommand('undo');
+  check('and the editor\'s own Enter can be undone', code.value === 'def f(n):\n    return n', JSON.stringify(code.value));
+  code.value = 'print("mine")'; code.dispatchEvent(new Event('input', {bubbles: true}));
+  $('examples').value = 'loop'; $('examples').dispatchEvent(new Event('change'));
+  const opened = code.value !== 'print("mine")';
+  code.focus(); document.execCommand('undo');
+  check('opening an example can be undone, so no code is lost', opened && code.value === 'print("mine")', JSON.stringify(code.value));
+  code.value = kept; code.dispatchEvent(new Event('input', {bubbles: true}));
   const version = await Pyviel.start();
   check('Python loads', /^(3\d\d\.|3\.\d+\.\d+)/.test(version), version);
 

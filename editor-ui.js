@@ -142,7 +142,8 @@
     button.addEventListener('mousedown', function (ev) { ev.preventDefault(); });
     button.addEventListener('click', function () {
       var start = code.selectionStart, end = code.selectionEnd;
-      code.setRangeText(button.dataset.insert, start, end, 'end');
+      if (window.PyvielEdit) window.PyvielEdit(button.dataset.insert, start, end, 'end');
+      else code.setRangeText(button.dataset.insert, start, end, 'end');
       code.dispatchEvent(new Event('input', {bubbles: true}));
       code.focus();
     });

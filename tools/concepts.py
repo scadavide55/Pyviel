@@ -55,7 +55,7 @@ def concepts(source):
         return found
 
     defined = set()
-    modules = set()
+    modules = {}  # the name used in the program -> the real name of the module
     for node in ast.walk(tree):
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
             defined.add(node.name)
@@ -75,7 +75,7 @@ def concepts(source):
             for alias in node.names:
                 name = alias.asname or alias.name.split(".")[0]
                 if isinstance(node, ast.Import):
-                    modules.add(name)
+                    modules[name] = alias.name.split(".")[0]
                 defined.add(name)
                 if isinstance(node, ast.ImportFrom):
                     add((node.module or "") + "." + alias.name)
@@ -89,7 +89,7 @@ def concepts(source):
                 add(f.id)
             elif isinstance(f, ast.Attribute):
                 if isinstance(f.value, ast.Name) and f.value.id in modules:
-                    add(f.value.id + "." + f.attr)
+                    add(modules[f.value.id] + "." + f.attr)
                 elif f.attr not in defined:
                     add("." + f.attr)
             if len([a for a in node.args if not isinstance(a, ast.Starred)]) >= 2:
@@ -99,7 +99,7 @@ def concepts(source):
                     add("arg:" + kw.arg)
         elif isinstance(node, ast.Attribute):
             if isinstance(node.value, ast.Name) and node.value.id in modules and not isinstance(getattr(node, "ctx", None), ast.Store):
-                add(node.value.id + "." + node.attr)
+                add(modules[node.value.id] + "." + node.attr)
         elif isinstance(node, ast.BinOp):
             add(OPS.get(type(node.op), "op"))
         elif isinstance(node, ast.AugAssign):

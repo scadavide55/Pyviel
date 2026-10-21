@@ -117,6 +117,21 @@ Python vient avec une énorme bibliothèque standard, et tu en rencontreras les 
           h: ['The first line brings in something that does not exist. Bring in math, then show its pi.', 'La prima riga porta dentro qualcosa che non esiste. Porta dentro math, poi mostra il suo pi.', 'La première ligne fait entrer quelque chose qui n\'existe pas. Fais entrer math, puis affiche son pi.'],
           start: 'import this_module_does_not_exist', sol: 'import math\nprint(math.pi)', out: '3.141592653589793'
         }
+      },
+      {
+        c: c`import math
+
+print(math.floor(7.8), math.ceil(7.2))
+print(round(math.pi, 3))`,
+        t: ['Challenge: the area of a circle', 'Sfida: l\'area di un cerchio', 'Défi : l\'aire d\'un cercle'],
+        x: ['math holds the tools of mathematics: floor rounds down, ceil rounds up, and pi is the famous number. round(x, 3) keeps three decimals.', 'math contiene gli strumenti della matematica: floor arrotonda per difetto, ceil per eccesso, e pi è il famoso numero. round(x, 3) tiene tre decimali.', 'math contient les outils des mathématiques : floor arrondit en dessous, ceil au-dessus, et pi est le fameux nombre. round(x, 3) garde trois décimales.'],
+        ex: {
+          t: ['A circle has a radius of 3. Show its area, pi times the radius squared, rounded to 2 decimals (28.27), using math.pi.', 'Un cerchio ha raggio 3. Mostra la sua area, pi per il raggio al quadrato, arrotondata a 2 decimali (28.27), usando math.pi.', 'Un cercle a un rayon de 3. Affiche son aire, pi fois le rayon au carré, arrondie à 2 décimales (28.27), avec math.pi.'],
+          h: ['import math first; the radius squared is radius ** 2; round(..., 2) at the end.', 'Prima import math; il raggio al quadrato è radius ** 2; round(..., 2) alla fine.', 'D\'abord import math ; le rayon au carré est radius ** 2 ; round(..., 2) à la fin.'],
+          start: '',
+          sol: 'import math\n\nradius = 3\nprint(round(math.pi * radius ** 2, 2))',
+          out: '28.27', uses: ['import', 'round']
+        }
       }
     ]
   },
@@ -338,6 +353,24 @@ Une bonne habitude est de vérifier un résultat à la main, par exemple la moye
           h: ['statistics.median([3, 9, 1, 7, 5])', 'statistics.median([3, 9, 1, 7, 5])', 'statistics.median([3, 9, 1, 7, 5])'],
           sol: 'import statistics\nprint(statistics.median([3, 9, 1, 7, 5]))', out: '5', c: 'median'
         }
+      },
+      {
+        c: c`import statistics
+
+marks = [6, 8, 7, 8, 5]
+print(statistics.mean(marks))
+print(statistics.median(marks))
+print(statistics.mode(marks))`,
+        n: ['statistics.mode'],
+        t: ['Challenge: the marks of a class', 'Sfida: i voti di una classe', 'Défi : les notes d\'une classe'],
+        x: ['statistics does the usual sums on a list: the mean is the average, the median is the middle value once the list is in order, and the mode is the value that comes back most often.', 'statistics fa i conti di sempre su una lista: mean è la media, median è il valore in mezzo quando la lista è in ordine, e mode è il valore che torna più spesso.', 'statistics fait les calculs habituels sur une liste : mean est la moyenne, median est la valeur du milieu une fois la liste triée, et mode est la valeur qui revient le plus souvent.'],
+        ex: {
+          t: ['The marks are 4, 9, 6, 9 and 7. Show their mean (7) and then the mark that appears most often (9), using statistics.mode.', 'I voti sono 4, 9, 6, 9 e 7. Mostra la loro media (7) e poi il voto che appare più spesso (9), usando statistics.mode.', 'Les notes sont 4, 9, 6, 9 et 7. Affiche leur moyenne (7) puis la note qui revient le plus souvent (9), avec statistics.mode.'],
+          h: ['A list of the five marks, then statistics.mean and statistics.mode on it.', 'Una lista dei cinque voti, poi statistics.mean e statistics.mode su di essa.', 'Une liste des cinq notes, puis statistics.mean et statistics.mode dessus.'],
+          start: '',
+          sol: 'import statistics\n\nmarks = [4, 9, 6, 9, 7]\nprint(statistics.mean(marks))\nprint(statistics.mode(marks))',
+          out: '7\n9', uses: ['.mean', '.mode']
+        }
       }
     ]
   },
@@ -468,6 +501,23 @@ C'est parfait pour mesurer combien de temps prend quelque chose : prends l'heure
           t: ['Measure how long it takes to add the numbers up to 100000 with sum(range(100000)), and show whether it was less than 5 seconds (it must show True).', 'Misura quanto ci vuole a sommare i numeri fino a 100000 con sum(range(100000)) e mostra se è stato meno di 5 secondi (deve mostrare True).', 'Mesure combien de temps il faut pour additionner les nombres jusqu\'à 100000 avec sum(range(100000)) et affiche si c\'était moins de 5 secondes (il doit afficher True).'],
           h: ['start = time.time(), the sum, then time.time() - start < 5.', 'start = time.time(), la somma, poi time.time() - start < 5.', 'start = time.time(), la somme, puis time.time() - start < 5.'],
           sol: 'import time\nstart = time.time()\ntotal = sum(range(100000))\nprint(time.time() - start < 5)', out: 'True', c: 'time\\.time'
+        }
+      },
+      {
+        c: c`from datetime import date
+
+start = date(2026, 1, 1)
+end = date(2026, 3, 1)
+print((end - start).days)
+print(end.strftime("%d/%m/%Y"))`,
+        t: ['Challenge: days between two dates', 'Sfida: giorni tra due date', 'Défi : des jours entre deux dates'],
+        x: ['Subtracting two dates gives a timedelta, and .days is its number of days. strftime writes a date the way you choose.', 'Sottrarre due date dà un timedelta, e .days è il suo numero di giorni. strftime scrive una data come vuoi tu.', 'Soustraire deux dates donne un timedelta, et .days est son nombre de jours. strftime écrit une date comme tu veux.'],
+        ex: {
+          t: ['How many days are there from 1 June 2026 to 1 September 2026? Show the number (92), letting Python subtract the dates.', 'Quanti giorni ci sono dal 1 giugno 2026 al 1 settembre 2026? Mostra il numero (92), lasciando a Python la sottrazione delle date.', 'Combien de jours y a-t-il du 1er juin 2026 au 1er septembre 2026 ? Affiche le nombre (92), en laissant Python soustraire les dates.'],
+          h: ['Two date(...) with year, month and day; subtract them and take .days.', 'Due date(...) con anno, mese e giorno; sottraile e prendi .days.', 'Deux date(...) avec année, mois et jour ; soustrais-les et prends .days.'],
+          start: '',
+          sol: 'from datetime import date\n\nprint((date(2026, 9, 1) - date(2026, 6, 1)).days)',
+          out: '92', uses: ['-', 'import']
         }
       }
     ]
@@ -654,6 +704,37 @@ Dans la leçon suivante tu apprendras à attraper cette erreur avec try et excep
           t: ['Fix it: first write the file demo_missing_file.txt with the text ok, then open it to read and show the text.', 'Correggilo: prima scrivi il file demo_missing_file.txt con il testo ok, poi aprilo per leggere e mostra il testo.', 'Corrige-le : écris d\'abord le fichier demo_missing_file.txt avec le texte ok, puis ouvre-le pour lire et affiche le texte.'],
           h: ['A with open(..., "w") first, then a with open(...) to read.', 'Prima un with open(..., "w"), poi un with open(...) per leggere.', 'D\'abord un with open(..., "w"), puis un with open(...) pour lire.'],
           start: 'open("demo_missing_file.txt")', sol: 'with open("demo_missing_file.txt", "w") as f:\n    f.write("ok")\nwith open("demo_missing_file.txt") as f:\n    print(f.read())', out: 'ok', c: '"w"'
+        }
+      },
+      {
+        c: [c`with open("demo_notes.txt", "w") as f:
+    f.write("one\ntwo\nthree\n")
+
+with open("demo_notes.txt") as f:
+    lines = f.read().splitlines()
+print(lines)
+print(len(lines), "lines")`, c`with open("demo_notes.txt", "w") as f:
+    f.write("uno\ndue\ntre\n")
+
+with open("demo_notes.txt") as f:
+    lines = f.read().splitlines()
+print(lines)
+print(len(lines), "righe")`, c`with open("demo_notes.txt", "w") as f:
+    f.write("un\ndeux\ntrois\n")
+
+with open("demo_notes.txt") as f:
+    lines = f.read().splitlines()
+print(lines)
+print(len(lines), "lignes")`],
+        n: ['.splitlines'],
+        t: ['Challenge: write, then read back', 'Sfida: scrivi, poi rileggi', 'Défi : écris, puis relis'],
+        x: ['The first with writes three lines into a file, and closes it. The second opens the same file to read it; splitlines turns the text into a list of lines.', 'Il primo with scrive tre righe in un file, e lo chiude. Il secondo apre lo stesso file per leggerlo; splitlines trasforma il testo in una lista di righe.', 'Le premier with écrit trois lignes dans un fichier, et le ferme. Le second ouvre le même fichier pour le lire ; splitlines transforme le texte en une liste de lignes.'],
+        ex: {
+          t: ['Write the numbers 1 to 5 into demo_numbers.txt, one per line. Then read the file back and show the sum of the numbers in it (15).', 'Scrivi i numeri da 1 a 5 in demo_numbers.txt, uno per riga. Poi rileggi il file e mostra la somma dei numeri che contiene (15).', 'Écris les nombres de 1 à 5 dans demo_numbers.txt, un par ligne. Puis relis le fichier et affiche la somme des nombres qu\'il contient (15).'],
+          h: ['A for loop writes str(n) + newline for each number. When you read, each line is text: int(...) before adding.', 'Un ciclo for scrive str(n) più a capo per ogni numero. Quando leggi, ogni riga è testo: int(...) prima di sommare.', 'Une boucle for écrit str(n) plus un retour à la ligne pour chaque nombre. À la lecture, chaque ligne est du texte : int(...) avant d\'additionner.'],
+          start: '',
+          sol: 'with open("demo_numbers.txt", "w") as f:\n    for n in range(1, 6):\n        f.write(str(n) + "\\n")\n\ntotal = 0\nwith open("demo_numbers.txt") as f:\n    for line in f:\n        total += int(line)\nprint(total)',
+          out: '15', uses: ['open', 'with', '.write']
         }
       }
     ]
@@ -907,6 +988,22 @@ break sort de la boucle seulement quand tout s'est bien passé.`],
           sol: 'while True:\n    text = input("Age: ")\n    try:\n        age = int(text)\n        if age < 1 or age > 120:\n            raise ValueError("range")\n        break\n    except ValueError:\n        print("Again")\nprint(age)',
           i: ['x', '0', '30'], m: '30$', c: '120'
         }
+      },
+      {
+        c: c`for text in ["3", "x", "10"]:
+    try:
+        print(int(text) + 1)
+    except ValueError:
+        print(text, "is not a number")`,
+        t: ['Challenge: a division that never breaks', 'Sfida: una divisione che non si rompe mai', 'Défi : une division qui ne casse jamais'],
+        x: ['try runs the risky line; when it raises a ValueError, except catches it and the loop goes on with the next text. The program never stops.', 'try esegue la riga rischiosa; quando solleva un ValueError, except lo prende e il ciclo continua con il testo dopo. Il programma non si ferma mai.', 'try lance la ligne risquée ; quand elle lève une ValueError, except l\'attrape et la boucle continue avec le texte suivant. Le programme ne s\'arrête jamais.'],
+        ex: {
+          t: ['Write safe_divide(a, b): it returns a / b, or None when b is 0 (use try and except ZeroDivisionError). Show safe_divide(10, 4) and then safe_divide(1, 0).', 'Scrivi safe_divide(a, b): restituisce a / b, oppure None quando b è 0 (usa try ed except ZeroDivisionError). Mostra safe_divide(10, 4) e poi safe_divide(1, 0).', 'Écris safe_divide(a, b) : elle rend a / b, ou None quand b vaut 0 (utilise try et except ZeroDivisionError). Affiche safe_divide(10, 4) puis safe_divide(1, 0).'],
+          h: ['Inside the function: try: return a / b, and under except ZeroDivisionError: return None.', 'Dentro la funzione: try: return a / b, e sotto except ZeroDivisionError: return None.', 'Dans la fonction : try: return a / b, et sous except ZeroDivisionError: return None.'],
+          start: '',
+          sol: 'def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n\nprint(safe_divide(10, 4))\nprint(safe_divide(1, 0))',
+          out: '2.5\nNone', uses: ['try', 'def']
+        }
       }
     ]
   },
@@ -1021,6 +1118,23 @@ csv.DictReader est plus agréable : il utilise la première ligne comme noms des
           t: ['The file already has the scores 12, 7 and 15. Show the biggest score, using DictReader (15).', 'Il file ha già i punteggi 12, 7 e 15. Mostra il punteggio più grande, usando DictReader (15).', 'Le fichier a déjà les scores 12, 7 et 15. Affiche le plus grand score, en utilisant DictReader (15).'],
           h: ['A list of the int(row["score"]) values, then max(...).', 'Una lista dei valori int(row["score"]), poi max(...).', 'Une liste des valeurs int(row["score"]), puis max(...).'],
           sol: 'import csv\nwith open("demo_s.csv", "w", newline="") as f:\n    csv.writer(f).writerows([["name", "score"], ["Ada", 12], ["Max", 7], ["Zoe", 15]])\nwith open("demo_s.csv") as f:\n    scores = [int(row["score"]) for row in csv.DictReader(f)]\nprint(max(scores))', out: '15', c: 'DictReader'
+        }
+      },
+      {
+        c: c`import json
+
+data = {"name": "Ada", "age": 12}
+text = json.dumps(data)
+print(text)
+print(json.loads(text)["age"])`,
+        t: ['Challenge: read a JSON text', 'Sfida: leggi un testo JSON', 'Défi : lis un texte JSON'],
+        x: ['dumps turns Python data into JSON text, ready for a file or the internet; loads turns JSON text back into Python data, so you can use its keys again.', 'dumps trasforma i dati di Python in testo JSON, pronto per un file o per internet; loads ritrasforma il testo JSON in dati Python, così puoi usarne di nuovo le chiavi.', 'dumps transforme les données Python en texte JSON, prêt pour un fichier ou internet ; loads retransforme le texte JSON en données Python, pour réutiliser ses clés.'],
+        ex: {
+          t: ['The box text holds some JSON. Read it with json.loads and show how many pets there are (2), then the first one.', 'La scatola text contiene del JSON. Leggilo con json.loads e mostra quanti animali ci sono (2), poi il primo.', 'La boîte text contient du JSON. Lis-le avec json.loads et affiche combien d\'animaux il y a (2), puis le premier.'],
+          h: ['json.loads(text) gives a dictionary; its key pets holds a list: len of it, then item 0.', 'json.loads(text) dà un dizionario; la sua chiave pets contiene una lista: len di quella, poi l\'elemento 0.', 'json.loads(text) donne un dictionnaire ; sa clé pets contient une liste : len de celle-ci, puis l\'élément 0.'],
+          start: ['import json\n\ntext = \'{"pets": ["cat", "dog"]}\'', 'import json\n\ntext = \'{"pets": ["gatto", "cane"]}\'', 'import json\n\ntext = \'{"pets": ["chat", "chien"]}\''],
+          sol: ['import json\n\ntext = \'{"pets": ["cat", "dog"]}\'\ndata = json.loads(text)\nprint(len(data["pets"]))\nprint(data["pets"][0])', 'import json\n\ntext = \'{"pets": ["gatto", "cane"]}\'\ndata = json.loads(text)\nprint(len(data["pets"]))\nprint(data["pets"][0])', 'import json\n\ntext = \'{"pets": ["chat", "chien"]}\'\ndata = json.loads(text)\nprint(len(data["pets"]))\nprint(data["pets"][0])'],
+          out: ['2\ncat', '2\ngatto', '2\nchat'], uses: ['.loads']
         }
       }
     ]

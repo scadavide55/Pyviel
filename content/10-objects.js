@@ -202,6 +202,28 @@ hasattr demande si un objet a un certain nom en lui : c'est True pour value et F
           h: ['c.add(5).add(5).add(5)', 'c.add(5).add(5).add(5)', 'c.add(5).add(5).add(5)'],
           start: 'class Counter:\n    def __init__(self):\n        self.value = 0\n\n    def add(self, amount=1):\n        self.value += amount\n        return self\n\nc = Counter()', sol: 'class Counter:\n    def __init__(self):\n        self.value = 0\n\n    def add(self, amount=1):\n        self.value += amount\n        return self\n\nc = Counter()\nc.add(5).add(5).add(5)\nprint(c.value)', out: '15', c: 'add\\(5\\)\\.add'
         }
+      },
+      {
+        c: c`class Counter:
+    def __init__(self):
+        self.count = 0
+
+    def add(self):
+        self.count += 1
+
+clicks = Counter()
+clicks.add()
+clicks.add()
+print(clicks.count)`,
+        t: ['Challenge: a rectangle that knows its area', 'Sfida: un rettangolo che conosce la sua area', 'Défi : un rectangle qui connaît son aire'],
+        x: ['A class is the plan; Counter() builds one object from it. __init__ prepares the object, and every method gets the object itself as self, so it can read and change its values.', 'Una classe è il progetto; Counter() costruisce un oggetto. __init__ prepara l\'oggetto, e ogni metodo riceve l\'oggetto stesso come self, così può leggere e cambiare i suoi valori.', 'Une classe est le plan ; Counter() construit un objet. __init__ prépare l\'objet, et chaque méthode reçoit l\'objet lui-même comme self, pour lire et changer ses valeurs.'],
+        ex: {
+          t: ['Write a class Rectangle that keeps a width and a height, and has a method area that returns width times height. Show Rectangle(3, 4).area() (12).', 'Scrivi una classe Rectangle che tiene una larghezza e un\'altezza, e ha un metodo area che restituisce larghezza per altezza. Mostra Rectangle(3, 4).area() (12).', 'Écris une classe Rectangle qui garde une largeur et une hauteur, et a une méthode area qui rend largeur fois hauteur. Affiche Rectangle(3, 4).area() (12).'],
+          h: ['__init__(self, width, height) keeps both in self; area(self) returns self.width * self.height.', '__init__(self, width, height) li tiene tutti e due in self; area(self) restituisce self.width * self.height.', '__init__(self, width, height) les garde tous les deux dans self ; area(self) rend self.width * self.height.'],
+          start: '',
+          sol: 'class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\nprint(Rectangle(3, 4).area())',
+          out: '12', uses: ['class', 'def', '.area']
+        }
       }
     ]
   },
@@ -830,6 +852,30 @@ Une bonne règle : quand tu n'es pas sûr, préfère "a un". Ça garde les class
           h: ['self.lamp = Lamp() in __init__ of Room, then return self.lamp.on().', 'self.lamp = Lamp() in __init__ di Room, poi return self.lamp.on().', 'self.lamp = Lamp() dans __init__ de Room, puis return self.lamp.on().'],
           sol: ['class Lamp:\n    def on(self):\n        return "Light!"\n\nclass Room:\n    def __init__(self):\n        self.lamp = Lamp()\n\n    def light(self):\n        return self.lamp.on()\n\nprint(Room().light())', 'class Lamp:\n    def on(self):\n        return "Luce!"\n\nclass Room:\n    def __init__(self):\n        self.lamp = Lamp()\n\n    def light(self):\n        return self.lamp.on()\n\nprint(Room().light())', 'class Lamp:\n    def on(self):\n        return "Lumière!"\n\nclass Room:\n    def __init__(self):\n        self.lamp = Lamp()\n\n    def light(self):\n        return self.lamp.on()\n\nprint(Room().light())'],
           out: ['Light!', 'Luce!', 'Lumière!'], c: 'self\\.lamp'
+        }
+      },
+      {
+        c: c`class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return "..."
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof"
+
+rex = Dog("Rex")
+print(rex.name, rex.speak())`,
+        t: ['Challenge: one more animal', 'Sfida: un animale in più', 'Défi : un animal de plus'],
+        x: ['Dog inherits from Animal: it gets __init__ and name for free, and changes only speak. A child class says only what is different.', 'Dog eredita da Animal: riceve __init__ e name gratis, e cambia solo speak. Una classe figlia dice solo quello che è diverso.', 'Dog hérite de Animal : il reçoit __init__ et name gratuitement, et ne change que speak. Une classe fille dit seulement ce qui est différent.'],
+        ex: {
+          t: ['Add a class Cat that inherits from Animal and says Meow. Show what Cat("Tom").speak() gives back.', 'Aggiungi una classe Cat che eredita da Animal e dice Miao. Mostra cosa restituisce Cat("Tom").speak().', 'Ajoute une classe Cat qui hérite de Animal et dit Miaou. Affiche ce que rend Cat("Tom").speak().'],
+          h: ['Copy the shape of Dog: class Cat(Animal): with its own speak.', 'Copia la forma di Dog: class Cat(Animal): con il suo speak.', 'Copie la forme de Dog : class Cat(Animal): avec son propre speak.'],
+          start: 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."',
+          sol: ['class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cat(Animal):\n    def speak(self):\n        return "Meow"\n\nprint(Cat("Tom").speak())', 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cat(Animal):\n    def speak(self):\n        return "Miao"\n\nprint(Cat("Tom").speak())', 'class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return "..."\n\nclass Cat(Animal):\n    def speak(self):\n        return "Miaou"\n\nprint(Cat("Tom").speak())'],
+          out: ['Meow', 'Miao', 'Miaou'], uses: ['class'], c: 'class\\s+Cat\\(\\s*Animal\\s*\\)'
         }
       }
     ]

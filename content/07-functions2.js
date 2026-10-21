@@ -188,6 +188,23 @@ Si tu la vois, vérifie le cas de base, et vérifie que chaque appel s'en rappro
           h: ['if n >= 3: return n, and after it return stop_at(n + 1).', 'if n >= 3: return n, e dopo return stop_at(n + 1).', 'if n >= 3: return n, et après return stop_at(n + 1).'],
           sol: 'def stop_at(n):\n    if n >= 3:\n        return n\n    return stop_at(n + 1)\n\nprint(stop_at(1))', out: '3', c: 'stop_at'
         }
+      },
+      {
+        c: c`def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))`,
+        t: ['Challenge: add up the digits', 'Sfida: somma le cifre', 'Défi : additionne les chiffres'],
+        x: ['factorial(5) is 5 * factorial(4), which is 4 * factorial(3), and so on down to factorial(0), which is simply 1. Every recursive function needs that simple case, or it never stops.', 'factorial(5) è 5 * factorial(4), che è 4 * factorial(3), e così via fino a factorial(0), che è semplicemente 1. Ogni funzione ricorsiva ha bisogno di quel caso semplice, o non si ferma mai.', 'factorial(5) vaut 5 * factorial(4), qui vaut 4 * factorial(3), et ainsi de suite jusqu\'à factorial(0), qui vaut simplement 1. Toute fonction récursive a besoin de ce cas simple, sinon elle ne s\'arrête jamais.'],
+        ex: {
+          t: ['Write a recursive function sum_digits(n) that adds up the digits of a number, and show sum_digits(1234) (10). The simple case: a number below 10 is its own sum.', 'Scrivi una funzione ricorsiva sum_digits(n) che somma le cifre di un numero, e mostra sum_digits(1234) (10). Il caso semplice: un numero sotto 10 è la sua somma.', 'Écris une fonction récursive sum_digits(n) qui additionne les chiffres d\'un nombre, et affiche sum_digits(1234) (10). Le cas simple : un nombre sous 10 est sa propre somme.'],
+          h: ['n % 10 is the last digit and n // 10 is the rest: the sum is the last digit plus sum_digits of the rest.', 'n % 10 è l\'ultima cifra e n // 10 è il resto: la somma è l\'ultima cifra più sum_digits del resto.', 'n % 10 est le dernier chiffre et n // 10 le reste : la somme est le dernier chiffre plus sum_digits du reste.'],
+          start: '',
+          sol: 'def sum_digits(n):\n    if n < 10:\n        return n\n    return n % 10 + sum_digits(n // 10)\n\nprint(sum_digits(1234))',
+          out: '10', uses: ['def', 'sum_digits', '%'], c: 'return[^\\n]*sum_digits\\('
+        }
       }
     ]
   },
@@ -343,6 +360,21 @@ N'importe quelle fonction marche, même une toute prête comme str. Les compréh
           t: ['With map and a lambda, show the list of the numbers [1, 2, 3] multiplied by 10.', 'Con map e una lambda, mostra la lista dei numeri [1, 2, 3] moltiplicati per 10.', 'Avec map et une lambda, affiche la liste des nombres [1, 2, 3] multipliés par 10.'],
           h: ['list(map(lambda n: n * 10, [1, 2, 3]))', 'list(map(lambda n: n * 10, [1, 2, 3]))', 'list(map(lambda n: n * 10, [1, 2, 3]))'],
           sol: 'print(list(map(lambda n: n * 10, [1, 2, 3])))', out: '[10, 20, 30]', c: 'map'
+        }
+      },
+      {
+        c: c`squares = [n * n for n in range(1, 6)]
+evens = [n for n in squares if n % 2 == 0]
+print(squares)
+print(evens)`,
+        t: ['Challenge: one line, a whole list', 'Sfida: una riga, una lista intera', 'Défi : une ligne, une liste entière'],
+        x: ['A comprehension builds a list in one line: what to keep, for each item, and (if you want) which items. The second one keeps only the even squares.', 'Una comprehension costruisce una lista in una riga: cosa tenere, per ogni elemento, e (se vuoi) quali elementi. La seconda tiene solo i quadrati pari.', 'Une compréhension construit une liste en une ligne : quoi garder, pour chaque élément, et (si tu veux) quels éléments. La seconde ne garde que les carrés pairs.'],
+        ex: {
+          t: ['With one comprehension, make the list of the multiples of 3 from 1 to 20, each one squared: [9, 36, 81, 144, 225, 324]. Show it.', 'Con una sola comprehension, fai la lista dei multipli di 3 da 1 a 20, ognuno al quadrato: [9, 36, 81, 144, 225, 324]. Mostrala.', 'Avec une seule compréhension, fais la liste des multiples de 3 de 1 à 20, chacun au carré : [9, 36, 81, 144, 225, 324]. Affiche-la.'],
+          h: ['[n * n for n in range(...) if ...]: the if keeps the numbers that % 3 makes 0.', '[n * n for n in range(...) if ...]: l\'if tiene i numeri che % 3 rende 0.', '[n * n for n in range(...) if ...] : le if garde les nombres que % 3 rend 0.'],
+          start: '',
+          sol: 'print([n * n for n in range(1, 21) if n % 3 == 0])',
+          out: '[9, 36, 81, 144, 225, 324]', uses: ['comprehension']
         }
       }
     ]

@@ -1,5 +1,21 @@
 # Changes
 
+## Next version (not released yet)
+
+The tutorials check real learning, and give much more practice.
+
+- **A task checks the idea, not only the text.** Python reads the student's program and says what it really uses (a loop, a function, `+=`...); words in quotes and comments never count. Printing the expected text no longer passes 55 tasks that teach something else; the message says what is missing ("this task asks you to use a for loop"). The build tries that shortcut on every task and fails when it passes.
+- **"Think first" is a real question** in 172 steps: three possible results, one right, the other two mistakes a beginner really makes (`2 + 3` shown as text, the quotes printed too, a number one off). It never blocks.
+- **A question on the lesson before** opens every lesson from the second one: "Remember?".
+- **11 "find the mistake" steps** in lessons 3 to 20: mismatched quotes, `x` for times, text plus a number, 4 times 2 is 44, `=` in an if, a missing colon, a line not pushed in, `add` on a list, changing a letter of a text, a missing key, a function without `return`.
+- **17 more challenges**, in lessons 21 to 40 (function options, scope, recursion, comprehensions, modules, statistics, dates, files, errors, JSON, regular expressions, classes, inheritance, special methods, dataclasses, generators, decorators). The course has **349 steps**.
+- **Lessons read and lessons solved** are counted apart, and a lesson shows how many of its tasks are solved.
+- On a phone, a **Check** button sits next to Run while a task is open.
+- **Plain sentences for four more errors**, in three languages: `JSONDecodeError`, `PatternError` (the regular expression is broken), `IsADirectoryError` and `UnicodeDecodeError`.
+- **Screen readers** hear what the program printed, and each problem, when a run ends.
+
+Note: in lessons 3 to 20 a new step was added before the challenge, so a challenge solved in 1.2.0 may show as not solved.
+
 ## 1.2.0 — 21 October 2026
 
 The first stable version.

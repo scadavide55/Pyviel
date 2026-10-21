@@ -144,6 +144,30 @@ C'est un motif simple : les vraies règles des e-mails sont bien plus longues. M
           h: ['print(bool(re.fullmatch(r"\\d+", "2024")))', 'print(bool(re.fullmatch(r"\\d+", "2024")))', 'print(bool(re.fullmatch(r"\\d+", "2024")))'],
           sol: 'import re\nprint(bool(re.fullmatch(r"\\d+", "2024")))', out: 'True', c: 'fullmatch'
         }
+      },
+      {
+        c: [c`import re
+
+text = "3 cats and 12 dogs"
+print(re.findall(r"\d+", text))
+print(sum(int(n) for n in re.findall(r"\d+", text)))`, c`import re
+
+text = "3 gatti e 12 cani"
+print(re.findall(r"\d+", text))
+print(sum(int(n) for n in re.findall(r"\d+", text)))`, c`import re
+
+text = "3 chats et 12 chiens"
+print(re.findall(r"\d+", text))
+print(sum(int(n) for n in re.findall(r"\d+", text)))`],
+        t: ['Challenge: words with a capital letter', 'Sfida: parole con la maiuscola', 'Défi : des mots avec une majuscule'],
+        x: ['findall gives back every piece of the text that matches the pattern. \\d+ means one digit or more, so it finds whole numbers, which can then be added up.', 'findall restituisce ogni pezzo del testo che corrisponde allo schema. \\d+ vuol dire una cifra o più, quindi trova i numeri interi, che poi si possono sommare.', 'findall rend chaque morceau du texte qui correspond au motif. \\d+ veut dire un chiffre ou plus, donc il trouve les nombres entiers, qu\'on peut ensuite additionner.'],
+        ex: {
+          t: ['Find every word that starts with a capital letter in the sentence in the box text, and show the list.', 'Trova ogni parola che inizia con una lettera maiuscola nella frase della scatola text, e mostra la lista.', 'Trouve chaque mot qui commence par une majuscule dans la phrase de la boîte text, et affiche la liste.'],
+          h: ['A capital letter is [A-Z], and the small letters after it are [a-z]*. Use findall with that pattern.', 'Una lettera maiuscola è [A-Z], e le lettere piccole dopo sono [a-z]*. Usa findall con quello schema.', 'Une majuscule est [A-Z], et les petites lettres après sont [a-z]*. Utilise findall avec ce motif.'],
+          start: ['import re\n\ntext = "Ada and Bo met Cy in Rome"', 'import re\n\ntext = "Ada e Bo hanno visto Cy a Roma"', 'import re\n\ntext = "Ada et Bo ont vu Cy à Rome"'],
+          sol: ['import re\n\ntext = "Ada and Bo met Cy in Rome"\nprint(re.findall(r"[A-Z][a-z]*", text))', 'import re\n\ntext = "Ada e Bo hanno visto Cy a Roma"\nprint(re.findall(r"[A-Z][a-z]*", text))', 'import re\n\ntext = "Ada et Bo ont vu Cy à Rome"\nprint(re.findall(r"[A-Z][a-z]*", text))'],
+          out: ['[\'Ada\', \'Bo\', \'Cy\', \'Rome\']', '[\'Ada\', \'Bo\', \'Cy\', \'Roma\']', '[\'Ada\', \'Bo\', \'Cy\', \'Rome\']'], uses: ['.findall']
+        }
       }
     ]
   }

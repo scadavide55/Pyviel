@@ -258,6 +258,28 @@ Il y a des dizaines de méthodes spéciales, et tu peux toujours en chercher une
           h: ['__init__(self, n) keeps n, and __call__(self, x) returns self.n + x.', '__init__(self, n) tiene n e __call__(self, x) restituisce self.n + x.', '__init__(self, n) garde n et __call__(self, x) rend self.n + x.'],
           sol: 'class Adder:\n    def __init__(self, n):\n        self.n = n\n\n    def __call__(self, x):\n        return self.n + x\n\nprint(Adder(10)(5))', out: '15', c: '__call__'
         }
+      },
+      {
+        c: c`class Money:
+    def __init__(self, euros):
+        self.euros = euros
+
+    def __add__(self, other):
+        return Money(self.euros + other.euros)
+
+    def __str__(self):
+        return f"{self.euros} euro"
+
+print(Money(3) + Money(4))`,
+        t: ['Challenge: a point that prints well', 'Sfida: un punto che si stampa bene', 'Défi : un point qui s\'affiche bien'],
+        x: ['__add__ says what + does with two Money objects, and __str__ says what print shows. With them, your objects work with the signs and functions of Python.', '__add__ dice cosa fa + con due oggetti Money, e __str__ dice cosa mostra print. Con questi, i tuoi oggetti funzionano con i segni e le funzioni di Python.', '__add__ dit ce que fait + avec deux objets Money, et __str__ dit ce qu\'affiche print. Avec elles, tes objets marchent avec les signes et les fonctions de Python.'],
+        ex: {
+          t: ['Give the class Point a __str__, so that print(Point(2, 3)) shows (2, 3).', 'Dai alla classe Point un __str__, così print(Point(2, 3)) mostra (2, 3).', 'Donne à la classe Point un __str__, pour que print(Point(2, 3)) affiche (2, 3).'],
+          h: ['def __str__(self): returns an f-string with self.x and self.y between brackets.', 'def __str__(self): restituisce una f-string con self.x e self.y tra parentesi.', 'def __str__(self): rend une f-string avec self.x et self.y entre parenthèses.'],
+          start: 'class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\nprint(Point(2, 3))',
+          sol: 'class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f"({self.x}, {self.y})"\n\nprint(Point(2, 3))',
+          out: '(2, 3)', uses: ['def'], c: 'def\\s+__str__'
+        }
       }
     ]
   },
@@ -593,6 +615,27 @@ Compare les choix d'un enum avec is, parce que chaque choix n'existe qu'une fois
           t: ['Add a fourth state, FAILED, to the enum, and show the name of State.FAILED (FAILED).', 'Aggiungi un quarto stato, FAILED, all\'enum e mostra il nome di State.FAILED (FAILED).', 'Ajoute un quatrième état, FAILED, à l\'enum et affiche le nom de State.FAILED (FAILED).'],
           h: ['FAILED = auto() inside the class State.', 'FAILED = auto() dentro la classe State.', 'FAILED = auto() dans la classe State.'],
           start: 'from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()', sol: 'from enum import Enum, auto\n\nclass State(Enum):\n    IDLE = auto()\n    RUNNING = auto()\n    DONE = auto()\n    FAILED = auto()\n\nprint(State.FAILED.name)', out: 'FAILED', c: 'FAILED = auto'
+        }
+      },
+      {
+        c: c`from dataclasses import dataclass
+
+@dataclass
+class Book:
+    title: str
+    pages: int
+
+book = Book("Kim", 300)
+print(book)
+print(book.pages > 200)`,
+        t: ['Challenge: a player in two lines', 'Sfida: un giocatore in due righe', 'Défi : un joueur en deux lignes'],
+        x: ['@dataclass writes __init__, a readable print and == for you: you only list the fields and their kinds.', '@dataclass scrive per te __init__, una stampa leggibile e ==: tu elenchi solo i campi e i loro tipi.', '@dataclass écrit pour toi __init__, un affichage lisible et == : tu listes seulement les champs et leurs genres.'],
+        ex: {
+          t: ['Make a dataclass Player with a name (str) and a score (int). Show Player("Ada", 10).', 'Fai una dataclass Player con un name (str) e uno score (int). Mostra Player("Ada", 10).', 'Fais une dataclass Player avec un name (str) et un score (int). Affiche Player("Ada", 10).'],
+          h: ['from dataclasses import dataclass, then @dataclass above the class, and one line per field.', 'from dataclasses import dataclass, poi @dataclass sopra la classe, e una riga per campo.', 'from dataclasses import dataclass, puis @dataclass au-dessus de la classe, et une ligne par champ.'],
+          start: '',
+          sol: 'from dataclasses import dataclass\n\n@dataclass\nclass Player:\n    name: str\n    score: int\n\nprint(Player("Ada", 10))',
+          out: "Player(name='Ada', score=10)", uses: ['class'], c: '@dataclass'
         }
       }
     ]

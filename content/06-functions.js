@@ -460,6 +460,22 @@ Souviens-toi de cette idée. Elle ouvre une toute nouvelle façon d'écrire des 
           h: ['callable(...) answers True or False. Give it print itself, with no brackets after print.', 'callable(...) risponde True o False. Dagli print stesso, senza parentesi dopo print.', 'callable(...) répond True ou False. Donne-lui print lui-même, sans parenthèses après print.'],
           sol: 'print(callable(print))', out: 'True', c: 'callable'
         }
+      },
+      {
+        c: c`def total(*prices, discount=0):
+    return sum(prices) - discount
+
+print(total(3, 4, 5))
+print(total(3, 4, 5, discount=2))`,
+        t: ['Challenge: any number of values', 'Sfida: quanti valori vuoi', 'Défi : autant de valeurs que tu veux'],
+        x: ['*prices collects every value given, in a tuple, so total works with two prices or twenty. discount has a default, so it can be left out, or given by name.', '*prices raccoglie tutti i valori dati, in una tupla, così total funziona con due prezzi o con venti. discount ha un valore predefinito, quindi si può lasciare fuori o dare per nome.', '*prices rassemble toutes les valeurs données, dans un tuple, donc total marche avec deux prix ou vingt. discount a une valeur par défaut : on peut l\'oublier, ou la donner par son nom.'],
+        ex: {
+          t: ['Write a function biggest that takes any number of numbers and returns the biggest. Show biggest(4, 9, 2) and then biggest(7).', 'Scrivi una funzione biggest che prende quanti numeri vuoi e restituisce il più grande. Mostra biggest(4, 9, 2) e poi biggest(7).', 'Écris une fonction biggest qui prend autant de nombres que tu veux et rend le plus grand. Affiche biggest(4, 9, 2) puis biggest(7).'],
+          h: ['A star before the parameter collects all the values; max can then find the biggest.', 'Un asterisco prima del parametro raccoglie tutti i valori; max poi trova il più grande.', 'Une étoile devant le paramètre rassemble toutes les valeurs ; max trouve ensuite le plus grand.'],
+          start: '',
+          sol: 'def biggest(*numbers):\n    return max(numbers)\n\nprint(biggest(4, 9, 2))\nprint(biggest(7))',
+          out: '9\n7', uses: ['def', 'return']
+        }
       }
     ]
   },
@@ -618,6 +634,36 @@ Chaque appel à make_counter crée son propre compteur séparé : c'est pourquoi
           h: ['Find the line inside step that adds to count, and change only the number it adds.', 'Trova la riga dentro step che aggiunge a count, e cambia solo il numero che aggiunge.', 'Trouve la ligne dans step qui ajoute à count, et change seulement le nombre ajouté.'],
           start: 'def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())',
           sol: 'def make_counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 2\n        return count\n    return step\n\na = make_counter()\nb = make_counter()\nprint(a(), a(), a())\nprint(b())', out: '2 4 6\n2'
+        }
+      },
+      {
+        c: [c`def make_greeter(word):
+    def greet(name):
+        return word + ", " + name
+    return greet
+
+hello = make_greeter("Hello")
+print(hello("Ada"))`, c`def make_greeter(word):
+    def greet(name):
+        return word + ", " + name
+    return greet
+
+hello = make_greeter("Ciao")
+print(hello("Ada"))`, c`def make_greeter(word):
+    def greet(name):
+        return word + ", " + name
+    return greet
+
+hello = make_greeter("Bonjour")
+print(hello("Ada"))`],
+        t: ['Challenge: a function that makes functions', 'Sfida: una funzione che fa funzioni', 'Défi : une fonction qui fabrique des fonctions'],
+        x: ['make_greeter builds a new function and gives it back. The inner function remembers word, even after make_greeter has finished: each function made this way keeps its own word.', 'make_greeter costruisce una funzione nuova e la restituisce. La funzione interna si ricorda word, anche dopo che make_greeter ha finito: ogni funzione fatta così tiene la sua word.', 'make_greeter construit une nouvelle fonction et la rend. La fonction intérieure se souvient de word, même après la fin de make_greeter : chaque fonction faite ainsi garde son propre word.'],
+        ex: {
+          t: ['Write make_adder(n), which returns a function that adds n to a number. Make add5 = make_adder(5) and show add5(10) (15).', 'Scrivi make_adder(n), che restituisce una funzione che aggiunge n a un numero. Fai add5 = make_adder(5) e mostra add5(10) (15).', 'Écris make_adder(n), qui rend une fonction qui ajoute n à un nombre. Fais add5 = make_adder(5) et affiche add5(10) (15).'],
+          h: ['Inside make_adder, a def of a small function that returns its number plus n; then return that function, without brackets.', 'Dentro make_adder, un def di una piccola funzione che restituisce il suo numero più n; poi restituisci quella funzione, senza parentesi.', 'Dans make_adder, un def d\'une petite fonction qui rend son nombre plus n ; puis rends cette fonction, sans parenthèses.'],
+          start: '',
+          sol: 'def make_adder(n):\n    def add(x):\n        return x + n\n    return add\n\nadd5 = make_adder(5)\nprint(add5(10))',
+          out: '15', uses: ['def', 'return', 'make_adder']
         }
       }
     ]

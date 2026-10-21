@@ -16185,6 +16185,110 @@ window.PyvielCourse = {
        "fr": "True"
       }
      }
+    },
+    {
+     "code": {
+      "en": "def total(*prices, discount=0):\n    return sum(prices) - discount\n\nprint(total(3, 4, 5))\nprint(total(3, 4, 5, discount=2))",
+      "it": "def total(*prices, discount=0):\n    return sum(prices) - discount\n\nprint(total(3, 4, 5))\nprint(total(3, 4, 5, discount=2))",
+      "fr": "def total(*prices, discount=0):\n    return sum(prices) - discount\n\nprint(total(3, 4, 5))\nprint(total(3, 4, 5, discount=2))"
+     },
+     "title": {
+      "en": "Challenge: any number of values",
+      "it": "Sfida: quanti valori vuoi",
+      "fr": "Défi : autant de valeurs que tu veux"
+     },
+     "text": {
+      "en": "*prices collects every value given, in a tuple, so total works with two prices or twenty. discount has a default, so it can be left out, or given by name.",
+      "it": "*prices raccoglie tutti i valori dati, in una tupla, così total funziona con due prezzi o con venti. discount ha un valore predefinito, quindi si può lasciare fuori o dare per nome.",
+      "fr": "*prices rassemble toutes les valeurs données, dans un tuple, donc total marche avec deux prix ou vingt. discount a une valeur par défaut : on peut l'oublier, ou la donner par son nom."
+     },
+     "see": {
+      "en": "12\n10",
+      "it": "12\n10",
+      "fr": "12\n10"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a function biggest that takes any number of numbers and returns the biggest. Show biggest(4, 9, 2) and then biggest(7).",
+       "it": "Scrivi una funzione biggest che prende quanti numeri vuoi e restituisce il più grande. Mostra biggest(4, 9, 2) e poi biggest(7).",
+       "fr": "Écris une fonction biggest qui prend autant de nombres que tu veux et rend le plus grand. Affiche biggest(4, 9, 2) puis biggest(7)."
+      },
+      "hint": {
+       "en": "A star before the parameter collects all the values; max can then find the biggest.",
+       "it": "Un asterisco prima del parametro raccoglie tutti i valori; max poi trova il più grande.",
+       "fr": "Une étoile devant le paramètre rassemble toutes les valeurs ; max trouve ensuite le plus grand."
+      },
+      "sol": {
+       "en": "def biggest(*numbers):\n    return max(numbers)\n\nprint(biggest(4, 9, 2))\nprint(biggest(7))",
+       "it": "def biggest(*numbers):\n    return max(numbers)\n\nprint(biggest(4, 9, 2))\nprint(biggest(7))",
+       "fr": "def biggest(*numbers):\n    return max(numbers)\n\nprint(biggest(4, 9, 2))\nprint(biggest(7))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "9\n7",
+        "uses": [
+         "def",
+         "return"
+        ]
+       },
+       "it": {
+        "out": "9\n7",
+        "uses": [
+         "def",
+         "return"
+        ]
+       },
+       "fr": {
+        "out": "9\n7",
+        "uses": [
+         "def",
+         "return"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "9\n7",
+       "it": "9\n7",
+       "fr": "9\n7"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello Ada\nHi Max",
+        "12\n10",
+        "12\n11"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "Ciao Ada\nEhi Max",
+        "12\n10",
+        "12\n11"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "Bonjour Ada\nSalut Max",
+        "12\n10",
+        "12\n11"
+       ],
+       "right": 1
+      }
+     }
     }
    ]
   },
@@ -16672,6 +16776,113 @@ window.PyvielCourse = {
        "right": 1
       }
      }
+    },
+    {
+     "code": {
+      "en": "def make_greeter(word):\n    def greet(name):\n        return word + \", \" + name\n    return greet\n\nhello = make_greeter(\"Hello\")\nprint(hello(\"Ada\"))",
+      "it": "def make_greeter(word):\n    def greet(name):\n        return word + \", \" + name\n    return greet\n\nhello = make_greeter(\"Ciao\")\nprint(hello(\"Ada\"))",
+      "fr": "def make_greeter(word):\n    def greet(name):\n        return word + \", \" + name\n    return greet\n\nhello = make_greeter(\"Bonjour\")\nprint(hello(\"Ada\"))"
+     },
+     "title": {
+      "en": "Challenge: a function that makes functions",
+      "it": "Sfida: una funzione che fa funzioni",
+      "fr": "Défi : une fonction qui fabrique des fonctions"
+     },
+     "text": {
+      "en": "make_greeter builds a new function and gives it back. The inner function remembers word, even after make_greeter has finished: each function made this way keeps its own word.",
+      "it": "make_greeter costruisce una funzione nuova e la restituisce. La funzione interna si ricorda word, anche dopo che make_greeter ha finito: ogni funzione fatta così tiene la sua word.",
+      "fr": "make_greeter construit une nouvelle fonction et la rend. La fonction intérieure se souvient de word, même après la fin de make_greeter : chaque fonction faite ainsi garde son propre word."
+     },
+     "see": {
+      "en": "Hello, Ada",
+      "it": "Ciao, Ada",
+      "fr": "Bonjour, Ada"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write make_adder(n), which returns a function that adds n to a number. Make add5 = make_adder(5) and show add5(10) (15).",
+       "it": "Scrivi make_adder(n), che restituisce una funzione che aggiunge n a un numero. Fai add5 = make_adder(5) e mostra add5(10) (15).",
+       "fr": "Écris make_adder(n), qui rend une fonction qui ajoute n à un nombre. Fais add5 = make_adder(5) et affiche add5(10) (15)."
+      },
+      "hint": {
+       "en": "Inside make_adder, a def of a small function that returns its number plus n; then return that function, without brackets.",
+       "it": "Dentro make_adder, un def di una piccola funzione che restituisce il suo numero più n; poi restituisci quella funzione, senza parentesi.",
+       "fr": "Dans make_adder, un def d'une petite fonction qui rend son nombre plus n ; puis rends cette fonction, sans parenthèses."
+      },
+      "sol": {
+       "en": "def make_adder(n):\n    def add(x):\n        return x + n\n    return add\n\nadd5 = make_adder(5)\nprint(add5(10))",
+       "it": "def make_adder(n):\n    def add(x):\n        return x + n\n    return add\n\nadd5 = make_adder(5)\nprint(add5(10))",
+       "fr": "def make_adder(n):\n    def add(x):\n        return x + n\n    return add\n\nadd5 = make_adder(5)\nprint(add5(10))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "15",
+        "uses": [
+         "def",
+         "return",
+         "make_adder"
+        ]
+       },
+       "it": {
+        "out": "15",
+        "uses": [
+         "def",
+         "return",
+         "make_adder"
+        ]
+       },
+       "fr": {
+        "out": "15",
+        "uses": [
+         "def",
+         "return",
+         "make_adder"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "15",
+       "it": "15",
+       "fr": "15"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Hello, Ada",
+        "20\n30",
+        "2\n3"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "2\n3",
+        "Ciao, Ada",
+        "20\n30"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "2\n3",
+        "20\n30",
+        "Bonjour, Ada"
+       ],
+       "right": 2
+      }
+     }
     }
    ]
   },
@@ -17089,6 +17300,116 @@ window.PyvielCourse = {
        "en": "3",
        "it": "3",
        "fr": "3"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))",
+      "it": "def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))",
+      "fr": "def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))"
+     },
+     "title": {
+      "en": "Challenge: add up the digits",
+      "it": "Sfida: somma le cifre",
+      "fr": "Défi : additionne les chiffres"
+     },
+     "text": {
+      "en": "factorial(5) is 5 * factorial(4), which is 4 * factorial(3), and so on down to factorial(0), which is simply 1. Every recursive function needs that simple case, or it never stops.",
+      "it": "factorial(5) è 5 * factorial(4), che è 4 * factorial(3), e così via fino a factorial(0), che è semplicemente 1. Ogni funzione ricorsiva ha bisogno di quel caso semplice, o non si ferma mai.",
+      "fr": "factorial(5) vaut 5 * factorial(4), qui vaut 4 * factorial(3), et ainsi de suite jusqu'à factorial(0), qui vaut simplement 1. Toute fonction récursive a besoin de ce cas simple, sinon elle ne s'arrête jamais."
+     },
+     "see": {
+      "en": "120",
+      "it": "120",
+      "fr": "120"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a recursive function sum_digits(n) that adds up the digits of a number, and show sum_digits(1234) (10). The simple case: a number below 10 is its own sum.",
+       "it": "Scrivi una funzione ricorsiva sum_digits(n) che somma le cifre di un numero, e mostra sum_digits(1234) (10). Il caso semplice: un numero sotto 10 è la sua somma.",
+       "fr": "Écris une fonction récursive sum_digits(n) qui additionne les chiffres d'un nombre, et affiche sum_digits(1234) (10). Le cas simple : un nombre sous 10 est sa propre somme."
+      },
+      "hint": {
+       "en": "n % 10 is the last digit and n // 10 is the rest: the sum is the last digit plus sum_digits of the rest.",
+       "it": "n % 10 è l'ultima cifra e n // 10 è il resto: la somma è l'ultima cifra più sum_digits del resto.",
+       "fr": "n % 10 est le dernier chiffre et n // 10 le reste : la somme est le dernier chiffre plus sum_digits du reste."
+      },
+      "sol": {
+       "en": "def sum_digits(n):\n    if n < 10:\n        return n\n    return n % 10 + sum_digits(n // 10)\n\nprint(sum_digits(1234))",
+       "it": "def sum_digits(n):\n    if n < 10:\n        return n\n    return n % 10 + sum_digits(n // 10)\n\nprint(sum_digits(1234))",
+       "fr": "def sum_digits(n):\n    if n < 10:\n        return n\n    return n % 10 + sum_digits(n // 10)\n\nprint(sum_digits(1234))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "10",
+        "c": "return[^\\n]*sum_digits\\(",
+        "uses": [
+         "def",
+         "sum_digits",
+         "%"
+        ]
+       },
+       "it": {
+        "out": "10",
+        "c": "return[^\\n]*sum_digits\\(",
+        "uses": [
+         "def",
+         "sum_digits",
+         "%"
+        ]
+       },
+       "fr": {
+        "out": "10",
+        "c": "return[^\\n]*sum_digits\\(",
+        "uses": [
+         "def",
+         "sum_digits",
+         "%"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "10",
+       "it": "10",
+       "fr": "10"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "121",
+        "120",
+        "120\n3628800"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "121",
+        "120",
+        "120\n3628800"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "121",
+        "120",
+        "120\n3628800"
+       ],
+       "right": 1
       }
      }
     }
@@ -17710,6 +18031,107 @@ window.PyvielCourse = {
         "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]"
        ],
        "right": 0
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "squares = [n * n for n in range(1, 6)]\nevens = [n for n in squares if n % 2 == 0]\nprint(squares)\nprint(evens)",
+      "it": "squares = [n * n for n in range(1, 6)]\nevens = [n for n in squares if n % 2 == 0]\nprint(squares)\nprint(evens)",
+      "fr": "squares = [n * n for n in range(1, 6)]\nevens = [n for n in squares if n % 2 == 0]\nprint(squares)\nprint(evens)"
+     },
+     "title": {
+      "en": "Challenge: one line, a whole list",
+      "it": "Sfida: una riga, una lista intera",
+      "fr": "Défi : une ligne, une liste entière"
+     },
+     "text": {
+      "en": "A comprehension builds a list in one line: what to keep, for each item, and (if you want) which items. The second one keeps only the even squares.",
+      "it": "Una comprehension costruisce una lista in una riga: cosa tenere, per ogni elemento, e (se vuoi) quali elementi. La seconda tiene solo i quadrati pari.",
+      "fr": "Une compréhension construit une liste en une ligne : quoi garder, pour chaque élément, et (si tu veux) quels éléments. La seconde ne garde que les carrés pairs."
+     },
+     "see": {
+      "en": "[1, 4, 9, 16, 25]\n[4, 16]",
+      "it": "[1, 4, 9, 16, 25]\n[4, 16]",
+      "fr": "[1, 4, 9, 16, 25]\n[4, 16]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "With one comprehension, make the list of the multiples of 3 from 1 to 20, each one squared: [9, 36, 81, 144, 225, 324]. Show it.",
+       "it": "Con una sola comprehension, fai la lista dei multipli di 3 da 1 a 20, ognuno al quadrato: [9, 36, 81, 144, 225, 324]. Mostrala.",
+       "fr": "Avec une seule compréhension, fais la liste des multiples de 3 de 1 à 20, chacun au carré : [9, 36, 81, 144, 225, 324]. Affiche-la."
+      },
+      "hint": {
+       "en": "[n * n for n in range(...) if ...]: the if keeps the numbers that % 3 makes 0.",
+       "it": "[n * n for n in range(...) if ...]: l'if tiene i numeri che % 3 rende 0.",
+       "fr": "[n * n for n in range(...) if ...] : le if garde les nombres que % 3 rend 0."
+      },
+      "sol": {
+       "en": "print([n * n for n in range(1, 21) if n % 3 == 0])",
+       "it": "print([n * n for n in range(1, 21) if n % 3 == 0])",
+       "fr": "print([n * n for n in range(1, 21) if n % 3 == 0])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[9, 36, 81, 144, 225, 324]",
+        "uses": [
+         "comprehension"
+        ]
+       },
+       "it": {
+        "out": "[9, 36, 81, 144, 225, 324]",
+        "uses": [
+         "comprehension"
+        ]
+       },
+       "fr": {
+        "out": "[9, 36, 81, 144, 225, 324]",
+        "uses": [
+         "comprehension"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[9, 36, 81, 144, 225, 324]",
+       "it": "[9, 36, 81, 144, 225, 324]",
+       "fr": "[9, 36, 81, 144, 225, 324]"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+        "[1, 4, 9, 16, 25]\n[4, 17]",
+        "[1, 4, 9, 16, 25]\n[4, 16]"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+        "[1, 4, 9, 16, 25]\n[4, 17]",
+        "[1, 4, 9, 16, 25]\n[4, 16]"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "[1, 4, 9, 16, 25]\n[1, 4, 9, 16, 25]",
+        "[1, 4, 9, 16, 25]\n[4, 17]",
+        "[1, 4, 9, 16, 25]\n[4, 16]"
+       ],
+       "right": 2
       }
      }
     }
@@ -18624,6 +19046,110 @@ window.PyvielCourse = {
        "fr": "3.141592653589793"
       }
      }
+    },
+    {
+     "code": {
+      "en": "import math\n\nprint(math.floor(7.8), math.ceil(7.2))\nprint(round(math.pi, 3))",
+      "it": "import math\n\nprint(math.floor(7.8), math.ceil(7.2))\nprint(round(math.pi, 3))",
+      "fr": "import math\n\nprint(math.floor(7.8), math.ceil(7.2))\nprint(round(math.pi, 3))"
+     },
+     "title": {
+      "en": "Challenge: the area of a circle",
+      "it": "Sfida: l'area di un cerchio",
+      "fr": "Défi : l'aire d'un cercle"
+     },
+     "text": {
+      "en": "math holds the tools of mathematics: floor rounds down, ceil rounds up, and pi is the famous number. round(x, 3) keeps three decimals.",
+      "it": "math contiene gli strumenti della matematica: floor arrotonda per difetto, ceil per eccesso, e pi è il famoso numero. round(x, 3) tiene tre decimali.",
+      "fr": "math contient les outils des mathématiques : floor arrondit en dessous, ceil au-dessus, et pi est le fameux nombre. round(x, 3) garde trois décimales."
+     },
+     "see": {
+      "en": "7 8\n3.142",
+      "it": "7 8\n3.142",
+      "fr": "7 8\n3.142"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "A circle has a radius of 3. Show its area, pi times the radius squared, rounded to 2 decimals (28.27), using math.pi.",
+       "it": "Un cerchio ha raggio 3. Mostra la sua area, pi per il raggio al quadrato, arrotondata a 2 decimali (28.27), usando math.pi.",
+       "fr": "Un cercle a un rayon de 3. Affiche son aire, pi fois le rayon au carré, arrondie à 2 décimales (28.27), avec math.pi."
+      },
+      "hint": {
+       "en": "import math first; the radius squared is radius ** 2; round(..., 2) at the end.",
+       "it": "Prima import math; il raggio al quadrato è radius ** 2; round(..., 2) alla fine.",
+       "fr": "D'abord import math ; le rayon au carré est radius ** 2 ; round(..., 2) à la fin."
+      },
+      "sol": {
+       "en": "import math\n\nradius = 3\nprint(round(math.pi * radius ** 2, 2))",
+       "it": "import math\n\nradius = 3\nprint(round(math.pi * radius ** 2, 2))",
+       "fr": "import math\n\nradius = 3\nprint(round(math.pi * radius ** 2, 2))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "28.27",
+        "uses": [
+         "import",
+         "round"
+        ]
+       },
+       "it": {
+        "out": "28.27",
+        "uses": [
+         "import",
+         "round"
+        ]
+       },
+       "fr": {
+        "out": "28.27",
+        "uses": [
+         "import",
+         "round"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "28.27",
+       "it": "28.27",
+       "fr": "28.27"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "7 8\n3.143",
+        "7 8\n3.142",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "7 8\n3.143",
+        "7 8\n3.142",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "7 8\n3.143",
+        "7 8\n3.142",
+        "12.0\n1.4142135623730951"
+       ],
+       "right": 1
+      }
+     }
     }
    ]
   },
@@ -19340,6 +19866,126 @@ window.PyvielCourse = {
        "right": 0
       }
      }
+    },
+    {
+     "code": {
+      "en": "import statistics\n\nmarks = [6, 8, 7, 8, 5]\nprint(statistics.mean(marks))\nprint(statistics.median(marks))\nprint(statistics.mode(marks))",
+      "it": "import statistics\n\nmarks = [6, 8, 7, 8, 5]\nprint(statistics.mean(marks))\nprint(statistics.median(marks))\nprint(statistics.mode(marks))",
+      "fr": "import statistics\n\nmarks = [6, 8, 7, 8, 5]\nprint(statistics.mean(marks))\nprint(statistics.median(marks))\nprint(statistics.mode(marks))"
+     },
+     "title": {
+      "en": "Challenge: the marks of a class",
+      "it": "Sfida: i voti di una classe",
+      "fr": "Défi : les notes d'une classe"
+     },
+     "text": {
+      "en": "statistics does the usual sums on a list: the mean is the average, the median is the middle value once the list is in order, and the mode is the value that comes back most often.",
+      "it": "statistics fa i conti di sempre su una lista: mean è la media, median è il valore in mezzo quando la lista è in ordine, e mode è il valore che torna più spesso.",
+      "fr": "statistics fait les calculs habituels sur une liste : mean est la moyenne, median est la valeur du milieu une fois la liste triée, et mode est la valeur qui revient le plus souvent."
+     },
+     "see": {
+      "en": "6.8\n7\n8",
+      "it": "6.8\n7\n8",
+      "fr": "6.8\n7\n8"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "statistics.mode",
+       "w": "statistics.mode( )",
+       "d": {
+        "en": "statistics.mode gives the value that appears most often.",
+        "it": "statistics.mode dà il valore che compare più spesso.",
+        "fr": "statistics.mode donne la valeur qui apparaît le plus souvent."
+       },
+       "s": {
+        "en": "statistics.mode(data)",
+        "it": "statistics.mode(data)",
+        "fr": "statistics.mode(data)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "The marks are 4, 9, 6, 9 and 7. Show their mean (7) and then the mark that appears most often (9), using statistics.mode.",
+       "it": "I voti sono 4, 9, 6, 9 e 7. Mostra la loro media (7) e poi il voto che appare più spesso (9), usando statistics.mode.",
+       "fr": "Les notes sont 4, 9, 6, 9 et 7. Affiche leur moyenne (7) puis la note qui revient le plus souvent (9), avec statistics.mode."
+      },
+      "hint": {
+       "en": "A list of the five marks, then statistics.mean and statistics.mode on it.",
+       "it": "Una lista dei cinque voti, poi statistics.mean e statistics.mode su di essa.",
+       "fr": "Une liste des cinq notes, puis statistics.mean et statistics.mode dessus."
+      },
+      "sol": {
+       "en": "import statistics\n\nmarks = [4, 9, 6, 9, 7]\nprint(statistics.mean(marks))\nprint(statistics.mode(marks))",
+       "it": "import statistics\n\nmarks = [4, 9, 6, 9, 7]\nprint(statistics.mean(marks))\nprint(statistics.mode(marks))",
+       "fr": "import statistics\n\nmarks = [4, 9, 6, 9, 7]\nprint(statistics.mean(marks))\nprint(statistics.mode(marks))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "7\n9",
+        "uses": [
+         ".mean",
+         ".mode"
+        ]
+       },
+       "it": {
+        "out": "7\n9",
+        "uses": [
+         ".mean",
+         ".mode"
+        ]
+       },
+       "fr": {
+        "out": "7\n9",
+        "uses": [
+         ".mean",
+         ".mode"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "7\n9",
+       "it": "7\n9",
+       "fr": "7\n9"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "6.8\n7\n8",
+        "5.0\n120\n6",
+        "6.8\n7\n9"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "6.8\n7\n8",
+        "5.0\n120\n6",
+        "6.8\n7\n9"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "6.8\n7\n8",
+        "5.0\n120\n6",
+        "6.8\n7\n9"
+       ],
+       "right": 0
+      }
+     }
     }
    ]
   },
@@ -19801,6 +20447,110 @@ window.PyvielCourse = {
         "L'horloge dit 2026 ou après : True\nCompter a pris moins de 5 secondes : True"
        ],
        "right": 2
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from datetime import date\n\nstart = date(2026, 1, 1)\nend = date(2026, 3, 1)\nprint((end - start).days)\nprint(end.strftime(\"%d/%m/%Y\"))",
+      "it": "from datetime import date\n\nstart = date(2026, 1, 1)\nend = date(2026, 3, 1)\nprint((end - start).days)\nprint(end.strftime(\"%d/%m/%Y\"))",
+      "fr": "from datetime import date\n\nstart = date(2026, 1, 1)\nend = date(2026, 3, 1)\nprint((end - start).days)\nprint(end.strftime(\"%d/%m/%Y\"))"
+     },
+     "title": {
+      "en": "Challenge: days between two dates",
+      "it": "Sfida: giorni tra due date",
+      "fr": "Défi : des jours entre deux dates"
+     },
+     "text": {
+      "en": "Subtracting two dates gives a timedelta, and .days is its number of days. strftime writes a date the way you choose.",
+      "it": "Sottrarre due date dà un timedelta, e .days è il suo numero di giorni. strftime scrive una data come vuoi tu.",
+      "fr": "Soustraire deux dates donne un timedelta, et .days est son nombre de jours. strftime écrit une date comme tu veux."
+     },
+     "see": {
+      "en": "59\n01/03/2026",
+      "it": "59\n01/03/2026",
+      "fr": "59\n01/03/2026"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "How many days are there from 1 June 2026 to 1 September 2026? Show the number (92), letting Python subtract the dates.",
+       "it": "Quanti giorni ci sono dal 1 giugno 2026 al 1 settembre 2026? Mostra il numero (92), lasciando a Python la sottrazione delle date.",
+       "fr": "Combien de jours y a-t-il du 1er juin 2026 au 1er septembre 2026 ? Affiche le nombre (92), en laissant Python soustraire les dates."
+      },
+      "hint": {
+       "en": "Two date(...) with year, month and day; subtract them and take .days.",
+       "it": "Due date(...) con anno, mese e giorno; sottraile e prendi .days.",
+       "fr": "Deux date(...) avec année, mois et jour ; soustrais-les et prends .days."
+      },
+      "sol": {
+       "en": "from datetime import date\n\nprint((date(2026, 9, 1) - date(2026, 6, 1)).days)",
+       "it": "from datetime import date\n\nprint((date(2026, 9, 1) - date(2026, 6, 1)).days)",
+       "fr": "from datetime import date\n\nprint((date(2026, 9, 1) - date(2026, 6, 1)).days)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "92",
+        "uses": [
+         "-",
+         "import"
+        ]
+       },
+       "it": {
+        "out": "92",
+        "uses": [
+         "-",
+         "import"
+        ]
+       },
+       "fr": {
+        "out": "92",
+        "uses": [
+         "-",
+         "import"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "92",
+       "it": "92",
+       "fr": "92"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "59\n01/03/2027",
+        "59\n01/03/2026",
+        "2014-05-17\n2014 5 17\n17/05/2014"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "59\n01/03/2027",
+        "59\n01/03/2026",
+        "2014-05-17\n2014 5 17\n17/05/2014"
+       ],
+       "right": 1
+      },
+      "fr": {
+       "options": [
+        "59\n01/03/2027",
+        "59\n01/03/2026",
+        "2014-05-17\n2014 5 17\n17/05/2014"
+       ],
+       "right": 1
       }
      }
     }
@@ -20501,6 +21251,129 @@ window.PyvielCourse = {
        "fr": "ok"
       }
      }
+    },
+    {
+     "code": {
+      "en": "with open(\"demo_notes.txt\", \"w\") as f:\n    f.write(\"one\\ntwo\\nthree\\n\")\n\nwith open(\"demo_notes.txt\") as f:\n    lines = f.read().splitlines()\nprint(lines)\nprint(len(lines), \"lines\")",
+      "it": "with open(\"demo_notes.txt\", \"w\") as f:\n    f.write(\"uno\\ndue\\ntre\\n\")\n\nwith open(\"demo_notes.txt\") as f:\n    lines = f.read().splitlines()\nprint(lines)\nprint(len(lines), \"righe\")",
+      "fr": "with open(\"demo_notes.txt\", \"w\") as f:\n    f.write(\"un\\ndeux\\ntrois\\n\")\n\nwith open(\"demo_notes.txt\") as f:\n    lines = f.read().splitlines()\nprint(lines)\nprint(len(lines), \"lignes\")"
+     },
+     "title": {
+      "en": "Challenge: write, then read back",
+      "it": "Sfida: scrivi, poi rileggi",
+      "fr": "Défi : écris, puis relis"
+     },
+     "text": {
+      "en": "The first with writes three lines into a file, and closes it. The second opens the same file to read it; splitlines turns the text into a list of lines.",
+      "it": "Il primo with scrive tre righe in un file, e lo chiude. Il secondo apre lo stesso file per leggerlo; splitlines trasforma il testo in una lista di righe.",
+      "fr": "Le premier with écrit trois lignes dans un fichier, et le ferme. Le second ouvre le même fichier pour le lire ; splitlines transforme le texte en une liste de lignes."
+     },
+     "see": {
+      "en": "['one', 'two', 'three']\n3 lines",
+      "it": "['uno', 'due', 'tre']\n3 righe",
+      "fr": "['un', 'deux', 'trois']\n3 lignes"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".splitlines",
+       "w": ".splitlines( )",
+       "d": {
+        "en": "splitlines cuts a text into a list of its lines.",
+        "it": "splitlines taglia un testo in una lista delle sue righe.",
+        "fr": "splitlines coupe un texte en une liste de ses lignes."
+       },
+       "s": {
+        "en": "text.splitlines()",
+        "it": "text.splitlines()",
+        "fr": "text.splitlines()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Write the numbers 1 to 5 into demo_numbers.txt, one per line. Then read the file back and show the sum of the numbers in it (15).",
+       "it": "Scrivi i numeri da 1 a 5 in demo_numbers.txt, uno per riga. Poi rileggi il file e mostra la somma dei numeri che contiene (15).",
+       "fr": "Écris les nombres de 1 à 5 dans demo_numbers.txt, un par ligne. Puis relis le fichier et affiche la somme des nombres qu'il contient (15)."
+      },
+      "hint": {
+       "en": "A for loop writes str(n) + newline for each number. When you read, each line is text: int(...) before adding.",
+       "it": "Un ciclo for scrive str(n) più a capo per ogni numero. Quando leggi, ogni riga è testo: int(...) prima di sommare.",
+       "fr": "Une boucle for écrit str(n) plus un retour à la ligne pour chaque nombre. À la lecture, chaque ligne est du texte : int(...) avant d'additionner."
+      },
+      "sol": {
+       "en": "with open(\"demo_numbers.txt\", \"w\") as f:\n    for n in range(1, 6):\n        f.write(str(n) + \"\\n\")\n\ntotal = 0\nwith open(\"demo_numbers.txt\") as f:\n    for line in f:\n        total += int(line)\nprint(total)",
+       "it": "with open(\"demo_numbers.txt\", \"w\") as f:\n    for n in range(1, 6):\n        f.write(str(n) + \"\\n\")\n\ntotal = 0\nwith open(\"demo_numbers.txt\") as f:\n    for line in f:\n        total += int(line)\nprint(total)",
+       "fr": "with open(\"demo_numbers.txt\", \"w\") as f:\n    for n in range(1, 6):\n        f.write(str(n) + \"\\n\")\n\ntotal = 0\nwith open(\"demo_numbers.txt\") as f:\n    for line in f:\n        total += int(line)\nprint(total)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "15",
+        "uses": [
+         "open",
+         "with",
+         ".write"
+        ]
+       },
+       "it": {
+        "out": "15",
+        "uses": [
+         "open",
+         "with",
+         ".write"
+        ]
+       },
+       "fr": {
+        "out": "15",
+        "uses": [
+         "open",
+         "with",
+         ".write"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "15",
+       "it": "15",
+       "fr": "15"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "File written",
+        "['one', 'two', 'three']\n4 lines",
+        "['one', 'two', 'three']\n3 lines"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "['uno', 'due', 'tre']\n3 righe",
+        "['uno', 'due', 'tre']\n4 righe",
+        "File scritto"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Fichier écrit",
+        "['un', 'deux', 'trois']\n3 lignes",
+        "['un', 'deux', 'trois']\n4 lignes"
+       ],
+       "right": 1
+      }
+     }
     }
    ]
   },
@@ -20974,6 +21847,110 @@ window.PyvielCourse = {
        ]
       }
      }
+    },
+    {
+     "code": {
+      "en": "for text in [\"3\", \"x\", \"10\"]:\n    try:\n        print(int(text) + 1)\n    except ValueError:\n        print(text, \"is not a number\")",
+      "it": "for text in [\"3\", \"x\", \"10\"]:\n    try:\n        print(int(text) + 1)\n    except ValueError:\n        print(text, \"is not a number\")",
+      "fr": "for text in [\"3\", \"x\", \"10\"]:\n    try:\n        print(int(text) + 1)\n    except ValueError:\n        print(text, \"is not a number\")"
+     },
+     "title": {
+      "en": "Challenge: a division that never breaks",
+      "it": "Sfida: una divisione che non si rompe mai",
+      "fr": "Défi : une division qui ne casse jamais"
+     },
+     "text": {
+      "en": "try runs the risky line; when it raises a ValueError, except catches it and the loop goes on with the next text. The program never stops.",
+      "it": "try esegue la riga rischiosa; quando solleva un ValueError, except lo prende e il ciclo continua con il testo dopo. Il programma non si ferma mai.",
+      "fr": "try lance la ligne risquée ; quand elle lève une ValueError, except l'attrape et la boucle continue avec le texte suivant. Le programme ne s'arrête jamais."
+     },
+     "see": {
+      "en": "4\nx is not a number\n11",
+      "it": "4\nx is not a number\n11",
+      "fr": "4\nx is not a number\n11"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write safe_divide(a, b): it returns a / b, or None when b is 0 (use try and except ZeroDivisionError). Show safe_divide(10, 4) and then safe_divide(1, 0).",
+       "it": "Scrivi safe_divide(a, b): restituisce a / b, oppure None quando b è 0 (usa try ed except ZeroDivisionError). Mostra safe_divide(10, 4) e poi safe_divide(1, 0).",
+       "fr": "Écris safe_divide(a, b) : elle rend a / b, ou None quand b vaut 0 (utilise try et except ZeroDivisionError). Affiche safe_divide(10, 4) puis safe_divide(1, 0)."
+      },
+      "hint": {
+       "en": "Inside the function: try: return a / b, and under except ZeroDivisionError: return None.",
+       "it": "Dentro la funzione: try: return a / b, e sotto except ZeroDivisionError: return None.",
+       "fr": "Dans la fonction : try: return a / b, et sous except ZeroDivisionError: return None."
+      },
+      "sol": {
+       "en": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n\nprint(safe_divide(10, 4))\nprint(safe_divide(1, 0))",
+       "it": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n\nprint(safe_divide(10, 4))\nprint(safe_divide(1, 0))",
+       "fr": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n\nprint(safe_divide(10, 4))\nprint(safe_divide(1, 0))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "2.5\nNone",
+        "uses": [
+         "try",
+         "def"
+        ]
+       },
+       "it": {
+        "out": "2.5\nNone",
+        "uses": [
+         "try",
+         "def"
+        ]
+       },
+       "fr": {
+        "out": "2.5\nNone",
+        "uses": [
+         "try",
+         "def"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "2.5\nNone",
+       "it": "2.5\nNone",
+       "fr": "2.5\nNone"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "That was not a number\nThe program goes on",
+        "4\nx is not a number\n12",
+        "4\nx is not a number\n11"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Quello non era un numero\nIl programma va avanti",
+        "4\nx is not a number\n12",
+        "4\nx is not a number\n11"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Ce n'était pas un nombre\nLe programme continue",
+        "4\nx is not a number\n12",
+        "4\nx is not a number\n11"
+       ],
+       "right": 2
+      }
+     }
     }
    ]
   },
@@ -21336,6 +22313,32 @@ window.PyvielCourse = {
        "it": [],
        "fr": []
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "name,score\nAda,12\nMax,7",
+        "name,score\nAda,12\nMax,8",
+        "{\"name\": \"Ada\", \"age\": 12}\n12"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "name,score\nAda,12\nMax,7",
+        "name,score\nAda,12\nMax,8",
+        "{\"name\": \"Ada\", \"age\": 12}\n12"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "name,score\nAda,12\nMax,7",
+        "name,score\nAda,12\nMax,8",
+        "{\"name\": \"Ada\", \"age\": 12}\n12"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -21434,6 +22437,107 @@ window.PyvielCourse = {
        "en": "15",
        "it": "15",
        "fr": "15"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import json\n\ndata = {\"name\": \"Ada\", \"age\": 12}\ntext = json.dumps(data)\nprint(text)\nprint(json.loads(text)[\"age\"])",
+      "it": "import json\n\ndata = {\"name\": \"Ada\", \"age\": 12}\ntext = json.dumps(data)\nprint(text)\nprint(json.loads(text)[\"age\"])",
+      "fr": "import json\n\ndata = {\"name\": \"Ada\", \"age\": 12}\ntext = json.dumps(data)\nprint(text)\nprint(json.loads(text)[\"age\"])"
+     },
+     "title": {
+      "en": "Challenge: read a JSON text",
+      "it": "Sfida: leggi un testo JSON",
+      "fr": "Défi : lis un texte JSON"
+     },
+     "text": {
+      "en": "dumps turns Python data into JSON text, ready for a file or the internet; loads turns JSON text back into Python data, so you can use its keys again.",
+      "it": "dumps trasforma i dati di Python in testo JSON, pronto per un file o per internet; loads ritrasforma il testo JSON in dati Python, così puoi usarne di nuovo le chiavi.",
+      "fr": "dumps transforme les données Python en texte JSON, prêt pour un fichier ou internet ; loads retransforme le texte JSON en données Python, pour réutiliser ses clés."
+     },
+     "see": {
+      "en": "{\"name\": \"Ada\", \"age\": 12}\n12",
+      "it": "{\"name\": \"Ada\", \"age\": 12}\n12",
+      "fr": "{\"name\": \"Ada\", \"age\": 12}\n12"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "The box text holds some JSON. Read it with json.loads and show how many pets there are (2), then the first one.",
+       "it": "La scatola text contiene del JSON. Leggilo con json.loads e mostra quanti animali ci sono (2), poi il primo.",
+       "fr": "La boîte text contient du JSON. Lis-le avec json.loads et affiche combien d'animaux il y a (2), puis le premier."
+      },
+      "hint": {
+       "en": "json.loads(text) gives a dictionary; its key pets holds a list: len of it, then item 0.",
+       "it": "json.loads(text) dà un dizionario; la sua chiave pets contiene una lista: len di quella, poi l'elemento 0.",
+       "fr": "json.loads(text) donne un dictionnaire ; sa clé pets contient une liste : len de celle-ci, puis l'élément 0."
+      },
+      "sol": {
+       "en": "import json\n\ntext = '{\"pets\": [\"cat\", \"dog\"]}'\ndata = json.loads(text)\nprint(len(data[\"pets\"]))\nprint(data[\"pets\"][0])",
+       "it": "import json\n\ntext = '{\"pets\": [\"gatto\", \"cane\"]}'\ndata = json.loads(text)\nprint(len(data[\"pets\"]))\nprint(data[\"pets\"][0])",
+       "fr": "import json\n\ntext = '{\"pets\": [\"chat\", \"chien\"]}'\ndata = json.loads(text)\nprint(len(data[\"pets\"]))\nprint(data[\"pets\"][0])"
+      },
+      "start": {
+       "en": "import json\n\ntext = '{\"pets\": [\"cat\", \"dog\"]}'",
+       "it": "import json\n\ntext = '{\"pets\": [\"gatto\", \"cane\"]}'",
+       "fr": "import json\n\ntext = '{\"pets\": [\"chat\", \"chien\"]}'"
+      },
+      "spec": {
+       "en": {
+        "out": "2\ncat",
+        "uses": [
+         ".loads"
+        ]
+       },
+       "it": {
+        "out": "2\ngatto",
+        "uses": [
+         ".loads"
+        ]
+       },
+       "fr": {
+        "out": "2\nchat",
+        "uses": [
+         ".loads"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "2\ncat",
+       "it": "2\ngatto",
+       "fr": "2\nchat"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "{\"name\": \"Ada\", \"age\": 12}\n12",
+        "{\"name\": \"Ada\", \"age\": 12}\n13",
+        "name,score\nAda,12\nMax,7"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "{\"name\": \"Ada\", \"age\": 12}\n12",
+        "{\"name\": \"Ada\", \"age\": 12}\n13",
+        "name,score\nAda,12\nMax,7"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "{\"name\": \"Ada\", \"age\": 12}\n12",
+        "{\"name\": \"Ada\", \"age\": 12}\n13",
+        "name,score\nAda,12\nMax,7"
+       ],
+       "right": 0
       }
      }
     }
@@ -21991,6 +23095,107 @@ window.PyvielCourse = {
        "en": "True",
        "it": "True",
        "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import re\n\ntext = \"3 cats and 12 dogs\"\nprint(re.findall(r\"\\d+\", text))\nprint(sum(int(n) for n in re.findall(r\"\\d+\", text)))",
+      "it": "import re\n\ntext = \"3 gatti e 12 cani\"\nprint(re.findall(r\"\\d+\", text))\nprint(sum(int(n) for n in re.findall(r\"\\d+\", text)))",
+      "fr": "import re\n\ntext = \"3 chats et 12 chiens\"\nprint(re.findall(r\"\\d+\", text))\nprint(sum(int(n) for n in re.findall(r\"\\d+\", text)))"
+     },
+     "title": {
+      "en": "Challenge: words with a capital letter",
+      "it": "Sfida: parole con la maiuscola",
+      "fr": "Défi : des mots avec une majuscule"
+     },
+     "text": {
+      "en": "findall gives back every piece of the text that matches the pattern. \\d+ means one digit or more, so it finds whole numbers, which can then be added up.",
+      "it": "findall restituisce ogni pezzo del testo che corrisponde allo schema. \\d+ vuol dire una cifra o più, quindi trova i numeri interi, che poi si possono sommare.",
+      "fr": "findall rend chaque morceau du texte qui correspond au motif. \\d+ veut dire un chiffre ou plus, donc il trouve les nombres entiers, qu'on peut ensuite additionner."
+     },
+     "see": {
+      "en": "['3', '12']\n15",
+      "it": "['3', '12']\n15",
+      "fr": "['3', '12']\n15"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Find every word that starts with a capital letter in the sentence in the box text, and show the list.",
+       "it": "Trova ogni parola che inizia con una lettera maiuscola nella frase della scatola text, e mostra la lista.",
+       "fr": "Trouve chaque mot qui commence par une majuscule dans la phrase de la boîte text, et affiche la liste."
+      },
+      "hint": {
+       "en": "A capital letter is [A-Z], and the small letters after it are [a-z]*. Use findall with that pattern.",
+       "it": "Una lettera maiuscola è [A-Z], e le lettere piccole dopo sono [a-z]*. Usa findall con quello schema.",
+       "fr": "Une majuscule est [A-Z], et les petites lettres après sont [a-z]*. Utilise findall avec ce motif."
+      },
+      "sol": {
+       "en": "import re\n\ntext = \"Ada and Bo met Cy in Rome\"\nprint(re.findall(r\"[A-Z][a-z]*\", text))",
+       "it": "import re\n\ntext = \"Ada e Bo hanno visto Cy a Roma\"\nprint(re.findall(r\"[A-Z][a-z]*\", text))",
+       "fr": "import re\n\ntext = \"Ada et Bo ont vu Cy à Rome\"\nprint(re.findall(r\"[A-Z][a-z]*\", text))"
+      },
+      "start": {
+       "en": "import re\n\ntext = \"Ada and Bo met Cy in Rome\"",
+       "it": "import re\n\ntext = \"Ada e Bo hanno visto Cy a Roma\"",
+       "fr": "import re\n\ntext = \"Ada et Bo ont vu Cy à Rome\""
+      },
+      "spec": {
+       "en": {
+        "out": "['Ada', 'Bo', 'Cy', 'Rome']",
+        "uses": [
+         ".findall"
+        ]
+       },
+       "it": {
+        "out": "['Ada', 'Bo', 'Cy', 'Roma']",
+        "uses": [
+         ".findall"
+        ]
+       },
+       "fr": {
+        "out": "['Ada', 'Bo', 'Cy', 'Rome']",
+        "uses": [
+         ".findall"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['Ada', 'Bo', 'Cy', 'Rome']",
+       "it": "['Ada', 'Bo', 'Cy', 'Roma']",
+       "fr": "['Ada', 'Bo', 'Cy', 'Rome']"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "['3', '12']\n16",
+        "['3', '12']\n15",
+        "<re.Match object; span=(12, 20), match='555-1234'>\nNone"
+       ],
+       "right": 1
+      },
+      "it": {
+       "options": [
+        "['3', '12']\n15",
+        "['3', '12']\n16",
+        "<re.Match object; span=(18, 26), match='555-1234'>\nNone"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "<re.Match object; span=(21, 29), match='555-1234'>\nNone",
+        "['3', '12']\n15",
+        "['3', '12']\n16"
+       ],
+       "right": 1
       }
      }
     }
@@ -22699,6 +23904,113 @@ window.PyvielCourse = {
         "13\nTrue False"
        ],
        "right": 0
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Counter:\n    def __init__(self):\n        self.count = 0\n\n    def add(self):\n        self.count += 1\n\nclicks = Counter()\nclicks.add()\nclicks.add()\nprint(clicks.count)",
+      "it": "class Counter:\n    def __init__(self):\n        self.count = 0\n\n    def add(self):\n        self.count += 1\n\nclicks = Counter()\nclicks.add()\nclicks.add()\nprint(clicks.count)",
+      "fr": "class Counter:\n    def __init__(self):\n        self.count = 0\n\n    def add(self):\n        self.count += 1\n\nclicks = Counter()\nclicks.add()\nclicks.add()\nprint(clicks.count)"
+     },
+     "title": {
+      "en": "Challenge: a rectangle that knows its area",
+      "it": "Sfida: un rettangolo che conosce la sua area",
+      "fr": "Défi : un rectangle qui connaît son aire"
+     },
+     "text": {
+      "en": "A class is the plan; Counter() builds one object from it. __init__ prepares the object, and every method gets the object itself as self, so it can read and change its values.",
+      "it": "Una classe è il progetto; Counter() costruisce un oggetto. __init__ prepara l'oggetto, e ogni metodo riceve l'oggetto stesso come self, così può leggere e cambiare i suoi valori.",
+      "fr": "Une classe est le plan ; Counter() construit un objet. __init__ prépare l'objet, et chaque méthode reçoit l'objet lui-même comme self, pour lire et changer ses valeurs."
+     },
+     "see": {
+      "en": "2",
+      "it": "2",
+      "fr": "2"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a class Rectangle that keeps a width and a height, and has a method area that returns width times height. Show Rectangle(3, 4).area() (12).",
+       "it": "Scrivi una classe Rectangle che tiene una larghezza e un'altezza, e ha un metodo area che restituisce larghezza per altezza. Mostra Rectangle(3, 4).area() (12).",
+       "fr": "Écris une classe Rectangle qui garde une largeur et une hauteur, et a une méthode area qui rend largeur fois hauteur. Affiche Rectangle(3, 4).area() (12)."
+      },
+      "hint": {
+       "en": "__init__(self, width, height) keeps both in self; area(self) returns self.width * self.height.",
+       "it": "__init__(self, width, height) li tiene tutti e due in self; area(self) restituisce self.width * self.height.",
+       "fr": "__init__(self, width, height) les garde tous les deux dans self ; area(self) rend self.width * self.height."
+      },
+      "sol": {
+       "en": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\nprint(Rectangle(3, 4).area())",
+       "it": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\nprint(Rectangle(3, 4).area())",
+       "fr": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\nprint(Rectangle(3, 4).area())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "12",
+        "uses": [
+         "class",
+         "def",
+         ".area"
+        ]
+       },
+       "it": {
+        "out": "12",
+        "uses": [
+         "class",
+         "def",
+         ".area"
+        ]
+       },
+       "fr": {
+        "out": "12",
+        "uses": [
+         "class",
+         "def",
+         ".area"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "12",
+       "it": "12",
+       "fr": "12"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "<class '__main__.Dog'>",
+        "3",
+        "2"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "<class '__main__.Dog'>",
+        "3",
+        "2"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "<class '__main__.Dog'>",
+        "3",
+        "2"
+       ],
+       "right": 2
       }
      }
     }
@@ -23509,6 +24821,110 @@ window.PyvielCourse = {
        "right": 0
       }
      }
+    },
+    {
+     "code": {
+      "en": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\nrex = Dog(\"Rex\")\nprint(rex.name, rex.speak())",
+      "it": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\nrex = Dog(\"Rex\")\nprint(rex.name, rex.speak())",
+      "fr": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\nrex = Dog(\"Rex\")\nprint(rex.name, rex.speak())"
+     },
+     "title": {
+      "en": "Challenge: one more animal",
+      "it": "Sfida: un animale in più",
+      "fr": "Défi : un animal de plus"
+     },
+     "text": {
+      "en": "Dog inherits from Animal: it gets __init__ and name for free, and changes only speak. A child class says only what is different.",
+      "it": "Dog eredita da Animal: riceve __init__ e name gratis, e cambia solo speak. Una classe figlia dice solo quello che è diverso.",
+      "fr": "Dog hérite de Animal : il reçoit __init__ et name gratuitement, et ne change que speak. Une classe fille dit seulement ce qui est différent."
+     },
+     "see": {
+      "en": "Rex Woof",
+      "it": "Rex Woof",
+      "fr": "Rex Woof"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Add a class Cat that inherits from Animal and says Meow. Show what Cat(\"Tom\").speak() gives back.",
+       "it": "Aggiungi una classe Cat che eredita da Animal e dice Miao. Mostra cosa restituisce Cat(\"Tom\").speak().",
+       "fr": "Ajoute une classe Cat qui hérite de Animal et dit Miaou. Affiche ce que rend Cat(\"Tom\").speak()."
+      },
+      "hint": {
+       "en": "Copy the shape of Dog: class Cat(Animal): with its own speak.",
+       "it": "Copia la forma di Dog: class Cat(Animal): con il suo speak.",
+       "fr": "Copie la forme de Dog : class Cat(Animal): avec son propre speak."
+      },
+      "sol": {
+       "en": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow\"\n\nprint(Cat(\"Tom\").speak())",
+       "it": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Miao\"\n\nprint(Cat(\"Tom\").speak())",
+       "fr": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Miaou\"\n\nprint(Cat(\"Tom\").speak())"
+      },
+      "start": {
+       "en": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"",
+       "it": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\"",
+       "fr": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"...\""
+      },
+      "spec": {
+       "en": {
+        "out": "Meow",
+        "c": "class\\s+Cat\\(\\s*Animal\\s*\\)",
+        "uses": [
+         "class"
+        ]
+       },
+       "it": {
+        "out": "Miao",
+        "c": "class\\s+Cat\\(\\s*Animal\\s*\\)",
+        "uses": [
+         "class"
+        ]
+       },
+       "fr": {
+        "out": "Miaou",
+        "c": "class\\s+Cat\\(\\s*Animal\\s*\\)",
+        "uses": [
+         "class"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Meow",
+       "it": "Miao",
+       "fr": "Miaou"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[9, 3.14, 4]\nTrue",
+        "Robin has 2 legs and can fly\nPenguin has 2 legs and cannot fly",
+        "Rex Woof"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "[9, 3.14, 4]\nTrue",
+        "Pettirosso ha 2 zampe e può volare\nPinguino ha 2 zampe e non può volare",
+        "Rex Woof"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "[9, 3.14, 4]\nTrue",
+        "Rouge-gorge a 2 pattes et peut voler\nPingouin a 2 pattes et ne peut pas voler",
+        "Rex Woof"
+       ],
+       "right": 2
+      }
+     }
     }
    ]
   },
@@ -24003,6 +25419,110 @@ window.PyvielCourse = {
         "Point(4, 6)\nPoint(3, 6)\nTrue False"
        ],
        "right": 1
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Money:\n    def __init__(self, euros):\n        self.euros = euros\n\n    def __add__(self, other):\n        return Money(self.euros + other.euros)\n\n    def __str__(self):\n        return f\"{self.euros} euro\"\n\nprint(Money(3) + Money(4))",
+      "it": "class Money:\n    def __init__(self, euros):\n        self.euros = euros\n\n    def __add__(self, other):\n        return Money(self.euros + other.euros)\n\n    def __str__(self):\n        return f\"{self.euros} euro\"\n\nprint(Money(3) + Money(4))",
+      "fr": "class Money:\n    def __init__(self, euros):\n        self.euros = euros\n\n    def __add__(self, other):\n        return Money(self.euros + other.euros)\n\n    def __str__(self):\n        return f\"{self.euros} euro\"\n\nprint(Money(3) + Money(4))"
+     },
+     "title": {
+      "en": "Challenge: a point that prints well",
+      "it": "Sfida: un punto che si stampa bene",
+      "fr": "Défi : un point qui s'affiche bien"
+     },
+     "text": {
+      "en": "__add__ says what + does with two Money objects, and __str__ says what print shows. With them, your objects work with the signs and functions of Python.",
+      "it": "__add__ dice cosa fa + con due oggetti Money, e __str__ dice cosa mostra print. Con questi, i tuoi oggetti funzionano con i segni e le funzioni di Python.",
+      "fr": "__add__ dit ce que fait + avec deux objets Money, et __str__ dit ce qu'affiche print. Avec elles, tes objets marchent avec les signes et les fonctions de Python."
+     },
+     "see": {
+      "en": "7 euro",
+      "it": "7 euro",
+      "fr": "7 euro"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Give the class Point a __str__, so that print(Point(2, 3)) shows (2, 3).",
+       "it": "Dai alla classe Point un __str__, così print(Point(2, 3)) mostra (2, 3).",
+       "fr": "Donne à la classe Point un __str__, pour que print(Point(2, 3)) affiche (2, 3)."
+      },
+      "hint": {
+       "en": "def __str__(self): returns an f-string with self.x and self.y between brackets.",
+       "it": "def __str__(self): restituisce una f-string con self.x e self.y tra parentesi.",
+       "fr": "def __str__(self): rend une f-string avec self.x et self.y entre parenthèses."
+      },
+      "sol": {
+       "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\nprint(Point(2, 3))",
+       "it": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\nprint(Point(2, 3))",
+       "fr": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\nprint(Point(2, 3))"
+      },
+      "start": {
+       "en": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\nprint(Point(2, 3))",
+       "it": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\nprint(Point(2, 3))",
+       "fr": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\nprint(Point(2, 3))"
+      },
+      "spec": {
+       "en": {
+        "out": "(2, 3)",
+        "c": "def\\s+__str__",
+        "uses": [
+         "def"
+        ]
+       },
+       "it": {
+        "out": "(2, 3)",
+        "c": "def\\s+__str__",
+        "uses": [
+         "def"
+        ]
+       },
+       "fr": {
+        "out": "(2, 3)",
+        "c": "def\\s+__str__",
+        "uses": [
+         "def"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "(2, 3)",
+       "it": "(2, 3)",
+       "fr": "(2, 3)"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "7 euro",
+        "8 euro",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "7 euro",
+        "8 euro",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "7 euro",
+        "8 euro",
+        "(3, 4)\n[Point(3, 4), Point(0, 0)]"
+       ],
+       "right": 0
       }
      }
     }
@@ -24549,6 +26069,32 @@ window.PyvielCourse = {
        "it": "Pet(name='Rex', age=3)",
        "fr": "Pet(name='Rex', age=3)"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+        "Book(title='Dune', pages=600, read=False)\nDune 601 False\nTrue",
+        "Book(title='Kim', pages=300)\nTrue"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+        "Book(title='Dune', pages=600, read=False)\nDune 601 False\nTrue",
+        "Book(title='Kim', pages=300)\nTrue"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+        "Book(title='Dune', pages=600, read=False)\nDune 601 False\nTrue",
+        "Book(title='Kim', pages=300)\nTrue"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -24819,6 +26365,110 @@ window.PyvielCourse = {
        "fr": "FAILED"
       }
      }
+    },
+    {
+     "code": {
+      "en": "from dataclasses import dataclass\n\n@dataclass\nclass Book:\n    title: str\n    pages: int\n\nbook = Book(\"Kim\", 300)\nprint(book)\nprint(book.pages > 200)",
+      "it": "from dataclasses import dataclass\n\n@dataclass\nclass Book:\n    title: str\n    pages: int\n\nbook = Book(\"Kim\", 300)\nprint(book)\nprint(book.pages > 200)",
+      "fr": "from dataclasses import dataclass\n\n@dataclass\nclass Book:\n    title: str\n    pages: int\n\nbook = Book(\"Kim\", 300)\nprint(book)\nprint(book.pages > 200)"
+     },
+     "title": {
+      "en": "Challenge: a player in two lines",
+      "it": "Sfida: un giocatore in due righe",
+      "fr": "Défi : un joueur en deux lignes"
+     },
+     "text": {
+      "en": "@dataclass writes __init__, a readable print and == for you: you only list the fields and their kinds.",
+      "it": "@dataclass scrive per te __init__, una stampa leggibile e ==: tu elenchi solo i campi e i loro tipi.",
+      "fr": "@dataclass écrit pour toi __init__, un affichage lisible et == : tu listes seulement les champs et leurs genres."
+     },
+     "see": {
+      "en": "Book(title='Kim', pages=300)\nTrue",
+      "it": "Book(title='Kim', pages=300)\nTrue",
+      "fr": "Book(title='Kim', pages=300)\nTrue"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a dataclass Player with a name (str) and a score (int). Show Player(\"Ada\", 10).",
+       "it": "Fai una dataclass Player con un name (str) e uno score (int). Mostra Player(\"Ada\", 10).",
+       "fr": "Fais une dataclass Player avec un name (str) et un score (int). Affiche Player(\"Ada\", 10)."
+      },
+      "hint": {
+       "en": "from dataclasses import dataclass, then @dataclass above the class, and one line per field.",
+       "it": "from dataclasses import dataclass, poi @dataclass sopra la classe, e una riga per campo.",
+       "fr": "from dataclasses import dataclass, puis @dataclass au-dessus de la classe, et une ligne par champ."
+      },
+      "sol": {
+       "en": "from dataclasses import dataclass\n\n@dataclass\nclass Player:\n    name: str\n    score: int\n\nprint(Player(\"Ada\", 10))",
+       "it": "from dataclasses import dataclass\n\n@dataclass\nclass Player:\n    name: str\n    score: int\n\nprint(Player(\"Ada\", 10))",
+       "fr": "from dataclasses import dataclass\n\n@dataclass\nclass Player:\n    name: str\n    score: int\n\nprint(Player(\"Ada\", 10))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "Player(name='Ada', score=10)",
+        "c": "@dataclass",
+        "uses": [
+         "class"
+        ]
+       },
+       "it": {
+        "out": "Player(name='Ada', score=10)",
+        "c": "@dataclass",
+        "uses": [
+         "class"
+        ]
+       },
+       "fr": {
+        "out": "Player(name='Ada', score=10)",
+        "c": "@dataclass",
+        "uses": [
+         "class"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Player(name='Ada', score=10)",
+       "it": "Player(name='Ada', score=10)",
+       "fr": "Player(name='Ada', score=10)"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "Book(title='Kim', pages=301)\nTrue",
+        "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+        "Book(title='Kim', pages=300)\nTrue"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "Book(title='Kim', pages=301)\nTrue",
+        "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+        "Book(title='Kim', pages=300)\nTrue"
+       ],
+       "right": 2
+      },
+      "fr": {
+       "options": [
+        "Book(title='Kim', pages=301)\nTrue",
+        "Book(title='Dune', pages=600, read=False)\nDune 600 False\nTrue",
+        "Book(title='Kim', pages=300)\nTrue"
+       ],
+       "right": 2
+      }
+     }
     }
    ]
   },
@@ -25083,6 +26733,32 @@ window.PyvielCourse = {
        "it": "[0, 1, 1, 2, 3, 5, 8, 13]",
        "fr": "[0, 1, 1, 2, 3, 5, 8, 13]"
       }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+        "[0, 2, 4, 6, 8]",
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 35]"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+        "[0, 2, 4, 6, 8]",
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 35]"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+        "[0, 2, 4, 6, 8]",
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 35]"
+       ],
+       "right": 0
+      }
      }
     },
     {
@@ -25252,6 +26928,110 @@ window.PyvielCourse = {
        "en": "[4, 3, 2, 1]",
        "it": "[4, 3, 2, 1]",
        "fr": "[4, 3, 2, 1]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def evens(limit):\n    n = 0\n    while n < limit:\n        yield n\n        n += 2\n\nprint(list(evens(10)))",
+      "it": "def evens(limit):\n    n = 0\n    while n < limit:\n        yield n\n        n += 2\n\nprint(list(evens(10)))",
+      "fr": "def evens(limit):\n    n = 0\n    while n < limit:\n        yield n\n        n += 2\n\nprint(list(evens(10)))"
+     },
+     "title": {
+      "en": "Challenge: a generator of squares",
+      "it": "Sfida: un generatore di quadrati",
+      "fr": "Défi : un générateur de carrés"
+     },
+     "text": {
+      "en": "yield hands out one value and pauses the function until the next value is asked for. list(...) asks for all of them.",
+      "it": "yield consegna un valore e mette in pausa la funzione finché non viene chiesto il valore dopo. list(...) li chiede tutti.",
+      "fr": "yield donne une valeur et met la fonction en pause jusqu'à ce qu'on demande la suivante. list(...) les demande toutes."
+     },
+     "see": {
+      "en": "[0, 2, 4, 6, 8]",
+      "it": "[0, 2, 4, 6, 8]",
+      "fr": "[0, 2, 4, 6, 8]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a generator squares(n) that yields 1, 4, 9, and so on up to n * n. Show list(squares(5)): [1, 4, 9, 16, 25].",
+       "it": "Scrivi un generatore squares(n) che dà 1, 4, 9, e così via fino a n * n. Mostra list(squares(5)): [1, 4, 9, 16, 25].",
+       "fr": "Écris un générateur squares(n) qui donne 1, 4, 9, et ainsi de suite jusqu'à n * n. Affiche list(squares(5)) : [1, 4, 9, 16, 25]."
+      },
+      "hint": {
+       "en": "A for loop from 1 to n, and inside it yield the number times itself.",
+       "it": "Un ciclo for da 1 a n, e dentro yield del numero per se stesso.",
+       "fr": "Une boucle for de 1 à n, et dedans yield du nombre fois lui-même."
+      },
+      "sol": {
+       "en": "def squares(n):\n    for i in range(1, n + 1):\n        yield i * i\n\nprint(list(squares(5)))",
+       "it": "def squares(n):\n    for i in range(1, n + 1):\n        yield i * i\n\nprint(list(squares(5)))",
+       "fr": "def squares(n):\n    for i in range(1, n + 1):\n        yield i * i\n\nprint(list(squares(5)))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[1, 4, 9, 16, 25]",
+        "uses": [
+         "yield",
+         "def"
+        ]
+       },
+       "it": {
+        "out": "[1, 4, 9, 16, 25]",
+        "uses": [
+         "yield",
+         "def"
+        ]
+       },
+       "fr": {
+        "out": "[1, 4, 9, 16, 25]",
+        "uses": [
+         "yield",
+         "def"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[1, 4, 9, 16, 25]",
+       "it": "[1, 4, 9, 16, 25]",
+       "fr": "[1, 4, 9, 16, 25]"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "[0, 2, 4, 6, 8]",
+        "[0, 2, 4, 6, 9]",
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+       ],
+       "right": 0
+      },
+      "it": {
+       "options": [
+        "[0, 2, 4, 6, 8]",
+        "[0, 2, 4, 6, 9]",
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "[0, 2, 4, 6, 8]",
+        "[0, 2, 4, 6, 9]",
+        "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+       ],
+       "right": 0
       }
      }
     }
@@ -25763,6 +27543,110 @@ window.PyvielCourse = {
        "en": "working",
        "it": "working",
        "fr": "working"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def shout(function):\n    def wrapper():\n        return function().upper() + \"!\"\n    return wrapper\n\n@shout\ndef hello():\n    return \"hello\"\n\nprint(hello())",
+      "it": "def shout(function):\n    def wrapper():\n        return function().upper() + \"!\"\n    return wrapper\n\n@shout\ndef hello():\n    return \"ciao\"\n\nprint(hello())",
+      "fr": "def shout(function):\n    def wrapper():\n        return function().upper() + \"!\"\n    return wrapper\n\n@shout\ndef hello():\n    return \"salut\"\n\nprint(hello())"
+     },
+     "title": {
+      "en": "Challenge: do it twice",
+      "it": "Sfida: fallo due volte",
+      "fr": "Défi : fais-le deux fois"
+     },
+     "text": {
+      "en": "A decorator takes a function and gives back a new one, wrapper, that does something around it. @shout above hello means hello = shout(hello).",
+      "it": "Un decoratore prende una funzione e ne restituisce una nuova, wrapper, che fa qualcosa intorno. @shout sopra hello vuol dire hello = shout(hello).",
+      "fr": "Un décorateur prend une fonction et en rend une nouvelle, wrapper, qui fait quelque chose autour. @shout au-dessus de hello veut dire hello = shout(hello)."
+     },
+     "see": {
+      "en": "HELLO!",
+      "it": "CIAO!",
+      "fr": "SALUT!"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Write a decorator twice that runs the function two times. Put it above the function hello, which shows hello, and call hello(): hello must appear two times.",
+       "it": "Scrivi un decoratore twice che esegue la funzione due volte. Mettilo sopra la funzione hello, che mostra ciao, e chiama hello(): ciao deve apparire due volte.",
+       "fr": "Écris un décorateur twice qui lance la fonction deux fois. Mets-le au-dessus de la fonction hello, qui affiche salut, et appelle hello() : salut doit apparaître deux fois."
+      },
+      "hint": {
+       "en": "Like shout: twice(function) has a wrapper that calls function() two times, and returns wrapper.",
+       "it": "Come shout: twice(function) ha un wrapper che chiama function() due volte, e restituisce wrapper.",
+       "fr": "Comme shout : twice(function) a un wrapper qui appelle function() deux fois, et rend wrapper."
+      },
+      "sol": {
+       "en": "def twice(function):\n    def wrapper():\n        function()\n        function()\n    return wrapper\n\n@twice\ndef hello():\n    print(\"hello\")\n\nhello()",
+       "it": "def twice(function):\n    def wrapper():\n        function()\n        function()\n    return wrapper\n\n@twice\ndef hello():\n    print(\"ciao\")\n\nhello()",
+       "fr": "def twice(function):\n    def wrapper():\n        function()\n        function()\n    return wrapper\n\n@twice\ndef hello():\n    print(\"salut\")\n\nhello()"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "hello\nhello",
+        "c": "@twice[\\s\\S]*def\\s+hello",
+        "uses": [
+         "def"
+        ]
+       },
+       "it": {
+        "out": "ciao\nciao",
+        "c": "@twice[\\s\\S]*def\\s+hello",
+        "uses": [
+         "def"
+        ]
+       },
+       "fr": {
+        "out": "salut\nsalut",
+        "c": "@twice[\\s\\S]*def\\s+hello",
+        "uses": [
+         "def"
+        ]
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "hello\nhello",
+       "it": "ciao\nciao",
+       "fr": "salut\nsalut"
+      }
+     },
+     "choices": {
+      "en": {
+       "options": [
+        "HELLO ADA!\nhello ada",
+        "HELLO ADA!\nHELLO MAX!",
+        "HELLO!"
+       ],
+       "right": 2
+      },
+      "it": {
+       "options": [
+        "CIAO!",
+        "CIAO ADA!\nciao ada",
+        "CIAO ADA!\nCIAO MAX!"
+       ],
+       "right": 0
+      },
+      "fr": {
+       "options": [
+        "BONJOUR ADA!\nBONJOUR MAX!",
+        "SALUT!",
+        "BONJOUR ADA!\nbonjour ada"
+       ],
+       "right": 1
       }
      }
     }

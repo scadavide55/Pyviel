@@ -169,6 +169,24 @@ Un générateur est en général plus court, donc ceci sert plutôt à comprendr
           h: ['Countdown(4) is an object you can loop over, so list(...) can collect everything it gives.', 'Countdown(4) è un oggetto su cui puoi fare un ciclo, quindi list(...) può raccogliere tutto quello che dà.', 'Countdown(4) est un objet qu\'on peut parcourir, donc list(...) peut rassembler tout ce qu\'il donne.'],
           start: 'class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value', sol: 'class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nprint(list(Countdown(4)))', out: '[4, 3, 2, 1]', c: 'Countdown\\(4\\)'
         }
+      },
+      {
+        c: c`def evens(limit):
+    n = 0
+    while n < limit:
+        yield n
+        n += 2
+
+print(list(evens(10)))`,
+        t: ['Challenge: a generator of squares', 'Sfida: un generatore di quadrati', 'Défi : un générateur de carrés'],
+        x: ['yield hands out one value and pauses the function until the next value is asked for. list(...) asks for all of them.', 'yield consegna un valore e mette in pausa la funzione finché non viene chiesto il valore dopo. list(...) li chiede tutti.', 'yield donne une valeur et met la fonction en pause jusqu\'à ce qu\'on demande la suivante. list(...) les demande toutes.'],
+        ex: {
+          t: ['Write a generator squares(n) that yields 1, 4, 9, and so on up to n * n. Show list(squares(5)): [1, 4, 9, 16, 25].', 'Scrivi un generatore squares(n) che dà 1, 4, 9, e così via fino a n * n. Mostra list(squares(5)): [1, 4, 9, 16, 25].', 'Écris un générateur squares(n) qui donne 1, 4, 9, et ainsi de suite jusqu\'à n * n. Affiche list(squares(5)) : [1, 4, 9, 16, 25].'],
+          h: ['A for loop from 1 to n, and inside it yield the number times itself.', 'Un ciclo for da 1 a n, e dentro yield del numero per se stesso.', 'Une boucle for de 1 à n, et dedans yield du nombre fois lui-même.'],
+          start: '',
+          sol: 'def squares(n):\n    for i in range(1, n + 1):\n        yield i * i\n\nprint(list(squares(5)))',
+          out: '[1, 4, 9, 16, 25]', uses: ['yield', 'def']
+        }
       }
     ]
   },
@@ -456,6 +474,45 @@ Les décorateurs ajoutent un pouvoir en plus à une fonction, sans toucher à la
           t: ['Use @remember on a function called triple(n) that shows "working" and returns n * 3. Call triple(5) twice: "working" must show only once.', 'Usa @remember su una funzione che si chiama triple(n) che mostra "working" e restituisce n * 3. Chiama triple(5) due volte: "working" deve comparire una sola volta.', 'Utilise @remember sur une fonction qui s\'appelle triple(n) qui affiche "working" et rend n * 3. Appelle triple(5) deux fois : "working" ne doit apparaître qu\'une fois.'],
           h: ['@remember above def triple(n): with print("working") inside.', '@remember sopra def triple(n): con print("working") dentro.', '@remember au-dessus de def triple(n): avec print("working") dedans.'],
           start: 'def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper', sol: 'def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef triple(n):\n    print("working")\n    return n * 3\n\ntriple(5)\ntriple(5)', out: 'working', c: '@remember'
+        }
+      },
+      {
+        c: [c`def shout(function):
+    def wrapper():
+        return function().upper() + "!"
+    return wrapper
+
+@shout
+def hello():
+    return "hello"
+
+print(hello())`, c`def shout(function):
+    def wrapper():
+        return function().upper() + "!"
+    return wrapper
+
+@shout
+def hello():
+    return "ciao"
+
+print(hello())`, c`def shout(function):
+    def wrapper():
+        return function().upper() + "!"
+    return wrapper
+
+@shout
+def hello():
+    return "salut"
+
+print(hello())`],
+        t: ['Challenge: do it twice', 'Sfida: fallo due volte', 'Défi : fais-le deux fois'],
+        x: ['A decorator takes a function and gives back a new one, wrapper, that does something around it. @shout above hello means hello = shout(hello).', 'Un decoratore prende una funzione e ne restituisce una nuova, wrapper, che fa qualcosa intorno. @shout sopra hello vuol dire hello = shout(hello).', 'Un décorateur prend une fonction et en rend une nouvelle, wrapper, qui fait quelque chose autour. @shout au-dessus de hello veut dire hello = shout(hello).'],
+        ex: {
+          t: ['Write a decorator twice that runs the function two times. Put it above the function hello, which shows hello, and call hello(): hello must appear two times.', 'Scrivi un decoratore twice che esegue la funzione due volte. Mettilo sopra la funzione hello, che mostra ciao, e chiama hello(): ciao deve apparire due volte.', 'Écris un décorateur twice qui lance la fonction deux fois. Mets-le au-dessus de la fonction hello, qui affiche salut, et appelle hello() : salut doit apparaître deux fois.'],
+          h: ['Like shout: twice(function) has a wrapper that calls function() two times, and returns wrapper.', 'Come shout: twice(function) ha un wrapper che chiama function() due volte, e restituisce wrapper.', 'Comme shout : twice(function) a un wrapper qui appelle function() deux fois, et rend wrapper.'],
+          start: '',
+          sol: ['def twice(function):\n    def wrapper():\n        function()\n        function()\n    return wrapper\n\n@twice\ndef hello():\n    print("hello")\n\nhello()', 'def twice(function):\n    def wrapper():\n        function()\n        function()\n    return wrapper\n\n@twice\ndef hello():\n    print("ciao")\n\nhello()', 'def twice(function):\n    def wrapper():\n        function()\n        function()\n    return wrapper\n\n@twice\ndef hello():\n    print("salut")\n\nhello()'],
+          out: ['hello\nhello', 'ciao\nciao', 'salut\nsalut'], uses: ['def'], c: '@twice[\\s\\S]*def\\s+hello'
         }
       }
     ]

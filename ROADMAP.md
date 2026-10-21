@@ -21,7 +21,9 @@ Decisions taken (20 October 2026):
 
 Written on 20 October 2026: 54 lessons and 261 steps, each in three languages (stage 1: 13 lessons, stage 2: 11, stage 3: 10, stage 4: 14, stage 5: 5, and a cheat sheet as an appendix). Every program of every step is run for real by a test, and every Python error that the course can cause has a sentence in all three languages.
 
-## Plan agreed on 21 October 2026 (nothing started)
+## Plan agreed on 21 October 2026 — done, not released yet (see CHANGELOG)
+
+All of it was built on 21 October 2026: the task check by idea, read and solved, the four errors, screen readers, `questions.py` ignored, the Check button on a phone, 11 find-the-mistake steps, 17 more challenges (lessons 21-40), the review question and "Think first" with a choice. Still open: challenges for lessons 41-49, and the test with a real beginner.
 
 ### 1.2.1 — a patch that can be rebuilt and checked in one evening
 - **Tasks check the idea, not only the text.** Today 48 tasks pass with a single `print` of the expected text (53 pass, 5 of them rightly, because there the `print` is the answer; 16 of the 48 have a loop in their solution). Plan: `pyviel-runner.py` parses the program once with `ast` and returns `used` (the constructs it really uses: `for`, `while`, `def`, `+=`...), so strings and comments never count; the page, the desktop app and the build all get it from the same runner. A task can ask for `uses`; the message names what is missing ("this task asks for a `for` loop"). `tools/check-tasks.js` tries the `print` shortcut on every task and fails the build when it passes. 19 of the 48 steps already name the construct in `n`; for the other 29 Claude proposes one and the author checks the list.

@@ -119,13 +119,13 @@ def concepts(source):
             if node.format_spec is not None:
                 add("format-spec")
         elif isinstance(node, ast.List):
-            add("list")
+            add("list-literal")
         elif isinstance(node, ast.Dict):
-            add("dict")
+            add("dict-literal")
         elif isinstance(node, ast.Set):
-            add("set")
+            add("set-literal")
         elif isinstance(node, ast.Tuple) and not isinstance(node.ctx, ast.Store):
-            add("tuple")
+            add("tuple-literal")
         elif isinstance(node, ast.Subscript):
             add("slice" if isinstance(node.slice, ast.Slice) else "index")
         elif isinstance(node, (ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)):

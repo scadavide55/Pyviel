@@ -4,5 +4,6 @@
 module.exports = Object.assign({},
   require('./glossary-start.js'),
   require('./glossary-numbers.js'),
-  require('./glossary-choices.js')
+  require('./glossary-choices.js'),
+  require('./glossary-data.js')
 );

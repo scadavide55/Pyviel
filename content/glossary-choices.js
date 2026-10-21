@@ -184,19 +184,19 @@ module.exports = {
   },
   '.index': {
     w: '.index( )',
-    d: ['.index tells the place of an item in the list: the first place where it is found.',
-      '.index dice il posto di un elemento nella lista: il primo posto in cui si trova.',
-      '.index dit la place d\'un élément dans la liste : la première place où on le trouve.'],
+    d: ['.index tells the place of an item in the list: the first place where it is found. If it is not there, Python stops with an error.',
+      '.index dice il posto di un elemento nella lista: il primo posto in cui si trova. Se non c\'è, Python si ferma con un errore.',
+      '.index dit la place d\'un élément dans la liste : la première place où on le trouve. S\'il n\'y est pas, Python s\'arrête avec une erreur.'],
     s: 'names.index("Ada")'
   },
   '.count': {
     w: '.count( )',
-    d: ['.count tells how many times an item is in the list.',
-      '.count dice quante volte un elemento è nella lista.',
-      '.count dit combien de fois un élément est dans la liste.'],
+    d: ['.count tells how many times something is in a list, or a piece in a text.',
+      '.count dice quante volte qualcosa è in una lista, o un pezzo in un testo.',
+      '.count dit combien de fois quelque chose est dans une liste, ou un morceau dans un texte.'],
     s: 'names.count("Max")'
   },
-  'list': {
+  'list-literal': {
     w: '[ ]',
     d: ['A list keeps many values in order. Write them between square brackets, with commas. Its items have places counted from 0, like the letters of a text.',
       'Una lista tiene molti valori in ordine. Scrivili tra parentesi quadre, con le virgole. I suoi elementi hanno posti contati da 0, come le lettere di un testo.',

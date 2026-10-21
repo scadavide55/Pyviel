@@ -6153,7 +6153,7 @@ window.PyvielCourse = {
      },
      "news": [
       {
-       "k": "list",
+       "k": "list-literal",
        "w": "[ ]",
        "d": {
         "en": "A list keeps many values in order. Write them between square brackets, with commas. Its items have places counted from 0, like the letters of a text.",
@@ -6736,9 +6736,9 @@ window.PyvielCourse = {
        "k": ".index",
        "w": ".index( )",
        "d": {
-        "en": ".index tells the place of an item in the list: the first place where it is found.",
-        "it": ".index dice il posto di un elemento nella lista: il primo posto in cui si trova.",
-        "fr": ".index dit la place d'un élément dans la liste : la première place où on le trouve."
+        "en": ".index tells the place of an item in the list: the first place where it is found. If it is not there, Python stops with an error.",
+        "it": ".index dice il posto di un elemento nella lista: il primo posto in cui si trova. Se non c'è, Python si ferma con un errore.",
+        "fr": ".index dit la place d'un élément dans la liste : la première place où on le trouve. S'il n'y est pas, Python s'arrête avec une erreur."
        },
        "s": {
         "en": "names.index(\"Ada\")",
@@ -6750,9 +6750,9 @@ window.PyvielCourse = {
        "k": ".count",
        "w": ".count( )",
        "d": {
-        "en": ".count tells how many times an item is in the list.",
-        "it": ".count dice quante volte un elemento è nella lista.",
-        "fr": ".count dit combien de fois un élément est dans la liste."
+        "en": ".count tells how many times something is in a list, or a piece in a text.",
+        "it": ".count dice quante volte qualcosa è in una lista, o un pezzo in un testo.",
+        "fr": ".count dit combien de fois quelque chose est dans une liste, ou un morceau dans un texte."
        },
        "s": {
         "en": "names.count(\"Max\")",
@@ -7226,6 +7226,3001 @@ window.PyvielCourse = {
        "en": "Start\n42",
        "it": "Inizio\n42",
        "fr": "Début\n42"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": {
+    "en": "Stage 2 · Keeping data",
+    "it": "Fase 2 · Tenere i dati",
+    "fr": "Étape 2 · Garder des données"
+   },
+   "title": {
+    "en": "More about text",
+    "it": "Ancora sul testo",
+    "fr": "Encore sur le texte"
+   },
+   "subtitle": {
+    "en": "Tools that every text has",
+    "it": "Gli attrezzi di ogni testo",
+    "fr": "Les outils de chaque texte"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "word = \"Python\"\nprint(word.upper())\nprint(word.lower())\nprint(word)",
+      "it": "word = \"Python\"\nprint(word.upper())\nprint(word.lower())\nprint(word)",
+      "fr": "word = \"Python\"\nprint(word.upper())\nprint(word.lower())\nprint(word)"
+     },
+     "title": {
+      "en": "Capital letters",
+      "it": "Lettere maiuscole",
+      "fr": "Les majuscules"
+     },
+     "text": {
+      "en": "A text has tools of its own, called methods. You write the text (or the box that holds it), a dot, the name of the tool and round brackets: word.upper().\n\nupper gives the text in capital letters, and lower gives it in small letters. The original text does not change: you get a new one, as the last line shows.",
+      "it": "Un testo ha degli attrezzi suoi, chiamati metodi. Scrivi il testo (o la scatola che lo contiene), un punto, il nome dell'attrezzo e le parentesi tonde: word.upper().\n\nupper dà il testo in lettere maiuscole e lower lo dà in lettere minuscole. Il testo originale non cambia: ne ottieni uno nuovo, come mostra l'ultima riga.",
+      "fr": "Un texte a ses propres outils, appelés méthodes. Tu écris le texte (ou la boîte qui le contient), un point, le nom de l'outil et des parenthèses rondes : word.upper().\n\nupper donne le texte en majuscules et lower le donne en minuscules. Le texte d'origine ne change pas : tu en obtiens un nouveau, comme le montre la dernière ligne."
+     },
+     "see": {
+      "en": "PYTHON\npython\nPython",
+      "it": "PYTHON\npython\nPython",
+      "fr": "PYTHON\npython\nPython"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".upper",
+       "w": ".upper( )",
+       "d": {
+        "en": "upper gives the text in CAPITAL letters. The original text does not change: you get a new one.",
+        "it": "upper dà il testo in lettere MAIUSCOLE. Il testo originale non cambia: ne ottieni uno nuovo.",
+        "fr": "upper donne le texte en MAJUSCULES. Le texte d'origine ne change pas : tu en obtiens un nouveau."
+       },
+       "s": {
+        "en": "word.upper()",
+        "it": "word.upper()",
+        "fr": "word.upper()"
+       }
+      },
+      {
+       "k": ".lower",
+       "w": ".lower( )",
+       "d": {
+        "en": "lower gives the text in small letters.",
+        "it": "lower dà il testo in lettere minuscole.",
+        "fr": "lower donne le texte en minuscules."
+       },
+       "s": {
+        "en": "word.lower()",
+        "it": "word.lower()",
+        "fr": "word.lower()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the word hello in capital letters.",
+       "it": "Mostra la parola ciao in lettere maiuscole.",
+       "fr": "Affiche le mot salut en majuscules."
+      },
+      "hint": {
+       "en": "\"hello\".upper() inside print.",
+       "it": "\"ciao\".upper() dentro print.",
+       "fr": "\"salut\".upper() dans print."
+      },
+      "sol": {
+       "en": "print(\"hello\".upper())",
+       "it": "print(\"ciao\".upper())",
+       "fr": "print(\"salut\".upper())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "HELLO",
+        "c": "upper"
+       },
+       "it": {
+        "out": "CIAO",
+        "c": "upper"
+       },
+       "fr": {
+        "out": "SALUT",
+        "c": "upper"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "HELLO",
+       "it": "CIAO",
+       "fr": "SALUT"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "text = \"  Hello, Python!  \"\nprint(text.strip())\nprint(text.title())\nprint(len(text), len(text.strip()))",
+      "it": "text = \"  Ciao, Python!  \"\nprint(text.strip())\nprint(text.title())\nprint(len(text), len(text.strip()))",
+      "fr": "text = \"  Bonjour, Python !  \"\nprint(text.strip())\nprint(text.title())\nprint(len(text), len(text.strip()))"
+     },
+     "title": {
+      "en": "Spaces and titles",
+      "it": "Spazi e titoli",
+      "fr": "Espaces et titres"
+     },
+     "text": {
+      "en": "strip cuts off the spaces at the start and at the end of a text. It is perfect for cleaning what a person typed.\n\ntitle makes every word start with a capital letter. The last line shows that strip really made the text shorter.",
+      "it": "strip taglia gli spazi all'inizio e alla fine di un testo. È perfetto per pulire quello che ha scritto una persona.\n\ntitle fa iniziare ogni parola con la lettera maiuscola. L'ultima riga mostra che strip ha davvero accorciato il testo.",
+      "fr": "strip coupe les espaces au début et à la fin d'un texte. C'est parfait pour nettoyer ce qu'une personne a tapé.\n\ntitle fait commencer chaque mot par une majuscule. La dernière ligne montre que strip a vraiment raccourci le texte."
+     },
+     "see": {
+      "en": "Hello, Python!\n  Hello, Python!  \n18 14",
+      "it": "Ciao, Python!\n  Ciao, Python!  \n17 13",
+      "fr": "Bonjour, Python !\n  Bonjour, Python !  \n21 17"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".strip",
+       "w": ".strip( )",
+       "d": {
+        "en": "strip cuts off the spaces at the start and at the end of a text.",
+        "it": "strip taglia gli spazi all'inizio e alla fine di un testo.",
+        "fr": "strip coupe les espaces au début et à la fin d'un texte."
+       },
+       "s": {
+        "en": "text.strip()",
+        "it": "text.strip()",
+        "fr": "text.strip()"
+       }
+      },
+      {
+       "k": ".title",
+       "w": ".title( )",
+       "d": {
+        "en": "title makes every word start with a capital letter.",
+        "it": "title fa iniziare ogni parola con la lettera maiuscola.",
+        "fr": "title fait commencer chaque mot par une majuscule."
+       },
+       "s": {
+        "en": "text.title()",
+        "it": "text.title()",
+        "fr": "text.title()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "The text has spaces around it. Show it without them.",
+       "it": "Il testo ha degli spazi intorno. Mostralo senza.",
+       "fr": "Le texte a des espaces autour. Affiche-le sans."
+      },
+      "hint": {
+       "en": "text.strip() inside print.",
+       "it": "text.strip() dentro print.",
+       "fr": "text.strip() dans print."
+      },
+      "sol": {
+       "en": "text = \"   hi   \"\nprint(text.strip())",
+       "it": "text = \"   ciao   \"\nprint(text.strip())",
+       "fr": "text = \"   salut   \"\nprint(text.strip())"
+      },
+      "start": {
+       "en": "text = \"   hi   \"",
+       "it": "text = \"   ciao   \"",
+       "fr": "text = \"   salut   \""
+      },
+      "spec": {
+       "en": {
+        "out": "hi",
+        "c": "strip"
+       },
+       "it": {
+        "out": "ciao",
+        "c": "strip"
+       },
+       "fr": {
+        "out": "salut",
+        "c": "strip"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "hi",
+       "it": "ciao",
+       "fr": "salut"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "sentence = \"the quick brown fox\"\nprint(sentence.replace(\"quick\", \"slow\"))\nprint(sentence)",
+      "it": "sentence = \"la volpe veloce salta\"\nprint(sentence.replace(\"veloce\", \"lenta\"))\nprint(sentence)",
+      "fr": "sentence = \"le renard rapide saute\"\nprint(sentence.replace(\"rapide\", \"lent\"))\nprint(sentence)"
+     },
+     "title": {
+      "en": "Search and replace",
+      "it": "Cerca e sostituisci",
+      "fr": "Cherche et remplace"
+     },
+     "text": {
+      "en": "replace swaps a piece of text for another one. Give it the old piece and the new piece, between the brackets.\n\nAgain, the original does not change: you get a new text. The second print proves it.",
+      "it": "replace cambia un pezzo di testo con un altro. Dagli il pezzo vecchio e il pezzo nuovo, tra le parentesi.\n\nAnche qui l'originale non cambia: ottieni un testo nuovo. Il secondo print lo dimostra.",
+      "fr": "replace remplace un morceau de texte par un autre. Donne-lui l'ancien morceau et le nouveau, entre les parenthèses.\n\nLà encore l'original ne change pas : tu obtiens un nouveau texte. Le deuxième print le prouve."
+     },
+     "see": {
+      "en": "the slow brown fox\nthe quick brown fox",
+      "it": "la volpe lenta salta\nla volpe veloce salta",
+      "fr": "le renard lent saute\nle renard rapide saute"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".replace",
+       "w": ".replace( )",
+       "d": {
+        "en": "replace swaps every piece of text you name for another one. Give it the old piece and the new piece.",
+        "it": "replace cambia ogni pezzo di testo che nomini con un altro. Dagli il pezzo vecchio e il pezzo nuovo.",
+        "fr": "replace remplace chaque morceau de texte que tu nommes par un autre. Donne-lui l'ancien morceau et le nouveau."
+       },
+       "s": {
+        "en": "sentence.replace(\"quick\", \"slow\")",
+        "it": "sentence.replace(\"veloce\", \"lenta\")",
+        "fr": "sentence.replace(\"rapide\", \"lente\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Replace the word cat with dog in the text and show it.",
+       "it": "Sostituisci la parola gatto con cane nel testo e mostralo.",
+       "fr": "Remplace le mot chat par chien dans le texte et affiche-le."
+      },
+      "hint": {
+       "en": "text.replace(\"cat\", \"dog\") inside print.",
+       "it": "text.replace(\"gatto\", \"cane\") dentro print.",
+       "fr": "text.replace(\"chat\", \"chien\") dans print."
+      },
+      "sol": {
+       "en": "text = \"my cat is big\"\nprint(text.replace(\"cat\", \"dog\"))",
+       "it": "text = \"il mio gatto è grande\"\nprint(text.replace(\"gatto\", \"cane\"))",
+       "fr": "text = \"mon chat est grand\"\nprint(text.replace(\"chat\", \"chien\"))"
+      },
+      "start": {
+       "en": "text = \"my cat is big\"",
+       "it": "text = \"il mio gatto è grande\"",
+       "fr": "text = \"mon chat est grand\""
+      },
+      "spec": {
+       "en": {
+        "out": "my dog is big\n",
+        "c": "replace"
+       },
+       "it": {
+        "out": "il mio cane è grande\n",
+        "c": "replace"
+       },
+       "fr": {
+        "out": "mon chien est grand\n",
+        "c": "replace"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "my dog is big",
+       "it": "il mio cane è grande",
+       "fr": "mon chien est grand"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "sentence = \"the quick brown fox\"\nprint(sentence.find(\"brown\"))\nprint(sentence.find(\"cat\"))\nprint(sentence.count(\"o\"))",
+      "it": "sentence = \"la volpe veloce salta\"\nprint(sentence.find(\"veloce\"))\nprint(sentence.find(\"gatto\"))\nprint(sentence.count(\"o\"))",
+      "fr": "sentence = \"le renard rapide saute\"\nprint(sentence.find(\"rapide\"))\nprint(sentence.find(\"chat\"))\nprint(sentence.count(\"e\"))"
+     },
+     "title": {
+      "en": "Find and count",
+      "it": "Trova e conta",
+      "fr": "Trouve et compte"
+     },
+     "text": {
+      "en": "find tells at which place a piece of text starts. If the piece is not there, it says -1. Remember that the first letter is at place 0.\n\ncount tells how many times a piece appears in the text.",
+      "it": "find dice a quale posto inizia un pezzo di testo. Se il pezzo non c'è, dice -1. Ricorda che la prima lettera è al posto 0.\n\ncount dice quante volte un pezzo compare nel testo.",
+      "fr": "find dit à quelle place commence un morceau de texte. Si le morceau n'y est pas, il dit -1. Souviens-toi que la première lettre est à la place 0.\n\ncount dit combien de fois un morceau apparaît dans le texte."
+     },
+     "see": {
+      "en": "10\n-1\n2",
+      "it": "9\n-1\n2",
+      "fr": "10\n-1\n4"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".find",
+       "w": ".find( )",
+       "d": {
+        "en": "find tells at which place a piece of text starts, or -1 if it is not there. The first letter is at place 0.",
+        "it": "find dice a quale posto inizia un pezzo di testo, o -1 se non c'è. La prima lettera è al posto 0.",
+        "fr": "find dit à quelle place commence un morceau de texte, ou -1 s'il n'y est pas. La première lettre est à la place 0."
+       },
+       "s": {
+        "en": "sentence.find(\"o\")",
+        "it": "sentence.find(\"o\")",
+        "fr": "sentence.find(\"o\")"
+       }
+      },
+      {
+       "k": ".count",
+       "w": ".count( )",
+       "d": {
+        "en": ".count tells how many times something is in a list, or a piece in a text.",
+        "it": ".count dice quante volte qualcosa è in una lista, o un pezzo in un testo.",
+        "fr": ".count dit combien de fois quelque chose est dans une liste, ou un morceau dans un texte."
+       },
+       "s": {
+        "en": "names.count(\"Max\")",
+        "it": "names.count(\"Max\")",
+        "fr": "names.count(\"Max\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show how many times the letter a is in the word banana.",
+       "it": "Mostra quante volte la lettera a è nella parola banana.",
+       "fr": "Affiche combien de fois la lettre a est dans le mot banane."
+      },
+      "hint": {
+       "en": "\"banana\".count(\"a\") inside print.",
+       "it": "\"banana\".count(\"a\") dentro print.",
+       "fr": "\"banane\".count(\"a\") dans print."
+      },
+      "sol": {
+       "en": "print(\"banana\".count(\"a\"))",
+       "it": "print(\"banana\".count(\"a\"))",
+       "fr": "print(\"banane\".count(\"a\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "count"
+       },
+       "it": {
+        "out": "3",
+        "c": "count"
+       },
+       "fr": {
+        "out": "2",
+        "c": "count"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "2"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "sentence = \"the quick brown fox\"\nprint(sentence.startswith(\"the\"))\nprint(sentence.endswith(\"dog\"))",
+      "it": "sentence = \"la volpe veloce salta\"\nprint(sentence.startswith(\"la\"))\nprint(sentence.endswith(\"cane\"))",
+      "fr": "sentence = \"le renard rapide saute\"\nprint(sentence.startswith(\"le\"))\nprint(sentence.endswith(\"chien\"))"
+     },
+     "title": {
+      "en": "Start and end",
+      "it": "Inizio e fine",
+      "fr": "Début et fin"
+     },
+     "text": {
+      "en": "startswith asks \"does the text begin with this?\". endswith asks \"does it end with this?\". The answer is True or False.\n\nThey are handy to look at the beginning of a name or the end of a file name.",
+      "it": "startswith chiede \"il testo inizia con questo?\". endswith chiede \"finisce con questo?\". La risposta è True o False.\n\nSono comodi per guardare l'inizio di un nome o la fine del nome di un file.",
+      "fr": "startswith demande \"le texte commence-t-il par ceci ?\". endswith demande \"finit-il par ceci ?\". La réponse est True ou False.\n\nIls sont pratiques pour regarder le début d'un nom ou la fin du nom d'un fichier."
+     },
+     "see": {
+      "en": "True\nFalse",
+      "it": "True\nFalse",
+      "fr": "True\nFalse"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".startswith",
+       "w": ".startswith( )",
+       "d": {
+        "en": "startswith asks \"does the text begin with this?\". The answer is True or False. endswith asks the same for the end.",
+        "it": "startswith chiede \"il testo inizia con questo?\". La risposta è True o False. endswith chiede lo stesso per la fine.",
+        "fr": "startswith demande \"le texte commence-t-il par ceci ?\". La réponse est True ou False. endswith demande la même chose pour la fin."
+       },
+       "s": {
+        "en": "name.startswith(\"A\")",
+        "it": "name.startswith(\"A\")",
+        "fr": "name.startswith(\"A\")"
+       }
+      },
+      {
+       "k": ".endswith",
+       "w": ".endswith( )",
+       "d": {
+        "en": "endswith asks \"does the text end with this?\". The answer is True or False.",
+        "it": "endswith chiede \"il testo finisce con questo?\". La risposta è True o False.",
+        "fr": "endswith demande \"le texte finit-il par ceci ?\". La réponse est True ou False."
+       },
+       "s": {
+        "en": "name.endswith(\"a\")",
+        "it": "name.endswith(\"a\")",
+        "fr": "name.endswith(\"a\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Ask if the text \"python\" ends with \"on\", and show the answer.",
+       "it": "Chiedi se il testo \"python\" finisce con \"on\" e mostra la risposta.",
+       "fr": "Demande si le texte \"python\" finit par \"on\" et affiche la réponse."
+      },
+      "hint": {
+       "en": "\"python\".endswith(\"on\") inside print.",
+       "it": "\"python\".endswith(\"on\") dentro print.",
+       "fr": "\"python\".endswith(\"on\") dans print."
+      },
+      "sol": {
+       "en": "print(\"python\".endswith(\"on\"))",
+       "it": "print(\"python\".endswith(\"on\"))",
+       "fr": "print(\"python\".endswith(\"on\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "endswith"
+       },
+       "it": {
+        "out": "True",
+        "c": "endswith"
+       },
+       "fr": {
+        "out": "True",
+        "c": "endswith"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "line = \"red,green,blue\"\ncolours = line.split(\",\")\nprint(colours)\nprint(\"-\".join(colours))\nprint(\"one two  three\".split())",
+      "it": "line = \"rosso,verde,blu\"\ncolours = line.split(\",\")\nprint(colours)\nprint(\"-\".join(colours))\nprint(\"uno due  tre\".split())",
+      "fr": "line = \"rouge,vert,bleu\"\ncolours = line.split(\",\")\nprint(colours)\nprint(\"-\".join(colours))\nprint(\"un deux  trois\".split())"
+     },
+     "title": {
+      "en": "Split and join",
+      "it": "Dividi e unisci",
+      "fr": "Coupe et colle"
+     },
+     "text": {
+      "en": "split cuts a text into a list, wherever it finds the separator you give. With nothing between the brackets, it cuts at the spaces, however many there are.\n\njoin does the opposite: it glues the texts of a list into one text. The text in front goes between the pieces.",
+      "it": "split taglia un testo in una lista, dove trova il separatore che gli dai. Senza niente tra le parentesi taglia agli spazi, quanti che siano.\n\njoin fa il contrario: incolla i testi di una lista in un solo testo. Il testo davanti va in mezzo ai pezzi.",
+      "fr": "split coupe un texte en une liste, là où il trouve le séparateur donné. Sans rien entre les parenthèses il coupe aux espaces, combien qu'il y en ait.\n\njoin fait le contraire : il colle les textes d'une liste en un seul texte. Le texte de devant va entre les morceaux."
+     },
+     "see": {
+      "en": "['red', 'green', 'blue']\nred-green-blue\n['one', 'two', 'three']",
+      "it": "['rosso', 'verde', 'blu']\nrosso-verde-blu\n['uno', 'due', 'tre']",
+      "fr": "['rouge', 'vert', 'bleu']\nrouge-vert-bleu\n['un', 'deux', 'trois']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".split",
+       "w": ".split( )",
+       "d": {
+        "en": "split cuts a text into a list, wherever it finds the separator you give. With nothing inside the brackets it cuts at the spaces.",
+        "it": "split taglia un testo in una lista, dove trova il separatore che gli dai. Senza niente tra le parentesi taglia agli spazi.",
+        "fr": "split coupe un texte en une liste, là où il trouve le séparateur donné. Sans rien entre les parenthèses il coupe aux espaces."
+       },
+       "s": {
+        "en": "line.split(\",\")",
+        "it": "line.split(\",\")",
+        "fr": "line.split(\",\")"
+       }
+      },
+      {
+       "k": ".join",
+       "w": ".join( )",
+       "d": {
+        "en": "join does the opposite of split: it glues the texts of a list into one text, with the text in front between them.",
+        "it": "join fa il contrario di split: incolla i testi di una lista in un solo testo, con il testo davanti in mezzo.",
+        "fr": "join fait le contraire de split : il colle les textes d'une liste en un seul texte, avec le texte de devant au milieu."
+       },
+       "s": {
+        "en": "\"-\".join(colours)",
+        "it": "\"-\".join(colours)",
+        "fr": "\"-\".join(colours)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show how many words are in the text \"a b c d\" (split it, then count with len).",
+       "it": "Mostra quante parole ci sono nel testo \"a b c d\" (dividilo, poi conta con len).",
+       "fr": "Affiche combien de mots il y a dans le texte \"a b c d\" (coupe-le, puis compte avec len)."
+      },
+      "hint": {
+       "en": "len(\"a b c d\".split()) inside print.",
+       "it": "len(\"a b c d\".split()) dentro print.",
+       "fr": "len(\"a b c d\".split()) dans print."
+      },
+      "sol": {
+       "en": "print(len(\"a b c d\".split()))",
+       "it": "print(len(\"a b c d\".split()))",
+       "fr": "print(len(\"a b c d\".split()))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "4",
+        "c": "split"
+       },
+       "it": {
+        "out": "4",
+        "c": "split"
+       },
+       "fr": {
+        "out": "4",
+        "c": "split"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "4",
+       "it": "4",
+       "fr": "4"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "word = \"Python\"\nprint(word[1:4])\nprint(word[::2])\nprint(word[::-1])",
+      "it": "word = \"Python\"\nprint(word[1:4])\nprint(word[::2])\nprint(word[::-1])",
+      "fr": "word = \"Python\"\nprint(word[1:4])\nprint(word[::2])\nprint(word[::-1])"
+     },
+     "title": {
+      "en": "Slices with a step",
+      "it": "Fette con un passo",
+      "fr": "Tranches avec un pas"
+     },
+     "text": {
+      "en": "You already know word[1:4]. A slice can have a third number, the step: word[::2] takes every second letter.\n\nA negative step goes backwards, so word[::-1] reads the whole text from the end. It is the quickest way to turn a text around.",
+      "it": "Conosci già word[1:4]. Una fetta può avere un terzo numero, il passo: word[::2] prende una lettera su due.\n\nUn passo negativo va all'indietro, quindi word[::-1] legge tutto il testo dalla fine. È il modo più rapido per girare un testo.",
+      "fr": "Tu connais déjà word[1:4]. Une tranche peut avoir un troisième nombre, le pas : word[::2] prend une lettre sur deux.\n\nUn pas négatif va en arrière, donc word[::-1] lit tout le texte depuis la fin. C'est la façon la plus rapide de retourner un texte."
+     },
+     "see": {
+      "en": "yth\nPto\nnohtyP",
+      "it": "yth\nPto\nnohtyP",
+      "fr": "yth\nPto\nnohtyP"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "slice-step",
+       "w": "text[::2]",
+       "d": {
+        "en": "A third number in a slice is the step: word[::2] takes every second letter, and word[::-1] reads the text backwards.",
+        "it": "Un terzo numero in una fetta è il passo: word[::2] prende una lettera su due, e word[::-1] legge il testo al contrario.",
+        "fr": "Un troisième nombre dans une tranche est le pas : word[::2] prend une lettre sur deux, et word[::-1] lit le texte à l'envers."
+       },
+       "s": {
+        "en": "word[::-1]",
+        "it": "word[::-1]",
+        "fr": "word[::-1]"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the word \"Python\" backwards.",
+       "it": "Mostra la parola \"Python\" al contrario.",
+       "fr": "Affiche le mot \"Python\" à l'envers."
+      },
+      "hint": {
+       "en": "word[::-1]",
+       "it": "word[::-1]",
+       "fr": "word[::-1]"
+      },
+      "sol": {
+       "en": "word = \"Python\"\nprint(word[::-1])",
+       "it": "word = \"Python\"\nprint(word[::-1])",
+       "fr": "word = \"Python\"\nprint(word[::-1])"
+      },
+      "start": {
+       "en": "word = \"Python\"",
+       "it": "word = \"Python\"",
+       "fr": "word = \"Python\""
+      },
+      "spec": {
+       "en": {
+        "out": "nohtyP",
+        "c": "\\[::-1\\]"
+       },
+       "it": {
+        "out": "nohtyP",
+        "c": "\\[::-1\\]"
+       },
+       "fr": {
+        "out": "nohtyP",
+        "c": "\\[::-1\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "nohtyP",
+       "it": "nohtyP",
+       "fr": "nohtyP"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(\"hello\".isalpha())\nprint(\"123\".isdigit())\nprint(\"abc123\".isalnum())\nprint(\"abc 123\".isalnum())",
+      "it": "print(\"hello\".isalpha())\nprint(\"123\".isdigit())\nprint(\"abc123\".isalnum())\nprint(\"abc 123\".isalnum())",
+      "fr": "print(\"hello\".isalpha())\nprint(\"123\".isdigit())\nprint(\"abc123\".isalnum())\nprint(\"abc 123\".isalnum())"
+     },
+     "title": {
+      "en": "Questions about a text",
+      "it": "Domande su un testo",
+      "fr": "Questions sur un texte"
+     },
+     "text": {
+      "en": "Many methods ask a question and answer True or False. isalpha asks \"are they all letters?\", isdigit asks \"are they all digits?\" and isalnum asks \"are they all letters or digits?\".\n\nThey are perfect to check what a person typed before you use it.",
+      "it": "Molti metodi fanno una domanda e rispondono True o False. isalpha chiede \"sono tutte lettere?\", isdigit chiede \"sono tutte cifre?\" e isalnum chiede \"sono tutte lettere o cifre?\".\n\nSono perfetti per controllare quello che ha scritto una persona prima di usarlo.",
+      "fr": "Beaucoup de méthodes posent une question et répondent True ou False. isalpha demande \"ce sont toutes des lettres ?\", isdigit demande \"ce sont tous des chiffres ?\" et isalnum demande \"ce sont toutes des lettres ou des chiffres ?\".\n\nElles sont parfaites pour vérifier ce qu'une personne a tapé avant de l'utiliser."
+     },
+     "see": {
+      "en": "True\nTrue\nTrue\nFalse",
+      "it": "True\nTrue\nTrue\nFalse",
+      "fr": "True\nTrue\nTrue\nFalse"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".isalpha",
+       "w": ".isalpha( )",
+       "d": {
+        "en": "isalpha asks \"are all of them letters?\" and answers True or False. It is useful to check what a person typed.",
+        "it": "isalpha chiede \"sono tutte lettere?\" e risponde True o False. È utile per controllare quello che ha scritto una persona.",
+        "fr": "isalpha demande \"ce sont toutes des lettres ?\" et répond True ou False. C'est utile pour vérifier ce qu'une personne a tapé."
+       },
+       "s": {
+        "en": "\"abc\".isalpha()",
+        "it": "\"abc\".isalpha()",
+        "fr": "\"abc\".isalpha()"
+       }
+      },
+      {
+       "k": ".isdigit",
+       "w": ".isdigit( )",
+       "d": {
+        "en": "isdigit asks \"are all of them digits?\" and answers True or False.",
+        "it": "isdigit chiede \"sono tutte cifre?\" e risponde True o False.",
+        "fr": "isdigit demande \"ce sont tous des chiffres ?\" et répond True ou False."
+       },
+       "s": {
+        "en": "\"123\".isdigit()",
+        "it": "\"123\".isdigit()",
+        "fr": "\"123\".isdigit()"
+       }
+      },
+      {
+       "k": ".isalnum",
+       "w": ".isalnum( )",
+       "d": {
+        "en": "isalnum asks \"are all of them letters or digits?\" and answers True or False.",
+        "it": "isalnum chiede \"sono tutte lettere o cifre?\" e risponde True o False.",
+        "fr": "isalnum demande \"ce sont toutes des lettres ou des chiffres ?\" et répond True ou False."
+       },
+       "s": {
+        "en": "\"abc123\".isalnum()",
+        "it": "\"abc123\".isalnum()",
+        "fr": "\"abc123\".isalnum()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Ask if the text \"2024\" is made only of digits, and show the answer.",
+       "it": "Chiedi se il testo \"2024\" è fatto solo di cifre e mostra la risposta.",
+       "fr": "Demande si le texte \"2024\" n'est fait que de chiffres et affiche la réponse."
+      },
+      "hint": {
+       "en": "\"2024\".isdigit() inside print.",
+       "it": "\"2024\".isdigit() dentro print.",
+       "fr": "\"2024\".isdigit() dans print."
+      },
+      "sol": {
+       "en": "print(\"2024\".isdigit())",
+       "it": "print(\"2024\".isdigit())",
+       "fr": "print(\"2024\".isdigit())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "isdigit"
+       },
+       "it": {
+        "out": "True",
+        "c": "isdigit"
+       },
+       "fr": {
+        "out": "True",
+        "c": "isdigit"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(\"HELLO\".isupper())\nprint(\"Hello\".isupper())\nprint(\"hello\".islower())",
+      "it": "print(\"HELLO\".isupper())\nprint(\"Hello\".isupper())\nprint(\"hello\".islower())",
+      "fr": "print(\"HELLO\".isupper())\nprint(\"Hello\".isupper())\nprint(\"hello\".islower())"
+     },
+     "title": {
+      "en": "Capitals or not?",
+      "it": "Maiuscole o no?",
+      "fr": "Majuscules ou pas ?"
+     },
+     "text": {
+      "en": "isupper asks \"are all the letters capitals?\" and islower asks \"are they all small?\". Both answer True or False.\n\n\"Hello\" has a capital and small letters, so it is neither of the two.",
+      "it": "isupper chiede \"le lettere sono tutte maiuscole?\" e islower chiede \"sono tutte minuscole?\". Tutte e due rispondono True o False.\n\n\"Hello\" ha una maiuscola e delle minuscole, quindi non è né l'una né l'altra cosa.",
+      "fr": "isupper demande \"les lettres sont-elles toutes en majuscules ?\" et islower demande \"sont-elles toutes en minuscules ?\". Les deux répondent True ou False.\n\n\"Hello\" a une majuscule et des minuscules, donc ce n'est ni l'un ni l'autre."
+     },
+     "see": {
+      "en": "True\nFalse\nTrue",
+      "it": "True\nFalse\nTrue",
+      "fr": "True\nFalse\nTrue"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".isupper",
+       "w": ".isupper( )",
+       "d": {
+        "en": "isupper asks \"are the letters all capitals?\" and answers True or False.",
+        "it": "isupper chiede \"le lettere sono tutte maiuscole?\" e risponde True o False.",
+        "fr": "isupper demande \"les lettres sont-elles toutes en majuscules ?\" et répond True ou False."
+       },
+       "s": {
+        "en": "\"HELLO\".isupper()",
+        "it": "\"HELLO\".isupper()",
+        "fr": "\"HELLO\".isupper()"
+       }
+      },
+      {
+       "k": ".islower",
+       "w": ".islower( )",
+       "d": {
+        "en": "islower asks \"are the letters all small?\" and answers True or False.",
+        "it": "islower chiede \"le lettere sono tutte minuscole?\" e risponde True o False.",
+        "fr": "islower demande \"les lettres sont-elles toutes en minuscules ?\" et répond True ou False."
+       },
+       "s": {
+        "en": "\"hello\".islower()",
+        "it": "\"hello\".islower()",
+        "fr": "\"hello\".islower()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Ask if \"python\" has only small letters, and show the answer.",
+       "it": "Chiedi se \"python\" ha solo lettere minuscole e mostra la risposta.",
+       "fr": "Demande si \"python\" n'a que des minuscules et affiche la réponse."
+      },
+      "hint": {
+       "en": "\"python\".islower() inside print.",
+       "it": "\"python\".islower() dentro print.",
+       "fr": "\"python\".islower() dans print."
+      },
+      "sol": {
+       "en": "print(\"python\".islower())",
+       "it": "print(\"python\".islower())",
+       "fr": "print(\"python\".islower())"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "True",
+        "c": "islower"
+       },
+       "it": {
+        "out": "True",
+        "c": "islower"
+       },
+       "fr": {
+        "out": "True",
+        "c": "islower"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "True",
+       "it": "True",
+       "fr": "True"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(ord(\"A\"))\nprint(ord(\"a\"))\nprint(chr(66))\nprint(chr(ord(\"A\") + 2))",
+      "it": "print(ord(\"A\"))\nprint(ord(\"a\"))\nprint(chr(66))\nprint(chr(ord(\"A\") + 2))",
+      "fr": "print(ord(\"A\"))\nprint(ord(\"a\"))\nprint(chr(66))\nprint(chr(ord(\"A\") + 2))"
+     },
+     "title": {
+      "en": "Letters and numbers",
+      "it": "Lettere e numeri",
+      "fr": "Lettres et nombres"
+     },
+     "text": {
+      "en": "The computer keeps every letter as a number. ord gives the number of a letter, and chr gives back the letter of a number.\n\nSo chr(ord(\"A\") + 2) moves two letters along the alphabet: it gives C. It is the start of every secret code.",
+      "it": "Il computer tiene ogni lettera come un numero. ord dà il numero di una lettera e chr restituisce la lettera di un numero.\n\nQuindi chr(ord(\"A\") + 2) si sposta di due lettere nell'alfabeto: dà C. È l'inizio di ogni codice segreto.",
+      "fr": "L'ordinateur garde chaque lettre comme un nombre. ord donne le nombre d'une lettre et chr redonne la lettre d'un nombre.\n\nDonc chr(ord(\"A\") + 2) avance de deux lettres dans l'alphabet : il donne C. C'est le début de tout code secret."
+     },
+     "see": {
+      "en": "65\n97\nB\nC",
+      "it": "65\n97\nB\nC",
+      "fr": "65\n97\nB\nC"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "ord",
+       "w": "ord( )",
+       "d": {
+        "en": "ord gives the number that the computer uses for a letter. It is the start of every secret code.",
+        "it": "ord dà il numero che il computer usa per una lettera. È l'inizio di ogni codice segreto.",
+        "fr": "ord donne le nombre que l'ordinateur utilise pour une lettre. C'est le début de tout code secret."
+       },
+       "s": {
+        "en": "ord(\"A\")",
+        "it": "ord(\"A\")",
+        "fr": "ord(\"A\")"
+       }
+      },
+      {
+       "k": "chr",
+       "w": "chr( )",
+       "d": {
+        "en": "chr does the opposite of ord: it gives the letter for a number.",
+        "it": "chr fa il contrario di ord: dà la lettera per un numero.",
+        "fr": "chr fait le contraire de ord : il donne la lettre pour un nombre."
+       },
+       "s": {
+        "en": "chr(66)",
+        "it": "chr(66)",
+        "fr": "chr(66)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the letter after \"B\" in the alphabet, using ord and chr.",
+       "it": "Mostra la lettera dopo \"B\" nell'alfabeto, usando ord e chr.",
+       "fr": "Affiche la lettre après \"B\" dans l'alphabet, en utilisant ord et chr."
+      },
+      "hint": {
+       "en": "chr(ord(\"B\") + 1) inside print.",
+       "it": "chr(ord(\"B\") + 1) dentro print.",
+       "fr": "chr(ord(\"B\") + 1) dans print."
+      },
+      "sol": {
+       "en": "print(chr(ord(\"B\") + 1))",
+       "it": "print(chr(ord(\"B\") + 1))",
+       "fr": "print(chr(ord(\"B\") + 1))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "C",
+        "c": "chr"
+       },
+       "it": {
+        "out": "C",
+        "c": "chr"
+       },
+       "fr": {
+        "out": "C",
+        "c": "chr"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "C",
+       "it": "C",
+       "fr": "C"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "word = \"banana\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"has\", vowels, \"vowels\")\nprint(word.replace(\"a\", \"\").upper())",
+      "it": "word = \"banana\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"ha\", vowels, \"vocali\")\nprint(word.replace(\"a\", \"\").upper())",
+      "fr": "word = \"banane\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"a\", vowels, \"voyelles\")\nprint(word.replace(\"a\", \"\").upper())"
+     },
+     "title": {
+      "en": "A little text program",
+      "it": "Un piccolo programma sul testo",
+      "fr": "Un petit programme sur le texte"
+     },
+     "text": {
+      "en": "Put it together: a loop over the letters, an if with in, and a counter. This counts the vowels of any word.\n\nThe last line shows two methods one after the other: replace makes a new text, and upper works on that new text.",
+      "it": "Mettiamo tutto insieme: un ciclo sulle lettere, un if con in e un contatore. Questo conta le vocali di una parola qualsiasi.\n\nL'ultima riga mostra due metodi uno dopo l'altro: replace fa un testo nuovo, e upper lavora su quel testo nuovo.",
+      "fr": "Mets tout ensemble : une boucle sur les lettres, un if avec in et un compteur. Ça compte les voyelles de n'importe quel mot.\n\nLa dernière ligne montre deux méthodes l'une après l'autre : replace fait un nouveau texte, et upper travaille sur ce nouveau texte."
+     },
+     "see": {
+      "en": "banana has 3 vowels\nBNN",
+      "it": "banana ha 3 vocali\nBNN",
+      "fr": "banane a 3 voyelles\nBNNE"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Change the word to count the vowels of a word of your choice: use the word \"education\".",
+       "it": "Cambia la parola per contare le vocali di una parola a tua scelta: usa la parola \"educazione\".",
+       "fr": "Change le mot pour compter les voyelles du mot \"education\"."
+      },
+      "hint": {
+       "en": "Change only the first line.",
+       "it": "Cambia solo la prima riga.",
+       "fr": "Change seulement la première ligne."
+      },
+      "sol": {
+       "en": "word = \"education\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"has\", vowels, \"vowels\")",
+       "it": "word = \"educazione\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"ha\", vowels, \"vocali\")",
+       "fr": "word = \"education\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"a\", vowels, \"voyelles\")"
+      },
+      "start": {
+       "en": "word = \"banana\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"has\", vowels, \"vowels\")",
+       "it": "word = \"banana\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"ha\", vowels, \"vocali\")",
+       "fr": "word = \"banane\"\nvowels = 0\nfor letter in word:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(word, \"a\", vowels, \"voyelles\")"
+      },
+      "spec": {
+       "en": {
+        "out": "education has 5 vowels\n"
+       },
+       "it": {
+        "out": "educazione ha 6 vocali\n"
+       },
+       "fr": {
+        "out": "education a 5 voyelles\n"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "education has 5 vowels",
+       "it": "educazione ha 6 vocali",
+       "fr": "education a 5 voyelles"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "More about lists",
+    "it": "Ancora sulle liste",
+    "fr": "Encore sur les listes"
+   },
+   "subtitle": {
+    "en": "Slices, copies and tables",
+    "it": "Fette, copie e tabelle",
+    "fr": "Tranches, copies et tableaux"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "nums = [10, 20, 30, 40, 50]\nprint(nums[1:4])\nprint(nums[-2:])\nprint(nums[::-1])\nprint(nums)",
+      "it": "nums = [10, 20, 30, 40, 50]\nprint(nums[1:4])\nprint(nums[-2:])\nprint(nums[::-1])\nprint(nums)",
+      "fr": "nums = [10, 20, 30, 40, 50]\nprint(nums[1:4])\nprint(nums[-2:])\nprint(nums[::-1])\nprint(nums)"
+     },
+     "title": {
+      "en": "Slices of a list",
+      "it": "Fette di una lista",
+      "fr": "Tranches d'une liste"
+     },
+     "text": {
+      "en": "A list can be sliced exactly like a text: list[start:stop:step]. You get a new list with the chosen items, and the original stays as it was.\n\nnums[-2:] takes the last two items. nums[::-1] is the list backwards.",
+      "it": "Una lista si può affettare esattamente come un testo: lista[inizio:fine:passo]. Ottieni una lista nuova con gli elementi scelti e l'originale resta com'era.\n\nnums[-2:] prende gli ultimi due elementi. nums[::-1] è la lista al contrario.",
+      "fr": "Une liste se découpe exactement comme un texte : liste[début:fin:pas]. Tu obtiens une nouvelle liste avec les éléments choisis, et l'original reste comme il était.\n\nnums[-2:] prend les deux derniers éléments. nums[::-1] est la liste à l'envers."
+     },
+     "see": {
+      "en": "[20, 30, 40]\n[40, 50]\n[50, 40, 30, 20, 10]\n[10, 20, 30, 40, 50]",
+      "it": "[20, 30, 40]\n[40, 50]\n[50, 40, 30, 20, 10]\n[10, 20, 30, 40, 50]",
+      "fr": "[20, 30, 40]\n[40, 50]\n[50, 40, 30, 20, 10]\n[10, 20, 30, 40, 50]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show the first three items of the list.",
+       "it": "Mostra i primi tre elementi della lista.",
+       "fr": "Affiche les trois premiers éléments de la liste."
+      },
+      "hint": {
+       "en": "nums[:3]",
+       "it": "nums[:3]",
+       "fr": "nums[:3]"
+      },
+      "sol": {
+       "en": "nums = [10, 20, 30, 40, 50]\nprint(nums[:3])",
+       "it": "nums = [10, 20, 30, 40, 50]\nprint(nums[:3])",
+       "fr": "nums = [10, 20, 30, 40, 50]\nprint(nums[:3])"
+      },
+      "start": {
+       "en": "nums = [10, 20, 30, 40, 50]",
+       "it": "nums = [10, 20, 30, 40, 50]",
+       "fr": "nums = [10, 20, 30, 40, 50]"
+      },
+      "spec": {
+       "en": {
+        "out": "[10, 20, 30]",
+        "c": "\\[:3\\]"
+       },
+       "it": {
+        "out": "[10, 20, 30]",
+        "c": "\\[:3\\]"
+       },
+       "fr": {
+        "out": "[10, 20, 30]",
+        "c": "\\[:3\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[10, 20, 30]",
+       "it": "[10, 20, 30]",
+       "fr": "[10, 20, 30]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)\nc = a.copy()\nc.append(5)\nprint(a, c)\nprint(a is b, a is c)",
+      "it": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)\nc = a.copy()\nc.append(5)\nprint(a, c)\nprint(a is b, a is c)",
+      "fr": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)\nc = a.copy()\nc.append(5)\nprint(a, c)\nprint(a is b, a is c)"
+     },
+     "title": {
+      "en": "One list, two names",
+      "it": "Una lista, due nomi",
+      "fr": "Une liste, deux noms"
+     },
+     "text": {
+      "en": "b = a does not make a new list: it puts a second label on the same list. Changing one changes \"both\", because there is only one list.\n\nTo get a real copy, use a.copy(). The word is asks \"are these exactly the same thing?\": a is b is True, but a is c is False.",
+      "it": "b = a non fa una lista nuova: mette una seconda etichetta sulla stessa lista. Cambiarne una cambia \"tutte e due\", perché c'è una lista sola.\n\nPer avere una vera copia usa a.copy(). La parola is chiede \"queste sono esattamente la stessa cosa?\": a is b è True, ma a is c è False.",
+      "fr": "b = a ne fait pas une nouvelle liste : il met une deuxième étiquette sur la même liste. En changer une change \"les deux\", parce qu'il n'y a qu'une seule liste.\n\nPour avoir une vraie copie, utilise a.copy(). Le mot is demande \"ces deux-là sont-ils exactement la même chose ?\" : a is b est True, mais a is c est False."
+     },
+     "see": {
+      "en": "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False",
+      "it": "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False",
+      "fr": "[1, 2, 3, 4]\n[1, 2, 3, 4] [1, 2, 3, 4, 5]\nTrue False"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".copy",
+       "w": ".copy( )",
+       "d": {
+        "en": "copy makes a second list with the same items. Changing the copy leaves the first list as it was.",
+        "it": "copy fa una seconda lista con gli stessi elementi. Cambiare la copia lascia la prima lista com'era.",
+        "fr": "copy fait une deuxième liste avec les mêmes éléments. Changer la copie laisse la première liste comme elle était."
+       },
+       "s": {
+        "en": "b = a.copy()",
+        "it": "b = a.copy()",
+        "fr": "b = a.copy()"
+       }
+      },
+      {
+       "k": "is",
+       "w": "is",
+       "d": {
+        "en": "is asks \"are these two exactly the same thing?\" (not only equal). With lists, it tells whether two names point to the very same list.",
+        "it": "is chiede \"queste due sono esattamente la stessa cosa?\" (non solo uguali). Con le liste dice se due nomi indicano proprio la stessa lista.",
+        "fr": "is demande \"ces deux-là sont-ils exactement la même chose ?\" (pas seulement égaux). Avec les listes, il dit si deux noms désignent bien la même liste."
+       },
+       "s": {
+        "en": "print(a is b)",
+        "it": "print(a is b)",
+        "fr": "print(a is b)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Change the program so that b is a real copy of a. Then a must still show [1, 2, 3] at the end.",
+       "it": "Cambia il programma così che b sia una vera copia di a. Poi a deve mostrare ancora [1, 2, 3] alla fine.",
+       "fr": "Change le programme pour que b soit une vraie copie de a. Alors a doit toujours afficher [1, 2, 3] à la fin."
+      },
+      "hint": {
+       "en": "b = a.copy()",
+       "it": "b = a.copy()",
+       "fr": "b = a.copy()"
+      },
+      "sol": {
+       "en": "a = [1, 2, 3]\nb = a.copy()\nb.append(4)\nprint(a)",
+       "it": "a = [1, 2, 3]\nb = a.copy()\nb.append(4)\nprint(a)",
+       "fr": "a = [1, 2, 3]\nb = a.copy()\nb.append(4)\nprint(a)"
+      },
+      "start": {
+       "en": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)",
+       "it": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)",
+       "fr": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)"
+      },
+      "spec": {
+       "en": {
+        "out": "[1, 2, 3]",
+        "c": "copy"
+       },
+       "it": {
+        "out": "[1, 2, 3]",
+        "c": "copy"
+       },
+       "fr": {
+        "out": "[1, 2, 3]",
+        "c": "copy"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[1, 2, 3]",
+       "it": "[1, 2, 3]",
+       "fr": "[1, 2, 3]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "grid = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9],\n]\nprint(grid[0])\nprint(grid[1][2])\ngrid[2][0] = 0\nfor row in grid:\n    print(row)",
+      "it": "grid = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9],\n]\nprint(grid[0])\nprint(grid[1][2])\ngrid[2][0] = 0\nfor row in grid:\n    print(row)",
+      "fr": "grid = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9],\n]\nprint(grid[0])\nprint(grid[1][2])\ngrid[2][0] = 0\nfor row in grid:\n    print(row)"
+     },
+     "title": {
+      "en": "A table: lists inside lists",
+      "it": "Una tabella: liste dentro liste",
+      "fr": "Un tableau : des listes dans des listes"
+     },
+     "text": {
+      "en": "A list can hold other lists. This makes a table: grid[1] is a whole row, and grid[1][2] is the item in row 1, column 2 (both counted from 0).\n\nTables are everywhere: game boards, photos, spreadsheets.",
+      "it": "Una lista può contenere altre liste. Così si fa una tabella: grid[1] è una riga intera, e grid[1][2] è l'elemento nella riga 1, colonna 2 (tutti e due contati da 0).\n\nLe tabelle sono dappertutto: scacchiere dei giochi, foto, fogli di calcolo.",
+      "fr": "Une liste peut contenir d'autres listes. Cela fait un tableau : grid[1] est une ligne entière, et grid[1][2] est l'élément de la ligne 1, colonne 2 (tous deux comptés à partir de 0).\n\nLes tableaux sont partout : plateaux de jeux, photos, tableurs."
+     },
+     "see": {
+      "en": "[1, 2, 3]\n6\n[1, 2, 3]\n[4, 5, 6]\n[0, 8, 9]",
+      "it": "[1, 2, 3]\n6\n[1, 2, 3]\n[4, 5, 6]\n[0, 8, 9]",
+      "fr": "[1, 2, 3]\n6\n[1, 2, 3]\n[4, 5, 6]\n[0, 8, 9]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "nested-list",
+       "w": "[[ ], [ ]]",
+       "d": {
+        "en": "A list can hold other lists. This makes a table: table[1] is a whole row, and table[1][2] is the item in row 1, column 2 (both counted from 0).",
+        "it": "Una lista può contenere altre liste. Così si fa una tabella: table[1] è una riga intera, e table[1][2] è l'elemento nella riga 1, colonna 2 (tutti e due contati da 0).",
+        "fr": "Une liste peut contenir d'autres listes. Cela fait un tableau : table[1] est une ligne entière, et table[1][2] est l'élément de la ligne 1, colonne 2 (tous deux comptés à partir de 0)."
+       },
+       "s": {
+        "en": "grid[1][2]",
+        "it": "grid[1][2]",
+        "fr": "grid[1][2]"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the item in the middle of the table (row 1, column 1).",
+       "it": "Mostra l'elemento in mezzo alla tabella (riga 1, colonna 1).",
+       "fr": "Affiche l'élément au milieu du tableau (ligne 1, colonne 1)."
+      },
+      "hint": {
+       "en": "grid[1][1]",
+       "it": "grid[1][1]",
+       "fr": "grid[1][1]"
+      },
+      "sol": {
+       "en": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nprint(grid[1][1])",
+       "it": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nprint(grid[1][1])",
+       "fr": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nprint(grid[1][1])"
+      },
+      "start": {
+       "en": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+       "it": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+       "fr": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]"
+      },
+      "spec": {
+       "en": {
+        "out": "5",
+        "c": "\\]\\["
+       },
+       "it": {
+        "out": "5",
+        "c": "\\]\\["
+       },
+       "fr": {
+        "out": "5",
+        "c": "\\]\\["
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "5",
+       "it": "5",
+       "fr": "5"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "players = [\"Ada\", \"Max\", \"Zoe\"]\npoints = [12, 7, 15]\nfor name, score in zip(players, points):\n    print(f\"{name}: {score}\")\nfor position, name in enumerate(players, start=1):\n    print(position, name)",
+      "it": "players = [\"Ada\", \"Max\", \"Zoe\"]\npoints = [12, 7, 15]\nfor name, score in zip(players, points):\n    print(f\"{name}: {score}\")\nfor position, name in enumerate(players, start=1):\n    print(position, name)",
+      "fr": "players = [\"Ada\", \"Max\", \"Zoe\"]\npoints = [12, 7, 15]\nfor name, score in zip(players, points):\n    print(f\"{name}: {score}\")\nfor position, name in enumerate(players, start=1):\n    print(position, name)"
+     },
+     "title": {
+      "en": "Walk through two lists",
+      "it": "Scorri due liste",
+      "fr": "Parcours deux listes"
+     },
+     "text": {
+      "en": "zip walks through two lists together, pair by pair: Ada with 12, Max with 7, Zoe with 15. Each pair is put into two names in the for line.\n\nenumerate gives every item with its number, and start=1 makes the counting begin at 1. Both are nicer than counting places by hand.",
+      "it": "zip scorre due liste insieme, a coppie: Ada con 12, Max con 7, Zoe con 15. Ogni coppia viene messa in due nomi nella riga for.\n\nenumerate dà ogni elemento con il suo numero, e start=1 fa iniziare il conteggio da 1. Tutti e due sono più belli che contare i posti a mano.",
+      "fr": "zip parcourt deux listes ensemble, par paires : Ada avec 12, Max avec 7, Zoe avec 15. Chaque paire est mise dans deux noms sur la ligne for.\n\nenumerate donne chaque élément avec son numéro, et start=1 fait commencer le comptage à 1. Les deux sont plus agréables que de compter les places à la main."
+     },
+     "see": {
+      "en": "Ada: 12\nMax: 7\nZoe: 15\n1 Ada\n2 Max\n3 Zoe",
+      "it": "Ada: 12\nMax: 7\nZoe: 15\n1 Ada\n2 Max\n3 Zoe",
+      "fr": "Ada: 12\nMax: 7\nZoe: 15\n1 Ada\n2 Max\n3 Zoe"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "zip",
+       "w": "zip( )",
+       "d": {
+        "en": "zip walks through two lists together, pair by pair: the first with the first, the second with the second.",
+        "it": "zip scorre due liste insieme, a coppie: il primo con il primo, il secondo con il secondo.",
+        "fr": "zip parcourt deux listes ensemble, par paires : le premier avec le premier, le deuxième avec le deuxième."
+       },
+       "s": {
+        "en": "zip(names, points)",
+        "it": "zip(names, points)",
+        "fr": "zip(names, points)"
+       }
+      },
+      {
+       "k": "enumerate",
+       "w": "enumerate( )",
+       "d": {
+        "en": "enumerate gives every item together with its number. It is nicer than counting places by hand.",
+        "it": "enumerate dà ogni elemento insieme al suo numero. È più bello che contare i posti a mano.",
+        "fr": "enumerate donne chaque élément avec son numéro. C'est plus agréable que de compter les places à la main."
+       },
+       "s": {
+        "en": "enumerate(names)",
+        "it": "enumerate(names)",
+        "fr": "enumerate(names)"
+       }
+      },
+      {
+       "k": "arg:start",
+       "w": "start=",
+       "d": {
+        "en": "start= chooses the number where enumerate begins to count. start=1 makes the first item number 1.",
+        "it": "start= sceglie il numero da cui enumerate comincia a contare. start=1 fa il primo elemento numero 1.",
+        "fr": "start= choisit le nombre où enumerate commence à compter. start=1 fait du premier élément le numéro 1."
+       },
+       "s": {
+        "en": "enumerate(names, start=1)",
+        "it": "enumerate(names, start=1)",
+        "fr": "enumerate(names, start=1)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Number the players from 1, and show each number with the name, one per line.",
+       "it": "Numera i giocatori da 1 e mostra ogni numero con il nome, uno per riga.",
+       "fr": "Numérote les joueurs à partir de 1 et affiche chaque numéro avec le nom, un par ligne."
+      },
+      "hint": {
+       "en": "for position, name in enumerate(players, start=1):",
+       "it": "for position, name in enumerate(players, start=1):",
+       "fr": "for position, name in enumerate(players, start=1):"
+      },
+      "sol": {
+       "en": "players = [\"Ada\", \"Max\", \"Zoe\"]\nfor position, name in enumerate(players, start=1):\n    print(position, name)",
+       "it": "players = [\"Ada\", \"Max\", \"Zoe\"]\nfor position, name in enumerate(players, start=1):\n    print(position, name)",
+       "fr": "players = [\"Ada\", \"Max\", \"Zoe\"]\nfor position, name in enumerate(players, start=1):\n    print(position, name)"
+      },
+      "start": {
+       "en": "players = [\"Ada\", \"Max\", \"Zoe\"]",
+       "it": "players = [\"Ada\", \"Max\", \"Zoe\"]",
+       "fr": "players = [\"Ada\", \"Max\", \"Zoe\"]"
+      },
+      "spec": {
+       "en": {
+        "out": "1 Ada\n2 Max\n3 Zoe",
+        "c": "enumerate"
+       },
+       "it": {
+        "out": "1 Ada\n2 Max\n3 Zoe",
+        "c": "enumerate"
+       },
+       "fr": {
+        "out": "1 Ada\n2 Max\n3 Zoe",
+        "c": "enumerate"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1 Ada\n2 Max\n3 Zoe",
+       "it": "1 Ada\n2 Max\n3 Zoe",
+       "fr": "1 Ada\n2 Max\n3 Zoe"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "words = [\"pear\", \"fig\", \"banana\", \"kiwi\"]\nprint(sorted(words))\nprint(sorted(words, key=len))\nprint(sorted(words, reverse=True))\nprint(max(words, key=len))",
+      "it": "words = [\"pera\", \"fico\", \"banana\", \"kiwi\"]\nprint(sorted(words))\nprint(sorted(words, key=len))\nprint(sorted(words, reverse=True))\nprint(max(words, key=len))",
+      "fr": "words = [\"poire\", \"figue\", \"banane\", \"kiwi\"]\nprint(sorted(words))\nprint(sorted(words, key=len))\nprint(sorted(words, reverse=True))\nprint(max(words, key=len))"
+     },
+     "title": {
+      "en": "Sort the way you want",
+      "it": "Ordina come vuoi",
+      "fr": "Trie comme tu veux"
+     },
+     "text": {
+      "en": "sorted, sort, max and min can take key=: a helper that tells what to look at. key=len orders the words by their length, not alphabetically.\n\nreverse=True turns the order around. And max(words, key=len) finds the longest word.",
+      "it": "sorted, sort, max e min possono prendere key=: un aiutante che dice cosa guardare. key=len ordina le parole per la loro lunghezza, non alfabeticamente.\n\nreverse=True gira l'ordine. E max(words, key=len) trova la parola più lunga.",
+      "fr": "sorted, sort, max et min peuvent prendre key= : un assistant qui dit ce qu'il faut regarder. key=len ordonne les mots par leur longueur, pas alphabétiquement.\n\nreverse=True retourne l'ordre. Et max(words, key=len) trouve le mot le plus long."
+     },
+     "see": {
+      "en": "['banana', 'fig', 'kiwi', 'pear']\n['fig', 'pear', 'kiwi', 'banana']\n['pear', 'kiwi', 'fig', 'banana']\nbanana",
+      "it": "['banana', 'fico', 'kiwi', 'pera']\n['pera', 'fico', 'kiwi', 'banana']\n['pera', 'kiwi', 'fico', 'banana']\nbanana",
+      "fr": "['banane', 'figue', 'kiwi', 'poire']\n['kiwi', 'poire', 'figue', 'banane']\n['poire', 'kiwi', 'figue', 'banane']\nbanane"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "arg:key",
+       "w": "key=",
+       "d": {
+        "en": "key= tells sorted, sort, max or min what to look at. key=len compares the words by their length, not alphabetically.",
+        "it": "key= dice a sorted, sort, max o min cosa guardare. key=len confronta le parole per la lunghezza, non in ordine alfabetico.",
+        "fr": "key= dit à sorted, sort, max ou min ce qu'il faut regarder. key=len compare les mots par leur longueur, pas alphabétiquement."
+       },
+       "s": {
+        "en": "sorted(words, key=len)",
+        "it": "sorted(words, key=len)",
+        "fr": "sorted(words, key=len)"
+       }
+      },
+      {
+       "k": "arg:reverse",
+       "w": "reverse=",
+       "d": {
+        "en": "reverse=True turns the order around, so the biggest comes first.",
+        "it": "reverse=True gira l'ordine, così viene prima il più grande.",
+        "fr": "reverse=True retourne l'ordre, donc le plus grand vient en premier."
+       },
+       "s": {
+        "en": "sorted(numbers, reverse=True)",
+        "it": "sorted(numbers, reverse=True)",
+        "fr": "sorted(numbers, reverse=True)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the numbers [5, 2, 9, 1] from the biggest to the smallest.",
+       "it": "Mostra i numeri [5, 2, 9, 1] dal più grande al più piccolo.",
+       "fr": "Affiche les nombres [5, 2, 9, 1] du plus grand au plus petit."
+      },
+      "hint": {
+       "en": "sorted([5, 2, 9, 1], reverse=True)",
+       "it": "sorted([5, 2, 9, 1], reverse=True)",
+       "fr": "sorted([5, 2, 9, 1], reverse=True)"
+      },
+      "sol": {
+       "en": "print(sorted([5, 2, 9, 1], reverse=True))",
+       "it": "print(sorted([5, 2, 9, 1], reverse=True))",
+       "fr": "print(sorted([5, 2, 9, 1], reverse=True))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[9, 5, 2, 1]",
+        "c": "reverse"
+       },
+       "it": {
+        "out": "[9, 5, 2, 1]",
+        "c": "reverse"
+       },
+       "fr": {
+        "out": "[9, 5, 2, 1]",
+        "c": "reverse"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[9, 5, 2, 1]",
+       "it": "[9, 5, 2, 1]",
+       "fr": "[9, 5, 2, 1]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(list(\"abc\"))\nprint(list(range(5)))\nnumbers = [5, 3, 8, 1]\nprint(sum(numbers) / len(numbers))\nprint(list(range(10, 0, -3)))",
+      "it": "print(list(\"abc\"))\nprint(list(range(5)))\nnumbers = [5, 3, 8, 1]\nprint(sum(numbers) / len(numbers))\nprint(list(range(10, 0, -3)))",
+      "fr": "print(list(\"abc\"))\nprint(list(range(5)))\nnumbers = [5, 3, 8, 1]\nprint(sum(numbers) / len(numbers))\nprint(list(range(10, 0, -3)))"
+     },
+     "title": {
+      "en": "A list from anything",
+      "it": "Una lista da qualsiasi cosa",
+      "fr": "Une liste à partir de n'importe quoi"
+     },
+     "text": {
+      "en": "list(...) turns any row of things into a list: the letters of a text, the numbers of a range.\n\nYou already know range. list(range(5)) is the quickest way to see what it makes. A step can be negative to count down.",
+      "it": "list(...) trasforma qualsiasi fila di cose in una lista: le lettere di un testo, i numeri di un range.\n\nConosci già range. list(range(5)) è il modo più rapido per vedere cosa fa. Il passo può essere negativo per contare all'indietro.",
+      "fr": "list(...) transforme n'importe quelle rangée de choses en liste : les lettres d'un texte, les nombres d'un range.\n\nTu connais déjà range. list(range(5)) est la façon la plus rapide de voir ce qu'il fait. Le pas peut être négatif pour compter à rebours."
+     },
+     "see": {
+      "en": "['a', 'b', 'c']\n[0, 1, 2, 3, 4]\n4.25\n[10, 7, 4, 1]",
+      "it": "['a', 'b', 'c']\n[0, 1, 2, 3, 4]\n4.25\n[10, 7, 4, 1]",
+      "fr": "['a', 'b', 'c']\n[0, 1, 2, 3, 4]\n4.25\n[10, 7, 4, 1]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "list",
+       "w": "list( )",
+       "d": {
+        "en": "list turns any row of things (a text, a range...) into a list.",
+        "it": "list trasforma qualsiasi fila di cose (un testo, un range...) in una lista.",
+        "fr": "list transforme n'importe quelle rangée de choses (un texte, un range...) en une liste."
+       },
+       "s": {
+        "en": "list(range(5))",
+        "it": "list(range(5))",
+        "fr": "list(range(5))"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the list of the numbers from 1 to 5, with list and range.",
+       "it": "Mostra la lista dei numeri da 1 a 5, con list e range.",
+       "fr": "Affiche la liste des nombres de 1 à 5, avec list et range."
+      },
+      "hint": {
+       "en": "list(range(1, 6))",
+       "it": "list(range(1, 6))",
+       "fr": "list(range(1, 6))"
+      },
+      "sol": {
+       "en": "print(list(range(1, 6)))",
+       "it": "print(list(range(1, 6)))",
+       "fr": "print(list(range(1, 6)))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[1, 2, 3, 4, 5]",
+        "c": "list"
+       },
+       "it": {
+        "out": "[1, 2, 3, 4, 5]",
+        "c": "list"
+       },
+       "fr": {
+        "out": "[1, 2, 3, 4, 5]",
+        "c": "list"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[1, 2, 3, 4, 5]",
+       "it": "[1, 2, 3, 4, 5]",
+       "fr": "[1, 2, 3, 4, 5]"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Tuples",
+    "it": "Tuple",
+    "fr": "Les tuples"
+   },
+   "subtitle": {
+    "en": "A list that cannot change",
+    "it": "Una lista che non può cambiare",
+    "fr": "Une liste qui ne peut pas changer"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "point = (3, 4)\nprint(point)\nprint(point[0], point[1])\nprint(len(point))",
+      "it": "point = (3, 4)\nprint(point)\nprint(point[0], point[1])\nprint(len(point))",
+      "fr": "point = (3, 4)\nprint(point)\nprint(point[0], point[1])\nprint(len(point))"
+     },
+     "title": {
+      "en": "Values that stay together",
+      "it": "Valori che stanno insieme",
+      "fr": "Des valeurs qui restent ensemble"
+     },
+     "text": {
+      "en": "A tuple is written with round brackets. It works like a list: you can ask for a place and use len. But once made, it cannot be changed.\n\nThat is useful for things that belong together and should stay fixed, like the x and the y of a point on a map.",
+      "it": "Una tupla si scrive con le parentesi tonde. Funziona come una lista: puoi chiedere un posto e usare len. Ma una volta fatta, non si può cambiare.\n\nÈ utile per le cose che stanno insieme e devono restare ferme, come la x e la y di un punto su una mappa.",
+      "fr": "Un tuple s'écrit avec des parenthèses rondes. Il marche comme une liste : tu peux demander une place et utiliser len. Mais une fois fait, il ne peut plus être changé.\n\nC'est utile pour des choses qui vont ensemble et doivent rester fixes, comme le x et le y d'un point sur une carte."
+     },
+     "see": {
+      "en": "(3, 4)\n3 4\n2",
+      "it": "(3, 4)\n3 4\n2",
+      "fr": "(3, 4)\n3 4\n2"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "tuple-literal",
+       "w": "( , )",
+       "d": {
+        "en": "A tuple is written with round brackets. It is like a list, but once made it cannot be changed. It is useful for values that belong together, like the x and y of a point.",
+        "it": "Una tupla si scrive con le parentesi tonde. È come una lista, ma una volta fatta non si può cambiare. È utile per valori che stanno insieme, come la x e la y di un punto.",
+        "fr": "Un tuple s'écrit avec des parenthèses rondes. C'est comme une liste, mais une fois fait il ne peut plus être changé. C'est utile pour des valeurs qui vont ensemble, comme le x et le y d'un point."
+       },
+       "s": {
+        "en": "point = (3, 4)",
+        "it": "point = (3, 4)",
+        "fr": "point = (3, 4)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a tuple called size with the numbers 5 and 8, and show its second item.",
+       "it": "Fai una tupla che si chiama size con i numeri 5 e 8 e mostra il suo secondo elemento.",
+       "fr": "Fais un tuple qui s'appelle size avec les nombres 5 et 8 et affiche son deuxième élément."
+      },
+      "hint": {
+       "en": "size = (5, 8) and then print(size[1]).",
+       "it": "size = (5, 8) e poi print(size[1]).",
+       "fr": "size = (5, 8) puis print(size[1])."
+      },
+      "sol": {
+       "en": "size = (5, 8)\nprint(size[1])",
+       "it": "size = (5, 8)\nprint(size[1])",
+       "fr": "size = (5, 8)\nprint(size[1])"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "8",
+        "c": "\\(5, 8\\)"
+       },
+       "it": {
+        "out": "8",
+        "c": "\\(5, 8\\)"
+       },
+       "fr": {
+        "out": "8",
+        "c": "\\(5, 8\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "8",
+       "it": "8",
+       "fr": "8"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "single = (5,)\nprint(type(single))\nnot_a_tuple = (5)\nprint(type(not_a_tuple))",
+      "it": "single = (5,)\nprint(type(single))\nnot_a_tuple = (5)\nprint(type(not_a_tuple))",
+      "fr": "single = (5,)\nprint(type(single))\nnot_a_tuple = (5)\nprint(type(not_a_tuple))"
+     },
+     "title": {
+      "en": "A tuple with one item",
+      "it": "Una tupla con un elemento",
+      "fr": "Un tuple avec un élément"
+     },
+     "text": {
+      "en": "A tuple with only one item needs a comma after it: (5,). Without the comma, (5) is just the number 5 in brackets, like in a sum.\n\nIt looks like a small thing, but it is a famous trap.",
+      "it": "Una tupla con un solo elemento ha bisogno di una virgola dopo: (5,). Senza la virgola, (5) è solo il numero 5 tra parentesi, come in un conto.\n\nSembra una piccolezza, ma è una trappola famosa.",
+      "fr": "Un tuple avec un seul élément a besoin d'une virgule après : (5,). Sans la virgule, (5) n'est que le nombre 5 entre parenthèses, comme dans un calcul.\n\nÇa a l'air d'un détail, mais c'est un piège célèbre."
+     },
+     "see": {
+      "en": "<class 'tuple'>\n<class 'int'>",
+      "it": "<class 'tuple'>\n<class 'int'>",
+      "fr": "<class 'tuple'>\n<class 'int'>"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "one-tuple",
+       "w": "(5,)",
+       "d": {
+        "en": "A tuple with one item needs a comma after it: (5,). Without the comma it is only a number in brackets.",
+        "it": "Una tupla con un solo elemento ha bisogno di una virgola dopo: (5,). Senza la virgola è solo un numero tra parentesi.",
+        "fr": "Un tuple d'un seul élément a besoin d'une virgule après : (5,). Sans la virgule, c'est seulement un nombre entre parenthèses."
+       },
+       "s": {
+        "en": "single = (5,)",
+        "it": "single = (5,)",
+        "fr": "single = (5,)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a tuple with only the number 7, and show its type.",
+       "it": "Fai una tupla con solo il numero 7 e mostra il suo tipo.",
+       "fr": "Fais un tuple avec seulement le nombre 7 et affiche son type."
+      },
+      "hint": {
+       "en": "(7,) with the comma.",
+       "it": "(7,) con la virgola.",
+       "fr": "(7,) avec la virgule."
+      },
+      "sol": {
+       "en": "seven = (7,)\nprint(type(seven))",
+       "it": "seven = (7,)\nprint(type(seven))",
+       "fr": "seven = (7,)\nprint(type(seven))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "<class 'tuple'>",
+        "c": "\\(7,\\)"
+       },
+       "it": {
+        "out": "<class 'tuple'>",
+        "c": "\\(7,\\)"
+       },
+       "fr": {
+        "out": "<class 'tuple'>",
+        "c": "\\(7,\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "<class 'tuple'>",
+       "it": "<class 'tuple'>",
+       "fr": "<class 'tuple'>"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "point = (3, 4)\nx, y = point\nprint(x, y)\nname, age, city = (\"Ada\", 12, \"Rome\")\nprint(f\"{name} is {age} and lives in {city}\")",
+      "it": "point = (3, 4)\nx, y = point\nprint(x, y)\nname, age, city = (\"Ada\", 12, \"Roma\")\nprint(f\"{name} ha {age} anni e vive a {city}\")",
+      "fr": "point = (3, 4)\nx, y = point\nprint(x, y)\nname, age, city = (\"Ada\", 12, \"Rome\")\nprint(f\"{name} a {age} ans et habite à {city}\")"
+     },
+     "title": {
+      "en": "Unpack a tuple",
+      "it": "Apri una tupla",
+      "fr": "Ouvre un tuple"
+     },
+     "text": {
+      "en": "You can put the items of a tuple into several names in one line: x, y = point puts 3 in x and 4 in y. The number of names must be the same as the number of items.\n\nYou can write the tuple right there too: name, age, city = (\"Ada\", 12, \"Rome\"). It also works with lists.",
+      "it": "Puoi mettere gli elementi di una tupla in più nomi in una riga: x, y = point mette 3 in x e 4 in y. Il numero di nomi deve essere uguale al numero di elementi.\n\nPuoi scrivere la tupla anche lì: name, age, city = (\"Ada\", 12, \"Roma\"). Funziona anche con le liste.",
+      "fr": "Tu peux mettre les éléments d'un tuple dans plusieurs noms en une ligne : x, y = point met 3 dans x et 4 dans y. Le nombre de noms doit être le même que le nombre d'éléments.\n\nTu peux aussi écrire le tuple tout de suite : name, age, city = (\"Ada\", 12, \"Rome\"). Ça marche aussi avec les listes."
+     },
+     "see": {
+      "en": "3 4\nAda is 12 and lives in Rome",
+      "it": "3 4\nAda ha 12 anni e vive a Roma",
+      "fr": "3 4\nAda a 12 ans et habite à Rome"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "unpack",
+       "w": "x, y = point",
+       "d": {
+        "en": "You can put the items of a tuple (or a list) into several names in one line. The number of names must be the same as the number of items.",
+        "it": "Puoi mettere gli elementi di una tupla (o di una lista) in più nomi in una sola riga. Il numero di nomi deve essere uguale al numero di elementi.",
+        "fr": "Tu peux mettre les éléments d'un tuple (ou d'une liste) dans plusieurs noms en une seule ligne. Le nombre de noms doit être le même que le nombre d'éléments."
+       },
+       "s": {
+        "en": "x, y = point",
+        "it": "x, y = point",
+        "fr": "x, y = point"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Unpack the tuple (7, 9) into the names a and b, and show a + b.",
+       "it": "Apri la tupla (7, 9) nei nomi a e b e mostra a + b.",
+       "fr": "Ouvre le tuple (7, 9) dans les noms a et b et affiche a + b."
+      },
+      "hint": {
+       "en": "a, b = (7, 9) and then print(a + b).",
+       "it": "a, b = (7, 9) e poi print(a + b).",
+       "fr": "a, b = (7, 9) puis print(a + b)."
+      },
+      "sol": {
+       "en": "a, b = (7, 9)\nprint(a + b)",
+       "it": "a, b = (7, 9)\nprint(a + b)",
+       "fr": "a, b = (7, 9)\nprint(a + b)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "16",
+        "c": "a, b ="
+       },
+       "it": {
+        "out": "16",
+        "c": "a, b ="
+       },
+       "fr": {
+        "out": "16",
+        "c": "a, b ="
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "16",
+       "it": "16",
+       "fr": "16"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "point = (3, 4)\nprint(point)\npoint[0] = 9",
+      "it": "point = (3, 4)\nprint(point)\npoint[0] = 9",
+      "fr": "point = (3, 4)\nprint(point)\npoint[0] = 9"
+     },
+     "title": {
+      "en": "The wall: tuples are fixed",
+      "it": "Il muro: le tuple sono fisse",
+      "fr": "Le mur : les tuples sont fixes"
+     },
+     "text": {
+      "en": "Try to change an item of a tuple and Python refuses: a tuple is fixed on purpose. Read the explanation.\n\nIf you need to change things, use a list. If you need a list that is allowed to change, you can make one from the tuple, in the next step.",
+      "it": "Prova a cambiare un elemento di una tupla e Python rifiuta: una tupla è ferma apposta. Leggi la spiegazione.\n\nSe ti serve cambiare le cose, usa una lista. Se ti serve una lista che si può cambiare, la puoi fare dalla tupla, nel passo dopo.",
+      "fr": "Essaie de changer un élément d'un tuple et Python refuse : un tuple est fixe exprès. Lis l'explication.\n\nSi tu as besoin de changer des choses, utilise une liste. Si tu as besoin d'une liste qui a le droit de changer, tu peux en faire une à partir du tuple, à l'étape suivante."
+     },
+     "see": {
+      "en": "(3, 4)\n⚠ Line 3: A tuple cannot be changed in place.",
+      "it": "(3, 4)\n⚠ Riga 3: Un tuple non si può cambiare sul posto.",
+      "fr": "(3, 4)\n⚠ Ligne 3: Un tuple ne peut pas être modifié sur place."
+     },
+     "slip": null,
+     "error": "TypeError",
+     "ex": {
+      "task": {
+       "en": "Make it work: use a list in square brackets instead of a tuple, so the first item can be changed. Show the list.",
+       "it": "Fallo funzionare: usa una lista tra parentesi quadre invece di una tupla, così il primo elemento si può cambiare. Mostra la lista.",
+       "fr": "Fais-le marcher : utilise une liste entre crochets au lieu d'un tuple, pour que le premier élément puisse être changé. Affiche la liste."
+      },
+      "hint": {
+       "en": "point = [3, 4] and then point[0] = 9 and print(point).",
+       "it": "point = [3, 4] e poi point[0] = 9 e print(point).",
+       "fr": "point = [3, 4] puis point[0] = 9 et print(point)."
+      },
+      "sol": {
+       "en": "point = [3, 4]\npoint[0] = 9\nprint(point)",
+       "it": "point = [3, 4]\npoint[0] = 9\nprint(point)",
+       "fr": "point = [3, 4]\npoint[0] = 9\nprint(point)"
+      },
+      "start": {
+       "en": "point = (3, 4)\nprint(point)\npoint[0] = 9",
+       "it": "point = (3, 4)\nprint(point)\npoint[0] = 9",
+       "fr": "point = (3, 4)\nprint(point)\npoint[0] = 9"
+      },
+      "spec": {
+       "en": {
+        "out": "[9, 4]"
+       },
+       "it": {
+        "out": "[9, 4]"
+       },
+       "fr": {
+        "out": "[9, 4]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[9, 4]",
+       "it": "[9, 4]",
+       "fr": "[9, 4]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "items = [\"a\", \"b\", \"c\"]\nas_tuple = tuple(items)\nback = list(as_tuple)\nprint(as_tuple, back)\nprint((1, 2) + (3,))\nprint((1, 2) == (1, 2))",
+      "it": "items = [\"a\", \"b\", \"c\"]\nas_tuple = tuple(items)\nback = list(as_tuple)\nprint(as_tuple, back)\nprint((1, 2) + (3,))\nprint((1, 2) == (1, 2))",
+      "fr": "items = [\"a\", \"b\", \"c\"]\nas_tuple = tuple(items)\nback = list(as_tuple)\nprint(as_tuple, back)\nprint((1, 2) + (3,))\nprint((1, 2) == (1, 2))"
+     },
+     "title": {
+      "en": "Tuples and lists",
+      "it": "Tuple e liste",
+      "fr": "Tuples et listes"
+     },
+     "text": {
+      "en": "tuple(...) and list(...) turn one into the other. Tuples can be joined with +, compared with ==, and asked about with in.\n\nChoose a list when the content will change, and a tuple when it should stay exactly as it is.",
+      "it": "tuple(...) e list(...) trasformano l'una nell'altra. Le tuple si possono unire con +, confrontare con == e interrogare con in.\n\nScegli una lista quando il contenuto cambierà e una tupla quando deve restare esattamente com'è.",
+      "fr": "tuple(...) et list(...) transforment l'un en l'autre. Les tuples peuvent être collés avec +, comparés avec == et interrogés avec in.\n\nChoisis une liste quand le contenu va changer, et un tuple quand il doit rester exactement comme il est."
+     },
+     "see": {
+      "en": "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 3)\nTrue",
+      "it": "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 3)\nTrue",
+      "fr": "('a', 'b', 'c') ['a', 'b', 'c']\n(1, 2, 3)\nTrue"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "tuple",
+       "w": "tuple( )",
+       "d": {
+        "en": "tuple turns a list into a tuple. list does the opposite.",
+        "it": "tuple trasforma una lista in una tupla. list fa il contrario.",
+        "fr": "tuple transforme une liste en tuple. list fait le contraire."
+       },
+       "s": {
+        "en": "tuple([1, 2])",
+        "it": "tuple([1, 2])",
+        "fr": "tuple([1, 2])"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Turn the list [1, 2, 3] into a tuple and show it.",
+       "it": "Trasforma la lista [1, 2, 3] in una tupla e mostrala.",
+       "fr": "Transforme la liste [1, 2, 3] en tuple et affiche-le."
+      },
+      "hint": {
+       "en": "print(tuple([1, 2, 3]))",
+       "it": "print(tuple([1, 2, 3]))",
+       "fr": "print(tuple([1, 2, 3]))"
+      },
+      "sol": {
+       "en": "print(tuple([1, 2, 3]))",
+       "it": "print(tuple([1, 2, 3]))",
+       "fr": "print(tuple([1, 2, 3]))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "(1, 2, 3)",
+        "c": "tuple"
+       },
+       "it": {
+        "out": "(1, 2, 3)",
+        "c": "tuple"
+       },
+       "fr": {
+        "out": "(1, 2, 3)",
+        "c": "tuple"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "(1, 2, 3)",
+       "it": "(1, 2, 3)",
+       "fr": "(1, 2, 3)"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Dictionaries",
+    "it": "I dizionari",
+    "fr": "Les dictionnaires"
+   },
+   "subtitle": {
+    "en": "Look things up by name",
+    "it": "Cerca le cose per nome",
+    "fr": "Cherche les choses par leur nom"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages)\nprint(ages[\"Ada\"])\nages[\"Zoe\"] = 15\nprint(ages)\nprint(len(ages))",
+      "it": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages)\nprint(ages[\"Ada\"])\nages[\"Zoe\"] = 15\nprint(ages)\nprint(len(ages))",
+      "fr": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages)\nprint(ages[\"Ada\"])\nages[\"Zoe\"] = 15\nprint(ages)\nprint(len(ages))"
+     },
+     "title": {
+      "en": "A dictionary: key and value",
+      "it": "Un dizionario: chiave e valore",
+      "fr": "Un dictionnaire : clé et valeur"
+     },
+     "text": {
+      "en": "A dictionary keeps pairs: a key and its value, written key: value between curly brackets. You look a value up by its key, not by a place: ages[\"Ada\"] gives 12.\n\nPutting a value in a key that does not exist yet adds it. Think of a real dictionary: the word is the key, the meaning is the value.",
+      "it": "Un dizionario tiene delle coppie: una chiave e il suo valore, scritti chiave: valore tra parentesi graffe. Cerchi un valore dalla sua chiave, non da un posto: ages[\"Ada\"] dà 12.\n\nMettere un valore in una chiave che non esiste ancora la aggiunge. Pensa a un vero dizionario: la parola è la chiave, il significato è il valore.",
+      "fr": "Un dictionnaire garde des paires : une clé et sa valeur, écrites clé: valeur entre accolades. Tu cherches une valeur par sa clé, pas par une place : ages[\"Ada\"] donne 12.\n\nMettre une valeur dans une clé qui n'existe pas encore l'ajoute. Pense à un vrai dictionnaire : le mot est la clé, le sens est la valeur."
+     },
+     "see": {
+      "en": "{'Ada': 12, 'Max': 9}\n12\n{'Ada': 12, 'Max': 9, 'Zoe': 15}\n3",
+      "it": "{'Ada': 12, 'Max': 9}\n12\n{'Ada': 12, 'Max': 9, 'Zoe': 15}\n3",
+      "fr": "{'Ada': 12, 'Max': 9}\n12\n{'Ada': 12, 'Max': 9, 'Zoe': 15}\n3"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "dict-literal",
+       "w": "{ k: v }",
+       "d": {
+        "en": "A dictionary keeps pairs: a key and its value, written key: value between curly brackets. You look a value up by its key, like a word in a real dictionary.",
+        "it": "Un dizionario tiene delle coppie: una chiave e il suo valore, scritti chiave: valore tra parentesi graffe. Cerchi un valore dalla sua chiave, come una parola in un vero dizionario.",
+        "fr": "Un dictionnaire garde des paires : une clé et sa valeur, écrites clé: valeur entre accolades. Tu cherches une valeur par sa clé, comme un mot dans un vrai dictionnaire."
+       },
+       "s": {
+        "en": "ages = {\"Ada\": 12, \"Max\": 9}",
+        "it": "ages = {\"Ada\": 12, \"Max\": 9}",
+        "fr": "ages = {\"Ada\": 12, \"Max\": 9}"
+       }
+      },
+      {
+       "k": "dict-index",
+       "w": "d[key]",
+       "d": {
+        "en": "Square brackets with a key give its value: ages[\"Ada\"]. Putting a value there changes it, or adds the key if it is new.",
+        "it": "Le parentesi quadre con una chiave danno il suo valore: ages[\"Ada\"]. Mettere un valore lì lo cambia, o aggiunge la chiave se è nuova.",
+        "fr": "Les crochets avec une clé donnent sa valeur : ages[\"Ada\"]. Y mettre une valeur la change, ou ajoute la clé si elle est nouvelle."
+       },
+       "s": {
+        "en": "ages[\"Ada\"]",
+        "it": "ages[\"Ada\"]",
+        "fr": "ages[\"Ada\"]"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Add a new key, Leo, with the value 11, and show the whole dictionary.",
+       "it": "Aggiungi una chiave nuova, Leo, con il valore 11, e mostra tutto il dizionario.",
+       "fr": "Ajoute une nouvelle clé, Leo, avec la valeur 11, et affiche tout le dictionnaire."
+      },
+      "hint": {
+       "en": "ages[\"Leo\"] = 11 and then print(ages).",
+       "it": "ages[\"Leo\"] = 11 e poi print(ages).",
+       "fr": "ages[\"Leo\"] = 11 puis print(ages)."
+      },
+      "sol": {
+       "en": "ages = {\"Ada\": 12, \"Max\": 9}\nages[\"Leo\"] = 11\nprint(ages)",
+       "it": "ages = {\"Ada\": 12, \"Max\": 9}\nages[\"Leo\"] = 11\nprint(ages)",
+       "fr": "ages = {\"Ada\": 12, \"Max\": 9}\nages[\"Leo\"] = 11\nprint(ages)"
+      },
+      "start": {
+       "en": "ages = {\"Ada\": 12, \"Max\": 9}",
+       "it": "ages = {\"Ada\": 12, \"Max\": 9}",
+       "fr": "ages = {\"Ada\": 12, \"Max\": 9}"
+      },
+      "spec": {
+       "en": {
+        "out": "{'Ada': 12, 'Max': 9, 'Leo': 11}",
+        "c": "\\[\"Leo\"\\]"
+       },
+       "it": {
+        "out": "{'Ada': 12, 'Max': 9, 'Leo': 11}",
+        "c": "\\[\"Leo\"\\]"
+       },
+       "fr": {
+        "out": "{'Ada': 12, 'Max': 9, 'Leo': 11}",
+        "c": "\\[\"Leo\"\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "{'Ada': 12, 'Max': 9, 'Leo': 11}",
+       "it": "{'Ada': 12, 'Max': 9, 'Leo': 11}",
+       "fr": "{'Ada': 12, 'Max': 9, 'Leo': 11}"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(\"Ada\" in ages)\nprint(\"Zoe\" in ages)\nprint(ages.get(\"Zoe\"))\nprint(ages.get(\"Zoe\", \"unknown\"))\nprint(ages[\"Zoe\"])",
+      "it": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(\"Ada\" in ages)\nprint(\"Zoe\" in ages)\nprint(ages.get(\"Zoe\"))\nprint(ages.get(\"Zoe\", \"sconosciuta\"))\nprint(ages[\"Zoe\"])",
+      "fr": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(\"Ada\" in ages)\nprint(\"Zoe\" in ages)\nprint(ages.get(\"Zoe\"))\nprint(ages.get(\"Zoe\", \"inconnue\"))\nprint(ages[\"Zoe\"])"
+     },
+     "title": {
+      "en": "Is the key there?",
+      "it": "La chiave c'è?",
+      "fr": "La clé est-elle là ?"
+     },
+     "text": {
+      "en": "in asks if a key exists. get gives the value of a key, or None if the key is missing, and with a second thing it gives that instead of None.\n\nThe last line uses the dangerous way, with square brackets, and Python stops with a KeyError: that key does not exist. Read the explanation.",
+      "it": "in chiede se una chiave esiste. get dà il valore di una chiave, o None se la chiave manca, e con un secondo valore dà quello al posto di None.\n\nL'ultima riga usa il modo pericoloso, con le parentesi quadre, e Python si ferma con un KeyError: quella chiave non esiste. Leggi la spiegazione.",
+      "fr": "in demande si une clé existe. get donne la valeur d'une clé, ou None si la clé manque, et avec une deuxième chose il donne celle-ci au lieu de None.\n\nLa dernière ligne utilise la façon dangereuse, avec les crochets, et Python s'arrête avec une KeyError : cette clé n'existe pas. Lis l'explication."
+     },
+     "see": {
+      "en": "True\nFalse\nNone\nunknown\n⚠ Line 6: The key 'Zoe' is not in the dictionary.",
+      "it": "True\nFalse\nNone\nsconosciuta\n⚠ Riga 6: La chiave 'Zoe' non è nel dizionario.",
+      "fr": "True\nFalse\nNone\ninconnue\n⚠ Ligne 6: La clé 'Zoe' n'est pas dans le dictionnaire."
+     },
+     "slip": null,
+     "error": "KeyError",
+     "news": [
+      {
+       "k": ".get",
+       "w": ".get( )",
+       "d": {
+        "en": "get gives the value of a key, or None if the key is missing. With a second thing it gives that instead of None.",
+        "it": "get dà il valore di una chiave, o None se la chiave manca. Con un secondo valore dà quello al posto di None.",
+        "fr": "get donne la valeur d'une clé, ou None si la clé manque. Avec une deuxième chose il donne celle-ci au lieu de None."
+       },
+       "s": {
+        "en": "ages.get(\"Zoe\", 0)",
+        "it": "ages.get(\"Zoe\", 0)",
+        "fr": "ages.get(\"Zoe\", 0)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the age of Zoe, safely with get, giving 0 when she is not in the dictionary.",
+       "it": "Mostra l'età di Zoe, in modo sicuro con get, dando 0 quando non è nel dizionario.",
+       "fr": "Affiche l'âge de Zoe, en sécurité avec get, en donnant 0 quand elle n'est pas dans le dictionnaire."
+      },
+      "hint": {
+       "en": "ages.get(\"Zoe\", 0)",
+       "it": "ages.get(\"Zoe\", 0)",
+       "fr": "ages.get(\"Zoe\", 0)"
+      },
+      "sol": {
+       "en": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages.get(\"Zoe\", 0))",
+       "it": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages.get(\"Zoe\", 0))",
+       "fr": "ages = {\"Ada\": 12, \"Max\": 9}\nprint(ages.get(\"Zoe\", 0))"
+      },
+      "start": {
+       "en": "ages = {\"Ada\": 12, \"Max\": 9}",
+       "it": "ages = {\"Ada\": 12, \"Max\": 9}",
+       "fr": "ages = {\"Ada\": 12, \"Max\": 9}"
+      },
+      "spec": {
+       "en": {
+        "out": "0",
+        "c": "get"
+       },
+       "it": {
+        "out": "0",
+        "c": "get"
+       },
+       "fr": {
+        "out": "0",
+        "c": "get"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "0",
+       "it": "0",
+       "fr": "0"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "stock = {\"apples\": 5, \"pears\": 2}\nstock[\"apples\"] = 4\nstock[\"kiwis\"] = 10\ndel stock[\"pears\"]\nprint(stock)\nprint(stock.pop(\"kiwis\"))\nstock.update({\"plums\": 3, \"apples\": 6})\nprint(stock)",
+      "it": "stock = {\"apples\": 5, \"pears\": 2}\nstock[\"apples\"] = 4\nstock[\"kiwis\"] = 10\ndel stock[\"pears\"]\nprint(stock)\nprint(stock.pop(\"kiwis\"))\nstock.update({\"plums\": 3, \"apples\": 6})\nprint(stock)",
+      "fr": "stock = {\"apples\": 5, \"pears\": 2}\nstock[\"apples\"] = 4\nstock[\"kiwis\"] = 10\ndel stock[\"pears\"]\nprint(stock)\nprint(stock.pop(\"kiwis\"))\nstock.update({\"plums\": 3, \"apples\": 6})\nprint(stock)"
+     },
+     "title": {
+      "en": "Change, add, remove",
+      "it": "Cambia, aggiungi, togli",
+      "fr": "Change, ajoute, enlève"
+     },
+     "text": {
+      "en": "Putting a value in an existing key changes it. Putting a value in a new key adds it. del removes a key, and pop(key) removes it and gives you the value, like pop did for lists.\n\nupdate puts all the pairs of another dictionary into this one. A dictionary remembers the order in which the keys were added.",
+      "it": "Mettere un valore in una chiave esistente la cambia. Mettere un valore in una chiave nuova la aggiunge. del toglie una chiave, e pop(chiave) la toglie e ti dà il valore, come pop faceva con le liste.\n\nupdate mette in questo dizionario tutte le coppie di un altro dizionario. Un dizionario ricorda l'ordine in cui le chiavi sono state aggiunte.",
+      "fr": "Mettre une valeur dans une clé existante la change. Mettre une valeur dans une nouvelle clé l'ajoute. del enlève une clé, et pop(clé) l'enlève et te donne la valeur, comme pop le faisait pour les listes.\n\nupdate met dans ce dictionnaire toutes les paires d'un autre dictionnaire. Un dictionnaire se souvient de l'ordre dans lequel les clés ont été ajoutées."
+     },
+     "see": {
+      "en": "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+      "it": "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}",
+      "fr": "{'apples': 4, 'kiwis': 10}\n10\n{'apples': 6, 'plums': 3}"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".update",
+       "w": ".update( )",
+       "d": {
+        "en": "update adds all the pairs of another dictionary into this one.",
+        "it": "update aggiunge a questo dizionario tutte le coppie di un altro dizionario.",
+        "fr": "update ajoute à ce dictionnaire toutes les paires d'un autre dictionnaire."
+       },
+       "s": {
+        "en": "stock.update({\"plums\": 3})",
+        "it": "stock.update({\"plums\": 3})",
+        "fr": "stock.update({\"plums\": 3})"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Take the key pears out of the dictionary, and show the dictionary.",
+       "it": "Togli la chiave pears dal dizionario e mostra il dizionario.",
+       "fr": "Enlève la clé pears du dictionnaire et affiche le dictionnaire."
+      },
+      "hint": {
+       "en": "del stock[\"pears\"] and then print(stock).",
+       "it": "del stock[\"pears\"] e poi print(stock).",
+       "fr": "del stock[\"pears\"] puis print(stock)."
+      },
+      "sol": {
+       "en": "stock = {\"apples\": 5, \"pears\": 2}\ndel stock[\"pears\"]\nprint(stock)",
+       "it": "stock = {\"apples\": 5, \"pears\": 2}\ndel stock[\"pears\"]\nprint(stock)",
+       "fr": "stock = {\"apples\": 5, \"pears\": 2}\ndel stock[\"pears\"]\nprint(stock)"
+      },
+      "start": {
+       "en": "stock = {\"apples\": 5, \"pears\": 2}",
+       "it": "stock = {\"apples\": 5, \"pears\": 2}",
+       "fr": "stock = {\"apples\": 5, \"pears\": 2}"
+      },
+      "spec": {
+       "en": {
+        "out": "{'apples': 5}",
+        "c": "del"
+       },
+       "it": {
+        "out": "{'apples': 5}",
+        "c": "del"
+       },
+       "fr": {
+        "out": "{'apples': 5}",
+        "c": "del"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "{'apples': 5}",
+       "it": "{'apples': 5}",
+       "fr": "{'apples': 5}"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "ages = {\"Ada\": 12, \"Max\": 9, \"Zoe\": 15}\nfor name in ages:\n    print(name)\nprint(list(ages.keys()))\nprint(list(ages.values()))\nfor name, age in ages.items():\n    print(f\"{name} is {age}\")",
+      "it": "ages = {\"Ada\": 12, \"Max\": 9, \"Zoe\": 15}\nfor name in ages:\n    print(name)\nprint(list(ages.keys()))\nprint(list(ages.values()))\nfor name, age in ages.items():\n    print(f\"{name} is {age}\")",
+      "fr": "ages = {\"Ada\": 12, \"Max\": 9, \"Zoe\": 15}\nfor name in ages:\n    print(name)\nprint(list(ages.keys()))\nprint(list(ages.values()))\nfor name, age in ages.items():\n    print(f\"{name} is {age}\")"
+     },
+     "title": {
+      "en": "Walk through a dictionary",
+      "it": "Scorri un dizionario",
+      "fr": "Parcours un dictionnaire"
+     },
+     "text": {
+      "en": "A for loop over a dictionary gives the keys. keys() and values() give all the keys and all the values. items() gives each key together with its value, as pairs that you can put in two names.\n\nitems() is the one you will use most.",
+      "it": "Un ciclo for su un dizionario dà le chiavi. keys() e values() danno tutte le chiavi e tutti i valori. items() dà ogni chiave insieme al suo valore, a coppie che puoi mettere in due nomi.\n\nitems() è quello che userai di più.",
+      "fr": "Une boucle for sur un dictionnaire donne les clés. keys() et values() donnent toutes les clés et toutes les valeurs. items() donne chaque clé avec sa valeur, par paires que tu peux mettre dans deux noms.\n\nitems() est celui que tu utiliseras le plus."
+     },
+     "see": {
+      "en": "Ada\nMax\nZoe\n['Ada', 'Max', 'Zoe']\n[12, 9, 15]\nAda is 12\nMax is 9\nZoe is 15",
+      "it": "Ada\nMax\nZoe\n['Ada', 'Max', 'Zoe']\n[12, 9, 15]\nAda is 12\nMax is 9\nZoe is 15",
+      "fr": "Ada\nMax\nZoe\n['Ada', 'Max', 'Zoe']\n[12, 9, 15]\nAda is 12\nMax is 9\nZoe is 15"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".keys",
+       "w": ".keys( )",
+       "d": {
+        "en": "keys gives all the keys of a dictionary.",
+        "it": "keys dà tutte le chiavi di un dizionario.",
+        "fr": "keys donne toutes les clés d'un dictionnaire."
+       },
+       "s": {
+        "en": "ages.keys()",
+        "it": "ages.keys()",
+        "fr": "ages.keys()"
+       }
+      },
+      {
+       "k": ".values",
+       "w": ".values( )",
+       "d": {
+        "en": "values gives all the values of a dictionary.",
+        "it": "values dà tutti i valori di un dizionario.",
+        "fr": "values donne toutes les valeurs d'un dictionnaire."
+       },
+       "s": {
+        "en": "ages.values()",
+        "it": "ages.values()",
+        "fr": "ages.values()"
+       }
+      },
+      {
+       "k": ".items",
+       "w": ".items( )",
+       "d": {
+        "en": "items gives every key together with its value, as pairs. In a for loop you can put each pair into two names.",
+        "it": "items dà ogni chiave insieme al suo valore, a coppie. In un ciclo for puoi mettere ogni coppia in due nomi.",
+        "fr": "items donne chaque clé avec sa valeur, par paires. Dans une boucle for tu peux mettre chaque paire dans deux noms."
+       },
+       "s": {
+        "en": "for key, value in ages.items():",
+        "it": "for key, value in ages.items():",
+        "fr": "for key, value in ages.items():"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show every name with its age like this: Ada 12 (one per line), using items().",
+       "it": "Mostra ogni nome con la sua età così: Ada 12 (uno per riga), usando items().",
+       "fr": "Affiche chaque nom avec son âge comme ceci : Ada 12 (un par ligne), en utilisant items()."
+      },
+      "hint": {
+       "en": "for name, age in ages.items(): and print(name, age).",
+       "it": "for name, age in ages.items(): e print(name, age).",
+       "fr": "for name, age in ages.items(): et print(name, age)."
+      },
+      "sol": {
+       "en": "ages = {\"Ada\": 12, \"Max\": 9}\nfor name, age in ages.items():\n    print(name, age)",
+       "it": "ages = {\"Ada\": 12, \"Max\": 9}\nfor name, age in ages.items():\n    print(name, age)",
+       "fr": "ages = {\"Ada\": 12, \"Max\": 9}\nfor name, age in ages.items():\n    print(name, age)"
+      },
+      "start": {
+       "en": "ages = {\"Ada\": 12, \"Max\": 9}",
+       "it": "ages = {\"Ada\": 12, \"Max\": 9}",
+       "fr": "ages = {\"Ada\": 12, \"Max\": 9}"
+      },
+      "spec": {
+       "en": {
+        "out": "Ada 12\nMax 9",
+        "c": "items"
+       },
+       "it": {
+        "out": "Ada 12\nMax 9",
+        "c": "items"
+       },
+       "fr": {
+        "out": "Ada 12\nMax 9",
+        "c": "items"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Ada 12\nMax 9",
+       "it": "Ada 12\nMax 9",
+       "fr": "Ada 12\nMax 9"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "text = \"the cat and the dog and the bird\"\ncounts = {}\nfor word in text.split():\n    counts[word] = counts.get(word, 0) + 1\nprint(counts)\nbest = max(counts, key=counts.get)\nprint(best, counts[best])",
+      "it": "text = \"il gatto e il cane e il uccello\"\ncounts = {}\nfor word in text.split():\n    counts[word] = counts.get(word, 0) + 1\nprint(counts)\nbest = max(counts, key=counts.get)\nprint(best, counts[best])",
+      "fr": "text = \"le chat et le chien et le oiseau\"\ncounts = {}\nfor word in text.split():\n    counts[word] = counts.get(word, 0) + 1\nprint(counts)\nbest = max(counts, key=counts.get)\nprint(best, counts[best])"
+     },
+     "title": {
+      "en": "Count things",
+      "it": "Conta le cose",
+      "fr": "Compte des choses"
+     },
+     "text": {
+      "en": "A very common job: count how many times each thing appears. Start with an empty dictionary {}. For each word, take its current count (0 if it is new) with get, and add one.\n\nmax(counts, key=counts.get) finds the key with the biggest value.",
+      "it": "Un lavoro molto comune: contare quante volte compare ogni cosa. Parti da un dizionario vuoto {}. Per ogni parola prendi il suo conteggio attuale (0 se è nuova) con get e aggiungi uno.\n\nmax(counts, key=counts.get) trova la chiave con il valore più grande.",
+      "fr": "Un travail très courant : compter combien de fois chaque chose apparaît. Commence avec un dictionnaire vide {}. Pour chaque mot, prends son compte actuel (0 s'il est nouveau) avec get et ajoute un.\n\nmax(counts, key=counts.get) trouve la clé avec la plus grande valeur."
+     },
+     "see": {
+      "en": "{'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}\nthe 3",
+      "it": "{'il': 3, 'gatto': 1, 'e': 2, 'cane': 1, 'uccello': 1}\nil 3",
+      "fr": "{'le': 3, 'chat': 1, 'et': 2, 'chien': 1, 'oiseau': 1}\nle 3"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Count the letters of the word \"hello\" with a dictionary, and show the dictionary.",
+       "it": "Conta le lettere della parola \"hello\" con un dizionario e mostra il dizionario.",
+       "fr": "Compte les lettres du mot \"hello\" avec un dictionnaire et affiche le dictionnaire."
+      },
+      "hint": {
+       "en": "A for loop over the letters, and counts[letter] = counts.get(letter, 0) + 1.",
+       "it": "Un ciclo for sulle lettere e counts[letter] = counts.get(letter, 0) + 1.",
+       "fr": "Une boucle for sur les lettres et counts[letter] = counts.get(letter, 0) + 1."
+      },
+      "sol": {
+       "en": "counts = {}\nfor letter in \"hello\":\n    counts[letter] = counts.get(letter, 0) + 1\nprint(counts)",
+       "it": "counts = {}\nfor letter in \"hello\":\n    counts[letter] = counts.get(letter, 0) + 1\nprint(counts)",
+       "fr": "counts = {}\nfor letter in \"hello\":\n    counts[letter] = counts.get(letter, 0) + 1\nprint(counts)"
+      },
+      "start": {
+       "en": "counts = {}",
+       "it": "counts = {}",
+       "fr": "counts = {}"
+      },
+      "spec": {
+       "en": {
+        "out": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}",
+        "c": "get"
+       },
+       "it": {
+        "out": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}",
+        "c": "get"
+       },
+       "fr": {
+        "out": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}",
+        "c": "get"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}",
+       "it": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}",
+       "fr": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "person = {\n    \"name\": \"Ada\",\n    \"age\": 12,\n    \"pets\": [\"cat\", \"dog\"],\n    \"address\": {\"city\": \"Rome\", \"zip\": \"00100\"},\n}\nprint(person[\"pets\"][1])\nprint(person[\"address\"][\"city\"])\nperson[\"pets\"].append(\"fox\")\nprint(len(person[\"pets\"]))",
+      "it": "person = {\n    \"name\": \"Ada\",\n    \"age\": 12,\n    \"pets\": [\"gatto\", \"cane\"],\n    \"address\": {\"city\": \"Roma\", \"zip\": \"00100\"},\n}\nprint(person[\"pets\"][1])\nprint(person[\"address\"][\"city\"])\nperson[\"pets\"].append(\"volpe\")\nprint(len(person[\"pets\"]))",
+      "fr": "person = {\n    \"name\": \"Ada\",\n    \"age\": 12,\n    \"pets\": [\"chat\", \"chien\"],\n    \"address\": {\"city\": \"Paris\", \"zip\": \"75001\"},\n}\nprint(person[\"pets\"][1])\nprint(person[\"address\"][\"city\"])\nperson[\"pets\"].append(\"renard\")\nprint(len(person[\"pets\"]))"
+     },
+     "title": {
+      "en": "Things inside things",
+      "it": "Cose dentro cose",
+      "fr": "Des choses dans des choses"
+     },
+     "text": {
+      "en": "The values of a dictionary can be anything: texts, numbers, lists, even other dictionaries. Chain the brackets to go deeper: person[\"address\"][\"city\"].\n\nThis is how real data looks, for example what websites send to each other.",
+      "it": "I valori di un dizionario possono essere qualsiasi cosa: testi, numeri, liste, perfino altri dizionari. Concatena le parentesi per andare più a fondo: person[\"address\"][\"city\"].\n\nÈ così che sono fatti i dati veri, per esempio quelli che i siti si mandano tra loro.",
+      "fr": "Les valeurs d'un dictionnaire peuvent être n'importe quoi : des textes, des nombres, des listes, même d'autres dictionnaires. Enchaîne les crochets pour aller plus profond : person[\"address\"][\"city\"].\n\nC'est ainsi que sont faites les vraies données, par exemple celles que les sites s'envoient entre eux."
+     },
+     "see": {
+      "en": "dog\nRome\n3",
+      "it": "cane\nRoma\n3",
+      "fr": "chien\nParis\n3"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show the zip code of the address of the person.",
+       "it": "Mostra il codice postale dell'indirizzo della persona.",
+       "fr": "Affiche le code postal de l'adresse de la personne."
+      },
+      "hint": {
+       "en": "person[\"address\"][\"zip\"]",
+       "it": "person[\"address\"][\"zip\"]",
+       "fr": "person[\"address\"][\"zip\"]"
+      },
+      "sol": {
+       "en": "person = {\"name\": \"Ada\", \"address\": {\"city\": \"Rome\", \"zip\": \"00100\"}}\nprint(person[\"address\"][\"zip\"])",
+       "it": "person = {\"name\": \"Ada\", \"address\": {\"city\": \"Roma\", \"zip\": \"00100\"}}\nprint(person[\"address\"][\"zip\"])",
+       "fr": "person = {\"name\": \"Ada\", \"address\": {\"city\": \"Paris\", \"zip\": \"75001\"}}\nprint(person[\"address\"][\"zip\"])"
+      },
+      "start": {
+       "en": "person = {\"name\": \"Ada\", \"address\": {\"city\": \"Rome\", \"zip\": \"00100\"}}",
+       "it": "person = {\"name\": \"Ada\", \"address\": {\"city\": \"Roma\", \"zip\": \"00100\"}}",
+       "fr": "person = {\"name\": \"Ada\", \"address\": {\"city\": \"Paris\", \"zip\": \"75001\"}}"
+      },
+      "spec": {
+       "en": {
+        "out": "00100",
+        "c": "\\[\"zip\"\\]"
+       },
+       "it": {
+        "out": "00100",
+        "c": "\\[\"zip\"\\]"
+       },
+       "fr": {
+        "out": "75001",
+        "c": "\\[\"zip\"\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "00100",
+       "it": "00100",
+       "fr": "75001"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Sets",
+    "it": "Gli insiemi",
+    "fr": "Les ensembles"
+   },
+   "subtitle": {
+    "en": "Each thing only once",
+    "it": "Ogni cosa una volta sola",
+    "fr": "Chaque chose une seule fois"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "colours = {\"red\", \"green\", \"red\", \"blue\", \"green\"}\nprint(len(colours))\nprint(\"red\" in colours)\nprint(set([1, 2, 2, 3, 3, 3]))\nprint(sorted(set(\"hello\")))",
+      "it": "colours = {\"rosso\", \"verde\", \"rosso\", \"blu\", \"verde\"}\nprint(len(colours))\nprint(\"rosso\" in colours)\nprint(set([1, 2, 2, 3, 3, 3]))\nprint(sorted(set(\"ciao\")))",
+      "fr": "colours = {\"rouge\", \"vert\", \"rouge\", \"bleu\", \"vert\"}\nprint(len(colours))\nprint(\"rouge\" in colours)\nprint(set([1, 2, 2, 3, 3, 3]))\nprint(sorted(set(\"salut\")))"
+     },
+     "title": {
+      "en": "A bunch without repeats",
+      "it": "Un gruppo senza ripetizioni",
+      "fr": "Un groupe sans répétitions"
+     },
+     "text": {
+      "en": "A set is a bunch of different things, with no repeats and no order. Curly brackets with no colons make a set. If you put the same thing in twice, it is kept once.\n\nset(...) builds a set from a list or a text. It is the quickest way to remove repeats.",
+      "it": "Un insieme è un gruppo di cose diverse, senza ripetizioni e senza ordine. Le parentesi graffe senza i due punti fanno un insieme. Se metti la stessa cosa due volte, viene tenuta una volta sola.\n\nset(...) costruisce un insieme da una lista o da un testo. È il modo più rapido per togliere le ripetizioni.",
+      "fr": "Un ensemble est un groupe de choses différentes, sans répétition et sans ordre. Des accolades sans deux points font un ensemble. Si tu mets deux fois la même chose, elle n'est gardée qu'une fois.\n\nset(...) construit un ensemble à partir d'une liste ou d'un texte. C'est la façon la plus rapide d'enlever les répétitions."
+     },
+     "see": {
+      "en": "3\nTrue\n{1, 2, 3}\n['e', 'h', 'l', 'o']",
+      "it": "3\nTrue\n{1, 2, 3}\n['a', 'c', 'i', 'o']",
+      "fr": "3\nTrue\n{1, 2, 3}\n['a', 'l', 's', 't', 'u']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "set-literal",
+       "w": "{ a, b }",
+       "d": {
+        "en": "A set is a bunch of different things, with no repeats and no order. Curly brackets with no colons make a set. A thing put in twice is kept once.",
+        "it": "Un insieme è un gruppo di cose diverse, senza ripetizioni e senza ordine. Le parentesi graffe senza i due punti fanno un insieme. Una cosa messa due volte viene tenuta una volta sola.",
+        "fr": "Un ensemble est un groupe de choses différentes, sans répétition et sans ordre. Des accolades sans deux points font un ensemble. Une chose mise deux fois n'est gardée qu'une fois."
+       },
+       "s": {
+        "en": "colours = {\"red\", \"blue\"}",
+        "it": "colours = {\"red\", \"blue\"}",
+        "fr": "colours = {\"red\", \"blue\"}"
+       }
+      },
+      {
+       "k": "set",
+       "w": "set( )",
+       "d": {
+        "en": "set builds a set from a list or a text. It is the quickest way to remove repeats.",
+        "it": "set costruisce un insieme da una lista o da un testo. È il modo più rapido per togliere le ripetizioni.",
+        "fr": "set construit un ensemble à partir d'une liste ou d'un texte. C'est la façon la plus rapide d'enlever les répétitions."
+       },
+       "s": {
+        "en": "set([1, 2, 2, 3])",
+        "it": "set([1, 2, 2, 3])",
+        "fr": "set([1, 2, 2, 3])"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show how many different numbers are in the list [1, 1, 2, 3, 3, 3].",
+       "it": "Mostra quanti numeri diversi ci sono nella lista [1, 1, 2, 3, 3, 3].",
+       "fr": "Affiche combien de nombres différents il y a dans la liste [1, 1, 2, 3, 3, 3]."
+      },
+      "hint": {
+       "en": "len(set([1, 1, 2, 3, 3, 3]))",
+       "it": "len(set([1, 1, 2, 3, 3, 3]))",
+       "fr": "len(set([1, 1, 2, 3, 3, 3]))"
+      },
+      "sol": {
+       "en": "print(len(set([1, 1, 2, 3, 3, 3])))",
+       "it": "print(len(set([1, 1, 2, 3, 3, 3])))",
+       "fr": "print(len(set([1, 1, 2, 3, 3, 3])))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "3",
+        "c": "set"
+       },
+       "it": {
+        "out": "3",
+        "c": "set"
+       },
+       "fr": {
+        "out": "3",
+        "c": "set"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "3",
+       "it": "3",
+       "fr": "3"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "tags = {\"python\", \"code\"}\ntags.add(\"fun\")\ntags.add(\"code\")\nprint(len(tags))\ntags.remove(\"python\")\ntags.discard(\"nothing\")\nprint(sorted(tags))",
+      "it": "tags = {\"python\", \"codice\"}\ntags.add(\"divertente\")\ntags.add(\"codice\")\nprint(len(tags))\ntags.remove(\"python\")\ntags.discard(\"niente\")\nprint(sorted(tags))",
+      "fr": "tags = {\"python\", \"code\"}\ntags.add(\"amusant\")\ntags.add(\"code\")\nprint(len(tags))\ntags.remove(\"python\")\ntags.discard(\"rien\")\nprint(sorted(tags))"
+     },
+     "title": {
+      "en": "Add and remove",
+      "it": "Aggiungi e togli",
+      "fr": "Ajoute et enlève"
+     },
+     "text": {
+      "en": "add puts a thing in. Adding something that is already there changes nothing. remove takes a thing out but stops with an error if it is not there. discard does the same without the error.\n\nA set has no order, so use sorted(...) when you want to show it in a clean order.",
+      "it": "add mette una cosa dentro. Aggiungere qualcosa che c'è già non cambia niente. remove toglie una cosa ma si ferma con un errore se non c'è. discard fa lo stesso senza l'errore.\n\nUn insieme non ha ordine, quindi usa sorted(...) quando vuoi mostrarlo in un ordine pulito.",
+      "fr": "add met une chose dedans. Ajouter quelque chose qui y est déjà ne change rien. remove enlève une chose mais s'arrête avec une erreur si elle n'y est pas. discard fait pareil sans l'erreur.\n\nUn ensemble n'a pas d'ordre, donc utilise sorted(...) quand tu veux l'afficher dans un ordre propre."
+     },
+     "see": {
+      "en": "3\n['code', 'fun']",
+      "it": "3\n['codice', 'divertente']",
+      "fr": "3\n['amusant', 'code']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".add",
+       "w": ".add( )",
+       "d": {
+        "en": "add puts a thing in a set. If it is already there, nothing changes.",
+        "it": "add mette una cosa in un insieme. Se c'è già, non cambia niente.",
+        "fr": "add met une chose dans un ensemble. Si elle y est déjà, rien ne change."
+       },
+       "s": {
+        "en": "tags.add(\"fun\")",
+        "it": "tags.add(\"fun\")",
+        "fr": "tags.add(\"fun\")"
+       }
+      },
+      {
+       "k": ".discard",
+       "w": ".discard( )",
+       "d": {
+        "en": "discard takes a thing out of a set, and does nothing if it is not there. (remove does the same but stops with an error if it is missing.)",
+        "it": "discard toglie una cosa da un insieme e non fa niente se non c'è. (remove fa lo stesso ma si ferma con un errore se manca.)",
+        "fr": "discard enlève une chose d'un ensemble et ne fait rien si elle n'y est pas. (remove fait pareil mais s'arrête avec une erreur si elle manque.)"
+       },
+       "s": {
+        "en": "tags.discard(\"fun\")",
+        "it": "tags.discard(\"fun\")",
+        "fr": "tags.discard(\"fun\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Add the number 4 to the set and show the set in order.",
+       "it": "Aggiungi il numero 4 all'insieme e mostra l'insieme in ordine.",
+       "fr": "Ajoute le nombre 4 à l'ensemble et affiche l'ensemble dans l'ordre."
+      },
+      "hint": {
+       "en": "numbers.add(4) and then print(sorted(numbers)).",
+       "it": "numbers.add(4) e poi print(sorted(numbers)).",
+       "fr": "numbers.add(4) puis print(sorted(numbers))."
+      },
+      "sol": {
+       "en": "numbers = {1, 2, 3}\nnumbers.add(4)\nprint(sorted(numbers))",
+       "it": "numbers = {1, 2, 3}\nnumbers.add(4)\nprint(sorted(numbers))",
+       "fr": "numbers = {1, 2, 3}\nnumbers.add(4)\nprint(sorted(numbers))"
+      },
+      "start": {
+       "en": "numbers = {1, 2, 3}",
+       "it": "numbers = {1, 2, 3}",
+       "fr": "numbers = {1, 2, 3}"
+      },
+      "spec": {
+       "en": {
+        "out": "[1, 2, 3, 4]",
+        "c": "add"
+       },
+       "it": {
+        "out": "[1, 2, 3, 4]",
+        "c": "add"
+       },
+       "fr": {
+        "out": "[1, 2, 3, 4]",
+        "c": "add"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[1, 2, 3, 4]",
+       "it": "[1, 2, 3, 4]",
+       "fr": "[1, 2, 3, 4]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "a = {1, 2, 3, 4}\nb = {3, 4, 5}\nprint(sorted(a | b))\nprint(sorted(a & b))\nprint(sorted(a - b))\nprint(sorted(a ^ b))\nprint({1, 2} <= a)",
+      "it": "a = {1, 2, 3, 4}\nb = {3, 4, 5}\nprint(sorted(a | b))\nprint(sorted(a & b))\nprint(sorted(a - b))\nprint(sorted(a ^ b))\nprint({1, 2} <= a)",
+      "fr": "a = {1, 2, 3, 4}\nb = {3, 4, 5}\nprint(sorted(a | b))\nprint(sorted(a & b))\nprint(sorted(a - b))\nprint(sorted(a ^ b))\nprint({1, 2} <= a)"
+     },
+     "title": {
+      "en": "Combine two sets",
+      "it": "Combina due insiemi",
+      "fr": "Combine deux ensembles"
+     },
+     "text": {
+      "en": "Sets work like in maths class. | is the union: everything that is in one or in the other. & is what they have in common. - is what is in the first but not in the second. ^ is what is in only one of them.\n\n<= asks if one set is inside the other. Great to find what two groups share.",
+      "it": "Gli insiemi funzionano come in matematica. | è l'unione: tutto quello che sta nell'uno o nell'altro. & è quello che hanno in comune. - è quello che sta nel primo ma non nel secondo. ^ è quello che sta in uno solo dei due.\n\n<= chiede se un insieme sta dentro l'altro. Ottimo per trovare cosa hanno in comune due gruppi.",
+      "fr": "Les ensembles marchent comme en maths. | est la réunion : tout ce qui est dans l'un ou dans l'autre. & est ce qu'ils ont en commun. - est ce qui est dans le premier mais pas dans le deuxième. ^ est ce qui est dans un seul des deux.\n\n<= demande si un ensemble est dans l'autre. Très bien pour trouver ce que deux groupes ont en commun."
+     },
+     "see": {
+      "en": "[1, 2, 3, 4, 5]\n[3, 4]\n[1, 2]\n[1, 2, 5]\nTrue",
+      "it": "[1, 2, 3, 4, 5]\n[3, 4]\n[1, 2]\n[1, 2, 5]\nTrue",
+      "fr": "[1, 2, 3, 4, 5]\n[3, 4]\n[1, 2]\n[1, 2, 5]\nTrue"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "|",
+       "w": "|",
+       "d": {
+        "en": "| between two sets is the union: everything that is in one or in the other.",
+        "it": "| tra due insiemi è l'unione: tutto quello che sta nell'uno o nell'altro.",
+        "fr": "| entre deux ensembles est la réunion : tout ce qui est dans l'un ou dans l'autre."
+       },
+       "s": {
+        "en": "a | b",
+        "it": "a | b",
+        "fr": "a | b"
+       }
+      },
+      {
+       "k": "&",
+       "w": "&",
+       "d": {
+        "en": "& between two sets is what they have in common.",
+        "it": "& tra due insiemi è quello che hanno in comune.",
+        "fr": "& entre deux ensembles est ce qu'ils ont en commun."
+       },
+       "s": {
+        "en": "a & b",
+        "it": "a & b",
+        "fr": "a & b"
+       }
+      },
+      {
+       "k": "^",
+       "w": "^",
+       "d": {
+        "en": "^ between two sets is what is in only one of them.",
+        "it": "^ tra due insiemi è quello che sta in uno solo dei due.",
+        "fr": "^ entre deux ensembles est ce qui est dans un seul des deux."
+       },
+       "s": {
+        "en": "a ^ b",
+        "it": "a ^ b",
+        "fr": "a ^ b"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show what the sets {1, 2, 3} and {2, 3, 4} have in common, as a sorted list.",
+       "it": "Mostra cosa hanno in comune gli insiemi {1, 2, 3} e {2, 3, 4}, come lista ordinata.",
+       "fr": "Affiche ce que les ensembles {1, 2, 3} et {2, 3, 4} ont en commun, sous forme de liste triée."
+      },
+      "hint": {
+       "en": "sorted({1, 2, 3} & {2, 3, 4})",
+       "it": "sorted({1, 2, 3} & {2, 3, 4})",
+       "fr": "sorted({1, 2, 3} & {2, 3, 4})"
+      },
+      "sol": {
+       "en": "print(sorted({1, 2, 3} & {2, 3, 4}))",
+       "it": "print(sorted({1, 2, 3} & {2, 3, 4}))",
+       "fr": "print(sorted({1, 2, 3} & {2, 3, 4}))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[2, 3]",
+        "c": "&"
+       },
+       "it": {
+        "out": "[2, 3]",
+        "c": "&"
+       },
+       "fr": {
+        "out": "[2, 3]",
+        "c": "&"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[2, 3]",
+       "it": "[2, 3]",
+       "fr": "[2, 3]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "visits = [\"Rome\", \"Paris\", \"Rome\", \"Oslo\", \"Paris\", \"Rome\"]\nprint(len(visits))\nunique = set(visits)\nprint(len(unique))\nordered = []\nfor v in visits:\n    if v not in ordered:\n        ordered.append(v)\nprint(ordered)",
+      "it": "visits = [\"Roma\", \"Parigi\", \"Roma\", \"Oslo\", \"Parigi\", \"Roma\"]\nprint(len(visits))\nunique = set(visits)\nprint(len(unique))\nordered = []\nfor v in visits:\n    if v not in ordered:\n        ordered.append(v)\nprint(ordered)",
+      "fr": "visits = [\"Rome\", \"Paris\", \"Rome\", \"Oslo\", \"Paris\", \"Rome\"]\nprint(len(visits))\nunique = set(visits)\nprint(len(unique))\nordered = []\nfor v in visits:\n    if v not in ordered:\n        ordered.append(v)\nprint(ordered)"
+     },
+     "title": {
+      "en": "Remove repeats",
+      "it": "Togli le ripetizioni",
+      "fr": "Enlève les répétitions"
+     },
+     "text": {
+      "en": "To count the different things, turn the list into a set and use len. To keep the order in which things first appeared, loop and add to a new list only if the thing is not already there.\n\nnot in is the opposite of in: it is True when the thing is not inside.",
+      "it": "Per contare le cose diverse, trasforma la lista in un insieme e usa len. Per tenere l'ordine in cui le cose sono comparse la prima volta, fai un ciclo e aggiungi a una lista nuova solo se la cosa non c'è già.\n\nnot in è il contrario di in: è True quando la cosa non c'è dentro.",
+      "fr": "Pour compter les choses différentes, transforme la liste en ensemble et utilise len. Pour garder l'ordre dans lequel les choses sont apparues la première fois, fais une boucle et ajoute à une nouvelle liste seulement si la chose n'y est pas déjà.\n\nnot in est le contraire de in : il est True quand la chose n'est pas dedans."
+     },
+     "see": {
+      "en": "6\n3\n['Rome', 'Paris', 'Oslo']",
+      "it": "6\n3\n['Roma', 'Parigi', 'Oslo']",
+      "fr": "6\n3\n['Rome', 'Paris', 'Oslo']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "not in",
+       "w": "not in",
+       "d": {
+        "en": "not in is the opposite of in: it is True when the thing is not inside.",
+        "it": "not in è il contrario di in: è True quando la cosa non c'è dentro.",
+        "fr": "not in est le contraire de in : il est True quand la chose n'est pas dedans."
+       },
+       "s": {
+        "en": "if x not in items:",
+        "it": "if x not in items:",
+        "fr": "if x not in items:"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Remove the repeats from [3, 1, 3, 2, 1] keeping the first order: the result must be [3, 1, 2].",
+       "it": "Togli le ripetizioni da [3, 1, 3, 2, 1] tenendo l'ordine di arrivo: il risultato deve essere [3, 1, 2].",
+       "fr": "Enlève les répétitions de [3, 1, 3, 2, 1] en gardant l'ordre d'arrivée : le résultat doit être [3, 1, 2]."
+      },
+      "hint": {
+       "en": "Loop, and use if n not in result: then result.append(n).",
+       "it": "Fai un ciclo e usa if n not in result: poi result.append(n).",
+       "fr": "Fais une boucle et utilise if n not in result: puis result.append(n)."
+      },
+      "sol": {
+       "en": "numbers = [3, 1, 3, 2, 1]\nresult = []\nfor n in numbers:\n    if n not in result:\n        result.append(n)\nprint(result)",
+       "it": "numbers = [3, 1, 3, 2, 1]\nresult = []\nfor n in numbers:\n    if n not in result:\n        result.append(n)\nprint(result)",
+       "fr": "numbers = [3, 1, 3, 2, 1]\nresult = []\nfor n in numbers:\n    if n not in result:\n        result.append(n)\nprint(result)"
+      },
+      "start": {
+       "en": "numbers = [3, 1, 3, 2, 1]\nresult = []",
+       "it": "numbers = [3, 1, 3, 2, 1]\nresult = []",
+       "fr": "numbers = [3, 1, 3, 2, 1]\nresult = []"
+      },
+      "spec": {
+       "en": {
+        "out": "[3, 1, 2]",
+        "c": "not in"
+       },
+       "it": {
+        "out": "[3, 1, 2]",
+        "c": "not in"
+       },
+       "fr": {
+        "out": "[3, 1, 2]",
+        "c": "not in"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[3, 1, 2]",
+       "it": "[3, 1, 2]",
+       "fr": "[3, 1, 2]"
       }
      }
     }

@@ -337,7 +337,7 @@ print(pets)
 print(pets[0])
 print(pets[-1])
 print(len(pets))`],
-        n: ['list'],
+        n: ['list-literal'],
         t: ['A list of things', 'Una lista di cose', 'Une liste de choses'],
         x: [`Square brackets make a list. Its items are separated by commas. A list works like a text: the first item is at place 0, the second at place 1, and a minus place counts from the end.
 

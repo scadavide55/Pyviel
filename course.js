@@ -18539,6 +18539,1497 @@ window.PyvielCourse = {
      }
     }
    ]
+  },
+  {
+   "group": {
+    "en": "Stage 6 · Beyond the basics",
+    "it": "Fase 6 · Oltre le basi",
+    "fr": "Étape 6 · Au-delà des bases"
+   },
+   "title": {
+    "en": "Produce one at a time: generators",
+    "it": "Produci uno alla volta: i generatori",
+    "fr": "Produis un à la fois : les générateurs"
+   },
+   "subtitle": {
+    "en": "Iterators and yield",
+    "it": "Iteratori e yield",
+    "fr": "Itérateurs et yield"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, \"nothing left\"))\nprint(next(items))",
+      "it": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, \"non c'è più niente\"))\nprint(next(items))",
+      "fr": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, \"il n'y en a plus\"))\nprint(next(items))"
+     },
+     "title": {
+      "en": "What a for loop really does",
+      "it": "Cosa fa davvero un ciclo for",
+      "fr": "Ce que fait vraiment une boucle for"
+     },
+     "text": {
+      "en": "A for loop asks for items one at a time. iter(list) makes the tool that hands out the items, and next(...) takes the next one.\n\nWhen there are none left, Python raises a StopIteration, which the for loop catches for you. With a second thing, next(items, \"...\") gives that instead of raising the error. The last line shows the error.",
+      "it": "Un ciclo for chiede gli elementi uno alla volta. iter(lista) fa lo strumento che consegna gli elementi, e next(...) prende il successivo.\n\nQuando non ce ne sono più, Python alza uno StopIteration, che il ciclo for prende per te. Con un secondo valore, next(items, \"...\") dà quello invece di alzare l'errore. L'ultima riga mostra l'errore.",
+      "fr": "Une boucle for demande les éléments un par un. iter(liste) fait l'outil qui distribue les éléments, et next(...) prend le suivant.\n\nQuand il n'y en a plus, Python lève une StopIteration, qu'une boucle for attrape pour toi. Avec une deuxième chose, next(items, \"...\") donne celle-ci au lieu de lever l'erreur. La dernière ligne montre l'erreur."
+     },
+     "see": {
+      "en": "a\nb\nc\nnothing left\n⚠ Line 6: There are no more items to take.",
+      "it": "a\nb\nc\nnon c'è più niente\n⚠ Riga 6: Non ci sono più elementi da prendere.",
+      "fr": "a\nb\nc\nil n'y en a plus\n⚠ Ligne 6: Il n'y a plus d'éléments à prendre."
+     },
+     "slip": null,
+     "error": "StopIteration",
+     "news": [
+      {
+       "k": "next",
+       "w": "next( )",
+       "d": {
+        "en": "next takes the next item from something that hands items out one at a time. When there are none left, Python raises a StopIteration, which a for loop catches for you. A second thing, next(items, \"none\"), is what to give instead of the error.",
+        "it": "next prende l'elemento successivo da qualcosa che consegna gli elementi uno alla volta. Quando non ce ne sono più, Python alza uno StopIteration, che un ciclo for prende per te. Un secondo valore, next(items, \"nessuno\"), è quello da dare al posto dell'errore.",
+        "fr": "next prend l'élément suivant de quelque chose qui distribue les éléments un par un. Quand il n'y en a plus, Python lève une StopIteration, qu'une boucle for attrape pour toi. Une deuxième chose, next(items, \"aucun\"), est ce qu'on donne à la place de l'erreur."
+       },
+       "s": {
+        "en": "next(items)",
+        "it": "next(items)",
+        "fr": "next(items)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Fix the program so that it ends without an error: ask for the next item a fourth time with a second thing, \"end\", and show it.",
+       "it": "Correggi il programma così che finisca senza errori: chiedi per la quarta volta l'elemento successivo con un secondo valore, \"fine\", e mostralo.",
+       "fr": "Corrige le programme pour qu'il finisse sans erreur : demande pour la quatrième fois l'élément suivant avec une deuxième chose, \"fin\", et affiche-le."
+      },
+      "hint": {
+       "en": "print(next(items, \"end\"))",
+       "it": "print(next(items, \"fine\"))",
+       "fr": "print(next(items, \"fin\"))"
+      },
+      "sol": {
+       "en": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, \"end\"))",
+       "it": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, \"fine\"))",
+       "fr": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items, \"fin\"))"
+      },
+      "start": {
+       "en": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items))",
+       "it": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items))",
+       "fr": "items = iter([\"a\", \"b\", \"c\"])\nprint(next(items))\nprint(next(items))\nprint(next(items))\nprint(next(items))"
+      },
+      "spec": {
+       "en": {
+        "out": "a\nb\nc\nend"
+       },
+       "it": {
+        "out": "a\nb\nc\nfine"
+       },
+       "fr": {
+        "out": "a\nb\nc\nfin"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "a\nb\nc\nend",
+       "it": "a\nb\nc\nfine",
+       "fr": "a\nb\nc\nfin"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def count_up(limit):\n    n = 1\n    while n <= limit:\n        yield n\n        n += 1\n\ngen = count_up(3)\nprint(type(gen).__name__)\nprint(next(gen), next(gen))\nfor n in count_up(4):\n    print(n)\nprint(list(count_up(5)))",
+      "it": "def count_up(limit):\n    n = 1\n    while n <= limit:\n        yield n\n        n += 1\n\ngen = count_up(3)\nprint(type(gen).__name__)\nprint(next(gen), next(gen))\nfor n in count_up(4):\n    print(n)\nprint(list(count_up(5)))",
+      "fr": "def count_up(limit):\n    n = 1\n    while n <= limit:\n        yield n\n        n += 1\n\ngen = count_up(3)\nprint(type(gen).__name__)\nprint(next(gen), next(gen))\nfor n in count_up(4):\n    print(n)\nprint(list(count_up(5)))"
+     },
+     "title": {
+      "en": "A function that pauses: yield",
+      "it": "Una funzione che si ferma: yield",
+      "fr": "Une fonction qui fait une pause : yield"
+     },
+     "text": {
+      "en": "A function with yield inside is a generator. Calling it does not run it: it gives back a generator. Each next(...) runs it until the next yield, hands out that value, and pauses there, remembering where it was.\n\nA for loop, or list(...), asks again and again until the function ends.",
+      "it": "Una funzione con yield dentro è un generatore. Chiamarla non la esegue: restituisce un generatore. Ogni next(...) la esegue fino al prossimo yield, consegna quel valore e si ferma lì, ricordando dov'era.\n\nUn ciclo for, o list(...), chiede ancora e ancora finché la funzione finisce.",
+      "fr": "Une fonction avec yield dedans est un générateur. L'appeler ne la lance pas : elle rend un générateur. Chaque next(...) la lance jusqu'au prochain yield, distribue cette valeur et fait une pause là, en se souvenant d'où elle en était.\n\nUne boucle for, ou list(...), redemande encore et encore jusqu'à ce que la fonction se termine."
+     },
+     "see": {
+      "en": "generator\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "it": "generator\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]",
+      "fr": "generator\n1 2\n1\n2\n3\n4\n[1, 2, 3, 4, 5]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "yield",
+       "w": "yield",
+       "d": {
+        "en": "A function with yield inside is a generator. Calling it does not run it: it gives back a generator. Each next(...) runs it until the next yield, hands out that value, and pauses there, remembering where it was.",
+        "it": "Una funzione con yield dentro è un generatore. Chiamarla non la esegue: restituisce un generatore. Ogni next(...) la esegue fino al prossimo yield, consegna quel valore e si ferma lì, ricordando dov'era.",
+        "fr": "Une fonction avec yield dedans est un générateur. L'appeler ne la lance pas : elle rend un générateur. Chaque next(...) la lance jusqu'au prochain yield, distribue cette valeur et fait une pause là, en se souvenant d'où elle en était."
+       },
+       "s": {
+        "en": "def count():\n    yield 1\n    yield 2",
+        "it": "def count():\n    yield 1\n    yield 2",
+        "fr": "def count():\n    yield 1\n    yield 2"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a generator called evens(limit) that yields the even numbers from 2 up to the limit. Show list(evens(10)).",
+       "it": "Crea un generatore che si chiama evens(limit) che consegna i numeri pari da 2 fino al limite. Mostra list(evens(10)).",
+       "fr": "Crée un générateur qui s'appelle evens(limit) qui distribue les nombres pairs de 2 jusqu'à la limite. Affiche list(evens(10))."
+      },
+      "hint": {
+       "en": "n = 2, then while n <= limit: yield n and n += 2.",
+       "it": "n = 2, poi while n <= limit: yield n e n += 2.",
+       "fr": "n = 2, puis while n <= limit: yield n et n += 2."
+      },
+      "sol": {
+       "en": "def evens(limit):\n    n = 2\n    while n <= limit:\n        yield n\n        n += 2\n\nprint(list(evens(10)))",
+       "it": "def evens(limit):\n    n = 2\n    while n <= limit:\n        yield n\n        n += 2\n\nprint(list(evens(10)))",
+       "fr": "def evens(limit):\n    n = 2\n    while n <= limit:\n        yield n\n        n += 2\n\nprint(list(evens(10)))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[2, 4, 6, 8, 10]",
+        "c": "yield"
+       },
+       "it": {
+        "out": "[2, 4, 6, 8, 10]",
+        "c": "yield"
+       },
+       "fr": {
+        "out": "[2, 4, 6, 8, 10]",
+        "c": "yield"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[2, 4, 6, 8, 10]",
+       "it": "[2, 4, 6, 8, 10]",
+       "fr": "[2, 4, 6, 8, 10]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def naturals():\n    n = 0\n    while True:\n        yield n\n        n += 1\n\ndef first(count, source):\n    for i in range(count):\n        yield next(source)\n\nprint(list(first(5, naturals())))\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nprint(list(first(10, fib())))",
+      "it": "def naturals():\n    n = 0\n    while True:\n        yield n\n        n += 1\n\ndef first(count, source):\n    for i in range(count):\n        yield next(source)\n\nprint(list(first(5, naturals())))\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nprint(list(first(10, fib())))",
+      "fr": "def naturals():\n    n = 0\n    while True:\n        yield n\n        n += 1\n\ndef first(count, source):\n    for i in range(count):\n        yield next(source)\n\nprint(list(first(5, naturals())))\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nprint(list(first(10, fib())))"
+     },
+     "title": {
+      "en": "A list that never ends",
+      "it": "Una lista che non finisce mai",
+      "fr": "Une liste qui ne finit jamais"
+     },
+     "text": {
+      "en": "A generator can be infinite, because it only makes a value when asked. naturals gives 0, 1, 2, 3... forever, and first takes just as many as you want.\n\nThe same idea gives the Fibonacci numbers, fast and in a few lines. A list of all the Fibonacci numbers could never exist, but a generator is happy to make them one by one.",
+      "it": "Un generatore può essere infinito, perché fa un valore solo quando glielo chiedi. naturals dà 0, 1, 2, 3... per sempre, e first ne prende quanti ne vuoi.\n\nLa stessa idea dà i numeri di Fibonacci, veloci e in poche righe. Una lista di tutti i numeri di Fibonacci non potrebbe mai esistere, ma un generatore li fa volentieri uno alla volta.",
+      "fr": "Un générateur peut être infini, parce qu'il ne fait une valeur que quand on la lui demande. naturals donne 0, 1, 2, 3... pour toujours, et first en prend autant que tu veux.\n\nLa même idée donne les nombres de Fibonacci, vite et en quelques lignes. Une liste de tous les nombres de Fibonacci ne pourrait jamais exister, mais un générateur les fait volontiers un par un."
+     },
+     "see": {
+      "en": "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+      "it": "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+      "fr": "[0, 1, 2, 3, 4]\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Show the first 8 numbers of the Fibonacci generator, using first.",
+       "it": "Mostra i primi 8 numeri del generatore di Fibonacci, usando first.",
+       "fr": "Affiche les 8 premiers nombres du générateur de Fibonacci, en utilisant first."
+      },
+      "hint": {
+       "en": "print(list(first(8, fib())))",
+       "it": "print(list(first(8, fib())))",
+       "fr": "print(list(first(8, fib())))"
+      },
+      "sol": {
+       "en": "def first(count, source):\n    for i in range(count):\n        yield next(source)\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nprint(list(first(8, fib())))",
+       "it": "def first(count, source):\n    for i in range(count):\n        yield next(source)\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nprint(list(first(8, fib())))",
+       "fr": "def first(count, source):\n    for i in range(count):\n        yield next(source)\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nprint(list(first(8, fib())))"
+      },
+      "start": {
+       "en": "def first(count, source):\n    for i in range(count):\n        yield next(source)\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b",
+       "it": "def first(count, source):\n    for i in range(count):\n        yield next(source)\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b",
+       "fr": "def first(count, source):\n    for i in range(count):\n        yield next(source)\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b"
+      },
+      "spec": {
+       "en": {
+        "out": "[0, 1, 1, 2, 3, 5, 8, 13]",
+        "c": "first\\(8"
+       },
+       "it": {
+        "out": "[0, 1, 1, 2, 3, 5, 8, 13]",
+        "c": "first\\(8"
+       },
+       "fr": {
+        "out": "[0, 1, 1, 2, 3, 5, 8, 13]",
+        "c": "first\\(8"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[0, 1, 1, 2, 3, 5, 8, 13]",
+       "it": "[0, 1, 1, 2, 3, 5, 8, 13]",
+       "fr": "[0, 1, 1, 2, 3, 5, 8, 13]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "squares = (n * n for n in range(1, 6))\nprint(type(squares).__name__)\nprint(sum(squares))\nprint(sum(n * n for n in range(1, 1001)))\nprint(max(len(w) for w in [\"a\", \"abc\", \"ab\"]))",
+      "it": "squares = (n * n for n in range(1, 6))\nprint(type(squares).__name__)\nprint(sum(squares))\nprint(sum(n * n for n in range(1, 1001)))\nprint(max(len(w) for w in [\"a\", \"abc\", \"ab\"]))",
+      "fr": "squares = (n * n for n in range(1, 6))\nprint(type(squares).__name__)\nprint(sum(squares))\nprint(sum(n * n for n in range(1, 1001)))\nprint(max(len(w) for w in [\"a\", \"abc\", \"ab\"]))"
+     },
+     "title": {
+      "en": "A generator in one line",
+      "it": "Un generatore in una riga",
+      "fr": "Un générateur en une ligne"
+     },
+     "text": {
+      "en": "Round brackets instead of square ones make a generator expression: like a list comprehension, but it hands out the values one at a time, without building the whole list.\n\nIt is the best choice when you only want to add the values up, or to look at them once. Inside a call like sum(...), the round brackets of the call are enough.",
+      "it": "Le parentesi tonde invece di quelle quadre fanno un'espressione generatrice: come una comprensione di lista, ma consegna i valori uno alla volta, senza costruire tutta la lista.\n\nÈ la scelta migliore quando vuoi solo sommare i valori, o guardarli una volta. Dentro una chiamata come sum(...) bastano le parentesi tonde della chiamata.",
+      "fr": "Des parenthèses rondes au lieu de crochets font une expression génératrice : comme une compréhension de liste, mais elle distribue les valeurs une par une, sans construire toute la liste.\n\nC'est le meilleur choix quand tu veux seulement additionner les valeurs, ou les regarder une fois. Dans un appel comme sum(...), les parenthèses rondes de l'appel suffisent."
+     },
+     "see": {
+      "en": "generator\n55\n333833500\n3",
+      "it": "generator\n55\n333833500\n3",
+      "fr": "generator\n55\n333833500\n3"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "genexp",
+       "w": "( x for x in y )",
+       "d": {
+        "en": "Round brackets instead of square ones make a generator expression: like a list comprehension, but it hands out the values one at a time, without building the whole list. It is the best choice when you only want to add them up or look at them once.",
+        "it": "Le parentesi tonde invece di quelle quadre fanno un'espressione generatrice: come una comprensione di lista, ma consegna i valori uno alla volta, senza costruire tutta la lista. È la scelta migliore quando vuoi solo sommarli o guardarli una volta.",
+        "fr": "Des parenthèses rondes au lieu de crochets font une expression génératrice : comme une compréhension de liste, mais elle distribue les valeurs une par une, sans construire toute la liste. C'est le meilleur choix quand tu veux seulement les additionner ou les regarder une fois."
+       },
+       "s": {
+        "en": "(n * n for n in range(5))",
+        "it": "(n * n for n in range(5))",
+        "fr": "(n * n for n in range(5))"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "With a generator expression inside sum, add up the cubes of 1 to 4 (1 + 8 + 27 + 64 = 100).",
+       "it": "Con un'espressione generatrice dentro sum, somma i cubi da 1 a 4 (1 + 8 + 27 + 64 = 100).",
+       "fr": "Avec une expression génératrice dans sum, additionne les cubes de 1 à 4 (1 + 8 + 27 + 64 = 100)."
+      },
+      "hint": {
+       "en": "sum(n ** 3 for n in range(1, 5))",
+       "it": "sum(n ** 3 for n in range(1, 5))",
+       "fr": "sum(n ** 3 for n in range(1, 5))"
+      },
+      "sol": {
+       "en": "print(sum(n ** 3 for n in range(1, 5)))",
+       "it": "print(sum(n ** 3 for n in range(1, 5)))",
+       "fr": "print(sum(n ** 3 for n in range(1, 5)))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "100",
+        "c": "sum\\(.* for "
+       },
+       "it": {
+        "out": "100",
+        "c": "sum\\(.* for "
+       },
+       "fr": {
+        "out": "100",
+        "c": "sum\\(.* for "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "100",
+       "it": "100",
+       "fr": "100"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nfor n in Countdown(3):\n    print(n)\nprint(list(Countdown(5)))",
+      "it": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nfor n in Countdown(3):\n    print(n)\nprint(list(Countdown(5)))",
+      "fr": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nfor n in Countdown(3):\n    print(n)\nprint(list(Countdown(5)))"
+     },
+     "title": {
+      "en": "Make your own iterator",
+      "it": "Fai un tuo iteratore",
+      "fr": "Fais ton propre itérateur"
+     },
+     "text": {
+      "en": "An iterator is any object with __iter__ and __next__. __next__ gives the next value, or raises StopIteration at the end. This is what a for loop needs to work.\n\nA generator is usually shorter, so this is more for understanding what happens behind the scenes. Now you know how for, list and sum really get their values.",
+      "it": "Un iteratore è un oggetto qualsiasi con __iter__ e __next__. __next__ dà il valore successivo, o alza StopIteration alla fine. È quello che serve a un ciclo for per funzionare.\n\nUn generatore di solito è più corto, quindi questo serve più per capire cosa succede dietro le quinte. Ora sai come for, list e sum ottengono davvero i loro valori.",
+      "fr": "Un itérateur est un objet quelconque avec __iter__ et __next__. __next__ donne la valeur suivante, ou lève StopIteration à la fin. C'est ce dont une boucle for a besoin pour marcher.\n\nUn générateur est en général plus court, donc ceci sert plutôt à comprendre ce qui se passe en coulisses. Maintenant tu sais comment for, list et sum obtiennent vraiment leurs valeurs."
+     },
+     "see": {
+      "en": "3\n2\n1\n[5, 4, 3, 2, 1]",
+      "it": "3\n2\n1\n[5, 4, 3, 2, 1]",
+      "fr": "3\n2\n1\n[5, 4, 3, 2, 1]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "iterator-class",
+       "w": "__iter__  __next__",
+       "d": {
+        "en": "An iterator is any object with __iter__ (which gives itself back) and __next__ (which gives the next value, or raises StopIteration at the end). This is what a for loop needs to work.",
+        "it": "Un iteratore è un oggetto qualsiasi con __iter__ (che restituisce se stesso) e __next__ (che dà il valore successivo, o alza StopIteration alla fine). È quello che serve a un ciclo for per funzionare.",
+        "fr": "Un itérateur est un objet quelconque avec __iter__ (qui se rend lui-même) et __next__ (qui donne la valeur suivante, ou lève StopIteration à la fin). C'est ce dont une boucle for a besoin pour marcher."
+       },
+       "s": {
+        "en": "def __next__(self):",
+        "it": "def __next__(self):",
+        "fr": "def __next__(self):"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use the class Countdown to show the list of a countdown from 4: [4, 3, 2, 1].",
+       "it": "Usa la classe Countdown per mostrare la lista di un conto alla rovescia da 4: [4, 3, 2, 1].",
+       "fr": "Utilise la classe Countdown pour afficher la liste d'un compte à rebours à partir de 4 : [4, 3, 2, 1]."
+      },
+      "hint": {
+       "en": "print(list(Countdown(4)))",
+       "it": "print(list(Countdown(4)))",
+       "fr": "print(list(Countdown(4)))"
+      },
+      "sol": {
+       "en": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nprint(list(Countdown(4)))",
+       "it": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nprint(list(Countdown(4)))",
+       "fr": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nprint(list(Countdown(4)))"
+      },
+      "start": {
+       "en": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value",
+       "it": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value",
+       "fr": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value"
+      },
+      "spec": {
+       "en": {
+        "out": "[4, 3, 2, 1]",
+        "c": "Countdown\\(4\\)"
+       },
+       "it": {
+        "out": "[4, 3, 2, 1]",
+        "c": "Countdown\\(4\\)"
+       },
+       "fr": {
+        "out": "[4, 3, 2, 1]",
+        "c": "Countdown\\(4\\)"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[4, 3, 2, 1]",
+       "it": "[4, 3, 2, 1]",
+       "fr": "[4, 3, 2, 1]"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Add a power to a function: decorators",
+    "it": "Dai un potere a una funzione: i decoratori",
+    "fr": "Donne un pouvoir à une fonction : les décorateurs"
+   },
+   "subtitle": {
+    "en": "Functions that wrap functions",
+    "it": "Funzioni che avvolgono funzioni",
+    "fr": "Des fonctions qui enveloppent des fonctions"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\ndef greet(name):\n    return \"hello \" + name\n\nloud = shout(greet)\nprint(loud(\"ada\"))\nprint(greet(\"ada\"))",
+      "it": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\ndef greet(name):\n    return \"ciao \" + name\n\nloud = shout(greet)\nprint(loud(\"ada\"))\nprint(greet(\"ada\"))",
+      "fr": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\ndef greet(name):\n    return \"bonjour \" + name\n\nloud = shout(greet)\nprint(loud(\"ada\"))\nprint(greet(\"ada\"))"
+     },
+     "title": {
+      "en": "A function that takes a function",
+      "it": "Una funzione che prende una funzione",
+      "fr": "Une fonction qui prend une fonction"
+     },
+     "text": {
+      "en": "Remember that a function is a value: you can pass it to another function. shout takes a function, builds a new function called wrapper that calls the old one and changes the result, and gives the new one back.\n\nloud is the new function: it shouts. greet is still the same as before. This is the idea behind decorators.",
+      "it": "Ricorda che una funzione è un valore: la puoi passare a un'altra funzione. shout prende una funzione, costruisce una funzione nuova che si chiama wrapper che chiama la vecchia e cambia il risultato, e restituisce la nuova.\n\nloud è la funzione nuova: grida. greet è ancora uguale a prima. Questa è l'idea dei decoratori.",
+      "fr": "Souviens-toi qu'une fonction est une valeur : tu peux la donner à une autre fonction. shout prend une fonction, construit une nouvelle fonction appelée wrapper qui appelle l'ancienne et change le résultat, et rend la nouvelle.\n\nloud est la nouvelle fonction : elle crie. greet est toujours pareille qu'avant. C'est l'idée derrière les décorateurs."
+     },
+     "see": {
+      "en": "HELLO ADA!\nhello ada",
+      "it": "CIAO ADA!\nciao ada",
+      "fr": "BONJOUR ADA!\nbonjour ada"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Make a function whisper that does the opposite of shout: the wrapper must give the result in small letters (lower). Show whisper(greet)(\"ADA\").",
+       "it": "Crea una funzione whisper che fa il contrario di shout: il wrapper deve dare il risultato in minuscolo (lower). Mostra whisper(greet)(\"ADA\").",
+       "fr": "Crée une fonction whisper qui fait le contraire de shout : le wrapper doit donner le résultat en minuscules (lower). Affiche whisper(greet)(\"ADA\")."
+      },
+      "hint": {
+       "en": "The same as shout, with .lower() instead of .upper() + \"!\".",
+       "it": "Come shout, con .lower() invece di .upper() + \"!\".",
+       "fr": "Comme shout, avec .lower() au lieu de .upper() + \"!\"."
+      },
+      "sol": {
+       "en": "def greet(name):\n    return \"HELLO \" + name\n\ndef whisper(function):\n    def wrapper(name):\n        return function(name).lower()\n    return wrapper\n\nprint(whisper(greet)(\"ADA\"))",
+       "it": "def greet(name):\n    return \"HELLO \" + name\n\ndef whisper(function):\n    def wrapper(name):\n        return function(name).lower()\n    return wrapper\n\nprint(whisper(greet)(\"ADA\"))",
+       "fr": "def greet(name):\n    return \"HELLO \" + name\n\ndef whisper(function):\n    def wrapper(name):\n        return function(name).lower()\n    return wrapper\n\nprint(whisper(greet)(\"ADA\"))"
+      },
+      "start": {
+       "en": "def greet(name):\n    return \"HELLO \" + name",
+       "it": "def greet(name):\n    return \"HELLO \" + name",
+       "fr": "def greet(name):\n    return \"HELLO \" + name"
+      },
+      "spec": {
+       "en": {
+        "out": "hello ada",
+        "c": "lower"
+       },
+       "it": {
+        "out": "hello ada",
+        "c": "lower"
+       },
+       "fr": {
+        "out": "hello ada",
+        "c": "lower"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "hello ada",
+       "it": "hello ada",
+       "fr": "hello ada"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\n@shout\ndef greet(name):\n    return \"hello \" + name\n\nprint(greet(\"ada\"))\nprint(greet(\"max\"))",
+      "it": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\n@shout\ndef greet(name):\n    return \"ciao \" + name\n\nprint(greet(\"ada\"))\nprint(greet(\"max\"))",
+      "fr": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\n@shout\ndef greet(name):\n    return \"bonjour \" + name\n\nprint(greet(\"ada\"))\nprint(greet(\"max\"))"
+     },
+     "title": {
+      "en": "The @ shortcut",
+      "it": "La scorciatoia @",
+      "fr": "Le raccourci @"
+     },
+     "text": {
+      "en": "Writing @shout right above def greet is exactly the same as writing greet = shout(greet) after it. It is called a decorator: you already met @property and @classmethod, and now you know how they work.\n\nFrom now on, every call to greet gets the new power.",
+      "it": "Scrivere @shout subito sopra a def greet è esattamente come scrivere greet = shout(greet) dopo. Si chiama decoratore: hai già conosciuto @property e @classmethod, e ora sai come funzionano.\n\nD'ora in poi ogni chiamata a greet ha il nuovo potere.",
+      "fr": "Écrire @shout juste au-dessus de def greet est exactement pareil qu'écrire greet = shout(greet) après. Cela s'appelle un décorateur : tu as déjà rencontré @property et @classmethod, et maintenant tu sais comment ils marchent.\n\nÀ partir de maintenant, chaque appel à greet a le nouveau pouvoir."
+     },
+     "see": {
+      "en": "HELLO ADA!\nHELLO MAX!",
+      "it": "CIAO ADA!\nCIAO MAX!",
+      "fr": "BONJOUR ADA!\nBONJOUR MAX!"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Use @shout on a new function called bye(name) that returns \"bye \" + name. Show bye(\"ada\") (BYE ADA!).",
+       "it": "Usa @shout su una funzione nuova che si chiama bye(name) che restituisce \"bye \" + name. Mostra bye(\"ada\") (BYE ADA!).",
+       "fr": "Utilise @shout sur une nouvelle fonction qui s'appelle bye(name) qui rend \"bye \" + name. Affiche bye(\"ada\") (BYE ADA!)."
+      },
+      "hint": {
+       "en": "@shout on the line above def bye(name):",
+       "it": "@shout sulla riga sopra def bye(name):",
+       "fr": "@shout sur la ligne au-dessus de def bye(name):"
+      },
+      "sol": {
+       "en": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\n@shout\ndef bye(name):\n    return \"bye \" + name\n\nprint(bye(\"ada\"))",
+       "it": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\n@shout\ndef bye(name):\n    return \"bye \" + name\n\nprint(bye(\"ada\"))",
+       "fr": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper\n\n@shout\ndef bye(name):\n    return \"bye \" + name\n\nprint(bye(\"ada\"))"
+      },
+      "start": {
+       "en": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper",
+       "it": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper",
+       "fr": "def shout(function):\n    def wrapper(name):\n        return function(name).upper() + \"!\"\n    return wrapper"
+      },
+      "spec": {
+       "en": {
+        "out": "BYE ADA!",
+        "c": "@shout"
+       },
+       "it": {
+        "out": "BYE ADA!",
+        "c": "@shout"
+       },
+       "fr": {
+        "out": "BYE ADA!",
+        "c": "@shout"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "BYE ADA!",
+       "it": "BYE ADA!",
+       "fr": "BYE ADA!"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef add(a, b=0):\n    \"\"\"Add two numbers.\"\"\"\n    return a + b\n\nadd(2, b=3)\nprint(add.__name__)",
+      "it": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef add(a, b=0):\n    \"\"\"Add two numbers.\"\"\"\n    return a + b\n\nadd(2, b=3)\nprint(add.__name__)",
+      "fr": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef add(a, b=0):\n    \"\"\"Add two numbers.\"\"\"\n    return a + b\n\nadd(2, b=3)\nprint(add.__name__)"
+     },
+     "title": {
+      "en": "A decorator for any function",
+      "it": "Un decoratore per qualsiasi funzione",
+      "fr": "Un décorateur pour n'importe quelle fonction"
+     },
+     "text": {
+      "en": "*args and **kwargs let the wrapper accept any values and pass them on, so the decorator works for any function.\n\nfunctools.wraps, used as a decorator on the wrapper, keeps the name and the description of the original function. Without it, add would show up as \"wrapper\".",
+      "it": "*args e **kwargs lasciano che il wrapper accetti qualsiasi valore e lo passi avanti, così il decoratore funziona per qualsiasi funzione.\n\nfunctools.wraps, usato come decoratore sul wrapper, tiene il nome e la descrizione della funzione originale. Senza, add comparirebbe come \"wrapper\".",
+      "fr": "*args et **kwargs laissent le wrapper accepter n'importe quelles valeurs et les passer, donc le décorateur marche pour n'importe quelle fonction.\n\nfunctools.wraps, utilisé comme décorateur sur le wrapper, garde le nom et la description de la fonction d'origine. Sans lui, add apparaîtrait comme \"wrapper\"."
+     },
+     "see": {
+      "en": "calling add with (2,) {'b': 3}\nadd returned 5\nadd",
+      "it": "calling add with (2,) {'b': 3}\nadd returned 5\nadd",
+      "fr": "calling add with (2,) {'b': 3}\nadd returned 5\nadd"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "module:functools",
+       "w": "functools",
+       "d": {
+        "en": "functools is a tool box with helpers for functions: remembering answers, wrapping, reducing a list to one value.",
+        "it": "functools è una cassetta di attrezzi con aiutanti per le funzioni: ricordare le risposte, avvolgere, ridurre una lista a un solo valore.",
+        "fr": "functools est une boîte à outils avec des assistants pour les fonctions : mémoriser des réponses, envelopper, réduire une liste à une seule valeur."
+       },
+       "s": {
+        "en": "import functools",
+        "it": "import functools",
+        "fr": "import functools"
+       }
+      },
+      {
+       "k": "functools.wraps",
+       "w": "@functools.wraps( )",
+       "d": {
+        "en": "functools.wraps, used as a decorator on the wrapper, keeps the name and the description of the original function, which would be lost otherwise.",
+        "it": "functools.wraps, usato come decoratore sul wrapper, tiene il nome e la descrizione della funzione originale, che altrimenti andrebbero persi.",
+        "fr": "functools.wraps, utilisé comme décorateur sur le wrapper, garde le nom et la description de la fonction d'origine, qui seraient perdus sinon."
+       },
+       "s": {
+        "en": "@functools.wraps(function)",
+        "it": "@functools.wraps(function)",
+        "fr": "@functools.wraps(function)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use @log_calls on a function called double(n) that returns n * 2, and show double(4). The log lines come first, then 8.",
+       "it": "Usa @log_calls su una funzione che si chiama double(n) che restituisce n * 2 e mostra double(4). Prima le righe del log, poi 8.",
+       "fr": "Utilise @log_calls sur une fonction qui s'appelle double(n) qui rend n * 2 et affiche double(4). D'abord les lignes du journal, puis 8."
+      },
+      "hint": {
+       "en": "@log_calls above def double(n):, then print(double(4)).",
+       "it": "@log_calls sopra def double(n):, poi print(double(4)).",
+       "fr": "@log_calls au-dessus de def double(n):, puis print(double(4))."
+      },
+      "sol": {
+       "en": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef double(n):\n    return n * 2\n\nprint(double(4))",
+       "it": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef double(n):\n    return n * 2\n\nprint(double(4))",
+       "fr": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper\n\n@log_calls\ndef double(n):\n    return n * 2\n\nprint(double(4))"
+      },
+      "start": {
+       "en": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper",
+       "it": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper",
+       "fr": "import functools\n\ndef log_calls(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        print(f\"calling {function.__name__} with {args} {kwargs}\")\n        result = function(*args, **kwargs)\n        print(f\"{function.__name__} returned {result}\")\n        return result\n    return wrapper"
+      },
+      "spec": {
+       "en": {
+        "m": "double returned 8\\n8$",
+        "c": "@log_calls"
+       },
+       "it": {
+        "m": "double returned 8\\n8$",
+        "c": "@log_calls"
+       },
+       "fr": {
+        "m": "double returned 8\\n8$",
+        "c": "@log_calls"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print(\"hello\")\n\nhello()",
+      "it": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print(\"hello\")\n\nhello()",
+      "fr": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print(\"hello\")\n\nhello()"
+     },
+     "title": {
+      "en": "A decorator with an option",
+      "it": "Un decoratore con un'opzione",
+      "fr": "Un décorateur avec une option"
+     },
+     "text": {
+      "en": "To give a decorator an option, like @repeat(3), you need one more layer: repeat(3) gives back the real decorator, which then wraps the function.\n\nThree nested functions look scary at first. Read them from the outside in: repeat takes the option, decorator takes the function, wrapper does the work.",
+      "it": "Per dare un'opzione a un decoratore, come @repeat(3), serve un livello in più: repeat(3) restituisce il vero decoratore, che poi avvolge la funzione.\n\nTre funzioni annidate fanno paura all'inizio. Leggile da fuori verso dentro: repeat prende l'opzione, decorator prende la funzione, wrapper fa il lavoro.",
+      "fr": "Pour donner une option à un décorateur, comme @repeat(3), il faut une couche de plus : repeat(3) rend le vrai décorateur, qui enveloppe ensuite la fonction.\n\nTrois fonctions imbriquées font peur au début. Lis-les de l'extérieur vers l'intérieur : repeat prend l'option, decorator prend la fonction, wrapper fait le travail."
+     },
+     "see": {
+      "en": "hello\nhello\nhello",
+      "it": "hello\nhello\nhello",
+      "fr": "hello\nhello\nhello"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Change the option so that hello is repeated 2 times.",
+       "it": "Cambia l'opzione così che hello venga ripetuta 2 volte.",
+       "fr": "Change l'option pour que hello soit répétée 2 fois."
+      },
+      "hint": {
+       "en": "@repeat(2)",
+       "it": "@repeat(2)",
+       "fr": "@repeat(2)"
+      },
+      "sol": {
+       "en": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(2)\ndef hello():\n    print(\"hello\")\n\nhello()",
+       "it": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(2)\ndef hello():\n    print(\"hello\")\n\nhello()",
+       "fr": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(2)\ndef hello():\n    print(\"hello\")\n\nhello()"
+      },
+      "start": {
+       "en": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print(\"hello\")\n\nhello()",
+       "it": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print(\"hello\")\n\nhello()",
+       "fr": "import functools\n\ndef repeat(times):\n    def decorator(function):\n        @functools.wraps(function)\n        def wrapper(*args, **kwargs):\n            for i in range(times):\n                result = function(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef hello():\n    print(\"hello\")\n\nhello()"
+      },
+      "spec": {
+       "en": {
+        "out": "hello\nhello"
+       },
+       "it": {
+        "out": "hello\nhello"
+       },
+       "fr": {
+        "out": "hello\nhello"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "hello\nhello",
+       "it": "hello\nhello",
+       "fr": "hello\nhello"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import time\nimport functools\n\ndef timed(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = function(*args, **kwargs)\n        wrapper.last_seconds = time.perf_counter() - start\n        return result\n    return wrapper\n\n@timed\ndef slow_sum(n):\n    return sum(range(n))\n\nprint(slow_sum(1000000))\nprint(slow_sum.last_seconds < 5)\n\ndef remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef square(n):\n    print(\"working out\", n)\n    return n * n\n\nprint(square(4), square(4))",
+      "it": "import time\nimport functools\n\ndef timed(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = function(*args, **kwargs)\n        wrapper.last_seconds = time.perf_counter() - start\n        return result\n    return wrapper\n\n@timed\ndef slow_sum(n):\n    return sum(range(n))\n\nprint(slow_sum(1000000))\nprint(slow_sum.last_seconds < 5)\n\ndef remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef square(n):\n    print(\"calcolo\", n)\n    return n * n\n\nprint(square(4), square(4))",
+      "fr": "import time\nimport functools\n\ndef timed(function):\n    @functools.wraps(function)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = function(*args, **kwargs)\n        wrapper.last_seconds = time.perf_counter() - start\n        return result\n    return wrapper\n\n@timed\ndef slow_sum(n):\n    return sum(range(n))\n\nprint(slow_sum(1000000))\nprint(slow_sum.last_seconds < 5)\n\ndef remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef square(n):\n    print(\"je calcule\", n)\n    return n * n\n\nprint(square(4), square(4))"
+     },
+     "title": {
+      "en": "Useful decorators",
+      "it": "Decoratori utili",
+      "fr": "Des décorateurs utiles"
+     },
+     "text": {
+      "en": "Here are two real ones. timed measures how long a function takes, with the very exact clock time.perf_counter. remember keeps the answers of a function in a dictionary, so square(4) is only worked out the first time.\n\nDecorators add a side power to a function, without touching the function itself. Logging, timing, remembering and checking are the classic ones.",
+      "it": "Ecco due decoratori veri. timed misura quanto ci mette una funzione, con l'orologio molto preciso time.perf_counter. remember tiene le risposte di una funzione in un dizionario, così square(4) viene calcolata solo la prima volta.\n\nI decoratori aggiungono un potere in più a una funzione, senza toccare la funzione stessa. Scrivere un registro, misurare il tempo, ricordare e controllare sono i classici.",
+      "fr": "Voici deux vrais décorateurs. timed mesure combien de temps prend une fonction, avec l'horloge très précise time.perf_counter. remember garde les réponses d'une fonction dans un dictionnaire, donc square(4) n'est calculée que la première fois.\n\nLes décorateurs ajoutent un pouvoir en plus à une fonction, sans toucher à la fonction elle-même. Écrire un journal, mesurer le temps, mémoriser et vérifier sont les classiques."
+     },
+     "see": {
+      "en": "499999500000\nTrue\nworking out 4\n16 16",
+      "it": "499999500000\nTrue\ncalcolo 4\n16 16",
+      "fr": "499999500000\nTrue\nje calcule 4\n16 16"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "time.perf_counter",
+       "w": "time.perf_counter( )",
+       "d": {
+        "en": "time.perf_counter is a very exact clock, made to measure how long short tasks take.",
+        "it": "time.perf_counter è un orologio molto preciso, fatto per misurare quanto durano i lavori brevi.",
+        "fr": "time.perf_counter est une horloge très précise, faite pour mesurer combien de temps durent les tâches courtes."
+       },
+       "s": {
+        "en": "start = time.perf_counter()",
+        "it": "start = time.perf_counter()",
+        "fr": "start = time.perf_counter()"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use @remember on a function called triple(n) that shows \"working\" and returns n * 3. Call triple(5) twice: \"working\" must show only once.",
+       "it": "Usa @remember su una funzione che si chiama triple(n) che mostra \"working\" e restituisce n * 3. Chiama triple(5) due volte: \"working\" deve comparire una sola volta.",
+       "fr": "Utilise @remember sur une fonction qui s'appelle triple(n) qui affiche \"working\" et rend n * 3. Appelle triple(5) deux fois : \"working\" ne doit apparaître qu'une fois."
+      },
+      "hint": {
+       "en": "@remember above def triple(n): with print(\"working\") inside.",
+       "it": "@remember sopra def triple(n): con print(\"working\") dentro.",
+       "fr": "@remember au-dessus de def triple(n): avec print(\"working\") dedans."
+      },
+      "sol": {
+       "en": "def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef triple(n):\n    print(\"working\")\n    return n * 3\n\ntriple(5)\ntriple(5)",
+       "it": "def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef triple(n):\n    print(\"working\")\n    return n * 3\n\ntriple(5)\ntriple(5)",
+       "fr": "def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper\n\n@remember\ndef triple(n):\n    print(\"working\")\n    return n * 3\n\ntriple(5)\ntriple(5)"
+      },
+      "start": {
+       "en": "def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper",
+       "it": "def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper",
+       "fr": "def remember(function):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = function(n)\n        return cache[n]\n    return wrapper"
+      },
+      "spec": {
+       "en": {
+        "out": "working",
+        "c": "@remember"
+       },
+       "it": {
+        "out": "working",
+        "c": "@remember"
+       },
+       "fr": {
+        "out": "working",
+        "c": "@remember"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "working",
+       "it": "working",
+       "fr": "working"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Open and always close: with",
+    "it": "Apri e chiudi sempre: with",
+    "fr": "Ouvre et ferme toujours : with"
+   },
+   "subtitle": {
+    "en": "Context managers",
+    "it": "I gestori di contesto",
+    "fr": "Les gestionnaires de contexte"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False\n\nwith Tag(\"html\") as page:\n    print(\"  hello\")\n    with Tag(\"b\"):\n        print(\"    bold\")",
+      "it": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False\n\nwith Tag(\"html\") as page:\n    print(\"  hello\")\n    with Tag(\"b\"):\n        print(\"    bold\")",
+      "fr": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False\n\nwith Tag(\"html\") as page:\n    print(\"  hello\")\n    with Tag(\"b\"):\n        print(\"    bold\")"
+     },
+     "title": {
+      "en": "What with really does",
+      "it": "Cosa fa davvero with",
+      "fr": "Ce que fait vraiment with"
+     },
+     "text": {
+      "en": "with calls __enter__ when it starts, and __exit__ when it ends, even if something goes wrong inside. That is how with open(...) always closes the file.\n\nAny class with these two methods can be used in a with. Here a Tag writes the opening and the closing, and the work in the middle is pushed in.",
+      "it": "with chiama __enter__ quando inizia e __exit__ quando finisce, anche se dentro qualcosa va storto. È così che with open(...) chiude sempre il file.\n\nQualsiasi classe con questi due metodi si può usare in un with. Qui un Tag scrive l'apertura e la chiusura, e il lavoro in mezzo è rientrato.",
+      "fr": "with appelle __enter__ quand il commence, et __exit__ quand il finit, même si quelque chose tourne mal dedans. C'est ainsi que with open(...) ferme toujours le fichier.\n\nToute classe avec ces deux méthodes peut être utilisée dans un with. Ici un Tag écrit l'ouverture et la fermeture, et le travail au milieu est décalé."
+     },
+     "see": {
+      "en": "<html>\n  hello\n<b>\n    bold\n</b>\n</html>",
+      "it": "<html>\n  hello\n<b>\n    bold\n</b>\n</html>",
+      "fr": "<html>\n  hello\n<b>\n    bold\n</b>\n</html>"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "context-manager",
+       "w": "__enter__  __exit__",
+       "d": {
+        "en": "with calls __enter__ when it starts and __exit__ when it ends, even if something goes wrong inside. That is how with open(...) always closes the file. Any class with these two methods can be used in a with.",
+        "it": "with chiama __enter__ quando inizia e __exit__ quando finisce, anche se dentro qualcosa va storto. È così che with open(...) chiude sempre il file. Qualsiasi classe con questi due metodi si può usare in un with.",
+        "fr": "with appelle __enter__ quand il commence et __exit__ quand il finit, même si quelque chose tourne mal dedans. C'est ainsi que with open(...) ferme toujours le fichier. Toute classe avec ces deux méthodes peut être utilisée dans un with."
+       },
+       "s": {
+        "en": "def __enter__(self):",
+        "it": "def __enter__(self):",
+        "fr": "def __enter__(self):"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use a Tag called p with a print(\"text\") inside it. It must show: <p>, text, </p> on three lines.",
+       "it": "Usa un Tag che si chiama p con un print(\"text\") dentro. Deve mostrare: <p>, text, </p> su tre righe.",
+       "fr": "Utilise un Tag qui s'appelle p avec un print(\"text\") dedans. Il doit afficher : <p>, text, </p> sur trois lignes."
+      },
+      "hint": {
+       "en": "with Tag(\"p\"): and, pushed in, print(\"text\").",
+       "it": "with Tag(\"p\"): e, rientrato, print(\"text\").",
+       "fr": "with Tag(\"p\"): et, décalé, print(\"text\")."
+      },
+      "sol": {
+       "en": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False\n\nwith Tag(\"p\"):\n    print(\"text\")",
+       "it": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False\n\nwith Tag(\"p\"):\n    print(\"text\")",
+       "fr": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False\n\nwith Tag(\"p\"):\n    print(\"text\")"
+      },
+      "start": {
+       "en": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False",
+       "it": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False",
+       "fr": "class Tag:\n    def __init__(self, name):\n        self.name = name\n\n    def __enter__(self):\n        print(\"<\" + self.name + \">\")\n        return self\n\n    def __exit__(self, kind, value, traceback):\n        print(\"</\" + self.name + \">\")\n        return False"
+      },
+      "spec": {
+       "en": {
+        "out": "<p>\ntext\n</p>",
+        "c": "with Tag"
+       },
+       "it": {
+        "out": "<p>\ntext\n</p>",
+        "c": "with Tag"
+       },
+       "fr": {
+        "out": "<p>\ntext\n</p>",
+        "c": "with Tag"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "<p>\ntext\n</p>",
+       "it": "<p>\ntext\n</p>",
+       "fr": "<p>\ntext\n</p>"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Start:\", task)\n    try:\n        yield\n    finally:\n        print(\"End:\", task)\n\nwith announce(\"cleaning\"):\n    print(\"working...\")\n\ntry:\n    with announce(\"risky\"):\n        raise ValueError(\"oops\")\nexcept ValueError:\n    print(\"the error went through\")",
+      "it": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Inizio:\", task)\n    try:\n        yield\n    finally:\n        print(\"Fine:\", task)\n\nwith announce(\"pulizie\"):\n    print(\"lavoro...\")\n\ntry:\n    with announce(\"rischioso\"):\n        raise ValueError(\"ops\")\nexcept ValueError:\n    print(\"l'errore è passato\")",
+      "fr": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Début :\", task)\n    try:\n        yield\n    finally:\n        print(\"Fin :\", task)\n\nwith announce(\"ménage\"):\n    print(\"je travaille...\")\n\ntry:\n    with announce(\"risqué\"):\n        raise ValueError(\"oups\")\nexcept ValueError:\n    print(\"l'erreur est passée\")"
+     },
+     "title": {
+      "en": "A with in a few lines",
+      "it": "Un with in poche righe",
+      "fr": "Un with en quelques lignes"
+     },
+     "text": {
+      "en": "@contextmanager lets you write a context manager as a generator: what is before the yield is the \"enter\", and what is after it is the \"exit\". Put the exit part in finally, so that it runs even when there is an error.\n\nThe second example shows it: the error goes through, but \"End\" is still shown first.",
+      "it": "@contextmanager ti lascia scrivere un gestore di contesto come un generatore: quello che sta prima dello yield è l'\"entrata\", e quello che sta dopo è l'\"uscita\". Metti la parte di uscita in finally, così gira anche quando c'è un errore.\n\nIl secondo esempio lo mostra: l'errore passa, ma \"Fine\" viene comunque mostrato prima.",
+      "fr": "@contextmanager te laisse écrire un gestionnaire de contexte comme un générateur : ce qui est avant le yield est l'\"entrée\", et ce qui est après est la \"sortie\". Mets la partie de sortie dans finally, pour qu'elle tourne même quand il y a une erreur.\n\nLe deuxième exemple le montre : l'erreur passe, mais \"Fin\" est quand même affiché d'abord."
+     },
+     "see": {
+      "en": "Start: cleaning\nworking...\nEnd: cleaning\nStart: risky\nEnd: risky\nthe error went through",
+      "it": "Inizio: pulizie\nlavoro...\nFine: pulizie\nInizio: rischioso\nFine: rischioso\nl'errore è passato",
+      "fr": "Début : ménage\nje travaille...\nFin : ménage\nDébut : risqué\nFin : risqué\nl'erreur est passée"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "contextlib.contextmanager",
+       "w": "@contextmanager",
+       "d": {
+        "en": "@contextmanager lets you write a context manager as a generator: what is before the yield is the \"enter\", what is after it is the \"exit\". Put the exit part in finally so that it runs even on an error.",
+        "it": "@contextmanager ti lascia scrivere un gestore di contesto come un generatore: quello che sta prima dello yield è l'\"entrata\", quello che sta dopo è l'\"uscita\". Metti la parte di uscita in finally così gira anche se c'è un errore.",
+        "fr": "@contextmanager te laisse écrire un gestionnaire de contexte comme un générateur : ce qui est avant le yield est l'\"entrée\", ce qui est après est la \"sortie\". Mets la partie de sortie dans finally pour qu'elle tourne même en cas d'erreur."
+       },
+       "s": {
+        "en": "@contextmanager",
+        "it": "@contextmanager",
+        "fr": "@contextmanager"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use announce with a task called \"test\" and a print(\"inside\") in it. It must show: Start: test, inside, End: test.",
+       "it": "Usa announce con un compito che si chiama \"test\" e un print(\"inside\") dentro. Deve mostrare: Inizio: test, inside, Fine: test.",
+       "fr": "Utilise announce avec une tâche qui s'appelle \"test\" et un print(\"inside\") dedans. Il doit afficher : Début : test, inside, Fin : test."
+      },
+      "hint": {
+       "en": "with announce(\"test\"): and print(\"inside\") pushed in.",
+       "it": "with announce(\"test\"): e print(\"inside\") rientrato.",
+       "fr": "with announce(\"test\"): et print(\"inside\") décalé."
+      },
+      "sol": {
+       "en": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Start:\", task)\n    try:\n        yield\n    finally:\n        print(\"End:\", task)\n\nwith announce(\"test\"):\n    print(\"inside\")",
+       "it": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Inizio:\", task)\n    try:\n        yield\n    finally:\n        print(\"Fine:\", task)\n\nwith announce(\"test\"):\n    print(\"inside\")",
+       "fr": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Début :\", task)\n    try:\n        yield\n    finally:\n        print(\"Fin :\", task)\n\nwith announce(\"test\"):\n    print(\"inside\")"
+      },
+      "start": {
+       "en": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Start:\", task)\n    try:\n        yield\n    finally:\n        print(\"End:\", task)",
+       "it": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Inizio:\", task)\n    try:\n        yield\n    finally:\n        print(\"Fine:\", task)",
+       "fr": "from contextlib import contextmanager\n\n@contextmanager\ndef announce(task):\n    print(\"Début :\", task)\n    try:\n        yield\n    finally:\n        print(\"Fin :\", task)"
+      },
+      "spec": {
+       "en": {
+        "out": "Start: test\ninside\nEnd: test\n",
+        "c": "with announce"
+       },
+       "it": {
+        "out": "Inizio: test\ninside\nFine: test\n",
+        "c": "with announce"
+       },
+       "fr": {
+        "out": "Début : test\ninside\nFin : test\n",
+        "c": "with announce"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Start: test\ninside\nEnd: test",
+       "it": "Inizio: test\ninside\nFine: test",
+       "fr": "Début : test\ninside\nFin : test"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove(\"demo_never_existed.txt\")\nprint(\"no error\")\n\nwith open(\"demo_a.txt\", \"w\") as one, open(\"demo_b.txt\", \"w\") as two:\n    one.write(\"1\")\n    two.write(\"2\")\nprint(os.path.exists(\"demo_a.txt\"), os.path.exists(\"demo_b.txt\"))",
+      "it": "from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove(\"demo_never_existed.txt\")\nprint(\"no error\")\n\nwith open(\"demo_a.txt\", \"w\") as one, open(\"demo_b.txt\", \"w\") as two:\n    one.write(\"1\")\n    two.write(\"2\")\nprint(os.path.exists(\"demo_a.txt\"), os.path.exists(\"demo_b.txt\"))",
+      "fr": "from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove(\"demo_never_existed.txt\")\nprint(\"no error\")\n\nwith open(\"demo_a.txt\", \"w\") as one, open(\"demo_b.txt\", \"w\") as two:\n    one.write(\"1\")\n    two.write(\"2\")\nprint(os.path.exists(\"demo_a.txt\"), os.path.exists(\"demo_b.txt\"))"
+     },
+     "title": {
+      "en": "Ready-made helpers",
+      "it": "Aiutanti già pronti",
+      "fr": "Des assistants tout prêts"
+     },
+     "text": {
+      "en": "contextlib has helpers made for with. suppress ignores a chosen kind of error: removing a file that does not exist would be an error, but inside suppress nothing happens and the program goes on.\n\nOne with can also open several things at once, separated by commas. Whenever you see \"open something, use it, always close it\", a with is the answer.",
+      "it": "contextlib ha aiutanti fatti per with. suppress ignora un tipo scelto di errore: cancellare un file che non esiste sarebbe un errore, ma dentro suppress non succede niente e il programma continua.\n\nUn solo with può anche aprire più cose insieme, separate da virgole. Ogni volta che vedi \"apri qualcosa, usalo, chiudilo sempre\", la risposta è un with.",
+      "fr": "contextlib a des assistants faits pour with. suppress ignore un genre d'erreur choisi : supprimer un fichier qui n'existe pas serait une erreur, mais dans suppress il ne se passe rien et le programme continue.\n\nUn seul with peut aussi ouvrir plusieurs choses à la fois, séparées par des virgules. Chaque fois que tu vois \"ouvre quelque chose, utilise-le, ferme-le toujours\", la réponse est un with."
+     },
+     "see": {
+      "en": "no error\nTrue True",
+      "it": "no error\nTrue True",
+      "fr": "no error\nTrue True"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "contextlib.suppress",
+       "w": "suppress( )",
+       "d": {
+        "en": "suppress ignores a chosen kind of error inside a with: with suppress(FileNotFoundError): ... Nothing happens if that error comes up, and the program goes on.",
+        "it": "suppress ignora un tipo scelto di errore dentro un with: with suppress(FileNotFoundError): ... Non succede niente se quell'errore compare, e il programma continua.",
+        "fr": "suppress ignore un genre d'erreur choisi dans un with : with suppress(FileNotFoundError): ... Il ne se passe rien si cette erreur arrive, et le programme continue."
+       },
+       "s": {
+        "en": "with suppress(FileNotFoundError):",
+        "it": "with suppress(FileNotFoundError):",
+        "fr": "with suppress(FileNotFoundError):"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Use suppress to try to remove a file called demo_nothing.txt that does not exist, and then show: ok",
+       "it": "Usa suppress per provare a cancellare un file che si chiama demo_nothing.txt che non esiste, e poi mostra: ok",
+       "fr": "Utilise suppress pour essayer de supprimer un fichier qui s'appelle demo_nothing.txt qui n'existe pas, puis affiche : ok"
+      },
+      "hint": {
+       "en": "with suppress(FileNotFoundError): and os.remove(...) pushed in.",
+       "it": "with suppress(FileNotFoundError): e os.remove(...) rientrato.",
+       "fr": "with suppress(FileNotFoundError): et os.remove(...) décalé."
+      },
+      "sol": {
+       "en": "from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove(\"demo_nothing.txt\")\nprint(\"ok\")",
+       "it": "from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove(\"demo_nothing.txt\")\nprint(\"ok\")",
+       "fr": "from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove(\"demo_nothing.txt\")\nprint(\"ok\")"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "ok",
+        "c": "suppress"
+       },
+       "it": {
+        "out": "ok",
+        "c": "suppress"
+       },
+       "fr": {
+        "out": "ok",
+        "c": "suppress"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "ok",
+       "it": "ok",
+       "fr": "ok"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Modern Python tricks",
+    "it": "Trucchi del Python moderno",
+    "fr": "Astuces du Python moderne"
+   },
+   "subtitle": {
+    "en": "match, walrus, unpacking and copies",
+    "it": "match, tricheco, apertura e copie",
+    "fr": "match, morse, déballage et copies"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "def describe(command):\n    match command:\n        case \"go north\" | \"go south\":\n            return \"moving\"\n        case \"quit\":\n            return \"bye\"\n        case [\"take\", item]:\n            return f\"taking {item}\"\n        case {\"type\": \"gift\", \"name\": name}:\n            return f\"a gift called {name}\"\n        case _:\n            return \"I do not understand\"\n\nprint(describe(\"go north\"))\nprint(describe([\"take\", \"lamp\"]))\nprint(describe({\"type\": \"gift\", \"name\": \"book\"}))\nprint(describe(\"dance\"))",
+      "it": "def describe(command):\n    match command:\n        case \"vai a nord\" | \"vai a sud\":\n            return \"mi muovo\"\n        case \"esci\":\n            return \"ciao\"\n        case [\"prendi\", item]:\n            return f\"prendo {item}\"\n        case {\"type\": \"gift\", \"name\": name}:\n            return f\"un regalo che si chiama {name}\"\n        case _:\n            return \"non capisco\"\n\nprint(describe(\"vai a nord\"))\nprint(describe([\"prendi\", \"lampada\"]))\nprint(describe({\"type\": \"gift\", \"name\": \"libro\"}))\nprint(describe(\"balla\"))",
+      "fr": "def describe(command):\n    match command:\n        case \"aller au nord\" | \"aller au sud\":\n            return \"je me déplace\"\n        case \"quitter\":\n            return \"au revoir\"\n        case [\"prendre\", item]:\n            return f\"je prends {item}\"\n        case {\"type\": \"gift\", \"name\": name}:\n            return f\"un cadeau qui s'appelle {name}\"\n        case _:\n            return \"je ne comprends pas\"\n\nprint(describe(\"aller au nord\"))\nprint(describe([\"prendre\", \"lampe\"]))\nprint(describe({\"type\": \"gift\", \"name\": \"livre\"}))\nprint(describe(\"danser\"))"
+     },
+     "title": {
+      "en": "match: choose by shape",
+      "it": "match: scegli dalla forma",
+      "fr": "match : choisis selon la forme"
+     },
+     "text": {
+      "en": "match looks at a value and picks the first case that fits. A case can be a plain value, several values joined with |, the shape of a list or of a dictionary that picks parts out into names, or _ that fits anything.\n\nIt is like a long if-elif chain, but it can look inside lists and dictionaries and name the pieces it finds: [\"take\", item] catches the item.",
+      "it": "match guarda un valore e sceglie il primo case che va bene. Un case può essere un valore semplice, più valori uniti con |, la forma di una lista o di un dizionario che estrae parti in dei nomi, o _ che va bene per qualsiasi cosa.\n\nÈ come una lunga catena if-elif, ma può guardare dentro liste e dizionari e dare un nome ai pezzi che trova: [\"prendi\", item] cattura l'oggetto.",
+      "fr": "match regarde une valeur et choisit le premier case qui convient. Un case peut être une valeur simple, plusieurs valeurs reliées par |, la forme d'une liste ou d'un dictionnaire qui extrait des parties dans des noms, ou _ qui convient à tout.\n\nC'est comme une longue chaîne if-elif, mais il peut regarder dans des listes et des dictionnaires et donner un nom aux morceaux qu'il trouve : [\"prendre\", item] attrape l'objet."
+     },
+     "see": {
+      "en": "moving\ntaking lamp\na gift called book\nI do not understand",
+      "it": "mi muovo\nprendo lampada\nun regalo che si chiama libro\nnon capisco",
+      "fr": "je me déplace\nje prends lampe\nun cadeau qui s'appelle livre\nje ne comprends pas"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "match",
+       "w": "match  case",
+       "d": {
+        "en": "match looks at a value and picks the first case that fits. A case can be a value, several values joined with |, the shape of a list or of a dictionary that picks parts out into names, or the pattern _ that fits anything.",
+        "it": "match guarda un valore e sceglie il primo case che va bene. Un case può essere un valore, più valori uniti con |, la forma di una lista o di un dizionario che estrae parti in dei nomi, o lo schema _ che va bene per qualsiasi cosa.",
+        "fr": "match regarde une valeur et choisit le premier case qui convient. Un case peut être une valeur, plusieurs valeurs reliées par |, la forme d'une liste ou d'un dictionnaire qui extrait des parties dans des noms, ou le motif _ qui convient à tout."
+       },
+       "s": {
+        "en": "match command:\n    case \"quit\":",
+        "it": "match command:\n    case \"quit\":",
+        "fr": "match command:\n    case \"quit\":"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a function colour_name(code) with a match: the code \"r\" gives \"red\", \"g\" gives \"green\", and anything else gives \"unknown\". Show colour_name(\"g\").",
+       "it": "Crea una funzione colour_name(code) con un match: il codice \"r\" dà \"rosso\", \"g\" dà \"verde\" e qualsiasi altra cosa dà \"ignoto\". Mostra colour_name(\"g\").",
+       "fr": "Crée une fonction colour_name(code) avec un match : le code \"r\" donne \"rouge\", \"g\" donne \"vert\" et tout autre donne \"inconnu\". Affiche colour_name(\"g\")."
+      },
+      "hint": {
+       "en": "match code: with case \"r\": return ..., case \"g\": return ..., case _: return ...",
+       "it": "match code: con case \"r\": return ..., case \"g\": return ..., case _: return ...",
+       "fr": "match code: avec case \"r\": return ..., case \"g\": return ..., case _: return ..."
+      },
+      "sol": {
+       "en": "def colour_name(code):\n    match code:\n        case \"r\":\n            return \"red\"\n        case \"g\":\n            return \"green\"\n        case _:\n            return \"unknown\"\n\nprint(colour_name(\"g\"))",
+       "it": "def colour_name(code):\n    match code:\n        case \"r\":\n            return \"rosso\"\n        case \"g\":\n            return \"verde\"\n        case _:\n            return \"ignoto\"\n\nprint(colour_name(\"g\"))",
+       "fr": "def colour_name(code):\n    match code:\n        case \"r\":\n            return \"rouge\"\n        case \"g\":\n            return \"vert\"\n        case _:\n            return \"inconnu\"\n\nprint(colour_name(\"g\"))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "green",
+        "c": "match "
+       },
+       "it": {
+        "out": "verde",
+        "c": "match "
+       },
+       "fr": {
+        "out": "vert",
+        "c": "match "
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "green",
+       "it": "verde",
+       "fr": "vert"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "data = [3, 8, 15, 4]\nif (n := len(data)) > 3:\n    print(f\"A long list of {n} items\")\n\nx = 5\nprint(f\"{x=}\")\nprint(f\"{x * 2 = }\")\n\ntotal = (a := 4) + (b := 5)\nprint(total, a, b)",
+      "it": "data = [3, 8, 15, 4]\nif (n := len(data)) > 3:\n    print(f\"Una lista lunga di {n} elementi\")\n\nx = 5\nprint(f\"{x=}\")\nprint(f\"{x * 2 = }\")\n\ntotal = (a := 4) + (b := 5)\nprint(total, a, b)",
+      "fr": "data = [3, 8, 15, 4]\nif (n := len(data)) > 3:\n    print(f\"Une longue liste de {n} éléments\")\n\nx = 5\nprint(f\"{x=}\")\nprint(f\"{x * 2 = }\")\n\ntotal = (a := 4) + (b := 5)\nprint(total, a, b)"
+     },
+     "title": {
+      "en": "The walrus and a debugging f-string",
+      "it": "Il tricheco e una f-string per il debug",
+      "fr": "Le morse et une f-string de débogage"
+     },
+     "text": {
+      "en": "The walrus := puts a value in a name inside an expression, so you can use it right away: (n := len(data)) > 3 keeps the length in n and tests it in one go.\n\nAnd f\"{x=}\" shows both the name and the value: x=5. It is the fastest way to look at a value while you are hunting a mistake.",
+      "it": "Il tricheco := mette un valore in un nome dentro un'espressione, così lo puoi usare subito: (n := len(data)) > 3 tiene la lunghezza in n e la verifica in un colpo solo.\n\nE f\"{x=}\" mostra sia il nome sia il valore: x=5. È il modo più rapido di guardare un valore mentre cerchi un errore.",
+      "fr": "Le morse := met une valeur dans un nom à l'intérieur d'une expression, donc tu peux l'utiliser tout de suite : (n := len(data)) > 3 garde la longueur dans n et la teste d'un coup.\n\nEt f\"{x=}\" montre à la fois le nom et la valeur : x=5. C'est la façon la plus rapide de regarder une valeur quand tu cherches une erreur."
+     },
+     "see": {
+      "en": "A long list of 4 items\nx=5\nx * 2 = 10\n9 4 5",
+      "it": "Una lista lunga di 4 elementi\nx=5\nx * 2 = 10\n9 4 5",
+      "fr": "Une longue liste de 4 éléments\nx=5\nx * 2 = 10\n9 4 5"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ":=",
+       "w": ":=",
+       "d": {
+        "en": "The walrus := puts a value in a name inside an expression, so you can use it right away: (n := len(data)) > 3 keeps the length and tests it in one go.",
+        "it": "Il tricheco := mette un valore in un nome dentro un'espressione, così lo puoi usare subito: (n := len(data)) > 3 tiene la lunghezza e la verifica in un colpo solo.",
+        "fr": "Le morse := met une valeur dans un nom à l'intérieur d'une expression, donc tu peux l'utiliser tout de suite : (n := len(data)) > 3 garde la longueur et la teste d'un coup."
+       },
+       "s": {
+        "en": "if (n := len(data)) > 3:",
+        "it": "if (n := len(data)) > 3:",
+        "fr": "if (n := len(data)) > 3:"
+       }
+      },
+      {
+       "k": "debug-fstring",
+       "w": "f\"{x=}\"",
+       "d": {
+        "en": "In an f-string, {x=} shows both the name and the value: x=5. It is the fastest way to look at a value while you are hunting a mistake.",
+        "it": "In una f-string, {x=} mostra sia il nome sia il valore: x=5. È il modo più rapido di guardare un valore mentre cerchi un errore.",
+        "fr": "Dans une f-string, {x=} montre à la fois le nom et la valeur : x=5. C'est la façon la plus rapide de regarder une valeur quand tu cherches une erreur."
+       },
+       "s": {
+        "en": "print(f\"{x=}\")",
+        "it": "print(f\"{x=}\")",
+        "fr": "print(f\"{x=}\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "With f\"{...=}\", show the value of the box price when it is 12: price=12",
+       "it": "Con f\"{...=}\", mostra il valore della scatola price quando vale 12: price=12",
+       "fr": "Avec f\"{...=}\", affiche la valeur de la boîte price quand elle vaut 12 : price=12"
+      },
+      "hint": {
+       "en": "print(f\"{price=}\")",
+       "it": "print(f\"{price=}\")",
+       "fr": "print(f\"{price=}\")"
+      },
+      "sol": {
+       "en": "price = 12\nprint(f\"{price=}\")",
+       "it": "price = 12\nprint(f\"{price=}\")",
+       "fr": "price = 12\nprint(f\"{price=}\")"
+      },
+      "start": {
+       "en": "price = 12",
+       "it": "price = 12",
+       "fr": "price = 12"
+      },
+      "spec": {
+       "en": {
+        "out": "price=12",
+        "c": "=\\}"
+       },
+       "it": {
+        "out": "price=12",
+        "c": "=\\}"
+       },
+       "fr": {
+        "out": "price=12",
+        "c": "=\\}"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "price=12",
+       "it": "price=12",
+       "fr": "price=12"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "first, *middle, last = [1, 2, 3, 4, 5]\nprint(first, middle, last)\na = {\"x\": 1, \"y\": 2}\nb = {\"y\": 20, \"z\": 30}\nprint(a | b)\nprint({**a, **b})\nprint([*range(3), *\"ab\"])\n(x, y), z = (1, 2), 3\nprint(x, y, z)",
+      "it": "first, *middle, last = [1, 2, 3, 4, 5]\nprint(first, middle, last)\na = {\"x\": 1, \"y\": 2}\nb = {\"y\": 20, \"z\": 30}\nprint(a | b)\nprint({**a, **b})\nprint([*range(3), *\"ab\"])\n(x, y), z = (1, 2), 3\nprint(x, y, z)",
+      "fr": "first, *middle, last = [1, 2, 3, 4, 5]\nprint(first, middle, last)\na = {\"x\": 1, \"y\": 2}\nb = {\"y\": 20, \"z\": 30}\nprint(a | b)\nprint({**a, **b})\nprint([*range(3), *\"ab\"])\n(x, y), z = (1, 2), 3\nprint(x, y, z)"
+     },
+     "title": {
+      "en": "Unpacking everywhere",
+      "it": "Aprire ovunque",
+      "fr": "Déballer partout"
+     },
+     "text": {
+      "en": "A star in an unpacking catches \"all the rest\" into a list: first, *middle, last takes the first and the last, and puts everything in between in middle.\n\nTwo dictionaries are merged with | (the second wins when a key is in both), or with ** inside curly brackets. A star in front of a list inside brackets spreads its items out. Unpacking can even go into nested pairs.",
+      "it": "Una stella in un'apertura cattura \"tutto il resto\" in una lista: first, *middle, last prende il primo e l'ultimo e mette tutto quello che sta in mezzo in middle.\n\nDue dizionari si uniscono con | (vince il secondo quando una chiave è in tutti e due), o con ** dentro le parentesi graffe. Una stella davanti a una lista dentro delle parentesi spande i suoi elementi. L'apertura può andare anche dentro coppie annidate.",
+      "fr": "Une étoile dans un déballage attrape \"tout le reste\" dans une liste : first, *middle, last prend le premier et le dernier, et met tout ce qui est entre les deux dans middle.\n\nDeux dictionnaires se fusionnent avec | (le deuxième gagne quand une clé est dans les deux), ou avec ** dans des accolades. Une étoile devant une liste dans des crochets étale ses éléments. Le déballage peut même aller dans des paires imbriquées."
+     },
+     "see": {
+      "en": "1 [2, 3, 4] 5\n{'x': 1, 'y': 20, 'z': 30}\n{'x': 1, 'y': 20, 'z': 30}\n[0, 1, 2, 'a', 'b']\n1 2 3",
+      "it": "1 [2, 3, 4] 5\n{'x': 1, 'y': 20, 'z': 30}\n{'x': 1, 'y': 20, 'z': 30}\n[0, 1, 2, 'a', 'b']\n1 2 3",
+      "fr": "1 [2, 3, 4] 5\n{'x': 1, 'y': 20, 'z': 30}\n{'x': 1, 'y': 20, 'z': 30}\n[0, 1, 2, 'a', 'b']\n1 2 3"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "star-unpack",
+       "w": "first, *rest",
+       "d": {
+        "en": "A star in an unpacking catches \"all the rest\" into a list: first, *rest = numbers. Two dictionaries are merged with | (or with ** inside curly brackets). A star in front of a list inside brackets spreads it out.",
+        "it": "Una stella in un'apertura cattura \"tutto il resto\" in una lista: first, *rest = numbers. Due dizionari si uniscono con | (o con ** dentro le graffe). Una stella davanti a una lista dentro delle parentesi la spande.",
+        "fr": "Une étoile dans un déballage attrape \"tout le reste\" dans une liste : first, *rest = numbers. Deux dictionnaires se fusionnent avec | (ou avec ** dans des accolades). Une étoile devant une liste dans des crochets l'étale."
+       },
+       "s": {
+        "en": "first, *rest = numbers",
+        "it": "first, *rest = numbers",
+        "fr": "first, *rest = numbers"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "From the list [10, 20, 30, 40], put the first item in head and all the others in tail, with a star, and show tail ([20, 30, 40]).",
+       "it": "Dalla lista [10, 20, 30, 40], metti il primo elemento in head e tutti gli altri in tail, con una stella, e mostra tail ([20, 30, 40]).",
+       "fr": "À partir de la liste [10, 20, 30, 40], mets le premier élément dans head et tous les autres dans tail, avec une étoile, et affiche tail ([20, 30, 40])."
+      },
+      "hint": {
+       "en": "head, *tail = [10, 20, 30, 40]",
+       "it": "head, *tail = [10, 20, 30, 40]",
+       "fr": "head, *tail = [10, 20, 30, 40]"
+      },
+      "sol": {
+       "en": "head, *tail = [10, 20, 30, 40]\nprint(tail)",
+       "it": "head, *tail = [10, 20, 30, 40]\nprint(tail)",
+       "fr": "head, *tail = [10, 20, 30, 40]\nprint(tail)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[20, 30, 40]",
+        "c": "\\*tail"
+       },
+       "it": {
+        "out": "[20, 30, 40]",
+        "c": "\\*tail"
+       },
+       "fr": {
+        "out": "[20, 30, 40]",
+        "c": "\\*tail"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[20, 30, 40]",
+       "it": "[20, 30, 40]",
+       "fr": "[20, 30, 40]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import copy\n\noriginal = {\"name\": \"Ada\", \"tags\": [\"a\", \"b\"]}\nshallow = original.copy()\ndeep = copy.deepcopy(original)\noriginal[\"tags\"].append(\"c\")\nprint(shallow[\"tags\"])\nprint(deep[\"tags\"])\n\na = b = [0]\na.append(1)\nprint(b)\ngrid = [[0] * 2] * 2\ngrid[0][0] = 9\nprint(grid)",
+      "it": "import copy\n\noriginal = {\"name\": \"Ada\", \"tags\": [\"a\", \"b\"]}\nshallow = original.copy()\ndeep = copy.deepcopy(original)\noriginal[\"tags\"].append(\"c\")\nprint(shallow[\"tags\"])\nprint(deep[\"tags\"])\n\na = b = [0]\na.append(1)\nprint(b)\ngrid = [[0] * 2] * 2\ngrid[0][0] = 9\nprint(grid)",
+      "fr": "import copy\n\noriginal = {\"name\": \"Ada\", \"tags\": [\"a\", \"b\"]}\nshallow = original.copy()\ndeep = copy.deepcopy(original)\noriginal[\"tags\"].append(\"c\")\nprint(shallow[\"tags\"])\nprint(deep[\"tags\"])\n\na = b = [0]\na.append(1)\nprint(b)\ngrid = [[0] * 2] * 2\ngrid[0][0] = 9\nprint(grid)"
+     },
+     "title": {
+      "en": "Copies, and a famous trap",
+      "it": "Copie, e una trappola famosa",
+      "fr": "Copies, et un piège célèbre"
+     },
+     "text": {
+      "en": "copy() makes a shallow copy: the outer list or dictionary is new, but the lists inside are still shared. copy.deepcopy copies everything, all the way down.\n\nThe famous trap: [[0] * 2] * 2 repeats the same inner list twice, so changing one row changes both. And a = b = [0] gives two names to one list. If you want separate rows, make each row on its own, for example with a comprehension.",
+      "it": "copy() fa una copia superficiale: la lista o il dizionario esterno è nuovo, ma le liste dentro sono ancora condivise. copy.deepcopy copia tutto, fino in fondo.\n\nLa trappola famosa: [[0] * 2] * 2 ripete due volte la stessa lista interna, quindi cambiando una riga si cambiano tutte e due. E a = b = [0] dà due nomi a una lista sola. Se vuoi righe separate, fai ogni riga da sola, per esempio con una comprensione.",
+      "fr": "copy() fait une copie superficielle : la liste ou le dictionnaire extérieur est nouveau, mais les listes à l'intérieur sont toujours partagées. copy.deepcopy copie tout, jusqu'au fond.\n\nLe piège célèbre : [[0] * 2] * 2 répète deux fois la même liste intérieure, donc changer une ligne change les deux. Et a = b = [0] donne deux noms à une seule liste. Si tu veux des lignes séparées, fais chaque ligne à part, par exemple avec une compréhension."
+     },
+     "see": {
+      "en": "['a', 'b', 'c']\n['a', 'b']\n[0, 1]\n[[9, 0], [9, 0]]",
+      "it": "['a', 'b', 'c']\n['a', 'b']\n[0, 1]\n[[9, 0], [9, 0]]",
+      "fr": "['a', 'b', 'c']\n['a', 'b']\n[0, 1]\n[[9, 0], [9, 0]]"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "module:copy",
+       "w": "copy",
+       "d": {
+        "en": "copy is a tool box to copy things. copy.deepcopy copies everything, all the way down, while a plain .copy() copies only the outer layer.",
+        "it": "copy è una cassetta di attrezzi per copiare le cose. copy.deepcopy copia tutto, fino in fondo, mentre un semplice .copy() copia solo lo strato esterno.",
+        "fr": "copy est une boîte à outils pour copier des choses. copy.deepcopy copie tout, jusqu'au fond, alors qu'un simple .copy() ne copie que la couche extérieure."
+       },
+       "s": {
+        "en": "import copy",
+        "it": "import copy",
+        "fr": "import copy"
+       }
+      },
+      {
+       "k": "copy.deepcopy",
+       "w": "copy.deepcopy( )",
+       "d": {
+        "en": "copy.deepcopy makes a full, independent copy: the lists inside are copied too.",
+        "it": "copy.deepcopy fa una copia completa e indipendente: anche le liste dentro vengono copiate.",
+        "fr": "copy.deepcopy fait une copie complète et indépendante : les listes à l'intérieur sont copiées aussi."
+       },
+       "s": {
+        "en": "copy.deepcopy(data)",
+        "it": "copy.deepcopy(data)",
+        "fr": "copy.deepcopy(data)"
+       }
+      },
+      {
+       "k": "chain-assign",
+       "w": "a = b = 0",
+       "d": {
+        "en": "a = b = [0] puts the same value in two names at once. With a list it is a trap: both names point to the very same list.",
+        "it": "a = b = [0] mette lo stesso valore in due nomi insieme. Con una lista è una trappola: tutti e due i nomi indicano proprio la stessa lista.",
+        "fr": "a = b = [0] met la même valeur dans deux noms à la fois. Avec une liste c'est un piège : les deux noms désignent bien la même liste."
+       },
+       "s": {
+        "en": "a = b = 0",
+        "it": "a = b = 0",
+        "fr": "a = b = 0"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Make a grid of 2 rows of 2 zeros where the rows are NOT shared (use a comprehension). Change the first item of the first row to 9 and show the grid: [[9, 0], [0, 0]]",
+       "it": "Fai una griglia di 2 righe di 2 zeri dove le righe NON sono condivise (usa una comprensione). Cambia il primo elemento della prima riga in 9 e mostra la griglia: [[9, 0], [0, 0]]",
+       "fr": "Fais une grille de 2 lignes de 2 zéros où les lignes ne sont PAS partagées (utilise une compréhension). Change le premier élément de la première ligne en 9 et affiche la grille : [[9, 0], [0, 0]]"
+      },
+      "hint": {
+       "en": "grid = [[0] * 2 for row in range(2)]",
+       "it": "grid = [[0] * 2 for row in range(2)]",
+       "fr": "grid = [[0] * 2 for row in range(2)]"
+      },
+      "sol": {
+       "en": "grid = [[0] * 2 for row in range(2)]\ngrid[0][0] = 9\nprint(grid)",
+       "it": "grid = [[0] * 2 for row in range(2)]\ngrid[0][0] = 9\nprint(grid)",
+       "fr": "grid = [[0] * 2 for row in range(2)]\ngrid[0][0] = 9\nprint(grid)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[[9, 0], [0, 0]]",
+        "c": "for row in range"
+       },
+       "it": {
+        "out": "[[9, 0], [0, 0]]",
+        "c": "for row in range"
+       },
+       "fr": {
+        "out": "[[9, 0], [0, 0]]",
+        "c": "for row in range"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[[9, 0], [0, 0]]",
+       "it": "[[9, 0], [0, 0]]",
+       "fr": "[[9, 0], [0, 0]]"
+      }
+     }
+    }
+   ]
   }
  ]
 };

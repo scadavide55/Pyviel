@@ -9,5 +9,6 @@ module.exports = Object.assign({},
   require('./glossary-functions.js'),
   require('./glossary-stdlib.js'),
   require('./glossary-regex.js'),
-  require('./glossary-objects.js')
+  require('./glossary-objects.js'),
+  require('./glossary-advanced.js')
 );

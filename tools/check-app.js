@@ -30,6 +30,9 @@ app.whenReady().then(async function () {
   session.defaultSession.webRequest.onBeforeRequest(function (details, callback) { callback({ cancel: /^https?:/i.test(details.url) }); });
   const win = new BrowserWindow({ width: 1280, height: 900, show: false, webPreferences: { preload: path.join(root, 'electron', 'preload.js'), contextIsolation: true, sandbox: true, additionalArguments: ['--pyviel-version=1.1.0-beta'] } });
   await win.loadURL('pyviel://app/index.html');
+  // The app keeps its storage between runs: start the course from nothing, like a new student.
+  await win.webContents.executeJavaScript("Object.keys(localStorage).filter(k => k.indexOf('pyviel.tutorial.') === 0).forEach(k => localStorage.removeItem(k))");
+  await win.loadURL('pyviel://app/index.html');
   await new Promise(function (r) { setTimeout(r, 1500); });
   const script = fs.readFileSync(path.join(__dirname, 'page-checks.js'), 'utf8');
   const results = await win.webContents.executeJavaScript(script);

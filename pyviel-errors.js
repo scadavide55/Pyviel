@@ -347,6 +347,11 @@
       it: ['Questo browser non riesce a mettere in pausa Python, quindi async e await non possono girare qui.', 'async ha bisogno di un browser recente (Chrome, Edge o Brave 137 o successivo, o un Firefox o Safari recente). Il resto di Python funziona come al solito.'],
       fr: ['Ce navigateur ne peut pas mettre Python en pause, donc async et await ne peuvent pas tourner ici.', 'async a besoin d\'un navigateur récent (Chrome, Edge ou Brave 137 ou plus récent, ou un Firefox ou Safari récent). Le reste de Python marche comme d\'habitude.']
     },
+    no_input: {
+      en: ['input() cannot wait for an answer in this browser window.', 'This window does not allow the small helper that input() needs (a private window, or a browser setting, can block it). Open Pyviel in a normal window, or use the Pyviel app. Everything else works here.'],
+      it: ['input() non può aspettare una risposta in questa finestra del browser.', 'Questa finestra non permette il piccolo aiutante che serve a input() (una finestra privata, o un\'impostazione del browser, può bloccarlo). Apri Pyviel in una finestra normale, o usa l\'app Pyviel. Tutto il resto funziona qui.'],
+      fr: ['input() ne peut pas attendre de réponse dans cette fenêtre du navigateur.', 'Cette fenêtre n\'autorise pas le petit assistant dont input() a besoin (une fenêtre privée, ou un réglage du navigateur, peut le bloquer). Ouvre Pyviel dans une fenêtre normale, ou utilise l\'app Pyviel. Tout le reste marche ici.']
+    },
     raised: {
       en: ['The program raised a `{1}`.', 'The message is: {m}. It was raised on purpose with raise, or by a Python tool when something was not right.'],
       it: ['Il programma ha sollevato un `{1}`.', 'Il messaggio è: {m}. È stato sollevato apposta con raise, oppure da uno strumento di Python quando qualcosa non andava.'],
@@ -429,6 +434,7 @@
     ['RecursionError', /^/, 'recursion'],
     ['EOFError', /^/, 'eof'],
     ['RuntimeError', /stack switch|WebAssembly stack switching/, 'old_browser'],
+    ['RuntimeError', /^Pyviel: input\(\) cannot wait/, 'no_input'],
     ['InternalError', /^Python stopped on its own/, 'process_ended'],
     ['InternalError', /^/, 'internal'],
     ['AssertionError', /^/, 'assertion'],

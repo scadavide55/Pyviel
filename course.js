@@ -23770,14 +23770,14 @@ window.PyvielCourse = {
      "slip": null,
      "ex": {
       "task": {
-       "en": "Answer 50, 30 and 42: the program must end by showing it took 3 tries.",
-       "it": "Rispondi 50, 30 e 42: il programma deve finire mostrando che ci sono voluti 3 tentativi.",
-       "fr": "Réponds 50, 30 et 42 : le programme doit finir en montrant qu'il a fallu 3 essais."
+       "en": "This version keeps asking, but it does not count. Add the counter: tries = 0 before the loop, tries += 1 after each guess, and a last message that says how many tries it took. With the answers 50, 30 and 42 it must end with \"You got it in 3 tries!\".",
+       "it": "Questa versione continua a chiedere, ma non conta. Aggiungi il contatore: tries = 0 prima del ciclo, tries += 1 dopo ogni tentativo, e un ultimo messaggio che dice quanti tentativi ci sono voluti. Con le risposte 50, 30 e 42 deve finire con \"Ce l'hai fatta in 3 tentativi!\".",
+       "fr": "Cette version continue à demander, mais elle ne compte pas. Ajoute le compteur : tries = 0 avant la boucle, tries += 1 après chaque essai, et un dernier message qui dit combien d'essais il a fallu. Avec les réponses 50, 30 et 42 il doit finir par \"Tu as réussi en 3 essais !\"."
       },
       "hint": {
-       "en": "Just run it and type the three answers.",
-       "it": "Eseguilo e scrivi le tre risposte.",
-       "fr": "Lance-le et tape les trois réponses."
+       "en": "The last print becomes an f-string: print(f\"You got it in {tries} tries!\").",
+       "it": "L'ultimo print diventa una f-string: print(f\"Ce l'hai fatta in {tries} tentativi!\").",
+       "fr": "Le dernier print devient une f-string : print(f\"Tu as réussi en {tries} essais !\")."
       },
       "sol": {
        "en": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Guess the number: \"))\n    tries += 1\n    if guess < secret:\n        print(\"Too low\")\n    elif guess > secret:\n        print(\"Too high\")\n    else:\n        print(f\"You got it in {tries} tries!\")\n        break",
@@ -23785,9 +23785,9 @@ window.PyvielCourse = {
        "fr": "secret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Devine le nombre : \"))\n    tries += 1\n    if guess < secret:\n        print(\"Trop petit\")\n    elif guess > secret:\n        print(\"Trop grand\")\n    else:\n        print(f\"Tu as réussi en {tries} essais !\")\n        break"
       },
       "start": {
-       "en": "",
-       "it": "",
-       "fr": ""
+       "en": "secret = 42\nwhile True:\n    guess = int(input(\"Guess the number: \"))\n    if guess < secret:\n        print(\"Too low\")\n    elif guess > secret:\n        print(\"Too high\")\n    else:\n        print(\"You got it!\")\n        break",
+       "it": "secret = 42\nwhile True:\n    guess = int(input(\"Indovina il numero: \"))\n    if guess < secret:\n        print(\"Troppo basso\")\n    elif guess > secret:\n        print(\"Troppo alto\")\n    else:\n        print(\"Ce l'hai fatta!\")\n        break",
+       "fr": "secret = 42\nwhile True:\n    guess = int(input(\"Devine le nombre : \"))\n    if guess < secret:\n        print(\"Trop petit\")\n    elif guess > secret:\n        print(\"Trop grand\")\n    else:\n        print(\"Tu as réussi !\")\n        break"
       },
       "spec": {
        "en": {
@@ -23846,14 +23846,14 @@ window.PyvielCourse = {
      "slip": null,
      "ex": {
       "task": {
-       "en": "With the answers abc, 500, 50 and 42, the program must end by saying you got it in 2 tries: the refused answers do not count as tries.",
-       "it": "Con le risposte abc, 500, 50 e 42, il programma deve finire dicendo che ce l'hai fatta in 2 tentativi: le risposte rifiutate non contano come tentativi.",
-       "fr": "Avec les réponses abc, 500, 50 et 42, le programme doit finir en disant que tu as réussi en 2 essais : les réponses refusées ne comptent pas comme essais."
+       "en": "Make the game use ask_number for every guess. With the answers abc, 500, 50 and 42, the program must end by saying you got it in 2 tries: the refused answers do not count as tries.",
+       "it": "Fai usare ask_number al gioco per ogni tentativo. Con le risposte abc, 500, 50 e 42, il programma deve finire dicendo che ce l'hai fatta in 2 tentativi: le risposte rifiutate non contano come tentativi.",
+       "fr": "Fais utiliser ask_number au jeu pour chaque essai. Avec les réponses abc, 500, 50 et 42, le programme doit finir en disant que tu as réussi en 2 essais : les réponses refusées ne comptent pas comme essais."
       },
       "hint": {
-       "en": "Just run it and type the four answers.",
-       "it": "Eseguilo e scrivi le quattro risposte.",
-       "fr": "Lance-le et tape les quatre réponses."
+       "en": "The function is already written, but nobody calls it: the guess still comes from int(input(...)), which stops with an error on abc. Replace that line with guess = ask_number(\"Guess (1-100): \", 1, 100).",
+       "it": "La funzione è già scritta, ma nessuno la chiama: il tentativo viene ancora da int(input(...)), che si ferma con un errore su abc. Sostituisci quella riga con guess = ask_number(\"Indovina (1-100): \", 1, 100).",
+       "fr": "La fonction est déjà écrite, mais personne ne l'appelle : l'essai vient encore de int(input(...)), qui s'arrête sur une erreur avec abc. Remplace cette ligne par guess = ask_number(\"Devine (1-100) : \", 1, 100)."
       },
       "sol": {
        "en": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"It must be between {low} and {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Guess (1-100): \", 1, 100)\n    tries += 1\n    if guess == secret:\n        print(f\"You got it in {tries} tries!\")\n        break\n    print(\"Too low\" if guess < secret else \"Too high\")",
@@ -23861,9 +23861,9 @@ window.PyvielCourse = {
        "fr": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Tape un nombre entier.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Il doit être entre {low} et {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = ask_number(\"Devine (1-100) : \", 1, 100)\n    tries += 1\n    if guess == secret:\n        print(f\"Tu as réussi en {tries} essais !\")\n        break\n    print(\"Trop petit\" if guess < secret else \"Trop grand\")"
       },
       "start": {
-       "en": "",
-       "it": "",
-       "fr": ""
+       "en": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Please type a whole number.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"It must be between {low} and {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Guess (1-100): \"))\n    tries += 1\n    if guess == secret:\n        print(f\"You got it in {tries} tries!\")\n        break\n    print(\"Too low\" if guess < secret else \"Too high\")",
+       "it": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Scrivi un numero intero.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Deve essere tra {low} e {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Indovina (1-100): \"))\n    tries += 1\n    if guess == secret:\n        print(f\"Ce l'hai fatta in {tries} tentativi!\")\n        break\n    print(\"Troppo basso\" if guess < secret else \"Troppo alto\")",
+       "fr": "def ask_number(question, low, high):\n    while True:\n        text = input(question)\n        if not text.strip().isdigit():\n            print(\"Tape un nombre entier.\")\n            continue\n        number = int(text)\n        if low <= number <= high:\n            return number\n        print(f\"Il doit être entre {low} et {high}.\")\n\nsecret = 42\ntries = 0\nwhile True:\n    guess = int(input(\"Devine (1-100) : \"))\n    tries += 1\n    if guess == secret:\n        print(f\"Tu as réussi en {tries} essais !\")\n        break\n    print(\"Trop petit\" if guess < secret else \"Trop grand\")"
       },
       "spec": {
        "en": {
@@ -25981,37 +25981,37 @@ window.PyvielCourse = {
      ],
      "ex": {
       "task": {
-       "en": "Make the program print its usage line and stop with the code 1 when no name is given. Keep it: with no name it must show the usage.",
-       "it": "Fai in modo che il programma scriva la riga di uso e si fermi con il codice 1 quando non è dato nessun nome. Tienilo: senza nome deve mostrare l'uso.",
-       "fr": "Fais en sorte que le programme affiche sa ligne d'usage et s'arrête avec le code 1 quand aucun nom n'est donné. Garde-le : sans nom il doit afficher l'usage."
+       "en": "Here no name is given, so sys.argv[1] does not exist and the program stops with an IndexError. Check first: when no name is given, print the usage line \"Usage: python3 greet.py NAME\" and stop with sys.exit(1).",
+       "it": "Qui non è dato nessun nome, quindi sys.argv[1] non esiste e il programma si ferma con un IndexError. Controlla prima: quando non è dato nessun nome, scrivi la riga di uso \"Uso: python3 greet.py NOME\" e fermati con sys.exit(1).",
+       "fr": "Ici aucun nom n'est donné, donc sys.argv[1] n'existe pas et le programme s'arrête sur une IndexError. Vérifie d'abord : quand aucun nom n'est donné, affiche la ligne d'usage \"Usage : python3 greet.py NOM\" et arrête-toi avec sys.exit(1)."
       },
       "hint": {
-       "en": "It already does: just press Check.",
-       "it": "Lo fa già: premi solo Controlla.",
-       "fr": "Il le fait déjà : appuie simplement sur Vérifier."
+       "en": "Before the last line: if len(sys.argv) < 2:, and inside it a print of the usage line and sys.exit(1).",
+       "it": "Prima dell'ultima riga: if len(sys.argv) < 2:, e dentro un print della riga di uso e sys.exit(1).",
+       "fr": "Avant la dernière ligne : if len(sys.argv) < 2:, et dedans un print de la ligne d'usage et sys.exit(1)."
       },
       "sol": {
        "en": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])",
-       "it": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])",
-       "fr": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage: python3 greet.py NAME\")\n    sys.exit(1)\nprint(\"Hello,\", sys.argv[1])"
+       "it": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Uso: python3 greet.py NOME\")\n    sys.exit(1)\nprint(\"Ciao,\", sys.argv[1])",
+       "fr": "import sys\n\nif len(sys.argv) < 2:\n    print(\"Usage : python3 greet.py NOM\")\n    sys.exit(1)\nprint(\"Bonjour,\", sys.argv[1])"
       },
       "start": {
-       "en": "",
-       "it": "",
-       "fr": ""
+       "en": "import sys\n\nprint(\"Hello,\", sys.argv[1])",
+       "it": "import sys\n\nprint(\"Ciao,\", sys.argv[1])",
+       "fr": "import sys\n\nprint(\"Bonjour,\", sys.argv[1])"
       },
       "spec": {
        "en": {
-        "m": "Usage",
-        "c": "sys\\.exit"
+        "m": "^Usage",
+        "c": "sys\\.exit\\(1\\)"
        },
        "it": {
-        "m": "Usage",
-        "c": "sys\\.exit"
+        "m": "^Uso",
+        "c": "sys\\.exit\\(1\\)"
        },
        "fr": {
-        "m": "Usage",
-        "c": "sys\\.exit"
+        "m": "^Usage",
+        "c": "sys\\.exit\\(1\\)"
        }
       },
       "answers": {
@@ -26097,9 +26097,9 @@ window.PyvielCourse = {
       "fr": "argparse : des arguments avec des noms et une aide"
      },
      "text": {
-      "en": "When a program has many options, reading sys.argv by hand gets messy. The module argparse does it for you, and gives a free help page. You describe the arguments you accept: add_argument(\"name\") is a word, and add_argument(\"--shout\", action=\"store_true\") is a switch that is either given or not.\n\nThen parse_args() reads the command line and fills an object: args.name and args.shout. In a terminal: python3 greet.py Ada --shout prints HELLO, ADA! and python3 greet.py --help prints a help page that argparse wrote by itself. A wrong option gets a clear error and exit code 2.",
-      "it": "Quando un programma ha molte opzioni, leggere sys.argv a mano diventa un pasticcio. Il modulo argparse lo fa per te e dà una pagina di aiuto gratis. Descrivi gli argomenti che accetti: add_argument(\"name\") è una parola, e add_argument(\"--shout\", action=\"store_true\") è un interruttore che c'è oppure no.\n\nPoi parse_args() legge la riga di comando e riempie un oggetto: args.name e args.shout. In un terminale: python3 greet.py Ada --shout scrive CIAO, ADA! e python3 greet.py --help scrive una pagina di aiuto che argparse ha scritto da solo. Un'opzione sbagliata riceve un errore chiaro e il codice di uscita 2.",
-      "fr": "Quand un programme a beaucoup d'options, lire sys.argv à la main devient confus. Le module argparse le fait pour toi, et donne une page d'aide gratuite. Tu décris les arguments acceptés : add_argument(\"name\") est un mot, et add_argument(\"--shout\", action=\"store_true\") est un interrupteur qui est donné ou non.\n\nPuis parse_args() lit la ligne de commande et remplit un objet : args.name et args.shout. Dans un terminal : python3 greet.py Ada --shout affiche BONJOUR, ADA ! et python3 greet.py --help affiche une page d'aide qu'argparse a écrite tout seul. Une mauvaise option reçoit une erreur claire et le code de sortie 2."
+      "en": "When a program has many options, reading sys.argv by hand gets messy. The module argparse does it for you, and gives a free help page. You describe the arguments you accept: add_argument(\"name\") is a word, and add_argument(\"--shout\", action=\"store_true\") is a switch that is either given or not. A plain word must be typed; nargs=\"?\" makes it optional, and default=\"friend\" is the value it takes when nothing is typed.\n\nThen parse_args() reads the command line and fills an object: args.name and args.shout. In a terminal: python3 greet.py Ada --shout prints HELLO, ADA! and python3 greet.py --help prints a help page that argparse wrote by itself. A wrong option gets a clear error and exit code 2.",
+      "it": "Quando un programma ha molte opzioni, leggere sys.argv a mano diventa un pasticcio. Il modulo argparse lo fa per te e dà una pagina di aiuto gratis. Descrivi gli argomenti che accetti: add_argument(\"name\") è una parola, e add_argument(\"--shout\", action=\"store_true\") è un interruttore che c'è oppure no. Una parola semplice va scritta per forza; nargs=\"?\" la rende facoltativa, e default=\"amico\" è il valore che prende quando non si scrive niente.\n\nPoi parse_args() legge la riga di comando e riempie un oggetto: args.name e args.shout. In un terminale: python3 greet.py Ada --shout scrive CIAO, ADA! e python3 greet.py --help scrive una pagina di aiuto che argparse ha scritto da solo. Un'opzione sbagliata riceve un errore chiaro e il codice di uscita 2.",
+      "fr": "Quand un programme a beaucoup d'options, lire sys.argv à la main devient confus. Le module argparse le fait pour toi, et donne une page d'aide gratuite. Tu décris les arguments acceptés : add_argument(\"name\") est un mot, et add_argument(\"--shout\", action=\"store_true\") est un interrupteur qui est donné ou non. Un mot simple doit être tapé ; nargs=\"?\" le rend facultatif, et default=\"ami\" est la valeur qu'il prend quand rien n'est tapé.\n\nPuis parse_args() lit la ligne de commande et remplit un objet : args.name et args.shout. Dans un terminal : python3 greet.py Ada --shout affiche BONJOUR, ADA ! et python3 greet.py --help affiche une page d'aide qu'argparse a écrite tout seul. Une mauvaise option reçoit une erreur claire et le code de sortie 2."
      },
      "see": {
       "en": "Hello, friend",
@@ -26223,14 +26223,14 @@ window.PyvielCourse = {
      ],
      "ex": {
       "task": {
-       "en": "Run it as it is: with no words typed, it must show a greeting to the default name.",
-       "it": "Eseguilo così com'è: senza parole scritte deve mostrare un saluto al nome predefinito.",
-       "fr": "Lance-le tel quel : sans mots tapés, il doit afficher une salutation au nom par défaut."
+       "en": "Here the name must be typed, so with no words argparse stops with an error (exit code 2). Make the name optional, with \"friend\" when nothing is typed: the program must show Hello, friend.",
+       "it": "Qui il nome va scritto per forza, quindi senza parole argparse si ferma con un errore (codice di uscita 2). Rendi il nome facoltativo, con \"amico\" quando non si scrive niente: il programma deve mostrare Ciao, amico.",
+       "fr": "Ici le nom doit être tapé, donc sans mots argparse s'arrête sur une erreur (code de sortie 2). Rends le nom facultatif, avec \"ami\" quand rien n'est tapé : le programme doit afficher Bonjour, ami."
       },
       "hint": {
-       "en": "Just press Check my program.",
-       "it": "Premi solo Controlla il mio programma.",
-       "fr": "Appuie simplement sur Vérifier mon programme."
+       "en": "Add two things inside add_argument(\"name\"): nargs=\"?\" and default=\"friend\".",
+       "it": "Aggiungi due cose dentro add_argument(\"name\"): nargs=\"?\" e default=\"amico\".",
+       "fr": "Ajoute deux choses dans add_argument(\"name\") : nargs=\"?\" et default=\"ami\"."
       },
       "sol": {
        "en": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Greets people\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"friend\")\nargs = parser.parse_args()\nprint(\"Hello, \" + args.name)",
@@ -26238,9 +26238,9 @@ window.PyvielCourse = {
        "fr": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Salue les gens\")\nparser.add_argument(\"name\", nargs=\"?\", default=\"ami\")\nargs = parser.parse_args()\nprint(\"Bonjour, \" + args.name)"
       },
       "start": {
-       "en": "",
-       "it": "",
-       "fr": ""
+       "en": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Greets people\")\nparser.add_argument(\"name\")\nargs = parser.parse_args()\nprint(\"Hello, \" + args.name)",
+       "it": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Saluta le persone\")\nparser.add_argument(\"name\")\nargs = parser.parse_args()\nprint(\"Ciao, \" + args.name)",
+       "fr": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Salue les gens\")\nparser.add_argument(\"name\")\nargs = parser.parse_args()\nprint(\"Bonjour, \" + args.name)"
       },
       "spec": {
        "en": {

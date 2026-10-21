@@ -194,6 +194,22 @@ check('every rule points at a text that exists', () => {
       assert.ok(missing.caption.includes('missing'));
     }
   });
+  check('a page without shared memory runs programs, and input() says why it cannot wait, in three languages', () => {
+    py.globals.set('NO_INPUT', true);
+    try {
+      assert.equal(go('print("still works")').out, 'still works\n');
+      const r = go('print("before")\nname = input("Name? ")', ['Ada']);
+      assert.equal(r.out, 'before\n');
+      assert.equal(r.result.error.line, 2);
+      for (const lang of Errors.languages) {
+        const said = Errors.explain(r.result.error, lang);
+        assert.equal(said.id, 'no_input');
+        assert.ok(said.title.includes('input()') && said.caption.length > 40);
+      }
+    } finally {
+      py.globals.set('NO_INPUT', false);
+    }
+  });
   check('an unknown kind of error still gets a sentence', () => {
     const e = go('class MyTrouble(Exception):\n    pass\nraise MyTrouble("x")').result.error;
     assert.equal(Errors.explain(e, 'en').id, 'raised');

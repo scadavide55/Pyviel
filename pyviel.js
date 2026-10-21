@@ -8,6 +8,7 @@
   'use strict';
   var VERSION = '1.1.0-beta';
   var SLOW_STOP_MS = 2500;
+  var BUILD = '1.1.0-2';      // cache key of the worker and the runner: bump it when either changes
 
   var worker = null;
   var starting = null;
@@ -21,9 +22,13 @@
   // In the desktop app the page talks to the Python packed inside the app, not to a worker.
   function desktop() { return root.pyvielDesktop && root.pyvielDesktop.python; }
 
+  // Shared buffers let Stop interrupt Python and let input() wait; they need a cross-origin isolated page.
+  function isolated() { return typeof SharedArrayBuffer !== 'undefined' && root.crossOriginIsolated === true; }
+
   function supported() {
     if (desktop()) return true;
-    return typeof SharedArrayBuffer !== 'undefined' && typeof Worker !== 'undefined' && root.crossOriginIsolated !== false;
+    // A module worker cannot start from a file on the computer; any web address works.
+    return typeof Worker !== 'undefined' && /^https?:$/.test(root.location && root.location.protocol);
   }
 
   function startDesktop() {
@@ -40,12 +45,16 @@
     if (starting) return starting;
     if (desktop()) return (starting = startDesktop());
     if (!supported()) return (starting = Promise.reject(new Error('unsupported')));
-    interrupt = new Uint8Array(new SharedArrayBuffer(1));
-    control = new Int32Array(new SharedArrayBuffer(8));
-    data = new Uint8Array(new SharedArrayBuffer(262144));
+    if (isolated()) {
+      interrupt = new Uint8Array(new SharedArrayBuffer(1));
+      control = new Int32Array(new SharedArrayBuffer(8));
+      data = new Uint8Array(new SharedArrayBuffer(262144));
+    } else {
+      interrupt = control = data = null;
+    }
     starting = new Promise(function (resolve, reject) {
       say('loading');
-      worker = new Worker('pyviel-worker.js' + (/[?&]nojspi\b/.test(location.search) ? '?nojspi' : ''), {type: 'module'});
+      worker = new Worker('pyviel-worker.js?v=' + BUILD + (/[?&]nojspi\b/.test(location.search) ? '&nojspi' : ''), {type: 'module'});
       worker.onmessage = function (event) {
         var m = event.data;
         if (m.type === 'ready') { say('ready', m.version); resolve(m.version); }
@@ -53,7 +62,7 @@
         else if (runner) handle(m);
       };
       worker.onerror = function (event) { say('failed', event.message); reject(new Error(event.message || 'worker error')); };
-      worker.postMessage({type: 'init', interrupt: interrupt.buffer, control: control.buffer, data: data.buffer});
+      worker.postMessage({type: 'init', interrupt: interrupt && interrupt.buffer, control: control && control.buffer, data: data && data.buffer});
     });
     return starting;
   }
@@ -73,6 +82,7 @@
 
   function reply(answer) {
     if (desktop()) { desktop().answer(answer === undefined ? null : answer); return; }
+    if (!control) return;
     if (answer === null || answer === undefined) {
       Atomics.store(control, 0, 2);
     } else {
@@ -117,9 +127,11 @@
   function stop() {
     if (!runner) return;
     if (desktop()) { desktop().stop(); return; }
-    interrupt[0] = 2;                  // Python raises KeyboardInterrupt at its next step
-    Atomics.store(control, 0, 2);      // and an input() that is waiting gives up
-    Atomics.notify(control, 0);
+    if (interrupt) {
+      interrupt[0] = 2;                  // Python raises KeyboardInterrupt at its next step
+      Atomics.store(control, 0, 2);      // and an input() that is waiting gives up
+      Atomics.notify(control, 0);
+    }
     var stuck = runner;
     setTimeout(function () {
       if (runner !== stuck) return;
@@ -130,7 +142,7 @@
       runner = null;
       stuck.resolve({output: stuck.output.split('\n'), text: stuck.output, problems: [], errors: 0, warnings: 0, stopped: true, cancelled: true, summary: root.PyvielErrors.words.stopped[language()] || root.PyvielErrors.words.stopped.en, restarted: true});
       start().catch(function () {});
-    }, SLOW_STOP_MS);
+    }, interrupt ? SLOW_STOP_MS : 0);
   }
 
   // The desktop app cannot start its Python: the run ends with a sentence instead of an exception.
@@ -152,7 +164,7 @@
         };
         if (options.signal) options.signal.addEventListener('abort', stop, {once: true});
         if (desktop()) { desktop().run(source); return; }
-        Atomics.store(control, 0, 0);
+        if (control) Atomics.store(control, 0, 0);
         worker.postMessage({type: 'run', source: source});
       });
     }, function (error) {

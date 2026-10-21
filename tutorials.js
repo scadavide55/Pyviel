@@ -31,6 +31,21 @@
     };
   });
 
+  // Split the inside of a call at its top-level commas (not the ones in quotes or brackets).
+  function topLevel(text) {
+    var parts = [], depth = 0, quote = '', start = 0;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      if (quote) { if (ch === '\\') i++; else if (ch === quote) quote = ''; continue; }
+      if (ch === '"' || ch === "'") quote = ch;
+      else if ('([{'.indexOf(ch) >= 0) depth++;
+      else if (')]}'.indexOf(ch) >= 0) depth--;
+      else if (ch === ',' && depth === 0) { parts.push(text.slice(start, i)); start = i + 1; }
+    }
+    if (text.trim()) parts.push(text.slice(start));
+    return parts;
+  }
+
   // One short sentence for each line of code, so the reader knows what every line does.
   function explain(line, next) {
     var t = line.trim(), m, e = EXPLAIN;
@@ -47,6 +62,22 @@
     if (/\.add_argument\(/.test(t)) return e.argparseAdd;
     if (/\.parse_args\(/.test(t)) return e.argparseParse;
     if (/\bjson\.dumps\(/.test(t)) return e.jsonDumps;
+    if (/^print\(/.test(t) && e.printText) {
+      var inner = t.replace(/\)\s+#.*$/, ')').replace(/^print\(/, '').replace(/\)$/, '');
+      var parts = topLevel(inner);
+      if (parts.length === 1) {
+        var only = parts[0].trim();
+        var lit = only.match(/^(["'])([^"'\\{}]*)\1$/);
+        if (lit) return fill(e.printText, {text: lit[2] || ' '});
+        if (/^-?[\d.]+$/.test(only)) return fill(e.printText, {text: only});
+        if (/^f["']/.test(only)) return e.printF;
+        if (/^\w+$/.test(only) && !/^(True|False|None)$/.test(only)) return fill(e.printName, {name: only});
+        if (only.length <= 40) return fill(e.printValue, {expr: only});
+      } else if (parts.length > 1) {
+        if (parts.some(function (p) { return /^\s*(sep|end)\s*=/.test(p); })) return e.printSep;
+        return e.printMany;
+      }
+    }
     if (/^print\(/.test(t)) return e.print;
     if (/^\w+\s*=\s*(float|int)\(input\(/.test(t)) return e.askNumber;
     if (/^[\w, ]+\s*=\s*input\(/.test(t)) return e.askNow;
@@ -90,6 +121,17 @@
     if (/^[\w.]+\[.+\]\s*=/.test(t)) return e.itemAssign;
     if (/^[\w.]+\.\w+\s*=[^=]/.test(t) && !/,/.test(t.split('=')[0])) return e.attrAssign;
     if (/^[\w.]+\s*,\s*[\w., *]+=[^=]/.test(t) || /^\(.*\)\s*,.*=[^=]/.test(t)) return e.unpackAssign;
+    if ((m = t.match(/^(\w+)\s*=\s*(.+)$/)) && e.assignValue) {
+      var value = m[2].trim(), named = m[1];
+      if (/^("""|''')/.test(value) && e.assignLong) return fill(e.assignLong, {name: named});
+      if (/^[A-Za-z_]\w*$/.test(value) && !/^(True|False|None)$/.test(value) && e.assignSame) return fill(e.assignSame, {name: named, value: value});
+      if (new RegExp('\\b' + named + '\\b').test(value) && value.length <= 30) return fill(e.assignUpdate, {name: named, value: value});
+      if ((/^("[^"]*"|'[^']*'|-?[\d.]+|True|False|None)$/.test(value)) && value.length <= 30) return fill(e.assignValue, {name: named, value: value});
+      var call = value.match(/^([\w.]+)\(/);
+      if (call && !/^[A-Z]/.test(call[1]) && value.length <= 60) return fill(e.assignCall, {name: named, fn: call[1]});
+      if (call && /^[A-Z]/.test(call[1].split('.').pop())) return fill(e.assignObject, {name: named, cls: call[1].split('.').pop()});
+      if (!/[(\[{]/.test(value) && value.length <= 30) return fill(e.assignSum, {name: named, value: value});
+    }
     if ((m = t.match(/^(\w+)\s*(?::\s*[\w\[\], ]+)?=\s*/))) return fill(e.assign, {name: m[1]});
     if (/^\w+\s*:\s*[\w\[\], |.]+$/.test(t)) return e.fieldDef;
     if (/^[\w.\[\]"' ]+\s(in|not in|==|!=|<|>|<=|>=)\s[\w.\[\]"' ]+$/.test(t)) return e.compareIt;
@@ -211,7 +253,9 @@
     var wanted = !done.length && panel.hidden;
     if (!wanted) { if (button) button.remove(); return; }
     if (button) return;
-    button = element('button', 'btn start-lessons', UI.startLessons || 'New here? Start with lesson 1');
+    var point = resumePoint();
+    var started = point.lesson > 0 || point.step > 0;
+    button = element('button', 'btn start-lessons', started ? fill(UI.continueLesson || 'Continue: lesson {n}', {n: point.lesson + 1}) : (UI.startLessons || 'New here? Start with lesson 1'));
     button.type = 'button';
     button.addEventListener('click', function () {
       showTab('lessons');
@@ -330,6 +374,7 @@
   var solved = read(SOLVED, {});
   if (!solved || typeof solved !== 'object') solved = {};
   var revealed = {};
+  var taskLoaded = {};   // steps whose starting code was already put in the editor during this visit
 
   function shortText(text, lines) {
     var rows = String(text).replace(/\s+$/, '').split('\n');
@@ -359,11 +404,22 @@
       buttons.appendChild(b);
       return b;
     }
-    button(UI.startTask || 'Start here', 'start-task', function () {
+    function putStart() {
       try { if (code.value.trim() && code.value !== task.start) localStorage.setItem(BACKUP, code.value); } catch (e) {}
       code.value = task.start || '';
       code.dispatchEvent(new Event('input', {bubbles: true}));
       code.setSelectionRange(code.value.length, code.value.length);
+      code.scrollTop = 0;
+    }
+    // The first time the task opens, its starting code goes in the editor by itself: nobody has to find a button first.
+    if (!taskLoaded[key] && !solved[key]) {
+      taskLoaded[key] = true;
+      putStart();
+      box.appendChild(element('p', 'task-ready', task.start ? (UI.taskStartIn || 'The starting code is in the editor. Change it there.') : (UI.taskEmpty || 'The editor is empty: write your program there.')));
+    }
+    button(taskLoaded[key] ? (UI.restartTask || 'Start over') : (UI.startTask || 'Start here'), 'start-task', function () {
+      taskLoaded[key] = true;
+      putStart();
       code.focus();
       if (window.innerWidth <= 900) setOpen(false);
       document.dispatchEvent(new CustomEvent('pyviel:notice', {detail: UI.taskReady || 'Ready. Write your answer in the editor, then press Check my program.'}));
@@ -431,11 +487,22 @@
         var tag = stepBox.querySelector('.exercise .block-title');
         if (tag && !tag.querySelector('.solved-tag')) tag.appendChild(element('span', 'solved-tag', '✓ ' + (UI.solved || 'Solved')));
         var dot = stepBox.querySelector('.progress .here'); if (dot) dot.className += ' solved';
+        var nextButton = stepBox.querySelector('.next-step'); if (nextButton) nextButton.className += ' primary';
+        var tab3 = stepBox.querySelectorAll('.phase-number')[2]; if (tab3) tab3.textContent = '✓';
         return;
       }
       if (verdict.why === 'empty') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkEmpty || 'Your program showed nothing. Use print to show something.')); return; }
       if (verdict.why === 'code') { say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkCode || 'It shows the right thing, but the task asks you to write it in a special way. Read the task again.')); return; }
       say2('no', UI.notYet || 'Not yet.', ' ' + (UI.checkWrong || 'Your program shows something different.'));
+      if (task.spec.out !== undefined) {
+        var mine = window.PyvielCheck.tidy(run.text).split('\n'), want = window.PyvielCheck.tidy(task.spec.out).split('\n');
+        var at = 0;
+        while (at < mine.length && at < want.length && mine[at] === want[at]) at++;
+        var why = at >= mine.length ? fill(UI.diffMissing || 'Your program stopped too early: line {n} is missing.', {n: at + 1})
+          : at >= want.length ? fill(UI.diffExtra || 'Your program shows more lines than needed, from line {n}.', {n: at + 1})
+          : fill(UI.diffLine || 'The first difference is on line {n}.', {n: at + 1}) + ' ' + fill(UI.diffWhat || 'It shows "{a}" but should show "{b}".', {a: mine[at], b: want[at]});
+        result.appendChild(element('div', 'diff-line', why));
+      }
       result.appendChild(element('div', 'expected-title', UI.yourShows || 'Your program showed:'));
       result.appendChild(element('pre', 'screen small', shortText(window.PyvielCheck.tidy(run.text), 8)));
       if (task.expected) {
@@ -448,14 +515,20 @@
     });
   }
 
+  // A step is shown in three moments, one at a time: learn the idea, see it run, then do it yourself.
+  var phases = {};
+  var PHASE_NAMES = function () { return [UI.phaseLearn || 'Learn', UI.phaseTry || 'Try it', UI.phaseDo || 'Your turn']; };
+
   function drawStep() {
     silence();
     var lesson = TUTORIALS[position.lesson], step = lesson.steps[position.step];
     var last = position.step === lesson.steps.length - 1;
+    var stepKey = position.lesson + ':' + position.step;
+    var phase = phases[stepKey] || 0;
     stepBox.innerHTML = '';
     stepBox.scrollTop = 0;
 
-    var back = element('button', 'back-link', '← All lessons');
+    var back = element('button', 'back-link', '← ' + (UI.allLessons || 'All lessons'));
     back.type = 'button';
     back.addEventListener('click', function () { showingStep = false; render(); });
     stepBox.appendChild(back);
@@ -466,129 +539,144 @@
     stepBox.appendChild(bar);
     stepBox.appendChild(element('div', 'step-count', (UI.lesson || 'Lesson') + ' ' + (position.lesson + 1) + ': ' + lesson.title + ' · ' + (UI.step || 'step') + ' ' + (position.step + 1) + ' ' + (UI.of || 'of') + ' ' + lesson.steps.length));
     stepBox.appendChild(element('h3', null, step.title));
-    String(step.text).split('\n\n').forEach(function (paragraph) {
-      stepBox.appendChild(element('p', 'tutorial-text', paragraph));
-    });
 
-    // Every new thing is explained before the program that uses it.
-    if (step.news.length) {
-      var words = element('div', 'new-words');
-      words.appendChild(element('div', 'block-title', UI.newWords || 'New in this step'));
-      step.news.forEach(function (n) {
-        var item = element('div', 'new-word');
-        item.appendChild(element('code', 'new-word-name', n.word));
-        item.appendChild(element('span', 'new-word-text', n.text));
-        if (n.shape) item.appendChild(element('pre', 'new-word-shape', n.shape));
-        words.appendChild(item);
+    // the three moments, as tabs
+    var tabs = element('div', 'phase-tabs');
+    tabs.setAttribute('role', 'tablist');
+    PHASE_NAMES().forEach(function (name, i) {
+      var tab = element('button', 'phase-tab' + (i === phase ? ' current' : '') + (i < phase ? ' seen' : ''));
+      tab.type = 'button';
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', String(i === phase));
+      tab.appendChild(element('span', 'phase-number', i === 2 && solved[stepKey] ? '✓' : String(i + 1)));
+      tab.appendChild(document.createTextNode(name));
+      tab.addEventListener('click', function () { phases[stepKey] = i; drawStep(); });
+      tabs.appendChild(tab);
+    });
+    stepBox.appendChild(tabs);
+
+    function goPhase(i) { phases[stepKey] = i; drawStep(); }
+    function bigButton(label, action, className) {
+      var b = element('button', 'btn primary big-next' + (className ? ' ' + className : ''), label);
+      b.type = 'button';
+      b.addEventListener('click', action);
+      stepBox.appendChild(b);
+      return b;
+    }
+    function codeBlock(withNotes) {
+      var rows = element('div', 'tutorial-code' + (withNotes ? '' : ' plain'));
+      var codeLines = step.code.split('\n');
+      var codeNotes = withNotes ? explainCode(step.code) : [];
+      codeLines.forEach(function (line, lineIndex) {
+        if (!line.trim()) { if (!withNotes) rows.appendChild(element('pre', 'src', ' ')); return; }
+        var row = element('div', 'code-row');
+        row.appendChild(element('pre', 'src', line));
+        var note = codeNotes[lineIndex];
+        if (note) row.appendChild(element('div', 'note', note));
+        rows.appendChild(row);
       });
-      stepBox.appendChild(words);
+      return rows;
     }
-
-    var listenRow = listenButton(step);
-    if (listenRow) stepBox.appendChild(listenRow);
-
-    stepBox.appendChild(element('div', 'block-title', UI.lineByLine || 'Line by line'));
-    var rows = element('div', 'tutorial-code');
-    var codeLines = step.code.split('\n');
-    var codeNotes = explainCode(step.code);
-    codeLines.forEach(function (line, lineIndex) {
-      if (!line.trim()) return;
-      var row = element('div', 'code-row');
-      row.appendChild(element('pre', 'src', line));
-      var note = codeNotes[lineIndex];
-      if (note) row.appendChild(element('div', 'note', note));
-      rows.appendChild(row);
-    });
-    stepBox.appendChild(rows);
-
-    // Think first, then look: the result stays hidden until the student has a guess.
-    var stepKey = position.lesson + ':' + position.step;
-    if (step.see) {
-      var see = element('div', 'see-box');
-      if (revealed[stepKey]) {
-        see.appendChild(element('div', 'block-title', UI.see || 'What you will see'));
-        see.appendChild(element('pre', 'screen', step.see));
-      } else {
-        var ask = element('div', 'predict');
-        ask.appendChild(element('b', null, UI.predict || 'Think first'));
-        ask.appendChild(element('span', null, UI.predictText || 'What do you think this program shows? Make a guess, then look.'));
-        var reveal = element('button', 'btn reveal', UI.showResult || 'Show what you will see');
-        reveal.type = 'button';
-        reveal.addEventListener('click', function () { revealed[stepKey] = true; drawStep(); });
-        ask.appendChild(reveal);
-        see.appendChild(ask);
-      }
-      stepBox.appendChild(see);
-    }
-
-    if (step.task) drawTask(step.task, stepKey);
-    else if (step.turn) {
-      var turn = element('p', 'your-turn');
-      turn.appendChild(element('b', null, UI.turn || 'Your turn'));
-      turn.appendChild(document.createTextNode(step.turn));
-      stepBox.appendChild(turn);
-    }
-    if (step.slip) {
-      var slip = element('p', 'slip-box');
-      slip.appendChild(element('b', null, UI.slip || 'Watch out'));
-      slip.appendChild(document.createTextNode(step.slip));
-      stepBox.appendChild(slip);
-    }
-
     function keepBackup() {
       try { if (code.value.trim() && code.value !== step.code) localStorage.setItem(BACKUP, code.value); } catch (e) {}
     }
-    function afterLoad(message) {
-      code.dispatchEvent(new Event('input', {bubbles: true}));
-      code.scrollTop = 0;
-      code.focus();
-      if (window.innerWidth <= 900) setOpen(false);
-      document.dispatchEvent(new CustomEvent('pyviel:notice', {detail: message}));
-      drawStep();
-    }
-    var actions = element('div', 'step-actions');
-    var typeIt = element('button', 'btn primary type-it', UI.typeIt || 'Type it yourself');
-    typeIt.type = 'button';
-    typeIt.addEventListener('click', function () {
-      keepBackup();
-      code.value = '';
-      code.setSelectionRange(0, 0);
-      afterLoad(UI.typeNote || 'Empty page ready. Type the lines, then press Run.');
-      code.setSelectionRange(0, 0);
-    });
-    actions.appendChild(typeIt);
-    var open = element('button', 'btn put-code', UI.putIt || 'Put it in the editor');
-    open.type = 'button';
-    open.addEventListener('click', function () {
+    function loadExample(andRun) {
       keepBackup();
       code.value = step.code;
       code.setSelectionRange(0, 0);
-      var run = $('run');
-      run.classList.add('nudge');
-      setTimeout(function () { run.classList.remove('nudge'); }, 2400);
-      afterLoad('Done. Now press the green Run button.');
-    });
-    actions.appendChild(open);
-    var tryIt = element('button', 'btn put-code try-it', UI.tryIt || 'Try it');
-    tryIt.type = 'button';
-    tryIt.addEventListener('click', function () {
-      open.click();
-      setTimeout(function () { var run = $('run'); if (run) run.click(); }, 60);
-    });
-    actions.insertBefore(tryIt, actions.firstChild);
-    stepBox.appendChild(actions);
+      code.dispatchEvent(new Event('input', {bubbles: true}));
+      code.scrollTop = 0;
+      if (window.innerWidth <= 900) setOpen(false);
+      if (andRun) setTimeout(function () { var run = $('run'); if (run) run.click(); }, 60);
+      else {
+        var run = $('run');
+        run.classList.add('nudge');
+        setTimeout(function () { run.classList.remove('nudge'); }, 2400);
+        document.dispatchEvent(new CustomEvent('pyviel:notice', {detail: UI.putNote || 'Done. Now press the green Run button.'}));
+      }
+    }
 
-    if (last && lesson.met.length) {
-      var recap = element('div', 'recap');
-      recap.appendChild(element('div', 'block-title', UI.recap || 'In this lesson you met'));
-      var chips = element('div', 'chips');
-      lesson.met.forEach(function (m) { var chip = element('code', 'chip', m.word); chip.title = m.text; chips.appendChild(chip); });
-      recap.appendChild(chips);
-      stepBox.appendChild(recap);
+    if (phase === 0) {
+      // 1. Learn: the idea, the new words, the program line by line
+      String(step.text).split('\n\n').forEach(function (paragraph) {
+        stepBox.appendChild(element('p', 'tutorial-text', paragraph));
+      });
+      if (step.news.length) {
+        var words = element('div', 'new-words');
+        words.appendChild(element('div', 'block-title', UI.newWords || 'New in this step'));
+        step.news.forEach(function (n) {
+          var item = element('div', 'new-word');
+          item.appendChild(element('code', 'new-word-name', n.word));
+          item.appendChild(element('span', 'new-word-text', n.text));
+          if (n.shape) item.appendChild(element('pre', 'new-word-shape', n.shape));
+          words.appendChild(item);
+        });
+        stepBox.appendChild(words);
+      }
+      var listenRow = listenButton(step);
+      if (listenRow) stepBox.appendChild(listenRow);
+      stepBox.appendChild(element('div', 'block-title', UI.lineByLine || 'Line by line'));
+      stepBox.appendChild(codeBlock(true));
+      bigButton((UI.nextTry || 'Next: see it work') + ' →', function () { goPhase(1); }, 'to-try');
+    } else if (phase === 1) {
+      // 2. Try it: guess first, then see, then run it for real
+      stepBox.appendChild(element('div', 'block-title', UI.theProgram || 'The program'));
+      stepBox.appendChild(codeBlock(false));
+      if (step.see) {
+        var see = element('div', 'see-box');
+        if (revealed[stepKey]) {
+          see.appendChild(element('div', 'block-title', UI.see || 'What you will see'));
+          see.appendChild(element('pre', 'screen', step.see));
+        } else {
+          var ask = element('div', 'predict');
+          ask.appendChild(element('b', null, UI.predict || 'Think first'));
+          ask.appendChild(element('span', null, UI.predictText || 'What do you think this program shows? Make a guess, then look.'));
+          var reveal = element('button', 'btn reveal', UI.showResult || 'Show what you will see');
+          reveal.type = 'button';
+          reveal.addEventListener('click', function () { revealed[stepKey] = true; drawStep(); });
+          ask.appendChild(reveal);
+          see.appendChild(ask);
+        }
+        stepBox.appendChild(see);
+      }
+      var actions = element('div', 'step-actions');
+      var tryIt = element('button', 'btn try-it', UI.tryIt || 'Run it in the editor');
+      tryIt.type = 'button';
+      tryIt.addEventListener('click', function () { revealed[stepKey] = true; loadExample(true); drawStep(); });
+      actions.appendChild(tryIt);
+      var open = element('button', 'btn put-code', UI.putIt || 'Put it in the editor');
+      open.type = 'button';
+      open.addEventListener('click', function () { loadExample(false); drawStep(); });
+      actions.appendChild(open);
+      stepBox.appendChild(actions);
+      if (step.slip) {
+        var slip = element('p', 'slip-box');
+        slip.appendChild(element('b', null, UI.slip || 'Watch out'));
+        slip.appendChild(document.createTextNode(step.slip));
+        stepBox.appendChild(slip);
+      }
+      bigButton((UI.nextDo || 'Next: your turn') + ' →', function () { goPhase(2); }, 'to-do');
+    } else {
+      // 3. Your turn: a small task, checked
+      if (step.task) drawTask(step.task, stepKey);
+      else if (step.turn) {
+        var turn = element('p', 'your-turn');
+        turn.appendChild(element('b', null, UI.turn || 'Your turn'));
+        turn.appendChild(document.createTextNode(step.turn));
+        stepBox.appendChild(turn);
+      }
+      if (last && lesson.met.length) {
+        var recap = element('div', 'recap');
+        recap.appendChild(element('div', 'block-title', UI.recap || 'In this lesson you met'));
+        var chips = element('div', 'chips');
+        lesson.met.forEach(function (m) { var chip = element('code', 'chip', m.word); chip.title = m.text; chips.appendChild(chip); });
+        recap.appendChild(chips);
+        stepBox.appendChild(recap);
+      }
     }
 
     var nav = element('div', 'nav-row');
-    var previous = element('button', 'btn', '← Back');
+    var previous = element('button', 'btn', '← ' + (UI.back || 'Back'));
     previous.type = 'button';
     previous.disabled = position.lesson === 0 && position.step === 0;
     previous.addEventListener('click', function () {
@@ -598,24 +686,26 @@
     });
     nav.appendChild(previous);
 
-    var next = element('button', 'btn', last ? (position.lesson === TUTORIALS.length - 1 ? 'Finish' : 'Next lesson →') : 'Next step →');
+    var nextLabel = last ? (position.lesson === TUTORIALS.length - 1 ? (UI.finish || 'Finish') : (UI.nextLesson || 'Next lesson') + ' →') : (UI.nextStep || 'Next step') + ' →';
+    var next = element('button', 'btn next-step' + (phase === 2 && (solved[stepKey] || !step.task) ? ' primary' : ''), nextLabel);
     next.type = 'button';
     next.addEventListener('click', function () {
       if (!last) position.step++;
       else {
         markDone(position.lesson);
         if (position.lesson < TUTORIALS.length - 1) { position.lesson++; position.step = 0; }
-        else { showingStep = false; document.dispatchEvent(new CustomEvent('pyviel:notice', {detail: 'You finished every lesson. Now go and make your own program.'})); }
+        else { showingStep = false; document.dispatchEvent(new CustomEvent('pyviel:notice', {detail: UI.allDoneNotice || 'You finished every lesson. Now go and make your own program.'})); }
       }
       write(STORE, position); render();
     });
-    nav.appendChild(next);
+    // Before the last phase the big button leads on; a second "next" would only invite skipping the task.
+    if (phase === 2) nav.appendChild(next);
     stepBox.appendChild(nav);
 
     var backup = null;
     try { backup = localStorage.getItem(BACKUP); } catch (e) {}
     if (backup !== null) {
-      var restore = element('button', 'restore-code', 'Bring back the code I had before');
+      var restore = element('button', 'restore-code', UI.restore || 'Bring back the code I had before');
       restore.type = 'button';
       restore.addEventListener('click', function () {
         code.value = backup;

@@ -113,21 +113,33 @@
   check('and has 200 steps or more', course.reduce((n, l) => n + l.steps.length, 0) >= 200);
   check('lessons are grouped under stage headings', document.querySelectorAll('.lesson-group').length >= 5, document.querySelectorAll('.lesson-group').length);
   lessons[0].click();
-  check('a lesson step shows its code line by line with notes', document.querySelectorAll('.tutorial-code .code-row .note').length >= 1);
-  check('and what you will see', !!document.querySelector('.see-box'));
+  const phaseTab = i => document.querySelectorAll('.phase-tab')[i];
+  check('a step has three phases: learn, try it, your turn', document.querySelectorAll('.phase-tab').length === 3 && phaseTab(0).classList.contains('current'));
   check('the step explains what is new, before the program', !!document.querySelector('.new-words .new-word-name') && document.querySelector('.new-words').compareDocumentPosition(document.querySelector('.tutorial-code')) & Node.DOCUMENT_POSITION_FOLLOWING);
+  check('the first phase shows the code line by line with notes', document.querySelectorAll('.tutorial-code .code-row .note').length >= 1);
+  check('before the last phase there is one way on, not two', !!document.querySelector('.big-next.to-try') && !document.querySelector('.nav-row .next-step'));
+  document.querySelector('.big-next.to-try').click();
+  check('the second phase shows the program and what you will see', phaseTab(1).classList.contains('current') && !!document.querySelector('.tutorial-code.plain') && !!document.querySelector('.see-box'));
   check('the result stays hidden until the student has thought about it', !!document.querySelector('.predict') && !document.querySelector('.see-box .screen'));
   document.querySelector('.reveal').click();
   check('and Show what you will see reveals it', !!document.querySelector('.see-box .screen'));
+  document.querySelector('.step-actions .put-code').click();
+  check('Put it in the editor loads the step', /print\(/.test(code.value));
   // a practice task: wrong answer, hint, solution, right answer
   const task = course[0].steps[0].task;
   check('every step has a practice task with a hint and a solution', course.every(l => l.steps.every(s => s.task && s.task.hint && s.task.solution)));
-  document.querySelector('.start-task').click();
-  check('Start here puts the starting code in the editor', code.value === task.start);
+  code.value = 'print("left over")'; code.dispatchEvent(new Event('input', {bubbles: true}));
+  document.querySelector('.big-next.to-do').click();
+  check('the last phase is the task', phaseTab(2).classList.contains('current') && !!document.querySelector('.exercise'));
+  check('opening the task puts its starting code in the editor by itself', code.value === task.start, code.value);
+  check('and the code that was there can come back', !!document.querySelector('.restore-code'));
   code.value = 'print("not the answer")'; code.dispatchEvent(new Event('input', {bubbles: true}));
   document.querySelector('.check-task').click();
   for (let i = 0; i < 100 && !document.querySelector('.exercise-result.no, .exercise-result.yes'); i++) await new Promise(r => setTimeout(r, 100));
   check('a wrong answer is explained and shows what the program printed', !!document.querySelector('.exercise-result.no') && /not the answer/.test(document.querySelector('.exercise-result').textContent), document.querySelector('.exercise-result') && document.querySelector('.exercise-result').textContent);
+  check('and points at the first line that differs', !!document.querySelector('.diff-line'));
+  document.querySelector('.start-task').click();
+  check('Start over puts the starting code back', code.value === task.start);
   document.querySelector('.hint-task').click();
   check('the hint opens', !!document.querySelector('.hint-box'));
   document.querySelector('.solution-task').click();
@@ -136,13 +148,11 @@
   document.querySelector('.check-task').click();
   for (let i = 0; i < 100 && !document.querySelector('.exercise-result.yes'); i++) await new Promise(r => setTimeout(r, 100));
   check('the right answer is recognised and remembered', !!document.querySelector('.exercise-result.yes') && !!document.querySelector('.solved-tag') && !!document.querySelector('.progress .solved'));
-  document.querySelector('.step-actions .put-code').click();
-  check('Put it in the editor loads the step', /print\(/.test(code.value));
-  document.querySelector('.step-actions .type-it').click();
-  check('Type it yourself gives an empty page', code.value === '');
-  document.querySelector('.step-actions .put-code').click();
-  const stepButtons = () => document.querySelectorAll('.nav-row .btn');
-  for (let i = 0; i < 4; i++) stepButtons()[1].click();
+  check('and the next step is the button to press', !!document.querySelector('.nav-row .next-step.primary'));
+  // on to step 5: the next-step button lives in the last phase
+  for (let i = 0; i < 4; i++) { phaseTab(2).click(); document.querySelector('.nav-row .next-step').click(); }
+  check('a new step opens on its first phase', phaseTab(0).classList.contains('current') && /step 5 of/.test(document.querySelector('.step-count') ? document.querySelector('.step-count').textContent : ''), document.querySelector('.step-count') && document.querySelector('.step-count').textContent);
+  phaseTab(1).click();
   document.querySelector('.step-actions .put-code').click();
   await run(code.value);
   check('the lesson about a mistake shows the friendly error', !!document.querySelector('.full-toggle') && /prnt/.test(document.querySelector('.problem-item').innerText), document.querySelector('.problem-item') && document.querySelector('.problem-item').innerText);

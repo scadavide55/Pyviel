@@ -46,13 +46,18 @@ function ask(prompt) {
 }
 
 async function init(message) {
-  interruptView = new Uint8Array(message.interrupt);
-  control = new Int32Array(message.control);
-  data = new Uint8Array(message.data);
+  // Without the shared buffers (a page that is not cross-origin isolated) Python still runs:
+  // Stop ends the worker instead, and input() says it cannot wait for an answer.
+  if (message.interrupt) {
+    interruptView = new Uint8Array(message.interrupt);
+    control = new Int32Array(message.control);
+    data = new Uint8Array(message.data);
+  }
   python = await loadPyodide({indexURL: new URL('./pyodide/', import.meta.url).href});
-  python.setInterruptBuffer(interruptView);
-  const source = await (await fetch(new URL('./pyviel-runner.py', import.meta.url))).text();
+  if (interruptView) python.setInterruptBuffer(interruptView);
+  const source = await (await fetch(new URL('./pyviel-runner.py?v=' + (new URL(import.meta.url).searchParams.get('v') || ''), import.meta.url))).text();
   python.runPython(source, {globals: python.globals});
+  if (!interruptView) python.globals.set('NO_INPUT', true);
   runProgram = python.globals.get('run');
   post({type: 'ready', version: python.version});
 }
@@ -61,7 +66,7 @@ let noStackSwitching = false;
 const fakeNoJspi = new URL(import.meta.url).searchParams.has('nojspi');
 
 async function runSource(source) {
-  interruptView[0] = 0;
+  if (interruptView) interruptView[0] = 0;
   let result;
   try {
     // callPromising lets Python wait for JavaScript (asyncio.sleep, await...) in browsers that can switch stacks.

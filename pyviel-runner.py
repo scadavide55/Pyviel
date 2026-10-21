@@ -58,6 +58,7 @@ def _describe(exc):
 
 
 SYNC_ASYNC = False  # set by the page when the browser cannot pause Python (no JSPI)
+NO_INPUT = False  # set by the page when it is not cross-origin isolated: input() cannot wait for an answer
 
 
 def _sync_asyncio_run():
@@ -138,6 +139,8 @@ def run(source, write, ask, cap=200000):
 
     def answer(prompt=""):
         prompt = str(prompt)
+        if NO_INPUT:
+            raise RuntimeError("Pyviel: input() cannot wait for an answer on this page")
         reply = ask(prompt)
         if reply is None or reply is jsnull:  # the page says Stop while the program waits for an answer
             raise _Stop()

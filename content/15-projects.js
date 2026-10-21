@@ -140,8 +140,36 @@ Il programma funziona già come gioco. I passi dopo lo rendono più sicuro e pi�
 
 Le programme marche déjà comme un jeu. Les étapes suivantes le rendent plus sûr et plus joli.`],
         ex: {
-          t: ['Answer 50, 30 and 42: the program must end by showing it took 3 tries.', 'Rispondi 50, 30 e 42: il programma deve finire mostrando che ci sono voluti 3 tentativi.', 'Réponds 50, 30 et 42 : le programme doit finir en montrant qu\'il a fallu 3 essais.'],
-          h: ['Just run it and type the three answers.', 'Eseguilo e scrivi le tre risposte.', 'Lance-le et tape les trois réponses.'],
+          t: ['This version keeps asking, but it does not count. Add the counter: tries = 0 before the loop, tries += 1 after each guess, and a last message that says how many tries it took. With the answers 50, 30 and 42 it must end with "You got it in 3 tries!".', 'Questa versione continua a chiedere, ma non conta. Aggiungi il contatore: tries = 0 prima del ciclo, tries += 1 dopo ogni tentativo, e un ultimo messaggio che dice quanti tentativi ci sono voluti. Con le risposte 50, 30 e 42 deve finire con "Ce l\'hai fatta in 3 tentativi!".', 'Cette version continue à demander, mais elle ne compte pas. Ajoute le compteur : tries = 0 avant la boucle, tries += 1 après chaque essai, et un dernier message qui dit combien d\'essais il a fallu. Avec les réponses 50, 30 et 42 il doit finir par "Tu as réussi en 3 essais !".'],
+          h: ['The last print becomes an f-string: print(f"You got it in {tries} tries!").', 'L\'ultimo print diventa una f-string: print(f"Ce l\'hai fatta in {tries} tentativi!").', 'Le dernier print devient une f-string : print(f"Tu as réussi en {tries} essais !").'],
+          start: [c`secret = 42
+while True:
+    guess = int(input("Guess the number: "))
+    if guess < secret:
+        print("Too low")
+    elif guess > secret:
+        print("Too high")
+    else:
+        print("You got it!")
+        break`, c`secret = 42
+while True:
+    guess = int(input("Indovina il numero: "))
+    if guess < secret:
+        print("Troppo basso")
+    elif guess > secret:
+        print("Troppo alto")
+    else:
+        print("Ce l'hai fatta!")
+        break`, c`secret = 42
+while True:
+    guess = int(input("Devine le nombre : "))
+    if guess < secret:
+        print("Trop petit")
+    elif guess > secret:
+        print("Trop grand")
+    else:
+        print("Tu as réussi !")
+        break`],
           sol: [c`secret = 42
 tries = 0
 while True:
@@ -253,8 +281,66 @@ Nota l'ultima riga del ciclo: un if in una riga sceglie tra "troppo basso" e "tr
 
 Remarque la dernière ligne de la boucle : un if sur une ligne choisit entre "trop petit" et "trop grand".`],
         ex: {
-          t: ['With the answers abc, 500, 50 and 42, the program must end by saying you got it in 2 tries: the refused answers do not count as tries.', 'Con le risposte abc, 500, 50 e 42, il programma deve finire dicendo che ce l\'hai fatta in 2 tentativi: le risposte rifiutate non contano come tentativi.', 'Avec les réponses abc, 500, 50 et 42, le programme doit finir en disant que tu as réussi en 2 essais : les réponses refusées ne comptent pas comme essais.'],
-          h: ['Just run it and type the four answers.', 'Eseguilo e scrivi le quattro risposte.', 'Lance-le et tape les quatre réponses.'],
+          t: ['Make the game use ask_number for every guess. With the answers abc, 500, 50 and 42, the program must end by saying you got it in 2 tries: the refused answers do not count as tries.', 'Fai usare ask_number al gioco per ogni tentativo. Con le risposte abc, 500, 50 e 42, il programma deve finire dicendo che ce l\'hai fatta in 2 tentativi: le risposte rifiutate non contano come tentativi.', 'Fais utiliser ask_number au jeu pour chaque essai. Avec les réponses abc, 500, 50 et 42, le programme doit finir en disant que tu as réussi en 2 essais : les réponses refusées ne comptent pas comme essais.'],
+          h: ['The function is already written, but nobody calls it: the guess still comes from int(input(...)), which stops with an error on abc. Replace that line with guess = ask_number("Guess (1-100): ", 1, 100).', 'La funzione è già scritta, ma nessuno la chiama: il tentativo viene ancora da int(input(...)), che si ferma con un errore su abc. Sostituisci quella riga con guess = ask_number("Indovina (1-100): ", 1, 100).', 'La fonction est déjà écrite, mais personne ne l\'appelle : l\'essai vient encore de int(input(...)), qui s\'arrête sur une erreur avec abc. Remplace cette ligne par guess = ask_number("Devine (1-100) : ", 1, 100).'],
+          start: [c`def ask_number(question, low, high):
+    while True:
+        text = input(question)
+        if not text.strip().isdigit():
+            print("Please type a whole number.")
+            continue
+        number = int(text)
+        if low <= number <= high:
+            return number
+        print(f"It must be between {low} and {high}.")
+
+secret = 42
+tries = 0
+while True:
+    guess = int(input("Guess (1-100): "))
+    tries += 1
+    if guess == secret:
+        print(f"You got it in {tries} tries!")
+        break
+    print("Too low" if guess < secret else "Too high")`, c`def ask_number(question, low, high):
+    while True:
+        text = input(question)
+        if not text.strip().isdigit():
+            print("Scrivi un numero intero.")
+            continue
+        number = int(text)
+        if low <= number <= high:
+            return number
+        print(f"Deve essere tra {low} e {high}.")
+
+secret = 42
+tries = 0
+while True:
+    guess = int(input("Indovina (1-100): "))
+    tries += 1
+    if guess == secret:
+        print(f"Ce l'hai fatta in {tries} tentativi!")
+        break
+    print("Troppo basso" if guess < secret else "Troppo alto")`, c`def ask_number(question, low, high):
+    while True:
+        text = input(question)
+        if not text.strip().isdigit():
+            print("Tape un nombre entier.")
+            continue
+        number = int(text)
+        if low <= number <= high:
+            return number
+        print(f"Il doit être entre {low} et {high}.")
+
+secret = 42
+tries = 0
+while True:
+    guess = int(input("Devine (1-100) : "))
+    tries += 1
+    if guess == secret:
+        print(f"Tu as réussi en {tries} essais !")
+        break
+    print("Trop petit" if guess < secret else "Trop grand")`],
           sol: [c`def ask_number(question, low, high):
     while True:
         text = input(question)

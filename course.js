@@ -5652,6 +5652,1584 @@ window.PyvielCourse = {
      }
     }
    ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Keep going",
+    "it": "Vai avanti",
+    "fr": "Continue"
+   },
+   "subtitle": {
+    "en": "The while loop",
+    "it": "Il ciclo while",
+    "fr": "La boucle while"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "n = 1\nwhile n <= 5:\n    print(\"n is\", n)\n    n += 1\nprint(\"Done\")",
+      "it": "n = 1\nwhile n <= 5:\n    print(\"n è\", n)\n    n += 1\nprint(\"Fatto\")",
+      "fr": "n = 1\nwhile n <= 5:\n    print(\"n est\", n)\n    n += 1\nprint(\"Terminé\")"
+     },
+     "title": {
+      "en": "Keep going while it is true",
+      "it": "Vai avanti finché è vero",
+      "fr": "Continue tant que c'est vrai"
+     },
+     "text": {
+      "en": "while repeats the pushed-in lines for as long as its question is True. Before each turn, Python asks the question again.\n\nInside, n += 1 changes n. Without it, n would never change, and the loop would never end.",
+      "it": "while ripete le righe rientrate finché la sua domanda è True. Prima di ogni giro, Python fa di nuovo la domanda.\n\nDentro, n += 1 cambia n. Senza, n non cambierebbe mai e il ciclo non finirebbe mai.",
+      "fr": "while répète les lignes décalées tant que sa question est True. Avant chaque tour, Python repose la question.\n\nDedans, n += 1 change n. Sans ça, n ne changerait jamais et la boucle ne finirait jamais."
+     },
+     "see": {
+      "en": "n is 1\nn is 2\nn is 3\nn is 4\nn is 5\nDone",
+      "it": "n è 1\nn è 2\nn è 3\nn è 4\nn è 5\nFatto",
+      "fr": "n est 1\nn est 2\nn est 3\nn est 4\nn est 5\nTerminé"
+     },
+     "slip": {
+      "en": "Always change something inside a while loop, or it never ends. If that happens, the Stop button is there.",
+      "it": "Cambia sempre qualcosa dentro un ciclo while, o non finisce mai. Se succede, c'è il pulsante Stop.",
+      "fr": "Change toujours quelque chose dans une boucle while, sinon elle ne finit jamais. Si ça arrive, le bouton Stop est là."
+     },
+     "news": [
+      {
+       "k": "while",
+       "w": "while",
+       "d": {
+        "en": "while repeats lines for as long as a question is True. Write while, a question and a colon. The question is asked again before every turn.",
+        "it": "while ripete delle righe finché una domanda è True. Scrivi while, una domanda e i due punti. La domanda viene fatta di nuovo prima di ogni giro.",
+        "fr": "while répète des lignes tant qu'une question est True. Écris while, une question et deux points. La question est reposée avant chaque tour."
+       },
+       "s": {
+        "en": "while count > 0:\n    count -= 1",
+        "it": "while count > 0:\n    count -= 1",
+        "fr": "while count > 0:\n    count -= 1"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Change the program so that it counts up to 8 instead of 5.",
+       "it": "Cambia il programma così che conti fino a 8 invece di 5.",
+       "fr": "Change le programme pour qu'il compte jusqu'à 8 au lieu de 5."
+      },
+      "hint": {
+       "en": "Change the 5 in the question of the while.",
+       "it": "Cambia il 5 nella domanda del while.",
+       "fr": "Change le 5 dans la question du while."
+      },
+      "sol": {
+       "en": "n = 1\nwhile n <= 8:\n    print(\"n is\", n)\n    n += 1\nprint(\"Done\")",
+       "it": "n = 1\nwhile n <= 8:\n    print(\"n è\", n)\n    n += 1\nprint(\"Fatto\")",
+       "fr": "n = 1\nwhile n <= 8:\n    print(\"n est\", n)\n    n += 1\nprint(\"Terminé\")"
+      },
+      "start": {
+       "en": "n = 1\nwhile n <= 5:\n    print(\"n is\", n)\n    n += 1\nprint(\"Done\")",
+       "it": "n = 1\nwhile n <= 5:\n    print(\"n è\", n)\n    n += 1\nprint(\"Fatto\")",
+       "fr": "n = 1\nwhile n <= 5:\n    print(\"n est\", n)\n    n += 1\nprint(\"Terminé\")"
+      },
+      "spec": {
+       "en": {
+        "out": "n is 1\nn is 2\nn is 3\nn is 4\nn is 5\nn is 6\nn is 7\nn is 8\nDone\n"
+       },
+       "it": {
+        "out": "n è 1\nn è 2\nn è 3\nn è 4\nn è 5\nn è 6\nn è 7\nn è 8\nFatto\n"
+       },
+       "fr": {
+        "out": "n est 1\nn est 2\nn est 3\nn est 4\nn est 5\nn est 6\nn est 7\nn est 8\nTerminé\n"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "n is 1\nn is 2\nn is 3\nn is 4\nn is 5\nn is 6\nn is 7\nn is 8\nDone",
+       "it": "n è 1\nn è 2\nn è 3\nn è 4\nn è 5\nn è 6\nn è 7\nn è 8\nFatto",
+       "fr": "n est 1\nn est 2\nn est 3\nn est 4\nn est 5\nn est 6\nn est 7\nn est 8\nTerminé"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "import random\nsecret = random.randint(1, 10)\nguess = 0\ntries = 0\nwhile guess != secret:\n    guess = int(input(\"Guess the number from 1 to 10: \"))\n    tries += 1\nprint(\"You got it in\", tries, \"tries!\")",
+      "it": "import random\nsecret = random.randint(1, 10)\nguess = 0\ntries = 0\nwhile guess != secret:\n    guess = int(input(\"Indovina il numero da 1 a 10: \"))\n    tries += 1\nprint(\"Ce l'hai fatta in\", tries, \"tentativi!\")",
+      "fr": "import random\nsecret = random.randint(1, 10)\nguess = 0\ntries = 0\nwhile guess != secret:\n    guess = int(input(\"Devine le nombre de 1 à 10 : \"))\n    tries += 1\nprint(\"Tu as réussi en\", tries, \"essais !\")"
+     },
+     "title": {
+      "en": "A guessing game",
+      "it": "Un gioco a indovinare",
+      "fr": "Un jeu de devinettes"
+     },
+     "text": {
+      "en": "while is perfect when you do not know how many turns you need. Here the program thinks of a secret number, and keeps asking until you find it.\n\nTo pick a secret number by luck, the program uses a tool box called random. This is the first time you see import: do not worry, you will meet it properly in a later lesson.",
+      "it": "while è perfetto quando non sai quanti giri ti servono. Qui il programma pensa a un numero segreto e continua a chiedere finché lo trovi.\n\nPer scegliere un numero segreto a caso, il programma usa una cassetta di attrezzi che si chiama random. È la prima volta che vedi import: non preoccuparti, lo conoscerai bene in una lezione più avanti.",
+      "fr": "while est parfait quand tu ne sais pas combien de tours il te faut. Ici le programme pense à un nombre secret et continue à demander jusqu'à ce que tu le trouves.\n\nPour choisir un nombre secret au hasard, le programme utilise une boîte à outils qui s'appelle random. C'est la première fois que tu vois import : ne t'inquiète pas, tu le connaîtras bien dans une leçon plus loin."
+     },
+     "see": {
+      "en": "Guess the number from 1 to 10: 5\nGuess the number from 1 to 10: 8\nYou got it in 2 tries!",
+      "it": "Indovina il numero da 1 a 10: 5\nIndovina il numero da 1 a 10: 8\nCe l'hai fatta in 2 tentativi!",
+      "fr": "Devine le nombre de 1 à 10 : 5\nDevine le nombre de 1 à 10 : 8\nTu as réussi en 2 essais !"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "import",
+       "w": "import",
+       "d": {
+        "en": "import brings in a tool box that Python has ready but does not load by itself. Write import and the name of the box; its tools then have the name of the box in front: random.something.",
+        "it": "import porta una cassetta degli attrezzi che Python ha pronta ma non carica da sola. Scrivi import e il nome della cassetta; i suoi attrezzi hanno poi davanti il nome della cassetta: random.qualcosa.",
+        "fr": "import apporte une boîte à outils que Python a prête mais ne charge pas toute seule. Écris import et le nom de la boîte ; ses outils ont ensuite devant eux le nom de la boîte : random.quelquechose."
+       },
+       "s": {
+        "en": "import random",
+        "it": "import random",
+        "fr": "import random"
+       }
+      },
+      {
+       "k": "module:random",
+       "w": "random",
+       "d": {
+        "en": "random is a tool box for luck: random numbers, shuffling, picking. You will meet it properly in a later lesson.",
+        "it": "random è una cassetta di attrezzi per la fortuna: numeri a caso, mescolare, scegliere. La conoscerai bene in una lezione più avanti.",
+        "fr": "random est une boîte à outils pour la chance : nombres au hasard, mélanger, choisir. Tu la connaîtras bien dans une leçon plus loin."
+       },
+       "s": {
+        "en": "import random",
+        "it": "import random",
+        "fr": "import random"
+       }
+      },
+      {
+       "k": "random.randint",
+       "w": "random.randint( )",
+       "d": {
+        "en": "random.randint(1, 10) gives a whole number chosen by luck from 1 to 10, both included. It is different every time you run the program.",
+        "it": "random.randint(1, 10) dà un numero intero scelto a caso da 1 a 10, estremi compresi. È diverso ogni volta che esegui il programma.",
+        "fr": "random.randint(1, 10) donne un nombre entier choisi au hasard de 1 à 10, bornes comprises. Il est différent à chaque fois que tu lances le programme."
+       },
+       "s": {
+        "en": "secret = random.randint(1, 10)",
+        "it": "secret = random.randint(1, 10)",
+        "fr": "secret = random.randint(1, 10)"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Change the game so that the secret number is from 1 to 3 instead of 1 to 10.",
+       "it": "Cambia il gioco così che il numero segreto sia da 1 a 3 invece di 1 a 10.",
+       "fr": "Change le jeu pour que le nombre secret soit de 1 à 3 au lieu de 1 à 10."
+      },
+      "hint": {
+       "en": "Change the numbers inside random.randint( ).",
+       "it": "Cambia i numeri dentro random.randint( ).",
+       "fr": "Change les nombres dans random.randint( )."
+      },
+      "sol": {
+       "en": "import random\nsecret = random.randint(1, 3)\nguess = 0\nwhile guess != secret:\n    guess = int(input(\"Guess: \"))\nprint(\"Yes!\")",
+       "it": "import random\nsecret = random.randint(1, 3)\nguess = 0\nwhile guess != secret:\n    guess = int(input(\"Indovina: \"))\nprint(\"Sì!\")",
+       "fr": "import random\nsecret = random.randint(1, 3)\nguess = 0\nwhile guess != secret:\n    guess = int(input(\"Devine : \"))\nprint(\"Oui !\")"
+      },
+      "start": {
+       "en": "import random\nsecret = random.randint(1, 10)\nguess = 0\nwhile guess != secret:\n    guess = int(input(\"Guess: \"))\nprint(\"Yes!\")",
+       "it": "import random\nsecret = random.randint(1, 10)\nguess = 0\nwhile guess != secret:\n    guess = int(input(\"Indovina: \"))\nprint(\"Sì!\")",
+       "fr": "import random\nsecret = random.randint(1, 10)\nguess = 0\nwhile guess != secret:\n    guess = int(input(\"Devine : \"))\nprint(\"Oui !\")"
+      },
+      "spec": {
+       "en": {
+        "m": "Yes!$",
+        "c": "randint\\(1, 3\\)"
+       },
+       "it": {
+        "m": "Sì!$",
+        "c": "randint\\(1, 3\\)"
+       },
+       "fr": {
+        "m": "Oui !$",
+        "c": "randint\\(1, 3\\)"
+       }
+      },
+      "answers": {
+       "en": [
+        "1",
+        "2",
+        "3"
+       ],
+       "it": [
+        "1",
+        "2",
+        "3"
+       ],
+       "fr": [
+        "1",
+        "2",
+        "3"
+       ]
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "for n in range(1, 10):\n    if n == 4:\n        break\n    print(n)\nprint(\"---\")\nfor n in range(1, 6):\n    if n == 3:\n        continue\n    print(n)",
+      "it": "for n in range(1, 10):\n    if n == 4:\n        break\n    print(n)\nprint(\"---\")\nfor n in range(1, 6):\n    if n == 3:\n        continue\n    print(n)",
+      "fr": "for n in range(1, 10):\n    if n == 4:\n        break\n    print(n)\nprint(\"---\")\nfor n in range(1, 6):\n    if n == 3:\n        continue\n    print(n)"
+     },
+     "title": {
+      "en": "Leave early: break and continue",
+      "it": "Esci prima: break e continue",
+      "fr": "Sors plus tôt : break et continue"
+     },
+     "text": {
+      "en": "break leaves the loop right now. continue skips the rest of this turn and goes straight to the next one.\n\nBoth work in for loops and in while loops. In the first loop, 4 is never shown, and the loop stops. In the second, only 3 is skipped.",
+      "it": "break esce subito dal ciclo. continue salta il resto di questo giro e passa subito al successivo.\n\nFunzionano tutti e due nei cicli for e nei cicli while. Nel primo ciclo il 4 non viene mai mostrato e il ciclo si ferma. Nel secondo viene saltato solo il 3.",
+      "fr": "break sort tout de suite de la boucle. continue saute le reste de ce tour et passe tout de suite au suivant.\n\nLes deux marchent dans les boucles for et dans les boucles while. Dans la première boucle, le 4 n'est jamais affiché et la boucle s'arrête. Dans la deuxième, seul le 3 est sauté."
+     },
+     "see": {
+      "en": "1\n2\n3\n---\n1\n2\n4\n5",
+      "it": "1\n2\n3\n---\n1\n2\n4\n5",
+      "fr": "1\n2\n3\n---\n1\n2\n4\n5"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "break",
+       "w": "break",
+       "d": {
+        "en": "break leaves the loop at once, and the program goes on with the lines after it.",
+        "it": "break esce subito dal ciclo, e il programma continua con le righe dopo.",
+        "fr": "break sort tout de suite de la boucle, et le programme continue avec les lignes d'après."
+       },
+       "s": {
+        "en": "if n == 3:\n    break",
+        "it": "if n == 3:\n    break",
+        "fr": "if n == 3:\n    break"
+       }
+      },
+      {
+       "k": "continue",
+       "w": "continue",
+       "d": {
+        "en": "continue skips the rest of this turn and goes straight to the next one.",
+        "it": "continue salta il resto di questo giro e passa subito al successivo.",
+        "fr": "continue saute le reste de ce tour et passe tout de suite au suivant."
+       },
+       "s": {
+        "en": "if n == 3:\n    continue",
+        "it": "if n == 3:\n    continue",
+        "fr": "if n == 3:\n    continue"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the numbers from 1 to 10, but stop as soon as you reach 6. The 6 must not be shown.",
+       "it": "Mostra i numeri da 1 a 10, ma fermati appena arrivi a 6. Il 6 non deve essere mostrato.",
+       "fr": "Affiche les nombres de 1 à 10, mais arrête-toi dès que tu arrives à 6. Le 6 ne doit pas être affiché."
+      },
+      "hint": {
+       "en": "if n == 6: and then break, before the print.",
+       "it": "if n == 6: e poi break, prima di print.",
+       "fr": "if n == 6: puis break, avant print."
+      },
+      "sol": {
+       "en": "for n in range(1, 11):\n    if n == 6:\n        break\n    print(n)",
+       "it": "for n in range(1, 11):\n    if n == 6:\n        break\n    print(n)",
+       "fr": "for n in range(1, 11):\n    if n == 6:\n        break\n    print(n)"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "1\n2\n3\n4\n5",
+        "c": "break"
+       },
+       "it": {
+        "out": "1\n2\n3\n4\n5",
+        "c": "break"
+       },
+       "fr": {
+        "out": "1\n2\n3\n4\n5",
+        "c": "break"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "1\n2\n3\n4\n5",
+       "it": "1\n2\n3\n4\n5",
+       "fr": "1\n2\n3\n4\n5"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "while True:\n    answer = input(\"Type quit to stop: \")\n    if answer == \"quit\":\n        break\n    print(\"You typed:\", answer)\nprint(\"Bye!\")",
+      "it": "while True:\n    answer = input(\"Scrivi quit per fermarti: \")\n    if answer == \"quit\":\n        break\n    print(\"Hai scritto:\", answer)\nprint(\"Ciao!\")",
+      "fr": "while True:\n    answer = input(\"Tape quit pour t'arrêter : \")\n    if answer == \"quit\":\n        break\n    print(\"Tu as tapé :\", answer)\nprint(\"Au revoir !\")"
+     },
+     "title": {
+      "en": "A loop with no end, on purpose",
+      "it": "Un ciclo senza fine, apposta",
+      "fr": "Une boucle sans fin, exprès"
+     },
+     "text": {
+      "en": "while True is a loop that never ends by itself, because True is always true. You leave it with break, when something happens inside.\n\nIt is a very common pattern for menus and games: keep asking until the person wants to stop.",
+      "it": "while True è un ciclo che non finisce mai da solo, perché True è sempre vero. Lo lasci con break, quando dentro succede qualcosa.\n\nÈ uno schema molto comune per menu e giochi: continua a chiedere finché la persona vuole fermarsi.",
+      "fr": "while True est une boucle qui ne finit jamais toute seule, parce que True est toujours vrai. Tu en sors avec break, quand quelque chose arrive dedans.\n\nC'est un schéma très courant pour les menus et les jeux : continue à demander jusqu'à ce que la personne veuille s'arrêter."
+     },
+     "see": {
+      "en": "Type quit to stop: hello\nYou typed: hello\nType quit to stop: python\nYou typed: python\nType quit to stop: quit\nBye!",
+      "it": "Scrivi quit per fermarti: hello\nHai scritto: hello\nScrivi quit per fermarti: python\nHai scritto: python\nScrivi quit per fermarti: quit\nCiao!",
+      "fr": "Tape quit pour t'arrêter : hello\nTu as tapé : hello\nTape quit pour t'arrêter : python\nTu as tapé : python\nTape quit pour t'arrêter : quit\nAu revoir !"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Change the program so that the word to type is stop instead of quit.",
+       "it": "Cambia il programma così che la parola da scrivere sia stop invece di quit.",
+       "fr": "Change le programme pour que le mot à taper soit stop au lieu de quit."
+      },
+      "hint": {
+       "en": "Change the word in the if, and the word in the question.",
+       "it": "Cambia la parola nell'if e quella nella domanda.",
+       "fr": "Change le mot dans le if et celui de la question."
+      },
+      "sol": {
+       "en": "while True:\n    answer = input(\"Type stop to stop: \")\n    if answer == \"stop\":\n        break\n    print(\"You typed:\", answer)",
+       "it": "while True:\n    answer = input(\"Scrivi stop per fermarti: \")\n    if answer == \"stop\":\n        break\n    print(\"Hai scritto:\", answer)",
+       "fr": "while True:\n    answer = input(\"Tape stop pour t'arrêter : \")\n    if answer == \"stop\":\n        break\n    print(\"Tu as tapé :\", answer)"
+      },
+      "start": {
+       "en": "while True:\n    answer = input(\"Type quit to stop: \")\n    if answer == \"quit\":\n        break\n    print(\"You typed:\", answer)",
+       "it": "while True:\n    answer = input(\"Scrivi quit per fermarti: \")\n    if answer == \"quit\":\n        break\n    print(\"Hai scritto:\", answer)",
+       "fr": "while True:\n    answer = input(\"Tape quit pour t'arrêter : \")\n    if answer == \"quit\":\n        break\n    print(\"Tu as tapé :\", answer)"
+      },
+      "spec": {
+       "en": {
+        "m": "You typed: hello",
+        "c": "\"stop\""
+       },
+       "it": {
+        "m": "Hai scritto: hello",
+        "c": "\"stop\""
+       },
+       "fr": {
+        "m": "Tu as tapé : hello",
+        "c": "\"stop\""
+       }
+      },
+      "answers": {
+       "en": [
+        "hello",
+        "stop"
+       ],
+       "it": [
+        "hello",
+        "stop"
+       ],
+       "fr": [
+        "hello",
+        "stop"
+       ]
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "n = 27\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Reached 1 after\", steps, \"steps\")",
+      "it": "n = 27\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Arrivato a 1 dopo\", steps, \"passi\")",
+      "fr": "n = 27\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Arrivé à 1 après\", steps, \"étapes\")"
+     },
+     "title": {
+      "en": "A famous number puzzle",
+      "it": "Un famoso rompicapo di numeri",
+      "fr": "Un célèbre casse-tête de nombres"
+     },
+     "text": {
+      "en": "The Collatz puzzle: take a number. If it is even, halve it. If it is odd, triple it and add 1. Repeat. Nobody has ever found a number that does not reach 1 in the end.\n\nIt puts together everything from this lesson: while, if, else and a counter.",
+      "it": "Il rompicapo di Collatz: prendi un numero. Se è pari, dividilo a metà. Se è dispari, triplicalo e aggiungi 1. Ripeti. Nessuno ha mai trovato un numero che alla fine non arrivi a 1.\n\nMette insieme tutto quello di questa lezione: while, if, else e un contatore.",
+      "fr": "Le casse-tête de Collatz : prends un nombre. S'il est pair, divise-le par deux. S'il est impair, triple-le et ajoute 1. Recommence. Personne n'a jamais trouvé un nombre qui n'arrive pas à 1 à la fin.\n\nIl rassemble tout ce qu'il y a dans cette leçon : while, if, else et un compteur."
+     },
+     "see": {
+      "en": "Reached 1 after 111 steps",
+      "it": "Arrivato a 1 dopo 111 passi",
+      "fr": "Arrivé à 1 après 111 étapes"
+     },
+     "slip": null,
+     "ex": {
+      "task": {
+       "en": "Start from 6 instead of 27, and see how many steps it needs.",
+       "it": "Parti da 6 invece di 27 e guarda di quanti passi ha bisogno.",
+       "fr": "Pars de 6 au lieu de 27 et regarde de combien d'étapes il a besoin."
+      },
+      "hint": {
+       "en": "Change only the first line.",
+       "it": "Cambia solo la prima riga.",
+       "fr": "Change seulement la première ligne."
+      },
+      "sol": {
+       "en": "n = 6\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Reached 1 after\", steps, \"steps\")",
+       "it": "n = 6\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Arrivato a 1 dopo\", steps, \"passi\")",
+       "fr": "n = 6\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Arrivé à 1 après\", steps, \"étapes\")"
+      },
+      "start": {
+       "en": "n = 27\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Reached 1 after\", steps, \"steps\")",
+       "it": "n = 27\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Arrivato a 1 dopo\", steps, \"passi\")",
+       "fr": "n = 27\nsteps = 0\nwhile n != 1:\n    if n % 2 == 0:\n        n = n // 2\n    else:\n        n = 3 * n + 1\n    steps += 1\nprint(\"Arrivé à 1 après\", steps, \"étapes\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Reached 1 after 8 steps\n"
+       },
+       "it": {
+        "out": "Arrivato a 1 dopo 8 passi\n"
+       },
+       "fr": {
+        "out": "Arrivé à 1 après 8 étapes\n"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Reached 1 after 8 steps",
+       "it": "Arrivato a 1 dopo 8 passi",
+       "fr": "Arrivé à 1 après 8 étapes"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Lists",
+    "it": "Le liste",
+    "fr": "Les listes"
+   },
+   "subtitle": {
+    "en": "Many things in one place",
+    "it": "Molte cose in un posto solo",
+    "fr": "Plein de choses au même endroit"
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "pets = [\"cat\", \"dog\", \"fox\"]\nprint(pets)\nprint(pets[0])\nprint(pets[-1])\nprint(len(pets))",
+      "it": "pets = [\"gatto\", \"cane\", \"volpe\"]\nprint(pets)\nprint(pets[0])\nprint(pets[-1])\nprint(len(pets))",
+      "fr": "pets = [\"chat\", \"chien\", \"renard\"]\nprint(pets)\nprint(pets[0])\nprint(pets[-1])\nprint(len(pets))"
+     },
+     "title": {
+      "en": "A list of things",
+      "it": "Una lista di cose",
+      "fr": "Une liste de choses"
+     },
+     "text": {
+      "en": "Square brackets make a list. Its items are separated by commas. A list works like a text: the first item is at place 0, the second at place 1, and a minus place counts from the end.\n\nlen tells how many items there are. You already know all of this from text: a list is a row of anything.",
+      "it": "Le parentesi quadre fanno una lista. I suoi elementi sono separati da virgole. Una lista funziona come un testo: il primo elemento è al posto 0, il secondo al posto 1, e un posto con il meno conta dalla fine.\n\nlen dice quanti elementi ci sono. Tutto questo lo conosci già dal testo: una lista è una fila di qualsiasi cosa.",
+      "fr": "Les crochets font une liste. Ses éléments sont séparés par des virgules. Une liste marche comme un texte : le premier élément est à la place 0, le deuxième à la place 1, et une place avec un moins compte depuis la fin.\n\nlen dit combien d'éléments il y a. Tu connais déjà tout ça avec le texte : une liste est une rangée de n'importe quoi."
+     },
+     "see": {
+      "en": "['cat', 'dog', 'fox']\ncat\nfox\n3",
+      "it": "['gatto', 'cane', 'volpe']\ngatto\nvolpe\n3",
+      "fr": "['chat', 'chien', 'renard']\nchat\nrenard\n3"
+     },
+     "slip": {
+      "en": "Asking for pets[3] in a list of three stops with an error: there is no place 3.",
+      "it": "Chiedere pets[3] in una lista di tre si ferma con un errore: non c'è il posto 3.",
+      "fr": "Demander pets[3] dans une liste de trois s'arrête avec une erreur : il n'y a pas de place 3."
+     },
+     "news": [
+      {
+       "k": "list",
+       "w": "[ ]",
+       "d": {
+        "en": "A list keeps many values in order. Write them between square brackets, with commas. Its items have places counted from 0, like the letters of a text.",
+        "it": "Una lista tiene molti valori in ordine. Scrivili tra parentesi quadre, con le virgole. I suoi elementi hanno posti contati da 0, come le lettere di un testo.",
+        "fr": "Une liste garde plusieurs valeurs dans l'ordre. Écris-les entre crochets, avec des virgules. Ses éléments ont des places comptées à partir de 0, comme les lettres d'un texte."
+       },
+       "s": {
+        "en": "fruits = [\"apple\", \"banana\"]",
+        "it": "fruits = [\"mela\", \"banana\"]",
+        "fr": "fruits = [\"pomme\", \"banane\"]"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the second pet of the list (remember: the places start at 0).",
+       "it": "Mostra il secondo animale della lista (ricorda: i posti partono da 0).",
+       "fr": "Affiche le deuxième animal de la liste (souviens-toi : les places commencent à 0)."
+      },
+      "hint": {
+       "en": "The second item is at place 1.",
+       "it": "Il secondo elemento è al posto 1.",
+       "fr": "Le deuxième élément est à la place 1."
+      },
+      "sol": {
+       "en": "pets = [\"cat\", \"dog\", \"fox\"]\nprint(pets[1])",
+       "it": "pets = [\"gatto\", \"cane\", \"volpe\"]\nprint(pets[1])",
+       "fr": "pets = [\"chat\", \"chien\", \"renard\"]\nprint(pets[1])"
+      },
+      "start": {
+       "en": "pets = [\"cat\", \"dog\", \"fox\"]",
+       "it": "pets = [\"gatto\", \"cane\", \"volpe\"]",
+       "fr": "pets = [\"chat\", \"chien\", \"renard\"]"
+      },
+      "spec": {
+       "en": {
+        "out": "dog",
+        "c": "\\[1\\]"
+       },
+       "it": {
+        "out": "cane",
+        "c": "\\[1\\]"
+       },
+       "fr": {
+        "out": "chien",
+        "c": "\\[1\\]"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "dog",
+       "it": "cane",
+       "fr": "chien"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "pets = [\"cat\", \"dog\", \"fox\"]\npets[1] = \"kitten\"\nprint(pets)",
+      "it": "pets = [\"gatto\", \"cane\", \"volpe\"]\npets[1] = \"cucciolo\"\nprint(pets)",
+      "fr": "pets = [\"chat\", \"chien\", \"renard\"]\npets[1] = \"chaton\"\nprint(pets)"
+     },
+     "title": {
+      "en": "Change an item",
+      "it": "Cambia un elemento",
+      "fr": "Change un élément"
+     },
+     "text": {
+      "en": "Unlike a text, a list can be changed. Write the list, the place in square brackets, an equal sign and the new value: the old item is replaced.\n\nThis is why lists are so useful: they can grow and change while the program runs.",
+      "it": "A differenza di un testo, una lista si può cambiare. Scrivi la lista, il posto tra parentesi quadre, un segno uguale e il nuovo valore: il vecchio elemento viene sostituito.\n\nPer questo le liste sono così utili: possono crescere e cambiare mentre il programma gira.",
+      "fr": "Contrairement à un texte, une liste peut être changée. Écris la liste, la place entre crochets, un signe égal et la nouvelle valeur : l'ancien élément est remplacé.\n\nC'est pourquoi les listes sont si utiles : elles peuvent grandir et changer pendant que le programme tourne."
+     },
+     "see": {
+      "en": "['cat', 'kitten', 'fox']",
+      "it": "['gatto', 'cucciolo', 'volpe']",
+      "fr": "['chat', 'chaton', 'renard']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "list-set",
+       "w": "list[0] = x",
+       "d": {
+        "en": "You can change one item of a list by its place: write the list, the place in square brackets, an equal sign and the new value.",
+        "it": "Puoi cambiare un elemento di una lista dal suo posto: scrivi la lista, il posto tra parentesi quadre, un segno uguale e il nuovo valore.",
+        "fr": "Tu peux changer un élément d'une liste par sa place : écris la liste, la place entre crochets, un signe égal et la nouvelle valeur."
+       },
+       "s": {
+        "en": "fruits[0] = \"pear\"",
+        "it": "fruits[0] = \"pera\"",
+        "fr": "fruits[0] = \"poire\""
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Replace the first item of the list with the word owl and show the list.",
+       "it": "Sostituisci il primo elemento della lista con la parola gufo e mostra la lista.",
+       "fr": "Remplace le premier élément de la liste par le mot hibou et affiche la liste."
+      },
+      "hint": {
+       "en": "pets[0] = ... on its own line, before the print.",
+       "it": "pets[0] = ... su una riga a parte, prima di print.",
+       "fr": "pets[0] = ... sur une ligne à part, avant print."
+      },
+      "sol": {
+       "en": "pets = [\"cat\", \"dog\", \"fox\"]\npets[0] = \"owl\"\nprint(pets)",
+       "it": "pets = [\"gatto\", \"cane\", \"volpe\"]\npets[0] = \"gufo\"\nprint(pets)",
+       "fr": "pets = [\"chat\", \"chien\", \"renard\"]\npets[0] = \"hibou\"\nprint(pets)"
+      },
+      "start": {
+       "en": "pets = [\"cat\", \"dog\", \"fox\"]",
+       "it": "pets = [\"gatto\", \"cane\", \"volpe\"]",
+       "fr": "pets = [\"chat\", \"chien\", \"renard\"]"
+      },
+      "spec": {
+       "en": {
+        "out": "['owl', 'dog', 'fox']\n",
+        "c": "\\[0\\] ="
+       },
+       "it": {
+        "out": "['gufo', 'cane', 'volpe']\n",
+        "c": "\\[0\\] ="
+       },
+       "fr": {
+        "out": "['hibou', 'chien', 'renard']\n",
+        "c": "\\[0\\] ="
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['owl', 'dog', 'fox']",
+       "it": "['gufo', 'cane', 'volpe']",
+       "fr": "['hibou', 'chien', 'renard']"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "pets = [\"cat\", \"dog\"]\npets.append(\"fox\")\nprint(pets)\npets.insert(0, \"owl\")\nprint(pets)",
+      "it": "pets = [\"gatto\", \"cane\"]\npets.append(\"volpe\")\nprint(pets)\npets.insert(0, \"gufo\")\nprint(pets)",
+      "fr": "pets = [\"chat\", \"chien\"]\npets.append(\"renard\")\nprint(pets)\npets.insert(0, \"hibou\")\nprint(pets)"
+     },
+     "title": {
+      "en": "Add things",
+      "it": "Aggiungi cose",
+      "fr": "Ajoute des choses"
+     },
+     "text": {
+      "en": "A list has its own helpers. Their name comes after a dot, and they work on that list. Programmers call them methods.\n\nappend adds an item at the end. insert puts an item at a place you choose, and the others move over.",
+      "it": "Una lista ha i suoi aiutanti. Il loro nome viene dopo un punto, e lavorano su quella lista. I programmatori li chiamano metodi.\n\nappend aggiunge un elemento in fondo. insert mette un elemento in un posto a tua scelta, e gli altri si spostano.",
+      "fr": "Une liste a ses propres assistants. Leur nom vient après un point, et ils travaillent sur cette liste. Les programmeurs les appellent des méthodes.\n\nappend ajoute un élément à la fin. insert met un élément à une place de ton choix, et les autres se décalent."
+     },
+     "see": {
+      "en": "['cat', 'dog', 'fox']\n['owl', 'cat', 'dog', 'fox']",
+      "it": "['gatto', 'cane', 'volpe']\n['gufo', 'gatto', 'cane', 'volpe']",
+      "fr": "['chat', 'chien', 'renard']\n['hibou', 'chat', 'chien', 'renard']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".append",
+       "w": ".append( )",
+       "d": {
+        "en": ".append adds one item at the end of a list. Write the list, a dot, append, and the item in brackets. The word after the dot is a method: a helper that belongs to the list.",
+        "it": ".append aggiunge un elemento in fondo a una lista. Scrivi la lista, un punto, append e l'elemento tra parentesi. La parola dopo il punto è un metodo: un aiutante che appartiene alla lista.",
+        "fr": ".append ajoute un élément à la fin d'une liste. Écris la liste, un point, append et l'élément entre parenthèses. Le mot après le point est une méthode : un assistant qui appartient à la liste."
+       },
+       "s": {
+        "en": "fruits.append(\"plum\")",
+        "it": "fruits.append(\"prugna\")",
+        "fr": "fruits.append(\"prune\")"
+       }
+      },
+      {
+       "k": ".insert",
+       "w": ".insert( )",
+       "d": {
+        "en": ".insert puts an item at a place of your choice: the place first, then the item. The others move over.",
+        "it": ".insert mette un elemento in un posto a tua scelta: prima il posto, poi l'elemento. Gli altri si spostano.",
+        "fr": ".insert met un élément à une place de ton choix : d'abord la place, puis l'élément. Les autres se décalent."
+       },
+       "s": {
+        "en": "fruits.insert(0, \"kiwi\")",
+        "it": "fruits.insert(0, \"kiwi\")",
+        "fr": "fruits.insert(0, \"kiwi\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "The list has two items. Add a third one, with append, and show the list.",
+       "it": "La lista ha due elementi. Aggiungine un terzo, con append, e mostra la lista.",
+       "fr": "La liste a deux éléments. Ajoute-en un troisième, avec append, et affiche la liste."
+      },
+      "hint": {
+       "en": "pets.append(\"...\") and then print(pets).",
+       "it": "pets.append(\"...\") e poi print(pets).",
+       "fr": "pets.append(\"...\") puis print(pets)."
+      },
+      "sol": {
+       "en": "pets = [\"cat\", \"dog\"]\npets.append(\"bird\")\nprint(pets)",
+       "it": "pets = [\"gatto\", \"cane\"]\npets.append(\"uccello\")\nprint(pets)",
+       "fr": "pets = [\"chat\", \"chien\"]\npets.append(\"oiseau\")\nprint(pets)"
+      },
+      "start": {
+       "en": "pets = [\"cat\", \"dog\"]",
+       "it": "pets = [\"gatto\", \"cane\"]",
+       "fr": "pets = [\"chat\", \"chien\"]"
+      },
+      "spec": {
+       "en": {
+        "out": "['cat', 'dog', 'bird']\n",
+        "c": "append"
+       },
+       "it": {
+        "out": "['gatto', 'cane', 'uccello']\n",
+        "c": "append"
+       },
+       "fr": {
+        "out": "['chat', 'chien', 'oiseau']\n",
+        "c": "append"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['cat', 'dog', 'bird']",
+       "it": "['gatto', 'cane', 'uccello']",
+       "fr": "['chat', 'chien', 'oiseau']"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "pets = [\"cat\", \"dog\", \"fox\", \"owl\"]\npets.remove(\"dog\")\nprint(pets)\nlast = pets.pop()\nprint(last, pets)\ndel pets[0]\nprint(pets)",
+      "it": "pets = [\"gatto\", \"cane\", \"volpe\", \"gufo\"]\npets.remove(\"cane\")\nprint(pets)\nlast = pets.pop()\nprint(last, pets)\ndel pets[0]\nprint(pets)",
+      "fr": "pets = [\"chat\", \"chien\", \"renard\", \"hibou\"]\npets.remove(\"chien\")\nprint(pets)\nlast = pets.pop()\nprint(last, pets)\ndel pets[0]\nprint(pets)"
+     },
+     "title": {
+      "en": "Take things out",
+      "it": "Togli cose",
+      "fr": "Enlève des choses"
+     },
+     "text": {
+      "en": "remove takes out the first item that has the value you give. pop takes out the last item and gives it back to you, so you can keep it in a box. del takes out the item at a place.\n\nremove stops with an error if the item is not in the list. Check with in first.",
+      "it": "remove toglie il primo elemento che ha il valore che gli dai. pop toglie l'ultimo elemento e te lo restituisce, così lo puoi tenere in una scatola. del toglie l'elemento che sta a un posto.\n\nremove si ferma con un errore se l'elemento non è nella lista. Controlla prima con in.",
+      "fr": "remove enlève le premier élément qui a la valeur que tu donnes. pop enlève le dernier élément et te le rend, donc tu peux le garder dans une boîte. del enlève l'élément qui est à une place.\n\nremove s'arrête avec une erreur si l'élément n'est pas dans la liste. Vérifie d'abord avec in."
+     },
+     "see": {
+      "en": "['cat', 'fox', 'owl']\nowl ['cat', 'fox']\n['fox']",
+      "it": "['gatto', 'volpe', 'gufo']\ngufo ['gatto', 'volpe']\n['volpe']",
+      "fr": "['chat', 'renard', 'hibou']\nhibou ['chat', 'renard']\n['renard']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".remove",
+       "w": ".remove( )",
+       "d": {
+        "en": ".remove takes out the first item that is equal to the one you give.",
+        "it": ".remove toglie il primo elemento uguale a quello che gli dai.",
+        "fr": ".remove enlève le premier élément égal à celui que tu donnes."
+       },
+       "s": {
+        "en": "fruits.remove(\"banana\")",
+        "it": "fruits.remove(\"banana\")",
+        "fr": "fruits.remove(\"banane\")"
+       }
+      },
+      {
+       "k": ".pop",
+       "w": ".pop( )",
+       "d": {
+        "en": ".pop takes out an item and gives it back to you. With no place, it is the last one.",
+        "it": ".pop toglie un elemento e te lo restituisce. Senza posto, è l'ultimo.",
+        "fr": ".pop enlève un élément et te le rend. Sans place, c'est le dernier."
+       },
+       "s": {
+        "en": "last = fruits.pop()",
+        "it": "last = fruits.pop()",
+        "fr": "last = fruits.pop()"
+       }
+      },
+      {
+       "k": "del",
+       "w": "del",
+       "d": {
+        "en": "del deletes something. With a list and a place, it removes the item that is there.",
+        "it": "del cancella qualcosa. Con una lista e un posto, toglie l'elemento che si trova lì.",
+        "fr": "del supprime quelque chose. Avec une liste et une place, il enlève l'élément qui s'y trouve."
+       },
+       "s": {
+        "en": "del fruits[0]",
+        "it": "del fruits[0]",
+        "fr": "del fruits[0]"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Take the item dog out of the list, and show the list.",
+       "it": "Togli l'elemento cane dalla lista e mostra la lista.",
+       "fr": "Enlève l'élément chien de la liste et affiche la liste."
+      },
+      "hint": {
+       "en": "pets.remove(\"dog\") and then print(pets).",
+       "it": "pets.remove(\"cane\") e poi print(pets).",
+       "fr": "pets.remove(\"chien\") puis print(pets)."
+      },
+      "sol": {
+       "en": "pets = [\"cat\", \"dog\", \"fox\"]\npets.remove(\"dog\")\nprint(pets)",
+       "it": "pets = [\"gatto\", \"cane\", \"volpe\"]\npets.remove(\"cane\")\nprint(pets)",
+       "fr": "pets = [\"chat\", \"chien\", \"renard\"]\npets.remove(\"chien\")\nprint(pets)"
+      },
+      "start": {
+       "en": "pets = [\"cat\", \"dog\", \"fox\"]",
+       "it": "pets = [\"gatto\", \"cane\", \"volpe\"]",
+       "fr": "pets = [\"chat\", \"chien\", \"renard\"]"
+      },
+      "spec": {
+       "en": {
+        "out": "['cat', 'fox']\n",
+        "c": "remove"
+       },
+       "it": {
+        "out": "['gatto', 'volpe']\n",
+        "c": "remove"
+       },
+       "fr": {
+        "out": "['chat', 'renard']\n",
+        "c": "remove"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "['cat', 'fox']",
+       "it": "['gatto', 'volpe']",
+       "fr": "['chat', 'renard']"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "scores = [70, 95, 82, 64]\ntotal = 0\nfor s in scores:\n    total += s\nprint(\"Total:\", total)\nprint(\"Average:\", total / len(scores))\nprint(sum(scores), min(scores), max(scores))",
+      "it": "scores = [70, 95, 82, 64]\ntotal = 0\nfor s in scores:\n    total += s\nprint(\"Totale:\", total)\nprint(\"Media:\", total / len(scores))\nprint(sum(scores), min(scores), max(scores))",
+      "fr": "scores = [70, 95, 82, 64]\ntotal = 0\nfor s in scores:\n    total += s\nprint(\"Total :\", total)\nprint(\"Moyenne :\", total / len(scores))\nprint(sum(scores), min(scores), max(scores))"
+     },
+     "title": {
+      "en": "Use all the items",
+      "it": "Usa tutti gli elementi",
+      "fr": "Utilise tous les éléments"
+     },
+     "text": {
+      "en": "A for loop can walk through all the items of a list, like it walked through the letters of a text. Here it adds them up, and the average is the total divided by how many there are.\n\nPython also has a ready-made helper: sum adds up a whole list in one go. min and max work on a whole list too.",
+      "it": "Un ciclo for può scorrere tutti gli elementi di una lista, come scorreva le lettere di un testo. Qui li somma, e la media è il totale diviso quanti sono.\n\nPython ha anche un aiutante già pronto: sum somma un'intera lista in un colpo solo. Anche min e max funzionano su un'intera lista.",
+      "fr": "Une boucle for peut parcourir tous les éléments d'une liste, comme elle parcourait les lettres d'un texte. Ici elle les additionne, et la moyenne est le total divisé par leur nombre.\n\nPython a aussi un assistant tout prêt : sum additionne toute une liste d'un coup. min et max marchent aussi sur toute une liste."
+     },
+     "see": {
+      "en": "Total: 311\nAverage: 77.75\n311 64 95",
+      "it": "Totale: 311\nMedia: 77.75\n311 64 95",
+      "fr": "Total : 311\nMoyenne : 77.75\n311 64 95"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": "sum",
+       "w": "sum( )",
+       "d": {
+        "en": "sum adds up all the numbers of a list.",
+        "it": "sum somma tutti i numeri di una lista.",
+        "fr": "sum additionne tous les nombres d'une liste."
+       },
+       "s": {
+        "en": "sum([1, 2, 3])",
+        "it": "sum([1, 2, 3])",
+        "fr": "sum([1, 2, 3])"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the sum of the list [3, 5, 8, 4] with sum.",
+       "it": "Mostra la somma della lista [3, 5, 8, 4] con sum.",
+       "fr": "Affiche la somme de la liste [3, 5, 8, 4] avec sum."
+      },
+      "hint": {
+       "en": "print(sum([3, 5, 8, 4]))",
+       "it": "print(sum([3, 5, 8, 4]))",
+       "fr": "print(sum([3, 5, 8, 4]))"
+      },
+      "sol": {
+       "en": "print(sum([3, 5, 8, 4]))",
+       "it": "print(sum([3, 5, 8, 4]))",
+       "fr": "print(sum([3, 5, 8, 4]))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "20",
+        "c": "sum"
+       },
+       "it": {
+        "out": "20",
+        "c": "sum"
+       },
+       "fr": {
+        "out": "20",
+        "c": "sum"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "20",
+       "it": "20",
+       "fr": "20"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "numbers = [3, 1, 2]\nnumbers.sort()\nprint(numbers)\nprint(sorted([9, 4, 7]))\nnames = [\"Zoe\", \"Ada\", \"Max\"]\nprint(sorted(names))",
+      "it": "numbers = [3, 1, 2]\nnumbers.sort()\nprint(numbers)\nprint(sorted([9, 4, 7]))\nnames = [\"Zoe\", \"Ada\", \"Max\"]\nprint(sorted(names))",
+      "fr": "numbers = [3, 1, 2]\nnumbers.sort()\nprint(numbers)\nprint(sorted([9, 4, 7]))\nnames = [\"Zoe\", \"Ada\", \"Max\"]\nprint(sorted(names))"
+     },
+     "title": {
+      "en": "Put in order",
+      "it": "Metti in ordine",
+      "fr": "Mets dans l'ordre"
+     },
+     "text": {
+      "en": "sort puts the items of the list itself in order, smallest first. The list changes.\n\nsorted gives a new list in order and leaves the old one as it was. Both work on numbers and on texts (in alphabetical order).",
+      "it": "sort mette in ordine gli elementi della lista stessa, dal più piccolo. La lista cambia.\n\nsorted dà una lista nuova in ordine e lascia la vecchia com'era. Funzionano tutti e due con i numeri e con i testi (in ordine alfabetico).",
+      "fr": "sort met dans l'ordre les éléments de la liste elle-même, du plus petit au plus grand. La liste change.\n\nsorted donne une nouvelle liste dans l'ordre et laisse l'ancienne comme elle était. Les deux marchent avec des nombres et avec des textes (dans l'ordre alphabétique)."
+     },
+     "see": {
+      "en": "[1, 2, 3]\n[4, 7, 9]\n['Ada', 'Max', 'Zoe']",
+      "it": "[1, 2, 3]\n[4, 7, 9]\n['Ada', 'Max', 'Zoe']",
+      "fr": "[1, 2, 3]\n[4, 7, 9]\n['Ada', 'Max', 'Zoe']"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".sort",
+       "w": ".sort( )",
+       "d": {
+        "en": ".sort puts the items of the list itself in order. The list changes; nothing is given back.",
+        "it": ".sort mette in ordine gli elementi della lista stessa. La lista cambia; non restituisce niente.",
+        "fr": ".sort met dans l'ordre les éléments de la liste elle-même. La liste change ; il ne rend rien."
+       },
+       "s": {
+        "en": "numbers.sort()",
+        "it": "numbers.sort()",
+        "fr": "numbers.sort()"
+       }
+      },
+      {
+       "k": "sorted",
+       "w": "sorted( )",
+       "d": {
+        "en": "sorted gives a new list with the same items in order, smallest first. The old list stays as it was.",
+        "it": "sorted dà una lista nuova con gli stessi elementi in ordine, dal più piccolo. La vecchia lista resta com'era.",
+        "fr": "sorted donne une nouvelle liste avec les mêmes éléments dans l'ordre, du plus petit au plus grand. L'ancienne liste reste comme elle était."
+       },
+       "s": {
+        "en": "sorted([3, 1, 2])",
+        "it": "sorted([3, 1, 2])",
+        "fr": "sorted([3, 1, 2])"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show the list [5, 2, 9, 1] in order, using sorted.",
+       "it": "Mostra la lista [5, 2, 9, 1] in ordine, usando sorted.",
+       "fr": "Affiche la liste [5, 2, 9, 1] dans l'ordre, en utilisant sorted."
+      },
+      "hint": {
+       "en": "print(sorted([5, 2, 9, 1]))",
+       "it": "print(sorted([5, 2, 9, 1]))",
+       "fr": "print(sorted([5, 2, 9, 1]))"
+      },
+      "sol": {
+       "en": "print(sorted([5, 2, 9, 1]))",
+       "it": "print(sorted([5, 2, 9, 1]))",
+       "fr": "print(sorted([5, 2, 9, 1]))"
+      },
+      "start": {
+       "en": "",
+       "it": "",
+       "fr": ""
+      },
+      "spec": {
+       "en": {
+        "out": "[1, 2, 5, 9]",
+        "c": "sorted"
+       },
+       "it": {
+        "out": "[1, 2, 5, 9]",
+        "c": "sorted"
+       },
+       "fr": {
+        "out": "[1, 2, 5, 9]",
+        "c": "sorted"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "[1, 2, 5, 9]",
+       "it": "[1, 2, 5, 9]",
+       "fr": "[1, 2, 5, 9]"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]\nnames.reverse()\nprint(names)\nprint(names.index(\"Max\"))\nprint(names.count(\"Ada\"))",
+      "it": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]\nnames.reverse()\nprint(names)\nprint(names.index(\"Max\"))\nprint(names.count(\"Ada\"))",
+      "fr": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]\nnames.reverse()\nprint(names)\nprint(names.index(\"Max\"))\nprint(names.count(\"Ada\"))"
+     },
+     "title": {
+      "en": "Turn around, find and count",
+      "it": "Gira, trova e conta",
+      "fr": "Retourne, trouve et compte"
+     },
+     "text": {
+      "en": "reverse turns the list around. index tells the place where an item is found. count tells how many times an item appears.\n\nTogether with the others you know, these are almost everything you need to work with lists.",
+      "it": "reverse gira la lista. index dice il posto in cui si trova un elemento. count dice quante volte compare un elemento.\n\nInsieme agli altri che conosci, sono quasi tutto quello che ti serve per lavorare con le liste.",
+      "fr": "reverse retourne la liste. index dit la place où se trouve un élément. count dit combien de fois un élément apparaît.\n\nAvec les autres que tu connais, c'est presque tout ce qu'il te faut pour travailler avec les listes."
+     },
+     "see": {
+      "en": "['Ada', 'Max', 'Ada', 'Zoe']\n1\n2",
+      "it": "['Ada', 'Max', 'Ada', 'Zoe']\n1\n2",
+      "fr": "['Ada', 'Max', 'Ada', 'Zoe']\n1\n2"
+     },
+     "slip": null,
+     "news": [
+      {
+       "k": ".reverse",
+       "w": ".reverse( )",
+       "d": {
+        "en": ".reverse turns the list around, so the last item comes first. The list itself changes.",
+        "it": ".reverse gira la lista, così l'ultimo elemento viene per primo. La lista stessa cambia.",
+        "fr": ".reverse retourne la liste, donc le dernier élément passe en premier. La liste elle-même change."
+       },
+       "s": {
+        "en": "numbers.reverse()",
+        "it": "numbers.reverse()",
+        "fr": "numbers.reverse()"
+       }
+      },
+      {
+       "k": ".index",
+       "w": ".index( )",
+       "d": {
+        "en": ".index tells the place of an item in the list: the first place where it is found.",
+        "it": ".index dice il posto di un elemento nella lista: il primo posto in cui si trova.",
+        "fr": ".index dit la place d'un élément dans la liste : la première place où on le trouve."
+       },
+       "s": {
+        "en": "names.index(\"Ada\")",
+        "it": "names.index(\"Ada\")",
+        "fr": "names.index(\"Ada\")"
+       }
+      },
+      {
+       "k": ".count",
+       "w": ".count( )",
+       "d": {
+        "en": ".count tells how many times an item is in the list.",
+        "it": ".count dice quante volte un elemento è nella lista.",
+        "fr": ".count dit combien de fois un élément est dans la liste."
+       },
+       "s": {
+        "en": "names.count(\"Max\")",
+        "it": "names.count(\"Max\")",
+        "fr": "names.count(\"Max\")"
+       }
+      }
+     ],
+     "ex": {
+      "task": {
+       "en": "Show how many times the name Ada is in the list.",
+       "it": "Mostra quante volte il nome Ada è nella lista.",
+       "fr": "Affiche combien de fois le nom Ada est dans la liste."
+      },
+      "hint": {
+       "en": "names.count(\"Ada\") inside print.",
+       "it": "names.count(\"Ada\") dentro print.",
+       "fr": "names.count(\"Ada\") dans print."
+      },
+      "sol": {
+       "en": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]\nprint(names.count(\"Ada\"))",
+       "it": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]\nprint(names.count(\"Ada\"))",
+       "fr": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]\nprint(names.count(\"Ada\"))"
+      },
+      "start": {
+       "en": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]",
+       "it": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]",
+       "fr": "names = [\"Zoe\", \"Ada\", \"Max\", \"Ada\"]"
+      },
+      "spec": {
+       "en": {
+        "out": "2",
+        "c": "count"
+       },
+       "it": {
+        "out": "2",
+        "c": "count"
+       },
+       "fr": {
+        "out": "2",
+        "c": "count"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "2",
+       "it": "2",
+       "fr": "2"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "group": null,
+   "title": {
+    "en": "Reading mistakes",
+    "it": "Leggere gli errori",
+    "fr": "Lire les erreurs"
+   },
+   "subtitle": {
+    "en": "They happen. It is fine.",
+    "it": "Capitano. Va bene così.",
+    "fr": "Ça arrive. C'est normal."
+   },
+   "steps": [
+    {
+     "code": {
+      "en": "if 5 > 3\n    print(\"yes\")",
+      "it": "if 5 > 3\n    print(\"yes\")",
+      "fr": "if 5 > 3\n    print(\"yes\")"
+     },
+     "title": {
+      "en": "Python cannot read the line",
+      "it": "Python non riesce a leggere la riga",
+      "fr": "Python ne peut pas lire la ligne"
+     },
+     "text": {
+      "en": "A syntax error means a line is not written the way Python expects: a missing colon, a missing bracket, a missing quote. Python finds these before running anything, so nothing is shown.\n\nPyviel says which line and what is missing. The line number is where Python noticed it, so look at the line just before too.",
+      "it": "Un errore di sintassi vuol dire che una riga non è scritta come Python si aspetta: manca un due punti, una parentesi, una virgoletta. Python li trova prima di eseguire qualsiasi cosa, quindi non si vede niente.\n\nPyviel dice quale riga e cosa manca. Il numero di riga è dove Python se n'è accorto, quindi guarda anche la riga appena prima.",
+      "fr": "Une erreur de syntaxe veut dire qu'une ligne n'est pas écrite comme Python l'attend : il manque deux points, une parenthèse, un guillemet. Python les trouve avant de lancer quoi que ce soit, donc rien ne s'affiche.\n\nPyviel dit quelle ligne et ce qui manque. Le numéro de ligne est celui où Python l'a remarqué, donc regarde aussi la ligne juste avant."
+     },
+     "see": {
+      "en": "⚠ Line 1: A colon : is missing at the end of this line.",
+      "it": "⚠ Riga 1: Manca i due punti : alla fine di questa riga.",
+      "fr": "⚠ Ligne 1: Il manque les deux-points : à la fin de cette ligne."
+     },
+     "slip": null,
+     "error": "SyntaxError",
+     "ex": {
+      "task": {
+       "en": "Fix the line so the program shows yes.",
+       "it": "Correggi la riga così il programma mostra sì.",
+       "fr": "Corrige la ligne pour que le programme affiche oui."
+      },
+      "hint": {
+       "en": "Something is missing at the end of the if line.",
+       "it": "Manca qualcosa alla fine della riga if.",
+       "fr": "Il manque quelque chose à la fin de la ligne if."
+      },
+      "sol": {
+       "en": "if 5 > 3:\n    print(\"yes\")",
+       "it": "if 5 > 3:\n    print(\"sì\")",
+       "fr": "if 5 > 3:\n    print(\"oui\")"
+      },
+      "start": {
+       "en": "if 5 > 3\n    print(\"yes\")",
+       "it": "if 5 > 3\n    print(\"sì\")",
+       "fr": "if 5 > 3\n    print(\"oui\")"
+      },
+      "spec": {
+       "en": {
+        "out": "yes"
+       },
+       "it": {
+        "out": "sì"
+       },
+       "fr": {
+        "out": "oui"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "yes",
+       "it": "sì",
+       "fr": "oui"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "if 5 > 3:\nprint(\"yes\")",
+      "it": "if 5 > 3:\nprint(\"yes\")",
+      "fr": "if 5 > 3:\nprint(\"yes\")"
+     },
+     "title": {
+      "en": "Pushed in too little",
+      "it": "Rientrato troppo poco",
+      "fr": "Pas assez décalé"
+     },
+     "text": {
+      "en": "After a line that ends with a colon, the next line must be pushed to the right by four spaces. Python uses this space to know what belongs together.\n\nAll the lines of one block must start at exactly the same place.",
+      "it": "Dopo una riga che finisce con i due punti, la riga successiva deve essere spostata a destra di quattro spazi. Python usa questo spazio per sapere cosa sta insieme.\n\nTutte le righe di uno stesso blocco devono iniziare esattamente nello stesso punto.",
+      "fr": "Après une ligne qui finit par deux points, la ligne suivante doit être décalée vers la droite de quatre espaces. Python utilise cet espace pour savoir ce qui va ensemble.\n\nToutes les lignes d'un même bloc doivent commencer exactement au même endroit."
+     },
+     "see": {
+      "en": "⚠ Line 2: An indented line is expected here.",
+      "it": "⚠ Riga 2: Qui ci vuole una riga rientrata.",
+      "fr": "⚠ Ligne 2: Une ligne décalée est attendue ici."
+     },
+     "slip": {
+      "en": "The Tab key puts four spaces in the Pyviel editor. Do not mix tabs and spaces.",
+      "it": "Il tasto Tab mette quattro spazi nell'editor di Pyviel. Non mescolare tabulazioni e spazi.",
+      "fr": "La touche Tab met quatre espaces dans l'éditeur de Pyviel. Ne mélange pas tabulations et espaces."
+     },
+     "error": "IndentationError",
+     "ex": {
+      "task": {
+       "en": "Fix the line so the program shows yes.",
+       "it": "Correggi la riga così il programma mostra sì.",
+       "fr": "Corrige la ligne pour que le programme affiche oui."
+      },
+      "hint": {
+       "en": "Put four spaces before the print line.",
+       "it": "Metti quattro spazi prima della riga print.",
+       "fr": "Mets quatre espaces avant la ligne print."
+      },
+      "sol": {
+       "en": "if 5 > 3:\n    print(\"yes\")",
+       "it": "if 5 > 3:\n    print(\"sì\")",
+       "fr": "if 5 > 3:\n    print(\"oui\")"
+      },
+      "start": {
+       "en": "if 5 > 3:\nprint(\"yes\")",
+       "it": "if 5 > 3:\nprint(\"sì\")",
+       "fr": "if 5 > 3:\nprint(\"oui\")"
+      },
+      "spec": {
+       "en": {
+        "out": "yes"
+       },
+       "it": {
+        "out": "sì"
+       },
+       "fr": {
+        "out": "oui"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "yes",
+       "it": "sì",
+       "fr": "oui"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "score = 10\nprint(scroe)",
+      "it": "score = 10\nprint(scroe)",
+      "fr": "score = 10\nprint(scroe)"
+     },
+     "title": {
+      "en": "A name that does not exist",
+      "it": "Un nome che non esiste",
+      "fr": "Un nom qui n'existe pas"
+     },
+     "text": {
+      "en": "This mistake only shows up while the program runs. Here a box is called score, but the next line asks for scroe: a typo. Python does not know that name.\n\nWhen a name is not found, check how it is spelled, and that the box was filled before you use it.",
+      "it": "Questo errore compare solo mentre il programma gira. Qui una scatola si chiama score, ma la riga dopo chiede scroe: un errore di battitura. Python non conosce quel nome.\n\nQuando un nome non si trova, controlla come è scritto e che la scatola sia stata riempita prima di usarla.",
+      "fr": "Cette erreur n'apparaît que pendant que le programme tourne. Ici une boîte s'appelle score, mais la ligne suivante demande scroe : une faute de frappe. Python ne connaît pas ce nom.\n\nQuand un nom n'est pas trouvé, vérifie comment il est écrit, et que la boîte a été remplie avant de l'utiliser."
+     },
+     "see": {
+      "en": "⚠ Line 2: scroe does not exist yet.",
+      "it": "⚠ Riga 2: scroe non esiste ancora.",
+      "fr": "⚠ Ligne 2: scroe n'existe pas encore."
+     },
+     "slip": null,
+     "error": "NameError",
+     "ex": {
+      "task": {
+       "en": "Fix the typo so the program shows 10.",
+       "it": "Correggi l'errore di battitura così il programma mostra 10.",
+       "fr": "Corrige la faute de frappe pour que le programme affiche 10."
+      },
+      "hint": {
+       "en": "The name in the print must be spelled like the box.",
+       "it": "Il nome in print deve essere scritto come la scatola.",
+       "fr": "Le nom dans print doit être écrit comme la boîte."
+      },
+      "sol": {
+       "en": "score = 10\nprint(score)",
+       "it": "score = 10\nprint(score)",
+       "fr": "score = 10\nprint(score)"
+      },
+      "start": {
+       "en": "score = 10\nprint(scroe)",
+       "it": "score = 10\nprint(scroe)",
+       "fr": "score = 10\nprint(scroe)"
+      },
+      "spec": {
+       "en": {
+        "out": "10"
+       },
+       "it": {
+        "out": "10"
+       },
+       "fr": {
+        "out": "10"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "10",
+       "it": "10",
+       "fr": "10"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "items = [\"a\", \"b\", \"c\"]\nprint(items[0])\nprint(items[3])",
+      "it": "items = [\"a\", \"b\", \"c\"]\nprint(items[0])\nprint(items[3])",
+      "fr": "items = [\"a\", \"b\", \"c\"]\nprint(items[0])\nprint(items[3])"
+     },
+     "title": {
+      "en": "A place that does not exist",
+      "it": "Un posto che non esiste",
+      "fr": "Une place qui n'existe pas"
+     },
+     "text": {
+      "en": "The list has 3 items, at places 0, 1 and 2. Asking for place 3 stops the program, but the lines before it have already done their work.\n\nRead the sentence: it names the problem. Then press View full error and find the line \"File ..., line 3\": it is the same line number.",
+      "it": "La lista ha 3 elementi, ai posti 0, 1 e 2. Chiedere il posto 3 ferma il programma, ma le righe prima hanno già fatto il loro lavoro.\n\nLeggi la frase: nomina il problema. Poi premi View full error e trova la riga \"File ..., line 3\": è lo stesso numero di riga.",
+      "fr": "La liste a 3 éléments, aux places 0, 1 et 2. Demander la place 3 arrête le programme, mais les lignes d'avant ont déjà fait leur travail.\n\nLis la phrase : elle nomme le problème. Puis appuie sur View full error et trouve la ligne \"File ..., line 3\" : c'est le même numéro de ligne."
+     },
+     "see": {
+      "en": "a\n⚠ Line 3: That position does not exist in the list.",
+      "it": "a\n⚠ Riga 3: Quella posizione non esiste nella lista.",
+      "fr": "a\n⚠ Ligne 3: Cette position n'existe pas dans la liste."
+     },
+     "slip": null,
+     "error": "IndexError",
+     "ex": {
+      "task": {
+       "en": "Fix the program so it shows the last item, c.",
+       "it": "Correggi il programma così mostra l'ultimo elemento, c.",
+       "fr": "Corrige le programme pour qu'il affiche le dernier élément, c."
+      },
+      "hint": {
+       "en": "The last item of three is at place 2, or at place -1.",
+       "it": "L'ultimo di tre elementi è al posto 2, o al posto -1.",
+       "fr": "Le dernier de trois éléments est à la place 2, ou à la place -1."
+      },
+      "sol": {
+       "en": "items = [\"a\", \"b\", \"c\"]\nprint(items[2])",
+       "it": "items = [\"a\", \"b\", \"c\"]\nprint(items[2])",
+       "fr": "items = [\"a\", \"b\", \"c\"]\nprint(items[2])"
+      },
+      "start": {
+       "en": "items = [\"a\", \"b\", \"c\"]\nprint(items[3])",
+       "it": "items = [\"a\", \"b\", \"c\"]\nprint(items[3])",
+       "fr": "items = [\"a\", \"b\", \"c\"]\nprint(items[3])"
+      },
+      "spec": {
+       "en": {
+        "out": "c"
+       },
+       "it": {
+        "out": "c"
+       },
+       "fr": {
+        "out": "c"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "c",
+       "it": "c",
+       "fr": "c"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(10 / 2)\nprint(10 / 0)",
+      "it": "print(10 / 2)\nprint(10 / 0)",
+      "fr": "print(10 / 2)\nprint(10 / 0)"
+     },
+     "title": {
+      "en": "Dividing by zero",
+      "it": "Dividere per zero",
+      "fr": "Diviser par zéro"
+     },
+     "text": {
+      "en": "Dividing by zero has no answer, even in maths. Python stops and tells you so. The first line worked and showed its answer before the stop.\n\nMistakes like this one often come from a box that holds 0 when you did not expect it. Show the box with print to find out.",
+      "it": "Dividere per zero non ha risposta, nemmeno in matematica. Python si ferma e te lo dice. La prima riga ha funzionato e ha mostrato la sua risposta prima dello stop.\n\nErrori come questo vengono spesso da una scatola che contiene 0 quando non te lo aspettavi. Mostra la scatola con print per scoprirlo.",
+      "fr": "Diviser par zéro n'a pas de réponse, même en maths. Python s'arrête et te le dit. La première ligne a marché et a affiché sa réponse avant l'arrêt.\n\nLes erreurs comme celle-ci viennent souvent d'une boîte qui contient 0 alors que tu ne t'y attendais pas. Affiche la boîte avec print pour le découvrir."
+     },
+     "see": {
+      "en": "5.0\n⚠ Line 2: A number was divided by zero.",
+      "it": "5.0\n⚠ Riga 2: Un numero è stato diviso per zero.",
+      "fr": "5.0\n⚠ Ligne 2: Un nombre a été divisé par zéro."
+     },
+     "slip": null,
+     "error": "ZeroDivisionError",
+     "ex": {
+      "task": {
+       "en": "Fix the second line so it divides 10 by 5.",
+       "it": "Correggi la seconda riga così divide 10 per 5.",
+       "fr": "Corrige la deuxième ligne pour qu'elle divise 10 par 5."
+      },
+      "hint": {
+       "en": "Change the 0 into a 5.",
+       "it": "Cambia lo 0 in 5.",
+       "fr": "Change le 0 en 5."
+      },
+      "sol": {
+       "en": "print(10 / 2)\nprint(10 / 5)",
+       "it": "print(10 / 2)\nprint(10 / 5)",
+       "fr": "print(10 / 2)\nprint(10 / 5)"
+      },
+      "start": {
+       "en": "print(10 / 2)\nprint(10 / 0)",
+       "it": "print(10 / 2)\nprint(10 / 0)",
+       "fr": "print(10 / 2)\nprint(10 / 0)"
+      },
+      "spec": {
+       "en": {
+        "out": "5.0\n2.0"
+       },
+       "it": {
+        "out": "5.0\n2.0"
+       },
+       "fr": {
+        "out": "5.0\n2.0"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "5.0\n2.0",
+       "it": "5.0\n2.0",
+       "fr": "5.0\n2.0"
+      }
+     }
+    },
+    {
+     "code": {
+      "en": "print(\"Start\")\nnumber = int(\"abc\")\nprint(\"Never reached\")",
+      "it": "print(\"Inizio\")\nnumber = int(\"abc\")\nprint(\"Mai raggiunta\")",
+      "fr": "print(\"Début\")\nnumber = int(\"abc\")\nprint(\"Jamais atteinte\")"
+     },
+     "title": {
+      "en": "A checklist for any mistake",
+      "it": "Una lista di controllo per ogni errore",
+      "fr": "Une liste de contrôle pour toute erreur"
+     },
+     "text": {
+      "en": "When something breaks, do this: 1) read the sentence from Pyviel, 2) look at the line it points to, and the one before, 3) press View full error and read the last line, 4) check spelling, brackets, quotes and colons, 5) add a print to see what the values really are.\n\nNobody writes a program without mistakes. Programmers are just fast at finding them.",
+      "it": "Quando qualcosa si rompe, fai così: 1) leggi la frase di Pyviel, 2) guarda la riga che indica, e quella prima, 3) premi View full error e leggi l'ultima riga, 4) controlla ortografia, parentesi, virgolette e due punti, 5) aggiungi un print per vedere cosa contengono davvero i valori.\n\nNessuno scrive un programma senza errori. I programmatori sono solo veloci a trovarli.",
+      "fr": "Quand quelque chose casse, fais ceci : 1) lis la phrase de Pyviel, 2) regarde la ligne qu'elle indique, et celle d'avant, 3) appuie sur View full error et lis la dernière ligne, 4) vérifie l'orthographe, les parenthèses, les guillemets et les deux points, 5) ajoute un print pour voir ce que contiennent vraiment les valeurs.\n\nPersonne n'écrit un programme sans erreurs. Les programmeurs sont juste rapides pour les trouver."
+     },
+     "see": {
+      "en": "Start\n⚠ Line 2: 'abc' cannot be turned into a whole number.",
+      "it": "Inizio\n⚠ Riga 2: 'abc' non si può trasformare in un numero intero.",
+      "fr": "Début\n⚠ Ligne 2: 'abc' ne peut pas devenir un nombre entier."
+     },
+     "slip": null,
+     "error": "ValueError",
+     "ex": {
+      "task": {
+       "en": "The text \"abc\" is not a number. Change it to \"42\" and show the number at the end.",
+       "it": "Il testo \"abc\" non è un numero. Cambialo in \"42\" e mostra il numero alla fine.",
+       "fr": "Le texte \"abc\" n'est pas un nombre. Change-le en \"42\" et affiche le nombre à la fin."
+      },
+      "hint": {
+       "en": "int(\"42\") works. Then print(number) at the end.",
+       "it": "int(\"42\") funziona. Poi print(number) alla fine.",
+       "fr": "int(\"42\") marche. Puis print(number) à la fin."
+      },
+      "sol": {
+       "en": "print(\"Start\")\nnumber = int(\"42\")\nprint(number)",
+       "it": "print(\"Inizio\")\nnumber = int(\"42\")\nprint(number)",
+       "fr": "print(\"Début\")\nnumber = int(\"42\")\nprint(number)"
+      },
+      "start": {
+       "en": "print(\"Start\")\nnumber = int(\"abc\")\nprint(\"Never reached\")",
+       "it": "print(\"Inizio\")\nnumber = int(\"abc\")\nprint(\"Mai raggiunta\")",
+       "fr": "print(\"Début\")\nnumber = int(\"abc\")\nprint(\"Jamais atteinte\")"
+      },
+      "spec": {
+       "en": {
+        "out": "Start\n42"
+       },
+       "it": {
+        "out": "Inizio\n42"
+       },
+       "fr": {
+        "out": "Début\n42"
+       }
+      },
+      "answers": {
+       "en": [],
+       "it": [],
+       "fr": []
+      },
+      "expected": {
+       "en": "Start\n42",
+       "it": "Inizio\n42",
+       "fr": "Début\n42"
+      }
+     }
+    }
+   ]
   }
  ]
 };

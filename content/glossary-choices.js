@@ -147,6 +147,55 @@ module.exports = {
       'continue saute le reste de ce tour et passe tout de suite au suivant.'],
     s: 'if n == 3:\n    continue'
   },
+  'import': {
+    w: 'import',
+    d: ['import brings in a tool box that Python has ready but does not load by itself. Write import and the name of the box; its tools then have the name of the box in front: random.something.',
+      'import porta una cassetta degli attrezzi che Python ha pronta ma non carica da sola. Scrivi import e il nome della cassetta; i suoi attrezzi hanno poi davanti il nome della cassetta: random.qualcosa.',
+      'import apporte une boîte à outils que Python a prête mais ne charge pas toute seule. Écris import et le nom de la boîte ; ses outils ont ensuite devant eux le nom de la boîte : random.quelquechose.'],
+    s: 'import random'
+  },
+  'module:random': {
+    w: 'random',
+    d: ['random is a tool box for luck: random numbers, shuffling, picking. You will meet it properly in a later lesson.',
+      'random è una cassetta di attrezzi per la fortuna: numeri a caso, mescolare, scegliere. La conoscerai bene in una lezione più avanti.',
+      'random est une boîte à outils pour la chance : nombres au hasard, mélanger, choisir. Tu la connaîtras bien dans une leçon plus loin.'],
+    s: 'import random'
+  },
+  'random.randint': {
+    w: 'random.randint( )',
+    d: ['random.randint(1, 10) gives a whole number chosen by luck from 1 to 10, both included. It is different every time you run the program.',
+      'random.randint(1, 10) dà un numero intero scelto a caso da 1 a 10, estremi compresi. È diverso ogni volta che esegui il programma.',
+      'random.randint(1, 10) donne un nombre entier choisi au hasard de 1 à 10, bornes comprises. Il est différent à chaque fois que tu lances le programme.'],
+    s: 'secret = random.randint(1, 10)'
+  },
+  'del': {
+    w: 'del',
+    d: ['del deletes something. With a list and a place, it removes the item that is there.',
+      'del cancella qualcosa. Con una lista e un posto, toglie l\'elemento che si trova lì.',
+      'del supprime quelque chose. Avec une liste et une place, il enlève l\'élément qui s\'y trouve.'],
+    s: 'del fruits[0]'
+  },
+  '.reverse': {
+    w: '.reverse( )',
+    d: ['.reverse turns the list around, so the last item comes first. The list itself changes.',
+      '.reverse gira la lista, così l\'ultimo elemento viene per primo. La lista stessa cambia.',
+      '.reverse retourne la liste, donc le dernier élément passe en premier. La liste elle-même change.'],
+    s: 'numbers.reverse()'
+  },
+  '.index': {
+    w: '.index( )',
+    d: ['.index tells the place of an item in the list: the first place where it is found.',
+      '.index dice il posto di un elemento nella lista: il primo posto in cui si trova.',
+      '.index dit la place d\'un élément dans la liste : la première place où on le trouve.'],
+    s: 'names.index("Ada")'
+  },
+  '.count': {
+    w: '.count( )',
+    d: ['.count tells how many times an item is in the list.',
+      '.count dice quante volte un elemento è nella lista.',
+      '.count dit combien de fois un élément est dans la liste.'],
+    s: 'names.count("Max")'
+  },
   'list': {
     w: '[ ]',
     d: ['A list keeps many values in order. Write them between square brackets, with commas. Its items have places counted from 0, like the letters of a text.',
